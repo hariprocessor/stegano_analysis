@@ -1,0 +1,114 @@
+.TH "WavFormatChunk" 3 "Thu Aug 17 2017" "Version 0.5.1" "steghide" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+WavFormatChunk
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <WavFormatChunk\&.h>\fP
+.PP
+Inherits \fBWavChunk\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBWavFormatChunk\fP (void)"
+.br
+.ti -1c
+.RI "\fBWavFormatChunk\fP (\fBWavChunkHeader\fP *chh)"
+.br
+.ti -1c
+.RI "\fBWavFormatChunk\fP (\fBWavChunkHeader\fP *chh, \fBBinaryIO\fP *io)"
+.br
+.ti -1c
+.RI "void \fBread\fP (\fBBinaryIO\fP *io)"
+.br
+.ti -1c
+.RI "void \fBwrite\fP (\fBBinaryIO\fP *io)"
+.br
+.ti -1c
+.RI "\fBUWORD16\fP \fBgetFormatTag\fP (void) const"
+.br
+.ti -1c
+.RI "\fBUWORD16\fP \fBgetBitsPerSample\fP (void) const"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static const \fBUWORD16\fP \fBFormatPCM\fP = 0x0001"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBUWORD16\fP \fBFormatTag\fP"
+.br
+.ti -1c
+.RI "\fBUWORD16\fP \fBChannels\fP"
+.br
+.ti -1c
+.RI "\fBUWORD32\fP \fBSamplesPerSec\fP"
+.br
+.ti -1c
+.RI "\fBUWORD32\fP \fBAvgBytesPerSec\fP"
+.br
+.ti -1c
+.RI "\fBUWORD16\fP \fBBlockAlign\fP"
+.br
+.ti -1c
+.RI "\fBUWORD16\fP \fBBitsPerSample\fP"
+.br
+.ti -1c
+.RI "\fBUWORD16\fP \fBAdditionalSize\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "WavFormatChunk::WavFormatChunk (void)\fC [inline]\fP"
+
+.SS "WavFormatChunk::WavFormatChunk (\fBWavChunkHeader\fP * chh)\fC [inline]\fP"
+
+.SS "WavFormatChunk::WavFormatChunk (\fBWavChunkHeader\fP * chh, \fBBinaryIO\fP * io)\fC [inline]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBUWORD16\fP WavFormatChunk::getBitsPerSample (void) const\fC [inline]\fP"
+
+.SS "\fBUWORD16\fP WavFormatChunk::getFormatTag (void) const\fC [inline]\fP"
+
+.SS "void WavFormatChunk::read (\fBBinaryIO\fP * io)\fC [virtual]\fP"
+
+.PP
+Implements \fBWavChunk\fP\&.
+.SS "void WavFormatChunk::write (\fBBinaryIO\fP * io)\fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBWavChunk\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBUWORD16\fP WavFormatChunk::AdditionalSize\fC [private]\fP"
+
+.SS "\fBUWORD32\fP WavFormatChunk::AvgBytesPerSec\fC [private]\fP"
+
+.SS "\fBUWORD16\fP WavFormatChunk::BitsPerSample\fC [private]\fP"
+
+.SS "\fBUWORD16\fP WavFormatChunk::BlockAlign\fC [private]\fP"
+
+.SS "\fBUWORD16\fP WavFormatChunk::Channels\fC [private]\fP"
+
+.SS "const \fBUWORD16\fP WavFormatChunk::FormatPCM = 0x0001\fC [static]\fP"
+
+.SS "\fBUWORD16\fP WavFormatChunk::FormatTag\fC [private]\fP"
+
+.SS "\fBUWORD32\fP WavFormatChunk::SamplesPerSec\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for steghide from the source code\&.

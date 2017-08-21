@@ -1,0 +1,162 @@
+\section{Audio\+Sample\+Value$<$ Type, Value\+Type $>$ Class Template Reference}
+\label{classAudioSampleValue}\index{Audio\+Sample\+Value$<$ Type, Value\+Type $>$@{Audio\+Sample\+Value$<$ Type, Value\+Type $>$}}
+
+
+a class representing an audio sample  
+
+
+
+
+{\ttfamily \#include $<$Audio\+Sample\+Value.\+h$>$}
+
+Inheritance diagram for Audio\+Sample\+Value$<$ Type, Value\+Type $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classAudioSampleValue}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Audio\+Sample\+Value} (Value\+Type v)
+\item 
+Value\+Type \textbf{ get\+Value} (void) const
+\item 
+\textbf{ Sample\+Value} $\ast$ \textbf{ get\+Nearest\+Target\+Sample\+Value} (\textbf{ Emb\+Value} t) const
+\item 
+\textbf{ U\+W\+O\+R\+D32} \textbf{ calc\+Distance} (const \textbf{ Sample\+Value} $\ast$s) const
+\item 
+std\+::string \textbf{ get\+Name} (void) const
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ U\+W\+O\+R\+D32} \textbf{ calc\+Key} (Value\+Type v) const
+\item 
+\textbf{ Emb\+Value} \textbf{ calc\+E\+Value} (Value\+Type v) const
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Value\+Type \textbf{ Value}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const Value\+Type \textbf{ Min\+Value} = 0
+\item 
+static const Value\+Type \textbf{ Max\+Value} = \textbf{ B\+Y\+T\+E\+\_\+\+M\+AX}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{classAudioSampleValue_af6cfbcff00be2bae6f3627d6dc20dbca}} 
+\index{Audio\+Sample\+Value@{Audio\+Sample\+Value}!Audio\+Sample\+Value@{Audio\+Sample\+Value}}
+\index{Audio\+Sample\+Value@{Audio\+Sample\+Value}!Audio\+Sample\+Value@{Audio\+Sample\+Value}}
+\subsubsection{Audio\+Sample\+Value()}
+{\footnotesize\ttfamily template$<$A\+U\+D\+I\+O\+S\+A\+M\+P\+L\+E\+T\+Y\+PE Type, class Value\+Type $>$ \\
+\textbf{ Audio\+Sample\+Value}$<$ Type, Value\+Type $>$\+::\textbf{ Audio\+Sample\+Value} (\begin{DoxyParamCaption}\item[{Value\+Type}]{v }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{classAudioSampleValue_a6e8bd4368a717ab9d97b0f85e3bcc24f}} 
+\index{Audio\+Sample\+Value@{Audio\+Sample\+Value}!calc\+Distance@{calc\+Distance}}
+\index{calc\+Distance@{calc\+Distance}!Audio\+Sample\+Value@{Audio\+Sample\+Value}}
+\subsubsection{calc\+Distance()}
+{\footnotesize\ttfamily template$<$A\+U\+D\+I\+O\+S\+A\+M\+P\+L\+E\+T\+Y\+PE Type, class Value\+Type $>$ \\
+\textbf{ U\+W\+O\+R\+D32} \textbf{ Audio\+Sample\+Value}$<$ Type, Value\+Type $>$\+::calc\+Distance (\begin{DoxyParamCaption}\item[{const \textbf{ Sample\+Value} $\ast$}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+calculate the distance between the sample value s and this sample value 
+\begin{DoxyParams}{Parameters}
+{\em s} & a sample value of the same type as this \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the distance 
+\end{DoxyReturn}
+
+
+Implements \textbf{ Sample\+Value} \doxyref{}{p.}{classSampleValue_aa7e5d9b69203f6f6edf97c79319232dd}.
+
+\mbox{\label{classAudioSampleValue_afa22f9a448376232b62075c83491492e}} 
+\index{Audio\+Sample\+Value@{Audio\+Sample\+Value}!calc\+E\+Value@{calc\+E\+Value}}
+\index{calc\+E\+Value@{calc\+E\+Value}!Audio\+Sample\+Value@{Audio\+Sample\+Value}}
+\subsubsection{calc\+E\+Value()}
+{\footnotesize\ttfamily template$<$A\+U\+D\+I\+O\+S\+A\+M\+P\+L\+E\+T\+Y\+PE Type, class Value\+Type$>$ \\
+\textbf{ Emb\+Value} \textbf{ Audio\+Sample\+Value}$<$ Type, Value\+Type $>$\+::calc\+E\+Value (\begin{DoxyParamCaption}\item[{Value\+Type}]{v }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\mbox{\label{classAudioSampleValue_ac3110059b0db7a57585dc80691d6d4d0}} 
+\index{Audio\+Sample\+Value@{Audio\+Sample\+Value}!calc\+Key@{calc\+Key}}
+\index{calc\+Key@{calc\+Key}!Audio\+Sample\+Value@{Audio\+Sample\+Value}}
+\subsubsection{calc\+Key()}
+{\footnotesize\ttfamily template$<$A\+U\+D\+I\+O\+S\+A\+M\+P\+L\+E\+T\+Y\+PE Type, class Value\+Type$>$ \\
+\textbf{ U\+W\+O\+R\+D32} \textbf{ Audio\+Sample\+Value}$<$ Type, Value\+Type $>$\+::calc\+Key (\begin{DoxyParamCaption}\item[{Value\+Type}]{v }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\mbox{\label{classAudioSampleValue_a9f6d83bd0007d8a9b157f55161519b08}} 
+\index{Audio\+Sample\+Value@{Audio\+Sample\+Value}!get\+Name@{get\+Name}}
+\index{get\+Name@{get\+Name}!Audio\+Sample\+Value@{Audio\+Sample\+Value}}
+\subsubsection{get\+Name()}
+{\footnotesize\ttfamily template$<$A\+U\+D\+I\+O\+S\+A\+M\+P\+L\+E\+T\+Y\+PE Type, class Value\+Type $>$ \\
+std\+::string \textbf{ Audio\+Sample\+Value}$<$ Type, Value\+Type $>$\+::get\+Name (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+return a short name uniquely identifying this sample value 
+
+Implements \textbf{ Sample\+Value} \doxyref{}{p.}{classSampleValue_aeaf5c46ec6d023840e9773604b20d25c}.
+
+\mbox{\label{classAudioSampleValue_aaeaaef73950dbe29a1bb1620bd4c53ab}} 
+\index{Audio\+Sample\+Value@{Audio\+Sample\+Value}!get\+Nearest\+Target\+Sample\+Value@{get\+Nearest\+Target\+Sample\+Value}}
+\index{get\+Nearest\+Target\+Sample\+Value@{get\+Nearest\+Target\+Sample\+Value}!Audio\+Sample\+Value@{Audio\+Sample\+Value}}
+\subsubsection{get\+Nearest\+Target\+Sample\+Value()}
+{\footnotesize\ttfamily template$<$A\+U\+D\+I\+O\+S\+A\+M\+P\+L\+E\+T\+Y\+PE Type, class Value\+Type $>$ \\
+\textbf{ Sample\+Value} $\ast$ \textbf{ Audio\+Sample\+Value}$<$ Type, Value\+Type $>$\+::get\+Nearest\+Target\+Sample\+Value (\begin{DoxyParamCaption}\item[{\textbf{ Emb\+Value}}]{t }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+get the nearest (with the least distance to this sample value) sample value whose embedded value equals the specified target 
+\begin{DoxyParams}{Parameters}
+{\em t} & the target embedded value\\
+\hline
+\end{DoxyParams}
+If two or more target sample values have equal distance each of them should be returned with equal probability.
+
+The returned \doxyref{Sample\+Value}{p.}{classSampleValue} object should be deleted by the callser. 
+
+Implements \textbf{ Sample\+Value} \doxyref{}{p.}{classSampleValue_aeca3fc1fd34c09d2244706b010935c2c}.
+
+\mbox{\label{classAudioSampleValue_a8f050529c4f956faa8105130ea90d578}} 
+\index{Audio\+Sample\+Value@{Audio\+Sample\+Value}!get\+Value@{get\+Value}}
+\index{get\+Value@{get\+Value}!Audio\+Sample\+Value@{Audio\+Sample\+Value}}
+\subsubsection{get\+Value()}
+{\footnotesize\ttfamily template$<$A\+U\+D\+I\+O\+S\+A\+M\+P\+L\+E\+T\+Y\+PE Type, class Value\+Type$>$ \\
+Value\+Type \textbf{ Audio\+Sample\+Value}$<$ Type, Value\+Type $>$\+::get\+Value (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{classAudioSampleValue_a852909519410c701cb47ab84c25c43f5}} 
+\index{Audio\+Sample\+Value@{Audio\+Sample\+Value}!Max\+Value@{Max\+Value}}
+\index{Max\+Value@{Max\+Value}!Audio\+Sample\+Value@{Audio\+Sample\+Value}}
+\subsubsection{Max\+Value}
+{\footnotesize\ttfamily template$<$A\+U\+D\+I\+O\+S\+A\+M\+P\+L\+E\+T\+Y\+PE Type, class Value\+Type$>$ \\
+const \textbf{ S\+W\+O\+R\+D32} Au\+P\+C\+M32\+Sample\+Value\+::\+Max\+Value = \textbf{ B\+Y\+T\+E\+\_\+\+M\+AX}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\label{classAudioSampleValue_ae606d07bca09850c1448720c80c002b8}} 
+\index{Audio\+Sample\+Value@{Audio\+Sample\+Value}!Min\+Value@{Min\+Value}}
+\index{Min\+Value@{Min\+Value}!Audio\+Sample\+Value@{Audio\+Sample\+Value}}
+\subsubsection{Min\+Value}
+{\footnotesize\ttfamily template$<$A\+U\+D\+I\+O\+S\+A\+M\+P\+L\+E\+T\+Y\+PE Type, class Value\+Type$>$ \\
+const \textbf{ S\+W\+O\+R\+D32} Au\+P\+C\+M32\+Sample\+Value\+::\+Min\+Value = 0\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\label{classAudioSampleValue_a7d800edb6ec6c2d5ccd7150cea3aab54}} 
+\index{Audio\+Sample\+Value@{Audio\+Sample\+Value}!Value@{Value}}
+\index{Value@{Value}!Audio\+Sample\+Value@{Audio\+Sample\+Value}}
+\subsubsection{Value}
+{\footnotesize\ttfamily template$<$A\+U\+D\+I\+O\+S\+A\+M\+P\+L\+E\+T\+Y\+PE Type, class Value\+Type$>$ \\
+Value\+Type \textbf{ Audio\+Sample\+Value}$<$ Type, Value\+Type $>$\+::Value\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ Audio\+Sample\+Value.\+h}\item 
+\textbf{ Au\+Sample\+Values.\+cc}\end{DoxyCompactItemize}

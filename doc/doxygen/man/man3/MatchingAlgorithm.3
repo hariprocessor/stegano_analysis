@@ -1,0 +1,79 @@
+.TH "MatchingAlgorithm" 3 "Thu Aug 17 2017" "Version 0.5.1" "steghide" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MatchingAlgorithm
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <MatchingAlgorithm\&.h>\fP
+.PP
+Inherited by \fBBFSAPHeuristic\fP, \fBDFSAPHeuristic\fP, \fBDMDConstructionHeuristic\fP, \fBSMDConstructionHeuristic\fP, and \fBWKSConstructionHeuristic\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMatchingAlgorithm\fP (\fBGraph\fP *g, \fBMatching\fP *m, float goal)"
+.br
+.ti -1c
+.RI "virtual \fB~MatchingAlgorithm\fP (void)"
+.br
+.ti -1c
+.RI "virtual void \fBrun\fP (void)=0"
+.br
+.ti -1c
+.RI "\fBMatching\fP * \fBgetMatching\fP (void) const"
+.br
+.ti -1c
+.RI "void \fBsetGoal\fP (float goal)"
+.br
+.ti -1c
+.RI "virtual const char * \fBgetName\fP (void) const =0"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBGraph\fP * \fBTheGraph\fP"
+.br
+.ti -1c
+.RI "\fBMatching\fP * \fBTheMatching\fP"
+.br
+.ti -1c
+.RI "unsigned long \fBCardinalityGoal\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "MatchingAlgorithm::MatchingAlgorithm (\fBGraph\fP * g, \fBMatching\fP * m, float goal)"
+
+.SS "virtual MatchingAlgorithm::~MatchingAlgorithm (void)\fC [inline]\fP, \fC [virtual]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBMatching\fP* MatchingAlgorithm::getMatching (void) const\fC [inline]\fP"
+
+.SS "virtual const char* MatchingAlgorithm::getName (void) const\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBWKSConstructionHeuristic\fP, \fBDFSAPHeuristic\fP, \fBBFSAPHeuristic\fP, \fBDMDConstructionHeuristic\fP, and \fBSMDConstructionHeuristic\fP\&.
+.SS "virtual void MatchingAlgorithm::run (void)\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBDFSAPHeuristic\fP, \fBWKSConstructionHeuristic\fP, \fBBFSAPHeuristic\fP, \fBDMDConstructionHeuristic\fP, and \fBSMDConstructionHeuristic\fP\&.
+.SS "void MatchingAlgorithm::setGoal (float goal)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "unsigned long MatchingAlgorithm::CardinalityGoal\fC [protected]\fP"
+
+.SS "\fBGraph\fP* MatchingAlgorithm::TheGraph\fC [protected]\fP"
+
+.SS "\fBMatching\fP* MatchingAlgorithm::TheMatching\fC [protected]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for steghide from the source code\&.

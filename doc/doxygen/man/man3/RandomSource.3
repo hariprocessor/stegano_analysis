@@ -1,0 +1,129 @@
+.TH "RandomSource" 3 "Thu Aug 17 2017" "Version 0.5.1" "steghide" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RandomSource \- objects of this class are used as a source of random (non reproduceable) data  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <RandomSource\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBRandomSource\fP (void)"
+.br
+.ti -1c
+.RI "\fB~RandomSource\fP (void)"
+.br
+.ti -1c
+.RI "\fBBYTE\fP \fBgetByte\fP (void)"
+.br
+.ti -1c
+.RI "std::vector< \fBBYTE\fP > \fBgetBytes\fP (unsigned int n)"
+.br
+.ti -1c
+.RI "\fBBitString\fP \fBgetBits\fP (unsigned int n)"
+.br
+.ti -1c
+.RI "bool \fBgetBool\fP (void)"
+.br
+.ti -1c
+.RI "unsigned long \fBgetValue\fP (unsigned long n)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "unsigned int \fBRandomBytePos\fP"
+.br
+.ti -1c
+.RI "\fBBYTE\fP \fBRandomByte\fP"
+.br
+.ti -1c
+.RI "FILE * \fBRandomInput\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "RandomSource::RandomSource (void)"
+
+.SS "RandomSource::~RandomSource (void)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBBitString\fP RandomSource::getBits (unsigned int n)"
+get n random bits 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIn\fP the number of requested random bits 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+a \fBBitString\fP containing n random bits 
+.RE
+.PP
+
+.SS "bool RandomSource::getBool (void)"
+get a boolean value 
+.PP
+\fBReturns:\fP
+.RS 4
+true of false with equal probability 
+.RE
+.PP
+
+.SS "\fBBYTE\fP RandomSource::getByte (void)"
+get a random byte 
+.PP
+\fBReturns:\fP
+.RS 4
+a random byte 
+.RE
+.PP
+
+.SS "std::vector< \fBBYTE\fP > RandomSource::getBytes (unsigned int n)"
+get n random bytes 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIn\fP the number of requested random bytes 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+n random bytes 
+.RE
+.PP
+
+.SS "unsigned long RandomSource::getValue (unsigned long n)"
+get a random value 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIn\fP the range of the random value to be returned 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+a random number in {0,\&.\&.\&.,n-1} 
+.RE
+.PP
+
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBBYTE\fP RandomSource::RandomByte\fC [private]\fP"
+
+.SS "unsigned int RandomSource::RandomBytePos\fC [private]\fP"
+
+.SS "FILE* RandomSource::RandomInput\fC [private]\fP"
+determines the random input - is either opened file pointer to /dev/urandom or NULL (the rand() function is then used as random source) 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for steghide from the source code\&.

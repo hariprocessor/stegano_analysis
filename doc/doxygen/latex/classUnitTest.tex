@@ -1,0 +1,135 @@
+\section{Unit\+Test Class Reference}
+\label{classUnitTest}\index{Unit\+Test@{Unit\+Test}}
+
+
+{\ttfamily \#include $<$Unit\+Test.\+h$>$}
+
+Inheritance diagram for Unit\+Test\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=12.000000cm]{classUnitTest}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Unit\+Test} (std\+::string n, \textbf{ Test\+Suite} $\ast$s)
+\item 
+\textbf{ $\sim$\+Unit\+Test} (void)
+\item 
+virtual void \textbf{ setup} (void)
+\item 
+void \textbf{ run} (void)
+\item 
+virtual void \textbf{ cleanup} (void)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ add\+Test\+Category} (\textbf{ Test\+Category} $\ast$tc)
+\item 
+void \textbf{ add\+Test\+Result} (bool r)
+\item 
+char $\ast$ \textbf{ strip\+\_\+test} (char $\ast$s)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \textbf{ Test\+Category} $\ast$ $>$ \textbf{ Test\+Categories}
+\item 
+\textbf{ Globals} \textbf{ Globs\+Backup}
+\begin{DoxyCompactList}\small\item\em servers as a backup for the \doxyref{Globals}{p.}{classGlobals} object stored in Globs \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{classUnitTest_a56bb42f2ecaad992fb10d9036751424d}} 
+\index{Unit\+Test@{Unit\+Test}!Unit\+Test@{Unit\+Test}}
+\index{Unit\+Test@{Unit\+Test}!Unit\+Test@{Unit\+Test}}
+\subsubsection{Unit\+Test()}
+{\footnotesize\ttfamily Unit\+Test\+::\+Unit\+Test (\begin{DoxyParamCaption}\item[{std\+::string}]{n,  }\item[{\textbf{ Test\+Suite} $\ast$}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & name of this unit test (probably the name of the tested class) \\
+\hline
+\end{DoxyParams}
+\mbox{\label{classUnitTest_aec7a198877b0df231599ba51ead74de0}} 
+\index{Unit\+Test@{Unit\+Test}!````~Unit\+Test@{$\sim$\+Unit\+Test}}
+\index{````~Unit\+Test@{$\sim$\+Unit\+Test}!Unit\+Test@{Unit\+Test}}
+\subsubsection{$\sim$\+Unit\+Test()}
+{\footnotesize\ttfamily Unit\+Test\+::$\sim$\+Unit\+Test (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{classUnitTest_a633b75dae644c60a813ca0f84d5ddefb}} 
+\index{Unit\+Test@{Unit\+Test}!add\+Test\+Category@{add\+Test\+Category}}
+\index{add\+Test\+Category@{add\+Test\+Category}!Unit\+Test@{Unit\+Test}}
+\subsubsection{add\+Test\+Category()}
+{\footnotesize\ttfamily void Unit\+Test\+::add\+Test\+Category (\begin{DoxyParamCaption}\item[{\textbf{ Test\+Category} $\ast$}]{tc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\label{classUnitTest_aa0b1b3363e95ce9706f03c70ebe8f874}} 
+\index{Unit\+Test@{Unit\+Test}!add\+Test\+Result@{add\+Test\+Result}}
+\index{add\+Test\+Result@{add\+Test\+Result}!Unit\+Test@{Unit\+Test}}
+\subsubsection{add\+Test\+Result()}
+{\footnotesize\ttfamily void Unit\+Test\+::add\+Test\+Result (\begin{DoxyParamCaption}\item[{bool}]{r }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\label{classUnitTest_adf77efe972ee4a766d94e3f7ddc193ad}} 
+\index{Unit\+Test@{Unit\+Test}!cleanup@{cleanup}}
+\index{cleanup@{cleanup}!Unit\+Test@{Unit\+Test}}
+\subsubsection{cleanup()}
+{\footnotesize\ttfamily void Unit\+Test\+::cleanup (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+cleanup the unit test -\/ called after run 
+
+Reimplemented in \textbf{ Edge\+Iterator\+Test} \doxyref{}{p.}{classEdgeIteratorTest_a7e1af6040e329046f30544cb703d2cd8}, \textbf{ Matching\+Test} \doxyref{}{p.}{classMatchingTest_aec8e791424a85a87a1b2768b1263e11a}, \textbf{ W\+K\+S\+Construction\+Heuristic\+Test} \doxyref{}{p.}{classWKSConstructionHeuristicTest_a5556320511482afea9612067f9637df9}, \textbf{ B\+F\+S\+A\+P\+Heuristic\+Test} \doxyref{}{p.}{classBFSAPHeuristicTest_a7ff74226439c2833485f4d388e5d4cd7}, \textbf{ Bit\+String\+Test} \doxyref{}{p.}{classBitStringTest_af7a839ea60ca9e788e480ee74f1ca675}, \textbf{ D\+F\+S\+A\+P\+Heuristic\+Test} \doxyref{}{p.}{classDFSAPHeuristicTest_afab26fa7135d6b59edaaa83aadb60e8c}, \textbf{ Graph\+Test} \doxyref{}{p.}{classGraphTest_a150987a43bbbdebc716152aaaa2c195d}, \textbf{ Bmp\+Win\+File\+Test} \doxyref{}{p.}{classBmpWinFileTest_a75851865ed9731498fef7a646ad516f1}, \textbf{ Bmp\+File\+Test} \doxyref{}{p.}{classBmpFileTest_a52d90560219c01c96522e3ea5927087d}, \textbf{ Jpeg\+Sample\+Value\+Test} \doxyref{}{p.}{classJpegSampleValueTest_a98099c2d4c7bbd0bb78c5310603b2b98}, \textbf{ Selector\+Test} \doxyref{}{p.}{classSelectorTest_a98447b7b1a6496e9cfbeb67804815da2}, \textbf{ Audio\+Sample\+Value\+Test} \doxyref{}{p.}{classAudioSampleValueTest_a9c89c4e4802bc59647e95d8323d8c0bb}, \textbf{ Au\+File\+Test} \doxyref{}{p.}{classAuFileTest_a10ebf29919259a98f435645885bf856f}, \textbf{ Bmp\+O\+S2\+File\+Test} \doxyref{}{p.}{classBmpOS2FileTest_a1fcfaa4f555c1cdf8c6ff2fc8e451eec}, \textbf{ Bmp\+Palette\+Sample\+Value\+Test} \doxyref{}{p.}{classBmpPaletteSampleValueTest_a0323136f3a1a4e958b96ed4e7ac3a601}, \textbf{ Bmp\+R\+G\+B\+Sample\+Value\+Test} \doxyref{}{p.}{classBmpRGBSampleValueTest_a678eb59000fdb188caf33fd5bb3c8ca2}, \textbf{ Jpeg\+File\+Test} \doxyref{}{p.}{classJpegFileTest_a9d4011e0f9a932d1ad9af4869315bfc5}, \textbf{ Wav\+File\+Test} \doxyref{}{p.}{classWavFileTest_ab126367a744e7cb74c3e367337ef3606}, and \textbf{ Wav\+P\+C\+M\+Sample\+Value\+Test} \doxyref{}{p.}{classWavPCMSampleValueTest_a902a32e21de3996f25ca2f9af21ca674}.
+
+\mbox{\label{classUnitTest_a0a05d574533261bbe6a0a87ce2742745}} 
+\index{Unit\+Test@{Unit\+Test}!run@{run}}
+\index{run@{run}!Unit\+Test@{Unit\+Test}}
+\subsubsection{run()}
+{\footnotesize\ttfamily void Unit\+Test\+::run (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \textbf{ Test} \doxyref{}{p.}{classTest_adaa1047515f66be6402569c5f4a51189}.
+
+\mbox{\label{classUnitTest_ad73fdf9012b651047ea001d21f9d27ad}} 
+\index{Unit\+Test@{Unit\+Test}!setup@{setup}}
+\index{setup@{setup}!Unit\+Test@{Unit\+Test}}
+\subsubsection{setup()}
+{\footnotesize\ttfamily void Unit\+Test\+::setup (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+setup the unit test -\/ called before run
+
+\doxyref{Unit\+Test\+::setup}{p.}{classUnitTest_ad73fdf9012b651047ea001d21f9d27ad} will (together with \doxyref{Unit\+Test\+::cleanup}{p.}{classUnitTest_adf77efe972ee4a766d94e3f7ddc193ad}) save and restore the object stored in Globs so they should be called from the corresponding functions in the derived object if the derived unit test manipulates the Globs object. 
+
+Reimplemented in \textbf{ Edge\+Iterator\+Test} \doxyref{}{p.}{classEdgeIteratorTest_ad56dd8b150c16b3fba70d4eadb7d7bc2}, \textbf{ Matching\+Test} \doxyref{}{p.}{classMatchingTest_a7eaacade93babf431d433f12fc8beac5}, \textbf{ W\+K\+S\+Construction\+Heuristic\+Test} \doxyref{}{p.}{classWKSConstructionHeuristicTest_a2706854152741dcda6c853766a4d953d}, \textbf{ B\+F\+S\+A\+P\+Heuristic\+Test} \doxyref{}{p.}{classBFSAPHeuristicTest_ac0e8dd9221ca2f22b27d19cb6b7881f7}, \textbf{ Bit\+String\+Test} \doxyref{}{p.}{classBitStringTest_ae3916035aad5f74e4dbcf92be6b4b9a8}, \textbf{ D\+F\+S\+A\+P\+Heuristic\+Test} \doxyref{}{p.}{classDFSAPHeuristicTest_a72fb16e54187758148f9e2b18687d5ac}, \textbf{ Sample\+Value\+Adjacency\+List\+Test} \doxyref{}{p.}{classSampleValueAdjacencyListTest_a9977e7e4a763ea8cc9db632cdfeed444}, \textbf{ Graph\+Test} \doxyref{}{p.}{classGraphTest_a5bfeaa205290aedf9c5ec8e6d011525e}, \textbf{ Bmp\+Win\+File\+Test} \doxyref{}{p.}{classBmpWinFileTest_a2e131bfb54e7e4e7e653d5dc55488e4e}, \textbf{ Bmp\+File\+Test} \doxyref{}{p.}{classBmpFileTest_a1f3c6e5a214a2601ed28d965da436821}, \textbf{ Jpeg\+Sample\+Value\+Test} \doxyref{}{p.}{classJpegSampleValueTest_ab0bad2a2543a8cc19db4aced314a1f03}, \textbf{ Selector\+Test} \doxyref{}{p.}{classSelectorTest_a06e85cff4977a465080b7a0b5f0e94b4}, \textbf{ Audio\+Sample\+Value\+Test} \doxyref{}{p.}{classAudioSampleValueTest_a82fa9023cfe5cdf9891138928a059b46}, \textbf{ Au\+File\+Test} \doxyref{}{p.}{classAuFileTest_a2f2b853a21a4fd46f1010a1ee474a9a1}, \textbf{ Bmp\+O\+S2\+File\+Test} \doxyref{}{p.}{classBmpOS2FileTest_aa2a4aa30f613dff18079f04a45ee6665}, \textbf{ Bmp\+Palette\+Sample\+Value\+Test} \doxyref{}{p.}{classBmpPaletteSampleValueTest_a7eb94a58b9972340f5098ce0e85d7677}, \textbf{ Bmp\+R\+G\+B\+Sample\+Value\+Test} \doxyref{}{p.}{classBmpRGBSampleValueTest_a55f098ab9be37a93fa7a88bd6f71f097}, \textbf{ Jpeg\+File\+Test} \doxyref{}{p.}{classJpegFileTest_ab8796303fb34f7bbfd03a09bfef85b71}, \textbf{ Wav\+File\+Test} \doxyref{}{p.}{classWavFileTest_a2efeccbc9aeed06504572e9b5d7d9f90}, and \textbf{ Wav\+P\+C\+M\+Sample\+Value\+Test} \doxyref{}{p.}{classWavPCMSampleValueTest_a2dd9578f7ff882e321ef0328f20afd50}.
+
+\mbox{\label{classUnitTest_a34b5774d03a938ff345e5a6aa160ce33}} 
+\index{Unit\+Test@{Unit\+Test}!strip\+\_\+test@{strip\+\_\+test}}
+\index{strip\+\_\+test@{strip\+\_\+test}!Unit\+Test@{Unit\+Test}}
+\subsubsection{strip\+\_\+test()}
+{\footnotesize\ttfamily char$\ast$ Unit\+Test\+::strip\+\_\+test (\begin{DoxyParamCaption}\item[{char $\ast$}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{classUnitTest_ab3260cb2bf40997ab84fdabfbb8f342f}} 
+\index{Unit\+Test@{Unit\+Test}!Globs\+Backup@{Globs\+Backup}}
+\index{Globs\+Backup@{Globs\+Backup}!Unit\+Test@{Unit\+Test}}
+\subsubsection{Globs\+Backup}
+{\footnotesize\ttfamily \textbf{ Globals} Unit\+Test\+::\+Globs\+Backup\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classUnitTest_a3adfedb8752ba0bfaa05bd5e19483f44}} 
+\index{Unit\+Test@{Unit\+Test}!Test\+Categories@{Test\+Categories}}
+\index{Test\+Categories@{Test\+Categories}!Unit\+Test@{Unit\+Test}}
+\subsubsection{Test\+Categories}
+{\footnotesize\ttfamily std\+::vector$<$\textbf{ Test\+Category}$\ast$$>$ Unit\+Test\+::\+Test\+Categories\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ Unit\+Test.\+h}\item 
+\textbf{ Unit\+Test.\+cc}\end{DoxyCompactItemize}

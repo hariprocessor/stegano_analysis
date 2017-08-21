@@ -1,0 +1,155 @@
+.TH "Arg.h" 3 "Thu Aug 17 2017" "Version 0.5.1" "steghide" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Arg.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <list>\fP
+.br
+\fC#include <string>\fP
+.br
+\fC#include 'EncryptionAlgorithm\&.h'\fP
+.br
+\fC#include 'EncryptionMode\&.h'\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBArg< T >\fP"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef \fBArg\fP< \fBCOMMAND\fP > \fBArgCommand\fP"
+.br
+.ti -1c
+.RI "typedef \fBArg\fP< \fBVERBOSITY\fP > \fBArgVerbosity\fP"
+.br
+.ti -1c
+.RI "typedef \fBArg\fP< bool > \fBArgBool\fP"
+.br
+.ti -1c
+.RI "typedef \fBArg\fP< std::string > \fBArgString\fP"
+.br
+.ti -1c
+.RI "typedef \fBArg\fP< unsigned long > \fBArgULong\fP"
+.br
+.ti -1c
+.RI "typedef \fBArg\fP< int > \fBArgInt\fP"
+.br
+.ti -1c
+.RI "typedef \fBArg\fP< float > \fBArgFloat\fP"
+.br
+.ti -1c
+.RI "typedef \fBArg\fP< \fBEncryptionAlgorithm\fP > \fBArgEncAlgo\fP"
+.br
+.ti -1c
+.RI "typedef \fBArg\fP< \fBEncryptionMode\fP > \fBArgEncMode\fP"
+.br
+.ti -1c
+.RI "typedef \fBArg\fP< unsigned int > \fBArgUInt\fP"
+.br
+.ti -1c
+.RI "typedef \fBArg\fP< std::list< std::string > > \fBArgStringList\fP"
+.br
+.ti -1c
+.RI "typedef \fBArg\fP< \fBDEBUGCOMMAND\fP > \fBArgDebugCommand\fP"
+.br
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBCOMMAND\fP { \fBEMBED\fP, \fBEXTRACT\fP, \fBINFO\fP, \fBENCINFO\fP, \fBSHOWVERSION\fP, \fBSHOWLICENSE\fP, \fBSHOWHELP\fP, \fBPRINTFREQS\fP }"
+.br
+.ti -1c
+.RI "enum \fBVERBOSITY\fP { \fBQUIET\fP, \fBNORMAL\fP, \fBVERBOSE\fP, \fBSTATS\fP }"
+.br
+.ti -1c
+.RI "enum \fBDEBUGCOMMAND\fP { \fBNONE\fP, \fBPRINTGRAPH\fP, \fBPRINTGMLGRAPH\fP, \fBPRINTGMLVERTEX\fP }"
+.br
+.in -1c
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef \fBArg\fP<bool> \fBArgBool\fP"
+
+.SS "typedef \fBArg\fP<\fBCOMMAND\fP> \fBArgCommand\fP"
+
+.SS "typedef \fBArg\fP<\fBDEBUGCOMMAND\fP> \fBArgDebugCommand\fP"
+
+.SS "typedef \fBArg\fP<\fBEncryptionAlgorithm\fP> \fBArgEncAlgo\fP"
+
+.SS "typedef \fBArg\fP<\fBEncryptionMode\fP> \fBArgEncMode\fP"
+
+.SS "typedef \fBArg\fP<float> \fBArgFloat\fP"
+
+.SS "typedef \fBArg\fP<int> \fBArgInt\fP"
+
+.SS "typedef \fBArg\fP<std::string> \fBArgString\fP"
+
+.SS "typedef \fBArg\fP<std::list<std::string> > \fBArgStringList\fP"
+
+.SS "typedef \fBArg\fP<unsigned int> \fBArgUInt\fP"
+
+.SS "typedef \fBArg\fP<unsigned long> \fBArgULong\fP"
+
+.SS "typedef \fBArg\fP<\fBVERBOSITY\fP> \fBArgVerbosity\fP"
+
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBCOMMAND\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIEMBED \fP\fP
+.TP
+\fB\fIEXTRACT \fP\fP
+.TP
+\fB\fIINFO \fP\fP
+.TP
+\fB\fIENCINFO \fP\fP
+.TP
+\fB\fISHOWVERSION \fP\fP
+.TP
+\fB\fISHOWLICENSE \fP\fP
+.TP
+\fB\fISHOWHELP \fP\fP
+.TP
+\fB\fIPRINTFREQS \fP\fP
+.SS "enum \fBDEBUGCOMMAND\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fINONE \fP\fP
+.TP
+\fB\fIPRINTGRAPH \fP\fP
+.TP
+\fB\fIPRINTGMLGRAPH \fP\fP
+.TP
+\fB\fIPRINTGMLVERTEX \fP\fP
+.SS "enum \fBVERBOSITY\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIQUIET \fP\fP
+.TP
+\fB\fINORMAL \fP\fP
+.TP
+\fB\fIVERBOSE \fP\fP
+.TP
+\fB\fISTATS \fP\fP
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for steghide from the source code\&.

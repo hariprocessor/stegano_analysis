@@ -1,0 +1,156 @@
+.TH "Selector" 3 "Thu Aug 17 2017" "Version 0.5.1" "steghide" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Selector \- a random permutation of a random combination  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Selector\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSelector\fP (\fBUWORD32\fP m, std::string pp)"
+.br
+.ti -1c
+.RI "\fBSelector\fP (\fBUWORD32\fP m)"
+.br
+.ti -1c
+.RI "\fBSelector\fP (const std::vector< \fBUWORD32\fP > &retvals)"
+.br
+.ti -1c
+.RI "\fB~Selector\fP (void)"
+.br
+.ti -1c
+.RI "\fBUWORD32\fP \fBoperator[]\fP (\fBUWORD32\fP i)"
+.br
+.ti -1c
+.RI "\fBUWORD32\fP \fBgetRange\fP (void) const"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBcalculate\fP (\fBUWORD32\fP m)"
+.br
+.ti -1c
+.RI "bool \fBidxX\fP (\fBUWORD32\fP v, \fBUWORD32\fP m, \fBUWORD32\fP *p) const"
+.br
+.ti -1c
+.RI "void \fBsetX\fP (\fBUWORD32\fP i, \fBUWORD32\fP v)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::vector< \fBUWORD32\fP > \fBX\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBUWORD32\fP > \fBY\fP"
+.br
+.ti -1c
+.RI "sgi::hash_map< \fBUWORD32\fP, \fBUWORD32\fP > \fBXreversed\fP"
+.br
+.ti -1c
+.RI "\fBUWORD32\fP \fBMaximum\fP"
+.br
+.RI "operator[] will return a value in {0,\&.\&.\&.,Maximum-1} "
+.ti -1c
+.RI "\fBUWORD32\fP \fBNumInArray\fP"
+.br
+.RI "the number of calculated positions in the arrays "
+.ti -1c
+.RI "\fBPseudoRandomSource\fP * \fBPRandom\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Selector::Selector (\fBUWORD32\fP m, std::string pp)"
+construct a \fBSelector\fP object 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIm\fP the range - operator[] will return numbers in {0,\&.\&.\&.,m-1} 
+.br
+\fIpp\fP a passphrase used to generate the seed 
+.RE
+.PP
+
+.SS "Selector::Selector (\fBUWORD32\fP m)"
+construct a \fBSelector\fP object that resembles the identity permutation with range m 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIm\fP the range - (*this)[i] will be i for i in {0,\&.\&.\&.,m-1} 
+.RE
+.PP
+
+.SS "Selector::Selector (const std::vector< \fBUWORD32\fP > & retvals)"
+construct a \fBSelector\fP object that will return predefined values 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIretvals\fP the values that operator[] shall return
+.RE
+.PP
+The Maximum is set to retvals\&.size()\&. 
+.SS "Selector::~Selector (void)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void Selector::calculate (\fBUWORD32\fP m)\fC [private]\fP"
+fill X, Y and Xreversed until but not including index m 
+.SS "\fBUWORD32\fP Selector::getRange (void) const\fC [inline]\fP"
+
+.SS "bool Selector::idxX (\fBUWORD32\fP v, \fBUWORD32\fP m, \fBUWORD32\fP * p) const\fC [private]\fP"
+search an index i such that 0 <= i < m and X[i] == v 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIv\fP the value to be searched for in the X-array 
+.br
+\fIm\fP the upper bound for the index 
+.br
+\fIp\fP a pointer to a variable where the found index can be stored 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+true iff such an index is found (*p is set to i in this case 
+.RE
+.PP
+
+.SS "\fBUWORD32\fP Selector::operator[] (\fBUWORD32\fP i)"
+get the value at the i-th position 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIi\fP an index 
+.RE
+.PP
+
+.SS "void Selector::setX (\fBUWORD32\fP i, \fBUWORD32\fP v)\fC [private]\fP"
+set X[i] to v while maintaining Xreversed 
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBUWORD32\fP Selector::Maximum\fC [private]\fP"
+
+.SS "\fBUWORD32\fP Selector::NumInArray\fC [private]\fP"
+
+.SS "\fBPseudoRandomSource\fP* Selector::PRandom\fC [private]\fP"
+
+.SS "std::vector<\fBUWORD32\fP> Selector::X\fC [private]\fP"
+
+.SS "sgi::hash_map<\fBUWORD32\fP,\fBUWORD32\fP> Selector::Xreversed\fC [private]\fP"
+
+.SS "std::vector<\fBUWORD32\fP> Selector::Y\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for steghide from the source code\&.

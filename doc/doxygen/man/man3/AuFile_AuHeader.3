@@ -1,0 +1,73 @@
+.TH "AuFile::AuHeader" 3 "Thu Aug 17 2017" "Version 0.5.1" "steghide" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+AuFile::AuHeader
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "unsigned short \fBgetBytesPerSample\fP (void) const"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "char \fBid\fP [4]"
+.br
+.ti -1c
+.RI "\fBUWORD32\fP \fBoffset\fP"
+.br
+.ti -1c
+.RI "\fBUWORD32\fP \fBsize\fP"
+.br
+.ti -1c
+.RI "\fBENCODING\fP \fBencoding\fP"
+.br
+.ti -1c
+.RI "\fBUWORD32\fP \fBsamplerate\fP"
+.br
+.ti -1c
+.RI "\fBUWORD32\fP \fBchannels\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static const \fBUWORD32\fP \fBSizeUnknown\fP = 0xFFFFFFFF"
+.br
+.ti -1c
+.RI "static const unsigned short \fBHeaderSize\fP = 24"
+.br
+.in -1c
+.SH "Member Function Documentation"
+.PP 
+.SS "unsigned short AuFile::AuHeader::getBytesPerSample (void) const"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBUWORD32\fP AuFile::AuHeader::channels"
+
+.SS "\fBENCODING\fP AuFile::AuHeader::encoding"
+
+.SS "const unsigned short AuFile::AuHeader::HeaderSize = 24\fC [static]\fP"
+
+.SS "char AuFile::AuHeader::id[4]"
+
+.SS "\fBUWORD32\fP AuFile::AuHeader::offset"
+
+.SS "\fBUWORD32\fP AuFile::AuHeader::samplerate"
+
+.SS "\fBUWORD32\fP AuFile::AuHeader::size"
+
+.SS "const \fBUWORD32\fP AuFile::AuHeader::SizeUnknown = 0xFFFFFFFF\fC [static]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for steghide from the source code\&.

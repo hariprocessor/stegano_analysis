@@ -1,0 +1,107 @@
+.TH "BmpFileTest" 3 "Thu Aug 17 2017" "Version 0.5.1" "steghide" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+BmpFileTest
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <BmpFileTest\&.h>\fP
+.PP
+Inherits \fBCvrStgFileTest\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBBmpFileTest\fP (\fBTestSuite\fP *s)"
+.br
+.ti -1c
+.RI "void \fBsetup\fP (void)"
+.br
+.ti -1c
+.RI "void \fBcleanup\fP (void)"
+.br
+.ti -1c
+.RI "void \fBtestSVALCalculation\fP (void)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBCvrStgFile\fP * \fBf1\fP"
+.br
+.ti -1c
+.RI "\fBCvrStgFile\fP * \fBf2\fP"
+.br
+.ti -1c
+.RI "\fBGraph\fP * \fBg1\fP"
+.br
+.ti -1c
+.RI "\fBGraph\fP * \fBg2\fP"
+.br
+.ti -1c
+.RI "\fBSelector\fP * \fBs1\fP"
+.br
+.ti -1c
+.RI "\fBSelector\fP * \fBs2\fP"
+.br
+.ti -1c
+.RI "\fBBitString\fP * \fBbs1\fP"
+.br
+.ti -1c
+.RI "\fBBitString\fP * \fBbs2\fP"
+.br
+.ti -1c
+.RI "\fBGlobals\fP \fBgl1\fP"
+.br
+.ti -1c
+.RI "\fBGlobals\fP \fBgl2\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "BmpFileTest::BmpFileTest (\fBTestSuite\fP * s)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void BmpFileTest::cleanup (void)\fC [virtual]\fP"
+cleanup the unit test - called after run 
+.PP
+Reimplemented from \fBUnitTest\fP\&.
+.SS "void BmpFileTest::setup (void)\fC [virtual]\fP"
+setup the unit test - called before run
+.PP
+\fBUnitTest::setup\fP will (together with \fBUnitTest::cleanup\fP) save and restore the object stored in Globs so they should be called from the corresponding functions in the derived object if the derived unit test manipulates the Globs object\&. 
+.PP
+Reimplemented from \fBUnitTest\fP\&.
+.SS "void BmpFileTest::testSVALCalculation (void)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBBitString\fP* BmpFileTest::bs1\fC [private]\fP"
+
+.SS "\fBBitString\fP * BmpFileTest::bs2\fC [private]\fP"
+
+.SS "\fBCvrStgFile\fP* BmpFileTest::f1\fC [private]\fP"
+
+.SS "\fBCvrStgFile\fP * BmpFileTest::f2\fC [private]\fP"
+
+.SS "\fBGraph\fP* BmpFileTest::g1\fC [private]\fP"
+
+.SS "\fBGraph\fP * BmpFileTest::g2\fC [private]\fP"
+
+.SS "\fBGlobals\fP BmpFileTest::gl1\fC [private]\fP"
+
+.SS "\fBGlobals\fP BmpFileTest::gl2\fC [private]\fP"
+
+.SS "\fBSelector\fP* BmpFileTest::s1\fC [private]\fP"
+
+.SS "\fBSelector\fP * BmpFileTest::s2\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for steghide from the source code\&.

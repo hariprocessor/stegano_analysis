@@ -1,0 +1,40 @@
+.TH "UnitTest.h" 3 "Thu Aug 17 2017" "Version 0.5.1" "steghide" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+UnitTest.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <string>\fP
+.br
+\fC#include <vector>\fP
+.br
+\fC#include 'common\&.h'\fP
+.br
+\fC#include 'Test\&.h'\fP
+.br
+\fC#include 'TestCategoryCaller\&.h'\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBUnitTest\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBADDTESTCATEGORY\fP(UTCLASS,  CMETHOD)   addTestCategory (new \fBTestCategoryCaller\fP<UTCLASS> (strip_test(#CMETHOD), getSuite(), this, &UTCLASS::CMETHOD))"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define ADDTESTCATEGORY(UTCLASS, CMETHOD)   addTestCategory (new \fBTestCategoryCaller\fP<UTCLASS> (strip_test(#CMETHOD), getSuite(), this, &UTCLASS::CMETHOD))"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for steghide from the source code\&.

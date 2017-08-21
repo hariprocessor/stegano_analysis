@@ -1,0 +1,65 @@
+.TH "Globals" 3 "Thu Aug 17 2017" "Version 0.5.1" "steghide" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Globals \- some useful pointers that should be global  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Globals\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBGlobals\fP (\fBCvrStgFile\fP *f=NULL, \fBGraph\fP *g=NULL)"
+.br
+.ti -1c
+.RI "void \fBoperator=\fP (const \fBGlobals\fP &g)"
+.br
+.ti -1c
+.RI "void \fBreset\fP (void)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBCvrStgFile\fP * \fBTheCvrStgFile\fP"
+.br
+.RI "the cover-/stego- file that is operated on (set in \fBCvrStgFile::CvrStgFile\fP) "
+.ti -1c
+.RI "\fBGraph\fP * \fBTheGraph\fP"
+.br
+.RI "the graph that is built upon the cover-/stego-file (set in \fBGraph::Graph\fP) "
+.in -1c
+.SH "Detailed Description"
+.PP 
+This class provides some useful global variables\&. They are not static, instead there exists a global Globs object to make it easy to use different \fBGlobals\fP objects during one execution (this is necessary for some unit-tests)\&.
+.PP
+The \fBGraph\fP constructor as well as the \fBCvrStgFile\fP constructor write itself into the Globs object\&. Doing this so early is necessary because the construction of a \fBGraph\fP or \fBCvrStgFile\fP object might already need a correctly set Globs object\&.
+.PP
+During one 'normal' (i\&.e\&. non-unit-test) execution of steghide only one \fBGlobals\fP object will be used, namely the one created in \fBmain()\fP, filled in the \fBGraph\fP and the \fBCvrStgFile\fP constructor and stored at the Globs pointer\&.
+.PP
+The main purpose of making these variables global is to save memory in classes that are small but used in large numbers (e\&.g\&. *SampleValue,\&.\&.\&.)\&. Using static pointers in these classed would be too chaotic to reset for the unit tests and non-static pointers would need too much memory\&. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Globals::Globals (\fBCvrStgFile\fP * f = \fCNULL\fP, \fBGraph\fP * g = \fCNULL\fP)\fC [inline]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void Globals::operator= (const \fBGlobals\fP & g)\fC [inline]\fP"
+
+.SS "void Globals::reset (void)\fC [inline]\fP"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBCvrStgFile\fP* Globals::TheCvrStgFile"
+
+.SS "\fBGraph\fP* Globals::TheGraph"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for steghide from the source code\&.

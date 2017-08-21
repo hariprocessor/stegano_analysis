@@ -1,0 +1,98 @@
+.TH "BFSAPHeuristic" 3 "Thu Aug 17 2017" "Version 0.5.1" "steghide" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+BFSAPHeuristic \- a matching algorithm implementing a heuristic breadth-first-search for augmenting paths  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <BFSAPHeuristic\&.h>\fP
+.PP
+Inherits \fBMatchingAlgorithm\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBBFSAPHeuristic\fP (\fBGraph\fP *g, \fBMatching\fP *m)"
+.br
+.ti -1c
+.RI "virtual \fB~BFSAPHeuristic\fP (void)"
+.br
+.ti -1c
+.RI "const char * \fBgetName\fP (void) const"
+.br
+.ti -1c
+.RI "void \fBrun\fP (void)"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "unsigned long \fBsearchAugmentingPath\fP (\fBVertex\fP *v0, const \fBEdge\fP **path)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "bool * \fBVertexVisited\fP"
+.br
+.ti -1c
+.RI "\fBEdge\fP * \fBBackEdge\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "BFSAPHeuristic::BFSAPHeuristic (\fBGraph\fP * g, \fBMatching\fP * m)"
+construct an \fBBFSAPHeuristic\fP object 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIg\fP the graph on which this heuristic should run 
+.br
+\fIm\fP the matching to start with 
+.RE
+.PP
+
+.SS "BFSAPHeuristic::~BFSAPHeuristic (void)\fC [virtual]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "const char* BFSAPHeuristic::getName (void) const\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBMatchingAlgorithm\fP\&.
+.SS "void BFSAPHeuristic::run (void)\fC [virtual]\fP"
+
+.PP
+Implements \fBMatchingAlgorithm\fP\&.
+.SS "unsigned long BFSAPHeuristic::searchAugmentingPath (\fBVertex\fP * v0, const \fBEdge\fP ** path)\fC [private]\fP"
+
+.PP
+\fBParameters:\fP
+.RS 4
+\fIv0\fP an exposed vertex 
+.br
+\fIpath\fP an array of \fBEdge\fP pointers where the path will be put 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the length of the path (the number of valid edges in path) 
+.RE
+.PP
+
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBEdge\fP* BFSAPHeuristic::BackEdge\fC [private]\fP"
+
+.SS "bool* BFSAPHeuristic::VertexVisited\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for steghide from the source code\&.

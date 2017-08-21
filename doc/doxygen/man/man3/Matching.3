@@ -1,0 +1,275 @@
+.TH "Matching" 3 "Thu Aug 17 2017" "Version 0.5.1" "steghide" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Matching \- represent a matching on a graph  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Matching\&.h>\fP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBVertexInfo\fP"
+.br
+.RI "contains information about a vertex that is possibly in a matching "
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMatching\fP (\fBGraph\fP *g, \fBProgressOutput\fP *po=NULL)"
+.br
+.ti -1c
+.RI "\fB~Matching\fP (void)"
+.br
+.ti -1c
+.RI "bool \fBisMatched\fP (\fBVertex\fP *v) const"
+.br
+.ti -1c
+.RI "bool \fBisMatched\fP (\fBVertexLabel\fP vlbl) const"
+.br
+.ti -1c
+.RI "bool \fBisExposed\fP (\fBVertex\fP *v) const"
+.br
+.ti -1c
+.RI "bool \fBisExposed\fP (\fBVertexLabel\fP vlbl) const"
+.br
+.ti -1c
+.RI "const \fBEdge\fP * \fBgetMatchingEdge\fP (\fBVertex\fP *v) const"
+.br
+.ti -1c
+.RI "bool \fBincludesEdge\fP (const \fBEdge\fP *e) const"
+.br
+.ti -1c
+.RI "bool \fBincludesEdge\fP (const \fBEdge\fP &e) const"
+.br
+.ti -1c
+.RI "unsigned long \fBgetCardinality\fP (void) const"
+.br
+.ti -1c
+.RI "const std::list< \fBVertex\fP * > & \fBgetExposedVertices\fP (void) const"
+.br
+.ti -1c
+.RI "float \fBgetMatchedRate\fP (void) const"
+.br
+.ti -1c
+.RI "float \fBgetAvgEdgeWeight\fP (void) const"
+.br
+.ti -1c
+.RI "const std::list< \fBVertex\fP * > * \fBgetExposedVerticesLink\fP (void) const"
+.br
+.ti -1c
+.RI "void \fBaddEdge\fP (const \fBEdge\fP &e)"
+.br
+.ti -1c
+.RI "void \fBaddEdge\fP (\fBEdge\fP *e)"
+.br
+.ti -1c
+.RI "void \fBremoveEdge\fP (const \fBEdge\fP &e)"
+.br
+.ti -1c
+.RI "const std::list< \fBEdge\fP * > & \fBgetEdges\fP (void) const"
+.br
+.ti -1c
+.RI "\fBMatching\fP & \fBaugment\fP (const \fBEdge\fP **path, unsigned long len)"
+.br
+.ti -1c
+.RI "\fBMatching\fP & \fBaugment\fP (const std::vector< \fBEdge\fP *> &path)"
+.br
+.ti -1c
+.RI "void \fBprintVerboseInfo\fP (void) const"
+.br
+.ti -1c
+.RI "bool \fBcheck\fP (void) const"
+.br
+.ti -1c
+.RI "bool \fBcheck_MatchingEdges_vs_VertexInformation\fP (void) const"
+.br
+.ti -1c
+.RI "bool \fBcheck_ExposedVertices_vs_VertexInformation\fP (void) const"
+.br
+.ti -1c
+.RI "bool \fBcheck_VertexInformation_Integrity\fP (void) const"
+.br
+.ti -1c
+.RI "bool \fBcheck_ValidAugPath\fP (const std::vector< \fBEdge\fP *> &path) const"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBsetCardinality\fP (unsigned long c)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::vector< \fBVertexInfo\fP > \fBVertexInformation\fP"
+.br
+.RI "contains a \fBVertexInfo\fP object for every vertex "
+.ti -1c
+.RI "std::list< \fBVertex\fP * > \fBExposedVertices\fP"
+.br
+.RI "the std::list of all exposed vertices "
+.ti -1c
+.RI "std::list< \fBEdge\fP * > \fBMatchingEdges\fP"
+.br
+.RI "the std::list of all edges in the matching "
+.ti -1c
+.RI "unsigned long \fBCardinality\fP"
+.br
+.RI "the number of edges in the matching "
+.ti -1c
+.RI "\fBGraph\fP * \fBTheGraph\fP"
+.br
+.RI "the graph underlying this \fBMatching\fP "
+.ti -1c
+.RI "\fBProgressOutput\fP * \fBPrOut\fP"
+.br
+.RI "the \fBProgressOutput\fP object that will print the number of matched vertices (as percentage) "
+.in -1c
+.SH "Detailed Description"
+.PP 
+A \fBMatching\fP object will copy all Edges that are passed to it and will take care of them, i\&.e\&. delete them if they are no longer used\&. Edges do only 'leave' a \fBMatching\fP object as const pointers\&. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Matching::Matching (\fBGraph\fP * g, \fBProgressOutput\fP * po = \fCNULL\fP)"
+create an empty matching that is ready for adding and augmenting 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIg\fP the underlying graph 
+.br
+\fIpo\fP a \fBProgressOutput\fP object that will print the number of matched vertices (in percent) 
+.RE
+.PP
+
+.SS "Matching::~Matching (void)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void Matching::addEdge (const \fBEdge\fP & e)"
+add an edge to the matching 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIe\fP the edge to add\&.
+.RE
+.PP
+For e=(v1,v2): neither v1 nor v2 are allowed to be adjacent to an edge that is already in the matching, 
+.SS "void Matching::addEdge (\fBEdge\fP * e)\fC [inline]\fP"
+
+.SS "\fBMatching\fP & Matching::augment (const \fBEdge\fP ** path, unsigned long len)"
+augment this matching along the given augmenting path 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpath\fP an augmenting path 
+.br
+\fIlen\fP the length (number of edges) of the augmenting path
+.RE
+.PP
+An augementing path is a path where edges with odd indices (the first, third,\&.\&.\&.) are not in the matching and edges with even indices are and the path has an odd length\&. 
+.SS "\fBMatching\fP & Matching::augment (const std::vector< \fBEdge\fP *> & path)"
+
+.SS "bool Matching::check (void) const"
+
+.SS "bool Matching::check_ExposedVertices_vs_VertexInformation (void) const"
+
+.SS "bool Matching::check_MatchingEdges_vs_VertexInformation (void) const"
+
+.SS "bool Matching::check_ValidAugPath (const std::vector< \fBEdge\fP *> & path) const"
+
+.SS "bool Matching::check_VertexInformation_Integrity (void) const"
+
+.SS "float Matching::getAvgEdgeWeight (void) const"
+get the average weight of all edges that are in this matching 
+.SS "unsigned long Matching::getCardinality (void) const\fC [inline]\fP"
+get the cardinality (the number of matched edges) 
+.SS "const std::list<\fBEdge\fP*>& Matching::getEdges (void) const\fC [inline]\fP"
+get the list of all edges in this matching 
+.SS "const std::list<\fBVertex\fP*>& Matching::getExposedVertices (void) const\fC [inline]\fP"
+
+.SS "const std::list<\fBVertex\fP*>* Matching::getExposedVerticesLink (void) const\fC [inline]\fP"
+get access to the std::list of exposed vertices 
+.PP
+\fBReturns:\fP
+.RS 4
+a pointer to the std::list of exposed vertices in this matching\&.
+.RE
+.PP
+The std::list that is pointed to by return value contains the exposed vertices even after augment has been called (it is the ExposedVertices member) an arbitrary number of times\&. 
+.SS "float Matching::getMatchedRate (void) const"
+get the rate of vertices of the underlying graph that are currently matched in this matching 
+.PP
+\fBReturns:\fP
+.RS 4
+a value between 0 and 1 
+.RE
+.PP
+
+.SS "const \fBEdge\fP* Matching::getMatchingEdge (\fBVertex\fP * v) const\fC [inline]\fP"
+get the edge that is in the matching and adjacent to v 
+.PP
+\fBReturns:\fP
+.RS 4
+the matched edge or NULL if v is exposed 
+.RE
+.PP
+
+.SS "bool Matching::includesEdge (const \fBEdge\fP * e) const\fC [inline]\fP"
+does this matching include the edge e ? 
+.PP
+\fBReturns:\fP
+.RS 4
+true iff the edge e is element of this matching 
+.RE
+.PP
+
+.SS "bool Matching::includesEdge (const \fBEdge\fP & e) const"
+
+.SS "bool Matching::isExposed (\fBVertex\fP * v) const\fC [inline]\fP"
+returns true iff the vertex v is exposed (not matched) in this matching\&. 
+.SS "bool Matching::isExposed (\fBVertexLabel\fP vlbl) const\fC [inline]\fP"
+returns true iff the vertex with the label vlbl is exposed (not matched) in this matching\&. 
+.SS "bool Matching::isMatched (\fBVertex\fP * v) const\fC [inline]\fP"
+returns true iff the vertex v is matched in this matching\&. 
+.SS "bool Matching::isMatched (\fBVertexLabel\fP vlbl) const\fC [inline]\fP"
+returns true iff the vertex with the label vlbl is matched in this matching\&. 
+.SS "void Matching::printVerboseInfo (void) const"
+
+.SS "void Matching::removeEdge (const \fBEdge\fP & e)"
+remove an edge from the matching 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIe\fP the edge to remove
+.RE
+.PP
+The edge e \fImust\fP be in this matching 
+.SS "void Matching::setCardinality (unsigned long c)\fC [private]\fP"
+set the cardinality (thereby updating PrOut) 
+.SH "Member Data Documentation"
+.PP 
+.SS "unsigned long Matching::Cardinality\fC [private]\fP"
+
+.SS "std::list<\fBVertex\fP*> Matching::ExposedVertices\fC [private]\fP"
+
+.SS "std::list<\fBEdge\fP*> Matching::MatchingEdges\fC [private]\fP"
+
+.SS "\fBProgressOutput\fP* Matching::PrOut\fC [private]\fP"
+
+.SS "\fBGraph\fP* Matching::TheGraph\fC [private]\fP"
+
+.SS "std::vector<\fBVertexInfo\fP> Matching::VertexInformation\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for steghide from the source code\&.

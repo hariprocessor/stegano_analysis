@@ -1,0 +1,79 @@
+.TH "DMDConstructionHeuristic" 3 "Thu Aug 17 2017" "Version 0.5.1" "steghide" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DMDConstructionHeuristic \- an implementation of the 'dynamic minimum degree' heuristic for contruction a matching  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <DMDConstructionHeuristic\&.h>\fP
+.PP
+Inherits \fBMatchingAlgorithm\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDMDConstructionHeuristic\fP (\fBGraph\fP *g, \fBMatching\fP *m, float goal=100\&.0)"
+.br
+.ti -1c
+.RI "virtual \fB~DMDConstructionHeuristic\fP (void)"
+.br
+.ti -1c
+.RI "const char * \fBgetName\fP (void) const"
+.br
+.ti -1c
+.RI "void \fBrun\fP (void)"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBVertexLabel\fP \fBfindMinDegIndex\fP (const std::vector< \fBVertex\fP *> &vertices)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::vector< \fBVertex\fP * > \fBAvailableVertices\fP"
+.br
+.in -1c
+.SS "Static Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "static const \fBVertexLabel\fP \fBMinDegNotFound\fP = \fBVERTEXLABEL_MAX\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "DMDConstructionHeuristic::DMDConstructionHeuristic (\fBGraph\fP * g, \fBMatching\fP * m, float goal = \fC100\&.0\fP)"
+
+.SS "virtual DMDConstructionHeuristic::~DMDConstructionHeuristic (void)\fC [inline]\fP, \fC [virtual]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBVertexLabel\fP DMDConstructionHeuristic::findMinDegIndex (const std::vector< \fBVertex\fP *> & vertices)\fC [private]\fP"
+
+.SS "const char* DMDConstructionHeuristic::getName (void) const\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBMatchingAlgorithm\fP\&.
+.SS "void DMDConstructionHeuristic::run (void)\fC [virtual]\fP"
+
+.PP
+Implements \fBMatchingAlgorithm\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "std::vector<\fBVertex\fP*> DMDConstructionHeuristic::AvailableVertices\fC [private]\fP"
+
+.SS "const \fBVertexLabel\fP DMDConstructionHeuristic::MinDegNotFound = \fBVERTEXLABEL_MAX\fP\fC [static]\fP, \fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for steghide from the source code\&.

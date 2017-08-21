@@ -1,0 +1,123 @@
+\section{B\+F\+S\+A\+P\+Heuristic Class Reference}
+\label{classBFSAPHeuristic}\index{B\+F\+S\+A\+P\+Heuristic@{B\+F\+S\+A\+P\+Heuristic}}
+
+
+a matching algorithm implementing a heuristic breadth-\/first-\/search for augmenting paths  
+
+
+
+
+{\ttfamily \#include $<$B\+F\+S\+A\+P\+Heuristic.\+h$>$}
+
+Inheritance diagram for B\+F\+S\+A\+P\+Heuristic\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classBFSAPHeuristic}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ B\+F\+S\+A\+P\+Heuristic} (\textbf{ Graph} $\ast$g, \textbf{ Matching} $\ast$m)
+\item 
+virtual \textbf{ $\sim$\+B\+F\+S\+A\+P\+Heuristic} (void)
+\item 
+const char $\ast$ \textbf{ get\+Name} (void) const
+\item 
+void \textbf{ run} (void)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+unsigned long \textbf{ search\+Augmenting\+Path} (\textbf{ Vertex} $\ast$v0, const \textbf{ Edge} $\ast$$\ast$path)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool $\ast$ \textbf{ Vertex\+Visited}
+\item 
+\textbf{ Edge} $\ast$ \textbf{ Back\+Edge}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{classBFSAPHeuristic_ad01695f4b13c50e8fefd15fb6813b491}} 
+\index{B\+F\+S\+A\+P\+Heuristic@{B\+F\+S\+A\+P\+Heuristic}!B\+F\+S\+A\+P\+Heuristic@{B\+F\+S\+A\+P\+Heuristic}}
+\index{B\+F\+S\+A\+P\+Heuristic@{B\+F\+S\+A\+P\+Heuristic}!B\+F\+S\+A\+P\+Heuristic@{B\+F\+S\+A\+P\+Heuristic}}
+\subsubsection{B\+F\+S\+A\+P\+Heuristic()}
+{\footnotesize\ttfamily B\+F\+S\+A\+P\+Heuristic\+::\+B\+F\+S\+A\+P\+Heuristic (\begin{DoxyParamCaption}\item[{\textbf{ Graph} $\ast$}]{g,  }\item[{\textbf{ Matching} $\ast$}]{m }\end{DoxyParamCaption})}
+
+construct an \doxyref{B\+F\+S\+A\+P\+Heuristic}{p.}{classBFSAPHeuristic} object 
+\begin{DoxyParams}{Parameters}
+{\em g} & the graph on which this heuristic should run \\
+\hline
+{\em m} & the matching to start with \\
+\hline
+\end{DoxyParams}
+\mbox{\label{classBFSAPHeuristic_ac5fe4a33565132234933b709becd5644}} 
+\index{B\+F\+S\+A\+P\+Heuristic@{B\+F\+S\+A\+P\+Heuristic}!````~B\+F\+S\+A\+P\+Heuristic@{$\sim$\+B\+F\+S\+A\+P\+Heuristic}}
+\index{````~B\+F\+S\+A\+P\+Heuristic@{$\sim$\+B\+F\+S\+A\+P\+Heuristic}!B\+F\+S\+A\+P\+Heuristic@{B\+F\+S\+A\+P\+Heuristic}}
+\subsubsection{$\sim$\+B\+F\+S\+A\+P\+Heuristic()}
+{\footnotesize\ttfamily B\+F\+S\+A\+P\+Heuristic\+::$\sim$\+B\+F\+S\+A\+P\+Heuristic (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{classBFSAPHeuristic_afbd3a55843232ba22bea3360e6009a97}} 
+\index{B\+F\+S\+A\+P\+Heuristic@{B\+F\+S\+A\+P\+Heuristic}!get\+Name@{get\+Name}}
+\index{get\+Name@{get\+Name}!B\+F\+S\+A\+P\+Heuristic@{B\+F\+S\+A\+P\+Heuristic}}
+\subsubsection{get\+Name()}
+{\footnotesize\ttfamily const char$\ast$ B\+F\+S\+A\+P\+Heuristic\+::get\+Name (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \textbf{ Matching\+Algorithm} \doxyref{}{p.}{classMatchingAlgorithm_a7305edae5d74e91987bcf983b2a1171a}.
+
+\mbox{\label{classBFSAPHeuristic_a2b12948841049cfca3e6d634d793c510}} 
+\index{B\+F\+S\+A\+P\+Heuristic@{B\+F\+S\+A\+P\+Heuristic}!run@{run}}
+\index{run@{run}!B\+F\+S\+A\+P\+Heuristic@{B\+F\+S\+A\+P\+Heuristic}}
+\subsubsection{run()}
+{\footnotesize\ttfamily void B\+F\+S\+A\+P\+Heuristic\+::run (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \textbf{ Matching\+Algorithm} \doxyref{}{p.}{classMatchingAlgorithm_aeea6c808daf03fd788c9a9feea885c41}.
+
+\mbox{\label{classBFSAPHeuristic_ae03e433e445781a1041ce5ff350e62b9}} 
+\index{B\+F\+S\+A\+P\+Heuristic@{B\+F\+S\+A\+P\+Heuristic}!search\+Augmenting\+Path@{search\+Augmenting\+Path}}
+\index{search\+Augmenting\+Path@{search\+Augmenting\+Path}!B\+F\+S\+A\+P\+Heuristic@{B\+F\+S\+A\+P\+Heuristic}}
+\subsubsection{search\+Augmenting\+Path()}
+{\footnotesize\ttfamily unsigned long B\+F\+S\+A\+P\+Heuristic\+::search\+Augmenting\+Path (\begin{DoxyParamCaption}\item[{\textbf{ Vertex} $\ast$}]{v0,  }\item[{const \textbf{ Edge} $\ast$$\ast$}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em v0} & an exposed vertex \\
+\hline
+{\em path} & an array of \doxyref{Edge}{p.}{classEdge} pointers where the path will be put \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the length of the path (the number of valid edges in path) 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{classBFSAPHeuristic_a352e950c3dde1e0c1046adbec7715ca9}} 
+\index{B\+F\+S\+A\+P\+Heuristic@{B\+F\+S\+A\+P\+Heuristic}!Back\+Edge@{Back\+Edge}}
+\index{Back\+Edge@{Back\+Edge}!B\+F\+S\+A\+P\+Heuristic@{B\+F\+S\+A\+P\+Heuristic}}
+\subsubsection{Back\+Edge}
+{\footnotesize\ttfamily \textbf{ Edge}$\ast$ B\+F\+S\+A\+P\+Heuristic\+::\+Back\+Edge\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classBFSAPHeuristic_aa7f91fc4148cfd04daa75b517d42805f}} 
+\index{B\+F\+S\+A\+P\+Heuristic@{B\+F\+S\+A\+P\+Heuristic}!Vertex\+Visited@{Vertex\+Visited}}
+\index{Vertex\+Visited@{Vertex\+Visited}!B\+F\+S\+A\+P\+Heuristic@{B\+F\+S\+A\+P\+Heuristic}}
+\subsubsection{Vertex\+Visited}
+{\footnotesize\ttfamily bool$\ast$ B\+F\+S\+A\+P\+Heuristic\+::\+Vertex\+Visited\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ B\+F\+S\+A\+P\+Heuristic.\+h}\item 
+\textbf{ B\+F\+S\+A\+P\+Heuristic.\+cc}\end{DoxyCompactItemize}

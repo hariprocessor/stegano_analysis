@@ -1,0 +1,451 @@
+\section{Bit\+String Class Reference}
+\label{classBitString}\index{Bit\+String@{Bit\+String}}
+
+
+a string of bits  
+
+
+
+
+{\ttfamily \#include $<$Bit\+String.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Bit\+String} (\textbf{ Emb\+Value} arity=2)
+\item 
+\textbf{ Bit\+String} (const \textbf{ Bit\+String} \&bs)
+\item 
+\textbf{ Bit\+String} (const unsigned long l)
+\item 
+\textbf{ Bit\+String} (const std\+::vector$<$ \textbf{ B\+Y\+TE} $>$ \&d)
+\item 
+\textbf{ Bit\+String} (const std\+::string \&d)
+\item 
+void \textbf{ set\+Arity} (\textbf{ Emb\+Value} arity)
+\item 
+\textbf{ Emb\+Value} \textbf{ get\+Arity} (void) const
+\item 
+\textbf{ U\+W\+O\+R\+D32} \textbf{ get\+Length} (void) const
+\item 
+\textbf{ U\+W\+O\+R\+D32} \textbf{ get\+N\+Ary\+Length} (void) const
+\item 
+\textbf{ Bit\+String} \& \textbf{ clear} (void)
+\item 
+\textbf{ Bit\+String} \& \textbf{ append} (const \textbf{ B\+IT} v)
+\item 
+\textbf{ Bit\+String} \& \textbf{ append} (const \textbf{ B\+Y\+TE} v, const unsigned short n=8)
+\item 
+\textbf{ Bit\+String} \& \textbf{ append} (const \textbf{ U\+W\+O\+R\+D16} v, const unsigned short n=16)
+\item 
+\textbf{ Bit\+String} \& \textbf{ append} (const \textbf{ U\+W\+O\+R\+D32} v, const unsigned short n=32)
+\item 
+\textbf{ Bit\+String} \& \textbf{ append} (const std\+::string \&v)
+\item 
+\textbf{ Bit\+String} \& \textbf{ append} (const std\+::vector$<$ \textbf{ B\+Y\+TE} $>$ \&v)
+\item 
+\textbf{ Bit\+String} \& \textbf{ append} (const \textbf{ Bit\+String} \&v)
+\item 
+\textbf{ Bit\+String} \& \textbf{ set\+Bit} (unsigned long i, \textbf{ B\+IT} v)
+\item 
+\textbf{ Bit\+String} \textbf{ get\+Bits} (const unsigned long s, const unsigned long l) const
+\item 
+\textbf{ Bit\+String} \textbf{ cut\+Bits} (const unsigned long s, const unsigned long l)
+\item 
+\textbf{ U\+W\+O\+R\+D32} \textbf{ get\+Value} (const unsigned long s, const unsigned short l) const
+\item 
+const std\+::vector$<$ \textbf{ B\+Y\+TE} $>$ \& \textbf{ get\+Bytes} (void) const
+\item 
+\textbf{ Bit\+String} \& \textbf{ truncate} (const unsigned long s, const unsigned long e)
+\item 
+\textbf{ Bit\+String} \& \textbf{ pad} (const unsigned long mult, const \textbf{ B\+IT} v)
+\item 
+\textbf{ Bit\+String} \& \textbf{ pad\+Random} (const unsigned long mult)
+\item 
+\textbf{ B\+Y\+TE} \textbf{ get\+N\+Ary} (unsigned long p) const
+\item 
+void \textbf{ append\+N\+Ary} (\textbf{ B\+Y\+TE} v)
+\item 
+\textbf{ B\+IT} \textbf{ operator[$\,$]} (const unsigned long i) const
+\item 
+\textbf{ Bit\+String} \& \textbf{ operator$^\wedge$=} (const \textbf{ Bit\+String} \&v)
+\item 
+bool \textbf{ operator==} (const \textbf{ Bit\+String} \&v) const
+\item 
+bool \textbf{ operator!=} (const \textbf{ Bit\+String} \&v) const
+\item 
+void \textbf{ print} (unsigned short spc=0) const
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ \+\_\+append} (\textbf{ B\+IT} v)
+\item 
+void \textbf{ clear\+Unused} (void)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ U\+W\+O\+R\+D32} \textbf{ Length}
+\begin{DoxyCompactList}\small\item\em the number of bits in Data \end{DoxyCompactList}\item 
+\textbf{ Emb\+Value} \textbf{ Arity}
+\begin{DoxyCompactList}\small\item\em the arity that will be used for get\+Length/get\+N\+Ary/append\+N\+Ary \end{DoxyCompactList}\item 
+unsigned short \textbf{ Arity\+N\+Bits}
+\begin{DoxyCompactList}\small\item\em the number of Bits per n-\/ary digit (where n is Arity) \end{DoxyCompactList}\item 
+std\+::vector$<$ \textbf{ B\+Y\+TE} $>$ \textbf{ Data}
+\begin{DoxyCompactList}\small\item\em the actual data \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class provides a way to conveniently store and manipulate a string of bits. Various objects can be appended to a \doxyref{Bit\+String}{p.}{classBitString}.
+
+For data storage a vector of B\+Y\+T\+Es is used with little endian bit encoding, i.\+e. the first bit is the least significant bit of the first byte and so on. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{classBitString_a1a8a22b2abccbde00e4ea54085000e7b}} 
+\index{Bit\+String@{Bit\+String}!Bit\+String@{Bit\+String}}
+\index{Bit\+String@{Bit\+String}!Bit\+String@{Bit\+String}}
+\subsubsection{Bit\+String()\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily Bit\+String\+::\+Bit\+String (\begin{DoxyParamCaption}\item[{\textbf{ Emb\+Value}}]{arity = {\ttfamily 2} }\end{DoxyParamCaption})}
+
+construct an empty \doxyref{Bit\+String}{p.}{classBitString} \mbox{\label{classBitString_a82b6c15aaa8b62fcb3489ec076e0e452}} 
+\index{Bit\+String@{Bit\+String}!Bit\+String@{Bit\+String}}
+\index{Bit\+String@{Bit\+String}!Bit\+String@{Bit\+String}}
+\subsubsection{Bit\+String()\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily Bit\+String\+::\+Bit\+String (\begin{DoxyParamCaption}\item[{const \textbf{ Bit\+String} \&}]{bs }\end{DoxyParamCaption})}
+
+copy constructor \mbox{\label{classBitString_ac3848a6cb02be02233f63daab90cebc9}} 
+\index{Bit\+String@{Bit\+String}!Bit\+String@{Bit\+String}}
+\index{Bit\+String@{Bit\+String}!Bit\+String@{Bit\+String}}
+\subsubsection{Bit\+String()\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily Bit\+String\+::\+Bit\+String (\begin{DoxyParamCaption}\item[{const unsigned long}]{l }\end{DoxyParamCaption})}
+
+construct a \doxyref{Bit\+String}{p.}{classBitString} containing l bits with value zero \mbox{\label{classBitString_a8d5c84db3b517a1fb8c30aedcc58a950}} 
+\index{Bit\+String@{Bit\+String}!Bit\+String@{Bit\+String}}
+\index{Bit\+String@{Bit\+String}!Bit\+String@{Bit\+String}}
+\subsubsection{Bit\+String()\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily Bit\+String\+::\+Bit\+String (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \textbf{ B\+Y\+TE} $>$ \&}]{d }\end{DoxyParamCaption})}
+
+construct a \doxyref{Bit\+String}{p.}{classBitString} containing the data in d \mbox{\label{classBitString_a429bda29d377ea97880ede85f178c051}} 
+\index{Bit\+String@{Bit\+String}!Bit\+String@{Bit\+String}}
+\index{Bit\+String@{Bit\+String}!Bit\+String@{Bit\+String}}
+\subsubsection{Bit\+String()\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily Bit\+String\+::\+Bit\+String (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{d }\end{DoxyParamCaption})}
+
+construct a \doxyref{Bit\+String}{p.}{classBitString} containing the characters in d as 8 bit unsigned chars 
+
+\subsection{Member Function Documentation}
+\mbox{\label{classBitString_a32a32cc700e14f34d5eea9d2ebfaa61b}} 
+\index{Bit\+String@{Bit\+String}!\+\_\+append@{\+\_\+append}}
+\index{\+\_\+append@{\+\_\+append}!Bit\+String@{Bit\+String}}
+\subsubsection{\+\_\+append()}
+{\footnotesize\ttfamily void Bit\+String\+::\+\_\+append (\begin{DoxyParamCaption}\item[{\textbf{ B\+IT}}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classBitString_a43042eba8b79a3efc08cad681863c493}} 
+\index{Bit\+String@{Bit\+String}!append@{append}}
+\index{append@{append}!Bit\+String@{Bit\+String}}
+\subsubsection{append()\hspace{0.1cm}{\footnotesize\ttfamily [1/7]}}
+{\footnotesize\ttfamily \textbf{ Bit\+String} \& Bit\+String\+::append (\begin{DoxyParamCaption}\item[{const \textbf{ B\+IT}}]{v }\end{DoxyParamCaption})}
+
+append the bit v to this \doxyref{Bit\+String}{p.}{classBitString} \mbox{\label{classBitString_a7dad7e57187bcf37afdbf7860d8d0f0a}} 
+\index{Bit\+String@{Bit\+String}!append@{append}}
+\index{append@{append}!Bit\+String@{Bit\+String}}
+\subsubsection{append()\hspace{0.1cm}{\footnotesize\ttfamily [2/7]}}
+{\footnotesize\ttfamily \textbf{ Bit\+String} \& Bit\+String\+::append (\begin{DoxyParamCaption}\item[{const \textbf{ B\+Y\+TE}}]{v,  }\item[{const unsigned short}]{n = {\ttfamily 8} }\end{DoxyParamCaption})}
+
+append n lower order bits of v to this \doxyref{Bit\+String}{p.}{classBitString} 
+\begin{DoxyParams}{Parameters}
+{\em v} & the value to be appended \\
+\hline
+{\em n} & the number of bits to be appended \\
+\hline
+\end{DoxyParams}
+\mbox{\label{classBitString_a5ca969ace354acd2bf68540dc99e65e1}} 
+\index{Bit\+String@{Bit\+String}!append@{append}}
+\index{append@{append}!Bit\+String@{Bit\+String}}
+\subsubsection{append()\hspace{0.1cm}{\footnotesize\ttfamily [3/7]}}
+{\footnotesize\ttfamily \textbf{ Bit\+String} \& Bit\+String\+::append (\begin{DoxyParamCaption}\item[{const \textbf{ U\+W\+O\+R\+D16}}]{v,  }\item[{const unsigned short}]{n = {\ttfamily 16} }\end{DoxyParamCaption})}
+
+append n lower order bits of v to this \doxyref{Bit\+String}{p.}{classBitString} 
+\begin{DoxyParams}{Parameters}
+{\em v} & the value to be appended \\
+\hline
+{\em n} & the number of bits to be appended \\
+\hline
+\end{DoxyParams}
+\mbox{\label{classBitString_a23780ee8020a3ca20f9aa73429a670ee}} 
+\index{Bit\+String@{Bit\+String}!append@{append}}
+\index{append@{append}!Bit\+String@{Bit\+String}}
+\subsubsection{append()\hspace{0.1cm}{\footnotesize\ttfamily [4/7]}}
+{\footnotesize\ttfamily \textbf{ Bit\+String} \& Bit\+String\+::append (\begin{DoxyParamCaption}\item[{const \textbf{ U\+W\+O\+R\+D32}}]{v,  }\item[{const unsigned short}]{n = {\ttfamily 32} }\end{DoxyParamCaption})}
+
+append n lower order bits of v to this \doxyref{Bit\+String}{p.}{classBitString} 
+\begin{DoxyParams}{Parameters}
+{\em v} & the value to be appended \\
+\hline
+{\em n} & the number of bits to be appended \\
+\hline
+\end{DoxyParams}
+\mbox{\label{classBitString_af4b6bc96e0494a7fe0785a1b24193473}} 
+\index{Bit\+String@{Bit\+String}!append@{append}}
+\index{append@{append}!Bit\+String@{Bit\+String}}
+\subsubsection{append()\hspace{0.1cm}{\footnotesize\ttfamily [5/7]}}
+{\footnotesize\ttfamily \textbf{ Bit\+String} \& Bit\+String\+::append (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{v }\end{DoxyParamCaption})}
+
+append the string v to this \doxyref{Bit\+String}{p.}{classBitString} \mbox{\label{classBitString_a8543be0b1c9d3391139782157f39fc5a}} 
+\index{Bit\+String@{Bit\+String}!append@{append}}
+\index{append@{append}!Bit\+String@{Bit\+String}}
+\subsubsection{append()\hspace{0.1cm}{\footnotesize\ttfamily [6/7]}}
+{\footnotesize\ttfamily \textbf{ Bit\+String} \& Bit\+String\+::append (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \textbf{ B\+Y\+TE} $>$ \&}]{v }\end{DoxyParamCaption})}
+
+append the vector v byte-\/wise to this \doxyref{Bit\+String}{p.}{classBitString} \mbox{\label{classBitString_a8e2c772152fe865ff9fc83ec4ae37458}} 
+\index{Bit\+String@{Bit\+String}!append@{append}}
+\index{append@{append}!Bit\+String@{Bit\+String}}
+\subsubsection{append()\hspace{0.1cm}{\footnotesize\ttfamily [7/7]}}
+{\footnotesize\ttfamily \textbf{ Bit\+String} \& Bit\+String\+::append (\begin{DoxyParamCaption}\item[{const \textbf{ Bit\+String} \&}]{v }\end{DoxyParamCaption})}
+
+append the \doxyref{Bit\+String}{p.}{classBitString} v to this \doxyref{Bit\+String}{p.}{classBitString} 
+\begin{DoxyParams}{Parameters}
+{\em v} & the \doxyref{Bit\+String}{p.}{classBitString} to be appended \\
+\hline
+\end{DoxyParams}
+\mbox{\label{classBitString_aae456867a0bec9097d27c0b8b2b5d987}} 
+\index{Bit\+String@{Bit\+String}!append\+N\+Ary@{append\+N\+Ary}}
+\index{append\+N\+Ary@{append\+N\+Ary}!Bit\+String@{Bit\+String}}
+\subsubsection{append\+N\+Ary()}
+{\footnotesize\ttfamily void Bit\+String\+::append\+N\+Ary (\begin{DoxyParamCaption}\item[{\textbf{ B\+Y\+TE}}]{v }\end{DoxyParamCaption})}
+
+append an n-\/ary digit to this \doxyref{Bit\+String}{p.}{classBitString} 
+\begin{DoxyParams}{Parameters}
+{\em v} & the n-\/ary value to be appended \\
+\hline
+\end{DoxyParams}
+\mbox{\label{classBitString_a637a77a6a57b3408074054df325fe034}} 
+\index{Bit\+String@{Bit\+String}!clear@{clear}}
+\index{clear@{clear}!Bit\+String@{Bit\+String}}
+\subsubsection{clear()}
+{\footnotesize\ttfamily \textbf{ Bit\+String} \& Bit\+String\+::clear (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+delete the contents of this Bitstring \mbox{\label{classBitString_aac2d664d0038b8c4c94309946367aab1}} 
+\index{Bit\+String@{Bit\+String}!clear\+Unused@{clear\+Unused}}
+\index{clear\+Unused@{clear\+Unused}!Bit\+String@{Bit\+String}}
+\subsubsection{clear\+Unused()}
+{\footnotesize\ttfamily void Bit\+String\+::clear\+Unused (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+clear unused part of last byte (\+\_\+append depends on this) \mbox{\label{classBitString_a85e14a7a954d657ff9e55c80c008619c}} 
+\index{Bit\+String@{Bit\+String}!cut\+Bits@{cut\+Bits}}
+\index{cut\+Bits@{cut\+Bits}!Bit\+String@{Bit\+String}}
+\subsubsection{cut\+Bits()}
+{\footnotesize\ttfamily \textbf{ Bit\+String} Bit\+String\+::cut\+Bits (\begin{DoxyParamCaption}\item[{const unsigned long}]{s,  }\item[{const unsigned long}]{l }\end{DoxyParamCaption})}
+
+cut some bits out of this \doxyref{Bit\+String}{p.}{classBitString} 
+\begin{DoxyParams}{Parameters}
+{\em s} & the index of the first bit to be removed from this \doxyref{Bit\+String}{p.}{classBitString} \\
+\hline
+{\em l} & the total number of bits to be removed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the \doxyref{Bit\+String}{p.}{classBitString} containing of the bits [s...s+(l-\/1)] of this \doxyref{Bit\+String}{p.}{classBitString}
+\end{DoxyReturn}
+After calling cut\+Bits, this \doxyref{Bit\+String}{p.}{classBitString} consists of the bits 0,...,s-\/1,s+l,... . \mbox{\label{classBitString_a44c612b8b0fdd72a6baba583628eaa60}} 
+\index{Bit\+String@{Bit\+String}!get\+Arity@{get\+Arity}}
+\index{get\+Arity@{get\+Arity}!Bit\+String@{Bit\+String}}
+\subsubsection{get\+Arity()}
+{\footnotesize\ttfamily \textbf{ Emb\+Value} Bit\+String\+::get\+Arity (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classBitString_a99b1949c5fc69f1ee4b1c11d62075619}} 
+\index{Bit\+String@{Bit\+String}!get\+Bits@{get\+Bits}}
+\index{get\+Bits@{get\+Bits}!Bit\+String@{Bit\+String}}
+\subsubsection{get\+Bits()}
+{\footnotesize\ttfamily \textbf{ Bit\+String} Bit\+String\+::get\+Bits (\begin{DoxyParamCaption}\item[{const unsigned long}]{s,  }\item[{const unsigned long}]{l }\end{DoxyParamCaption}) const}
+
+get a \doxyref{Bit\+String}{p.}{classBitString} that is a part of this \doxyref{Bit\+String}{p.}{classBitString} 
+\begin{DoxyParams}{Parameters}
+{\em s} & the index of the first bit to be copied from this \doxyref{Bit\+String}{p.}{classBitString} \\
+\hline
+{\em l} & the total number of bits to be used for the return value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the \doxyref{Bit\+String}{p.}{classBitString} containing of the bits [s...s+(l-\/1)] of this \doxyref{Bit\+String}{p.}{classBitString} 
+\end{DoxyReturn}
+\mbox{\label{classBitString_abf4f840e8e44934bf8a882a4dfdc4814}} 
+\index{Bit\+String@{Bit\+String}!get\+Bytes@{get\+Bytes}}
+\index{get\+Bytes@{get\+Bytes}!Bit\+String@{Bit\+String}}
+\subsubsection{get\+Bytes()}
+{\footnotesize\ttfamily const std\+::vector$<$ \textbf{ B\+Y\+TE} $>$ \& Bit\+String\+::get\+Bytes (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+get the contents of this \doxyref{Bit\+String}{p.}{classBitString} as vector of bytes \begin{DoxyReturn}{Returns}
+the contents of this \doxyref{Bit\+String}{p.}{classBitString} as vector of bytes
+\end{DoxyReturn}
+\doxyref{get\+Length()}{p.}{classBitString_a7f8a99ab98f31b8a021690cb542e1e50} \% 8 must be 0 to call this function \mbox{\label{classBitString_a7f8a99ab98f31b8a021690cb542e1e50}} 
+\index{Bit\+String@{Bit\+String}!get\+Length@{get\+Length}}
+\index{get\+Length@{get\+Length}!Bit\+String@{Bit\+String}}
+\subsubsection{get\+Length()}
+{\footnotesize\ttfamily \textbf{ U\+W\+O\+R\+D32} Bit\+String\+::get\+Length (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+get the number of bits in this \doxyref{Bit\+String}{p.}{classBitString} \mbox{\label{classBitString_a8e79e34b6f012fd57babc05839747828}} 
+\index{Bit\+String@{Bit\+String}!get\+N\+Ary@{get\+N\+Ary}}
+\index{get\+N\+Ary@{get\+N\+Ary}!Bit\+String@{Bit\+String}}
+\subsubsection{get\+N\+Ary()}
+{\footnotesize\ttfamily \textbf{ B\+Y\+TE} Bit\+String\+::get\+N\+Ary (\begin{DoxyParamCaption}\item[{unsigned long}]{p }\end{DoxyParamCaption}) const}
+
+get an n-\/ary digit from this \doxyref{Bit\+String}{p.}{classBitString} 
+\begin{DoxyParams}{Parameters}
+{\em p} & the position (in the n-\/ary representation of this \doxyref{Bit\+String}{p.}{classBitString}) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the p-\/th n-\/ary digit 
+\end{DoxyReturn}
+\mbox{\label{classBitString_aa950e0ee7142492cb2bd402a2b4c2592}} 
+\index{Bit\+String@{Bit\+String}!get\+N\+Ary\+Length@{get\+N\+Ary\+Length}}
+\index{get\+N\+Ary\+Length@{get\+N\+Ary\+Length}!Bit\+String@{Bit\+String}}
+\subsubsection{get\+N\+Ary\+Length()}
+{\footnotesize\ttfamily \textbf{ U\+W\+O\+R\+D32} Bit\+String\+::get\+N\+Ary\+Length (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+get the number of Emb\+Values in this \doxyref{Bit\+String}{p.}{classBitString} (using this \doxyref{Bit\+String}{p.}{classBitString}\textquotesingle{}s arity) \mbox{\label{classBitString_ac880193e4a8bd39bc4c150d6965d2156}} 
+\index{Bit\+String@{Bit\+String}!get\+Value@{get\+Value}}
+\index{get\+Value@{get\+Value}!Bit\+String@{Bit\+String}}
+\subsubsection{get\+Value()}
+{\footnotesize\ttfamily \textbf{ U\+W\+O\+R\+D32} Bit\+String\+::get\+Value (\begin{DoxyParamCaption}\item[{const unsigned long}]{s,  }\item[{const unsigned short}]{l }\end{DoxyParamCaption}) const}
+
+return a value composed from bits in this \doxyref{Bit\+String}{p.}{classBitString} 
+\begin{DoxyParams}{Parameters}
+{\em s} & the index of the first bit to be used for the return value \\
+\hline
+{\em l} & the total number of bits to be used for the return value (must be $<$= 32) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the value ($\ast$this)[s],...,($\ast$this)[s+l-\/1] 
+\end{DoxyReturn}
+\mbox{\label{classBitString_ae64c0b53aa04b0d9e4b9a9bb58e4da1d}} 
+\index{Bit\+String@{Bit\+String}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!Bit\+String@{Bit\+String}}
+\subsubsection{operator"!=()}
+{\footnotesize\ttfamily bool Bit\+String\+::operator!= (\begin{DoxyParamCaption}\item[{const \textbf{ Bit\+String} \&}]{v }\end{DoxyParamCaption}) const}
+
+compare this \doxyref{Bit\+String}{p.}{classBitString} with the \doxyref{Bit\+String}{p.}{classBitString} v \begin{DoxyReturn}{Returns}
+true iff the lengths are not equal or there exists an index with different values 
+\end{DoxyReturn}
+\mbox{\label{classBitString_aae55f077e864e2eded022d9a6148805c}} 
+\index{Bit\+String@{Bit\+String}!operator==@{operator==}}
+\index{operator==@{operator==}!Bit\+String@{Bit\+String}}
+\subsubsection{operator==()}
+{\footnotesize\ttfamily bool Bit\+String\+::operator== (\begin{DoxyParamCaption}\item[{const \textbf{ Bit\+String} \&}]{v }\end{DoxyParamCaption}) const}
+
+compare this \doxyref{Bit\+String}{p.}{classBitString} with the \doxyref{Bit\+String}{p.}{classBitString} v \begin{DoxyReturn}{Returns}
+true iff the lengths are equal and for every valid index the value is equal 
+\end{DoxyReturn}
+\mbox{\label{classBitString_ad5aa261f8693980a0a1ecd929314e847}} 
+\index{Bit\+String@{Bit\+String}!operator[]@{operator[]}}
+\index{operator[]@{operator[]}!Bit\+String@{Bit\+String}}
+\subsubsection{operator[]()}
+{\footnotesize\ttfamily \textbf{ B\+IT} Bit\+String\+::operator[$\,$] (\begin{DoxyParamCaption}\item[{const unsigned long}]{i }\end{DoxyParamCaption}) const}
+
+get the value of the i-\/th bit \mbox{\label{classBitString_aa28899ac5fbc7b22f842c6a980132625}} 
+\index{Bit\+String@{Bit\+String}!operator$^\wedge$=@{operator$^\wedge$=}}
+\index{operator$^\wedge$=@{operator$^\wedge$=}!Bit\+String@{Bit\+String}}
+\subsubsection{operator$^\wedge$=()}
+{\footnotesize\ttfamily \textbf{ Bit\+String} \& Bit\+String\+::operator$^\wedge$= (\begin{DoxyParamCaption}\item[{const \textbf{ Bit\+String} \&}]{v }\end{DoxyParamCaption})}
+
+xor v with this \doxyref{Bit\+String}{p.}{classBitString}, saving the result in this Bitstring. The result has the same length as this \doxyref{Bit\+String}{p.}{classBitString}. \mbox{\label{classBitString_a2f544dd02f977b20d5121c11155873cb}} 
+\index{Bit\+String@{Bit\+String}!pad@{pad}}
+\index{pad@{pad}!Bit\+String@{Bit\+String}}
+\subsubsection{pad()}
+{\footnotesize\ttfamily \textbf{ Bit\+String} \& Bit\+String\+::pad (\begin{DoxyParamCaption}\item[{const unsigned long}]{mult,  }\item[{const \textbf{ B\+IT}}]{v }\end{DoxyParamCaption})}
+
+pad this \doxyref{Bit\+String}{p.}{classBitString} with the value in v 
+\begin{DoxyParams}{Parameters}
+{\em mult} & this \doxyref{Bit\+String}{p.}{classBitString} is padded until size is a multiple of mult (given in bits) \\
+\hline
+{\em v} & the value this \doxyref{Bit\+String}{p.}{classBitString} should be padded with \\
+\hline
+\end{DoxyParams}
+\mbox{\label{classBitString_a81016ee82a1dae533f69b667edcd9aaf}} 
+\index{Bit\+String@{Bit\+String}!pad\+Random@{pad\+Random}}
+\index{pad\+Random@{pad\+Random}!Bit\+String@{Bit\+String}}
+\subsubsection{pad\+Random()}
+{\footnotesize\ttfamily \textbf{ Bit\+String} \& Bit\+String\+::pad\+Random (\begin{DoxyParamCaption}\item[{const unsigned long}]{mult }\end{DoxyParamCaption})}
+
+pad this \doxyref{Bit\+String}{p.}{classBitString} with random data 
+\begin{DoxyParams}{Parameters}
+{\em mult} & this \doxyref{Bit\+String}{p.}{classBitString} is padded until size is a multiple of mult (given in bits) \\
+\hline
+\end{DoxyParams}
+\mbox{\label{classBitString_a2cb0b059eb1a189085f29481cc5acb99}} 
+\index{Bit\+String@{Bit\+String}!print@{print}}
+\index{print@{print}!Bit\+String@{Bit\+String}}
+\subsubsection{print()}
+{\footnotesize\ttfamily void Bit\+String\+::print (\begin{DoxyParamCaption}\item[{unsigned short}]{spc = {\ttfamily 0} }\end{DoxyParamCaption}) const}
+
+\mbox{\label{classBitString_a696e9315d08b21687305759c496578aa}} 
+\index{Bit\+String@{Bit\+String}!set\+Arity@{set\+Arity}}
+\index{set\+Arity@{set\+Arity}!Bit\+String@{Bit\+String}}
+\subsubsection{set\+Arity()}
+{\footnotesize\ttfamily void Bit\+String\+::set\+Arity (\begin{DoxyParamCaption}\item[{\textbf{ Emb\+Value}}]{arity }\end{DoxyParamCaption})}
+
+\mbox{\label{classBitString_af0b397d9fffc60fc050befbfec2e1b90}} 
+\index{Bit\+String@{Bit\+String}!set\+Bit@{set\+Bit}}
+\index{set\+Bit@{set\+Bit}!Bit\+String@{Bit\+String}}
+\subsubsection{set\+Bit()}
+{\footnotesize\ttfamily \textbf{ Bit\+String} \& Bit\+String\+::set\+Bit (\begin{DoxyParamCaption}\item[{unsigned long}]{i,  }\item[{\textbf{ B\+IT}}]{v }\end{DoxyParamCaption})}
+
+set the p-\/th bit to v 
+\begin{DoxyParams}{Parameters}
+{\em i} & the index (must be $<$ \doxyref{get\+Length()}{p.}{classBitString_a7f8a99ab98f31b8a021690cb542e1e50}) \\
+\hline
+{\em v} & the value \\
+\hline
+\end{DoxyParams}
+\mbox{\label{classBitString_aadcb23a7c46ba7d9c1b3c2b7e50a8e50}} 
+\index{Bit\+String@{Bit\+String}!truncate@{truncate}}
+\index{truncate@{truncate}!Bit\+String@{Bit\+String}}
+\subsubsection{truncate()}
+{\footnotesize\ttfamily \textbf{ Bit\+String} \& Bit\+String\+::truncate (\begin{DoxyParamCaption}\item[{const unsigned long}]{s,  }\item[{const unsigned long}]{e }\end{DoxyParamCaption})}
+
+truncate this \doxyref{Bit\+String}{p.}{classBitString} 
+\begin{DoxyParams}{Parameters}
+{\em s} & start \\
+\hline
+{\em e} & end \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+this \doxyref{Bit\+String}{p.}{classBitString} modified to contain only ($\ast$this)[s]...($\ast$this)[e -\/ 1] 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{classBitString_a8c2570628e6d2ae2d434623ed5295580}} 
+\index{Bit\+String@{Bit\+String}!Arity@{Arity}}
+\index{Arity@{Arity}!Bit\+String@{Bit\+String}}
+\subsubsection{Arity}
+{\footnotesize\ttfamily \textbf{ Emb\+Value} Bit\+String\+::\+Arity\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classBitString_ac6056d95052daa9fe44a463739ef2c85}} 
+\index{Bit\+String@{Bit\+String}!Arity\+N\+Bits@{Arity\+N\+Bits}}
+\index{Arity\+N\+Bits@{Arity\+N\+Bits}!Bit\+String@{Bit\+String}}
+\subsubsection{Arity\+N\+Bits}
+{\footnotesize\ttfamily unsigned short Bit\+String\+::\+Arity\+N\+Bits\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classBitString_ab5c447f20d07eaa7f72b235f75ecea6e}} 
+\index{Bit\+String@{Bit\+String}!Data@{Data}}
+\index{Data@{Data}!Bit\+String@{Bit\+String}}
+\subsubsection{Data}
+{\footnotesize\ttfamily std\+::vector$<$\textbf{ B\+Y\+TE}$>$ Bit\+String\+::\+Data\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classBitString_a1ce6fb38dd0fd270a4ede3e03c140b8b}} 
+\index{Bit\+String@{Bit\+String}!Length@{Length}}
+\index{Length@{Length}!Bit\+String@{Bit\+String}}
+\subsubsection{Length}
+{\footnotesize\ttfamily \textbf{ U\+W\+O\+R\+D32} Bit\+String\+::\+Length\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ Bit\+String.\+h}\item 
+\textbf{ Bit\+String.\+cc}\end{DoxyCompactItemize}

@@ -1,0 +1,117 @@
+.TH "AudioSampleValue< Type, ValueType >" 3 "Thu Aug 17 2017" "Version 0.5.1" "steghide" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+AudioSampleValue< Type, ValueType > \- a class representing an audio sample  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <AudioSampleValue\&.h>\fP
+.PP
+Inherits \fBSampleValue\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBAudioSampleValue\fP (ValueType v)"
+.br
+.ti -1c
+.RI "ValueType \fBgetValue\fP (void) const"
+.br
+.ti -1c
+.RI "\fBSampleValue\fP * \fBgetNearestTargetSampleValue\fP (\fBEmbValue\fP t) const"
+.br
+.ti -1c
+.RI "\fBUWORD32\fP \fBcalcDistance\fP (const \fBSampleValue\fP *s) const"
+.br
+.ti -1c
+.RI "std::string \fBgetName\fP (void) const"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBUWORD32\fP \fBcalcKey\fP (ValueType v) const"
+.br
+.ti -1c
+.RI "\fBEmbValue\fP \fBcalcEValue\fP (ValueType v) const"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "ValueType \fBValue\fP"
+.br
+.in -1c
+.SS "Static Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "static const ValueType \fBMinValue\fP = 0"
+.br
+.ti -1c
+.RI "static const ValueType \fBMaxValue\fP = \fBBYTE_MAX\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "template<AUDIOSAMPLETYPE Type, class ValueType > \fBAudioSampleValue\fP< Type, ValueType >::\fBAudioSampleValue\fP (ValueType v)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "template<AUDIOSAMPLETYPE Type, class ValueType > \fBUWORD32\fP \fBAudioSampleValue\fP< Type, ValueType >::calcDistance (const \fBSampleValue\fP * s) const\fC [virtual]\fP"
+calculate the distance between the sample value s and this sample value 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIs\fP a sample value of the same type as this 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the distance 
+.RE
+.PP
+
+.PP
+Implements \fBSampleValue\fP\&.
+.SS "template<AUDIOSAMPLETYPE Type, class ValueType> \fBEmbValue\fP \fBAudioSampleValue\fP< Type, ValueType >::calcEValue (ValueType v) const\fC [inline]\fP, \fC [private]\fP"
+
+.SS "template<AUDIOSAMPLETYPE Type, class ValueType> \fBUWORD32\fP \fBAudioSampleValue\fP< Type, ValueType >::calcKey (ValueType v) const\fC [inline]\fP, \fC [private]\fP"
+
+.SS "template<AUDIOSAMPLETYPE Type, class ValueType > std::string \fBAudioSampleValue\fP< Type, ValueType >::getName (void) const\fC [virtual]\fP"
+return a short name uniquely identifying this sample value 
+.PP
+Implements \fBSampleValue\fP\&.
+.SS "template<AUDIOSAMPLETYPE Type, class ValueType > \fBSampleValue\fP * \fBAudioSampleValue\fP< Type, ValueType >::getNearestTargetSampleValue (\fBEmbValue\fP t) const\fC [virtual]\fP"
+get the nearest (with the least distance to this sample value) sample value whose embedded value equals the specified target 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIt\fP the target embedded value
+.RE
+.PP
+If two or more target sample values have equal distance each of them should be returned with equal probability\&.
+.PP
+The returned \fBSampleValue\fP object should be deleted by the callser\&. 
+.PP
+Implements \fBSampleValue\fP\&.
+.SS "template<AUDIOSAMPLETYPE Type, class ValueType> ValueType \fBAudioSampleValue\fP< Type, ValueType >::getValue (void) const\fC [inline]\fP"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "template<AUDIOSAMPLETYPE Type, class ValueType> const \fBSWORD32\fP AuPCM32SampleValue::MaxValue = \fBBYTE_MAX\fP\fC [static]\fP, \fC [private]\fP"
+
+.SS "template<AUDIOSAMPLETYPE Type, class ValueType> const \fBSWORD32\fP AuPCM32SampleValue::MinValue = 0\fC [static]\fP, \fC [private]\fP"
+
+.SS "template<AUDIOSAMPLETYPE Type, class ValueType> ValueType \fBAudioSampleValue\fP< Type, ValueType >::Value\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for steghide from the source code\&.

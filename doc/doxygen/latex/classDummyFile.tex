@@ -1,0 +1,184 @@
+\section{Dummy\+File Class Reference}
+\label{classDummyFile}\index{Dummy\+File@{Dummy\+File}}
+
+
+a dummy \doxyref{Cvr\+Stg\+File}{p.}{classCvrStgFile} implementation to facilitate testing and debugging  
+
+
+
+
+{\ttfamily \#include $<$Dummy\+File.\+h$>$}
+
+Inheritance diagram for Dummy\+File\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classDummyFile}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Dummy\+File} (\textbf{ U\+W\+O\+R\+D16} s, std\+::vector$<$ std\+::vector$<$ bool $>$ $>$ $\ast$svam)
+\item 
+std\+::list$<$ \textbf{ Cvr\+Stg\+File\+::\+Property} $>$ \textbf{ get\+Properties} (void) const
+\item 
+unsigned long \textbf{ get\+Num\+Samples} (void) const
+\item 
+void \textbf{ replace\+Sample} (const \textbf{ Sample\+Pos} pos, const \textbf{ Sample\+Value} $\ast$s)
+\item 
+\textbf{ Sample\+Value} $\ast$ \textbf{ get\+Sample\+Value} (const \textbf{ Sample\+Pos} pos) const
+\item 
+std\+::vector$<$ std\+::vector$<$ bool $>$ $>$ $\ast$ \textbf{ get\+Sample\+Value\+Adjacency\+Matrix} () const
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \textbf{ create\+Graph} (std\+::vector$<$ std\+::list$<$ \textbf{ U\+W\+O\+R\+D16} $>$ $>$ \&adjlist, \textbf{ Bit\+String} $\ast$$\ast$bs, \textbf{ Cvr\+Stg\+File} $\ast$$\ast$f, \textbf{ Selector} $\ast$$\ast$s)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \textbf{ U\+W\+O\+R\+D16} $>$ \textbf{ Samples}
+\item 
+std\+::vector$<$ std\+::vector$<$ bool $>$ $>$ $\ast$ \textbf{ Sample\+Value\+Adjacency\+Matrix}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const unsigned short \textbf{ Samples\+Per\+Vertex} = 2
+\item 
+static const \textbf{ Emb\+Value} \textbf{ Emb\+Value\+Modulus} = 2
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{classDummyFile_a94c2eff9aa3f00a5164c4089601d87f5}} 
+\index{Dummy\+File@{Dummy\+File}!Dummy\+File@{Dummy\+File}}
+\index{Dummy\+File@{Dummy\+File}!Dummy\+File@{Dummy\+File}}
+\subsubsection{Dummy\+File()}
+{\footnotesize\ttfamily Dummy\+File\+::\+Dummy\+File (\begin{DoxyParamCaption}\item[{\textbf{ U\+W\+O\+R\+D16}}]{s,  }\item[{std\+::vector$<$ std\+::vector$<$ bool $>$ $>$ $\ast$}]{svam }\end{DoxyParamCaption})}
+
+construct a \doxyref{Dummy\+File}{p.}{classDummyFile} object containing the sample values 0,1,...,s-\/1 
+\begin{DoxyParams}{Parameters}
+{\em s} & the size of the \doxyref{Dummy\+File}{p.}{classDummyFile} (i.\+e. the number of samples it should contain) \\
+\hline
+{\em svam} & the Sample\+Value\+Adjacency\+Matrix for the Samples in this file \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{classDummyFile_a107e54b5336510f0e336db820248011e}} 
+\index{Dummy\+File@{Dummy\+File}!create\+Graph@{create\+Graph}}
+\index{create\+Graph@{create\+Graph}!Dummy\+File@{Dummy\+File}}
+\subsubsection{create\+Graph()}
+{\footnotesize\ttfamily void Dummy\+File\+::create\+Graph (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::list$<$ \textbf{ U\+W\+O\+R\+D16} $>$ $>$ \&}]{adjlist,  }\item[{\textbf{ Bit\+String} $\ast$$\ast$}]{bs,  }\item[{\textbf{ Cvr\+Stg\+File} $\ast$$\ast$}]{f,  }\item[{\textbf{ Selector} $\ast$$\ast$}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+create a \doxyref{Bit\+String}{p.}{classBitString}, a \doxyref{Dummy\+File}{p.}{classDummyFile} and a \doxyref{Selector}{p.}{classSelector} that together will produce a graph like described by the adjacency list 
+\begin{DoxyParams}{Parameters}
+{\em adjlist} & an adjacency list describing the \char`\"{}target graph\char`\"{} \\
+\hline
+{\em bs} & will be filled with the \doxyref{Bit\+String}{p.}{classBitString} \\
+\hline
+{\em f} & will be filled with the \doxyref{Dummy\+File}{p.}{classDummyFile} \\
+\hline
+{\em s} & will be filled with the \doxyref{Selector}{p.}{classSelector}\\
+\hline
+\end{DoxyParams}
+Constructing a \doxyref{Graph}{p.}{classGraph} object with \char`\"{}\+Graph ($\ast$f, $\ast$$\ast$bs, $\ast$$\ast$s)\char`\"{} will result in a graph of the form of adjlist.
+
+The constructed graph has the following form\+: Samples\+Per\+Vertex == 2, Emb\+Value\+Modulus = 2 every vertex has a sample value with bit == 0 at index 0 and one with bit == 1 at index 1, if two vertices are adjacent, one end of the edge is at index 0 of the vertex with the lower vertex label and the other end of the edge is at index 1 of the vertex with the higher vertex label. The distance between vertex with label i and vertex with label j is \+: 2$\ast$$\vert$j -\/ i$\vert$ + 1 \mbox{\label{classDummyFile_a79290dd8bd87a2fabf01f8453d4ce9f0}} 
+\index{Dummy\+File@{Dummy\+File}!get\+Num\+Samples@{get\+Num\+Samples}}
+\index{get\+Num\+Samples@{get\+Num\+Samples}!Dummy\+File@{Dummy\+File}}
+\subsubsection{get\+Num\+Samples()}
+{\footnotesize\ttfamily unsigned long Dummy\+File\+::get\+Num\+Samples (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+get the number of samples in this \doxyref{Cvr\+Stg\+Object}{p.}{classCvrStgObject} 
+
+Implements \textbf{ Cvr\+Stg\+Object} \doxyref{}{p.}{classCvrStgObject_a80ae8f095b66683e5207adf8ff8265b4}.
+
+\mbox{\label{classDummyFile_a40d1703beb749e1d6207b7d9eff8777f}} 
+\index{Dummy\+File@{Dummy\+File}!get\+Properties@{get\+Properties}}
+\index{get\+Properties@{get\+Properties}!Dummy\+File@{Dummy\+File}}
+\subsubsection{get\+Properties()}
+{\footnotesize\ttfamily std\+::list$<$ \textbf{ Cvr\+Stg\+File\+::\+Property} $>$ Dummy\+File\+::get\+Properties (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \textbf{ Cvr\+Stg\+File} \doxyref{}{p.}{classCvrStgFile_afe2f570ea6447c0636093b44ff7793cc}.
+
+\mbox{\label{classDummyFile_a44e79fbed4d236321e47d47a9e916e29}} 
+\index{Dummy\+File@{Dummy\+File}!get\+Sample\+Value@{get\+Sample\+Value}}
+\index{get\+Sample\+Value@{get\+Sample\+Value}!Dummy\+File@{Dummy\+File}}
+\subsubsection{get\+Sample\+Value()}
+{\footnotesize\ttfamily \textbf{ Sample\+Value} $\ast$ Dummy\+File\+::get\+Sample\+Value (\begin{DoxyParamCaption}\item[{const \textbf{ Sample\+Pos}}]{pos }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+get the sample at position pos 
+\begin{DoxyParams}{Parameters}
+{\em pos} & the position of a sample (must be in 0...\doxyref{get\+Num\+Samples()}{p.}{classDummyFile_a79290dd8bd87a2fabf01f8453d4ce9f0}-\/1) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the sample at the given position
+\end{DoxyReturn}
+The sample object is created in this function and should be deleted by the caller. The derived class should check the condition(s) given above in its Implementation of this function. 
+
+Implements \textbf{ Cvr\+Stg\+Object} \doxyref{}{p.}{classCvrStgObject_ac77a8da85a4f7b53e2166e990dfaa4f2}.
+
+\mbox{\label{classDummyFile_a29830fce407665c63b5e00dc9808f146}} 
+\index{Dummy\+File@{Dummy\+File}!get\+Sample\+Value\+Adjacency\+Matrix@{get\+Sample\+Value\+Adjacency\+Matrix}}
+\index{get\+Sample\+Value\+Adjacency\+Matrix@{get\+Sample\+Value\+Adjacency\+Matrix}!Dummy\+File@{Dummy\+File}}
+\subsubsection{get\+Sample\+Value\+Adjacency\+Matrix()}
+{\footnotesize\ttfamily std\+::vector$<$std\+::vector$<$bool$>$ $>$$\ast$ Dummy\+File\+::get\+Sample\+Value\+Adjacency\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classDummyFile_a702ca13d4515e719785b6c7b670354bb}} 
+\index{Dummy\+File@{Dummy\+File}!replace\+Sample@{replace\+Sample}}
+\index{replace\+Sample@{replace\+Sample}!Dummy\+File@{Dummy\+File}}
+\subsubsection{replace\+Sample()}
+{\footnotesize\ttfamily void Dummy\+File\+::replace\+Sample (\begin{DoxyParamCaption}\item[{const \textbf{ Sample\+Pos}}]{pos,  }\item[{const \textbf{ Sample\+Value} $\ast$}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+replace a sample thus (possibly) altering the value of the bit returned by Sample\+Value-\/$>$get\+Bit() 
+\begin{DoxyParams}{Parameters}
+{\em pos} & the position of the sample (must be in 0...\doxyref{get\+Num\+Samples()}{p.}{classDummyFile_a79290dd8bd87a2fabf01f8453d4ce9f0}-\/1) \\
+\hline
+{\em s} & the sample value that should replace the current sample value (must be of correct type for this \doxyref{Cvr\+Stg\+Object}{p.}{classCvrStgObject})\\
+\hline
+\end{DoxyParams}
+The derived class should check the condition(s) given above in its Implementation of this function. 
+
+Implements \textbf{ Cvr\+Stg\+Object} \doxyref{}{p.}{classCvrStgObject_a3068d6a9dcc1c0b8bde2f081cfde6ce5}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{classDummyFile_aa2ec37494bf0cb97569ab81a93f38b59}} 
+\index{Dummy\+File@{Dummy\+File}!Emb\+Value\+Modulus@{Emb\+Value\+Modulus}}
+\index{Emb\+Value\+Modulus@{Emb\+Value\+Modulus}!Dummy\+File@{Dummy\+File}}
+\subsubsection{Emb\+Value\+Modulus}
+{\footnotesize\ttfamily const \textbf{ Emb\+Value} Dummy\+File\+::\+Emb\+Value\+Modulus = 2\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\label{classDummyFile_a709877388004e7a4fd55e330270ef610}} 
+\index{Dummy\+File@{Dummy\+File}!Samples@{Samples}}
+\index{Samples@{Samples}!Dummy\+File@{Dummy\+File}}
+\subsubsection{Samples}
+{\footnotesize\ttfamily std\+::vector$<$\textbf{ U\+W\+O\+R\+D16}$>$ Dummy\+File\+::\+Samples\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classDummyFile_acc0267226ad4c85d34f4e4bfa5088ef4}} 
+\index{Dummy\+File@{Dummy\+File}!Samples\+Per\+Vertex@{Samples\+Per\+Vertex}}
+\index{Samples\+Per\+Vertex@{Samples\+Per\+Vertex}!Dummy\+File@{Dummy\+File}}
+\subsubsection{Samples\+Per\+Vertex}
+{\footnotesize\ttfamily const unsigned short Dummy\+File\+::\+Samples\+Per\+Vertex = 2\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\label{classDummyFile_ab061a391905b948f72f6c59688258dba}} 
+\index{Dummy\+File@{Dummy\+File}!Sample\+Value\+Adjacency\+Matrix@{Sample\+Value\+Adjacency\+Matrix}}
+\index{Sample\+Value\+Adjacency\+Matrix@{Sample\+Value\+Adjacency\+Matrix}!Dummy\+File@{Dummy\+File}}
+\subsubsection{Sample\+Value\+Adjacency\+Matrix}
+{\footnotesize\ttfamily std\+::vector$<$std\+::vector$<$bool$>$ $>$$\ast$ Dummy\+File\+::\+Sample\+Value\+Adjacency\+Matrix\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ Dummy\+File.\+h}\item 
+\textbf{ Dummy\+File.\+cc}\end{DoxyCompactItemize}

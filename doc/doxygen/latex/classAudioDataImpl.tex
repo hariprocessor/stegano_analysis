@@ -1,0 +1,175 @@
+\section{Audio\+Data\+Impl$<$ Type, Value\+Type, Sample\+Value\+Type $>$ Class Template Reference}
+\label{classAudioDataImpl}\index{Audio\+Data\+Impl$<$ Type, Value\+Type, Sample\+Value\+Type $>$@{Audio\+Data\+Impl$<$ Type, Value\+Type, Sample\+Value\+Type $>$}}
+
+
+implementation of the Audio\+Data-\/\+Interface  
+
+
+
+
+{\ttfamily \#include $<$Audio\+Data.\+h$>$}
+
+Inheritance diagram for Audio\+Data\+Impl$<$ Type, Value\+Type, Sample\+Value\+Type $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classAudioDataImpl}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Audio\+Data\+Impl} (\textbf{ Cvr\+Stg\+File} $\ast$f)
+\item 
+virtual \textbf{ $\sim$\+Audio\+Data\+Impl} (void)
+\item 
+void \textbf{ read} (\textbf{ Binary\+IO} $\ast$io, \textbf{ U\+W\+O\+R\+D32} n=\textbf{ Audio\+Data\+::\+No\+Limit})
+\item 
+void \textbf{ write} (\textbf{ Binary\+IO} $\ast$io, \textbf{ U\+W\+O\+R\+D32} n=\textbf{ Audio\+Data\+::\+No\+Limit})
+\item 
+unsigned long \textbf{ get\+Num\+Samples} (void) const
+\item 
+\textbf{ Sample\+Value} $\ast$ \textbf{ get\+Sample\+Value} (const \textbf{ Sample\+Pos} pos) const
+\item 
+void \textbf{ replace\+Sample} (const \textbf{ Sample\+Pos} pos, const \textbf{ Sample\+Value} $\ast$s)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Value\+Type \textbf{ read\+Value} (\textbf{ Binary\+IO} $\ast$io) const
+\item 
+void \textbf{ write\+Value} (\textbf{ Binary\+IO} $\ast$io, Value\+Type v) const
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ Value\+Type $>$ \textbf{ Data}
+\item 
+\textbf{ Cvr\+Stg\+File} $\ast$ \textbf{ The\+Cvr\+Stg\+File}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{classAudioDataImpl_a5775d49843e1ab609610f6cf4efb178e}} 
+\index{Audio\+Data\+Impl@{Audio\+Data\+Impl}!Audio\+Data\+Impl@{Audio\+Data\+Impl}}
+\index{Audio\+Data\+Impl@{Audio\+Data\+Impl}!Audio\+Data\+Impl@{Audio\+Data\+Impl}}
+\subsubsection{Audio\+Data\+Impl()}
+{\footnotesize\ttfamily template$<$A\+U\+D\+I\+O\+S\+A\+M\+P\+L\+E\+T\+Y\+PE Type, class Value\+Type , class Sample\+Value\+Type  = Audio\+Sample\+Value$<$\+Type,\+Value\+Type$>$$>$ \\
+\textbf{ Audio\+Data\+Impl}$<$ Type, Value\+Type, Sample\+Value\+Type $>$\+::\textbf{ Audio\+Data\+Impl} (\begin{DoxyParamCaption}\item[{\textbf{ Cvr\+Stg\+File} $\ast$}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classAudioDataImpl_a700d701bf616673b6f09d761ea31307d}} 
+\index{Audio\+Data\+Impl@{Audio\+Data\+Impl}!````~Audio\+Data\+Impl@{$\sim$\+Audio\+Data\+Impl}}
+\index{````~Audio\+Data\+Impl@{$\sim$\+Audio\+Data\+Impl}!Audio\+Data\+Impl@{Audio\+Data\+Impl}}
+\subsubsection{$\sim$\+Audio\+Data\+Impl()}
+{\footnotesize\ttfamily template$<$A\+U\+D\+I\+O\+S\+A\+M\+P\+L\+E\+T\+Y\+PE Type, class Value\+Type , class Sample\+Value\+Type  = Audio\+Sample\+Value$<$\+Type,\+Value\+Type$>$$>$ \\
+virtual \textbf{ Audio\+Data\+Impl}$<$ Type, Value\+Type, Sample\+Value\+Type $>$\+::$\sim$\textbf{ Audio\+Data\+Impl} (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{classAudioDataImpl_a84f684e5b78a19e9b9ecfc530589706a}} 
+\index{Audio\+Data\+Impl@{Audio\+Data\+Impl}!get\+Num\+Samples@{get\+Num\+Samples}}
+\index{get\+Num\+Samples@{get\+Num\+Samples}!Audio\+Data\+Impl@{Audio\+Data\+Impl}}
+\subsubsection{get\+Num\+Samples()}
+{\footnotesize\ttfamily template$<$A\+U\+D\+I\+O\+S\+A\+M\+P\+L\+E\+T\+Y\+PE Type, class Value\+Type , class Sample\+Value\+Type $>$ \\
+unsigned long \textbf{ Audio\+Data\+Impl}$<$ Type, Value\+Type, Sample\+Value\+Type $>$\+::get\+Num\+Samples (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+get the number of samples in this \doxyref{Cvr\+Stg\+Object}{p.}{classCvrStgObject} 
+
+Implements \textbf{ Cvr\+Stg\+Object} \doxyref{}{p.}{classCvrStgObject_a80ae8f095b66683e5207adf8ff8265b4}.
+
+\mbox{\label{classAudioDataImpl_a52990850bb0a8a108108f70f378d9461}} 
+\index{Audio\+Data\+Impl@{Audio\+Data\+Impl}!get\+Sample\+Value@{get\+Sample\+Value}}
+\index{get\+Sample\+Value@{get\+Sample\+Value}!Audio\+Data\+Impl@{Audio\+Data\+Impl}}
+\subsubsection{get\+Sample\+Value()}
+{\footnotesize\ttfamily template$<$A\+U\+D\+I\+O\+S\+A\+M\+P\+L\+E\+T\+Y\+PE Type, class Value\+Type , class Sample\+Value\+Type $>$ \\
+\textbf{ Sample\+Value} $\ast$ \textbf{ Audio\+Data\+Impl}$<$ Type, Value\+Type, Sample\+Value\+Type $>$\+::get\+Sample\+Value (\begin{DoxyParamCaption}\item[{const \textbf{ Sample\+Pos}}]{pos }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+get the sample at position pos 
+\begin{DoxyParams}{Parameters}
+{\em pos} & the position of a sample (must be in 0...\doxyref{get\+Num\+Samples()}{p.}{classAudioDataImpl_a84f684e5b78a19e9b9ecfc530589706a}-\/1) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the sample at the given position
+\end{DoxyReturn}
+The sample object is created in this function and should be deleted by the caller. The derived class should check the condition(s) given above in its Implementation of this function. 
+
+Implements \textbf{ Cvr\+Stg\+Object} \doxyref{}{p.}{classCvrStgObject_ac77a8da85a4f7b53e2166e990dfaa4f2}.
+
+\mbox{\label{classAudioDataImpl_a6c8105d5fceee538b423e8b137ecd3ab}} 
+\index{Audio\+Data\+Impl@{Audio\+Data\+Impl}!read@{read}}
+\index{read@{read}!Audio\+Data\+Impl@{Audio\+Data\+Impl}}
+\subsubsection{read()}
+{\footnotesize\ttfamily template$<$A\+U\+D\+I\+O\+S\+A\+M\+P\+L\+E\+T\+Y\+PE Type, class Value\+Type , class Sample\+Value\+Type $>$ \\
+void \textbf{ Audio\+Data\+Impl}$<$ Type, Value\+Type, Sample\+Value\+Type $>$\+::read (\begin{DoxyParamCaption}\item[{\textbf{ Binary\+IO} $\ast$}]{io,  }\item[{\textbf{ U\+W\+O\+R\+D32}}]{n = {\ttfamily \textbf{ Audio\+Data\+::\+No\+Limit}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \textbf{ Audio\+Data} \doxyref{}{p.}{classAudioData_aa3ac98fcebcd5e2f5376464b08212e58}.
+
+\mbox{\label{classAudioDataImpl_a1bf144eaca747e96569a4d173a078c40}} 
+\index{Audio\+Data\+Impl@{Audio\+Data\+Impl}!read\+Value@{read\+Value}}
+\index{read\+Value@{read\+Value}!Audio\+Data\+Impl@{Audio\+Data\+Impl}}
+\subsubsection{read\+Value()}
+{\footnotesize\ttfamily \textbf{ S\+W\+O\+R\+D32} Au\+P\+C\+M32\+Audio\+Data\+::read\+Value (\begin{DoxyParamCaption}\item[{\textbf{ Binary\+IO} $\ast$}]{io }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classAudioDataImpl_a2522e8ff1588325b0fe93210a3c048f5}} 
+\index{Audio\+Data\+Impl@{Audio\+Data\+Impl}!replace\+Sample@{replace\+Sample}}
+\index{replace\+Sample@{replace\+Sample}!Audio\+Data\+Impl@{Audio\+Data\+Impl}}
+\subsubsection{replace\+Sample()}
+{\footnotesize\ttfamily template$<$A\+U\+D\+I\+O\+S\+A\+M\+P\+L\+E\+T\+Y\+PE Type, class Value\+Type , class Sample\+Value\+Type $>$ \\
+void \textbf{ Audio\+Data\+Impl}$<$ Type, Value\+Type, Sample\+Value\+Type $>$\+::replace\+Sample (\begin{DoxyParamCaption}\item[{const \textbf{ Sample\+Pos}}]{pos,  }\item[{const \textbf{ Sample\+Value} $\ast$}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+replace a sample thus (possibly) altering the value of the bit returned by Sample\+Value-\/$>$get\+Bit() 
+\begin{DoxyParams}{Parameters}
+{\em pos} & the position of the sample (must be in 0...\doxyref{get\+Num\+Samples()}{p.}{classAudioDataImpl_a84f684e5b78a19e9b9ecfc530589706a}-\/1) \\
+\hline
+{\em s} & the sample value that should replace the current sample value (must be of correct type for this \doxyref{Cvr\+Stg\+Object}{p.}{classCvrStgObject})\\
+\hline
+\end{DoxyParams}
+The derived class should check the condition(s) given above in its Implementation of this function. 
+
+Implements \textbf{ Cvr\+Stg\+Object} \doxyref{}{p.}{classCvrStgObject_a3068d6a9dcc1c0b8bde2f081cfde6ce5}.
+
+\mbox{\label{classAudioDataImpl_a66671d9d8ee1c2322f4226dad81e257c}} 
+\index{Audio\+Data\+Impl@{Audio\+Data\+Impl}!write@{write}}
+\index{write@{write}!Audio\+Data\+Impl@{Audio\+Data\+Impl}}
+\subsubsection{write()}
+{\footnotesize\ttfamily template$<$A\+U\+D\+I\+O\+S\+A\+M\+P\+L\+E\+T\+Y\+PE Type, class Value\+Type , class Sample\+Value\+Type $>$ \\
+void \textbf{ Audio\+Data\+Impl}$<$ Type, Value\+Type, Sample\+Value\+Type $>$\+::write (\begin{DoxyParamCaption}\item[{\textbf{ Binary\+IO} $\ast$}]{io,  }\item[{\textbf{ U\+W\+O\+R\+D32}}]{n = {\ttfamily \textbf{ Audio\+Data\+::\+No\+Limit}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \textbf{ Audio\+Data} \doxyref{}{p.}{classAudioData_aedc90f99fe9da3fd0012e2fb79403d88}.
+
+\mbox{\label{classAudioDataImpl_aefc1b5e47a9c70f00b5793a824eb3798}} 
+\index{Audio\+Data\+Impl@{Audio\+Data\+Impl}!write\+Value@{write\+Value}}
+\index{write\+Value@{write\+Value}!Audio\+Data\+Impl@{Audio\+Data\+Impl}}
+\subsubsection{write\+Value()}
+{\footnotesize\ttfamily template$<$A\+U\+D\+I\+O\+S\+A\+M\+P\+L\+E\+T\+Y\+PE Type, class Value\+Type , class Sample\+Value\+Type  = Audio\+Sample\+Value$<$\+Type,\+Value\+Type$>$$>$ \\
+void \textbf{ Audio\+Data\+Impl}$<$ Type, Value\+Type, Sample\+Value\+Type $>$\+::write\+Value (\begin{DoxyParamCaption}\item[{\textbf{ Binary\+IO} $\ast$}]{io,  }\item[{Value\+Type}]{v }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{classAudioDataImpl_a966787e5527fc0fd8a9513bcf3313941}} 
+\index{Audio\+Data\+Impl@{Audio\+Data\+Impl}!Data@{Data}}
+\index{Data@{Data}!Audio\+Data\+Impl@{Audio\+Data\+Impl}}
+\subsubsection{Data}
+{\footnotesize\ttfamily template$<$A\+U\+D\+I\+O\+S\+A\+M\+P\+L\+E\+T\+Y\+PE Type, class Value\+Type , class Sample\+Value\+Type  = Audio\+Sample\+Value$<$\+Type,\+Value\+Type$>$$>$ \\
+std\+::vector$<$Value\+Type$>$ \textbf{ Audio\+Data\+Impl}$<$ Type, Value\+Type, Sample\+Value\+Type $>$\+::Data\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classAudioDataImpl_ae7e85812b02849f1f194aee11b0d30f9}} 
+\index{Audio\+Data\+Impl@{Audio\+Data\+Impl}!The\+Cvr\+Stg\+File@{The\+Cvr\+Stg\+File}}
+\index{The\+Cvr\+Stg\+File@{The\+Cvr\+Stg\+File}!Audio\+Data\+Impl@{Audio\+Data\+Impl}}
+\subsubsection{The\+Cvr\+Stg\+File}
+{\footnotesize\ttfamily template$<$A\+U\+D\+I\+O\+S\+A\+M\+P\+L\+E\+T\+Y\+PE Type, class Value\+Type , class Sample\+Value\+Type  = Audio\+Sample\+Value$<$\+Type,\+Value\+Type$>$$>$ \\
+\textbf{ Cvr\+Stg\+File}$\ast$ \textbf{ Audio\+Data\+Impl}$<$ Type, Value\+Type, Sample\+Value\+Type $>$\+::The\+Cvr\+Stg\+File\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ Audio\+Data.\+h}\item 
+\textbf{ Au\+Data.\+h}\end{DoxyCompactItemize}

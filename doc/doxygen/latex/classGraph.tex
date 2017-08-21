@@ -1,0 +1,377 @@
+\section{Graph Class Reference}
+\label{classGraph}\index{Graph@{Graph}}
+
+
+a graph constructed from a cover file and a message to be embedded  
+
+
+
+
+{\ttfamily \#include $<$Graph.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Graph} (\textbf{ Cvr\+Stg\+File} $\ast$cvr, const \textbf{ Bit\+String} \&emb, \textbf{ Selector} \&sel)
+\item 
+\textbf{ $\sim$\+Graph} (void)
+\item 
+unsigned long \textbf{ get\+Num\+Vertices} (void) const
+\item 
+\textbf{ Vertex} $\ast$ \textbf{ get\+Vertex} (\textbf{ Vertex\+Label} l) const
+\item 
+void \textbf{ unmark\+Deleted\+All\+Vertices} (void)
+\item 
+float \textbf{ get\+Avg\+Vertex\+Degree} (void) const
+\item 
+void \textbf{ print\+Verbose\+Info} (void)
+\item 
+bool \textbf{ check} (bool verbose=false) const
+\item 
+bool \textbf{ check\+\_\+\+Vertices} (bool verbose=false) const
+\item 
+bool \textbf{ check\+\_\+\+Sample\+Values} (bool verbose=false) const
+\item 
+bool \textbf{ check\+\_\+\+Sample\+Occurences} (bool verbose=false) const
+\item 
+bool \textbf{ check\+\_\+\+S\+V\+A\+Lists} (bool verbose=false) const
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::list$<$ \textbf{ Sample\+Occurence} $>$\+::iterator \textbf{ mark\+Deleted\+Sample\+Occurence} (std\+::list$<$ \textbf{ Sample\+Occurence} $>$\+::iterator it)
+\item 
+std\+::list$<$ \textbf{ Sample\+Occurence} $>$\+::iterator \textbf{ unmark\+Deleted\+Sample\+Occurence} (std\+::list$<$ \textbf{ Sample\+Occurence} $>$\+::iterator it)
+\item 
+void \textbf{ construct\+Samples} (const std\+::vector$<$ \textbf{ Sample\+Pos} $\ast$$>$ \&sposs, std\+::vector$<$ \textbf{ Sample\+Value} $\ast$$\ast$$>$ \&svalues)
+\item 
+void \textbf{ construct\+Vertices} (std\+::vector$<$ \textbf{ Sample\+Pos} $\ast$$>$ \&sposs, std\+::vector$<$ \textbf{ Sample\+Value} $\ast$$\ast$$>$ \&svalues, const std\+::vector$<$ \textbf{ Emb\+Value} $>$ \&tvalues)
+\item 
+void \textbf{ construct\+Edges} (void)
+\item 
+bool \textbf{ check\+\_\+\+Sample\+Occurences\+\_\+size} (bool verbose=false) const
+\item 
+bool \textbf{ check\+\_\+\+Sample\+Occurences\+\_\+correctness} (bool verbose=false) const
+\item 
+bool \textbf{ check\+\_\+\+Sample\+Occurences\+\_\+completeness} (bool verbose=false) const
+\item 
+bool \textbf{ check\+\_\+\+S\+V\+A\+Lists\+\_\+size} (bool verbose=false) const
+\item 
+bool \textbf{ check\+\_\+\+S\+V\+A\+Lists\+\_\+soundness} (bool verbose=false) const
+\item 
+bool \textbf{ check\+\_\+\+S\+V\+A\+Lists\+\_\+sorted} (bool verbose=false) const
+\item 
+bool \textbf{ check\+\_\+\+S\+V\+A\+Lists\+\_\+uniqueness} (bool verbose=false) const
+\item 
+bool \textbf{ check\+\_\+\+S\+V\+A\+Lists\+\_\+completeness} (bool verbose=false) const
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \textbf{ Vertex} $\ast$ $>$ \textbf{ Vertices}
+\begin{DoxyCompactList}\small\item\em contains the vertices in this graph -\/ Vertices[l] is the vertex with label l \end{DoxyCompactList}\item 
+std\+::vector$<$ \textbf{ Sample\+Value} $\ast$ $>$ \textbf{ Sample\+Values}
+\begin{DoxyCompactList}\small\item\em contains the list of (unique) sample values -\/ Sample\+Values[l] is the sample value with label l \end{DoxyCompactList}\item 
+std\+::vector$<$ \textbf{ Sample\+Value\+Adjacency\+List} $\ast$ $>$ \textbf{ S\+V\+A\+Lists}
+\begin{DoxyCompactList}\small\item\em contains the sample value adjacency lists (S\+V\+A\+Lists[v] contains only sample values with embedded value v) \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::list$<$ \textbf{ Sample\+Occurence} $>$ $>$ \textbf{ Sample\+Occurences}
+\begin{DoxyCompactList}\small\item\em Sample\+Occurences[l] contains all occurences of the sample value with label l. \end{DoxyCompactList}\item 
+std\+::vector$<$ \textbf{ U\+W\+O\+R\+D32} $\ast$ $>$ \textbf{ Num\+Sample\+Occurences}
+\item 
+std\+::vector$<$ std\+::list$<$ \textbf{ Sample\+Occurence} $>$ $>$ \textbf{ Deleted\+Sample\+Occurences}
+\begin{DoxyCompactList}\small\item\em contains those sample occurences that have been marked as deleted from Sample\+Occurences \end{DoxyCompactList}\item 
+std\+::vector$<$ \textbf{ U\+W\+O\+R\+D32} $\ast$ $>$ \textbf{ Num\+Deleted\+Sample\+Occurences}
+\item 
+\textbf{ Cvr\+Stg\+File} $\ast$ \textbf{ File}
+\item 
+\textbf{ Emb\+Value} \textbf{ Emb\+Value\+Modulus}
+\item 
+unsigned short \textbf{ Samples\+Per\+Vertex}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \textbf{ W\+K\+S\+Construction\+Heuristic}
+\item 
+class \textbf{ Edge\+Iterator}
+\item 
+class \textbf{ Sample\+Value\+Adjacency\+List}
+\item 
+class \textbf{ Vertex}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class provides a purely graph-\/theoretic interface to any other class. Some classes however need access to the internal (steganographic) representation, for example\+: \doxyref{Vertex}{p.}{classVertex}, \doxyref{Edge\+Iterator}{p.}{classEdgeIterator},... . These are declared as friends of \doxyref{Graph}{p.}{classGraph} here and thus have direct access to the private data structures. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{classGraph_acde9c764fc9764a356801ff56b88d572}} 
+\index{Graph@{Graph}!Graph@{Graph}}
+\index{Graph@{Graph}!Graph@{Graph}}
+\subsubsection{Graph()}
+{\footnotesize\ttfamily Graph\+::\+Graph (\begin{DoxyParamCaption}\item[{\textbf{ Cvr\+Stg\+File} $\ast$}]{cvr,  }\item[{const \textbf{ Bit\+String} \&}]{emb,  }\item[{\textbf{ Selector} \&}]{sel }\end{DoxyParamCaption})}
+
+construct a graph 
+\begin{DoxyParams}{Parameters}
+{\em cvr} & the underlying cover file \\
+\hline
+{\em emb} & the bitstring to be embedded (with correct arity already set) \\
+\hline
+\end{DoxyParams}
+\mbox{\label{classGraph_a07d045a86c6ce7cba6edbc95f6d83ded}} 
+\index{Graph@{Graph}!````~Graph@{$\sim$\+Graph}}
+\index{````~Graph@{$\sim$\+Graph}!Graph@{Graph}}
+\subsubsection{$\sim$\+Graph()}
+{\footnotesize\ttfamily Graph\+::$\sim$\+Graph (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+destructor 
+
+\subsection{Member Function Documentation}
+\mbox{\label{classGraph_a56bd2be6c3a1cb16dfda970a50f6dfe9}} 
+\index{Graph@{Graph}!check@{check}}
+\index{check@{check}!Graph@{Graph}}
+\subsubsection{check()}
+{\footnotesize\ttfamily bool Graph\+::check (\begin{DoxyParamCaption}\item[{bool}]{verbose = {\ttfamily false} }\end{DoxyParamCaption}) const}
+
+check the integrity of all data structures, only used for debugging and testing \mbox{\label{classGraph_a3754926324ba715af6577031b96a51ac}} 
+\index{Graph@{Graph}!check\+\_\+\+Sample\+Occurences@{check\+\_\+\+Sample\+Occurences}}
+\index{check\+\_\+\+Sample\+Occurences@{check\+\_\+\+Sample\+Occurences}!Graph@{Graph}}
+\subsubsection{check\+\_\+\+Sample\+Occurences()}
+{\footnotesize\ttfamily bool Graph\+::check\+\_\+\+Sample\+Occurences (\begin{DoxyParamCaption}\item[{bool}]{verbose = {\ttfamily false} }\end{DoxyParamCaption}) const}
+
+check the integrity of the Sample\+Occurences data structure, it is assumed that Deleted\+Sample\+Occurences is empty, only used for debugging and testing \mbox{\label{classGraph_a980de90153470cafa0d0877e23dc8153}} 
+\index{Graph@{Graph}!check\+\_\+\+Sample\+Occurences\+\_\+completeness@{check\+\_\+\+Sample\+Occurences\+\_\+completeness}}
+\index{check\+\_\+\+Sample\+Occurences\+\_\+completeness@{check\+\_\+\+Sample\+Occurences\+\_\+completeness}!Graph@{Graph}}
+\subsubsection{check\+\_\+\+Sample\+Occurences\+\_\+completeness()}
+{\footnotesize\ttfamily bool Graph\+::check\+\_\+\+Sample\+Occurences\+\_\+completeness (\begin{DoxyParamCaption}\item[{bool}]{verbose = {\ttfamily false} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classGraph_a5d9c921f02c2da236a662187073f924e}} 
+\index{Graph@{Graph}!check\+\_\+\+Sample\+Occurences\+\_\+correctness@{check\+\_\+\+Sample\+Occurences\+\_\+correctness}}
+\index{check\+\_\+\+Sample\+Occurences\+\_\+correctness@{check\+\_\+\+Sample\+Occurences\+\_\+correctness}!Graph@{Graph}}
+\subsubsection{check\+\_\+\+Sample\+Occurences\+\_\+correctness()}
+{\footnotesize\ttfamily bool Graph\+::check\+\_\+\+Sample\+Occurences\+\_\+correctness (\begin{DoxyParamCaption}\item[{bool}]{verbose = {\ttfamily false} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classGraph_a719683aa103afa63a0d2e0881eefd30f}} 
+\index{Graph@{Graph}!check\+\_\+\+Sample\+Occurences\+\_\+size@{check\+\_\+\+Sample\+Occurences\+\_\+size}}
+\index{check\+\_\+\+Sample\+Occurences\+\_\+size@{check\+\_\+\+Sample\+Occurences\+\_\+size}!Graph@{Graph}}
+\subsubsection{check\+\_\+\+Sample\+Occurences\+\_\+size()}
+{\footnotesize\ttfamily bool Graph\+::check\+\_\+\+Sample\+Occurences\+\_\+size (\begin{DoxyParamCaption}\item[{bool}]{verbose = {\ttfamily false} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classGraph_a8c8d23c8394adcb3aed99297e541729c}} 
+\index{Graph@{Graph}!check\+\_\+\+Sample\+Values@{check\+\_\+\+Sample\+Values}}
+\index{check\+\_\+\+Sample\+Values@{check\+\_\+\+Sample\+Values}!Graph@{Graph}}
+\subsubsection{check\+\_\+\+Sample\+Values()}
+{\footnotesize\ttfamily bool Graph\+::check\+\_\+\+Sample\+Values (\begin{DoxyParamCaption}\item[{bool}]{verbose = {\ttfamily false} }\end{DoxyParamCaption}) const}
+
+check the integrity of the Sample\+Values data structure, only used for debugging and testing \mbox{\label{classGraph_a27c23206b9fb56b3fb8cbedd83d58348}} 
+\index{Graph@{Graph}!check\+\_\+\+S\+V\+A\+Lists@{check\+\_\+\+S\+V\+A\+Lists}}
+\index{check\+\_\+\+S\+V\+A\+Lists@{check\+\_\+\+S\+V\+A\+Lists}!Graph@{Graph}}
+\subsubsection{check\+\_\+\+S\+V\+A\+Lists()}
+{\footnotesize\ttfamily bool Graph\+::check\+\_\+\+S\+V\+A\+Lists (\begin{DoxyParamCaption}\item[{bool}]{verbose = {\ttfamily false} }\end{DoxyParamCaption}) const}
+
+check the integrity of the S\+V\+A\+Lists data structure, only used for debugging and testing \mbox{\label{classGraph_a0d1722b14d792965dc652eecbb276324}} 
+\index{Graph@{Graph}!check\+\_\+\+S\+V\+A\+Lists\+\_\+completeness@{check\+\_\+\+S\+V\+A\+Lists\+\_\+completeness}}
+\index{check\+\_\+\+S\+V\+A\+Lists\+\_\+completeness@{check\+\_\+\+S\+V\+A\+Lists\+\_\+completeness}!Graph@{Graph}}
+\subsubsection{check\+\_\+\+S\+V\+A\+Lists\+\_\+completeness()}
+{\footnotesize\ttfamily bool Graph\+::check\+\_\+\+S\+V\+A\+Lists\+\_\+completeness (\begin{DoxyParamCaption}\item[{bool}]{verbose = {\ttfamily false} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classGraph_aad39a73fba4b61bf6c1089c5edafa6bc}} 
+\index{Graph@{Graph}!check\+\_\+\+S\+V\+A\+Lists\+\_\+size@{check\+\_\+\+S\+V\+A\+Lists\+\_\+size}}
+\index{check\+\_\+\+S\+V\+A\+Lists\+\_\+size@{check\+\_\+\+S\+V\+A\+Lists\+\_\+size}!Graph@{Graph}}
+\subsubsection{check\+\_\+\+S\+V\+A\+Lists\+\_\+size()}
+{\footnotesize\ttfamily bool Graph\+::check\+\_\+\+S\+V\+A\+Lists\+\_\+size (\begin{DoxyParamCaption}\item[{bool}]{verbose = {\ttfamily false} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classGraph_af6e8d429b8daeb5c106dc24f72e98878}} 
+\index{Graph@{Graph}!check\+\_\+\+S\+V\+A\+Lists\+\_\+sorted@{check\+\_\+\+S\+V\+A\+Lists\+\_\+sorted}}
+\index{check\+\_\+\+S\+V\+A\+Lists\+\_\+sorted@{check\+\_\+\+S\+V\+A\+Lists\+\_\+sorted}!Graph@{Graph}}
+\subsubsection{check\+\_\+\+S\+V\+A\+Lists\+\_\+sorted()}
+{\footnotesize\ttfamily bool Graph\+::check\+\_\+\+S\+V\+A\+Lists\+\_\+sorted (\begin{DoxyParamCaption}\item[{bool}]{verbose = {\ttfamily false} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classGraph_a30f1c51592b8057efa34b2102ca6dc88}} 
+\index{Graph@{Graph}!check\+\_\+\+S\+V\+A\+Lists\+\_\+soundness@{check\+\_\+\+S\+V\+A\+Lists\+\_\+soundness}}
+\index{check\+\_\+\+S\+V\+A\+Lists\+\_\+soundness@{check\+\_\+\+S\+V\+A\+Lists\+\_\+soundness}!Graph@{Graph}}
+\subsubsection{check\+\_\+\+S\+V\+A\+Lists\+\_\+soundness()}
+{\footnotesize\ttfamily bool Graph\+::check\+\_\+\+S\+V\+A\+Lists\+\_\+soundness (\begin{DoxyParamCaption}\item[{bool}]{verbose = {\ttfamily false} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classGraph_a4a78678d53081babe689919cac7da546}} 
+\index{Graph@{Graph}!check\+\_\+\+S\+V\+A\+Lists\+\_\+uniqueness@{check\+\_\+\+S\+V\+A\+Lists\+\_\+uniqueness}}
+\index{check\+\_\+\+S\+V\+A\+Lists\+\_\+uniqueness@{check\+\_\+\+S\+V\+A\+Lists\+\_\+uniqueness}!Graph@{Graph}}
+\subsubsection{check\+\_\+\+S\+V\+A\+Lists\+\_\+uniqueness()}
+{\footnotesize\ttfamily bool Graph\+::check\+\_\+\+S\+V\+A\+Lists\+\_\+uniqueness (\begin{DoxyParamCaption}\item[{bool}]{verbose = {\ttfamily false} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classGraph_a3d1c65335d4bed4e92bb9f2d293d5421}} 
+\index{Graph@{Graph}!check\+\_\+\+Vertices@{check\+\_\+\+Vertices}}
+\index{check\+\_\+\+Vertices@{check\+\_\+\+Vertices}!Graph@{Graph}}
+\subsubsection{check\+\_\+\+Vertices()}
+{\footnotesize\ttfamily bool Graph\+::check\+\_\+\+Vertices (\begin{DoxyParamCaption}\item[{bool}]{verbose = {\ttfamily false} }\end{DoxyParamCaption}) const}
+
+check the integrity of the Vertices data structure, only used for debugging and testing \mbox{\label{classGraph_ab04e0fe7dc4716ca52336c7ff0d2cd93}} 
+\index{Graph@{Graph}!construct\+Edges@{construct\+Edges}}
+\index{construct\+Edges@{construct\+Edges}!Graph@{Graph}}
+\subsubsection{construct\+Edges()}
+{\footnotesize\ttfamily void Graph\+::construct\+Edges (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+construct edge-\/related data structures
+
+needs\+: Sample\+Values, Vertices (except Sample\+Occurence\+Its) provides\+: S\+V\+A\+Lists, Sample\+Occurences, Vertices (Sample\+Occurence\+Its) \mbox{\label{classGraph_a45073ed125c39bc0d293ab3bdc788d70}} 
+\index{Graph@{Graph}!construct\+Samples@{construct\+Samples}}
+\index{construct\+Samples@{construct\+Samples}!Graph@{Graph}}
+\subsubsection{construct\+Samples()}
+{\footnotesize\ttfamily void Graph\+::construct\+Samples (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \textbf{ Sample\+Pos} $\ast$$>$ \&}]{sposs,  }\item[{std\+::vector$<$ \textbf{ Sample\+Value} $\ast$$\ast$$>$ \&}]{svalues }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+construct sample-\/related data structures
+
+needs\+: sposs(unsorted) provides\+: svalues(unsorted,unique), Sample\+Values \mbox{\label{classGraph_a20117c610dcad0f9c0d3a076ac958286}} 
+\index{Graph@{Graph}!construct\+Vertices@{construct\+Vertices}}
+\index{construct\+Vertices@{construct\+Vertices}!Graph@{Graph}}
+\subsubsection{construct\+Vertices()}
+{\footnotesize\ttfamily void Graph\+::construct\+Vertices (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \textbf{ Sample\+Pos} $\ast$$>$ \&}]{sposs,  }\item[{std\+::vector$<$ \textbf{ Sample\+Value} $\ast$$\ast$$>$ \&}]{svalues,  }\item[{const std\+::vector$<$ \textbf{ Emb\+Value} $>$ \&}]{tvalues }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+construct vertex-\/related data structures
+
+needs\+: sposs(unsorted), svalues(unsorted,unique), tvalues provides\+: sposs(sorted), Vertices (except Sample\+Occurence\+Its) \mbox{\label{classGraph_a66ffa943a2b3f0ae20884b711502e1ed}} 
+\index{Graph@{Graph}!get\+Avg\+Vertex\+Degree@{get\+Avg\+Vertex\+Degree}}
+\index{get\+Avg\+Vertex\+Degree@{get\+Avg\+Vertex\+Degree}!Graph@{Graph}}
+\subsubsection{get\+Avg\+Vertex\+Degree()}
+{\footnotesize\ttfamily float Graph\+::get\+Avg\+Vertex\+Degree (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+calculate and return the average vertex degree \mbox{\label{classGraph_a2b2e62a0b5f3d561312bc251f331bd3a}} 
+\index{Graph@{Graph}!get\+Num\+Vertices@{get\+Num\+Vertices}}
+\index{get\+Num\+Vertices@{get\+Num\+Vertices}!Graph@{Graph}}
+\subsubsection{get\+Num\+Vertices()}
+{\footnotesize\ttfamily unsigned long Graph\+::get\+Num\+Vertices (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+get the number of vertices in this graph \mbox{\label{classGraph_a5b52602ae910603f3f5ef3e7e7376fcf}} 
+\index{Graph@{Graph}!get\+Vertex@{get\+Vertex}}
+\index{get\+Vertex@{get\+Vertex}!Graph@{Graph}}
+\subsubsection{get\+Vertex()}
+{\footnotesize\ttfamily \textbf{ Vertex}$\ast$ Graph\+::get\+Vertex (\begin{DoxyParamCaption}\item[{\textbf{ Vertex\+Label}}]{l }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+get a vertex 
+\begin{DoxyParams}{Parameters}
+{\em l} & the vertex label (index) of the vertex to be returned (must be $<$ \doxyref{get\+Num\+Vertices()}{p.}{classGraph_a2b2e62a0b5f3d561312bc251f331bd3a}) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the vertex with label l 
+\end{DoxyReturn}
+\mbox{\label{classGraph_aef07fd520c1cbaab561f00155054c7d6}} 
+\index{Graph@{Graph}!mark\+Deleted\+Sample\+Occurence@{mark\+Deleted\+Sample\+Occurence}}
+\index{mark\+Deleted\+Sample\+Occurence@{mark\+Deleted\+Sample\+Occurence}!Graph@{Graph}}
+\subsubsection{mark\+Deleted\+Sample\+Occurence()}
+{\footnotesize\ttfamily std\+::list$<$ \textbf{ Sample\+Occurence} $>$\+::iterator Graph\+::mark\+Deleted\+Sample\+Occurence (\begin{DoxyParamCaption}\item[{std\+::list$<$ \textbf{ Sample\+Occurence} $>$\+::iterator}]{it }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classGraph_a08f680ed32a20a402edce8e94c452154}} 
+\index{Graph@{Graph}!print\+Verbose\+Info@{print\+Verbose\+Info}}
+\index{print\+Verbose\+Info@{print\+Verbose\+Info}!Graph@{Graph}}
+\subsubsection{print\+Verbose\+Info()}
+{\footnotesize\ttfamily void Graph\+::print\+Verbose\+Info (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\label{classGraph_ad01f801d32519d6ba4f9597bc4689f5e}} 
+\index{Graph@{Graph}!unmark\+Deleted\+All\+Vertices@{unmark\+Deleted\+All\+Vertices}}
+\index{unmark\+Deleted\+All\+Vertices@{unmark\+Deleted\+All\+Vertices}!Graph@{Graph}}
+\subsubsection{unmark\+Deleted\+All\+Vertices()}
+{\footnotesize\ttfamily void Graph\+::unmark\+Deleted\+All\+Vertices (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\label{classGraph_a3a4c3f9a3bf426d7422c109f25c65b38}} 
+\index{Graph@{Graph}!unmark\+Deleted\+Sample\+Occurence@{unmark\+Deleted\+Sample\+Occurence}}
+\index{unmark\+Deleted\+Sample\+Occurence@{unmark\+Deleted\+Sample\+Occurence}!Graph@{Graph}}
+\subsubsection{unmark\+Deleted\+Sample\+Occurence()}
+{\footnotesize\ttfamily std\+::list$<$ \textbf{ Sample\+Occurence} $>$\+::iterator Graph\+::unmark\+Deleted\+Sample\+Occurence (\begin{DoxyParamCaption}\item[{std\+::list$<$ \textbf{ Sample\+Occurence} $>$\+::iterator}]{it }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\label{classGraph_a265a85b438f4a316627f37c1c2d442e8}} 
+\index{Graph@{Graph}!Edge\+Iterator@{Edge\+Iterator}}
+\index{Edge\+Iterator@{Edge\+Iterator}!Graph@{Graph}}
+\subsubsection{Edge\+Iterator}
+{\footnotesize\ttfamily friend class \textbf{ Edge\+Iterator}\hspace{0.3cm}{\ttfamily [friend]}}
+
+\mbox{\label{classGraph_a97822b5234021e42a8717079ee25ec34}} 
+\index{Graph@{Graph}!Sample\+Value\+Adjacency\+List@{Sample\+Value\+Adjacency\+List}}
+\index{Sample\+Value\+Adjacency\+List@{Sample\+Value\+Adjacency\+List}!Graph@{Graph}}
+\subsubsection{Sample\+Value\+Adjacency\+List}
+{\footnotesize\ttfamily friend class \textbf{ Sample\+Value\+Adjacency\+List}\hspace{0.3cm}{\ttfamily [friend]}}
+
+\mbox{\label{classGraph_a1251d18f08324022e8e73506c3768f3c}} 
+\index{Graph@{Graph}!Vertex@{Vertex}}
+\index{Vertex@{Vertex}!Graph@{Graph}}
+\subsubsection{Vertex}
+{\footnotesize\ttfamily friend class \textbf{ Vertex}\hspace{0.3cm}{\ttfamily [friend]}}
+
+\mbox{\label{classGraph_ac7f07013964280d20b3bc4f81a15c43e}} 
+\index{Graph@{Graph}!W\+K\+S\+Construction\+Heuristic@{W\+K\+S\+Construction\+Heuristic}}
+\index{W\+K\+S\+Construction\+Heuristic@{W\+K\+S\+Construction\+Heuristic}!Graph@{Graph}}
+\subsubsection{W\+K\+S\+Construction\+Heuristic}
+{\footnotesize\ttfamily friend class \textbf{ W\+K\+S\+Construction\+Heuristic}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{classGraph_acb89b8552b4a6edc9709dad25fadd1dd}} 
+\index{Graph@{Graph}!Deleted\+Sample\+Occurences@{Deleted\+Sample\+Occurences}}
+\index{Deleted\+Sample\+Occurences@{Deleted\+Sample\+Occurences}!Graph@{Graph}}
+\subsubsection{Deleted\+Sample\+Occurences}
+{\footnotesize\ttfamily std\+::vector$<$std\+::list$<$\textbf{ Sample\+Occurence}$>$ $>$ Graph\+::\+Deleted\+Sample\+Occurences\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classGraph_a18d4cc9398fe5efa3fa0f9732a27bcc1}} 
+\index{Graph@{Graph}!Emb\+Value\+Modulus@{Emb\+Value\+Modulus}}
+\index{Emb\+Value\+Modulus@{Emb\+Value\+Modulus}!Graph@{Graph}}
+\subsubsection{Emb\+Value\+Modulus}
+{\footnotesize\ttfamily \textbf{ Emb\+Value} Graph\+::\+Emb\+Value\+Modulus\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classGraph_a1429397414c4c280f1e71f91663bfe2a}} 
+\index{Graph@{Graph}!File@{File}}
+\index{File@{File}!Graph@{Graph}}
+\subsubsection{File}
+{\footnotesize\ttfamily \textbf{ Cvr\+Stg\+File}$\ast$ Graph\+::\+File\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classGraph_ac65253ad3d9999e5629f6f74f7ed1e0c}} 
+\index{Graph@{Graph}!Num\+Deleted\+Sample\+Occurences@{Num\+Deleted\+Sample\+Occurences}}
+\index{Num\+Deleted\+Sample\+Occurences@{Num\+Deleted\+Sample\+Occurences}!Graph@{Graph}}
+\subsubsection{Num\+Deleted\+Sample\+Occurences}
+{\footnotesize\ttfamily std\+::vector$<$\textbf{ U\+W\+O\+R\+D32}$\ast$$>$ Graph\+::\+Num\+Deleted\+Sample\+Occurences\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classGraph_ae94ea1b193edc0b6e6f8df03f65f5710}} 
+\index{Graph@{Graph}!Num\+Sample\+Occurences@{Num\+Sample\+Occurences}}
+\index{Num\+Sample\+Occurences@{Num\+Sample\+Occurences}!Graph@{Graph}}
+\subsubsection{Num\+Sample\+Occurences}
+{\footnotesize\ttfamily std\+::vector$<$\textbf{ U\+W\+O\+R\+D32}$\ast$$>$ Graph\+::\+Num\+Sample\+Occurences\hspace{0.3cm}{\ttfamily [private]}}
+
+Num\+Sample\+Occurences[l][t] contains the number vertices that contain the sample value with label l and associated target t \mbox{\label{classGraph_ada9e617cbd2ab093eb3f03a562ce4fd8}} 
+\index{Graph@{Graph}!Sample\+Occurences@{Sample\+Occurences}}
+\index{Sample\+Occurences@{Sample\+Occurences}!Graph@{Graph}}
+\subsubsection{Sample\+Occurences}
+{\footnotesize\ttfamily std\+::vector$<$std\+::list$<$\textbf{ Sample\+Occurence}$>$ $>$ Graph\+::\+Sample\+Occurences\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classGraph_aa189a14593b706d25ffa241a977399da}} 
+\index{Graph@{Graph}!Samples\+Per\+Vertex@{Samples\+Per\+Vertex}}
+\index{Samples\+Per\+Vertex@{Samples\+Per\+Vertex}!Graph@{Graph}}
+\subsubsection{Samples\+Per\+Vertex}
+{\footnotesize\ttfamily unsigned short Graph\+::\+Samples\+Per\+Vertex\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classGraph_a87095f9478fe9b15fa99030f9c4c3cef}} 
+\index{Graph@{Graph}!Sample\+Values@{Sample\+Values}}
+\index{Sample\+Values@{Sample\+Values}!Graph@{Graph}}
+\subsubsection{Sample\+Values}
+{\footnotesize\ttfamily std\+::vector$<$\textbf{ Sample\+Value}$\ast$$>$ Graph\+::\+Sample\+Values\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classGraph_a98373bf1218bc2f908d0c647710d1792}} 
+\index{Graph@{Graph}!S\+V\+A\+Lists@{S\+V\+A\+Lists}}
+\index{S\+V\+A\+Lists@{S\+V\+A\+Lists}!Graph@{Graph}}
+\subsubsection{S\+V\+A\+Lists}
+{\footnotesize\ttfamily std\+::vector$<$\textbf{ Sample\+Value\+Adjacency\+List}$\ast$$>$ Graph\+::\+S\+V\+A\+Lists\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classGraph_a35f528433d7a27965f90dc9281a48855}} 
+\index{Graph@{Graph}!Vertices@{Vertices}}
+\index{Vertices@{Vertices}!Graph@{Graph}}
+\subsubsection{Vertices}
+{\footnotesize\ttfamily std\+::vector$<$\textbf{ Vertex}$\ast$$>$ Graph\+::\+Vertices\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ Graph.\+h}\item 
+\textbf{ Graph.\+cc}\end{DoxyCompactItemize}

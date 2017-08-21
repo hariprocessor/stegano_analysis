@@ -1,0 +1,66 @@
+.TH "AUtils" 3 "Thu Aug 17 2017" "Version 0.5.1" "steghide" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+AUtils \- provides some generic functions for non-standard arithmetic operations  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <AUtils\&.h>\fP
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "template<class T > static T \fBmax\fP (T a, T b)"
+.br
+.ti -1c
+.RI "template<class T > static T \fBmin\fP (T a, T b)"
+.br
+.ti -1c
+.RI "template<class T > static T \fBdiv_roundup\fP (T a, T b)"
+.br
+.ti -1c
+.RI "template<class T > static T \fBbminus\fP (T a, T b)"
+.br
+.ti -1c
+.RI "template<class T , T top> static T \fBbplus\fP (T a, T b)"
+.br
+.ti -1c
+.RI "template<class T > static T \fBbplus\fP (T a, T b, T top)"
+.br
+.ti -1c
+.RI "template<class T , class CTYPE > static T \fBmodsum\fP (T *s, CTYPE n, T m)"
+.br
+.ti -1c
+.RI "template<class IT , class FT > static IT \fBroundup\fP (FT x)"
+.br
+.ti -1c
+.RI "template<class T > static T \fBlog2_ceil\fP (T n)"
+.br
+.in -1c
+.SH "Member Function Documentation"
+.PP 
+.SS "template<class T > T AUtils::bminus (T a, T b)\fC [static]\fP"
+substraction with the modification to return 0 (T()) for negative difference (needs >, -, T()) 
+.SS "template<class T , T top> T AUtils::bplus (T a, T b)\fC [static]\fP"
+addition with the modification to return top for sums that are larger than top 
+.SS "template<class T > T AUtils::bplus (T a, T b, T top)\fC [static]\fP"
+
+.SS "template<class T > T AUtils::div_roundup (T a, T b)\fC [static]\fP"
+returns a divided through b rounded up to nearest 'integer' (needs =, --, +, /) 
+.SS "template<class T > T AUtils::log2_ceil (T n)\fC [static]\fP"
+compute 2-logarithm of n (rounded up to nearest int), i\&.e\&. number of bits needed to store values from {0,\&.\&.\&.,n-1} 
+.SS "template<class T > T AUtils::max (T a, T b)\fC [static]\fP"
+return the maximum of a and b (needs >) 
+.SS "template<class T > T AUtils::min (T a, T b)\fC [static]\fP"
+return the minimum of a and b (needs <) 
+.SS "template<class T , class CTYPE > T AUtils::modsum (T * s, CTYPE n, T m)\fC [static]\fP"
+calculate the sum s[0]+\&.\&.\&.s[n-1] modulo m (needs =, +, % for T and =, CTYPE(), <, ++ for CTYPE) 
+.SS "template<class IT , class FT > IT AUtils::roundup (FT x)\fC [static]\fP"
+round up x to nearest integer 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for steghide from the source code\&.

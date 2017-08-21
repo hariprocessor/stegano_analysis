@@ -1,0 +1,343 @@
+\section{Matching Class Reference}
+\label{classMatching}\index{Matching@{Matching}}
+
+
+represent a matching on a graph  
+
+
+
+
+{\ttfamily \#include $<$Matching.\+h$>$}
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \textbf{ Vertex\+Info}
+\begin{DoxyCompactList}\small\item\em contains information about a vertex that is possibly in a matching \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Matching} (\textbf{ Graph} $\ast$g, \textbf{ Progress\+Output} $\ast$po=N\+U\+LL)
+\item 
+\textbf{ $\sim$\+Matching} (void)
+\item 
+bool \textbf{ is\+Matched} (\textbf{ Vertex} $\ast$v) const
+\item 
+bool \textbf{ is\+Matched} (\textbf{ Vertex\+Label} vlbl) const
+\item 
+bool \textbf{ is\+Exposed} (\textbf{ Vertex} $\ast$v) const
+\item 
+bool \textbf{ is\+Exposed} (\textbf{ Vertex\+Label} vlbl) const
+\item 
+const \textbf{ Edge} $\ast$ \textbf{ get\+Matching\+Edge} (\textbf{ Vertex} $\ast$v) const
+\item 
+bool \textbf{ includes\+Edge} (const \textbf{ Edge} $\ast$e) const
+\item 
+bool \textbf{ includes\+Edge} (const \textbf{ Edge} \&e) const
+\item 
+unsigned long \textbf{ get\+Cardinality} (void) const
+\item 
+const std\+::list$<$ \textbf{ Vertex} $\ast$ $>$ \& \textbf{ get\+Exposed\+Vertices} (void) const
+\item 
+float \textbf{ get\+Matched\+Rate} (void) const
+\item 
+float \textbf{ get\+Avg\+Edge\+Weight} (void) const
+\item 
+const std\+::list$<$ \textbf{ Vertex} $\ast$ $>$ $\ast$ \textbf{ get\+Exposed\+Vertices\+Link} (void) const
+\item 
+void \textbf{ add\+Edge} (const \textbf{ Edge} \&e)
+\item 
+void \textbf{ add\+Edge} (\textbf{ Edge} $\ast$e)
+\item 
+void \textbf{ remove\+Edge} (const \textbf{ Edge} \&e)
+\item 
+const std\+::list$<$ \textbf{ Edge} $\ast$ $>$ \& \textbf{ get\+Edges} (void) const
+\item 
+\textbf{ Matching} \& \textbf{ augment} (const \textbf{ Edge} $\ast$$\ast$path, unsigned long len)
+\item 
+\textbf{ Matching} \& \textbf{ augment} (const std\+::vector$<$ \textbf{ Edge} $\ast$$>$ \&path)
+\item 
+void \textbf{ print\+Verbose\+Info} (void) const
+\item 
+bool \textbf{ check} (void) const
+\item 
+bool \textbf{ check\+\_\+\+Matching\+Edges\+\_\+vs\+\_\+\+Vertex\+Information} (void) const
+\item 
+bool \textbf{ check\+\_\+\+Exposed\+Vertices\+\_\+vs\+\_\+\+Vertex\+Information} (void) const
+\item 
+bool \textbf{ check\+\_\+\+Vertex\+Information\+\_\+\+Integrity} (void) const
+\item 
+bool \textbf{ check\+\_\+\+Valid\+Aug\+Path} (const std\+::vector$<$ \textbf{ Edge} $\ast$$>$ \&path) const
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ set\+Cardinality} (unsigned long c)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \textbf{ Vertex\+Info} $>$ \textbf{ Vertex\+Information}
+\begin{DoxyCompactList}\small\item\em contains a \doxyref{Vertex\+Info}{p.}{classMatching_1_1VertexInfo} object for every vertex \end{DoxyCompactList}\item 
+std\+::list$<$ \textbf{ Vertex} $\ast$ $>$ \textbf{ Exposed\+Vertices}
+\begin{DoxyCompactList}\small\item\em the std\+::list of all exposed vertices \end{DoxyCompactList}\item 
+std\+::list$<$ \textbf{ Edge} $\ast$ $>$ \textbf{ Matching\+Edges}
+\begin{DoxyCompactList}\small\item\em the std\+::list of all edges in the matching \end{DoxyCompactList}\item 
+unsigned long \textbf{ Cardinality}
+\begin{DoxyCompactList}\small\item\em the number of edges in the matching \end{DoxyCompactList}\item 
+\textbf{ Graph} $\ast$ \textbf{ The\+Graph}
+\begin{DoxyCompactList}\small\item\em the graph underlying this \doxyref{Matching}{p.}{classMatching} \end{DoxyCompactList}\item 
+\textbf{ Progress\+Output} $\ast$ \textbf{ Pr\+Out}
+\begin{DoxyCompactList}\small\item\em the \doxyref{Progress\+Output}{p.}{classProgressOutput} object that will print the number of matched vertices (as percentage) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A \doxyref{Matching}{p.}{classMatching} object will copy all Edges that are passed to it and will take care of them, i.\+e. delete them if they are no longer used. Edges do only \char`\"{}leave\char`\"{} a \doxyref{Matching}{p.}{classMatching} object as const pointers. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{classMatching_aed84a04e309df94f8eb9005ffe957bbd}} 
+\index{Matching@{Matching}!Matching@{Matching}}
+\index{Matching@{Matching}!Matching@{Matching}}
+\subsubsection{Matching()}
+{\footnotesize\ttfamily Matching\+::\+Matching (\begin{DoxyParamCaption}\item[{\textbf{ Graph} $\ast$}]{g,  }\item[{\textbf{ Progress\+Output} $\ast$}]{po = {\ttfamily NULL} }\end{DoxyParamCaption})}
+
+create an empty matching that is ready for adding and augmenting 
+\begin{DoxyParams}{Parameters}
+{\em g} & the underlying graph \\
+\hline
+{\em po} & a \doxyref{Progress\+Output}{p.}{classProgressOutput} object that will print the number of matched vertices (in percent) \\
+\hline
+\end{DoxyParams}
+\mbox{\label{classMatching_ad2d812a2bf359a0aba56c4b010d593ca}} 
+\index{Matching@{Matching}!````~Matching@{$\sim$\+Matching}}
+\index{````~Matching@{$\sim$\+Matching}!Matching@{Matching}}
+\subsubsection{$\sim$\+Matching()}
+{\footnotesize\ttfamily Matching\+::$\sim$\+Matching (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{classMatching_a6c838465213fedaf6fc3604498bc4872}} 
+\index{Matching@{Matching}!add\+Edge@{add\+Edge}}
+\index{add\+Edge@{add\+Edge}!Matching@{Matching}}
+\subsubsection{add\+Edge()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Matching\+::add\+Edge (\begin{DoxyParamCaption}\item[{const \textbf{ Edge} \&}]{e }\end{DoxyParamCaption})}
+
+add an edge to the matching 
+\begin{DoxyParams}{Parameters}
+{\em e} & the edge to add.\\
+\hline
+\end{DoxyParams}
+For e=(v1,v2)\+: neither v1 nor v2 are allowed to be adjacent to an edge that is already in the matching, \mbox{\label{classMatching_a96c361574c82870fb2def9ee837a661b}} 
+\index{Matching@{Matching}!add\+Edge@{add\+Edge}}
+\index{add\+Edge@{add\+Edge}!Matching@{Matching}}
+\subsubsection{add\+Edge()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Matching\+::add\+Edge (\begin{DoxyParamCaption}\item[{\textbf{ Edge} $\ast$}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classMatching_a129ad66579ab15131149c450f0d228bb}} 
+\index{Matching@{Matching}!augment@{augment}}
+\index{augment@{augment}!Matching@{Matching}}
+\subsubsection{augment()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \textbf{ Matching} \& Matching\+::augment (\begin{DoxyParamCaption}\item[{const \textbf{ Edge} $\ast$$\ast$}]{path,  }\item[{unsigned long}]{len }\end{DoxyParamCaption})}
+
+augment this matching along the given augmenting path 
+\begin{DoxyParams}{Parameters}
+{\em path} & an augmenting path \\
+\hline
+{\em len} & the length (number of edges) of the augmenting path\\
+\hline
+\end{DoxyParams}
+An augementing path is a path where edges with odd indices (the first, third,...) are not in the matching and edges with even indices are and the path has an odd length. \mbox{\label{classMatching_af3007a9e1a3a012cab3d8f375e6c0b2f}} 
+\index{Matching@{Matching}!augment@{augment}}
+\index{augment@{augment}!Matching@{Matching}}
+\subsubsection{augment()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \textbf{ Matching} \& Matching\+::augment (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \textbf{ Edge} $\ast$$>$ \&}]{path }\end{DoxyParamCaption})}
+
+\mbox{\label{classMatching_a228050946f86494d0a55fcc87d62ea8d}} 
+\index{Matching@{Matching}!check@{check}}
+\index{check@{check}!Matching@{Matching}}
+\subsubsection{check()}
+{\footnotesize\ttfamily bool Matching\+::check (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+\mbox{\label{classMatching_ad08e51d28eb8474e645149ba30378e35}} 
+\index{Matching@{Matching}!check\+\_\+\+Exposed\+Vertices\+\_\+vs\+\_\+\+Vertex\+Information@{check\+\_\+\+Exposed\+Vertices\+\_\+vs\+\_\+\+Vertex\+Information}}
+\index{check\+\_\+\+Exposed\+Vertices\+\_\+vs\+\_\+\+Vertex\+Information@{check\+\_\+\+Exposed\+Vertices\+\_\+vs\+\_\+\+Vertex\+Information}!Matching@{Matching}}
+\subsubsection{check\+\_\+\+Exposed\+Vertices\+\_\+vs\+\_\+\+Vertex\+Information()}
+{\footnotesize\ttfamily bool Matching\+::check\+\_\+\+Exposed\+Vertices\+\_\+vs\+\_\+\+Vertex\+Information (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+\mbox{\label{classMatching_a238b7d528375a06d7e53786143e72450}} 
+\index{Matching@{Matching}!check\+\_\+\+Matching\+Edges\+\_\+vs\+\_\+\+Vertex\+Information@{check\+\_\+\+Matching\+Edges\+\_\+vs\+\_\+\+Vertex\+Information}}
+\index{check\+\_\+\+Matching\+Edges\+\_\+vs\+\_\+\+Vertex\+Information@{check\+\_\+\+Matching\+Edges\+\_\+vs\+\_\+\+Vertex\+Information}!Matching@{Matching}}
+\subsubsection{check\+\_\+\+Matching\+Edges\+\_\+vs\+\_\+\+Vertex\+Information()}
+{\footnotesize\ttfamily bool Matching\+::check\+\_\+\+Matching\+Edges\+\_\+vs\+\_\+\+Vertex\+Information (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+\mbox{\label{classMatching_ace51856a8d01c60c3b0638118bfacba6}} 
+\index{Matching@{Matching}!check\+\_\+\+Valid\+Aug\+Path@{check\+\_\+\+Valid\+Aug\+Path}}
+\index{check\+\_\+\+Valid\+Aug\+Path@{check\+\_\+\+Valid\+Aug\+Path}!Matching@{Matching}}
+\subsubsection{check\+\_\+\+Valid\+Aug\+Path()}
+{\footnotesize\ttfamily bool Matching\+::check\+\_\+\+Valid\+Aug\+Path (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \textbf{ Edge} $\ast$$>$ \&}]{path }\end{DoxyParamCaption}) const}
+
+\mbox{\label{classMatching_aac70adfc95547020b988cc99ff4f50a5}} 
+\index{Matching@{Matching}!check\+\_\+\+Vertex\+Information\+\_\+\+Integrity@{check\+\_\+\+Vertex\+Information\+\_\+\+Integrity}}
+\index{check\+\_\+\+Vertex\+Information\+\_\+\+Integrity@{check\+\_\+\+Vertex\+Information\+\_\+\+Integrity}!Matching@{Matching}}
+\subsubsection{check\+\_\+\+Vertex\+Information\+\_\+\+Integrity()}
+{\footnotesize\ttfamily bool Matching\+::check\+\_\+\+Vertex\+Information\+\_\+\+Integrity (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+\mbox{\label{classMatching_aaae0ccd8440b174446959caeff5eb924}} 
+\index{Matching@{Matching}!get\+Avg\+Edge\+Weight@{get\+Avg\+Edge\+Weight}}
+\index{get\+Avg\+Edge\+Weight@{get\+Avg\+Edge\+Weight}!Matching@{Matching}}
+\subsubsection{get\+Avg\+Edge\+Weight()}
+{\footnotesize\ttfamily float Matching\+::get\+Avg\+Edge\+Weight (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+get the average weight of all edges that are in this matching \mbox{\label{classMatching_a0ef0a64e0f3e321b28c78617a65af749}} 
+\index{Matching@{Matching}!get\+Cardinality@{get\+Cardinality}}
+\index{get\+Cardinality@{get\+Cardinality}!Matching@{Matching}}
+\subsubsection{get\+Cardinality()}
+{\footnotesize\ttfamily unsigned long Matching\+::get\+Cardinality (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+get the cardinality (the number of matched edges) \mbox{\label{classMatching_af8e8287e2ef659ce956d832f31bd77be}} 
+\index{Matching@{Matching}!get\+Edges@{get\+Edges}}
+\index{get\+Edges@{get\+Edges}!Matching@{Matching}}
+\subsubsection{get\+Edges()}
+{\footnotesize\ttfamily const std\+::list$<$\textbf{ Edge}$\ast$$>$\& Matching\+::get\+Edges (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+get the list of all edges in this matching \mbox{\label{classMatching_a1148deb78c1929aa07ce128332e3ba0f}} 
+\index{Matching@{Matching}!get\+Exposed\+Vertices@{get\+Exposed\+Vertices}}
+\index{get\+Exposed\+Vertices@{get\+Exposed\+Vertices}!Matching@{Matching}}
+\subsubsection{get\+Exposed\+Vertices()}
+{\footnotesize\ttfamily const std\+::list$<$\textbf{ Vertex}$\ast$$>$\& Matching\+::get\+Exposed\+Vertices (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classMatching_a157a6f2ac29fa66e99218b6e7693c189}} 
+\index{Matching@{Matching}!get\+Exposed\+Vertices\+Link@{get\+Exposed\+Vertices\+Link}}
+\index{get\+Exposed\+Vertices\+Link@{get\+Exposed\+Vertices\+Link}!Matching@{Matching}}
+\subsubsection{get\+Exposed\+Vertices\+Link()}
+{\footnotesize\ttfamily const std\+::list$<$\textbf{ Vertex}$\ast$$>$$\ast$ Matching\+::get\+Exposed\+Vertices\+Link (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+get access to the std\+::list of exposed vertices \begin{DoxyReturn}{Returns}
+a pointer to the std\+::list of exposed vertices in this matching.
+\end{DoxyReturn}
+The std\+::list that is pointed to by return value contains the exposed vertices even after augment has been called (it is the Exposed\+Vertices member) an arbitrary number of times. \mbox{\label{classMatching_a1a4ef03ce17f0161c06f78a199b0f4f1}} 
+\index{Matching@{Matching}!get\+Matched\+Rate@{get\+Matched\+Rate}}
+\index{get\+Matched\+Rate@{get\+Matched\+Rate}!Matching@{Matching}}
+\subsubsection{get\+Matched\+Rate()}
+{\footnotesize\ttfamily float Matching\+::get\+Matched\+Rate (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+get the rate of vertices of the underlying graph that are currently matched in this matching \begin{DoxyReturn}{Returns}
+a value between 0 and 1 
+\end{DoxyReturn}
+\mbox{\label{classMatching_a994d4033a6ce0dc9b2d0ebfeb99abaad}} 
+\index{Matching@{Matching}!get\+Matching\+Edge@{get\+Matching\+Edge}}
+\index{get\+Matching\+Edge@{get\+Matching\+Edge}!Matching@{Matching}}
+\subsubsection{get\+Matching\+Edge()}
+{\footnotesize\ttfamily const \textbf{ Edge}$\ast$ Matching\+::get\+Matching\+Edge (\begin{DoxyParamCaption}\item[{\textbf{ Vertex} $\ast$}]{v }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+get the edge that is in the matching and adjacent to v \begin{DoxyReturn}{Returns}
+the matched edge or N\+U\+LL if v is exposed 
+\end{DoxyReturn}
+\mbox{\label{classMatching_a5ab2b2d30f2a677b11748fd488363bd7}} 
+\index{Matching@{Matching}!includes\+Edge@{includes\+Edge}}
+\index{includes\+Edge@{includes\+Edge}!Matching@{Matching}}
+\subsubsection{includes\+Edge()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Matching\+::includes\+Edge (\begin{DoxyParamCaption}\item[{const \textbf{ Edge} $\ast$}]{e }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+does this matching include the edge e ? \begin{DoxyReturn}{Returns}
+true iff the edge e is element of this matching 
+\end{DoxyReturn}
+\mbox{\label{classMatching_a65016580feb104843b1c299481e3bb15}} 
+\index{Matching@{Matching}!includes\+Edge@{includes\+Edge}}
+\index{includes\+Edge@{includes\+Edge}!Matching@{Matching}}
+\subsubsection{includes\+Edge()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Matching\+::includes\+Edge (\begin{DoxyParamCaption}\item[{const \textbf{ Edge} \&}]{e }\end{DoxyParamCaption}) const}
+
+\mbox{\label{classMatching_a1aa623dc0383ad7e42cee2fa509d741b}} 
+\index{Matching@{Matching}!is\+Exposed@{is\+Exposed}}
+\index{is\+Exposed@{is\+Exposed}!Matching@{Matching}}
+\subsubsection{is\+Exposed()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Matching\+::is\+Exposed (\begin{DoxyParamCaption}\item[{\textbf{ Vertex} $\ast$}]{v }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+returns true iff the vertex v is exposed (not matched) in this matching. \mbox{\label{classMatching_a666297ec929bc0663a2177a8d6e25099}} 
+\index{Matching@{Matching}!is\+Exposed@{is\+Exposed}}
+\index{is\+Exposed@{is\+Exposed}!Matching@{Matching}}
+\subsubsection{is\+Exposed()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Matching\+::is\+Exposed (\begin{DoxyParamCaption}\item[{\textbf{ Vertex\+Label}}]{vlbl }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+returns true iff the vertex with the label vlbl is exposed (not matched) in this matching. \mbox{\label{classMatching_a0c1b2558dc7055812271e8a26f8c7bbf}} 
+\index{Matching@{Matching}!is\+Matched@{is\+Matched}}
+\index{is\+Matched@{is\+Matched}!Matching@{Matching}}
+\subsubsection{is\+Matched()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Matching\+::is\+Matched (\begin{DoxyParamCaption}\item[{\textbf{ Vertex} $\ast$}]{v }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+returns true iff the vertex v is matched in this matching. \mbox{\label{classMatching_ab3498a477d0f76d10968f7679b34f5cb}} 
+\index{Matching@{Matching}!is\+Matched@{is\+Matched}}
+\index{is\+Matched@{is\+Matched}!Matching@{Matching}}
+\subsubsection{is\+Matched()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Matching\+::is\+Matched (\begin{DoxyParamCaption}\item[{\textbf{ Vertex\+Label}}]{vlbl }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+returns true iff the vertex with the label vlbl is matched in this matching. \mbox{\label{classMatching_a5bdd63b1f2e52410dae97c19854a3117}} 
+\index{Matching@{Matching}!print\+Verbose\+Info@{print\+Verbose\+Info}}
+\index{print\+Verbose\+Info@{print\+Verbose\+Info}!Matching@{Matching}}
+\subsubsection{print\+Verbose\+Info()}
+{\footnotesize\ttfamily void Matching\+::print\+Verbose\+Info (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+\mbox{\label{classMatching_a050930214af9313531a041cd7b0cfdc9}} 
+\index{Matching@{Matching}!remove\+Edge@{remove\+Edge}}
+\index{remove\+Edge@{remove\+Edge}!Matching@{Matching}}
+\subsubsection{remove\+Edge()}
+{\footnotesize\ttfamily void Matching\+::remove\+Edge (\begin{DoxyParamCaption}\item[{const \textbf{ Edge} \&}]{e }\end{DoxyParamCaption})}
+
+remove an edge from the matching 
+\begin{DoxyParams}{Parameters}
+{\em e} & the edge to remove\\
+\hline
+\end{DoxyParams}
+The edge e {\itshape must} be in this matching \mbox{\label{classMatching_abb3bd68cfac697812d6719cc72a42915}} 
+\index{Matching@{Matching}!set\+Cardinality@{set\+Cardinality}}
+\index{set\+Cardinality@{set\+Cardinality}!Matching@{Matching}}
+\subsubsection{set\+Cardinality()}
+{\footnotesize\ttfamily void Matching\+::set\+Cardinality (\begin{DoxyParamCaption}\item[{unsigned long}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+set the cardinality (thereby updating Pr\+Out) 
+
+\subsection{Member Data Documentation}
+\mbox{\label{classMatching_a0010374751f5cb6a24a103d020125df2}} 
+\index{Matching@{Matching}!Cardinality@{Cardinality}}
+\index{Cardinality@{Cardinality}!Matching@{Matching}}
+\subsubsection{Cardinality}
+{\footnotesize\ttfamily unsigned long Matching\+::\+Cardinality\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classMatching_ad13336c41a30e91d0e43d76d9a3472d0}} 
+\index{Matching@{Matching}!Exposed\+Vertices@{Exposed\+Vertices}}
+\index{Exposed\+Vertices@{Exposed\+Vertices}!Matching@{Matching}}
+\subsubsection{Exposed\+Vertices}
+{\footnotesize\ttfamily std\+::list$<$\textbf{ Vertex}$\ast$$>$ Matching\+::\+Exposed\+Vertices\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classMatching_a101468aa7aa0d515d5f26a90aff23635}} 
+\index{Matching@{Matching}!Matching\+Edges@{Matching\+Edges}}
+\index{Matching\+Edges@{Matching\+Edges}!Matching@{Matching}}
+\subsubsection{Matching\+Edges}
+{\footnotesize\ttfamily std\+::list$<$\textbf{ Edge}$\ast$$>$ Matching\+::\+Matching\+Edges\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classMatching_a557079f39cb4955db24659100f391eef}} 
+\index{Matching@{Matching}!Pr\+Out@{Pr\+Out}}
+\index{Pr\+Out@{Pr\+Out}!Matching@{Matching}}
+\subsubsection{Pr\+Out}
+{\footnotesize\ttfamily \textbf{ Progress\+Output}$\ast$ Matching\+::\+Pr\+Out\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classMatching_aeca9faeb654b61cd465de583e57ff991}} 
+\index{Matching@{Matching}!The\+Graph@{The\+Graph}}
+\index{The\+Graph@{The\+Graph}!Matching@{Matching}}
+\subsubsection{The\+Graph}
+{\footnotesize\ttfamily \textbf{ Graph}$\ast$ Matching\+::\+The\+Graph\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classMatching_a0942e9b5f7ebac36164d003fd84d7f32}} 
+\index{Matching@{Matching}!Vertex\+Information@{Vertex\+Information}}
+\index{Vertex\+Information@{Vertex\+Information}!Matching@{Matching}}
+\subsubsection{Vertex\+Information}
+{\footnotesize\ttfamily std\+::vector$<$\textbf{ Vertex\+Info}$>$ Matching\+::\+Vertex\+Information\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ Matching.\+h}\item 
+\textbf{ Matching.\+cc}\end{DoxyCompactItemize}

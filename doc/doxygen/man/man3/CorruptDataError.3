@@ -1,0 +1,41 @@
+.TH "CorruptDataError" 3 "Thu Aug 17 2017" "Version 0.5.1" "steghide" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+CorruptDataError \- is thrown as exception when corrupt data is encountered during extraction  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <error\&.h>\fP
+.PP
+Inherits \fBSteghideError\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCorruptDataError\fP (const char *msgfmt,\&.\&.\&.)"
+.br
+.ti -1c
+.RI "void \fBprintMessage\fP (void) const"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+A possible cause of this exception being thrown is a wrong password\&. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "CorruptDataError::CorruptDataError (const char * msgfmt,  \&.\&.\&.)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void CorruptDataError::printMessage (void) const\fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBSteghideError\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for steghide from the source code\&.

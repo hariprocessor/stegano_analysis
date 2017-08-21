@@ -1,0 +1,97 @@
+\section{Question Class Reference}
+\label{classQuestion}\index{Question@{Question}}
+
+
+{\ttfamily \#include $<$msg.\+h$>$}
+
+Inheritance diagram for Question\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classQuestion}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Question} (void)
+\item 
+\textbf{ Question} (std\+::string msg)
+\item 
+\textbf{ Question} (const char $\ast$msgfmt,...)
+\item 
+void \textbf{ print\+Message} (void) const
+\item 
+bool \textbf{ get\+Answer} (void)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \textbf{ yeschar}
+\item 
+std\+::string \textbf{ nochar}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{classQuestion_a135d047e1f35ce94e7668505b727c20c}} 
+\index{Question@{Question}!Question@{Question}}
+\index{Question@{Question}!Question@{Question}}
+\subsubsection{Question()\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Question\+::\+Question (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\label{classQuestion_a8f1451cd8bc72891f33c80a52ece51b4}} 
+\index{Question@{Question}!Question@{Question}}
+\index{Question@{Question}!Question@{Question}}
+\subsubsection{Question()\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Question\+::\+Question (\begin{DoxyParamCaption}\item[{std\+::string}]{msg }\end{DoxyParamCaption})}
+
+\mbox{\label{classQuestion_ab11e3e5ec83c510a217964d3ab2edc40}} 
+\index{Question@{Question}!Question@{Question}}
+\index{Question@{Question}!Question@{Question}}
+\subsubsection{Question()\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Question\+::\+Question (\begin{DoxyParamCaption}\item[{const char $\ast$}]{msgfmt,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{classQuestion_ada436c3b56eb8b46bc9aad8af47279e4}} 
+\index{Question@{Question}!get\+Answer@{get\+Answer}}
+\index{get\+Answer@{get\+Answer}!Question@{Question}}
+\subsubsection{get\+Answer()}
+{\footnotesize\ttfamily bool Question\+::get\+Answer (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+wait for the user to answer the question (should be printed before) \begin{DoxyReturn}{Returns}
+true iff the user answers with yes, i.\+e. presses the yeschar-\/key 
+\end{DoxyReturn}
+\mbox{\label{classQuestion_a5b0fe8561addc6710984b02b34cfe68c}} 
+\index{Question@{Question}!print\+Message@{print\+Message}}
+\index{print\+Message@{print\+Message}!Question@{Question}}
+\subsubsection{print\+Message()}
+{\footnotesize\ttfamily void Question\+::print\+Message (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \textbf{ Message\+Base} \doxyref{}{p.}{classMessageBase_a207178190da2bec546a972495cdf9bc6}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{classQuestion_ad53b548a6db59f4a51c21dcab4072796}} 
+\index{Question@{Question}!nochar@{nochar}}
+\index{nochar@{nochar}!Question@{Question}}
+\subsubsection{nochar}
+{\footnotesize\ttfamily std\+::string Question\+::nochar\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classQuestion_aa9644e0c50afcbedd7eaaba5966ad3e6}} 
+\index{Question@{Question}!yeschar@{yeschar}}
+\index{yeschar@{yeschar}!Question@{Question}}
+\subsubsection{yeschar}
+{\footnotesize\ttfamily std\+::string Question\+::yeschar\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ msg.\+h}\item 
+\textbf{ msg.\+cc}\end{DoxyCompactItemize}

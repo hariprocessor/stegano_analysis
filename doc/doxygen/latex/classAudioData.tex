@@ -1,0 +1,69 @@
+\section{Audio\+Data Class Reference}
+\label{classAudioData}\index{Audio\+Data@{Audio\+Data}}
+
+
+interface definition for \doxyref{Audio\+Data}{p.}{classAudioData} objects.  
+
+
+
+
+{\ttfamily \#include $<$Audio\+Data.\+h$>$}
+
+Inheritance diagram for Audio\+Data\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classAudioData}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \textbf{ read} (\textbf{ Binary\+IO} $\ast$io, \textbf{ U\+W\+O\+R\+D32} n=\textbf{ No\+Limit})=0
+\item 
+virtual void \textbf{ write} (\textbf{ Binary\+IO} $\ast$io, \textbf{ U\+W\+O\+R\+D32} n=\textbf{ No\+Limit})=0
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const \textbf{ U\+W\+O\+R\+D32} \textbf{ No\+Limit} = 0
+\begin{DoxyCompactList}\small\item\em constant that can be used as parameter to read and write to indicate that there is no limit \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class is necessary to provide one common base class for all types of audio data, i.\+e. all different instances of \doxyref{Audio\+Data\+Impl}{p.}{classAudioDataImpl}. 
+
+\subsection{Member Function Documentation}
+\mbox{\label{classAudioData_aa3ac98fcebcd5e2f5376464b08212e58}} 
+\index{Audio\+Data@{Audio\+Data}!read@{read}}
+\index{read@{read}!Audio\+Data@{Audio\+Data}}
+\subsubsection{read()}
+{\footnotesize\ttfamily virtual void Audio\+Data\+::read (\begin{DoxyParamCaption}\item[{\textbf{ Binary\+IO} $\ast$}]{io,  }\item[{\textbf{ U\+W\+O\+R\+D32}}]{n = {\ttfamily \textbf{ No\+Limit}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \textbf{ Audio\+Data\+Impl$<$ Type, Value\+Type, Sample\+Value\+Type $>$} \doxyref{}{p.}{classAudioDataImpl_a6c8105d5fceee538b423e8b137ecd3ab}.
+
+\mbox{\label{classAudioData_aedc90f99fe9da3fd0012e2fb79403d88}} 
+\index{Audio\+Data@{Audio\+Data}!write@{write}}
+\index{write@{write}!Audio\+Data@{Audio\+Data}}
+\subsubsection{write()}
+{\footnotesize\ttfamily virtual void Audio\+Data\+::write (\begin{DoxyParamCaption}\item[{\textbf{ Binary\+IO} $\ast$}]{io,  }\item[{\textbf{ U\+W\+O\+R\+D32}}]{n = {\ttfamily \textbf{ No\+Limit}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \textbf{ Audio\+Data\+Impl$<$ Type, Value\+Type, Sample\+Value\+Type $>$} \doxyref{}{p.}{classAudioDataImpl_a66671d9d8ee1c2322f4226dad81e257c}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{classAudioData_ae4e3f99d2d21a5982aa1f76d78367cf6}} 
+\index{Audio\+Data@{Audio\+Data}!No\+Limit@{No\+Limit}}
+\index{No\+Limit@{No\+Limit}!Audio\+Data@{Audio\+Data}}
+\subsubsection{No\+Limit}
+{\footnotesize\ttfamily const \textbf{ U\+W\+O\+R\+D32} Audio\+Data\+::\+No\+Limit = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ Audio\+Data.\+h}\end{DoxyCompactItemize}

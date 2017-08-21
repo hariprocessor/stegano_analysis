@@ -1,0 +1,103 @@
+.TH "CvrStgFileTest" 3 "Thu Aug 17 2017" "Version 0.5.1" "steghide" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+CvrStgFileTest
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <CvrStgFileTest\&.h>\fP
+.PP
+Inherits \fBUnitTest\fP\&.
+.PP
+Inherited by \fBAuFileTest\fP, \fBBmpFileTest\fP, \fBBmpOS2FileTest\fP, \fBBmpWinFileTest\fP, \fBJpegFileTest\fP, and \fBWavFileTest\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCvrStgFileTest\fP (std::string n, \fBTestSuite\fP *s)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBgenericTestReadWrite\fP (const std::string &rfn, bool new_wfn=true) const"
+.br
+.ti -1c
+.RI "bool \fBgenericTestReadEmbedExtract\fP (const std::string &fn, \fBBitString\fP &emb) const"
+.br
+.ti -1c
+.RI "bool \fBgenericTestReadExtractCompare\fP (const std::string &fn, \fBBitString\fP &emb) const"
+.br
+.ti -1c
+.RI "bool \fBgenericTestReadEmbedWriteReadExtract\fP (const std::string &cvrfn, \fBBitString\fP &emb) const"
+.br
+.ti -1c
+.RI "bool \fBgenericTestPosition\fP (const \fBCvrStgFile\fP *f, const \fBSamplePos\fP pos, \fBSampleValue\fP *sv_r) const"
+.br
+.ti -1c
+.RI "bool \fBgenericTestSVALCalculation\fP (const \fBCvrStgFile\fP *f, const \fBGraph\fP *g) const"
+.br
+.ti -1c
+.RI "bool \fBgenericTestEmbeddedValue\fP (const \fBCvrStgFile\fP *f) const"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBareEqual\fP (const std::string &fn1, const std::string &fn2) const"
+.br
+.ti -1c
+.RI "void \fBremoveFile\fP (const std::string &fn) const"
+.br
+.ti -1c
+.RI "void \fBcopyFile\fP (const std::string &src, const std::string &dest) const"
+.br
+.ti -1c
+.RI "void \fBmoveFile\fP (const std::string &src, const std::string &dest) const"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "CvrStgFileTest::CvrStgFileTest (std::string n, \fBTestSuite\fP * s)\fC [inline]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "bool CvrStgFileTest::areEqual (const std::string & fn1, const std::string & fn2) const\fC [private]\fP"
+
+.SS "void CvrStgFileTest::copyFile (const std::string & src, const std::string & dest) const\fC [private]\fP"
+
+.SS "bool CvrStgFileTest::genericTestEmbeddedValue (const \fBCvrStgFile\fP * f) const\fC [protected]\fP"
+for all sample positions, test if f->getEmbeddedValue(p) and f->getSampleValue(p)->getEmbeddedValue() return the same result 
+.SS "bool CvrStgFileTest::genericTestPosition (const \fBCvrStgFile\fP * f, const \fBSamplePos\fP pos, \fBSampleValue\fP * sv_r) const\fC [protected]\fP"
+
+.SS "bool CvrStgFileTest::genericTestReadEmbedExtract (const std::string & fn, \fBBitString\fP & emb) const\fC [protected]\fP"
+
+.SS "bool CvrStgFileTest::genericTestReadEmbedWriteReadExtract (const std::string & cvrfn, \fBBitString\fP & emb) const\fC [protected]\fP"
+
+.SS "bool CvrStgFileTest::genericTestReadExtractCompare (const std::string & fn, \fBBitString\fP & emb) const\fC [protected]\fP"
+read fn and extract the first emb\&.getLength() bits, return true iff these equal emb 
+.SS "bool CvrStgFileTest::genericTestReadWrite (const std::string & rfn, bool new_wfn = \fCtrue\fP) const\fC [protected]\fP"
+read the file rfn and write it again, return true iff write op created what was read by read op 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIrfn\fP the file name of the file to read 
+.br
+\fInew_wfn\fP wether to write the data to another file or to rfn (a backup copy is done) 
+.RE
+.PP
+
+.SS "bool CvrStgFileTest::genericTestSVALCalculation (const \fBCvrStgFile\fP * f, const \fBGraph\fP * g) const\fC [protected]\fP"
+
+.SS "void CvrStgFileTest::moveFile (const std::string & src, const std::string & dest) const\fC [private]\fP"
+
+.SS "void CvrStgFileTest::removeFile (const std::string & fn) const\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for steghide from the source code\&.

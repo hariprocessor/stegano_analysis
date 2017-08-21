@@ -1,0 +1,367 @@
+.TH "Arguments" 3 "Thu Aug 17 2017" "Version 0.5.1" "steghide" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Arguments \- parsing and data representation of command-line arguments  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Arguments\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBArguments\fP (void)"
+.br
+.ti -1c
+.RI "\fBArguments\fP (int argc, char *argv[])"
+.br
+.ti -1c
+.RI "void \fBparse\fP (void)"
+.br
+.ti -1c
+.RI "bool \fBstdin_isused\fP (void) const"
+.br
+.ti -1c
+.RI "std::string \fBgetPassphrase\fP (bool doublecheck=false)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBArgCommand\fP \fBCommand\fP"
+.br
+.RI "the command to be executed in this session "
+.ti -1c
+.RI "std::string \fBCommandString\fP"
+.br
+.RI "the name of the command to be executed in this session (as supplied by the user) "
+.ti -1c
+.RI "\fBArgString\fP \fBEmbFn\fP"
+.br
+.RI "the embed file name, '' if stdin "
+.ti -1c
+.RI "\fBArgString\fP \fBExtFn\fP"
+.br
+.RI "the extract file name, '' if stdout "
+.ti -1c
+.RI "\fBArgString\fP \fBCvrFn\fP"
+.br
+.RI "the cover file name, '' if stdin "
+.ti -1c
+.RI "\fBArgString\fP \fBStgFn\fP"
+.br
+.RI "the stego file name, '' if stdout/stdin "
+.ti -1c
+.RI "\fBArgString\fP \fBPassphrase\fP"
+.br
+.ti -1c
+.RI "\fBArgBool\fP \fBChecksum\fP"
+.br
+.ti -1c
+.RI "\fBArgInt\fP \fBCompression\fP"
+.br
+.ti -1c
+.RI "\fBArgBool\fP \fBEmbedEmbFn\fP"
+.br
+.ti -1c
+.RI "\fBArgEncAlgo\fP \fBEncAlgo\fP"
+.br
+.ti -1c
+.RI "\fBArgEncMode\fP \fBEncMode\fP"
+.br
+.ti -1c
+.RI "\fBArgULong\fP \fBRadius\fP"
+.br
+.ti -1c
+.RI "\fBArgFloat\fP \fBGoal\fP"
+.br
+.ti -1c
+.RI "\fBArgBool\fP \fBForce\fP"
+.br
+.ti -1c
+.RI "\fBArgVerbosity\fP \fBVerbosity\fP"
+.br
+.ti -1c
+.RI "\fBArgDebugCommand\fP \fBDebugCommand\fP"
+.br
+.ti -1c
+.RI "\fBArgBool\fP \fBCheck\fP"
+.br
+.ti -1c
+.RI "\fBArgStringList\fP \fBFileList\fP"
+.br
+.ti -1c
+.RI "\fBArgUInt\fP \fBDebugLevel\fP"
+.br
+.ti -1c
+.RI "\fBArgUInt\fP \fBGmlGraphRecDepth\fP"
+.br
+.ti -1c
+.RI "\fBArgUInt\fP \fBGmlStartVertex\fP"
+.br
+.in -1c
+.SS "Private Types"
+
+.in +1c
+.ti -1c
+.RI "typedef std::vector< std::string >::const_iterator \fBArgIt\fP"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBparse_Command\fP (\fBArgIt\fP &curarg)"
+.br
+.ti -1c
+.RI "bool \fBparse_EmbFn\fP (\fBArgIt\fP &curarg)"
+.br
+.ti -1c
+.RI "bool \fBparse_ExtFn\fP (\fBArgIt\fP &curarg)"
+.br
+.ti -1c
+.RI "bool \fBparse_CvrFn\fP (\fBArgIt\fP &curarg)"
+.br
+.ti -1c
+.RI "bool \fBparse_StgFn\fP (\fBArgIt\fP &curarg)"
+.br
+.ti -1c
+.RI "bool \fBparse_Passphrase\fP (\fBArgIt\fP &curarg)"
+.br
+.ti -1c
+.RI "bool \fBparse_Checksum\fP (\fBArgIt\fP &curarg)"
+.br
+.ti -1c
+.RI "bool \fBparse_Compression\fP (\fBArgIt\fP &curarg)"
+.br
+.ti -1c
+.RI "bool \fBparse_EmbedEmbFn\fP (\fBArgIt\fP &curarg)"
+.br
+.ti -1c
+.RI "bool \fBparse_Encryption\fP (\fBArgIt\fP &curarg)"
+.br
+.ti -1c
+.RI "bool \fBparse_Radius\fP (\fBArgIt\fP &curarg)"
+.br
+.ti -1c
+.RI "bool \fBparse_Goal\fP (\fBArgIt\fP &curarg)"
+.br
+.ti -1c
+.RI "bool \fBparse_Force\fP (\fBArgIt\fP &curarg)"
+.br
+.ti -1c
+.RI "bool \fBparse_Verbosity\fP (\fBArgIt\fP &curarg)"
+.br
+.ti -1c
+.RI "bool \fBparse_Debug\fP (\fBArgIt\fP &curarg)"
+.br
+.ti -1c
+.RI "void \fBsetDefaults\fP (void)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::vector< std::string > \fBTheArguments\fP"
+.br
+.in -1c
+.SS "Static Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "static const int \fBNoCompression\fP = 0"
+.br
+.ti -1c
+.RI "static const \fBEncryptionAlgorithm\fP \fBDefault_EncAlgo\fP = \fBEncryptionAlgorithm\fP (\fBEncryptionAlgorithm::NONE\fP)"
+.br
+.ti -1c
+.RI "static const \fBEncryptionMode\fP \fBDefault_EncMode\fP = \fBEncryptionMode\fP (\fBEncryptionMode::ECB\fP)"
+.br
+.ti -1c
+.RI "static const bool \fBDefault_Checksum\fP = true"
+.br
+.ti -1c
+.RI "static const int \fBDefault_Compression\fP = 9"
+.br
+.ti -1c
+.RI "static const bool \fBDefault_EmbedEmbFn\fP = true"
+.br
+.ti -1c
+.RI "static const bool \fBDefault_Force\fP = false"
+.br
+.ti -1c
+.RI "static const \fBVERBOSITY\fP \fBDefault_Verbosity\fP = \fBNORMAL\fP"
+.br
+.ti -1c
+.RI "static const unsigned long \fBDefault_Radius\fP = 0"
+.br
+.ti -1c
+.RI "static const unsigned int \fBMax_Algorithm\fP = 3"
+.br
+.ti -1c
+.RI "static const float \fBDefault_Goal\fP = 100\&.0"
+.br
+.ti -1c
+.RI "static const \fBDEBUGCOMMAND\fP \fBDefault_DebugCommand\fP = \fBNONE\fP"
+.br
+.ti -1c
+.RI "static const bool \fBDefault_Check\fP = false"
+.br
+.ti -1c
+.RI "static const unsigned int \fBDefault_DebugLevel\fP = 0"
+.br
+.ti -1c
+.RI "static const unsigned int \fBDefault_GmlGraphRecDepth\fP = 0"
+.br
+.ti -1c
+.RI "static const unsigned int \fBDefault_GmlStartVertex\fP = 0"
+.br
+.in -1c
+.SH "Member Typedef Documentation"
+.PP 
+.SS "typedef std::vector<std::string>::const_iterator \fBArguments::ArgIt\fP\fC [private]\fP"
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Arguments::Arguments (void)\fC [inline]\fP"
+
+.SS "Arguments::Arguments (int argc, char * argv[])"
+initialize this \fBArguments\fP object with argc and argv 
+.SH "Member Function Documentation"
+.PP 
+.SS "std::string Arguments::getPassphrase (bool doublecheck = \fCfalse\fP)"
+
+.SS "void Arguments::parse (void)"
+parse Argc and Argv filling the Arg* member variable for later access 
+.SS "bool Arguments::parse_Checksum (\fBArgIt\fP & curarg)\fC [private]\fP"
+
+.SS "void Arguments::parse_Command (\fBArgIt\fP & curarg)\fC [private]\fP"
+parse the command
+.PP
+Note: parse_Command is the only parse_* function that requires curarg to be a command\&. (because the command is the only argument with a fixed position)\&. 
+.SS "bool Arguments::parse_Compression (\fBArgIt\fP & curarg)\fC [private]\fP"
+
+.SS "bool Arguments::parse_CvrFn (\fBArgIt\fP & curarg)\fC [private]\fP"
+
+.SS "bool Arguments::parse_Debug (\fBArgIt\fP & curarg)\fC [private]\fP"
+
+.SS "bool Arguments::parse_EmbedEmbFn (\fBArgIt\fP & curarg)\fC [private]\fP"
+
+.SS "bool Arguments::parse_EmbFn (\fBArgIt\fP & curarg)\fC [private]\fP"
+test if curarg points to an emb filename argument and if yes: parse it 
+.PP
+\fBReturns:\fP
+.RS 4
+true iff one or more arguments have been parsed 
+.RE
+.PP
+
+.SS "bool Arguments::parse_Encryption (\fBArgIt\fP & curarg)\fC [private]\fP"
+
+.SS "bool Arguments::parse_ExtFn (\fBArgIt\fP & curarg)\fC [private]\fP"
+
+.SS "bool Arguments::parse_Force (\fBArgIt\fP & curarg)\fC [private]\fP"
+
+.SS "bool Arguments::parse_Goal (\fBArgIt\fP & curarg)\fC [private]\fP"
+
+.SS "bool Arguments::parse_Passphrase (\fBArgIt\fP & curarg)\fC [private]\fP"
+
+.SS "bool Arguments::parse_Radius (\fBArgIt\fP & curarg)\fC [private]\fP"
+
+.SS "bool Arguments::parse_StgFn (\fBArgIt\fP & curarg)\fC [private]\fP"
+
+.SS "bool Arguments::parse_Verbosity (\fBArgIt\fP & curarg)\fC [private]\fP"
+
+.SS "void Arguments::setDefaults (void)\fC [private]\fP"
+
+.SS "bool Arguments::stdin_isused (void) const"
+is standard input used ? - according to the given arguments 
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBArgBool\fP Arguments::Check"
+
+.SS "\fBArgBool\fP Arguments::Checksum"
+
+.SS "\fBArgCommand\fP Arguments::Command"
+
+.SS "std::string Arguments::CommandString"
+
+.SS "\fBArgInt\fP Arguments::Compression"
+
+.SS "\fBArgString\fP Arguments::CvrFn"
+
+.SS "\fBArgDebugCommand\fP Arguments::DebugCommand"
+
+.SS "\fBArgUInt\fP Arguments::DebugLevel"
+
+.SS "const bool Arguments::Default_Check = false\fC [static]\fP, \fC [private]\fP"
+
+.SS "const bool Arguments::Default_Checksum = true\fC [static]\fP, \fC [private]\fP"
+
+.SS "const int Arguments::Default_Compression = 9\fC [static]\fP, \fC [private]\fP"
+
+.SS "const \fBDEBUGCOMMAND\fP Arguments::Default_DebugCommand = \fBNONE\fP\fC [static]\fP, \fC [private]\fP"
+
+.SS "const unsigned int Arguments::Default_DebugLevel = 0\fC [static]\fP, \fC [private]\fP"
+
+.SS "const bool Arguments::Default_EmbedEmbFn = true\fC [static]\fP, \fC [private]\fP"
+
+.SS "const \fBEncryptionAlgorithm\fP Arguments::Default_EncAlgo = \fBEncryptionAlgorithm\fP (\fBEncryptionAlgorithm::NONE\fP)\fC [static]\fP, \fC [private]\fP"
+
+.SS "const \fBEncryptionMode\fP Arguments::Default_EncMode = \fBEncryptionMode\fP (\fBEncryptionMode::ECB\fP)\fC [static]\fP, \fC [private]\fP"
+
+.SS "const bool Arguments::Default_Force = false\fC [static]\fP, \fC [private]\fP"
+
+.SS "const unsigned int Arguments::Default_GmlGraphRecDepth = 0\fC [static]\fP, \fC [private]\fP"
+
+.SS "const unsigned int Arguments::Default_GmlStartVertex = 0\fC [static]\fP, \fC [private]\fP"
+
+.SS "const float Arguments::Default_Goal = 100\&.0\fC [static]\fP, \fC [private]\fP"
+
+.SS "const unsigned long Arguments::Default_Radius = 0\fC [static]\fP, \fC [private]\fP"
+
+.SS "const \fBVERBOSITY\fP Arguments::Default_Verbosity = \fBNORMAL\fP\fC [static]\fP, \fC [private]\fP"
+
+.SS "\fBArgBool\fP Arguments::EmbedEmbFn"
+
+.SS "\fBArgString\fP Arguments::EmbFn"
+
+.SS "\fBArgEncAlgo\fP Arguments::EncAlgo"
+
+.SS "\fBArgEncMode\fP Arguments::EncMode"
+
+.SS "\fBArgString\fP Arguments::ExtFn"
+
+.SS "\fBArgStringList\fP Arguments::FileList"
+
+.SS "\fBArgBool\fP Arguments::Force"
+
+.SS "\fBArgUInt\fP Arguments::GmlGraphRecDepth"
+
+.SS "\fBArgUInt\fP Arguments::GmlStartVertex"
+
+.SS "\fBArgFloat\fP Arguments::Goal"
+
+.SS "const unsigned int Arguments::Max_Algorithm = 3\fC [static]\fP, \fC [private]\fP"
+
+.SS "const int Arguments::NoCompression = 0\fC [static]\fP, \fC [private]\fP"
+
+.SS "\fBArgString\fP Arguments::Passphrase"
+
+.SS "\fBArgULong\fP Arguments::Radius"
+
+.SS "\fBArgString\fP Arguments::StgFn"
+
+.SS "std::vector<std::string> Arguments::TheArguments\fC [private]\fP"
+
+.SS "\fBArgVerbosity\fP Arguments::Verbosity"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for steghide from the source code\&.

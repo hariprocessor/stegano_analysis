@@ -1,0 +1,51 @@
+.TH "SteghideError" 3 "Thu Aug 17 2017" "Version 0.5.1" "steghide" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SteghideError
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SteghideError\&.h>\fP
+.PP
+Inherits \fBMessageBase\fP\&.
+.PP
+Inherited by \fBArgError\fP, \fBAssertionFailed\fP, \fBBinaryInputError\fP, \fBBinaryOutputError\fP, \fBCorruptDataError\fP, \fBNotImplementedError\fP, and \fBUnSupFileFormat\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSteghideError\fP (void)"
+.br
+.ti -1c
+.RI "\fBSteghideError\fP (std::string msg)"
+.br
+.ti -1c
+.RI "\fBSteghideError\fP (const char *msgfmt,\&.\&.\&.)"
+.br
+.ti -1c
+.RI "virtual void \fBprintMessage\fP (void) const"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SteghideError::SteghideError (void)"
+
+.SS "SteghideError::SteghideError (std::string msg)"
+
+.SS "SteghideError::SteghideError (const char * msgfmt,  \&.\&.\&.)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void SteghideError::printMessage (void) const\fC [virtual]\fP"
+
+.PP
+Implements \fBMessageBase\fP\&.
+.PP
+Reimplemented in \fBCorruptDataError\fP, \fBNotImplementedError\fP, \fBArgError\fP, and \fBAssertionFailed\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for steghide from the source code\&.

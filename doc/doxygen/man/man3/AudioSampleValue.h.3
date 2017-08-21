@@ -1,0 +1,52 @@
+.TH "AudioSampleValue.h" 3 "Thu Aug 17 2017" "Version 0.5.1" "steghide" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+AudioSampleValue.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'CvrStgFile\&.h'\fP
+.br
+\fC#include 'SampleValue\&.h'\fP
+.br
+\fC#include 'common\&.h'\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBAudioSampleValue< Type, ValueType >\fP"
+.br
+.RI "a class representing an audio sample "
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBAUDIOSAMPLETYPE\fP { \fBAuMuLaw\fP, \fBAuPCM8\fP, \fBAuPCM16\fP, \fBAuPCM32\fP }"
+.br
+.in -1c
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBAUDIOSAMPLETYPE\fP"
+An enumeration containing all audio sample types\&. This enumeration is used as template parameter for \fBAudioSampleValue\fP and \fBAudioData\fP to identify the correct implementation for a given audio format\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIAuMuLaw \fP\fP
+au 8 Bit mu-law 
+.TP
+\fB\fIAuPCM8 \fP\fP
+au 8 Bit linear pcm 
+.TP
+\fB\fIAuPCM16 \fP\fP
+au 16 Bit linear pcm 
+.TP
+\fB\fIAuPCM32 \fP\fP
+au 32 Bit linear pcm 
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for steghide from the source code\&.

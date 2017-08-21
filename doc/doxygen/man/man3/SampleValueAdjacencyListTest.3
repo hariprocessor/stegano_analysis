@@ -1,0 +1,65 @@
+.TH "SampleValueAdjacencyListTest" 3 "Thu Aug 17 2017" "Version 0.5.1" "steghide" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SampleValueAdjacencyListTest
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SampleValueAdjacencyListTest\&.h>\fP
+.PP
+Inherits \fBUnitTest\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSampleValueAdjacencyListTest\fP (\fBTestSuite\fP *s)"
+.br
+.ti -1c
+.RI "void \fBsetup\fP (void)"
+.br
+.ti -1c
+.RI "void \fBtestEquality\fP (void)"
+.br
+.ti -1c
+.RI "void \fBtestQuicksort\fP (void)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBSampleValueAdjacencyList\fP \fBDummySVAL\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBSampleValue\fP * > \fBSVEmpty\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SampleValueAdjacencyListTest::SampleValueAdjacencyListTest (\fBTestSuite\fP * s)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void SampleValueAdjacencyListTest::setup (void)\fC [virtual]\fP"
+setup the unit test - called before run
+.PP
+\fBUnitTest::setup\fP will (together with \fBUnitTest::cleanup\fP) save and restore the object stored in Globs so they should be called from the corresponding functions in the derived object if the derived unit test manipulates the Globs object\&. 
+.PP
+Reimplemented from \fBUnitTest\fP\&.
+.SS "void SampleValueAdjacencyListTest::testEquality (void)"
+
+.SS "void SampleValueAdjacencyListTest::testQuicksort (void)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBSampleValueAdjacencyList\fP SampleValueAdjacencyListTest::DummySVAL\fC [private]\fP"
+
+.SS "std::vector<\fBSampleValue\fP*> SampleValueAdjacencyListTest::SVEmpty\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for steghide from the source code\&.

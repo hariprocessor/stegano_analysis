@@ -1,0 +1,102 @@
+.TH "MHashKeyGen" 3 "Thu Aug 17 2017" "Version 0.5.1" "steghide" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MHashKeyGen
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <MHashKeyGen\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMHashKeyGen\fP (void)"
+.br
+.ti -1c
+.RI "\fBMHashKeyGen\fP (keygenid kgalgo, hashid halgo, unsigned int keysize)"
+.br
+.ti -1c
+.RI "\fB~MHashKeyGen\fP (void)"
+.br
+.ti -1c
+.RI "void \fBsetKeySize\fP (unsigned int \fBKeySize\fP)"
+.br
+.ti -1c
+.RI "void \fBsetKeyGenAlgorithm\fP (keygenid algo)"
+.br
+.ti -1c
+.RI "void \fBsetHashAlgorithm\fP (hashid hashalgo)"
+.br
+.ti -1c
+.RI "void \fBsetHashAlgorithms\fP (std::vector< hashid > hashalgos)"
+.br
+.ti -1c
+.RI "void \fBsetSalt\fP (std::vector< unsigned char > salt)"
+.br
+.ti -1c
+.RI "std::vector< unsigned char > \fBcreateKey\fP (std::string password)"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void * \fBs_malloc\fP (size_t size)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "bool \fBready\fP"
+.br
+.ti -1c
+.RI "keygenid \fBAlgorithm\fP"
+.br
+.ti -1c
+.RI "KEYGEN \fBAlgorithmData\fP"
+.br
+.ti -1c
+.RI "unsigned int \fBKeySize\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "MHashKeyGen::MHashKeyGen (void)"
+
+.SS "MHashKeyGen::MHashKeyGen (keygenid kgalgo, hashid halgo, unsigned int keysize)"
+
+.SS "MHashKeyGen::~MHashKeyGen (void)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "std::vector< unsigned char > MHashKeyGen::createKey (std::string password)"
+
+.SS "void * MHashKeyGen::s_malloc (size_t size)\fC [private]\fP"
+
+.SS "void MHashKeyGen::setHashAlgorithm (hashid hashalgo)"
+
+.SS "void MHashKeyGen::setHashAlgorithms (std::vector< hashid > hashalgos)"
+
+.SS "void MHashKeyGen::setKeyGenAlgorithm (keygenid algo)"
+
+.SS "void MHashKeyGen::setKeySize (unsigned int KeySize)"
+
+.SS "void MHashKeyGen::setSalt (std::vector< unsigned char > salt)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "keygenid MHashKeyGen::Algorithm\fC [private]\fP"
+
+.SS "KEYGEN MHashKeyGen::AlgorithmData\fC [private]\fP"
+
+.SS "unsigned int MHashKeyGen::KeySize\fC [private]\fP"
+
+.SS "bool MHashKeyGen::ready\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for steghide from the source code\&.

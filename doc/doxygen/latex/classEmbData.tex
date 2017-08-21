@@ -1,0 +1,436 @@
+\section{Emb\+Data Class Reference}
+\label{classEmbData}\index{Emb\+Data@{Emb\+Data}}
+
+
+{\ttfamily \#include $<$Emb\+Data.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \textbf{ M\+O\+DE} \{ \textbf{ E\+M\+B\+ED}, 
+\textbf{ E\+X\+T\+R\+A\+CT}
+ \}
+\item 
+enum \textbf{ S\+T\+A\+TE} \{ \newline
+\textbf{ R\+E\+A\+D\+\_\+\+M\+A\+G\+IC}, 
+\textbf{ R\+E\+A\+D\+\_\+\+V\+E\+R\+S\+I\+ON}, 
+\textbf{ R\+E\+A\+D\+\_\+\+E\+N\+C\+I\+N\+FO}, 
+\textbf{ R\+E\+A\+D\+\_\+\+N\+P\+L\+A\+I\+N\+B\+I\+TS}, 
+\newline
+\textbf{ R\+E\+A\+D\+\_\+\+E\+N\+C\+R\+Y\+P\+T\+ED}, 
+\textbf{ E\+ND}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Emb\+Data} (\textbf{ M\+O\+DE} m, std\+::string pp, std\+::string fn=\char`\"{}\char`\"{})
+\item 
+\textbf{ Bit\+String} \textbf{ get\+Bit\+String} (void)
+\item 
+bool \textbf{ finished} (void)
+\item 
+unsigned long \textbf{ get\+Num\+Bits\+Requested} (void)
+\item 
+void \textbf{ add\+Bits} (\textbf{ Bit\+String} addbits)
+\item 
+void \textbf{ set\+Enc\+Algo} (\textbf{ Encryption\+Algorithm} a)
+\item 
+\textbf{ Encryption\+Algorithm} \textbf{ get\+Enc\+Algo} (void) const
+\item 
+void \textbf{ set\+Enc\+Mode} (\textbf{ Encryption\+Mode} m)
+\item 
+\textbf{ Encryption\+Mode} \textbf{ get\+Enc\+Mode} (void) const
+\item 
+void \textbf{ set\+Compression} (int c)
+\item 
+int \textbf{ get\+Compression} (void) const
+\item 
+void \textbf{ set\+Checksum} (bool c)
+\item 
+bool \textbf{ get\+Checksum} (void) const
+\item 
+bool \textbf{ checksum\+OK} (void) const
+\item 
+void \textbf{ set\+Data} (const std\+::vector$<$ \textbf{ B\+Y\+TE} $>$ data)
+\item 
+std\+::vector$<$ \textbf{ B\+Y\+TE} $>$ \textbf{ get\+Data} (void) const
+\item 
+std\+::string \textbf{ get\+File\+Name} (void) const
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const unsigned int \textbf{ Min\+Stego\+Header\+Size} = 50
+\begin{DoxyCompactList}\small\item\em the minimum size of the part of the generatred \doxyref{Bit\+String}{p.}{classBitString} that is not the data \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \textbf{ strip\+Dir} (std\+::string s)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ M\+O\+DE} \textbf{ Mode}
+\item 
+\textbf{ S\+T\+A\+TE} \textbf{ State}
+\item 
+unsigned long \textbf{ N\+Plain\+Bits}
+\item 
+unsigned long \textbf{ Num\+Bits\+Requested}
+\begin{DoxyCompactList}\small\item\em the number of bits that the caller must at least supply to add\+Bits \end{DoxyCompactList}\item 
+unsigned long \textbf{ Num\+Bits\+Needed}
+\begin{DoxyCompactList}\small\item\em exactly the number of bits that the next step will consume from Reservoir and add\+Bits together \end{DoxyCompactList}\item 
+\textbf{ Bit\+String} \textbf{ Reservoir}
+\item 
+std\+::string \textbf{ Passphrase}
+\item 
+unsigned short \textbf{ Version}
+\begin{DoxyCompactList}\small\item\em version read from input bitstring \end{DoxyCompactList}\item 
+\textbf{ Encryption\+Algorithm} \textbf{ Enc\+Algo}
+\item 
+\textbf{ Encryption\+Mode} \textbf{ Enc\+Mode}
+\item 
+int \textbf{ Compression}
+\begin{DoxyCompactList}\small\item\em compression level\+: 0(none),1(best speed),...,9(best compression) \end{DoxyCompactList}\item 
+bool \textbf{ Checksum}
+\begin{DoxyCompactList}\small\item\em will a checksum be embedded ? \end{DoxyCompactList}\item 
+unsigned long \textbf{ C\+R\+C32}
+\begin{DoxyCompactList}\small\item\em the checksum \end{DoxyCompactList}\item 
+std\+::string \textbf{ File\+Name}
+\item 
+std\+::vector$<$ \textbf{ B\+Y\+TE} $>$ \textbf{ Data}
+\begin{DoxyCompactList}\small\item\em contains the actual message to be embedded \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const unsigned int \textbf{ N\+Bits\+N\+Plain\+Bits} = 32
+\begin{DoxyCompactList}\small\item\em number of bits used to code the number of plain bits \end{DoxyCompactList}\item 
+static const unsigned int \textbf{ N\+Bits\+N\+Uncompressed\+Bits} = 32
+\begin{DoxyCompactList}\small\item\em number of bits used to code the number of uncompressed bits \end{DoxyCompactList}\item 
+static const unsigned int \textbf{ N\+Bits\+Crc32} = 32
+\begin{DoxyCompactList}\small\item\em size of a crc32 checksum in bits \end{DoxyCompactList}\item 
+static const unsigned short \textbf{ Code\+Version} = 0
+\begin{DoxyCompactList}\small\item\em version of this steghide embedding (stego compatibility of \doxyref{Emb\+Data}{p.}{classEmbData}) \end{DoxyCompactList}\item 
+static const \textbf{ U\+W\+O\+R\+D32} \textbf{ Magic} = 0x73688\+D\+UL
+\begin{DoxyCompactList}\small\item\em steghide magic to recognize embedded data (the string \char`\"{}shm\char`\"{}) \end{DoxyCompactList}\item 
+static const unsigned int \textbf{ N\+Bits\+Magic} = 24
+\begin{DoxyCompactList}\small\item\em size (in bits of Magic) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\label{classEmbData_a00fef1fa854d226fe06bd579ceea0120}} 
+\index{Emb\+Data@{Emb\+Data}!M\+O\+DE@{M\+O\+DE}}
+\index{M\+O\+DE@{M\+O\+DE}!Emb\+Data@{Emb\+Data}}
+\subsubsection{M\+O\+DE}
+{\footnotesize\ttfamily enum \textbf{ Emb\+Data\+::\+M\+O\+DE}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E\+M\+B\+ED@{E\+M\+B\+ED}!Emb\+Data@{Emb\+Data}}\index{Emb\+Data@{Emb\+Data}!E\+M\+B\+ED@{E\+M\+B\+ED}}}\mbox{\label{classEmbData_a00fef1fa854d226fe06bd579ceea0120afa385935ce639214be2daaeb7a780338}} 
+E\+M\+B\+ED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E\+X\+T\+R\+A\+CT@{E\+X\+T\+R\+A\+CT}!Emb\+Data@{Emb\+Data}}\index{Emb\+Data@{Emb\+Data}!E\+X\+T\+R\+A\+CT@{E\+X\+T\+R\+A\+CT}}}\mbox{\label{classEmbData_a00fef1fa854d226fe06bd579ceea0120aa29aa094d2a8985348cffb278b843273}} 
+E\+X\+T\+R\+A\+CT&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\label{classEmbData_aa4b8daa3dc087297d82a8d4ac21be1da}} 
+\index{Emb\+Data@{Emb\+Data}!S\+T\+A\+TE@{S\+T\+A\+TE}}
+\index{S\+T\+A\+TE@{S\+T\+A\+TE}!Emb\+Data@{Emb\+Data}}
+\subsubsection{S\+T\+A\+TE}
+{\footnotesize\ttfamily enum \textbf{ Emb\+Data\+::\+S\+T\+A\+TE}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R\+E\+A\+D\+\_\+\+M\+A\+G\+IC@{R\+E\+A\+D\+\_\+\+M\+A\+G\+IC}!Emb\+Data@{Emb\+Data}}\index{Emb\+Data@{Emb\+Data}!R\+E\+A\+D\+\_\+\+M\+A\+G\+IC@{R\+E\+A\+D\+\_\+\+M\+A\+G\+IC}}}\mbox{\label{classEmbData_aa4b8daa3dc087297d82a8d4ac21be1daa96ab1bd638c78584fe1762547cc63ec1}} 
+R\+E\+A\+D\+\_\+\+M\+A\+G\+IC&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R\+E\+A\+D\+\_\+\+V\+E\+R\+S\+I\+ON@{R\+E\+A\+D\+\_\+\+V\+E\+R\+S\+I\+ON}!Emb\+Data@{Emb\+Data}}\index{Emb\+Data@{Emb\+Data}!R\+E\+A\+D\+\_\+\+V\+E\+R\+S\+I\+ON@{R\+E\+A\+D\+\_\+\+V\+E\+R\+S\+I\+ON}}}\mbox{\label{classEmbData_aa4b8daa3dc087297d82a8d4ac21be1daa4de750ebecbb7ceaaf4e510aa6eb6129}} 
+R\+E\+A\+D\+\_\+\+V\+E\+R\+S\+I\+ON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R\+E\+A\+D\+\_\+\+E\+N\+C\+I\+N\+FO@{R\+E\+A\+D\+\_\+\+E\+N\+C\+I\+N\+FO}!Emb\+Data@{Emb\+Data}}\index{Emb\+Data@{Emb\+Data}!R\+E\+A\+D\+\_\+\+E\+N\+C\+I\+N\+FO@{R\+E\+A\+D\+\_\+\+E\+N\+C\+I\+N\+FO}}}\mbox{\label{classEmbData_aa4b8daa3dc087297d82a8d4ac21be1daa42632becdf8ded759ba1bc9bb77da350}} 
+R\+E\+A\+D\+\_\+\+E\+N\+C\+I\+N\+FO&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R\+E\+A\+D\+\_\+\+N\+P\+L\+A\+I\+N\+B\+I\+TS@{R\+E\+A\+D\+\_\+\+N\+P\+L\+A\+I\+N\+B\+I\+TS}!Emb\+Data@{Emb\+Data}}\index{Emb\+Data@{Emb\+Data}!R\+E\+A\+D\+\_\+\+N\+P\+L\+A\+I\+N\+B\+I\+TS@{R\+E\+A\+D\+\_\+\+N\+P\+L\+A\+I\+N\+B\+I\+TS}}}\mbox{\label{classEmbData_aa4b8daa3dc087297d82a8d4ac21be1daa2fb7b3c5403020302d4ba10a8ac1fc8f}} 
+R\+E\+A\+D\+\_\+\+N\+P\+L\+A\+I\+N\+B\+I\+TS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R\+E\+A\+D\+\_\+\+E\+N\+C\+R\+Y\+P\+T\+ED@{R\+E\+A\+D\+\_\+\+E\+N\+C\+R\+Y\+P\+T\+ED}!Emb\+Data@{Emb\+Data}}\index{Emb\+Data@{Emb\+Data}!R\+E\+A\+D\+\_\+\+E\+N\+C\+R\+Y\+P\+T\+ED@{R\+E\+A\+D\+\_\+\+E\+N\+C\+R\+Y\+P\+T\+ED}}}\mbox{\label{classEmbData_aa4b8daa3dc087297d82a8d4ac21be1daaa841eb3989dfd24be61ca00da3f95ab7}} 
+R\+E\+A\+D\+\_\+\+E\+N\+C\+R\+Y\+P\+T\+ED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E\+ND@{E\+ND}!Emb\+Data@{Emb\+Data}}\index{Emb\+Data@{Emb\+Data}!E\+ND@{E\+ND}}}\mbox{\label{classEmbData_aa4b8daa3dc087297d82a8d4ac21be1daac9a5ed3f05533f3a6040f303a01d943a}} 
+E\+ND&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{classEmbData_a1dd8dcba5a5a159a55e903a2094a2ffd}} 
+\index{Emb\+Data@{Emb\+Data}!Emb\+Data@{Emb\+Data}}
+\index{Emb\+Data@{Emb\+Data}!Emb\+Data@{Emb\+Data}}
+\subsubsection{Emb\+Data()}
+{\footnotesize\ttfamily Emb\+Data\+::\+Emb\+Data (\begin{DoxyParamCaption}\item[{\textbf{ M\+O\+DE}}]{m,  }\item[{std\+::string}]{pp,  }\item[{std\+::string}]{fn = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})}
+
+construct a new \doxyref{Emb\+Data}{p.}{classEmbData} object 
+\begin{DoxyParams}{Parameters}
+{\em m} & the mode (E\+M\+B\+ED or E\+X\+T\+R\+A\+CT) \\
+\hline
+{\em pp} & the passphrase \\
+\hline
+{\em fn} & the filename (only need for mode E\+M\+B\+ED) \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{classEmbData_aa0b2fab1b18e44565346943a4375effa}} 
+\index{Emb\+Data@{Emb\+Data}!add\+Bits@{add\+Bits}}
+\index{add\+Bits@{add\+Bits}!Emb\+Data@{Emb\+Data}}
+\subsubsection{add\+Bits()}
+{\footnotesize\ttfamily void Emb\+Data\+::add\+Bits (\begin{DoxyParamCaption}\item[{\textbf{ Bit\+String}}]{addbits }\end{DoxyParamCaption})}
+
+\mbox{\label{classEmbData_a09c84cf93e64abf62a90713bf659555f}} 
+\index{Emb\+Data@{Emb\+Data}!checksum\+OK@{checksum\+OK}}
+\index{checksum\+OK@{checksum\+OK}!Emb\+Data@{Emb\+Data}}
+\subsubsection{checksum\+O\+K()}
+{\footnotesize\ttfamily bool Emb\+Data\+::checksum\+OK (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+check if crc32 checksum is ok (needs filled Data and C\+R\+C32 fields) \begin{DoxyReturn}{Returns}
+true iff checksum is ok 
+\end{DoxyReturn}
+\mbox{\label{classEmbData_a699ca2ad6986f194520393ae7bcff939}} 
+\index{Emb\+Data@{Emb\+Data}!finished@{finished}}
+\index{finished@{finished}!Emb\+Data@{Emb\+Data}}
+\subsubsection{finished()}
+{\footnotesize\ttfamily bool Emb\+Data\+::finished (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\label{classEmbData_a62e622d2fd223fd38c9ee148433a72fd}} 
+\index{Emb\+Data@{Emb\+Data}!get\+Bit\+String@{get\+Bit\+String}}
+\index{get\+Bit\+String@{get\+Bit\+String}!Emb\+Data@{Emb\+Data}}
+\subsubsection{get\+Bit\+String()}
+{\footnotesize\ttfamily \textbf{ Bit\+String} Emb\+Data\+::get\+Bit\+String (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\label{classEmbData_a526b3c014e5e618a34d0d671974ef535}} 
+\index{Emb\+Data@{Emb\+Data}!get\+Checksum@{get\+Checksum}}
+\index{get\+Checksum@{get\+Checksum}!Emb\+Data@{Emb\+Data}}
+\subsubsection{get\+Checksum()}
+{\footnotesize\ttfamily bool Emb\+Data\+::get\+Checksum (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+\mbox{\label{classEmbData_af116ffd488b759e71ef65089a1879b4d}} 
+\index{Emb\+Data@{Emb\+Data}!get\+Compression@{get\+Compression}}
+\index{get\+Compression@{get\+Compression}!Emb\+Data@{Emb\+Data}}
+\subsubsection{get\+Compression()}
+{\footnotesize\ttfamily int Emb\+Data\+::get\+Compression (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+\mbox{\label{classEmbData_ac1013026c0309859c826b4f14fa79750}} 
+\index{Emb\+Data@{Emb\+Data}!get\+Data@{get\+Data}}
+\index{get\+Data@{get\+Data}!Emb\+Data@{Emb\+Data}}
+\subsubsection{get\+Data()}
+{\footnotesize\ttfamily std\+::vector$<$\textbf{ B\+Y\+TE}$>$ Emb\+Data\+::get\+Data (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classEmbData_ab79107d1bb24cafb2c60ca58a9f07554}} 
+\index{Emb\+Data@{Emb\+Data}!get\+Enc\+Algo@{get\+Enc\+Algo}}
+\index{get\+Enc\+Algo@{get\+Enc\+Algo}!Emb\+Data@{Emb\+Data}}
+\subsubsection{get\+Enc\+Algo()}
+{\footnotesize\ttfamily \textbf{ Encryption\+Algorithm} Emb\+Data\+::get\+Enc\+Algo (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+\mbox{\label{classEmbData_a9a8a574ac33806d3b48e7734d788dd71}} 
+\index{Emb\+Data@{Emb\+Data}!get\+Enc\+Mode@{get\+Enc\+Mode}}
+\index{get\+Enc\+Mode@{get\+Enc\+Mode}!Emb\+Data@{Emb\+Data}}
+\subsubsection{get\+Enc\+Mode()}
+{\footnotesize\ttfamily \textbf{ Encryption\+Mode} Emb\+Data\+::get\+Enc\+Mode (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+\mbox{\label{classEmbData_ae4ad98108d16954bd514e70237649a52}} 
+\index{Emb\+Data@{Emb\+Data}!get\+File\+Name@{get\+File\+Name}}
+\index{get\+File\+Name@{get\+File\+Name}!Emb\+Data@{Emb\+Data}}
+\subsubsection{get\+File\+Name()}
+{\footnotesize\ttfamily std\+::string Emb\+Data\+::get\+File\+Name (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classEmbData_ad45dcea907ce93ac8c10e9f267e2e608}} 
+\index{Emb\+Data@{Emb\+Data}!get\+Num\+Bits\+Requested@{get\+Num\+Bits\+Requested}}
+\index{get\+Num\+Bits\+Requested@{get\+Num\+Bits\+Requested}!Emb\+Data@{Emb\+Data}}
+\subsubsection{get\+Num\+Bits\+Requested()}
+{\footnotesize\ttfamily unsigned long Emb\+Data\+::get\+Num\+Bits\+Requested (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+get the minimum length of the \doxyref{Bit\+String}{p.}{classBitString} that is to be passed to add\+Bits \mbox{\label{classEmbData_a8756c5f0cb869013632bb1f262e075c8}} 
+\index{Emb\+Data@{Emb\+Data}!set\+Checksum@{set\+Checksum}}
+\index{set\+Checksum@{set\+Checksum}!Emb\+Data@{Emb\+Data}}
+\subsubsection{set\+Checksum()}
+{\footnotesize\ttfamily void Emb\+Data\+::set\+Checksum (\begin{DoxyParamCaption}\item[{bool}]{c }\end{DoxyParamCaption})}
+
+\mbox{\label{classEmbData_ad5ba375a5eaf27a9ad36bf2064d3397d}} 
+\index{Emb\+Data@{Emb\+Data}!set\+Compression@{set\+Compression}}
+\index{set\+Compression@{set\+Compression}!Emb\+Data@{Emb\+Data}}
+\subsubsection{set\+Compression()}
+{\footnotesize\ttfamily void Emb\+Data\+::set\+Compression (\begin{DoxyParamCaption}\item[{int}]{c }\end{DoxyParamCaption})}
+
+\mbox{\label{classEmbData_a590f9f1ed1516654af82f1dbca33406e}} 
+\index{Emb\+Data@{Emb\+Data}!set\+Data@{set\+Data}}
+\index{set\+Data@{set\+Data}!Emb\+Data@{Emb\+Data}}
+\subsubsection{set\+Data()}
+{\footnotesize\ttfamily void Emb\+Data\+::set\+Data (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \textbf{ B\+Y\+TE} $>$}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classEmbData_afd81a894ee354489c49d1d60ad544f83}} 
+\index{Emb\+Data@{Emb\+Data}!set\+Enc\+Algo@{set\+Enc\+Algo}}
+\index{set\+Enc\+Algo@{set\+Enc\+Algo}!Emb\+Data@{Emb\+Data}}
+\subsubsection{set\+Enc\+Algo()}
+{\footnotesize\ttfamily void Emb\+Data\+::set\+Enc\+Algo (\begin{DoxyParamCaption}\item[{\textbf{ Encryption\+Algorithm}}]{a }\end{DoxyParamCaption})}
+
+\mbox{\label{classEmbData_a710998ae27522c78c7d7a8911301e846}} 
+\index{Emb\+Data@{Emb\+Data}!set\+Enc\+Mode@{set\+Enc\+Mode}}
+\index{set\+Enc\+Mode@{set\+Enc\+Mode}!Emb\+Data@{Emb\+Data}}
+\subsubsection{set\+Enc\+Mode()}
+{\footnotesize\ttfamily void Emb\+Data\+::set\+Enc\+Mode (\begin{DoxyParamCaption}\item[{\textbf{ Encryption\+Mode}}]{m }\end{DoxyParamCaption})}
+
+\mbox{\label{classEmbData_ae4861f4c36be1609d2d7de7c2b6d5541}} 
+\index{Emb\+Data@{Emb\+Data}!strip\+Dir@{strip\+Dir}}
+\index{strip\+Dir@{strip\+Dir}!Emb\+Data@{Emb\+Data}}
+\subsubsection{strip\+Dir()}
+{\footnotesize\ttfamily std\+::string Emb\+Data\+::strip\+Dir (\begin{DoxyParamCaption}\item[{std\+::string}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{classEmbData_a2d43274a34434bc7431e554e1f8cd707}} 
+\index{Emb\+Data@{Emb\+Data}!Checksum@{Checksum}}
+\index{Checksum@{Checksum}!Emb\+Data@{Emb\+Data}}
+\subsubsection{Checksum}
+{\footnotesize\ttfamily bool Emb\+Data\+::\+Checksum\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classEmbData_a91dc48546df6338aa0694b9b1049708c}} 
+\index{Emb\+Data@{Emb\+Data}!Code\+Version@{Code\+Version}}
+\index{Code\+Version@{Code\+Version}!Emb\+Data@{Emb\+Data}}
+\subsubsection{Code\+Version}
+{\footnotesize\ttfamily const unsigned short Emb\+Data\+::\+Code\+Version = 0\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\label{classEmbData_a1b5be3af2aa0eafc2b4f8b0ef4578aa9}} 
+\index{Emb\+Data@{Emb\+Data}!Compression@{Compression}}
+\index{Compression@{Compression}!Emb\+Data@{Emb\+Data}}
+\subsubsection{Compression}
+{\footnotesize\ttfamily int Emb\+Data\+::\+Compression\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classEmbData_a94eeb764b0c4625e9c6fe8d7abb94b9a}} 
+\index{Emb\+Data@{Emb\+Data}!C\+R\+C32@{C\+R\+C32}}
+\index{C\+R\+C32@{C\+R\+C32}!Emb\+Data@{Emb\+Data}}
+\subsubsection{C\+R\+C32}
+{\footnotesize\ttfamily unsigned long Emb\+Data\+::\+C\+R\+C32\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classEmbData_a8d7315049fb05d0f1119f3b40b553757}} 
+\index{Emb\+Data@{Emb\+Data}!Data@{Data}}
+\index{Data@{Data}!Emb\+Data@{Emb\+Data}}
+\subsubsection{Data}
+{\footnotesize\ttfamily std\+::vector$<$\textbf{ B\+Y\+TE}$>$ Emb\+Data\+::\+Data\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classEmbData_a5e3e18c52f36adf2a34610b6dee2c8fe}} 
+\index{Emb\+Data@{Emb\+Data}!Enc\+Algo@{Enc\+Algo}}
+\index{Enc\+Algo@{Enc\+Algo}!Emb\+Data@{Emb\+Data}}
+\subsubsection{Enc\+Algo}
+{\footnotesize\ttfamily \textbf{ Encryption\+Algorithm} Emb\+Data\+::\+Enc\+Algo\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classEmbData_a9a6abfa96f7e4261993337759bb95f5b}} 
+\index{Emb\+Data@{Emb\+Data}!Enc\+Mode@{Enc\+Mode}}
+\index{Enc\+Mode@{Enc\+Mode}!Emb\+Data@{Emb\+Data}}
+\subsubsection{Enc\+Mode}
+{\footnotesize\ttfamily \textbf{ Encryption\+Mode} Emb\+Data\+::\+Enc\+Mode\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classEmbData_af615f129b068e0dc3e6eacfdc6cbd96a}} 
+\index{Emb\+Data@{Emb\+Data}!File\+Name@{File\+Name}}
+\index{File\+Name@{File\+Name}!Emb\+Data@{Emb\+Data}}
+\subsubsection{File\+Name}
+{\footnotesize\ttfamily std\+::string Emb\+Data\+::\+File\+Name\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classEmbData_a3cd2498fc805e575bdba9bf11880288c}} 
+\index{Emb\+Data@{Emb\+Data}!Magic@{Magic}}
+\index{Magic@{Magic}!Emb\+Data@{Emb\+Data}}
+\subsubsection{Magic}
+{\footnotesize\ttfamily const \textbf{ U\+W\+O\+R\+D32} Emb\+Data\+::\+Magic = 0x73688\+D\+UL\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\label{classEmbData_a55439c544b3b493b0b07d235ded1bf4c}} 
+\index{Emb\+Data@{Emb\+Data}!Min\+Stego\+Header\+Size@{Min\+Stego\+Header\+Size}}
+\index{Min\+Stego\+Header\+Size@{Min\+Stego\+Header\+Size}!Emb\+Data@{Emb\+Data}}
+\subsubsection{Min\+Stego\+Header\+Size}
+{\footnotesize\ttfamily const unsigned int Emb\+Data\+::\+Min\+Stego\+Header\+Size = 50\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\label{classEmbData_af41023fae36a224f8ad1db9fc09e1a3b}} 
+\index{Emb\+Data@{Emb\+Data}!Mode@{Mode}}
+\index{Mode@{Mode}!Emb\+Data@{Emb\+Data}}
+\subsubsection{Mode}
+{\footnotesize\ttfamily \textbf{ M\+O\+DE} Emb\+Data\+::\+Mode\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classEmbData_a4775bc765273a7f5a773eddef1407860}} 
+\index{Emb\+Data@{Emb\+Data}!N\+Bits\+Crc32@{N\+Bits\+Crc32}}
+\index{N\+Bits\+Crc32@{N\+Bits\+Crc32}!Emb\+Data@{Emb\+Data}}
+\subsubsection{N\+Bits\+Crc32}
+{\footnotesize\ttfamily const unsigned int Emb\+Data\+::\+N\+Bits\+Crc32 = 32\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\label{classEmbData_adf395aacf479755e4e7c900f4393104b}} 
+\index{Emb\+Data@{Emb\+Data}!N\+Bits\+Magic@{N\+Bits\+Magic}}
+\index{N\+Bits\+Magic@{N\+Bits\+Magic}!Emb\+Data@{Emb\+Data}}
+\subsubsection{N\+Bits\+Magic}
+{\footnotesize\ttfamily const unsigned int Emb\+Data\+::\+N\+Bits\+Magic = 24\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\label{classEmbData_aac2e47cec6d1584afc4e586cd0bd648e}} 
+\index{Emb\+Data@{Emb\+Data}!N\+Bits\+N\+Plain\+Bits@{N\+Bits\+N\+Plain\+Bits}}
+\index{N\+Bits\+N\+Plain\+Bits@{N\+Bits\+N\+Plain\+Bits}!Emb\+Data@{Emb\+Data}}
+\subsubsection{N\+Bits\+N\+Plain\+Bits}
+{\footnotesize\ttfamily const unsigned int Emb\+Data\+::\+N\+Bits\+N\+Plain\+Bits = 32\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\label{classEmbData_a9b363b6ce16886a3fa011d14833455ce}} 
+\index{Emb\+Data@{Emb\+Data}!N\+Bits\+N\+Uncompressed\+Bits@{N\+Bits\+N\+Uncompressed\+Bits}}
+\index{N\+Bits\+N\+Uncompressed\+Bits@{N\+Bits\+N\+Uncompressed\+Bits}!Emb\+Data@{Emb\+Data}}
+\subsubsection{N\+Bits\+N\+Uncompressed\+Bits}
+{\footnotesize\ttfamily const unsigned int Emb\+Data\+::\+N\+Bits\+N\+Uncompressed\+Bits = 32\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\label{classEmbData_a328e8cc75a5b66082eaec3db13594372}} 
+\index{Emb\+Data@{Emb\+Data}!N\+Plain\+Bits@{N\+Plain\+Bits}}
+\index{N\+Plain\+Bits@{N\+Plain\+Bits}!Emb\+Data@{Emb\+Data}}
+\subsubsection{N\+Plain\+Bits}
+{\footnotesize\ttfamily unsigned long Emb\+Data\+::\+N\+Plain\+Bits\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classEmbData_a90f81537555dc6540108f87d35e1ccc0}} 
+\index{Emb\+Data@{Emb\+Data}!Num\+Bits\+Needed@{Num\+Bits\+Needed}}
+\index{Num\+Bits\+Needed@{Num\+Bits\+Needed}!Emb\+Data@{Emb\+Data}}
+\subsubsection{Num\+Bits\+Needed}
+{\footnotesize\ttfamily unsigned long Emb\+Data\+::\+Num\+Bits\+Needed\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classEmbData_a0a2967d38cdd9171948656a19eea8929}} 
+\index{Emb\+Data@{Emb\+Data}!Num\+Bits\+Requested@{Num\+Bits\+Requested}}
+\index{Num\+Bits\+Requested@{Num\+Bits\+Requested}!Emb\+Data@{Emb\+Data}}
+\subsubsection{Num\+Bits\+Requested}
+{\footnotesize\ttfamily unsigned long Emb\+Data\+::\+Num\+Bits\+Requested\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classEmbData_a35e2946f0335b678e9957a926098b18c}} 
+\index{Emb\+Data@{Emb\+Data}!Passphrase@{Passphrase}}
+\index{Passphrase@{Passphrase}!Emb\+Data@{Emb\+Data}}
+\subsubsection{Passphrase}
+{\footnotesize\ttfamily std\+::string Emb\+Data\+::\+Passphrase\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classEmbData_a0e87141096da88cc74fd7dd8d161be70}} 
+\index{Emb\+Data@{Emb\+Data}!Reservoir@{Reservoir}}
+\index{Reservoir@{Reservoir}!Emb\+Data@{Emb\+Data}}
+\subsubsection{Reservoir}
+{\footnotesize\ttfamily \textbf{ Bit\+String} Emb\+Data\+::\+Reservoir\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classEmbData_adc3561feb96eee38ea4bdc44bbc14526}} 
+\index{Emb\+Data@{Emb\+Data}!State@{State}}
+\index{State@{State}!Emb\+Data@{Emb\+Data}}
+\subsubsection{State}
+{\footnotesize\ttfamily \textbf{ S\+T\+A\+TE} Emb\+Data\+::\+State\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classEmbData_ab3ac0bc3e688be1ad7a0cc5dce5f2bb3}} 
+\index{Emb\+Data@{Emb\+Data}!Version@{Version}}
+\index{Version@{Version}!Emb\+Data@{Emb\+Data}}
+\subsubsection{Version}
+{\footnotesize\ttfamily unsigned short Emb\+Data\+::\+Version\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ Emb\+Data.\+h}\item 
+\textbf{ Emb\+Data.\+cc}\end{DoxyCompactItemize}

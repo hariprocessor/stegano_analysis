@@ -1,0 +1,172 @@
+.TH "Edge" 3 "Thu Aug 17 2017" "Version 0.5.1" "steghide" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Edge
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Edge\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBEdge\fP (void)"
+.br
+.ti -1c
+.RI "\fBEdge\fP (\fBVertex\fP *v1, unsigned short idx1, \fBVertex\fP *v2, unsigned short idx2)"
+.br
+.ti -1c
+.RI "\fBEdge\fP (const \fBEdge\fP &e)"
+.br
+.ti -1c
+.RI "\fBVertex\fP * \fBgetVertex1\fP (void) const"
+.br
+.ti -1c
+.RI "void \fBsetVertex1\fP (\fBVertex\fP *v)"
+.br
+.ti -1c
+.RI "\fBVertex\fP * \fBgetVertex2\fP (void) const"
+.br
+.ti -1c
+.RI "unsigned short \fBgetIndex1\fP (void) const"
+.br
+.ti -1c
+.RI "void \fBsetIndex1\fP (unsigned short i)"
+.br
+.ti -1c
+.RI "unsigned short \fBgetIndex2\fP (void) const"
+.br
+.ti -1c
+.RI "\fBUWORD32\fP \fBgetWeight\fP (void)"
+.br
+.ti -1c
+.RI "void \fBset\fP (\fBVertex\fP *v1, unsigned short idx1, \fBVertex\fP *v2, unsigned short idx2)"
+.br
+.ti -1c
+.RI "void \fBset1\fP (\fBVertex\fP *v1, unsigned short idx1)"
+.br
+.ti -1c
+.RI "void \fBset2\fP (\fBVertex\fP *v2, unsigned short idx2)"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBEdge\fP &e) const"
+.br
+.ti -1c
+.RI "bool \fBoperator!=\fP (const \fBEdge\fP &e) const"
+.br
+.ti -1c
+.RI "void \fBswap\fP (void)"
+.br
+.ti -1c
+.RI "bool \fBcontains\fP (const \fBVertex\fP *v) const"
+.br
+.ti -1c
+.RI "\fBVertex\fP * \fBgetOtherVertex\fP (const \fBVertex\fP *v) const"
+.br
+.ti -1c
+.RI "\fBSamplePos\fP \fBgetSamplePos\fP (\fBVertex\fP *v) const"
+.br
+.ti -1c
+.RI "\fBSampleValue\fP * \fBgetOriginalSampleValue\fP (\fBVertex\fP *v) const"
+.br
+.ti -1c
+.RI "\fBSampleValue\fP * \fBgetReplacingSampleValue\fP (\fBVertex\fP *v) const"
+.br
+.ti -1c
+.RI "void \fBprint\fP (unsigned short spc=0) const"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBVertex\fP * \fBVertex1\fP"
+.br
+.ti -1c
+.RI "unsigned short \fBIndex1\fP"
+.br
+.RI "contains the index of the sample (of those in Vertex1) that will be changed (if this edge is used) "
+.ti -1c
+.RI "\fBVertex\fP * \fBVertex2\fP"
+.br
+.ti -1c
+.RI "unsigned short \fBIndex2\fP"
+.br
+.RI "contains the index of the sample (of those in Vertex2) that will be changed (if this edge is used) "
+.ti -1c
+.RI "\fBUWORD32\fP \fBWeight\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Edge::Edge (void)\fC [inline]\fP"
+default constructor - does not create a useful object 
+.SS "Edge::Edge (\fBVertex\fP * v1, unsigned short idx1, \fBVertex\fP * v2, unsigned short idx2)"
+constructs an edge object 
+.SS "Edge::Edge (const \fBEdge\fP & e)"
+copy constructor 
+.SH "Member Function Documentation"
+.PP 
+.SS "bool Edge::contains (const \fBVertex\fP * v) const"
+
+.PP
+\fBReturns:\fP
+.RS 4
+true iff this edge contains the vertex v 
+.RE
+.PP
+
+.SS "unsigned short Edge::getIndex1 (void) const\fC [inline]\fP"
+
+.SS "unsigned short Edge::getIndex2 (void) const\fC [inline]\fP"
+
+.SS "\fBSampleValue\fP * Edge::getOriginalSampleValue (\fBVertex\fP * v) const"
+get the old sample value that will be replaced to embed the bit represented by the vertex v 
+.SS "\fBVertex\fP * Edge::getOtherVertex (const \fBVertex\fP * v) const"
+get the vertex on this edge that is not equal to v 
+.SS "\fBSampleValue\fP * Edge::getReplacingSampleValue (\fBVertex\fP * v) const"
+get the sample value that should replace the previous sample value to embed the bit represented by the vertex v 
+.SS "\fBSamplePos\fP Edge::getSamplePos (\fBVertex\fP * v) const"
+get the position of the sample that should be changed to embed the bit represented by the vertex v 
+.SS "\fBVertex\fP* Edge::getVertex1 (void) const\fC [inline]\fP"
+
+.SS "\fBVertex\fP* Edge::getVertex2 (void) const\fC [inline]\fP"
+
+.SS "\fBUWORD32\fP Edge::getWeight (void)"
+
+.SS "bool Edge::operator!= (const \fBEdge\fP & e) const"
+
+.SS "bool Edge::operator== (const \fBEdge\fP & e) const"
+
+.SS "void Edge::print (unsigned short spc = \fC0\fP) const"
+
+.SS "void Edge::set (\fBVertex\fP * v1, unsigned short idx1, \fBVertex\fP * v2, unsigned short idx2)"
+
+.SS "void Edge::set1 (\fBVertex\fP * v1, unsigned short idx1)"
+
+.SS "void Edge::set2 (\fBVertex\fP * v2, unsigned short idx2)"
+
+.SS "void Edge::setIndex1 (unsigned short i)\fC [inline]\fP"
+
+.SS "void Edge::setVertex1 (\fBVertex\fP * v)\fC [inline]\fP"
+
+.SS "void Edge::swap (void)"
+swap vertices 1 and 2 in this edge (weight is not altered) 
+.SH "Member Data Documentation"
+.PP 
+.SS "unsigned short Edge::Index1\fC [private]\fP"
+
+.SS "unsigned short Edge::Index2\fC [private]\fP"
+
+.SS "\fBVertex\fP* Edge::Vertex1\fC [private]\fP"
+
+.SS "\fBVertex\fP* Edge::Vertex2\fC [private]\fP"
+
+.SS "\fBUWORD32\fP Edge::Weight\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for steghide from the source code\&.

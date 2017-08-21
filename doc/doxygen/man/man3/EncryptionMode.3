@@ -1,0 +1,185 @@
+.TH "EncryptionMode" 3 "Thu Aug 17 2017" "Version 0.5.1" "steghide" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+EncryptionMode
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <EncryptionMode\&.h>\fP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBstruct_Translation\fP"
+.br
+.in -1c
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBIRep\fP { \fBECB\fP = 0, \fBCBC\fP = 1, \fBOFB\fP = 2, \fBCFB\fP = 3, \fBNOFB\fP = 4, \fBNCFB\fP = 5, \fBCTR\fP = 6, \fBSTREAM\fP = 7 }"
+.br
+.RI "integer representation of encryption mode "
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBEncryptionMode\fP (void)"
+.br
+.ti -1c
+.RI "\fBEncryptionMode\fP (\fBIRep\fP irep)"
+.br
+.ti -1c
+.RI "\fBEncryptionMode\fP (std::string srep)"
+.br
+.ti -1c
+.RI "void \fBsetValue\fP (\fBIRep\fP irep)"
+.br
+.ti -1c
+.RI "std::string \fBgetStringRep\fP (void) const"
+.br
+.ti -1c
+.RI "\fBIRep\fP \fBgetIntegerRep\fP (void) const"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBEncryptionMode\fP &mode) const"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static bool \fBisValidStringRep\fP (std::string srep)"
+.br
+.ti -1c
+.RI "static bool \fBisValidIntegerRep\fP (unsigned int irep)"
+.br
+.ti -1c
+.RI "static std::string \fBtranslate\fP (\fBIRep\fP irep)"
+.br
+.ti -1c
+.RI "static \fBIRep\fP \fBtranslate\fP (std::string srep)"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static const unsigned int \fBIRep_size\fP = 3"
+.br
+.RI "number of bits needed to code the mode "
+.in -1c
+.SS "Private Types"
+
+.in +1c
+.ti -1c
+.RI "typedef struct \fBEncryptionMode::struct_Translation\fP \fBTranslation\fP"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBIRep\fP \fBValue\fP"
+.br
+.in -1c
+.SS "Static Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "static const unsigned int \fBNumValues\fP = 8"
+.br
+.ti -1c
+.RI "static const \fBTranslation\fP \fBTranslations\fP []"
+.br
+.in -1c
+.SH "Member Typedef Documentation"
+.PP 
+.SS "typedef struct \fBEncryptionMode::struct_Translation\fP  \fBEncryptionMode::Translation\fP\fC [private]\fP"
+
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBEncryptionMode::IRep\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIECB \fP\fP
+.TP
+\fB\fICBC \fP\fP
+.TP
+\fB\fIOFB \fP\fP
+.TP
+\fB\fICFB \fP\fP
+.TP
+\fB\fINOFB \fP\fP
+.TP
+\fB\fINCFB \fP\fP
+.TP
+\fB\fICTR \fP\fP
+.TP
+\fB\fISTREAM \fP\fP
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "EncryptionMode::EncryptionMode (void)"
+construct a new \fBEncryptionMode\fP object setting Value to ECB 
+.SS "EncryptionMode::EncryptionMode (\fBEncryptionMode::IRep\fP irep)"
+
+.SS "EncryptionMode::EncryptionMode (std::string srep)"
+construct a new \fBEncryptionMode\fP object from a std::string representation 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsrep\fP a valid(!) std::string representation 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBEncryptionMode::IRep\fP EncryptionMode::getIntegerRep (void) const"
+
+.SS "std::string EncryptionMode::getStringRep (void) const"
+
+.SS "bool EncryptionMode::isValidIntegerRep (unsigned int irep)\fC [static]\fP"
+
+.SS "bool EncryptionMode::isValidStringRep (std::string srep)\fC [static]\fP"
+
+.SS "bool EncryptionMode::operator== (const \fBEncryptionMode\fP & mode) const\fC [inline]\fP"
+
+.SS "void EncryptionMode::setValue (\fBEncryptionMode::IRep\fP irep)"
+
+.SS "std::string EncryptionMode::translate (\fBEncryptionMode::IRep\fP irep)\fC [static]\fP"
+
+.SS "\fBEncryptionMode::IRep\fP EncryptionMode::translate (std::string srep)\fC [static]\fP"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "const unsigned int EncryptionMode::IRep_size = 3\fC [static]\fP"
+
+.SS "const unsigned int EncryptionMode::NumValues = 8\fC [static]\fP, \fC [private]\fP"
+
+.SS "const \fBEncryptionMode::Translation\fP EncryptionMode::Translations\fC [static]\fP, \fC [private]\fP"
+\fBInitial value:\fP
+.PP
+.nf
+= {
+        { ECB, "ecb" },
+        { CBC, "cbc" },
+        { OFB, "ofb" },
+        { CFB, "cfb" },
+        { NOFB, "nofb" },
+        { NCFB, "ncfb" },
+        { CTR, "ctr" },
+        { STREAM, "stream" }
+}
+.fi
+.SS "\fBIRep\fP EncryptionMode::Value\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for steghide from the source code\&.

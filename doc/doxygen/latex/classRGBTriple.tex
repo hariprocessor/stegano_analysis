@@ -1,0 +1,99 @@
+\section{R\+G\+B\+Triple Class Reference}
+\label{classRGBTriple}\index{R\+G\+B\+Triple@{R\+G\+B\+Triple}}
+
+
+{\ttfamily \#include $<$R\+G\+B\+Triple.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ R\+G\+B\+Triple} (void)
+\item 
+\textbf{ R\+G\+B\+Triple} (\textbf{ B\+Y\+TE} r, \textbf{ B\+Y\+TE} g, \textbf{ B\+Y\+TE} b)
+\item 
+\textbf{ U\+W\+O\+R\+D32} \textbf{ calc\+Distance} (const \textbf{ R\+G\+B\+Triple} \&t) const
+\item 
+bool \textbf{ operator==} (const \textbf{ R\+G\+B\+Triple} \&t) const
+\item 
+bool \textbf{ operator!=} (const \textbf{ R\+G\+B\+Triple} \&t) const
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ B\+Y\+TE} \textbf{ Red}
+\item 
+\textbf{ B\+Y\+TE} \textbf{ Green}
+\item 
+\textbf{ B\+Y\+TE} \textbf{ Blue}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{classRGBTriple_aab572f447086df43db5d08b4c3b75199}} 
+\index{R\+G\+B\+Triple@{R\+G\+B\+Triple}!R\+G\+B\+Triple@{R\+G\+B\+Triple}}
+\index{R\+G\+B\+Triple@{R\+G\+B\+Triple}!R\+G\+B\+Triple@{R\+G\+B\+Triple}}
+\subsubsection{R\+G\+B\+Triple()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily R\+G\+B\+Triple\+::\+R\+G\+B\+Triple (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classRGBTriple_a47459117a129f99faf57260fb39d0a85}} 
+\index{R\+G\+B\+Triple@{R\+G\+B\+Triple}!R\+G\+B\+Triple@{R\+G\+B\+Triple}}
+\index{R\+G\+B\+Triple@{R\+G\+B\+Triple}!R\+G\+B\+Triple@{R\+G\+B\+Triple}}
+\subsubsection{R\+G\+B\+Triple()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily R\+G\+B\+Triple\+::\+R\+G\+B\+Triple (\begin{DoxyParamCaption}\item[{\textbf{ B\+Y\+TE}}]{r,  }\item[{\textbf{ B\+Y\+TE}}]{g,  }\item[{\textbf{ B\+Y\+TE}}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{classRGBTriple_aa8a50821a88d11a5e8f2a7fc7ed31958}} 
+\index{R\+G\+B\+Triple@{R\+G\+B\+Triple}!calc\+Distance@{calc\+Distance}}
+\index{calc\+Distance@{calc\+Distance}!R\+G\+B\+Triple@{R\+G\+B\+Triple}}
+\subsubsection{calc\+Distance()}
+{\footnotesize\ttfamily \textbf{ U\+W\+O\+R\+D32} R\+G\+B\+Triple\+::calc\+Distance (\begin{DoxyParamCaption}\item[{const \textbf{ R\+G\+B\+Triple} \&}]{t }\end{DoxyParamCaption}) const}
+
+get the squared distance in the R\+GB cube between this triple and the triple t 
+\begin{DoxyParams}{Parameters}
+{\em t} & another R\+GB triple \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the square of the euclidean distance between this and t 
+\end{DoxyReturn}
+\mbox{\label{classRGBTriple_a00ec6e847926e1d0484f76dc899b399b}} 
+\index{R\+G\+B\+Triple@{R\+G\+B\+Triple}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!R\+G\+B\+Triple@{R\+G\+B\+Triple}}
+\subsubsection{operator"!=()}
+{\footnotesize\ttfamily bool R\+G\+B\+Triple\+::operator!= (\begin{DoxyParamCaption}\item[{const \textbf{ R\+G\+B\+Triple} \&}]{t }\end{DoxyParamCaption}) const}
+
+return true iff this triple and t are not equal (i.\+e. have different rgb values) \mbox{\label{classRGBTriple_a1c795b3d57cc4e1efa775130fa15f277}} 
+\index{R\+G\+B\+Triple@{R\+G\+B\+Triple}!operator==@{operator==}}
+\index{operator==@{operator==}!R\+G\+B\+Triple@{R\+G\+B\+Triple}}
+\subsubsection{operator==()}
+{\footnotesize\ttfamily bool R\+G\+B\+Triple\+::operator== (\begin{DoxyParamCaption}\item[{const \textbf{ R\+G\+B\+Triple} \&}]{t }\end{DoxyParamCaption}) const}
+
+returns true iff this triple and t are equal (i.\+e. have the same rgb values) 
+
+\subsection{Member Data Documentation}
+\mbox{\label{classRGBTriple_a8f690931d10d813d60ec03b3f19d55df}} 
+\index{R\+G\+B\+Triple@{R\+G\+B\+Triple}!Blue@{Blue}}
+\index{Blue@{Blue}!R\+G\+B\+Triple@{R\+G\+B\+Triple}}
+\subsubsection{Blue}
+{\footnotesize\ttfamily \textbf{ B\+Y\+TE} R\+G\+B\+Triple\+::\+Blue}
+
+\mbox{\label{classRGBTriple_a418d7693e0c3db631b601f3c09e1d01c}} 
+\index{R\+G\+B\+Triple@{R\+G\+B\+Triple}!Green@{Green}}
+\index{Green@{Green}!R\+G\+B\+Triple@{R\+G\+B\+Triple}}
+\subsubsection{Green}
+{\footnotesize\ttfamily \textbf{ B\+Y\+TE} R\+G\+B\+Triple\+::\+Green}
+
+\mbox{\label{classRGBTriple_ae89cd719bd23402ce4290ee723e2db72}} 
+\index{R\+G\+B\+Triple@{R\+G\+B\+Triple}!Red@{Red}}
+\index{Red@{Red}!R\+G\+B\+Triple@{R\+G\+B\+Triple}}
+\subsubsection{Red}
+{\footnotesize\ttfamily \textbf{ B\+Y\+TE} R\+G\+B\+Triple\+::\+Red}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ R\+G\+B\+Triple.\+h}\item 
+\textbf{ R\+G\+B\+Triple.\+cc}\end{DoxyCompactItemize}

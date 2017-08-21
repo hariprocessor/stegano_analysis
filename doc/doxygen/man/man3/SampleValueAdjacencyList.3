@@ -1,0 +1,90 @@
+.TH "SampleValueAdjacencyList" 3 "Thu Aug 17 2017" "Version 0.5.1" "steghide" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SampleValueAdjacencyList \- an adjacency list-like data structur for sample values  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SampleValueAdjacencyList\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSampleValueAdjacencyList\fP (\fBSampleValueLabel\fP numsvs)"
+.br
+.ti -1c
+.RI "std::vector< \fBSampleValue\fP * > & \fBoperator[]\fP (const \fBSampleValueLabel\fP lbl)"
+.br
+.ti -1c
+.RI "std::vector< \fBSampleValue\fP * > & \fBoperator[]\fP (const \fBSampleValue\fP *sv)"
+.br
+.ti -1c
+.RI "unsigned long \fBgetNumRows\fP (void) const"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBSampleValueAdjacencyList\fP &sval)"
+.br
+.ti -1c
+.RI "void \fBsort\fP (void)"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBquicksort\fP (std::vector< \fBSampleValue\fP *> &oppneighs, \fBUWORD32\fP *distances, unsigned int l, unsigned int r)"
+.br
+.ti -1c
+.RI "unsigned int \fBpartition\fP (std::vector< \fBSampleValue\fP *> &oppneighs, \fBUWORD32\fP *distances, unsigned int l, unsigned int r, \fBUWORD32\fP x)"
+.br
+.ti -1c
+.RI "void \fBswap\fP (std::vector< \fBSampleValue\fP *> &oppneighs, \fBUWORD32\fP *distances, unsigned int i, unsigned int j)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::vector< std::vector< \fBSampleValue\fP * > > \fBAdjacencyList\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SampleValueAdjacencyList::SampleValueAdjacencyList (\fBSampleValueLabel\fP numsvs)"
+construct a \fBSampleValueAdjacencyList\fP with numsvs rows 
+.SH "Member Function Documentation"
+.PP 
+.SS "unsigned long SampleValueAdjacencyList::getNumRows (void) const\fC [inline]\fP"
+
+.SS "bool SampleValueAdjacencyList::operator== (const \fBSampleValueAdjacencyList\fP & sval)"
+check if every row contains the same set of sample values 
+.SS "std::vector<\fBSampleValue\fP*>& SampleValueAdjacencyList::operator[] (const \fBSampleValueLabel\fP lbl)\fC [inline]\fP"
+
+.SS "std::vector<\fBSampleValue\fP*>& SampleValueAdjacencyList::operator[] (const \fBSampleValue\fP * sv)\fC [inline]\fP"
+
+.SS "unsigned int SampleValueAdjacencyList::partition (std::vector< \fBSampleValue\fP *> & oppneighs, \fBUWORD32\fP * distances, unsigned int l, unsigned int r, \fBUWORD32\fP x)\fC [private]\fP"
+partition oppneighs/distances into those with distances less than and those with distances greater than and equal to x 
+.PP
+\fBReturns:\fP
+.RS 4
+the index in oppneighs/distances that separates the two 
+.RE
+.PP
+
+.SS "void SampleValueAdjacencyList::quicksort (std::vector< \fBSampleValue\fP *> & oppneighs, \fBUWORD32\fP * distances, unsigned int l, unsigned int r)\fC [private]\fP"
+
+.SS "void SampleValueAdjacencyList::sort (void)"
+sort the list in a way that the first entry of a row has the least distance to source sample value 
+.SS "void SampleValueAdjacencyList::swap (std::vector< \fBSampleValue\fP *> & oppneighs, \fBUWORD32\fP * distances, unsigned int i, unsigned int j)\fC [private]\fP"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "std::vector<std::vector<\fBSampleValue\fP*> > SampleValueAdjacencyList::AdjacencyList\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for steghide from the source code\&.

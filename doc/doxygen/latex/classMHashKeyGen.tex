@@ -1,0 +1,142 @@
+\section{M\+Hash\+Key\+Gen Class Reference}
+\label{classMHashKeyGen}\index{M\+Hash\+Key\+Gen@{M\+Hash\+Key\+Gen}}
+
+
+{\ttfamily \#include $<$M\+Hash\+Key\+Gen.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ M\+Hash\+Key\+Gen} (void)
+\item 
+\textbf{ M\+Hash\+Key\+Gen} (keygenid kgalgo, hashid halgo, unsigned int keysize)
+\item 
+\textbf{ $\sim$\+M\+Hash\+Key\+Gen} (void)
+\item 
+void \textbf{ set\+Key\+Size} (unsigned int \textbf{ Key\+Size})
+\item 
+void \textbf{ set\+Key\+Gen\+Algorithm} (keygenid algo)
+\item 
+void \textbf{ set\+Hash\+Algorithm} (hashid hashalgo)
+\item 
+void \textbf{ set\+Hash\+Algorithms} (std\+::vector$<$ hashid $>$ hashalgos)
+\item 
+void \textbf{ set\+Salt} (std\+::vector$<$ unsigned char $>$ salt)
+\item 
+std\+::vector$<$ unsigned char $>$ \textbf{ create\+Key} (std\+::string password)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void $\ast$ \textbf{ s\+\_\+malloc} (size\+\_\+t size)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \textbf{ ready}
+\item 
+keygenid \textbf{ Algorithm}
+\item 
+K\+E\+Y\+G\+EN \textbf{ Algorithm\+Data}
+\item 
+unsigned int \textbf{ Key\+Size}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{classMHashKeyGen_a1cffb83fdf21b8300eac6e162a40dfee}} 
+\index{M\+Hash\+Key\+Gen@{M\+Hash\+Key\+Gen}!M\+Hash\+Key\+Gen@{M\+Hash\+Key\+Gen}}
+\index{M\+Hash\+Key\+Gen@{M\+Hash\+Key\+Gen}!M\+Hash\+Key\+Gen@{M\+Hash\+Key\+Gen}}
+\subsubsection{M\+Hash\+Key\+Gen()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily M\+Hash\+Key\+Gen\+::\+M\+Hash\+Key\+Gen (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\label{classMHashKeyGen_ae871e6bdee1a294aa6afa0730fd0d1aa}} 
+\index{M\+Hash\+Key\+Gen@{M\+Hash\+Key\+Gen}!M\+Hash\+Key\+Gen@{M\+Hash\+Key\+Gen}}
+\index{M\+Hash\+Key\+Gen@{M\+Hash\+Key\+Gen}!M\+Hash\+Key\+Gen@{M\+Hash\+Key\+Gen}}
+\subsubsection{M\+Hash\+Key\+Gen()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily M\+Hash\+Key\+Gen\+::\+M\+Hash\+Key\+Gen (\begin{DoxyParamCaption}\item[{keygenid}]{kgalgo,  }\item[{hashid}]{halgo,  }\item[{unsigned int}]{keysize }\end{DoxyParamCaption})}
+
+\mbox{\label{classMHashKeyGen_ac84419b92def320f8c7f3fdd6a82838c}} 
+\index{M\+Hash\+Key\+Gen@{M\+Hash\+Key\+Gen}!````~M\+Hash\+Key\+Gen@{$\sim$\+M\+Hash\+Key\+Gen}}
+\index{````~M\+Hash\+Key\+Gen@{$\sim$\+M\+Hash\+Key\+Gen}!M\+Hash\+Key\+Gen@{M\+Hash\+Key\+Gen}}
+\subsubsection{$\sim$\+M\+Hash\+Key\+Gen()}
+{\footnotesize\ttfamily M\+Hash\+Key\+Gen\+::$\sim$\+M\+Hash\+Key\+Gen (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{classMHashKeyGen_a94021d906060002d1d4c2ff7c141389d}} 
+\index{M\+Hash\+Key\+Gen@{M\+Hash\+Key\+Gen}!create\+Key@{create\+Key}}
+\index{create\+Key@{create\+Key}!M\+Hash\+Key\+Gen@{M\+Hash\+Key\+Gen}}
+\subsubsection{create\+Key()}
+{\footnotesize\ttfamily std\+::vector$<$ unsigned char $>$ M\+Hash\+Key\+Gen\+::create\+Key (\begin{DoxyParamCaption}\item[{std\+::string}]{password }\end{DoxyParamCaption})}
+
+\mbox{\label{classMHashKeyGen_aa64a9326a3c3fb931d535afd95afb738}} 
+\index{M\+Hash\+Key\+Gen@{M\+Hash\+Key\+Gen}!s\+\_\+malloc@{s\+\_\+malloc}}
+\index{s\+\_\+malloc@{s\+\_\+malloc}!M\+Hash\+Key\+Gen@{M\+Hash\+Key\+Gen}}
+\subsubsection{s\+\_\+malloc()}
+{\footnotesize\ttfamily void $\ast$ M\+Hash\+Key\+Gen\+::s\+\_\+malloc (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classMHashKeyGen_a8c274ba1b37bb5075e9f122ce97d6fa9}} 
+\index{M\+Hash\+Key\+Gen@{M\+Hash\+Key\+Gen}!set\+Hash\+Algorithm@{set\+Hash\+Algorithm}}
+\index{set\+Hash\+Algorithm@{set\+Hash\+Algorithm}!M\+Hash\+Key\+Gen@{M\+Hash\+Key\+Gen}}
+\subsubsection{set\+Hash\+Algorithm()}
+{\footnotesize\ttfamily void M\+Hash\+Key\+Gen\+::set\+Hash\+Algorithm (\begin{DoxyParamCaption}\item[{hashid}]{hashalgo }\end{DoxyParamCaption})}
+
+\mbox{\label{classMHashKeyGen_a24fb66cb5aa7c5120ca8b65667435c5b}} 
+\index{M\+Hash\+Key\+Gen@{M\+Hash\+Key\+Gen}!set\+Hash\+Algorithms@{set\+Hash\+Algorithms}}
+\index{set\+Hash\+Algorithms@{set\+Hash\+Algorithms}!M\+Hash\+Key\+Gen@{M\+Hash\+Key\+Gen}}
+\subsubsection{set\+Hash\+Algorithms()}
+{\footnotesize\ttfamily void M\+Hash\+Key\+Gen\+::set\+Hash\+Algorithms (\begin{DoxyParamCaption}\item[{std\+::vector$<$ hashid $>$}]{hashalgos }\end{DoxyParamCaption})}
+
+\mbox{\label{classMHashKeyGen_a793284ce053ce3ea4c81a53d2c8d5f3a}} 
+\index{M\+Hash\+Key\+Gen@{M\+Hash\+Key\+Gen}!set\+Key\+Gen\+Algorithm@{set\+Key\+Gen\+Algorithm}}
+\index{set\+Key\+Gen\+Algorithm@{set\+Key\+Gen\+Algorithm}!M\+Hash\+Key\+Gen@{M\+Hash\+Key\+Gen}}
+\subsubsection{set\+Key\+Gen\+Algorithm()}
+{\footnotesize\ttfamily void M\+Hash\+Key\+Gen\+::set\+Key\+Gen\+Algorithm (\begin{DoxyParamCaption}\item[{keygenid}]{algo }\end{DoxyParamCaption})}
+
+\mbox{\label{classMHashKeyGen_afb604d40cffc15747e3e22cf145537bf}} 
+\index{M\+Hash\+Key\+Gen@{M\+Hash\+Key\+Gen}!set\+Key\+Size@{set\+Key\+Size}}
+\index{set\+Key\+Size@{set\+Key\+Size}!M\+Hash\+Key\+Gen@{M\+Hash\+Key\+Gen}}
+\subsubsection{set\+Key\+Size()}
+{\footnotesize\ttfamily void M\+Hash\+Key\+Gen\+::set\+Key\+Size (\begin{DoxyParamCaption}\item[{unsigned int}]{Key\+Size }\end{DoxyParamCaption})}
+
+\mbox{\label{classMHashKeyGen_ade5e590e9a7fe3e880a548d5a1f527bd}} 
+\index{M\+Hash\+Key\+Gen@{M\+Hash\+Key\+Gen}!set\+Salt@{set\+Salt}}
+\index{set\+Salt@{set\+Salt}!M\+Hash\+Key\+Gen@{M\+Hash\+Key\+Gen}}
+\subsubsection{set\+Salt()}
+{\footnotesize\ttfamily void M\+Hash\+Key\+Gen\+::set\+Salt (\begin{DoxyParamCaption}\item[{std\+::vector$<$ unsigned char $>$}]{salt }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{classMHashKeyGen_a02555544aabc2ee67796b29b4c2e2fa2}} 
+\index{M\+Hash\+Key\+Gen@{M\+Hash\+Key\+Gen}!Algorithm@{Algorithm}}
+\index{Algorithm@{Algorithm}!M\+Hash\+Key\+Gen@{M\+Hash\+Key\+Gen}}
+\subsubsection{Algorithm}
+{\footnotesize\ttfamily keygenid M\+Hash\+Key\+Gen\+::\+Algorithm\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classMHashKeyGen_a2983042aa752b477e867ae694c44e020}} 
+\index{M\+Hash\+Key\+Gen@{M\+Hash\+Key\+Gen}!Algorithm\+Data@{Algorithm\+Data}}
+\index{Algorithm\+Data@{Algorithm\+Data}!M\+Hash\+Key\+Gen@{M\+Hash\+Key\+Gen}}
+\subsubsection{Algorithm\+Data}
+{\footnotesize\ttfamily K\+E\+Y\+G\+EN M\+Hash\+Key\+Gen\+::\+Algorithm\+Data\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classMHashKeyGen_a339c55fa387f746241004036c7119524}} 
+\index{M\+Hash\+Key\+Gen@{M\+Hash\+Key\+Gen}!Key\+Size@{Key\+Size}}
+\index{Key\+Size@{Key\+Size}!M\+Hash\+Key\+Gen@{M\+Hash\+Key\+Gen}}
+\subsubsection{Key\+Size}
+{\footnotesize\ttfamily unsigned int M\+Hash\+Key\+Gen\+::\+Key\+Size\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classMHashKeyGen_ab6b00edfe8982171fb991ef527256bde}} 
+\index{M\+Hash\+Key\+Gen@{M\+Hash\+Key\+Gen}!ready@{ready}}
+\index{ready@{ready}!M\+Hash\+Key\+Gen@{M\+Hash\+Key\+Gen}}
+\subsubsection{ready}
+{\footnotesize\ttfamily bool M\+Hash\+Key\+Gen\+::ready\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ M\+Hash\+Key\+Gen.\+h}\item 
+\textbf{ M\+Hash\+Key\+Gen.\+cc}\end{DoxyCompactItemize}

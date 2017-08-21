@@ -1,0 +1,97 @@
+.TH "JpegSampleValue" 3 "Thu Aug 17 2017" "Version 0.5.1" "steghide" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+JpegSampleValue
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <JpegSampleValue\&.h>\fP
+.PP
+Inherits \fBSampleValue\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBJpegSampleValue\fP (int c)"
+.br
+.ti -1c
+.RI "\fBSampleValue\fP * \fBgetNearestTargetSampleValue\fP (\fBEmbValue\fP t) const"
+.br
+.ti -1c
+.RI "\fBUWORD32\fP \fBcalcDistance\fP (const \fBSampleValue\fP *s) const"
+.br
+.ti -1c
+.RI "std::string \fBgetName\fP (void) const"
+.br
+.ti -1c
+.RI "\fBSWORD16\fP \fBgetDctCoeff\fP (void) const"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBEmbValue\fP \fBcalcEValue\fP (\fBSWORD16\fP dctc)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBSWORD16\fP \fBDctCoeff\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "JpegSampleValue::JpegSampleValue (int c)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBUWORD32\fP JpegSampleValue::calcDistance (const \fBSampleValue\fP * s) const\fC [virtual]\fP"
+calculate the distance between the sample value s and this sample value 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIs\fP a sample value of the same type as this 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the distance 
+.RE
+.PP
+
+.PP
+Implements \fBSampleValue\fP\&.
+.SS "static \fBEmbValue\fP JpegSampleValue::calcEValue (\fBSWORD16\fP dctc)\fC [inline]\fP, \fC [static]\fP"
+
+.SS "\fBSWORD16\fP JpegSampleValue::getDctCoeff (void) const\fC [inline]\fP"
+
+.SS "std::string JpegSampleValue::getName (void) const\fC [virtual]\fP"
+return a short name uniquely identifying this sample value 
+.PP
+Implements \fBSampleValue\fP\&.
+.SS "\fBSampleValue\fP * JpegSampleValue::getNearestTargetSampleValue (\fBEmbValue\fP t) const\fC [virtual]\fP"
+get the nearest (with the least distance to this sample value) sample value whose embedded value equals the specified target 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIt\fP the target embedded value
+.RE
+.PP
+If two or more target sample values have equal distance each of them should be returned with equal probability\&.
+.PP
+The returned \fBSampleValue\fP object should be deleted by the callser\&. 
+.PP
+Implements \fBSampleValue\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBSWORD16\fP JpegSampleValue::DctCoeff\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for steghide from the source code\&.

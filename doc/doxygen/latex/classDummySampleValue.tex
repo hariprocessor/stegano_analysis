@@ -1,0 +1,113 @@
+\section{Dummy\+Sample\+Value Class Reference}
+\label{classDummySampleValue}\index{Dummy\+Sample\+Value@{Dummy\+Sample\+Value}}
+
+
+{\ttfamily \#include $<$Dummy\+Sample\+Value.\+h$>$}
+
+Inheritance diagram for Dummy\+Sample\+Value\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classDummySampleValue}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Dummy\+Sample\+Value} (\textbf{ U\+W\+O\+R\+D16} v)
+\item 
+\textbf{ U\+W\+O\+R\+D16} \textbf{ get\+Value} (void) const
+\item 
+\textbf{ U\+W\+O\+R\+D32} \textbf{ calc\+Distance} (const \textbf{ Sample\+Value} $\ast$s) const
+\item 
+bool \textbf{ is\+Neighbour} (const \textbf{ Sample\+Value} $\ast$s) const
+\item 
+\textbf{ Sample\+Value} $\ast$ \textbf{ get\+Nearest\+Target\+Sample\+Value} (\textbf{ Emb\+Value} t) const
+\item 
+std\+::string \textbf{ get\+Name} (void) const
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ U\+W\+O\+R\+D16} \textbf{ Value}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{classDummySampleValue_adcc002e8d5372432b673f40e4bf36c15}} 
+\index{Dummy\+Sample\+Value@{Dummy\+Sample\+Value}!Dummy\+Sample\+Value@{Dummy\+Sample\+Value}}
+\index{Dummy\+Sample\+Value@{Dummy\+Sample\+Value}!Dummy\+Sample\+Value@{Dummy\+Sample\+Value}}
+\subsubsection{Dummy\+Sample\+Value()}
+{\footnotesize\ttfamily Dummy\+Sample\+Value\+::\+Dummy\+Sample\+Value (\begin{DoxyParamCaption}\item[{\textbf{ U\+W\+O\+R\+D16}}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{classDummySampleValue_ac3af289d7b12a404aebb4df17cfd3122}} 
+\index{Dummy\+Sample\+Value@{Dummy\+Sample\+Value}!calc\+Distance@{calc\+Distance}}
+\index{calc\+Distance@{calc\+Distance}!Dummy\+Sample\+Value@{Dummy\+Sample\+Value}}
+\subsubsection{calc\+Distance()}
+{\footnotesize\ttfamily \textbf{ U\+W\+O\+R\+D32} Dummy\+Sample\+Value\+::calc\+Distance (\begin{DoxyParamCaption}\item[{const \textbf{ Sample\+Value} $\ast$}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+calculate the distance as $\vert$ Value -\/ s-\/$>$Value $\vert$ 
+
+Implements \textbf{ Sample\+Value} \doxyref{}{p.}{classSampleValue_aa7e5d9b69203f6f6edf97c79319232dd}.
+
+\mbox{\label{classDummySampleValue_aba495f69560f9341acda9227878975a4}} 
+\index{Dummy\+Sample\+Value@{Dummy\+Sample\+Value}!get\+Name@{get\+Name}}
+\index{get\+Name@{get\+Name}!Dummy\+Sample\+Value@{Dummy\+Sample\+Value}}
+\subsubsection{get\+Name()}
+{\footnotesize\ttfamily std\+::string Dummy\+Sample\+Value\+::get\+Name (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+return a short name uniquely identifying this sample value 
+
+Implements \textbf{ Sample\+Value} \doxyref{}{p.}{classSampleValue_aeaf5c46ec6d023840e9773604b20d25c}.
+
+\mbox{\label{classDummySampleValue_a5920eb5fb6d87e8fbd8f6320a8a5f3f9}} 
+\index{Dummy\+Sample\+Value@{Dummy\+Sample\+Value}!get\+Nearest\+Target\+Sample\+Value@{get\+Nearest\+Target\+Sample\+Value}}
+\index{get\+Nearest\+Target\+Sample\+Value@{get\+Nearest\+Target\+Sample\+Value}!Dummy\+Sample\+Value@{Dummy\+Sample\+Value}}
+\subsubsection{get\+Nearest\+Target\+Sample\+Value()}
+{\footnotesize\ttfamily \textbf{ Sample\+Value} $\ast$ Dummy\+Sample\+Value\+::get\+Nearest\+Target\+Sample\+Value (\begin{DoxyParamCaption}\item[{\textbf{ Emb\+Value}}]{t }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+get the nearest (with the least distance to this sample value) sample value whose embedded value equals the specified target 
+\begin{DoxyParams}{Parameters}
+{\em t} & the target embedded value\\
+\hline
+\end{DoxyParams}
+If two or more target sample values have equal distance each of them should be returned with equal probability.
+
+The returned \doxyref{Sample\+Value}{p.}{classSampleValue} object should be deleted by the callser. 
+
+Implements \textbf{ Sample\+Value} \doxyref{}{p.}{classSampleValue_aeca3fc1fd34c09d2244706b010935c2c}.
+
+\mbox{\label{classDummySampleValue_a555d0ffd2e403a99bcdf589f7ac68b44}} 
+\index{Dummy\+Sample\+Value@{Dummy\+Sample\+Value}!get\+Value@{get\+Value}}
+\index{get\+Value@{get\+Value}!Dummy\+Sample\+Value@{Dummy\+Sample\+Value}}
+\subsubsection{get\+Value()}
+{\footnotesize\ttfamily \textbf{ U\+W\+O\+R\+D16} Dummy\+Sample\+Value\+::get\+Value (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classDummySampleValue_a63875aaa574e70c8f1aa881ebe60dede}} 
+\index{Dummy\+Sample\+Value@{Dummy\+Sample\+Value}!is\+Neighbour@{is\+Neighbour}}
+\index{is\+Neighbour@{is\+Neighbour}!Dummy\+Sample\+Value@{Dummy\+Sample\+Value}}
+\subsubsection{is\+Neighbour()}
+{\footnotesize\ttfamily bool Dummy\+Sample\+Value\+::is\+Neighbour (\begin{DoxyParamCaption}\item[{const \textbf{ Sample\+Value} $\ast$}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+return from the contents of the Sample\+Value\+Adjacency\+Matrix in the \doxyref{Dummy\+File}{p.}{classDummyFile} 
+
+Reimplemented from \textbf{ Sample\+Value} \doxyref{}{p.}{classSampleValue_a6f746349802439be40062a7a27d118fb}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{classDummySampleValue_a9545e16ad327f0ca5282ecaf7958f83e}} 
+\index{Dummy\+Sample\+Value@{Dummy\+Sample\+Value}!Value@{Value}}
+\index{Value@{Value}!Dummy\+Sample\+Value@{Dummy\+Sample\+Value}}
+\subsubsection{Value}
+{\footnotesize\ttfamily \textbf{ U\+W\+O\+R\+D16} Dummy\+Sample\+Value\+::\+Value\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ Dummy\+Sample\+Value.\+h}\item 
+\textbf{ Dummy\+Sample\+Value.\+cc}\end{DoxyCompactItemize}

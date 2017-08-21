@@ -1,0 +1,472 @@
+.TH "GraphTest" 3 "Thu Aug 17 2017" "Version 0.5.1" "steghide" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+GraphTest
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <GraphTest\&.h>\fP
+.PP
+Inherits \fBUnitTest\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBGraphTest\fP (\fBTestSuite\fP *s)"
+.br
+.ti -1c
+.RI "void \fBsetup\fP (void)"
+.br
+.ti -1c
+.RI "void \fBcleanup\fP (void)"
+.br
+.ti -1c
+.RI "void \fBtestVertices\fP (void)"
+.br
+.ti -1c
+.RI "void \fBtestSampleValues\fP (void)"
+.br
+.ti -1c
+.RI "void \fBtestSampleOccurences\fP (void)"
+.br
+.ti -1c
+.RI "void \fBtestSampleValueAdjacencyLists\fP (void)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBCvrStgFile\fP * \fBf1\fP"
+.br
+.ti -1c
+.RI "\fBCvrStgFile\fP * \fBf2\fP"
+.br
+.ti -1c
+.RI "\fBCvrStgFile\fP * \fBf3\fP"
+.br
+.ti -1c
+.RI "\fBCvrStgFile\fP * \fBf4\fP"
+.br
+.ti -1c
+.RI "\fBCvrStgFile\fP * \fBf5\fP"
+.br
+.ti -1c
+.RI "\fBCvrStgFile\fP * \fBf6\fP"
+.br
+.ti -1c
+.RI "\fBCvrStgFile\fP * \fBf7\fP"
+.br
+.ti -1c
+.RI "\fBCvrStgFile\fP * \fBf8\fP"
+.br
+.ti -1c
+.RI "\fBCvrStgFile\fP * \fBf9\fP"
+.br
+.ti -1c
+.RI "\fBCvrStgFile\fP * \fBf10\fP"
+.br
+.ti -1c
+.RI "\fBCvrStgFile\fP * \fBf11\fP"
+.br
+.ti -1c
+.RI "\fBCvrStgFile\fP * \fBf12\fP"
+.br
+.ti -1c
+.RI "\fBCvrStgFile\fP * \fBf13\fP"
+.br
+.ti -1c
+.RI "\fBCvrStgFile\fP * \fBf14\fP"
+.br
+.ti -1c
+.RI "\fBCvrStgFile\fP * \fBf15\fP"
+.br
+.ti -1c
+.RI "\fBCvrStgFile\fP * \fBf_f\fP"
+.br
+.ti -1c
+.RI "\fBBitString\fP * \fBbs1\fP"
+.br
+.ti -1c
+.RI "\fBBitString\fP * \fBbs2\fP"
+.br
+.ti -1c
+.RI "\fBBitString\fP * \fBbs3\fP"
+.br
+.ti -1c
+.RI "\fBBitString\fP * \fBbs4\fP"
+.br
+.ti -1c
+.RI "\fBBitString\fP * \fBbs5\fP"
+.br
+.ti -1c
+.RI "\fBBitString\fP * \fBbs6\fP"
+.br
+.ti -1c
+.RI "\fBBitString\fP * \fBbs7\fP"
+.br
+.ti -1c
+.RI "\fBBitString\fP * \fBbs8\fP"
+.br
+.ti -1c
+.RI "\fBBitString\fP * \fBbs9\fP"
+.br
+.ti -1c
+.RI "\fBBitString\fP * \fBbs10\fP"
+.br
+.ti -1c
+.RI "\fBBitString\fP * \fBbs11\fP"
+.br
+.ti -1c
+.RI "\fBBitString\fP * \fBbs12\fP"
+.br
+.ti -1c
+.RI "\fBBitString\fP * \fBbs13\fP"
+.br
+.ti -1c
+.RI "\fBBitString\fP * \fBbs14\fP"
+.br
+.ti -1c
+.RI "\fBBitString\fP * \fBbs15\fP"
+.br
+.ti -1c
+.RI "\fBBitString\fP * \fBbs_f\fP"
+.br
+.ti -1c
+.RI "\fBSelector\fP * \fBs1\fP"
+.br
+.ti -1c
+.RI "\fBSelector\fP * \fBs2\fP"
+.br
+.ti -1c
+.RI "\fBSelector\fP * \fBs3\fP"
+.br
+.ti -1c
+.RI "\fBSelector\fP * \fBs4\fP"
+.br
+.ti -1c
+.RI "\fBSelector\fP * \fBs5\fP"
+.br
+.ti -1c
+.RI "\fBSelector\fP * \fBs6\fP"
+.br
+.ti -1c
+.RI "\fBSelector\fP * \fBs7\fP"
+.br
+.ti -1c
+.RI "\fBSelector\fP * \fBs8\fP"
+.br
+.ti -1c
+.RI "\fBSelector\fP * \fBs9\fP"
+.br
+.ti -1c
+.RI "\fBSelector\fP * \fBs10\fP"
+.br
+.ti -1c
+.RI "\fBSelector\fP * \fBs11\fP"
+.br
+.ti -1c
+.RI "\fBSelector\fP * \fBs12\fP"
+.br
+.ti -1c
+.RI "\fBSelector\fP * \fBs13\fP"
+.br
+.ti -1c
+.RI "\fBSelector\fP * \fBs14\fP"
+.br
+.ti -1c
+.RI "\fBSelector\fP * \fBs15\fP"
+.br
+.ti -1c
+.RI "\fBSelector\fP * \fBs_f\fP"
+.br
+.ti -1c
+.RI "\fBGraph\fP * \fBg1\fP"
+.br
+.ti -1c
+.RI "\fBGraph\fP * \fBg2\fP"
+.br
+.ti -1c
+.RI "\fBGraph\fP * \fBg3\fP"
+.br
+.ti -1c
+.RI "\fBGraph\fP * \fBg4\fP"
+.br
+.ti -1c
+.RI "\fBGraph\fP * \fBg5\fP"
+.br
+.ti -1c
+.RI "\fBGraph\fP * \fBg6\fP"
+.br
+.ti -1c
+.RI "\fBGraph\fP * \fBg7\fP"
+.br
+.ti -1c
+.RI "\fBGraph\fP * \fBg8\fP"
+.br
+.ti -1c
+.RI "\fBGraph\fP * \fBg9\fP"
+.br
+.ti -1c
+.RI "\fBGraph\fP * \fBg10\fP"
+.br
+.ti -1c
+.RI "\fBGraph\fP * \fBg11\fP"
+.br
+.ti -1c
+.RI "\fBGraph\fP * \fBg12\fP"
+.br
+.ti -1c
+.RI "\fBGraph\fP * \fBg13\fP"
+.br
+.ti -1c
+.RI "\fBGraph\fP * \fBg14\fP"
+.br
+.ti -1c
+.RI "\fBGraph\fP * \fBg15\fP"
+.br
+.ti -1c
+.RI "\fBGraph\fP * \fBg_f\fP"
+.br
+.ti -1c
+.RI "\fBGlobals\fP \fBgl1\fP"
+.br
+.ti -1c
+.RI "\fBGlobals\fP \fBgl2\fP"
+.br
+.ti -1c
+.RI "\fBGlobals\fP \fBgl3\fP"
+.br
+.ti -1c
+.RI "\fBGlobals\fP \fBgl4\fP"
+.br
+.ti -1c
+.RI "\fBGlobals\fP \fBgl5\fP"
+.br
+.ti -1c
+.RI "\fBGlobals\fP \fBgl6\fP"
+.br
+.ti -1c
+.RI "\fBGlobals\fP \fBgl7\fP"
+.br
+.ti -1c
+.RI "\fBGlobals\fP \fBgl8\fP"
+.br
+.ti -1c
+.RI "\fBGlobals\fP \fBgl9\fP"
+.br
+.ti -1c
+.RI "\fBGlobals\fP \fBgl10\fP"
+.br
+.ti -1c
+.RI "\fBGlobals\fP \fBgl11\fP"
+.br
+.ti -1c
+.RI "\fBGlobals\fP \fBgl12\fP"
+.br
+.ti -1c
+.RI "\fBGlobals\fP \fBgl13\fP"
+.br
+.ti -1c
+.RI "\fBGlobals\fP \fBgl14\fP"
+.br
+.ti -1c
+.RI "\fBGlobals\fP \fBgl15\fP"
+.br
+.ti -1c
+.RI "\fBGlobals\fP \fBgl_f\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "GraphTest::GraphTest (\fBTestSuite\fP * s)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void GraphTest::cleanup (void)\fC [virtual]\fP"
+cleanup the unit test - called after run 
+.PP
+Reimplemented from \fBUnitTest\fP\&.
+.SS "void GraphTest::setup (void)\fC [virtual]\fP"
+setup the unit test - called before run
+.PP
+\fBUnitTest::setup\fP will (together with \fBUnitTest::cleanup\fP) save and restore the object stored in Globs so they should be called from the corresponding functions in the derived object if the derived unit test manipulates the Globs object\&. 
+.PP
+Reimplemented from \fBUnitTest\fP\&.
+.SS "void GraphTest::testSampleOccurences (void)"
+
+.SS "void GraphTest::testSampleValueAdjacencyLists (void)"
+
+.SS "void GraphTest::testSampleValues (void)"
+
+.SS "void GraphTest::testVertices (void)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBBitString\fP* GraphTest::bs1\fC [private]\fP"
+
+.SS "\fBBitString\fP * GraphTest::bs10\fC [private]\fP"
+
+.SS "\fBBitString\fP * GraphTest::bs11\fC [private]\fP"
+
+.SS "\fBBitString\fP * GraphTest::bs12\fC [private]\fP"
+
+.SS "\fBBitString\fP * GraphTest::bs13\fC [private]\fP"
+
+.SS "\fBBitString\fP * GraphTest::bs14\fC [private]\fP"
+
+.SS "\fBBitString\fP * GraphTest::bs15\fC [private]\fP"
+
+.SS "\fBBitString\fP * GraphTest::bs2\fC [private]\fP"
+
+.SS "\fBBitString\fP * GraphTest::bs3\fC [private]\fP"
+
+.SS "\fBBitString\fP * GraphTest::bs4\fC [private]\fP"
+
+.SS "\fBBitString\fP * GraphTest::bs5\fC [private]\fP"
+
+.SS "\fBBitString\fP * GraphTest::bs6\fC [private]\fP"
+
+.SS "\fBBitString\fP * GraphTest::bs7\fC [private]\fP"
+
+.SS "\fBBitString\fP * GraphTest::bs8\fC [private]\fP"
+
+.SS "\fBBitString\fP * GraphTest::bs9\fC [private]\fP"
+
+.SS "\fBBitString\fP * GraphTest::bs_f\fC [private]\fP"
+
+.SS "\fBCvrStgFile\fP* GraphTest::f1\fC [private]\fP"
+
+.SS "\fBCvrStgFile\fP * GraphTest::f10\fC [private]\fP"
+
+.SS "\fBCvrStgFile\fP * GraphTest::f11\fC [private]\fP"
+
+.SS "\fBCvrStgFile\fP * GraphTest::f12\fC [private]\fP"
+
+.SS "\fBCvrStgFile\fP * GraphTest::f13\fC [private]\fP"
+
+.SS "\fBCvrStgFile\fP * GraphTest::f14\fC [private]\fP"
+
+.SS "\fBCvrStgFile\fP * GraphTest::f15\fC [private]\fP"
+
+.SS "\fBCvrStgFile\fP * GraphTest::f2\fC [private]\fP"
+
+.SS "\fBCvrStgFile\fP * GraphTest::f3\fC [private]\fP"
+
+.SS "\fBCvrStgFile\fP * GraphTest::f4\fC [private]\fP"
+
+.SS "\fBCvrStgFile\fP * GraphTest::f5\fC [private]\fP"
+
+.SS "\fBCvrStgFile\fP * GraphTest::f6\fC [private]\fP"
+
+.SS "\fBCvrStgFile\fP * GraphTest::f7\fC [private]\fP"
+
+.SS "\fBCvrStgFile\fP * GraphTest::f8\fC [private]\fP"
+
+.SS "\fBCvrStgFile\fP * GraphTest::f9\fC [private]\fP"
+
+.SS "\fBCvrStgFile\fP * GraphTest::f_f\fC [private]\fP"
+
+.SS "\fBGraph\fP* GraphTest::g1\fC [private]\fP"
+
+.SS "\fBGraph\fP * GraphTest::g10\fC [private]\fP"
+
+.SS "\fBGraph\fP * GraphTest::g11\fC [private]\fP"
+
+.SS "\fBGraph\fP * GraphTest::g12\fC [private]\fP"
+
+.SS "\fBGraph\fP * GraphTest::g13\fC [private]\fP"
+
+.SS "\fBGraph\fP * GraphTest::g14\fC [private]\fP"
+
+.SS "\fBGraph\fP * GraphTest::g15\fC [private]\fP"
+
+.SS "\fBGraph\fP * GraphTest::g2\fC [private]\fP"
+
+.SS "\fBGraph\fP * GraphTest::g3\fC [private]\fP"
+
+.SS "\fBGraph\fP * GraphTest::g4\fC [private]\fP"
+
+.SS "\fBGraph\fP * GraphTest::g5\fC [private]\fP"
+
+.SS "\fBGraph\fP * GraphTest::g6\fC [private]\fP"
+
+.SS "\fBGraph\fP * GraphTest::g7\fC [private]\fP"
+
+.SS "\fBGraph\fP * GraphTest::g8\fC [private]\fP"
+
+.SS "\fBGraph\fP * GraphTest::g9\fC [private]\fP"
+
+.SS "\fBGraph\fP * GraphTest::g_f\fC [private]\fP"
+
+.SS "\fBGlobals\fP GraphTest::gl1\fC [private]\fP"
+
+.SS "\fBGlobals\fP GraphTest::gl10\fC [private]\fP"
+
+.SS "\fBGlobals\fP GraphTest::gl11\fC [private]\fP"
+
+.SS "\fBGlobals\fP GraphTest::gl12\fC [private]\fP"
+
+.SS "\fBGlobals\fP GraphTest::gl13\fC [private]\fP"
+
+.SS "\fBGlobals\fP GraphTest::gl14\fC [private]\fP"
+
+.SS "\fBGlobals\fP GraphTest::gl15\fC [private]\fP"
+
+.SS "\fBGlobals\fP GraphTest::gl2\fC [private]\fP"
+
+.SS "\fBGlobals\fP GraphTest::gl3\fC [private]\fP"
+
+.SS "\fBGlobals\fP GraphTest::gl4\fC [private]\fP"
+
+.SS "\fBGlobals\fP GraphTest::gl5\fC [private]\fP"
+
+.SS "\fBGlobals\fP GraphTest::gl6\fC [private]\fP"
+
+.SS "\fBGlobals\fP GraphTest::gl7\fC [private]\fP"
+
+.SS "\fBGlobals\fP GraphTest::gl8\fC [private]\fP"
+
+.SS "\fBGlobals\fP GraphTest::gl9\fC [private]\fP"
+
+.SS "\fBGlobals\fP GraphTest::gl_f\fC [private]\fP"
+
+.SS "\fBSelector\fP* GraphTest::s1\fC [private]\fP"
+
+.SS "\fBSelector\fP * GraphTest::s10\fC [private]\fP"
+
+.SS "\fBSelector\fP * GraphTest::s11\fC [private]\fP"
+
+.SS "\fBSelector\fP * GraphTest::s12\fC [private]\fP"
+
+.SS "\fBSelector\fP * GraphTest::s13\fC [private]\fP"
+
+.SS "\fBSelector\fP * GraphTest::s14\fC [private]\fP"
+
+.SS "\fBSelector\fP * GraphTest::s15\fC [private]\fP"
+
+.SS "\fBSelector\fP * GraphTest::s2\fC [private]\fP"
+
+.SS "\fBSelector\fP * GraphTest::s3\fC [private]\fP"
+
+.SS "\fBSelector\fP * GraphTest::s4\fC [private]\fP"
+
+.SS "\fBSelector\fP * GraphTest::s5\fC [private]\fP"
+
+.SS "\fBSelector\fP * GraphTest::s6\fC [private]\fP"
+
+.SS "\fBSelector\fP * GraphTest::s7\fC [private]\fP"
+
+.SS "\fBSelector\fP * GraphTest::s8\fC [private]\fP"
+
+.SS "\fBSelector\fP * GraphTest::s9\fC [private]\fP"
+
+.SS "\fBSelector\fP * GraphTest::s_f\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for steghide from the source code\&.

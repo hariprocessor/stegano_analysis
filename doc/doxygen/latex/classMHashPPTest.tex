@@ -1,0 +1,75 @@
+\section{M\+Hash\+P\+P\+Test Class Reference}
+\label{classMHashPPTest}\index{M\+Hash\+P\+P\+Test@{M\+Hash\+P\+P\+Test}}
+
+
+{\ttfamily \#include $<$M\+Hash\+P\+P\+Test.\+h$>$}
+
+Inheritance diagram for M\+Hash\+P\+P\+Test\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classMHashPPTest}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ M\+Hash\+P\+P\+Test} (\textbf{ Test\+Suite} $\ast$s)
+\item 
+void \textbf{ test\+M\+D5} (void)
+\item 
+void \textbf{ test\+C\+R\+C32} (void)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \textbf{ generic\+Test\+M\+Hash\+PP} (hashid a, \textbf{ Bit\+String} data, \textbf{ B\+Y\+TE} $\ast$shouldbe)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{classMHashPPTest_aa7b0e8282de3bec1c6a19908693d5df1}} 
+\index{M\+Hash\+P\+P\+Test@{M\+Hash\+P\+P\+Test}!M\+Hash\+P\+P\+Test@{M\+Hash\+P\+P\+Test}}
+\index{M\+Hash\+P\+P\+Test@{M\+Hash\+P\+P\+Test}!M\+Hash\+P\+P\+Test@{M\+Hash\+P\+P\+Test}}
+\subsubsection{M\+Hash\+P\+P\+Test()}
+{\footnotesize\ttfamily M\+Hash\+P\+P\+Test\+::\+M\+Hash\+P\+P\+Test (\begin{DoxyParamCaption}\item[{\textbf{ Test\+Suite} $\ast$}]{s }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{classMHashPPTest_abdcae7036faf958977b8cb9193a15303}} 
+\index{M\+Hash\+P\+P\+Test@{M\+Hash\+P\+P\+Test}!generic\+Test\+M\+Hash\+PP@{generic\+Test\+M\+Hash\+PP}}
+\index{generic\+Test\+M\+Hash\+PP@{generic\+Test\+M\+Hash\+PP}!M\+Hash\+P\+P\+Test@{M\+Hash\+P\+P\+Test}}
+\subsubsection{generic\+Test\+M\+Hash\+P\+P()}
+{\footnotesize\ttfamily bool M\+Hash\+P\+P\+Test\+::generic\+Test\+M\+Hash\+PP (\begin{DoxyParamCaption}\item[{hashid}]{a,  }\item[{\textbf{ Bit\+String}}]{data,  }\item[{\textbf{ B\+Y\+TE} $\ast$}]{shouldbe }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+compute a hash using \doxyref{M\+Hash\+PP}{p.}{classMHashPP} and compare it to a reference value 
+\begin{DoxyParams}{Parameters}
+{\em a} & the hash algorithm that should be used by \doxyref{M\+Hash\+PP}{p.}{classMHashPP} \\
+\hline
+{\em data} & the input of the hash algorithm \\
+\hline
+{\em shouldbe} & the reference value of the result of the hash algorithm \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true iff shouldbe is the result of the hash algorithm a applied to data by \doxyref{M\+Hash\+PP}{p.}{classMHashPP} 
+\end{DoxyReturn}
+\mbox{\label{classMHashPPTest_a6b5b8beed154c913654549f521a2d7f2}} 
+\index{M\+Hash\+P\+P\+Test@{M\+Hash\+P\+P\+Test}!test\+C\+R\+C32@{test\+C\+R\+C32}}
+\index{test\+C\+R\+C32@{test\+C\+R\+C32}!M\+Hash\+P\+P\+Test@{M\+Hash\+P\+P\+Test}}
+\subsubsection{test\+C\+R\+C32()}
+{\footnotesize\ttfamily void M\+Hash\+P\+P\+Test\+::test\+C\+R\+C32 (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\label{classMHashPPTest_acff33e798e12a739c9709ff176243d9c}} 
+\index{M\+Hash\+P\+P\+Test@{M\+Hash\+P\+P\+Test}!test\+M\+D5@{test\+M\+D5}}
+\index{test\+M\+D5@{test\+M\+D5}!M\+Hash\+P\+P\+Test@{M\+Hash\+P\+P\+Test}}
+\subsubsection{test\+M\+D5()}
+{\footnotesize\ttfamily void M\+Hash\+P\+P\+Test\+::test\+M\+D5 (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+test output of \doxyref{M\+Hash\+PP}{p.}{classMHashPP} class with M\+D5 algorithm against the test vectors given in R\+FC 1321 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ M\+Hash\+P\+P\+Test.\+h}\item 
+\textbf{ M\+Hash\+P\+P\+Test.\+cc}\end{DoxyCompactItemize}

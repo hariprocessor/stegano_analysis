@@ -1,0 +1,311 @@
+\section{Edge\+Iterator\+Test Class Reference}
+\label{classEdgeIteratorTest}\index{Edge\+Iterator\+Test@{Edge\+Iterator\+Test}}
+
+
+{\ttfamily \#include $<$Edge\+Iterator\+Test.\+h$>$}
+
+Inheritance diagram for Edge\+Iterator\+Test\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classEdgeIteratorTest}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Edge\+Iterator\+Test} (\textbf{ Test\+Suite} $\ast$s)
+\item 
+void \textbf{ setup} (void)
+\item 
+void \textbf{ cleanup} (void)
+\item 
+void \textbf{ test\+Reference\+Iteration} (void)
+\item 
+void \textbf{ test\+Iteration\+Length} (void)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \textbf{ generic\+Test\+Graph\+Iteration} (\textbf{ Graph} $\ast$g, \textbf{ Edge\+Iterator\+::\+I\+T\+E\+R\+A\+T\+I\+O\+N\+M\+O\+DE} m)
+\item 
+bool \textbf{ generic\+Test\+Vertex\+Iteration} (\textbf{ Vertex} $\ast$srcvertex, \textbf{ Edge\+Iterator\+::\+I\+T\+E\+R\+A\+T\+I\+O\+N\+M\+O\+DE} m, const std\+::vector$<$ \textbf{ Edge} $\ast$$>$ \&edges)
+\item 
+bool \textbf{ generic\+Test\+Iteration\+Length} (\textbf{ Graph} $\ast$g)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Bit\+String} $\ast$ \textbf{ bs1}
+\item 
+\textbf{ Bit\+String} $\ast$ \textbf{ bs2}
+\item 
+\textbf{ Cvr\+Stg\+File} $\ast$ \textbf{ f1}
+\item 
+\textbf{ Cvr\+Stg\+File} $\ast$ \textbf{ f2}
+\item 
+\textbf{ Selector} $\ast$ \textbf{ s1}
+\item 
+\textbf{ Selector} $\ast$ \textbf{ s2}
+\item 
+\textbf{ Graph} $\ast$ \textbf{ g1}
+\item 
+\textbf{ Graph} $\ast$ \textbf{ g2}
+\item 
+\textbf{ Globals} \textbf{ gl1}
+\item 
+\textbf{ Globals} \textbf{ gl2}
+\item 
+\textbf{ Bit\+String} $\ast$ \textbf{ bs10}
+\item 
+\textbf{ Bit\+String} $\ast$ \textbf{ bs11}
+\item 
+\textbf{ Bit\+String} $\ast$ \textbf{ bs12}
+\item 
+\textbf{ Cvr\+Stg\+File} $\ast$ \textbf{ f10}
+\item 
+\textbf{ Cvr\+Stg\+File} $\ast$ \textbf{ f11}
+\item 
+\textbf{ Cvr\+Stg\+File} $\ast$ \textbf{ f12}
+\item 
+\textbf{ Selector} $\ast$ \textbf{ s10}
+\item 
+\textbf{ Selector} $\ast$ \textbf{ s11}
+\item 
+\textbf{ Selector} $\ast$ \textbf{ s12}
+\item 
+\textbf{ Graph} $\ast$ \textbf{ g10}
+\item 
+\textbf{ Graph} $\ast$ \textbf{ g11}
+\item 
+\textbf{ Graph} $\ast$ \textbf{ g12}
+\item 
+\textbf{ Globals} \textbf{ gl10}
+\item 
+\textbf{ Globals} \textbf{ gl11}
+\item 
+\textbf{ Globals} \textbf{ gl12}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{classEdgeIteratorTest_a82601ecbc3b939feb92fbfb62b512dbb}} 
+\index{Edge\+Iterator\+Test@{Edge\+Iterator\+Test}!Edge\+Iterator\+Test@{Edge\+Iterator\+Test}}
+\index{Edge\+Iterator\+Test@{Edge\+Iterator\+Test}!Edge\+Iterator\+Test@{Edge\+Iterator\+Test}}
+\subsubsection{Edge\+Iterator\+Test()}
+{\footnotesize\ttfamily Edge\+Iterator\+Test\+::\+Edge\+Iterator\+Test (\begin{DoxyParamCaption}\item[{\textbf{ Test\+Suite} $\ast$}]{s }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{classEdgeIteratorTest_a7e1af6040e329046f30544cb703d2cd8}} 
+\index{Edge\+Iterator\+Test@{Edge\+Iterator\+Test}!cleanup@{cleanup}}
+\index{cleanup@{cleanup}!Edge\+Iterator\+Test@{Edge\+Iterator\+Test}}
+\subsubsection{cleanup()}
+{\footnotesize\ttfamily void Edge\+Iterator\+Test\+::cleanup (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+cleanup the unit test -\/ called after run 
+
+Reimplemented from \textbf{ Unit\+Test} \doxyref{}{p.}{classUnitTest_adf77efe972ee4a766d94e3f7ddc193ad}.
+
+\mbox{\label{classEdgeIteratorTest_af6683aa7e61c472534fb36164fa71410}} 
+\index{Edge\+Iterator\+Test@{Edge\+Iterator\+Test}!generic\+Test\+Graph\+Iteration@{generic\+Test\+Graph\+Iteration}}
+\index{generic\+Test\+Graph\+Iteration@{generic\+Test\+Graph\+Iteration}!Edge\+Iterator\+Test@{Edge\+Iterator\+Test}}
+\subsubsection{generic\+Test\+Graph\+Iteration()}
+{\footnotesize\ttfamily bool Edge\+Iterator\+Test\+::generic\+Test\+Graph\+Iteration (\begin{DoxyParamCaption}\item[{\textbf{ Graph} $\ast$}]{g,  }\item[{\textbf{ Edge\+Iterator\+::\+I\+T\+E\+R\+A\+T\+I\+O\+N\+M\+O\+DE}}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classEdgeIteratorTest_a47e64a32b433e8a29190075f757c43bc}} 
+\index{Edge\+Iterator\+Test@{Edge\+Iterator\+Test}!generic\+Test\+Iteration\+Length@{generic\+Test\+Iteration\+Length}}
+\index{generic\+Test\+Iteration\+Length@{generic\+Test\+Iteration\+Length}!Edge\+Iterator\+Test@{Edge\+Iterator\+Test}}
+\subsubsection{generic\+Test\+Iteration\+Length()}
+{\footnotesize\ttfamily bool Edge\+Iterator\+Test\+::generic\+Test\+Iteration\+Length (\begin{DoxyParamCaption}\item[{\textbf{ Graph} $\ast$}]{g }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+for all vertices in the graph test if get\+Degree() returns exactly the number of edges \doxyref{Edge\+Iterator}{p.}{classEdgeIterator} iterates through \mbox{\label{classEdgeIteratorTest_a01a828efc2bbe14aa50cee9a7ae2522e}} 
+\index{Edge\+Iterator\+Test@{Edge\+Iterator\+Test}!generic\+Test\+Vertex\+Iteration@{generic\+Test\+Vertex\+Iteration}}
+\index{generic\+Test\+Vertex\+Iteration@{generic\+Test\+Vertex\+Iteration}!Edge\+Iterator\+Test@{Edge\+Iterator\+Test}}
+\subsubsection{generic\+Test\+Vertex\+Iteration()}
+{\footnotesize\ttfamily bool Edge\+Iterator\+Test\+::generic\+Test\+Vertex\+Iteration (\begin{DoxyParamCaption}\item[{\textbf{ Vertex} $\ast$}]{srcvertex,  }\item[{\textbf{ Edge\+Iterator\+::\+I\+T\+E\+R\+A\+T\+I\+O\+N\+M\+O\+DE}}]{m,  }\item[{const std\+::vector$<$ \textbf{ Edge} $\ast$$>$ \&}]{edges }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+check if an edge iterator for srcvertex with m iterates exactly through edges \mbox{\label{classEdgeIteratorTest_ad56dd8b150c16b3fba70d4eadb7d7bc2}} 
+\index{Edge\+Iterator\+Test@{Edge\+Iterator\+Test}!setup@{setup}}
+\index{setup@{setup}!Edge\+Iterator\+Test@{Edge\+Iterator\+Test}}
+\subsubsection{setup()}
+{\footnotesize\ttfamily void Edge\+Iterator\+Test\+::setup (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+setup the unit test -\/ called before run
+
+\doxyref{Unit\+Test\+::setup}{p.}{classUnitTest_ad73fdf9012b651047ea001d21f9d27ad} will (together with \doxyref{Unit\+Test\+::cleanup}{p.}{classUnitTest_adf77efe972ee4a766d94e3f7ddc193ad}) save and restore the object stored in Globs so they should be called from the corresponding functions in the derived object if the derived unit test manipulates the Globs object. 
+
+Reimplemented from \textbf{ Unit\+Test} \doxyref{}{p.}{classUnitTest_ad73fdf9012b651047ea001d21f9d27ad}.
+
+\mbox{\label{classEdgeIteratorTest_ac52ea6543adad6901f27e87ca63dd80a}} 
+\index{Edge\+Iterator\+Test@{Edge\+Iterator\+Test}!test\+Iteration\+Length@{test\+Iteration\+Length}}
+\index{test\+Iteration\+Length@{test\+Iteration\+Length}!Edge\+Iterator\+Test@{Edge\+Iterator\+Test}}
+\subsubsection{test\+Iteration\+Length()}
+{\footnotesize\ttfamily void Edge\+Iterator\+Test\+::test\+Iteration\+Length (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\label{classEdgeIteratorTest_acbef606cf0301f1ad401cb8fb53b6fd7}} 
+\index{Edge\+Iterator\+Test@{Edge\+Iterator\+Test}!test\+Reference\+Iteration@{test\+Reference\+Iteration}}
+\index{test\+Reference\+Iteration@{test\+Reference\+Iteration}!Edge\+Iterator\+Test@{Edge\+Iterator\+Test}}
+\subsubsection{test\+Reference\+Iteration()}
+{\footnotesize\ttfamily void Edge\+Iterator\+Test\+::test\+Reference\+Iteration (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{classEdgeIteratorTest_a08d7344594c3f9b406fd5f26afbc3034}} 
+\index{Edge\+Iterator\+Test@{Edge\+Iterator\+Test}!bs1@{bs1}}
+\index{bs1@{bs1}!Edge\+Iterator\+Test@{Edge\+Iterator\+Test}}
+\subsubsection{bs1}
+{\footnotesize\ttfamily \textbf{ Bit\+String}$\ast$ Edge\+Iterator\+Test\+::bs1\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classEdgeIteratorTest_a240e682e43ade7e69be301cbe00fcefd}} 
+\index{Edge\+Iterator\+Test@{Edge\+Iterator\+Test}!bs10@{bs10}}
+\index{bs10@{bs10}!Edge\+Iterator\+Test@{Edge\+Iterator\+Test}}
+\subsubsection{bs10}
+{\footnotesize\ttfamily \textbf{ Bit\+String}$\ast$ Edge\+Iterator\+Test\+::bs10\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classEdgeIteratorTest_adaaa75fe739abcc86cfeabf8aee04285}} 
+\index{Edge\+Iterator\+Test@{Edge\+Iterator\+Test}!bs11@{bs11}}
+\index{bs11@{bs11}!Edge\+Iterator\+Test@{Edge\+Iterator\+Test}}
+\subsubsection{bs11}
+{\footnotesize\ttfamily \textbf{ Bit\+String} $\ast$ Edge\+Iterator\+Test\+::bs11\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classEdgeIteratorTest_adeeabfc59f8cf4f3025b30ce64c0d610}} 
+\index{Edge\+Iterator\+Test@{Edge\+Iterator\+Test}!bs12@{bs12}}
+\index{bs12@{bs12}!Edge\+Iterator\+Test@{Edge\+Iterator\+Test}}
+\subsubsection{bs12}
+{\footnotesize\ttfamily \textbf{ Bit\+String} $\ast$ Edge\+Iterator\+Test\+::bs12\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classEdgeIteratorTest_aa4b53f6b9f3cbcd24d17bd6bc294f1a6}} 
+\index{Edge\+Iterator\+Test@{Edge\+Iterator\+Test}!bs2@{bs2}}
+\index{bs2@{bs2}!Edge\+Iterator\+Test@{Edge\+Iterator\+Test}}
+\subsubsection{bs2}
+{\footnotesize\ttfamily \textbf{ Bit\+String} $\ast$ Edge\+Iterator\+Test\+::bs2\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classEdgeIteratorTest_a7dcecf333b22f1da3a4c0ab8d3c1366a}} 
+\index{Edge\+Iterator\+Test@{Edge\+Iterator\+Test}!f1@{f1}}
+\index{f1@{f1}!Edge\+Iterator\+Test@{Edge\+Iterator\+Test}}
+\subsubsection{f1}
+{\footnotesize\ttfamily \textbf{ Cvr\+Stg\+File}$\ast$ Edge\+Iterator\+Test\+::f1\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classEdgeIteratorTest_ac458a03c3acf833328c26c654b6a5038}} 
+\index{Edge\+Iterator\+Test@{Edge\+Iterator\+Test}!f10@{f10}}
+\index{f10@{f10}!Edge\+Iterator\+Test@{Edge\+Iterator\+Test}}
+\subsubsection{f10}
+{\footnotesize\ttfamily \textbf{ Cvr\+Stg\+File}$\ast$ Edge\+Iterator\+Test\+::f10\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classEdgeIteratorTest_a73b440836d74a030ac6452f38f419c11}} 
+\index{Edge\+Iterator\+Test@{Edge\+Iterator\+Test}!f11@{f11}}
+\index{f11@{f11}!Edge\+Iterator\+Test@{Edge\+Iterator\+Test}}
+\subsubsection{f11}
+{\footnotesize\ttfamily \textbf{ Cvr\+Stg\+File} $\ast$ Edge\+Iterator\+Test\+::f11\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classEdgeIteratorTest_aa449704576e2b31c6e07c3efe9339ea3}} 
+\index{Edge\+Iterator\+Test@{Edge\+Iterator\+Test}!f12@{f12}}
+\index{f12@{f12}!Edge\+Iterator\+Test@{Edge\+Iterator\+Test}}
+\subsubsection{f12}
+{\footnotesize\ttfamily \textbf{ Cvr\+Stg\+File} $\ast$ Edge\+Iterator\+Test\+::f12\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classEdgeIteratorTest_ac5431abde302d76ee9b7279457743e8b}} 
+\index{Edge\+Iterator\+Test@{Edge\+Iterator\+Test}!f2@{f2}}
+\index{f2@{f2}!Edge\+Iterator\+Test@{Edge\+Iterator\+Test}}
+\subsubsection{f2}
+{\footnotesize\ttfamily \textbf{ Cvr\+Stg\+File} $\ast$ Edge\+Iterator\+Test\+::f2\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classEdgeIteratorTest_a274f699ee5bc8f87790c9bb624200d1e}} 
+\index{Edge\+Iterator\+Test@{Edge\+Iterator\+Test}!g1@{g1}}
+\index{g1@{g1}!Edge\+Iterator\+Test@{Edge\+Iterator\+Test}}
+\subsubsection{g1}
+{\footnotesize\ttfamily \textbf{ Graph}$\ast$ Edge\+Iterator\+Test\+::g1\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classEdgeIteratorTest_ac4e71f1ce98b4c726919de6caf1f6e6b}} 
+\index{Edge\+Iterator\+Test@{Edge\+Iterator\+Test}!g10@{g10}}
+\index{g10@{g10}!Edge\+Iterator\+Test@{Edge\+Iterator\+Test}}
+\subsubsection{g10}
+{\footnotesize\ttfamily \textbf{ Graph}$\ast$ Edge\+Iterator\+Test\+::g10\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classEdgeIteratorTest_a94fca00ece2e3b1071af45bec15f492c}} 
+\index{Edge\+Iterator\+Test@{Edge\+Iterator\+Test}!g11@{g11}}
+\index{g11@{g11}!Edge\+Iterator\+Test@{Edge\+Iterator\+Test}}
+\subsubsection{g11}
+{\footnotesize\ttfamily \textbf{ Graph} $\ast$ Edge\+Iterator\+Test\+::g11\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classEdgeIteratorTest_ae9be2ae14654e4e76d3c578d8188e203}} 
+\index{Edge\+Iterator\+Test@{Edge\+Iterator\+Test}!g12@{g12}}
+\index{g12@{g12}!Edge\+Iterator\+Test@{Edge\+Iterator\+Test}}
+\subsubsection{g12}
+{\footnotesize\ttfamily \textbf{ Graph} $\ast$ Edge\+Iterator\+Test\+::g12\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classEdgeIteratorTest_ab5efd255980d02e45d59e019425c4808}} 
+\index{Edge\+Iterator\+Test@{Edge\+Iterator\+Test}!g2@{g2}}
+\index{g2@{g2}!Edge\+Iterator\+Test@{Edge\+Iterator\+Test}}
+\subsubsection{g2}
+{\footnotesize\ttfamily \textbf{ Graph} $\ast$ Edge\+Iterator\+Test\+::g2\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classEdgeIteratorTest_a61996fb7ecbcc0526dbfc71f99846b12}} 
+\index{Edge\+Iterator\+Test@{Edge\+Iterator\+Test}!gl1@{gl1}}
+\index{gl1@{gl1}!Edge\+Iterator\+Test@{Edge\+Iterator\+Test}}
+\subsubsection{gl1}
+{\footnotesize\ttfamily \textbf{ Globals} Edge\+Iterator\+Test\+::gl1\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classEdgeIteratorTest_a03bd54163fb92a79e036483474eb80ff}} 
+\index{Edge\+Iterator\+Test@{Edge\+Iterator\+Test}!gl10@{gl10}}
+\index{gl10@{gl10}!Edge\+Iterator\+Test@{Edge\+Iterator\+Test}}
+\subsubsection{gl10}
+{\footnotesize\ttfamily \textbf{ Globals} Edge\+Iterator\+Test\+::gl10\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classEdgeIteratorTest_a071a62e979f0938cf4e56a5933f1f783}} 
+\index{Edge\+Iterator\+Test@{Edge\+Iterator\+Test}!gl11@{gl11}}
+\index{gl11@{gl11}!Edge\+Iterator\+Test@{Edge\+Iterator\+Test}}
+\subsubsection{gl11}
+{\footnotesize\ttfamily \textbf{ Globals} Edge\+Iterator\+Test\+::gl11\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classEdgeIteratorTest_a48a2ba94c963f390f66ef1a6766b75aa}} 
+\index{Edge\+Iterator\+Test@{Edge\+Iterator\+Test}!gl12@{gl12}}
+\index{gl12@{gl12}!Edge\+Iterator\+Test@{Edge\+Iterator\+Test}}
+\subsubsection{gl12}
+{\footnotesize\ttfamily \textbf{ Globals} Edge\+Iterator\+Test\+::gl12\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classEdgeIteratorTest_a7ad0420695a12e70a2f8a8d4b0dd9baa}} 
+\index{Edge\+Iterator\+Test@{Edge\+Iterator\+Test}!gl2@{gl2}}
+\index{gl2@{gl2}!Edge\+Iterator\+Test@{Edge\+Iterator\+Test}}
+\subsubsection{gl2}
+{\footnotesize\ttfamily \textbf{ Globals} Edge\+Iterator\+Test\+::gl2\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classEdgeIteratorTest_a965769589c4cdd3f120991e806e05899}} 
+\index{Edge\+Iterator\+Test@{Edge\+Iterator\+Test}!s1@{s1}}
+\index{s1@{s1}!Edge\+Iterator\+Test@{Edge\+Iterator\+Test}}
+\subsubsection{s1}
+{\footnotesize\ttfamily \textbf{ Selector}$\ast$ Edge\+Iterator\+Test\+::s1\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classEdgeIteratorTest_a609f059ac8e31b614ab209df8ea2a3c6}} 
+\index{Edge\+Iterator\+Test@{Edge\+Iterator\+Test}!s10@{s10}}
+\index{s10@{s10}!Edge\+Iterator\+Test@{Edge\+Iterator\+Test}}
+\subsubsection{s10}
+{\footnotesize\ttfamily \textbf{ Selector}$\ast$ Edge\+Iterator\+Test\+::s10\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classEdgeIteratorTest_ab23d0b6178cc9e9f63b23c79622f4ffd}} 
+\index{Edge\+Iterator\+Test@{Edge\+Iterator\+Test}!s11@{s11}}
+\index{s11@{s11}!Edge\+Iterator\+Test@{Edge\+Iterator\+Test}}
+\subsubsection{s11}
+{\footnotesize\ttfamily \textbf{ Selector} $\ast$ Edge\+Iterator\+Test\+::s11\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classEdgeIteratorTest_a014cd4945f95a278fc7103128ed229b5}} 
+\index{Edge\+Iterator\+Test@{Edge\+Iterator\+Test}!s12@{s12}}
+\index{s12@{s12}!Edge\+Iterator\+Test@{Edge\+Iterator\+Test}}
+\subsubsection{s12}
+{\footnotesize\ttfamily \textbf{ Selector} $\ast$ Edge\+Iterator\+Test\+::s12\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classEdgeIteratorTest_aec6c239f963159742633026b67825fb7}} 
+\index{Edge\+Iterator\+Test@{Edge\+Iterator\+Test}!s2@{s2}}
+\index{s2@{s2}!Edge\+Iterator\+Test@{Edge\+Iterator\+Test}}
+\subsubsection{s2}
+{\footnotesize\ttfamily \textbf{ Selector} $\ast$ Edge\+Iterator\+Test\+::s2\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ Edge\+Iterator\+Test.\+h}\item 
+\textbf{ Edge\+Iterator\+Test.\+cc}\end{DoxyCompactItemize}

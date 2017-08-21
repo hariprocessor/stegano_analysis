@@ -1,0 +1,80 @@
+\section{Globals Class Reference}
+\label{classGlobals}\index{Globals@{Globals}}
+
+
+some useful pointers that should be global  
+
+
+
+
+{\ttfamily \#include $<$Globals.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Globals} (\textbf{ Cvr\+Stg\+File} $\ast$f=N\+U\+LL, \textbf{ Graph} $\ast$g=N\+U\+LL)
+\item 
+void \textbf{ operator=} (const \textbf{ Globals} \&g)
+\item 
+void \textbf{ reset} (void)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Cvr\+Stg\+File} $\ast$ \textbf{ The\+Cvr\+Stg\+File}
+\begin{DoxyCompactList}\small\item\em the cover-\//stego-\/ file that is operated on (set in \doxyref{Cvr\+Stg\+File\+::\+Cvr\+Stg\+File}{p.}{classCvrStgFile_acf876c7ea8b9442de8ff3624ced376fe}) \end{DoxyCompactList}\item 
+\textbf{ Graph} $\ast$ \textbf{ The\+Graph}
+\begin{DoxyCompactList}\small\item\em the graph that is built upon the cover-\//stego-\/file (set in \doxyref{Graph\+::\+Graph}{p.}{classGraph_acde9c764fc9764a356801ff56b88d572}) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class provides some useful global variables. They are not static, instead there exists a global Globs object to make it easy to use different \doxyref{Globals}{p.}{classGlobals} objects during one execution (this is necessary for some unit-\/tests).
+
+The \doxyref{Graph}{p.}{classGraph} constructor as well as the \doxyref{Cvr\+Stg\+File}{p.}{classCvrStgFile} constructor write itself into the Globs object. Doing this so early is necessary because the construction of a \doxyref{Graph}{p.}{classGraph} or \doxyref{Cvr\+Stg\+File}{p.}{classCvrStgFile} object might already need a correctly set Globs object.
+
+During one \char`\"{}normal\char`\"{} (i.\+e. non-\/unit-\/test) execution of steghide only one \doxyref{Globals}{p.}{classGlobals} object will be used, namely the one created in \doxyref{main()}{p.}{src_2main_8cc_a0ddf1224851353fc92bfbff6f499fa97}, filled in the \doxyref{Graph}{p.}{classGraph} and the \doxyref{Cvr\+Stg\+File}{p.}{classCvrStgFile} constructor and stored at the Globs pointer.
+
+The main purpose of making these variables global is to save memory in classes that are small but used in large numbers (e.\+g. $\ast$\+Sample\+Value,...). Using static pointers in these classed would be too chaotic to reset for the unit tests and non-\/static pointers would need too much memory. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{classGlobals_a3311b9ef050e320966a42b9fc2b93253}} 
+\index{Globals@{Globals}!Globals@{Globals}}
+\index{Globals@{Globals}!Globals@{Globals}}
+\subsubsection{Globals()}
+{\footnotesize\ttfamily Globals\+::\+Globals (\begin{DoxyParamCaption}\item[{\textbf{ Cvr\+Stg\+File} $\ast$}]{f = {\ttfamily NULL},  }\item[{\textbf{ Graph} $\ast$}]{g = {\ttfamily NULL} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{classGlobals_a2b84bbd81cf5acf969a9b42712253330}} 
+\index{Globals@{Globals}!operator=@{operator=}}
+\index{operator=@{operator=}!Globals@{Globals}}
+\subsubsection{operator=()}
+{\footnotesize\ttfamily void Globals\+::operator= (\begin{DoxyParamCaption}\item[{const \textbf{ Globals} \&}]{g }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classGlobals_a59d1e2dcebbf09e0c7175e22d45c98c1}} 
+\index{Globals@{Globals}!reset@{reset}}
+\index{reset@{reset}!Globals@{Globals}}
+\subsubsection{reset()}
+{\footnotesize\ttfamily void Globals\+::reset (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{classGlobals_a0086ee19afb0db15946b0a6b96f2bb19}} 
+\index{Globals@{Globals}!The\+Cvr\+Stg\+File@{The\+Cvr\+Stg\+File}}
+\index{The\+Cvr\+Stg\+File@{The\+Cvr\+Stg\+File}!Globals@{Globals}}
+\subsubsection{The\+Cvr\+Stg\+File}
+{\footnotesize\ttfamily \textbf{ Cvr\+Stg\+File}$\ast$ Globals\+::\+The\+Cvr\+Stg\+File}
+
+\mbox{\label{classGlobals_a77ded012b1ba56dfea1cfa06685f338c}} 
+\index{Globals@{Globals}!The\+Graph@{The\+Graph}}
+\index{The\+Graph@{The\+Graph}!Globals@{Globals}}
+\subsubsection{The\+Graph}
+{\footnotesize\ttfamily \textbf{ Graph}$\ast$ Globals\+::\+The\+Graph}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ Globals.\+h}\end{DoxyCompactItemize}

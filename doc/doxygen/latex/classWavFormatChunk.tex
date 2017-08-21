@@ -1,0 +1,165 @@
+\section{Wav\+Format\+Chunk Class Reference}
+\label{classWavFormatChunk}\index{Wav\+Format\+Chunk@{Wav\+Format\+Chunk}}
+
+
+{\ttfamily \#include $<$Wav\+Format\+Chunk.\+h$>$}
+
+Inheritance diagram for Wav\+Format\+Chunk\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classWavFormatChunk}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Wav\+Format\+Chunk} (void)
+\item 
+\textbf{ Wav\+Format\+Chunk} (\textbf{ Wav\+Chunk\+Header} $\ast$chh)
+\item 
+\textbf{ Wav\+Format\+Chunk} (\textbf{ Wav\+Chunk\+Header} $\ast$chh, \textbf{ Binary\+IO} $\ast$io)
+\item 
+void \textbf{ read} (\textbf{ Binary\+IO} $\ast$io)
+\item 
+void \textbf{ write} (\textbf{ Binary\+IO} $\ast$io)
+\item 
+\textbf{ U\+W\+O\+R\+D16} \textbf{ get\+Format\+Tag} (void) const
+\item 
+\textbf{ U\+W\+O\+R\+D16} \textbf{ get\+Bits\+Per\+Sample} (void) const
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const \textbf{ U\+W\+O\+R\+D16} \textbf{ Format\+P\+CM} = 0x0001
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ U\+W\+O\+R\+D16} \textbf{ Format\+Tag}
+\item 
+\textbf{ U\+W\+O\+R\+D16} \textbf{ Channels}
+\item 
+\textbf{ U\+W\+O\+R\+D32} \textbf{ Samples\+Per\+Sec}
+\item 
+\textbf{ U\+W\+O\+R\+D32} \textbf{ Avg\+Bytes\+Per\+Sec}
+\item 
+\textbf{ U\+W\+O\+R\+D16} \textbf{ Block\+Align}
+\item 
+\textbf{ U\+W\+O\+R\+D16} \textbf{ Bits\+Per\+Sample}
+\item 
+\textbf{ U\+W\+O\+R\+D16} \textbf{ Additional\+Size}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{classWavFormatChunk_a58546984c2c311e3218f32f08aa5579c}} 
+\index{Wav\+Format\+Chunk@{Wav\+Format\+Chunk}!Wav\+Format\+Chunk@{Wav\+Format\+Chunk}}
+\index{Wav\+Format\+Chunk@{Wav\+Format\+Chunk}!Wav\+Format\+Chunk@{Wav\+Format\+Chunk}}
+\subsubsection{Wav\+Format\+Chunk()\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Wav\+Format\+Chunk\+::\+Wav\+Format\+Chunk (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classWavFormatChunk_a898bffbd5c98735b52a0271a2e7005bb}} 
+\index{Wav\+Format\+Chunk@{Wav\+Format\+Chunk}!Wav\+Format\+Chunk@{Wav\+Format\+Chunk}}
+\index{Wav\+Format\+Chunk@{Wav\+Format\+Chunk}!Wav\+Format\+Chunk@{Wav\+Format\+Chunk}}
+\subsubsection{Wav\+Format\+Chunk()\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Wav\+Format\+Chunk\+::\+Wav\+Format\+Chunk (\begin{DoxyParamCaption}\item[{\textbf{ Wav\+Chunk\+Header} $\ast$}]{chh }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classWavFormatChunk_a8039c5d9c4d8252377d23ec4453e21f9}} 
+\index{Wav\+Format\+Chunk@{Wav\+Format\+Chunk}!Wav\+Format\+Chunk@{Wav\+Format\+Chunk}}
+\index{Wav\+Format\+Chunk@{Wav\+Format\+Chunk}!Wav\+Format\+Chunk@{Wav\+Format\+Chunk}}
+\subsubsection{Wav\+Format\+Chunk()\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Wav\+Format\+Chunk\+::\+Wav\+Format\+Chunk (\begin{DoxyParamCaption}\item[{\textbf{ Wav\+Chunk\+Header} $\ast$}]{chh,  }\item[{\textbf{ Binary\+IO} $\ast$}]{io }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{classWavFormatChunk_a790b2d806f26a6ae3a6b0558ad1b401c}} 
+\index{Wav\+Format\+Chunk@{Wav\+Format\+Chunk}!get\+Bits\+Per\+Sample@{get\+Bits\+Per\+Sample}}
+\index{get\+Bits\+Per\+Sample@{get\+Bits\+Per\+Sample}!Wav\+Format\+Chunk@{Wav\+Format\+Chunk}}
+\subsubsection{get\+Bits\+Per\+Sample()}
+{\footnotesize\ttfamily \textbf{ U\+W\+O\+R\+D16} Wav\+Format\+Chunk\+::get\+Bits\+Per\+Sample (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classWavFormatChunk_ab4136ade61a70a87533c15a04a5cb699}} 
+\index{Wav\+Format\+Chunk@{Wav\+Format\+Chunk}!get\+Format\+Tag@{get\+Format\+Tag}}
+\index{get\+Format\+Tag@{get\+Format\+Tag}!Wav\+Format\+Chunk@{Wav\+Format\+Chunk}}
+\subsubsection{get\+Format\+Tag()}
+{\footnotesize\ttfamily \textbf{ U\+W\+O\+R\+D16} Wav\+Format\+Chunk\+::get\+Format\+Tag (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classWavFormatChunk_a2810c4990b3914754e79ff76a01c657a}} 
+\index{Wav\+Format\+Chunk@{Wav\+Format\+Chunk}!read@{read}}
+\index{read@{read}!Wav\+Format\+Chunk@{Wav\+Format\+Chunk}}
+\subsubsection{read()}
+{\footnotesize\ttfamily void Wav\+Format\+Chunk\+::read (\begin{DoxyParamCaption}\item[{\textbf{ Binary\+IO} $\ast$}]{io }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \textbf{ Wav\+Chunk} \doxyref{}{p.}{classWavChunk_ac322d789b5f916cd63f4d7f1aaae9fa6}.
+
+\mbox{\label{classWavFormatChunk_af2d84921208ca02f4c484c8d2a9340e8}} 
+\index{Wav\+Format\+Chunk@{Wav\+Format\+Chunk}!write@{write}}
+\index{write@{write}!Wav\+Format\+Chunk@{Wav\+Format\+Chunk}}
+\subsubsection{write()}
+{\footnotesize\ttfamily void Wav\+Format\+Chunk\+::write (\begin{DoxyParamCaption}\item[{\textbf{ Binary\+IO} $\ast$}]{io }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \textbf{ Wav\+Chunk} \doxyref{}{p.}{classWavChunk_acc01d022177f41fbd027430bd577e885}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{classWavFormatChunk_a4a202f2433021315660a30cc2dedd727}} 
+\index{Wav\+Format\+Chunk@{Wav\+Format\+Chunk}!Additional\+Size@{Additional\+Size}}
+\index{Additional\+Size@{Additional\+Size}!Wav\+Format\+Chunk@{Wav\+Format\+Chunk}}
+\subsubsection{Additional\+Size}
+{\footnotesize\ttfamily \textbf{ U\+W\+O\+R\+D16} Wav\+Format\+Chunk\+::\+Additional\+Size\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classWavFormatChunk_a1ea077956112742194ef1f033628d412}} 
+\index{Wav\+Format\+Chunk@{Wav\+Format\+Chunk}!Avg\+Bytes\+Per\+Sec@{Avg\+Bytes\+Per\+Sec}}
+\index{Avg\+Bytes\+Per\+Sec@{Avg\+Bytes\+Per\+Sec}!Wav\+Format\+Chunk@{Wav\+Format\+Chunk}}
+\subsubsection{Avg\+Bytes\+Per\+Sec}
+{\footnotesize\ttfamily \textbf{ U\+W\+O\+R\+D32} Wav\+Format\+Chunk\+::\+Avg\+Bytes\+Per\+Sec\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classWavFormatChunk_acc92619817bcdf58e93bcf9f888a1cbf}} 
+\index{Wav\+Format\+Chunk@{Wav\+Format\+Chunk}!Bits\+Per\+Sample@{Bits\+Per\+Sample}}
+\index{Bits\+Per\+Sample@{Bits\+Per\+Sample}!Wav\+Format\+Chunk@{Wav\+Format\+Chunk}}
+\subsubsection{Bits\+Per\+Sample}
+{\footnotesize\ttfamily \textbf{ U\+W\+O\+R\+D16} Wav\+Format\+Chunk\+::\+Bits\+Per\+Sample\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classWavFormatChunk_addaddd5f9dcf2aa40811a7e47e461e15}} 
+\index{Wav\+Format\+Chunk@{Wav\+Format\+Chunk}!Block\+Align@{Block\+Align}}
+\index{Block\+Align@{Block\+Align}!Wav\+Format\+Chunk@{Wav\+Format\+Chunk}}
+\subsubsection{Block\+Align}
+{\footnotesize\ttfamily \textbf{ U\+W\+O\+R\+D16} Wav\+Format\+Chunk\+::\+Block\+Align\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classWavFormatChunk_aef241016db86533e5ff2fce14b7cf062}} 
+\index{Wav\+Format\+Chunk@{Wav\+Format\+Chunk}!Channels@{Channels}}
+\index{Channels@{Channels}!Wav\+Format\+Chunk@{Wav\+Format\+Chunk}}
+\subsubsection{Channels}
+{\footnotesize\ttfamily \textbf{ U\+W\+O\+R\+D16} Wav\+Format\+Chunk\+::\+Channels\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classWavFormatChunk_ad12e16a703198e5be164ddd46658b82e}} 
+\index{Wav\+Format\+Chunk@{Wav\+Format\+Chunk}!Format\+P\+CM@{Format\+P\+CM}}
+\index{Format\+P\+CM@{Format\+P\+CM}!Wav\+Format\+Chunk@{Wav\+Format\+Chunk}}
+\subsubsection{Format\+P\+CM}
+{\footnotesize\ttfamily const \textbf{ U\+W\+O\+R\+D16} Wav\+Format\+Chunk\+::\+Format\+P\+CM = 0x0001\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\label{classWavFormatChunk_a03b1a19b450c79a777379d0d1f6d5331}} 
+\index{Wav\+Format\+Chunk@{Wav\+Format\+Chunk}!Format\+Tag@{Format\+Tag}}
+\index{Format\+Tag@{Format\+Tag}!Wav\+Format\+Chunk@{Wav\+Format\+Chunk}}
+\subsubsection{Format\+Tag}
+{\footnotesize\ttfamily \textbf{ U\+W\+O\+R\+D16} Wav\+Format\+Chunk\+::\+Format\+Tag\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classWavFormatChunk_ac3353d168814d1a8acc6dadeabac3cad}} 
+\index{Wav\+Format\+Chunk@{Wav\+Format\+Chunk}!Samples\+Per\+Sec@{Samples\+Per\+Sec}}
+\index{Samples\+Per\+Sec@{Samples\+Per\+Sec}!Wav\+Format\+Chunk@{Wav\+Format\+Chunk}}
+\subsubsection{Samples\+Per\+Sec}
+{\footnotesize\ttfamily \textbf{ U\+W\+O\+R\+D32} Wav\+Format\+Chunk\+::\+Samples\+Per\+Sec\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ Wav\+Format\+Chunk.\+h}\item 
+\textbf{ Wav\+Format\+Chunk.\+cc}\end{DoxyCompactItemize}

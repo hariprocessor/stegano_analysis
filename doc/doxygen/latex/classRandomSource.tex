@@ -1,0 +1,142 @@
+\section{Random\+Source Class Reference}
+\label{classRandomSource}\index{Random\+Source@{Random\+Source}}
+
+
+objects of this class are used as a source of random (non reproduceable) data  
+
+
+
+
+{\ttfamily \#include $<$Random\+Source.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Random\+Source} (void)
+\item 
+\textbf{ $\sim$\+Random\+Source} (void)
+\item 
+\textbf{ B\+Y\+TE} \textbf{ get\+Byte} (void)
+\item 
+std\+::vector$<$ \textbf{ B\+Y\+TE} $>$ \textbf{ get\+Bytes} (unsigned int n)
+\item 
+\textbf{ Bit\+String} \textbf{ get\+Bits} (unsigned int n)
+\item 
+bool \textbf{ get\+Bool} (void)
+\item 
+unsigned long \textbf{ get\+Value} (unsigned long n)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \textbf{ Random\+Byte\+Pos}
+\item 
+\textbf{ B\+Y\+TE} \textbf{ Random\+Byte}
+\item 
+F\+I\+LE $\ast$ \textbf{ Random\+Input}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{classRandomSource_aa6834a1aa7e03c593a6294188016d9b8}} 
+\index{Random\+Source@{Random\+Source}!Random\+Source@{Random\+Source}}
+\index{Random\+Source@{Random\+Source}!Random\+Source@{Random\+Source}}
+\subsubsection{Random\+Source()}
+{\footnotesize\ttfamily Random\+Source\+::\+Random\+Source (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\label{classRandomSource_a36d73775c1660b03707061a03374f8ee}} 
+\index{Random\+Source@{Random\+Source}!````~Random\+Source@{$\sim$\+Random\+Source}}
+\index{````~Random\+Source@{$\sim$\+Random\+Source}!Random\+Source@{Random\+Source}}
+\subsubsection{$\sim$\+Random\+Source()}
+{\footnotesize\ttfamily Random\+Source\+::$\sim$\+Random\+Source (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{classRandomSource_aa179ee74465da57ce3f547dd26b894aa}} 
+\index{Random\+Source@{Random\+Source}!get\+Bits@{get\+Bits}}
+\index{get\+Bits@{get\+Bits}!Random\+Source@{Random\+Source}}
+\subsubsection{get\+Bits()}
+{\footnotesize\ttfamily \textbf{ Bit\+String} Random\+Source\+::get\+Bits (\begin{DoxyParamCaption}\item[{unsigned int}]{n }\end{DoxyParamCaption})}
+
+get n random bits 
+\begin{DoxyParams}{Parameters}
+{\em n} & the number of requested random bits \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a \doxyref{Bit\+String}{p.}{classBitString} containing n random bits 
+\end{DoxyReturn}
+\mbox{\label{classRandomSource_af88464db6fe07bd9aad36ba0e9c2ccca}} 
+\index{Random\+Source@{Random\+Source}!get\+Bool@{get\+Bool}}
+\index{get\+Bool@{get\+Bool}!Random\+Source@{Random\+Source}}
+\subsubsection{get\+Bool()}
+{\footnotesize\ttfamily bool Random\+Source\+::get\+Bool (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+get a boolean value \begin{DoxyReturn}{Returns}
+true of false with equal probability 
+\end{DoxyReturn}
+\mbox{\label{classRandomSource_aed9b2b297e46a34024fca9f26c205dbc}} 
+\index{Random\+Source@{Random\+Source}!get\+Byte@{get\+Byte}}
+\index{get\+Byte@{get\+Byte}!Random\+Source@{Random\+Source}}
+\subsubsection{get\+Byte()}
+{\footnotesize\ttfamily \textbf{ B\+Y\+TE} Random\+Source\+::get\+Byte (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+get a random byte \begin{DoxyReturn}{Returns}
+a random byte 
+\end{DoxyReturn}
+\mbox{\label{classRandomSource_a5e9f3b244d0e3f8cb1d3c29aa2702a54}} 
+\index{Random\+Source@{Random\+Source}!get\+Bytes@{get\+Bytes}}
+\index{get\+Bytes@{get\+Bytes}!Random\+Source@{Random\+Source}}
+\subsubsection{get\+Bytes()}
+{\footnotesize\ttfamily std\+::vector$<$ \textbf{ B\+Y\+TE} $>$ Random\+Source\+::get\+Bytes (\begin{DoxyParamCaption}\item[{unsigned int}]{n }\end{DoxyParamCaption})}
+
+get n random bytes 
+\begin{DoxyParams}{Parameters}
+{\em n} & the number of requested random bytes \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+n random bytes 
+\end{DoxyReturn}
+\mbox{\label{classRandomSource_a36229e10b935fc34a0ea9151cdcf253f}} 
+\index{Random\+Source@{Random\+Source}!get\+Value@{get\+Value}}
+\index{get\+Value@{get\+Value}!Random\+Source@{Random\+Source}}
+\subsubsection{get\+Value()}
+{\footnotesize\ttfamily unsigned long Random\+Source\+::get\+Value (\begin{DoxyParamCaption}\item[{unsigned long}]{n }\end{DoxyParamCaption})}
+
+get a random value 
+\begin{DoxyParams}{Parameters}
+{\em n} & the range of the random value to be returned \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a random number in \{0,...,n-\/1\} 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{classRandomSource_a8ca93a71e1ba9aaf8cb6fe4f8d65dfde}} 
+\index{Random\+Source@{Random\+Source}!Random\+Byte@{Random\+Byte}}
+\index{Random\+Byte@{Random\+Byte}!Random\+Source@{Random\+Source}}
+\subsubsection{Random\+Byte}
+{\footnotesize\ttfamily \textbf{ B\+Y\+TE} Random\+Source\+::\+Random\+Byte\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classRandomSource_a43389d89f5be07bc777ad87c435939be}} 
+\index{Random\+Source@{Random\+Source}!Random\+Byte\+Pos@{Random\+Byte\+Pos}}
+\index{Random\+Byte\+Pos@{Random\+Byte\+Pos}!Random\+Source@{Random\+Source}}
+\subsubsection{Random\+Byte\+Pos}
+{\footnotesize\ttfamily unsigned int Random\+Source\+::\+Random\+Byte\+Pos\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classRandomSource_aa9015ccb1b35282da7273963b4a58ccd}} 
+\index{Random\+Source@{Random\+Source}!Random\+Input@{Random\+Input}}
+\index{Random\+Input@{Random\+Input}!Random\+Source@{Random\+Source}}
+\subsubsection{Random\+Input}
+{\footnotesize\ttfamily F\+I\+LE$\ast$ Random\+Source\+::\+Random\+Input\hspace{0.3cm}{\ttfamily [private]}}
+
+determines the random input -\/ is either opened file pointer to /dev/urandom or N\+U\+LL (the rand() function is then used as random source) 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ Random\+Source.\+h}\item 
+\textbf{ Random\+Source.\+cc}\end{DoxyCompactItemize}

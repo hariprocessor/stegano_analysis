@@ -1,0 +1,142 @@
+.TH "BmpWinFileTest" 3 "Thu Aug 17 2017" "Version 0.5.1" "steghide" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+BmpWinFileTest
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <BmpWinFileTest\&.h>\fP
+.PP
+Inherits \fBCvrStgFileTest\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBBmpWinFileTest\fP (\fBTestSuite\fP *s)"
+.br
+.ti -1c
+.RI "void \fBsetup\fP (void)"
+.br
+.ti -1c
+.RI "void \fBcleanup\fP (void)"
+.br
+.ti -1c
+.RI "void \fBtestReadWrite\fP (void)"
+.br
+.ti -1c
+.RI "void \fBtestReadEmbedExtract\fP (void)"
+.br
+.ti -1c
+.RI "void \fBtestReadEmbedWriteReadExtract\fP (void)"
+.br
+.ti -1c
+.RI "void \fBtestPosition\fP (void)"
+.br
+.ti -1c
+.RI "void \fBtestReadExtractCompare\fP (void)"
+.br
+.ti -1c
+.RI "void \fBtestEmbeddedValue\fP (void)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBBitString\fP * \fBbs1\fP"
+.br
+.ti -1c
+.RI "\fBBitString\fP * \fBbs2\fP"
+.br
+.ti -1c
+.RI "\fBBitString\fP * \fBbs3\fP"
+.br
+.ti -1c
+.RI "\fBBitString\fP * \fBbs4\fP"
+.br
+.ti -1c
+.RI "\fBCvrStgFile\fP * \fBf1\fP"
+.br
+.ti -1c
+.RI "\fBCvrStgFile\fP * \fBf2\fP"
+.br
+.ti -1c
+.RI "\fBCvrStgFile\fP * \fBf3\fP"
+.br
+.ti -1c
+.RI "\fBCvrStgFile\fP * \fBf4\fP"
+.br
+.ti -1c
+.RI "\fBGlobals\fP \fBgl1\fP"
+.br
+.ti -1c
+.RI "\fBGlobals\fP \fBgl2\fP"
+.br
+.ti -1c
+.RI "\fBGlobals\fP \fBgl3\fP"
+.br
+.ti -1c
+.RI "\fBGlobals\fP \fBgl4\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "BmpWinFileTest::BmpWinFileTest (\fBTestSuite\fP * s)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void BmpWinFileTest::cleanup (void)\fC [virtual]\fP"
+cleanup the unit test - called after run 
+.PP
+Reimplemented from \fBUnitTest\fP\&.
+.SS "void BmpWinFileTest::setup (void)\fC [virtual]\fP"
+setup the unit test - called before run
+.PP
+\fBUnitTest::setup\fP will (together with \fBUnitTest::cleanup\fP) save and restore the object stored in Globs so they should be called from the corresponding functions in the derived object if the derived unit test manipulates the Globs object\&. 
+.PP
+Reimplemented from \fBUnitTest\fP\&.
+.SS "void BmpWinFileTest::testEmbeddedValue (void)"
+
+.SS "void BmpWinFileTest::testPosition (void)"
+
+.SS "void BmpWinFileTest::testReadEmbedExtract (void)"
+
+.SS "void BmpWinFileTest::testReadEmbedWriteReadExtract (void)"
+
+.SS "void BmpWinFileTest::testReadExtractCompare (void)"
+
+.SS "void BmpWinFileTest::testReadWrite (void)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBBitString\fP* BmpWinFileTest::bs1\fC [private]\fP"
+
+.SS "\fBBitString\fP * BmpWinFileTest::bs2\fC [private]\fP"
+
+.SS "\fBBitString\fP * BmpWinFileTest::bs3\fC [private]\fP"
+
+.SS "\fBBitString\fP * BmpWinFileTest::bs4\fC [private]\fP"
+
+.SS "\fBCvrStgFile\fP* BmpWinFileTest::f1\fC [private]\fP"
+
+.SS "\fBCvrStgFile\fP * BmpWinFileTest::f2\fC [private]\fP"
+
+.SS "\fBCvrStgFile\fP * BmpWinFileTest::f3\fC [private]\fP"
+
+.SS "\fBCvrStgFile\fP * BmpWinFileTest::f4\fC [private]\fP"
+
+.SS "\fBGlobals\fP BmpWinFileTest::gl1\fC [private]\fP"
+
+.SS "\fBGlobals\fP BmpWinFileTest::gl2\fC [private]\fP"
+
+.SS "\fBGlobals\fP BmpWinFileTest::gl3\fC [private]\fP"
+
+.SS "\fBGlobals\fP BmpWinFileTest::gl4\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for steghide from the source code\&.

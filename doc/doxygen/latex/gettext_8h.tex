@@ -1,0 +1,88 @@
+\section{gettext.\+h File Reference}
+\label{gettext_8h}\index{gettext.\+h@{gettext.\+h}}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \textbf{ gettext}(Msgid)~((const char $\ast$) (Msgid))
+\item 
+\#define \textbf{ dgettext}(Domainname,  Msgid)~((const char $\ast$) (Msgid))
+\item 
+\#define \textbf{ dcgettext}(Domainname,  Msgid,  Category)~((const char $\ast$) (Msgid))
+\item 
+\#define \textbf{ ngettext}(Msgid1,  Msgid2,  N)~((N) == 1 ? (const char $\ast$) (Msgid1) \+: (const char $\ast$) (Msgid2))
+\item 
+\#define \textbf{ dngettext}(Domainname,  Msgid1,  Msgid2,  N)~((N) == 1 ? (const char $\ast$) (Msgid1) \+: (const char $\ast$) (Msgid2))
+\item 
+\#define \textbf{ dcngettext}(Domainname,  Msgid1,  Msgid2,  N,  Category)~((N) == 1 ? (const char $\ast$) (Msgid1) \+: (const char $\ast$) (Msgid2))
+\item 
+\#define \textbf{ textdomain}(Domainname)~((const char $\ast$) (Domainname))
+\item 
+\#define \textbf{ bindtextdomain}(Domainname,  Dirname)~((const char $\ast$) (Dirname))
+\item 
+\#define \textbf{ bind\+\_\+textdomain\+\_\+codeset}(Domainname,  Codeset)~((const char $\ast$) (Codeset))
+\item 
+\#define \textbf{ gettext\+\_\+noop}(String)~String
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\label{gettext_8h_a973ce74418a69a456534d48dedddcd46}} 
+\index{gettext.\+h@{gettext.\+h}!bind\+\_\+textdomain\+\_\+codeset@{bind\+\_\+textdomain\+\_\+codeset}}
+\index{bind\+\_\+textdomain\+\_\+codeset@{bind\+\_\+textdomain\+\_\+codeset}!gettext.\+h@{gettext.\+h}}
+\subsubsection{bind\+\_\+textdomain\+\_\+codeset}
+{\footnotesize\ttfamily \#define bind\+\_\+textdomain\+\_\+codeset(\begin{DoxyParamCaption}\item[{}]{Domainname,  }\item[{}]{Codeset }\end{DoxyParamCaption})~((const char $\ast$) (Codeset))}
+
+\mbox{\label{gettext_8h_ac719c37e146c0e2030a7ed1dfcbdd5f8}} 
+\index{gettext.\+h@{gettext.\+h}!bindtextdomain@{bindtextdomain}}
+\index{bindtextdomain@{bindtextdomain}!gettext.\+h@{gettext.\+h}}
+\subsubsection{bindtextdomain}
+{\footnotesize\ttfamily \#define bindtextdomain(\begin{DoxyParamCaption}\item[{}]{Domainname,  }\item[{}]{Dirname }\end{DoxyParamCaption})~((const char $\ast$) (Dirname))}
+
+\mbox{\label{gettext_8h_a4419bece30ab76327deb6ef4149322f4}} 
+\index{gettext.\+h@{gettext.\+h}!dcgettext@{dcgettext}}
+\index{dcgettext@{dcgettext}!gettext.\+h@{gettext.\+h}}
+\subsubsection{dcgettext}
+{\footnotesize\ttfamily \#define dcgettext(\begin{DoxyParamCaption}\item[{}]{Domainname,  }\item[{}]{Msgid,  }\item[{}]{Category }\end{DoxyParamCaption})~((const char $\ast$) (Msgid))}
+
+\mbox{\label{gettext_8h_aa646ec380c28849655fcc4d56873062c}} 
+\index{gettext.\+h@{gettext.\+h}!dcngettext@{dcngettext}}
+\index{dcngettext@{dcngettext}!gettext.\+h@{gettext.\+h}}
+\subsubsection{dcngettext}
+{\footnotesize\ttfamily \#define dcngettext(\begin{DoxyParamCaption}\item[{}]{Domainname,  }\item[{}]{Msgid1,  }\item[{}]{Msgid2,  }\item[{}]{N,  }\item[{}]{Category }\end{DoxyParamCaption})~((N) == 1 ? (const char $\ast$) (Msgid1) \+: (const char $\ast$) (Msgid2))}
+
+\mbox{\label{gettext_8h_a86f757e66ffde703afba316a7396a28f}} 
+\index{gettext.\+h@{gettext.\+h}!dgettext@{dgettext}}
+\index{dgettext@{dgettext}!gettext.\+h@{gettext.\+h}}
+\subsubsection{dgettext}
+{\footnotesize\ttfamily \#define dgettext(\begin{DoxyParamCaption}\item[{}]{Domainname,  }\item[{}]{Msgid }\end{DoxyParamCaption})~((const char $\ast$) (Msgid))}
+
+\mbox{\label{gettext_8h_a06fa46950f520d32c10de24270198932}} 
+\index{gettext.\+h@{gettext.\+h}!dngettext@{dngettext}}
+\index{dngettext@{dngettext}!gettext.\+h@{gettext.\+h}}
+\subsubsection{dngettext}
+{\footnotesize\ttfamily \#define dngettext(\begin{DoxyParamCaption}\item[{}]{Domainname,  }\item[{}]{Msgid1,  }\item[{}]{Msgid2,  }\item[{}]{N }\end{DoxyParamCaption})~((N) == 1 ? (const char $\ast$) (Msgid1) \+: (const char $\ast$) (Msgid2))}
+
+\mbox{\label{gettext_8h_aa0fab2ce0e5eb897c393cee0d83c6ea9}} 
+\index{gettext.\+h@{gettext.\+h}!gettext@{gettext}}
+\index{gettext@{gettext}!gettext.\+h@{gettext.\+h}}
+\subsubsection{gettext}
+{\footnotesize\ttfamily \#define gettext(\begin{DoxyParamCaption}\item[{}]{Msgid }\end{DoxyParamCaption})~((const char $\ast$) (Msgid))}
+
+\mbox{\label{gettext_8h_a1a0ef2e42374f90a13299cc06f437847}} 
+\index{gettext.\+h@{gettext.\+h}!gettext\+\_\+noop@{gettext\+\_\+noop}}
+\index{gettext\+\_\+noop@{gettext\+\_\+noop}!gettext.\+h@{gettext.\+h}}
+\subsubsection{gettext\+\_\+noop}
+{\footnotesize\ttfamily \#define gettext\+\_\+noop(\begin{DoxyParamCaption}\item[{}]{String }\end{DoxyParamCaption})~String}
+
+\mbox{\label{gettext_8h_a248c64613ae95f3477511c239fe9c5c1}} 
+\index{gettext.\+h@{gettext.\+h}!ngettext@{ngettext}}
+\index{ngettext@{ngettext}!gettext.\+h@{gettext.\+h}}
+\subsubsection{ngettext}
+{\footnotesize\ttfamily \#define ngettext(\begin{DoxyParamCaption}\item[{}]{Msgid1,  }\item[{}]{Msgid2,  }\item[{}]{N }\end{DoxyParamCaption})~((N) == 1 ? (const char $\ast$) (Msgid1) \+: (const char $\ast$) (Msgid2))}
+
+\mbox{\label{gettext_8h_aba3653075c8f1f84c741ef23b2266f89}} 
+\index{gettext.\+h@{gettext.\+h}!textdomain@{textdomain}}
+\index{textdomain@{textdomain}!gettext.\+h@{gettext.\+h}}
+\subsubsection{textdomain}
+{\footnotesize\ttfamily \#define textdomain(\begin{DoxyParamCaption}\item[{}]{Domainname }\end{DoxyParamCaption})~((const char $\ast$) (Domainname))}
+

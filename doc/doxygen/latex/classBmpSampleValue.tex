@@ -1,0 +1,101 @@
+\section{Bmp\+Sample\+Value Class Reference}
+\label{classBmpSampleValue}\index{Bmp\+Sample\+Value@{Bmp\+Sample\+Value}}
+
+
+an (abstract) sample value in a bmp file  
+
+
+
+
+{\ttfamily \#include $<$Bmp\+Sample\+Value.\+h$>$}
+
+Inheritance diagram for Bmp\+Sample\+Value\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classBmpSampleValue}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Bmp\+Sample\+Value} (void)
+\item 
+virtual \textbf{ U\+W\+O\+R\+D32} \textbf{ calc\+Distance} (const \textbf{ Sample\+Value} $\ast$s) const
+\item 
+virtual unsigned char \textbf{ get\+Red} (void) const =0
+\item 
+virtual unsigned char \textbf{ get\+Green} (void) const =0
+\item 
+virtual unsigned char \textbf{ get\+Blue} (void) const =0
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{classBmpSampleValue_a088339541abf3b4511e71778633b6b12}} 
+\index{Bmp\+Sample\+Value@{Bmp\+Sample\+Value}!Bmp\+Sample\+Value@{Bmp\+Sample\+Value}}
+\index{Bmp\+Sample\+Value@{Bmp\+Sample\+Value}!Bmp\+Sample\+Value@{Bmp\+Sample\+Value}}
+\subsubsection{Bmp\+Sample\+Value()}
+{\footnotesize\ttfamily Bmp\+Sample\+Value\+::\+Bmp\+Sample\+Value (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{classBmpSampleValue_af81c03b48ec98543a9e1a88b69b83abd}} 
+\index{Bmp\+Sample\+Value@{Bmp\+Sample\+Value}!calc\+Distance@{calc\+Distance}}
+\index{calc\+Distance@{calc\+Distance}!Bmp\+Sample\+Value@{Bmp\+Sample\+Value}}
+\subsubsection{calc\+Distance()}
+{\footnotesize\ttfamily \textbf{ U\+W\+O\+R\+D32} Bmp\+Sample\+Value\+::calc\+Distance (\begin{DoxyParamCaption}\item[{const \textbf{ Sample\+Value} $\ast$}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+calculate the distance between the sample value s and this sample value 
+\begin{DoxyParams}{Parameters}
+{\em s} & a sample value of the same type as this \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the distance 
+\end{DoxyReturn}
+
+
+Implements \textbf{ Sample\+Value} \doxyref{}{p.}{classSampleValue_aa7e5d9b69203f6f6edf97c79319232dd}.
+
+
+
+Reimplemented in \textbf{ Bmp\+R\+G\+B\+Sample\+Value} \doxyref{}{p.}{classBmpRGBSampleValue_a41c765b2108e640d3e7249f5dfd81eef}.
+
+\mbox{\label{classBmpSampleValue_a0c31d4428158c7c6017935ac03254b26}} 
+\index{Bmp\+Sample\+Value@{Bmp\+Sample\+Value}!get\+Blue@{get\+Blue}}
+\index{get\+Blue@{get\+Blue}!Bmp\+Sample\+Value@{Bmp\+Sample\+Value}}
+\subsubsection{get\+Blue()}
+{\footnotesize\ttfamily virtual unsigned char Bmp\+Sample\+Value\+::get\+Blue (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+get the blue color component 
+
+Implemented in \textbf{ Bmp\+Palette\+Sample\+Value} \doxyref{}{p.}{classBmpPaletteSampleValue_aba2549aa10e39b580488e0c4625720c0}, and \textbf{ Bmp\+R\+G\+B\+Sample\+Value} \doxyref{}{p.}{classBmpRGBSampleValue_a35de04de107bf2a1f66f53eac3ab2b8d}.
+
+\mbox{\label{classBmpSampleValue_a5d646a4082648a5b63323167553066ab}} 
+\index{Bmp\+Sample\+Value@{Bmp\+Sample\+Value}!get\+Green@{get\+Green}}
+\index{get\+Green@{get\+Green}!Bmp\+Sample\+Value@{Bmp\+Sample\+Value}}
+\subsubsection{get\+Green()}
+{\footnotesize\ttfamily virtual unsigned char Bmp\+Sample\+Value\+::get\+Green (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+get the green color component 
+
+Implemented in \textbf{ Bmp\+Palette\+Sample\+Value} \doxyref{}{p.}{classBmpPaletteSampleValue_a886c54100ed64d4bfd732b4be4ddae67}, and \textbf{ Bmp\+R\+G\+B\+Sample\+Value} \doxyref{}{p.}{classBmpRGBSampleValue_a9c1418294f6552b218a05a2439ee5df0}.
+
+\mbox{\label{classBmpSampleValue_a8665a4c4db9ac910abf4ec0738cfde68}} 
+\index{Bmp\+Sample\+Value@{Bmp\+Sample\+Value}!get\+Red@{get\+Red}}
+\index{get\+Red@{get\+Red}!Bmp\+Sample\+Value@{Bmp\+Sample\+Value}}
+\subsubsection{get\+Red()}
+{\footnotesize\ttfamily virtual unsigned char Bmp\+Sample\+Value\+::get\+Red (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+get the red color component 
+
+Implemented in \textbf{ Bmp\+Palette\+Sample\+Value} \doxyref{}{p.}{classBmpPaletteSampleValue_a168e95b6da4f8aa4216fde934d561660}, and \textbf{ Bmp\+R\+G\+B\+Sample\+Value} \doxyref{}{p.}{classBmpRGBSampleValue_a8cbb5d220b2be0d1b9239d7abcda3a55}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ Bmp\+Sample\+Value.\+h}\item 
+\textbf{ Bmp\+Sample\+Value.\+cc}\end{DoxyCompactItemize}

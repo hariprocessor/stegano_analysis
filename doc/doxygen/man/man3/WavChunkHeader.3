@@ -1,0 +1,73 @@
+.TH "WavChunkHeader" 3 "Thu Aug 17 2017" "Version 0.5.1" "steghide" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+WavChunkHeader
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <WavChunkHeader\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBWavChunkHeader\fP (void)"
+.br
+.ti -1c
+.RI "\fBWavChunkHeader\fP (char *id, \fBUWORD32\fP len)"
+.br
+.ti -1c
+.RI "\fBWavChunkHeader\fP (\fBBinaryIO\fP *io)"
+.br
+.ti -1c
+.RI "void \fBread\fP (\fBBinaryIO\fP *io)"
+.br
+.ti -1c
+.RI "void \fBwrite\fP (\fBBinaryIO\fP *io) const"
+.br
+.ti -1c
+.RI "\fBUWORD32\fP \fBgetChunkLength\fP (void) const"
+.br
+.ti -1c
+.RI "const char * \fBgetChunkId\fP (void) const"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "char \fBChunkId\fP [4]"
+.br
+.ti -1c
+.RI "\fBUWORD32\fP \fBChunkLength\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "WavChunkHeader::WavChunkHeader (void)\fC [inline]\fP"
+
+.SS "WavChunkHeader::WavChunkHeader (char * id, \fBUWORD32\fP len)"
+
+.SS "WavChunkHeader::WavChunkHeader (\fBBinaryIO\fP * io)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "const char* WavChunkHeader::getChunkId (void) const\fC [inline]\fP"
+
+.SS "\fBUWORD32\fP WavChunkHeader::getChunkLength (void) const\fC [inline]\fP"
+
+.SS "void WavChunkHeader::read (\fBBinaryIO\fP * io)"
+
+.SS "void WavChunkHeader::write (\fBBinaryIO\fP * io) const"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "char WavChunkHeader::ChunkId[4]\fC [private]\fP"
+
+.SS "\fBUWORD32\fP WavChunkHeader::ChunkLength\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for steghide from the source code\&.

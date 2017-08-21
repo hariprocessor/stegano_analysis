@@ -1,0 +1,182 @@
+.TH "common.h" 3 "Thu Aug 17 2017" "Version 0.5.1" "steghide" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+common.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'gettext\&.h'\fP
+.br
+\fC#include 'Globals\&.h'\fP
+.br
+\fC#include 'AssertionFailed\&.h'\fP
+.br
+\fC#include <iostream>\fP
+.br
+\fC#include 'Arguments\&.h'\fP
+.br
+\fC#include 'RandomSource\&.h'\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBUWORD32_MAX\fP   0xFFFFFFFFUL"
+.br
+.ti -1c
+.RI "#define \fBUWORD16_MAX\fP   0xFFFF"
+.br
+.ti -1c
+.RI "#define \fBBYTE_MAX\fP   0xFF"
+.br
+.ti -1c
+.RI "#define \fBSWORD32_MIN\fP   \-2147483647 \- 1"
+.br
+.ti -1c
+.RI "#define \fBSWORD32_MAX\fP   2147483647"
+.br
+.ti -1c
+.RI "#define \fBSWORD16_MIN\fP   \-32768"
+.br
+.ti -1c
+.RI "#define \fBSWORD16_MAX\fP   32767"
+.br
+.ti -1c
+.RI "#define \fBSBYTE_MIN\fP   \-128"
+.br
+.ti -1c
+.RI "#define \fBSBYTE_MAX\fP   127"
+.br
+.ti -1c
+.RI "#define \fBSAMPLEKEY_MAX\fP   \fBUWORD32_MAX\fP"
+.br
+.ti -1c
+.RI "#define \fBVERTEXLABEL_MAX\fP   \fBUWORD32_MAX\fP"
+.br
+.ti -1c
+.RI "#define \fB_\fP(S)   \fBgettext\fP (S)"
+.br
+.ti -1c
+.RI "#define \fBmyassert\fP(expr)   if (!(expr)) throw \fBAssertionFailed\fP (__FILE__, __LINE__)"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef unsigned long \fBUWORD32\fP"
+.br
+.ti -1c
+.RI "typedef unsigned short \fBUWORD16\fP"
+.br
+.ti -1c
+.RI "typedef unsigned char \fBBYTE\fP"
+.br
+.ti -1c
+.RI "typedef long \fBSWORD32\fP"
+.br
+.ti -1c
+.RI "typedef short \fBSWORD16\fP"
+.br
+.ti -1c
+.RI "typedef char \fBSBYTE\fP"
+.br
+.ti -1c
+.RI "typedef bool \fBBIT\fP"
+.br
+.ti -1c
+.RI "typedef \fBBYTE\fP \fBEmbValue\fP"
+.br
+.ti -1c
+.RI "typedef \fBUWORD32\fP \fBSamplePos\fP"
+.br
+.ti -1c
+.RI "typedef \fBUWORD32\fP \fBVertexLabel\fP"
+.br
+.ti -1c
+.RI "typedef \fBUWORD32\fP \fBSampleValueLabel\fP"
+.br
+.ti -1c
+.RI "typedef \fBUWORD32\fP \fBSampleKey\fP"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBGlobals\fP \fBGlobs\fP"
+.br
+.ti -1c
+.RI "\fBArguments\fP \fBArgs\fP"
+.br
+.ti -1c
+.RI "\fBRandomSource\fP \fBRndSrc\fP"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define _(S)   \fBgettext\fP (S)"
+
+.SS "#define BYTE_MAX   0xFF"
+
+.SS "#define myassert(expr)   if (!(expr)) throw \fBAssertionFailed\fP (__FILE__, __LINE__)"
+
+.SS "#define SAMPLEKEY_MAX   \fBUWORD32_MAX\fP"
+
+.SS "#define SBYTE_MAX   127"
+
+.SS "#define SBYTE_MIN   \-128"
+
+.SS "#define SWORD16_MAX   32767"
+
+.SS "#define SWORD16_MIN   \-32768"
+
+.SS "#define SWORD32_MAX   2147483647"
+
+.SS "#define SWORD32_MIN   \-2147483647 \- 1"
+
+.SS "#define UWORD16_MAX   0xFFFF"
+
+.SS "#define UWORD32_MAX   0xFFFFFFFFUL"
+
+.SS "#define VERTEXLABEL_MAX   \fBUWORD32_MAX\fP"
+
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef bool \fBBIT\fP"
+
+.SS "typedef unsigned char \fBBYTE\fP"
+
+.SS "typedef \fBBYTE\fP \fBEmbValue\fP"
+
+.SS "typedef \fBUWORD32\fP \fBSampleKey\fP"
+
+.SS "typedef \fBUWORD32\fP \fBSamplePos\fP"
+
+.SS "typedef \fBUWORD32\fP \fBSampleValueLabel\fP"
+
+.SS "typedef char \fBSBYTE\fP"
+
+.SS "typedef short \fBSWORD16\fP"
+
+.SS "typedef long \fBSWORD32\fP"
+
+.SS "typedef unsigned short \fBUWORD16\fP"
+
+.SS "typedef unsigned long \fBUWORD32\fP"
+
+.SS "typedef \fBUWORD32\fP \fBVertexLabel\fP"
+
+.SH "Variable Documentation"
+.PP 
+.SS "\fBArguments\fP Args"
+
+.SS "\fBGlobals\fP Globs"
+
+.SS "\fBRandomSource\fP RndSrc"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for steghide from the source code\&.

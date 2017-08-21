@@ -1,0 +1,137 @@
+\section{W\+K\+S\+Construction\+Heuristic Class Reference}
+\label{classWKSConstructionHeuristic}\index{W\+K\+S\+Construction\+Heuristic@{W\+K\+S\+Construction\+Heuristic}}
+
+
+a heuristic algorithm for constructing a matching  
+
+
+
+
+{\ttfamily \#include $<$W\+K\+S\+Construction\+Heuristic.\+h$>$}
+
+Inheritance diagram for W\+K\+S\+Construction\+Heuristic\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classWKSConstructionHeuristic}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \textbf{ Longer\+Shortest\+Edge}
+\begin{DoxyCompactList}\small\item\em a comparison operator \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ W\+K\+S\+Construction\+Heuristic} (\textbf{ Graph} $\ast$g, \textbf{ Matching} $\ast$m, float goal=100.\+0)
+\item 
+virtual \textbf{ $\sim$\+W\+K\+S\+Construction\+Heuristic} (void)
+\item 
+const char $\ast$ \textbf{ get\+Name} (void) const
+\item 
+void \textbf{ run} (void)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Vertex} $\ast$ \textbf{ find\+Vertex\+Deg1} (void)
+\item 
+\textbf{ Vertex} $\ast$ \textbf{ find\+Vertex\+DegG} (void)
+\item 
+void \textbf{ check\+Neighbours\+Deg1} (\textbf{ Vertex} $\ast$v)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::priority\+\_\+queue$<$ \textbf{ Vertex} $\ast$, std\+::vector$<$ \textbf{ Vertex} $\ast$ $>$, \textbf{ Longer\+Shortest\+Edge} $>$ \textbf{ Vertices\+Deg1}
+\begin{DoxyCompactList}\small\item\em contains all vertices of degree 1 -\/ every vertex in this queue has a correct shortest edge if it still has degree 1 \end{DoxyCompactList}\item 
+std\+::priority\+\_\+queue$<$ \textbf{ Vertex} $\ast$, std\+::vector$<$ \textbf{ Vertex} $\ast$ $>$, \textbf{ Longer\+Shortest\+Edge} $>$ \textbf{ Vertices\+DegG}
+\begin{DoxyCompactList}\small\item\em contains all vertices with degree greater than 1 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+This class implements a construction heuristic for the maximum matching problem. The idea for the algorithm is taken from Michael Sipser, Richard M. Karp\+: \char`\"{}\+Maximum matchings in sparse random graphs\char`\"{}, in 22nd Annual Symposium on Foundations of Computer Science. The modification consists of the priority queues, resp. of the fact that the vertices in the priority queues are ordered by the length of their shortest edge, thus creating a weighted version of this heuristic by biasing the algorithm to choose shorter edges on average. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{classWKSConstructionHeuristic_afd24063c7439518b3d1381d11a8a760f}} 
+\index{W\+K\+S\+Construction\+Heuristic@{W\+K\+S\+Construction\+Heuristic}!W\+K\+S\+Construction\+Heuristic@{W\+K\+S\+Construction\+Heuristic}}
+\index{W\+K\+S\+Construction\+Heuristic@{W\+K\+S\+Construction\+Heuristic}!W\+K\+S\+Construction\+Heuristic@{W\+K\+S\+Construction\+Heuristic}}
+\subsubsection{W\+K\+S\+Construction\+Heuristic()}
+{\footnotesize\ttfamily W\+K\+S\+Construction\+Heuristic\+::\+W\+K\+S\+Construction\+Heuristic (\begin{DoxyParamCaption}\item[{\textbf{ Graph} $\ast$}]{g,  }\item[{\textbf{ Matching} $\ast$}]{m,  }\item[{float}]{goal = {\ttfamily 100.0} }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & the underlying graph \\
+\hline
+{\em m} & the inital matching (should be empty) \\
+\hline
+\end{DoxyParams}
+\mbox{\label{classWKSConstructionHeuristic_ada1e6ce80969aa9c0be22d62e60f5909}} 
+\index{W\+K\+S\+Construction\+Heuristic@{W\+K\+S\+Construction\+Heuristic}!````~W\+K\+S\+Construction\+Heuristic@{$\sim$\+W\+K\+S\+Construction\+Heuristic}}
+\index{````~W\+K\+S\+Construction\+Heuristic@{$\sim$\+W\+K\+S\+Construction\+Heuristic}!W\+K\+S\+Construction\+Heuristic@{W\+K\+S\+Construction\+Heuristic}}
+\subsubsection{$\sim$\+W\+K\+S\+Construction\+Heuristic()}
+{\footnotesize\ttfamily virtual W\+K\+S\+Construction\+Heuristic\+::$\sim$\+W\+K\+S\+Construction\+Heuristic (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{classWKSConstructionHeuristic_a87e4ebbe9b5c5622d4ba2d9eb740e184}} 
+\index{W\+K\+S\+Construction\+Heuristic@{W\+K\+S\+Construction\+Heuristic}!check\+Neighbours\+Deg1@{check\+Neighbours\+Deg1}}
+\index{check\+Neighbours\+Deg1@{check\+Neighbours\+Deg1}!W\+K\+S\+Construction\+Heuristic@{W\+K\+S\+Construction\+Heuristic}}
+\subsubsection{check\+Neighbours\+Deg1()}
+{\footnotesize\ttfamily void W\+K\+S\+Construction\+Heuristic\+::check\+Neighbours\+Deg1 (\begin{DoxyParamCaption}\item[{\textbf{ Vertex} $\ast$}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+copy all Neighbours of v that have degree 1 to Vertices\+Deg1 \mbox{\label{classWKSConstructionHeuristic_ab466858ce4ff82430552c7ef6db8a2eb}} 
+\index{W\+K\+S\+Construction\+Heuristic@{W\+K\+S\+Construction\+Heuristic}!find\+Vertex\+Deg1@{find\+Vertex\+Deg1}}
+\index{find\+Vertex\+Deg1@{find\+Vertex\+Deg1}!W\+K\+S\+Construction\+Heuristic@{W\+K\+S\+Construction\+Heuristic}}
+\subsubsection{find\+Vertex\+Deg1()}
+{\footnotesize\ttfamily \textbf{ Vertex} $\ast$ W\+K\+S\+Construction\+Heuristic\+::find\+Vertex\+Deg1 (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+get the \doxyref{Vertex}{p.}{classVertex} from Vertices\+Deg1 that is nearest to top (with updated degrees and shortest edges) \mbox{\label{classWKSConstructionHeuristic_a1c2233d1625f773b3fa32cb7278e9396}} 
+\index{W\+K\+S\+Construction\+Heuristic@{W\+K\+S\+Construction\+Heuristic}!find\+Vertex\+DegG@{find\+Vertex\+DegG}}
+\index{find\+Vertex\+DegG@{find\+Vertex\+DegG}!W\+K\+S\+Construction\+Heuristic@{W\+K\+S\+Construction\+Heuristic}}
+\subsubsection{find\+Vertex\+Deg\+G()}
+{\footnotesize\ttfamily \textbf{ Vertex} $\ast$ W\+K\+S\+Construction\+Heuristic\+::find\+Vertex\+DegG (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+get the \doxyref{Vertex}{p.}{classVertex} from Vertices\+DegG that is nearest to top (with updated degrees and shortest edges) \mbox{\label{classWKSConstructionHeuristic_a279664d019277e218ea026d436ecd549}} 
+\index{W\+K\+S\+Construction\+Heuristic@{W\+K\+S\+Construction\+Heuristic}!get\+Name@{get\+Name}}
+\index{get\+Name@{get\+Name}!W\+K\+S\+Construction\+Heuristic@{W\+K\+S\+Construction\+Heuristic}}
+\subsubsection{get\+Name()}
+{\footnotesize\ttfamily const char$\ast$ W\+K\+S\+Construction\+Heuristic\+::get\+Name (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \textbf{ Matching\+Algorithm} \doxyref{}{p.}{classMatchingAlgorithm_a7305edae5d74e91987bcf983b2a1171a}.
+
+\mbox{\label{classWKSConstructionHeuristic_a04c931636b6e457493b6bc25697f98fb}} 
+\index{W\+K\+S\+Construction\+Heuristic@{W\+K\+S\+Construction\+Heuristic}!run@{run}}
+\index{run@{run}!W\+K\+S\+Construction\+Heuristic@{W\+K\+S\+Construction\+Heuristic}}
+\subsubsection{run()}
+{\footnotesize\ttfamily void W\+K\+S\+Construction\+Heuristic\+::run (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \textbf{ Matching\+Algorithm} \doxyref{}{p.}{classMatchingAlgorithm_aeea6c808daf03fd788c9a9feea885c41}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{classWKSConstructionHeuristic_aa10ccd5f02c16ed9207f10101dd50c43}} 
+\index{W\+K\+S\+Construction\+Heuristic@{W\+K\+S\+Construction\+Heuristic}!Vertices\+Deg1@{Vertices\+Deg1}}
+\index{Vertices\+Deg1@{Vertices\+Deg1}!W\+K\+S\+Construction\+Heuristic@{W\+K\+S\+Construction\+Heuristic}}
+\subsubsection{Vertices\+Deg1}
+{\footnotesize\ttfamily std\+::priority\+\_\+queue$<$\textbf{ Vertex}$\ast$, std\+::vector$<$\textbf{ Vertex}$\ast$$>$, \textbf{ Longer\+Shortest\+Edge}$>$ W\+K\+S\+Construction\+Heuristic\+::\+Vertices\+Deg1\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classWKSConstructionHeuristic_acb53370d5b437466e6eaed1507dcf2f9}} 
+\index{W\+K\+S\+Construction\+Heuristic@{W\+K\+S\+Construction\+Heuristic}!Vertices\+DegG@{Vertices\+DegG}}
+\index{Vertices\+DegG@{Vertices\+DegG}!W\+K\+S\+Construction\+Heuristic@{W\+K\+S\+Construction\+Heuristic}}
+\subsubsection{Vertices\+DegG}
+{\footnotesize\ttfamily std\+::priority\+\_\+queue$<$\textbf{ Vertex}$\ast$, std\+::vector$<$\textbf{ Vertex}$\ast$$>$, \textbf{ Longer\+Shortest\+Edge}$>$ W\+K\+S\+Construction\+Heuristic\+::\+Vertices\+DegG\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ W\+K\+S\+Construction\+Heuristic.\+h}\item 
+\textbf{ W\+K\+S\+Construction\+Heuristic.\+cc}\end{DoxyCompactItemize}

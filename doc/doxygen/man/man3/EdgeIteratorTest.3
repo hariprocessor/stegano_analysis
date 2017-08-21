@@ -1,0 +1,206 @@
+.TH "EdgeIteratorTest" 3 "Thu Aug 17 2017" "Version 0.5.1" "steghide" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+EdgeIteratorTest
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <EdgeIteratorTest\&.h>\fP
+.PP
+Inherits \fBUnitTest\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBEdgeIteratorTest\fP (\fBTestSuite\fP *s)"
+.br
+.ti -1c
+.RI "void \fBsetup\fP (void)"
+.br
+.ti -1c
+.RI "void \fBcleanup\fP (void)"
+.br
+.ti -1c
+.RI "void \fBtestReferenceIteration\fP (void)"
+.br
+.ti -1c
+.RI "void \fBtestIterationLength\fP (void)"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBgenericTestGraphIteration\fP (\fBGraph\fP *g, \fBEdgeIterator::ITERATIONMODE\fP m)"
+.br
+.ti -1c
+.RI "bool \fBgenericTestVertexIteration\fP (\fBVertex\fP *srcvertex, \fBEdgeIterator::ITERATIONMODE\fP m, const std::vector< \fBEdge\fP *> &edges)"
+.br
+.ti -1c
+.RI "bool \fBgenericTestIterationLength\fP (\fBGraph\fP *g)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBBitString\fP * \fBbs1\fP"
+.br
+.ti -1c
+.RI "\fBBitString\fP * \fBbs2\fP"
+.br
+.ti -1c
+.RI "\fBCvrStgFile\fP * \fBf1\fP"
+.br
+.ti -1c
+.RI "\fBCvrStgFile\fP * \fBf2\fP"
+.br
+.ti -1c
+.RI "\fBSelector\fP * \fBs1\fP"
+.br
+.ti -1c
+.RI "\fBSelector\fP * \fBs2\fP"
+.br
+.ti -1c
+.RI "\fBGraph\fP * \fBg1\fP"
+.br
+.ti -1c
+.RI "\fBGraph\fP * \fBg2\fP"
+.br
+.ti -1c
+.RI "\fBGlobals\fP \fBgl1\fP"
+.br
+.ti -1c
+.RI "\fBGlobals\fP \fBgl2\fP"
+.br
+.ti -1c
+.RI "\fBBitString\fP * \fBbs10\fP"
+.br
+.ti -1c
+.RI "\fBBitString\fP * \fBbs11\fP"
+.br
+.ti -1c
+.RI "\fBBitString\fP * \fBbs12\fP"
+.br
+.ti -1c
+.RI "\fBCvrStgFile\fP * \fBf10\fP"
+.br
+.ti -1c
+.RI "\fBCvrStgFile\fP * \fBf11\fP"
+.br
+.ti -1c
+.RI "\fBCvrStgFile\fP * \fBf12\fP"
+.br
+.ti -1c
+.RI "\fBSelector\fP * \fBs10\fP"
+.br
+.ti -1c
+.RI "\fBSelector\fP * \fBs11\fP"
+.br
+.ti -1c
+.RI "\fBSelector\fP * \fBs12\fP"
+.br
+.ti -1c
+.RI "\fBGraph\fP * \fBg10\fP"
+.br
+.ti -1c
+.RI "\fBGraph\fP * \fBg11\fP"
+.br
+.ti -1c
+.RI "\fBGraph\fP * \fBg12\fP"
+.br
+.ti -1c
+.RI "\fBGlobals\fP \fBgl10\fP"
+.br
+.ti -1c
+.RI "\fBGlobals\fP \fBgl11\fP"
+.br
+.ti -1c
+.RI "\fBGlobals\fP \fBgl12\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "EdgeIteratorTest::EdgeIteratorTest (\fBTestSuite\fP * s)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void EdgeIteratorTest::cleanup (void)\fC [virtual]\fP"
+cleanup the unit test - called after run 
+.PP
+Reimplemented from \fBUnitTest\fP\&.
+.SS "bool EdgeIteratorTest::genericTestGraphIteration (\fBGraph\fP * g, \fBEdgeIterator::ITERATIONMODE\fP m)\fC [private]\fP"
+
+.SS "bool EdgeIteratorTest::genericTestIterationLength (\fBGraph\fP * g)\fC [private]\fP"
+for all vertices in the graph test if getDegree() returns exactly the number of edges \fBEdgeIterator\fP iterates through 
+.SS "bool EdgeIteratorTest::genericTestVertexIteration (\fBVertex\fP * srcvertex, \fBEdgeIterator::ITERATIONMODE\fP m, const std::vector< \fBEdge\fP *> & edges)\fC [private]\fP"
+check if an edge iterator for srcvertex with m iterates exactly through edges 
+.SS "void EdgeIteratorTest::setup (void)\fC [virtual]\fP"
+setup the unit test - called before run
+.PP
+\fBUnitTest::setup\fP will (together with \fBUnitTest::cleanup\fP) save and restore the object stored in Globs so they should be called from the corresponding functions in the derived object if the derived unit test manipulates the Globs object\&. 
+.PP
+Reimplemented from \fBUnitTest\fP\&.
+.SS "void EdgeIteratorTest::testIterationLength (void)"
+
+.SS "void EdgeIteratorTest::testReferenceIteration (void)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBBitString\fP* EdgeIteratorTest::bs1\fC [private]\fP"
+
+.SS "\fBBitString\fP* EdgeIteratorTest::bs10\fC [private]\fP"
+
+.SS "\fBBitString\fP * EdgeIteratorTest::bs11\fC [private]\fP"
+
+.SS "\fBBitString\fP * EdgeIteratorTest::bs12\fC [private]\fP"
+
+.SS "\fBBitString\fP * EdgeIteratorTest::bs2\fC [private]\fP"
+
+.SS "\fBCvrStgFile\fP* EdgeIteratorTest::f1\fC [private]\fP"
+
+.SS "\fBCvrStgFile\fP* EdgeIteratorTest::f10\fC [private]\fP"
+
+.SS "\fBCvrStgFile\fP * EdgeIteratorTest::f11\fC [private]\fP"
+
+.SS "\fBCvrStgFile\fP * EdgeIteratorTest::f12\fC [private]\fP"
+
+.SS "\fBCvrStgFile\fP * EdgeIteratorTest::f2\fC [private]\fP"
+
+.SS "\fBGraph\fP* EdgeIteratorTest::g1\fC [private]\fP"
+
+.SS "\fBGraph\fP* EdgeIteratorTest::g10\fC [private]\fP"
+
+.SS "\fBGraph\fP * EdgeIteratorTest::g11\fC [private]\fP"
+
+.SS "\fBGraph\fP * EdgeIteratorTest::g12\fC [private]\fP"
+
+.SS "\fBGraph\fP * EdgeIteratorTest::g2\fC [private]\fP"
+
+.SS "\fBGlobals\fP EdgeIteratorTest::gl1\fC [private]\fP"
+
+.SS "\fBGlobals\fP EdgeIteratorTest::gl10\fC [private]\fP"
+
+.SS "\fBGlobals\fP EdgeIteratorTest::gl11\fC [private]\fP"
+
+.SS "\fBGlobals\fP EdgeIteratorTest::gl12\fC [private]\fP"
+
+.SS "\fBGlobals\fP EdgeIteratorTest::gl2\fC [private]\fP"
+
+.SS "\fBSelector\fP* EdgeIteratorTest::s1\fC [private]\fP"
+
+.SS "\fBSelector\fP* EdgeIteratorTest::s10\fC [private]\fP"
+
+.SS "\fBSelector\fP * EdgeIteratorTest::s11\fC [private]\fP"
+
+.SS "\fBSelector\fP * EdgeIteratorTest::s12\fC [private]\fP"
+
+.SS "\fBSelector\fP * EdgeIteratorTest::s2\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for steghide from the source code\&.

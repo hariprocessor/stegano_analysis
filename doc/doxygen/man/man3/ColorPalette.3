@@ -1,0 +1,41 @@
+.TH "ColorPalette" 3 "Thu Aug 17 2017" "Version 0.5.1" "steghide" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ColorPalette \- a color palette  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <ColorPalette\&.h>\fP
+.PP
+Inherits vector< RGBTriple >\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "unsigned int \fBgetSize\fP (void) const"
+.br
+.ti -1c
+.RI "void \fBaddEntry\fP (\fBRGBTriple\fP rgb)"
+.br
+.ti -1c
+.RI "void \fBaddEntry\fP (\fBBYTE\fP r, \fBBYTE\fP g, \fBBYTE\fP b)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+This class is essentially a vector<RGBTriple> with some wrappers for exisiting methods\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "void ColorPalette::addEntry (\fBRGBTriple\fP rgb)\fC [inline]\fP"
+add (a copy of) rgb to the end of this color palette 
+.SS "void ColorPalette::addEntry (\fBBYTE\fP r, \fBBYTE\fP g, \fBBYTE\fP b)\fC [inline]\fP"
+add the color r/g/b to the end of this color palette 
+.SS "unsigned int ColorPalette::getSize (void) const\fC [inline]\fP"
+get the size, i\&.e\&. the number of entries of this color palette 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for steghide from the source code\&.

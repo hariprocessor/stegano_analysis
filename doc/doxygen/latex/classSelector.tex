@@ -1,0 +1,189 @@
+\section{Selector Class Reference}
+\label{classSelector}\index{Selector@{Selector}}
+
+
+a random permutation of a random combination  
+
+
+
+
+{\ttfamily \#include $<$Selector.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Selector} (\textbf{ U\+W\+O\+R\+D32} m, std\+::string pp)
+\item 
+\textbf{ Selector} (\textbf{ U\+W\+O\+R\+D32} m)
+\item 
+\textbf{ Selector} (const std\+::vector$<$ \textbf{ U\+W\+O\+R\+D32} $>$ \&retvals)
+\item 
+\textbf{ $\sim$\+Selector} (void)
+\item 
+\textbf{ U\+W\+O\+R\+D32} \textbf{ operator[$\,$]} (\textbf{ U\+W\+O\+R\+D32} i)
+\item 
+\textbf{ U\+W\+O\+R\+D32} \textbf{ get\+Range} (void) const
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ calculate} (\textbf{ U\+W\+O\+R\+D32} m)
+\item 
+bool \textbf{ idxX} (\textbf{ U\+W\+O\+R\+D32} v, \textbf{ U\+W\+O\+R\+D32} m, \textbf{ U\+W\+O\+R\+D32} $\ast$p) const
+\item 
+void \textbf{ setX} (\textbf{ U\+W\+O\+R\+D32} i, \textbf{ U\+W\+O\+R\+D32} v)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \textbf{ U\+W\+O\+R\+D32} $>$ \textbf{ X}
+\item 
+std\+::vector$<$ \textbf{ U\+W\+O\+R\+D32} $>$ \textbf{ Y}
+\item 
+sgi\+::hash\+\_\+map$<$ \textbf{ U\+W\+O\+R\+D32}, \textbf{ U\+W\+O\+R\+D32} $>$ \textbf{ Xreversed}
+\item 
+\textbf{ U\+W\+O\+R\+D32} \textbf{ Maximum}
+\begin{DoxyCompactList}\small\item\em operator[] will return a value in \{0,...,Maximum-\/1\} \end{DoxyCompactList}\item 
+\textbf{ U\+W\+O\+R\+D32} \textbf{ Num\+In\+Array}
+\begin{DoxyCompactList}\small\item\em the number of calculated positions in the arrays \end{DoxyCompactList}\item 
+\textbf{ Pseudo\+Random\+Source} $\ast$ \textbf{ P\+Random}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{classSelector_acc52824162ed137decacc0edc1b0b1e1}} 
+\index{Selector@{Selector}!Selector@{Selector}}
+\index{Selector@{Selector}!Selector@{Selector}}
+\subsubsection{Selector()\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Selector\+::\+Selector (\begin{DoxyParamCaption}\item[{\textbf{ U\+W\+O\+R\+D32}}]{m,  }\item[{std\+::string}]{pp }\end{DoxyParamCaption})}
+
+construct a \doxyref{Selector}{p.}{classSelector} object 
+\begin{DoxyParams}{Parameters}
+{\em m} & the range -\/ operator[] will return numbers in \{0,...,m-\/1\} \\
+\hline
+{\em pp} & a passphrase used to generate the seed \\
+\hline
+\end{DoxyParams}
+\mbox{\label{classSelector_a8873699208d4c5dc2cb65173503f385a}} 
+\index{Selector@{Selector}!Selector@{Selector}}
+\index{Selector@{Selector}!Selector@{Selector}}
+\subsubsection{Selector()\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Selector\+::\+Selector (\begin{DoxyParamCaption}\item[{\textbf{ U\+W\+O\+R\+D32}}]{m }\end{DoxyParamCaption})}
+
+construct a \doxyref{Selector}{p.}{classSelector} object that resembles the identity permutation with range m 
+\begin{DoxyParams}{Parameters}
+{\em m} & the range -\/ ($\ast$this)[i] will be i for i in \{0,...,m-\/1\} \\
+\hline
+\end{DoxyParams}
+\mbox{\label{classSelector_af872fa2e722baccf4333afc219785e04}} 
+\index{Selector@{Selector}!Selector@{Selector}}
+\index{Selector@{Selector}!Selector@{Selector}}
+\subsubsection{Selector()\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Selector\+::\+Selector (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \textbf{ U\+W\+O\+R\+D32} $>$ \&}]{retvals }\end{DoxyParamCaption})}
+
+construct a \doxyref{Selector}{p.}{classSelector} object that will return predefined values 
+\begin{DoxyParams}{Parameters}
+{\em retvals} & the values that operator[] shall return\\
+\hline
+\end{DoxyParams}
+The Maximum is set to retvals.\+size(). \mbox{\label{classSelector_a961800f205d55026d33890664b5599ca}} 
+\index{Selector@{Selector}!````~Selector@{$\sim$\+Selector}}
+\index{````~Selector@{$\sim$\+Selector}!Selector@{Selector}}
+\subsubsection{$\sim$\+Selector()}
+{\footnotesize\ttfamily Selector\+::$\sim$\+Selector (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{classSelector_a499a21441da9a8363f36adf4692b175a}} 
+\index{Selector@{Selector}!calculate@{calculate}}
+\index{calculate@{calculate}!Selector@{Selector}}
+\subsubsection{calculate()}
+{\footnotesize\ttfamily void Selector\+::calculate (\begin{DoxyParamCaption}\item[{\textbf{ U\+W\+O\+R\+D32}}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+fill X, Y and Xreversed until but not including index m \mbox{\label{classSelector_a3316810323b6f7f8b0b77354027fe43a}} 
+\index{Selector@{Selector}!get\+Range@{get\+Range}}
+\index{get\+Range@{get\+Range}!Selector@{Selector}}
+\subsubsection{get\+Range()}
+{\footnotesize\ttfamily \textbf{ U\+W\+O\+R\+D32} Selector\+::get\+Range (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classSelector_ac4e7ddf2e9e887fcd4be057b14b92744}} 
+\index{Selector@{Selector}!idxX@{idxX}}
+\index{idxX@{idxX}!Selector@{Selector}}
+\subsubsection{idx\+X()}
+{\footnotesize\ttfamily bool Selector\+::idxX (\begin{DoxyParamCaption}\item[{\textbf{ U\+W\+O\+R\+D32}}]{v,  }\item[{\textbf{ U\+W\+O\+R\+D32}}]{m,  }\item[{\textbf{ U\+W\+O\+R\+D32} $\ast$}]{p }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+search an index i such that 0 $<$= i $<$ m and X[i] == v 
+\begin{DoxyParams}{Parameters}
+{\em v} & the value to be searched for in the X-\/array \\
+\hline
+{\em m} & the upper bound for the index \\
+\hline
+{\em p} & a pointer to a variable where the found index can be stored \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true iff such an index is found ($\ast$p is set to i in this case 
+\end{DoxyReturn}
+\mbox{\label{classSelector_a67c22f0caa7be017426c03fa0b4bcbe0}} 
+\index{Selector@{Selector}!operator[]@{operator[]}}
+\index{operator[]@{operator[]}!Selector@{Selector}}
+\subsubsection{operator[]()}
+{\footnotesize\ttfamily \textbf{ U\+W\+O\+R\+D32} Selector\+::operator[$\,$] (\begin{DoxyParamCaption}\item[{\textbf{ U\+W\+O\+R\+D32}}]{i }\end{DoxyParamCaption})}
+
+get the value at the i-\/th position 
+\begin{DoxyParams}{Parameters}
+{\em i} & an index \\
+\hline
+\end{DoxyParams}
+\mbox{\label{classSelector_a533b70ee161de028022ea2cbf9e743ba}} 
+\index{Selector@{Selector}!setX@{setX}}
+\index{setX@{setX}!Selector@{Selector}}
+\subsubsection{set\+X()}
+{\footnotesize\ttfamily void Selector\+::setX (\begin{DoxyParamCaption}\item[{\textbf{ U\+W\+O\+R\+D32}}]{i,  }\item[{\textbf{ U\+W\+O\+R\+D32}}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+set X[i] to v while maintaining Xreversed 
+
+\subsection{Member Data Documentation}
+\mbox{\label{classSelector_a3a48b553233d96fb718ebe39bcf20ba0}} 
+\index{Selector@{Selector}!Maximum@{Maximum}}
+\index{Maximum@{Maximum}!Selector@{Selector}}
+\subsubsection{Maximum}
+{\footnotesize\ttfamily \textbf{ U\+W\+O\+R\+D32} Selector\+::\+Maximum\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classSelector_ac22e09b027bcf728eef8380e47543507}} 
+\index{Selector@{Selector}!Num\+In\+Array@{Num\+In\+Array}}
+\index{Num\+In\+Array@{Num\+In\+Array}!Selector@{Selector}}
+\subsubsection{Num\+In\+Array}
+{\footnotesize\ttfamily \textbf{ U\+W\+O\+R\+D32} Selector\+::\+Num\+In\+Array\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classSelector_a5b0a5a96d37e69b6e0b994cfa480d215}} 
+\index{Selector@{Selector}!P\+Random@{P\+Random}}
+\index{P\+Random@{P\+Random}!Selector@{Selector}}
+\subsubsection{P\+Random}
+{\footnotesize\ttfamily \textbf{ Pseudo\+Random\+Source}$\ast$ Selector\+::\+P\+Random\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classSelector_a9caaded60e133e61c4e33e93307abb6f}} 
+\index{Selector@{Selector}!X@{X}}
+\index{X@{X}!Selector@{Selector}}
+\subsubsection{X}
+{\footnotesize\ttfamily std\+::vector$<$\textbf{ U\+W\+O\+R\+D32}$>$ Selector\+::X\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classSelector_ac550990891ddaa2025312e9803097d8e}} 
+\index{Selector@{Selector}!Xreversed@{Xreversed}}
+\index{Xreversed@{Xreversed}!Selector@{Selector}}
+\subsubsection{Xreversed}
+{\footnotesize\ttfamily sgi\+::hash\+\_\+map$<$\textbf{ U\+W\+O\+R\+D32},\textbf{ U\+W\+O\+R\+D32}$>$ Selector\+::\+Xreversed\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classSelector_a73d5c0af7145d1a7f57af997ad4e7b7a}} 
+\index{Selector@{Selector}!Y@{Y}}
+\index{Y@{Y}!Selector@{Selector}}
+\subsubsection{Y}
+{\footnotesize\ttfamily std\+::vector$<$\textbf{ U\+W\+O\+R\+D32}$>$ Selector\+::Y\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ Selector.\+h}\item 
+\textbf{ Selector.\+cc}\end{DoxyCompactItemize}

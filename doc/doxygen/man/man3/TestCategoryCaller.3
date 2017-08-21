@@ -1,0 +1,63 @@
+.TH "TestCategoryCaller< UTType >" 3 "Thu Aug 17 2017" "Version 0.5.1" "steghide" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+TestCategoryCaller< UTType >
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <TestCategoryCaller\&.h>\fP
+.PP
+Inherits \fBTestCategory\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "typedef void(UTType::* \fBTCMType\fP) ()"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBTestCategoryCaller\fP (std::string n, \fBTestSuite\fP *s, UTType *o, \fBTCMType\fP m)"
+.br
+.ti -1c
+.RI "void \fBrun\fP (void)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "UTType * \fBUTObject\fP"
+.br
+.ti -1c
+.RI "\fBTCMType\fP \fBTestMethod\fP"
+.br
+.in -1c
+.SH "Member Typedef Documentation"
+.PP 
+.SS "template<class UTType > typedef void(UTType::* \fBTestCategoryCaller\fP< UTType >::TCMType) ()"
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "template<class UTType > \fBTestCategoryCaller\fP< UTType >::\fBTestCategoryCaller\fP (std::string n, \fBTestSuite\fP * s, UTType * o, \fBTCMType\fP m)\fC [inline]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "template<class UTType > void \fBTestCategoryCaller\fP< UTType >::run (void)\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBTest\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "template<class UTType > \fBTCMType\fP \fBTestCategoryCaller\fP< UTType >::TestMethod\fC [private]\fP"
+
+.SS "template<class UTType > UTType* \fBTestCategoryCaller\fP< UTType >::UTObject\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for steghide from the source code\&.

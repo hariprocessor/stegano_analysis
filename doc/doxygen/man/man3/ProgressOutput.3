@@ -1,0 +1,108 @@
+.TH "ProgressOutput" 3 "Thu Aug 17 2017" "Version 0.5.1" "steghide" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ProgressOutput \- prints the progress to stdout  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <ProgressOutput\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBProgressOutput\fP (void)"
+.br
+.ti -1c
+.RI "\fBProgressOutput\fP (const std::string &m)"
+.br
+.ti -1c
+.RI "void \fBsetMessage\fP (const std::string &m)"
+.br
+.ti -1c
+.RI "void \fBsetMessage\fP (const char *msgfmt,\&.\&.\&.)"
+.br
+.ti -1c
+.RI "void \fBupdate\fP (float rate)"
+.br
+.ti -1c
+.RI "void \fBdone\fP (void) const"
+.br
+.ti -1c
+.RI "void \fBdone\fP (float rate, float avgweight=\fBNoAvgWeight\fP) const"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static const float \fBNoAvgWeight\fP = \-1\&.0"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "std::string \fBvcompose\fP (const char *msgfmt, va_list ap) const"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::string \fBMessage\fP"
+.br
+.ti -1c
+.RI "time_t \fBLastUpdate\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ProgressOutput::ProgressOutput (void)"
+create an empty \fBProgressOutput\fP object 
+.SS "ProgressOutput::ProgressOutput (const std::string & m)"
+create a \fBProgressOutput\fP object 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIm\fP the message to be displayed 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void ProgressOutput::done (void) const"
+update the output appending 'done' and a newline (no rate nor average weight) 
+.SS "void ProgressOutput::done (float rate, float avgweight = \fC\fBNoAvgWeight\fP\fP) const"
+update the output appending rate, [average edge weight], 'done' and a newline 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIrate\fP the rate of matched vertices 
+.br
+\fIavgweight\fP the average edge weight (is not printed if not given) 
+.RE
+.PP
+
+.SS "void ProgressOutput::setMessage (const std::string & m)\fC [inline]\fP"
+
+.SS "void ProgressOutput::setMessage (const char * msgfmt,  \&.\&.\&.)"
+
+.SS "void ProgressOutput::update (float rate)"
+update the output (taking update frequency into account) with rate as percentage 
+.SS "std::string ProgressOutput::vcompose (const char * msgfmt, va_list ap) const\fC [protected]\fP"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "time_t ProgressOutput::LastUpdate\fC [private]\fP"
+
+.SS "std::string ProgressOutput::Message\fC [private]\fP"
+
+.SS "const float ProgressOutput::NoAvgWeight = \-1\&.0\fC [static]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for steghide from the source code\&.

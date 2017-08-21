@@ -1,0 +1,117 @@
+.TH "AudioSampleValueTest" 3 "Thu Aug 17 2017" "Version 0.5.1" "steghide" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+AudioSampleValueTest
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <AudioSampleValueTest\&.h>\fP
+.PP
+Inherits \fBSampleValueTest\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBAudioSampleValueTest\fP (\fBTestSuite\fP *s)"
+.br
+.ti -1c
+.RI "void \fBsetup\fP (void)"
+.br
+.ti -1c
+.RI "void \fBcleanup\fP (void)"
+.br
+.ti -1c
+.RI "void \fBtestDistance\fP (void)"
+.br
+.ti -1c
+.RI "void \fBtestIsNeighbour\fP (void)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBCvrStgFile\fP * \fBf_AuMuLaw\fP"
+.br
+.ti -1c
+.RI "\fBCvrStgFile\fP * \fBf_AuPCM16\fP"
+.br
+.ti -1c
+.RI "\fBSampleValue\fP * \fBsv_AuMuLaw_0\fP"
+.br
+.ti -1c
+.RI "\fBSampleValue\fP * \fBsv_AuMuLaw_1\fP"
+.br
+.ti -1c
+.RI "\fBSampleValue\fP * \fBsv_AuMuLaw_45\fP"
+.br
+.ti -1c
+.RI "\fBSampleValue\fP * \fBsv_AuPCM16_m32768\fP"
+.br
+.ti -1c
+.RI "\fBSampleValue\fP * \fBsv_AuPCM16_32767\fP"
+.br
+.ti -1c
+.RI "\fBSampleValue\fP * \fBsv_AuPCM16_0\fP"
+.br
+.ti -1c
+.RI "\fBSampleValue\fP * \fBsv_AuPCM16_15\fP"
+.br
+.ti -1c
+.RI "\fBGlobals\fP \fBgl_AuMuLaw\fP"
+.br
+.ti -1c
+.RI "\fBGlobals\fP \fBgl_AuPCM16\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "AudioSampleValueTest::AudioSampleValueTest (\fBTestSuite\fP * s)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void AudioSampleValueTest::cleanup (void)\fC [virtual]\fP"
+cleanup the unit test - called after run 
+.PP
+Reimplemented from \fBUnitTest\fP\&.
+.SS "void AudioSampleValueTest::setup (void)\fC [virtual]\fP"
+setup the unit test - called before run
+.PP
+\fBUnitTest::setup\fP will (together with \fBUnitTest::cleanup\fP) save and restore the object stored in Globs so they should be called from the corresponding functions in the derived object if the derived unit test manipulates the Globs object\&. 
+.PP
+Reimplemented from \fBUnitTest\fP\&.
+.SS "void AudioSampleValueTest::testDistance (void)"
+
+.SS "void AudioSampleValueTest::testIsNeighbour (void)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBCvrStgFile\fP* AudioSampleValueTest::f_AuMuLaw\fC [private]\fP"
+
+.SS "\fBCvrStgFile\fP * AudioSampleValueTest::f_AuPCM16\fC [private]\fP"
+
+.SS "\fBGlobals\fP AudioSampleValueTest::gl_AuMuLaw\fC [private]\fP"
+
+.SS "\fBGlobals\fP AudioSampleValueTest::gl_AuPCM16\fC [private]\fP"
+
+.SS "\fBSampleValue\fP* AudioSampleValueTest::sv_AuMuLaw_0\fC [private]\fP"
+
+.SS "\fBSampleValue\fP * AudioSampleValueTest::sv_AuMuLaw_1\fC [private]\fP"
+
+.SS "\fBSampleValue\fP * AudioSampleValueTest::sv_AuMuLaw_45\fC [private]\fP"
+
+.SS "\fBSampleValue\fP * AudioSampleValueTest::sv_AuPCM16_0\fC [private]\fP"
+
+.SS "\fBSampleValue\fP * AudioSampleValueTest::sv_AuPCM16_15\fC [private]\fP"
+
+.SS "\fBSampleValue\fP * AudioSampleValueTest::sv_AuPCM16_32767\fC [private]\fP"
+
+.SS "\fBSampleValue\fP * AudioSampleValueTest::sv_AuPCM16_m32768\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for steghide from the source code\&.

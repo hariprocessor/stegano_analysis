@@ -1,0 +1,63 @@
+.TH "Arg< T >" 3 "Thu Aug 17 2017" "Version 0.5.1" "steghide" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Arg< T >
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Arg\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBArg\fP (void)"
+.br
+.ti -1c
+.RI "\fBArg\fP (T v, bool setbyuser=true)"
+.br
+.ti -1c
+.RI "T \fBgetValue\fP (void) const"
+.br
+.ti -1c
+.RI "void \fBsetValue\fP (T v, bool setbyuser=true)"
+.br
+.ti -1c
+.RI "bool \fBis_set\fP (void) const"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "T \fBValue\fP"
+.br
+.ti -1c
+.RI "bool \fBset\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "template<class T> \fBArg\fP< T >::\fBArg\fP (void)\fC [inline]\fP"
+
+.SS "template<class T> \fBArg\fP< T >::\fBArg\fP (T v, bool setbyuser = \fCtrue\fP)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "template<class T> T \fBArg\fP< T >::getValue (void) const\fC [inline]\fP"
+
+.SS "template<class T> bool \fBArg\fP< T >::is_set (void) const\fC [inline]\fP"
+
+.SS "template<class T> void \fBArg\fP< T >::setValue (T v, bool setbyuser = \fCtrue\fP)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "template<class T> bool \fBArg\fP< T >::set\fC [private]\fP"
+
+.SS "template<class T> T \fBArg\fP< T >::Value\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for steghide from the source code\&.

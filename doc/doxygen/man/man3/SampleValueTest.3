@@ -1,0 +1,96 @@
+.TH "SampleValueTest" 3 "Thu Aug 17 2017" "Version 0.5.1" "steghide" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SampleValueTest
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SampleValueTest\&.h>\fP
+.PP
+Inherits \fBUnitTest\fP\&.
+.PP
+Inherited by \fBAudioSampleValueTest\fP, \fBBmpPaletteSampleValueTest\fP, \fBBmpRGBSampleValueTest\fP, \fBJpegSampleValueTest\fP, and \fBWavPCMSampleValueTest\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSampleValueTest\fP (std::string n, \fBTestSuite\fP *s)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBgenericTestDistance\fP (\fBSampleValue\fP *s1, \fBSampleValue\fP *s2, \fBUWORD32\fP dist)"
+.br
+.ti -1c
+.RI "bool \fBgenericTestIsNeighbour\fP (\fBSampleValue\fP *s1, \fBSampleValue\fP *s2, bool res)"
+.br
+.ti -1c
+.RI "bool \fBgenericTestEValue\fP (\fBSampleValue\fP *s, \fBEmbValue\fP ev)"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SampleValueTest::SampleValueTest (std::string n, \fBTestSuite\fP * s)\fC [inline]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "bool SampleValueTest::genericTestDistance (\fBSampleValue\fP * s1, \fBSampleValue\fP * s2, \fBUWORD32\fP dist)\fC [protected]\fP"
+generic distance test 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIs1\fP a sample value 
+.br
+\fIs2\fP another sample value 
+.br
+\fIdist\fP this should be the distance between s1 and s2 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+true iff distance is commutative and return dist 
+.RE
+.PP
+
+.SS "bool SampleValueTest::genericTestEValue (\fBSampleValue\fP * s, \fBEmbValue\fP ev)\fC [protected]\fP"
+generic evalue test 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIs\fP a sample value 
+.br
+\fIev\fP an embedded value 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+true iff s->getEmbeddedValue() == ev 
+.RE
+.PP
+
+.SS "bool SampleValueTest::genericTestIsNeighbour (\fBSampleValue\fP * s1, \fBSampleValue\fP * s2, bool res)\fC [protected]\fP"
+generic neighbourhood test 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIs1\fP a sample value 
+.br
+\fIs2\fP another sample value 
+.br
+\fIres\fP true iff they are neighbours 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+true iff calling isNeighbour (with reflexivity) equals res 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for steghide from the source code\&.

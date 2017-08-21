@@ -1,0 +1,80 @@
+.TH "PseudoRandomSource" 3 "Thu Aug 17 2017" "Version 0.5.1" "steghide" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PseudoRandomSource \- this class serves as a source of reproducible (pseudo-)random numbers  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <PseudoRandomSource\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBPseudoRandomSource\fP (\fBUWORD32\fP s)"
+.br
+.ti -1c
+.RI "\fBUWORD32\fP \fBgetValue\fP (\fBUWORD32\fP n)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBUWORD32\fP \fBValue\fP"
+.br
+.in -1c
+.SS "Static Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "static const \fBUWORD32\fP \fBA\fP = 1367208549"
+.br
+.ti -1c
+.RI "static const \fBUWORD32\fP \fBC\fP = 1"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+To generate the random numbers, the linear congruetial method is used\&. 2^32 is used as modulus\&. The overflow in the implementation is intended (and controlled, as UWORD32 is used as datatype which always is 32 bits wide)\&. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "PseudoRandomSource::PseudoRandomSource (\fBUWORD32\fP s)\fC [inline]\fP"
+construct a \fBPseudoRandomSource\fP object 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIs\fP the seed 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBUWORD32\fP PseudoRandomSource::getValue (\fBUWORD32\fP n)"
+get a pseudo-random value from {0,\&.\&.\&.,n-1} 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIn\fP the range of the random value to be returned 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+a number >= 0 and <= n - 1
+.RE
+.PP
+After calling getValue, the next getValue call will use the next state of the random number generator (analogous to the C rand() function) 
+.SH "Member Data Documentation"
+.PP 
+.SS "const \fBUWORD32\fP PseudoRandomSource::A = 1367208549\fC [static]\fP, \fC [private]\fP"
+
+.SS "const \fBUWORD32\fP PseudoRandomSource::C = 1\fC [static]\fP, \fC [private]\fP"
+
+.SS "\fBUWORD32\fP PseudoRandomSource::Value\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for steghide from the source code\&.

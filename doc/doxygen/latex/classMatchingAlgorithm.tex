@@ -1,0 +1,113 @@
+\section{Matching\+Algorithm Class Reference}
+\label{classMatchingAlgorithm}\index{Matching\+Algorithm@{Matching\+Algorithm}}
+
+
+{\ttfamily \#include $<$Matching\+Algorithm.\+h$>$}
+
+Inheritance diagram for Matching\+Algorithm\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.317647cm]{classMatchingAlgorithm}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Matching\+Algorithm} (\textbf{ Graph} $\ast$g, \textbf{ Matching} $\ast$m, float goal)
+\item 
+virtual \textbf{ $\sim$\+Matching\+Algorithm} (void)
+\item 
+virtual void \textbf{ run} (void)=0
+\item 
+\textbf{ Matching} $\ast$ \textbf{ get\+Matching} (void) const
+\item 
+void \textbf{ set\+Goal} (float goal)
+\item 
+virtual const char $\ast$ \textbf{ get\+Name} (void) const =0
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Graph} $\ast$ \textbf{ The\+Graph}
+\item 
+\textbf{ Matching} $\ast$ \textbf{ The\+Matching}
+\item 
+unsigned long \textbf{ Cardinality\+Goal}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{classMatchingAlgorithm_ae8cd854b438d0d4b90dce63296a29961}} 
+\index{Matching\+Algorithm@{Matching\+Algorithm}!Matching\+Algorithm@{Matching\+Algorithm}}
+\index{Matching\+Algorithm@{Matching\+Algorithm}!Matching\+Algorithm@{Matching\+Algorithm}}
+\subsubsection{Matching\+Algorithm()}
+{\footnotesize\ttfamily Matching\+Algorithm\+::\+Matching\+Algorithm (\begin{DoxyParamCaption}\item[{\textbf{ Graph} $\ast$}]{g,  }\item[{\textbf{ Matching} $\ast$}]{m,  }\item[{float}]{goal }\end{DoxyParamCaption})}
+
+\mbox{\label{classMatchingAlgorithm_a263bc490ed5abf59bb6fa0336cacd9da}} 
+\index{Matching\+Algorithm@{Matching\+Algorithm}!````~Matching\+Algorithm@{$\sim$\+Matching\+Algorithm}}
+\index{````~Matching\+Algorithm@{$\sim$\+Matching\+Algorithm}!Matching\+Algorithm@{Matching\+Algorithm}}
+\subsubsection{$\sim$\+Matching\+Algorithm()}
+{\footnotesize\ttfamily virtual Matching\+Algorithm\+::$\sim$\+Matching\+Algorithm (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{classMatchingAlgorithm_aa098c67b241f6441539faea7862822a8}} 
+\index{Matching\+Algorithm@{Matching\+Algorithm}!get\+Matching@{get\+Matching}}
+\index{get\+Matching@{get\+Matching}!Matching\+Algorithm@{Matching\+Algorithm}}
+\subsubsection{get\+Matching()}
+{\footnotesize\ttfamily \textbf{ Matching}$\ast$ Matching\+Algorithm\+::get\+Matching (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classMatchingAlgorithm_a7305edae5d74e91987bcf983b2a1171a}} 
+\index{Matching\+Algorithm@{Matching\+Algorithm}!get\+Name@{get\+Name}}
+\index{get\+Name@{get\+Name}!Matching\+Algorithm@{Matching\+Algorithm}}
+\subsubsection{get\+Name()}
+{\footnotesize\ttfamily virtual const char$\ast$ Matching\+Algorithm\+::get\+Name (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \textbf{ W\+K\+S\+Construction\+Heuristic} \doxyref{}{p.}{classWKSConstructionHeuristic_a279664d019277e218ea026d436ecd549}, \textbf{ D\+F\+S\+A\+P\+Heuristic} \doxyref{}{p.}{classDFSAPHeuristic_afd3814466a9968e66558451ae0a0c611}, \textbf{ B\+F\+S\+A\+P\+Heuristic} \doxyref{}{p.}{classBFSAPHeuristic_afbd3a55843232ba22bea3360e6009a97}, \textbf{ D\+M\+D\+Construction\+Heuristic} \doxyref{}{p.}{classDMDConstructionHeuristic_a0ee1864e50b3478d6cccdd18f2502c54}, and \textbf{ S\+M\+D\+Construction\+Heuristic} \doxyref{}{p.}{classSMDConstructionHeuristic_a9e5bd0cdb6c2318d791fa9d38406dc84}.
+
+\mbox{\label{classMatchingAlgorithm_aeea6c808daf03fd788c9a9feea885c41}} 
+\index{Matching\+Algorithm@{Matching\+Algorithm}!run@{run}}
+\index{run@{run}!Matching\+Algorithm@{Matching\+Algorithm}}
+\subsubsection{run()}
+{\footnotesize\ttfamily virtual void Matching\+Algorithm\+::run (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \textbf{ D\+F\+S\+A\+P\+Heuristic} \doxyref{}{p.}{classDFSAPHeuristic_a6be8de5d724975d145500fc7a1f12198}, \textbf{ W\+K\+S\+Construction\+Heuristic} \doxyref{}{p.}{classWKSConstructionHeuristic_a04c931636b6e457493b6bc25697f98fb}, \textbf{ B\+F\+S\+A\+P\+Heuristic} \doxyref{}{p.}{classBFSAPHeuristic_a2b12948841049cfca3e6d634d793c510}, \textbf{ D\+M\+D\+Construction\+Heuristic} \doxyref{}{p.}{classDMDConstructionHeuristic_a49dd3ba3c89b0993922918379d3d3240}, and \textbf{ S\+M\+D\+Construction\+Heuristic} \doxyref{}{p.}{classSMDConstructionHeuristic_a34f0fc8df70751b17badb578be25d5a0}.
+
+\mbox{\label{classMatchingAlgorithm_ae6fa3917ebacc51dcf465a173d8d42a3}} 
+\index{Matching\+Algorithm@{Matching\+Algorithm}!set\+Goal@{set\+Goal}}
+\index{set\+Goal@{set\+Goal}!Matching\+Algorithm@{Matching\+Algorithm}}
+\subsubsection{set\+Goal()}
+{\footnotesize\ttfamily void Matching\+Algorithm\+::set\+Goal (\begin{DoxyParamCaption}\item[{float}]{goal }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{classMatchingAlgorithm_aec9ec46a32f1afcd67b338d54ddb0e1c}} 
+\index{Matching\+Algorithm@{Matching\+Algorithm}!Cardinality\+Goal@{Cardinality\+Goal}}
+\index{Cardinality\+Goal@{Cardinality\+Goal}!Matching\+Algorithm@{Matching\+Algorithm}}
+\subsubsection{Cardinality\+Goal}
+{\footnotesize\ttfamily unsigned long Matching\+Algorithm\+::\+Cardinality\+Goal\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\label{classMatchingAlgorithm_a3af20bc23311e6165f81d5064f1d0404}} 
+\index{Matching\+Algorithm@{Matching\+Algorithm}!The\+Graph@{The\+Graph}}
+\index{The\+Graph@{The\+Graph}!Matching\+Algorithm@{Matching\+Algorithm}}
+\subsubsection{The\+Graph}
+{\footnotesize\ttfamily \textbf{ Graph}$\ast$ Matching\+Algorithm\+::\+The\+Graph\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\label{classMatchingAlgorithm_a7f048641a6db4e92258f7b118fac33b0}} 
+\index{Matching\+Algorithm@{Matching\+Algorithm}!The\+Matching@{The\+Matching}}
+\index{The\+Matching@{The\+Matching}!Matching\+Algorithm@{Matching\+Algorithm}}
+\subsubsection{The\+Matching}
+{\footnotesize\ttfamily \textbf{ Matching}$\ast$ Matching\+Algorithm\+::\+The\+Matching\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ Matching\+Algorithm.\+h}\item 
+\textbf{ Matching\+Algorithm.\+cc}\end{DoxyCompactItemize}

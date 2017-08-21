@@ -1,0 +1,150 @@
+.TH "DFSAPHeuristic" 3 "Thu Aug 17 2017" "Version 0.5.1" "steghide" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DFSAPHeuristic \- a matching algorithm implementing a heuristic search for augmenting paths  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <DFSAPHeuristic\&.h>\fP
+.PP
+Inherits \fBMatchingAlgorithm\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDFSAPHeuristic\fP (\fBGraph\fP *g, \fBMatching\fP *m, float goal=100\&.0, \fBUWORD32\fP mne=\fBUWORD32_MAX\fP, \fBEdgeIterator::ITERATIONMODE\fP mo=\fBEdgeIterator::SAMPLEOCCURENCE\fP)"
+.br
+.ti -1c
+.RI "virtual \fB~DFSAPHeuristic\fP (void)"
+.br
+.ti -1c
+.RI "const char * \fBgetName\fP (void) const"
+.br
+.ti -1c
+.RI "void \fBreset\fP (\fBUWORD32\fP mne=\fBUWORD32_MAX\fP, \fBEdgeIterator::ITERATIONMODE\fP mo=\fBEdgeIterator::SAMPLEOCCURENCE\fP)"
+.br
+.ti -1c
+.RI "void \fBrun\fP (void)"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "unsigned long \fBsearchAugmentingPath\fP (\fBVertex\fP *v0, const \fBEdge\fP **path)"
+.br
+.ti -1c
+.RI "const \fBEdge\fP * \fBgetNextEdge\fP (\fBVertex\fP *v)"
+.br
+.ti -1c
+.RI "void \fBmarkVisited\fP (\fBVertex\fP *v)"
+.br
+.ti -1c
+.RI "bool \fBisVisited\fP (\fBVertex\fP *v) const"
+.br
+.ti -1c
+.RI "bool \fBisVisited\fP (\fBVertexLabel\fP vlbl) const"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBUWORD32\fP \fBTimeCounter\fP"
+.br
+.ti -1c
+.RI "\fBUWORD32\fP * \fBTimeCounters\fP"
+.br
+.ti -1c
+.RI "bool * \fBVertexOnPath\fP"
+.br
+.ti -1c
+.RI "\fBEdgeIterator\fP * \fBEdgeIterators\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+This class implements the heuristic augmenting path search presented by Rolf H\&. Moehring and Matthias Mueller-Hannemann in their paper: 'Cardinality
+Matching: Heuristic Search for Augmenting Paths'\&. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "DFSAPHeuristic::DFSAPHeuristic (\fBGraph\fP * g, \fBMatching\fP * m, float goal = \fC100\&.0\fP, \fBUWORD32\fP mne = \fC\fBUWORD32_MAX\fP\fP, \fBEdgeIterator::ITERATIONMODE\fP mo = \fC\fBEdgeIterator::SAMPLEOCCURENCE\fP\fP)"
+construct an \fBDFSAPHeuristic\fP object 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIg\fP the graph on which this heuristic should run 
+.br
+\fIm\fP the matching to start with 
+.br
+\fIgoal\fP the percentage of matched vertices that should be reached 
+.br
+\fImne\fP the maximum number of edges that should be considered for every vertex 
+.br
+\fImo\fP the mode for edge iteration 
+.RE
+.PP
+
+.SS "DFSAPHeuristic::~DFSAPHeuristic (void)\fC [virtual]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "const char* DFSAPHeuristic::getName (void) const\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBMatchingAlgorithm\fP\&.
+.SS "const \fBEdge\fP * DFSAPHeuristic::getNextEdge (\fBVertex\fP * v)\fC [private]\fP"
+
+.SS "bool DFSAPHeuristic::isVisited (\fBVertex\fP * v) const\fC [inline]\fP, \fC [private]\fP"
+returns true iff v has already been visited in this iteration, i\&.e\&. in the current call of searchAugmentingPath 
+.SS "bool DFSAPHeuristic::isVisited (\fBVertexLabel\fP vlbl) const\fC [inline]\fP, \fC [private]\fP"
+
+.SS "void DFSAPHeuristic::markVisited (\fBVertex\fP * v)\fC [inline]\fP, \fC [private]\fP"
+
+.SS "void DFSAPHeuristic::reset (\fBUWORD32\fP mne = \fC\fBUWORD32_MAX\fP\fP, \fBEdgeIterator::ITERATIONMODE\fP mo = \fC\fBEdgeIterator::SAMPLEOCCURENCE\fP\fP)"
+reset the state of this \fBDFSAPHeuristic\fP, esp\&. the EdgeIterators 
+.PP
+\fBParameters:\fP
+.RS 4
+\fImne\fP the maximum number of edges that should be considered for every vertex for now on 
+.RE
+.PP
+
+.SS "void DFSAPHeuristic::run (void)\fC [virtual]\fP"
+
+.PP
+Implements \fBMatchingAlgorithm\fP\&.
+.SS "unsigned long DFSAPHeuristic::searchAugmentingPath (\fBVertex\fP * v0, const \fBEdge\fP ** path)\fC [private]\fP"
+
+.PP
+\fBParameters:\fP
+.RS 4
+\fIv0\fP an exposed vertex 
+.br
+\fIpath\fP an array of \fBEdge\fP pointers where the path will be put 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the length of the path (the number of valid edges in path) 
+.RE
+.PP
+
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBEdgeIterator\fP* DFSAPHeuristic::EdgeIterators\fC [private]\fP"
+
+.SS "\fBUWORD32\fP DFSAPHeuristic::TimeCounter\fC [private]\fP"
+
+.SS "\fBUWORD32\fP* DFSAPHeuristic::TimeCounters\fC [private]\fP"
+
+.SS "bool* DFSAPHeuristic::VertexOnPath\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for steghide from the source code\&.

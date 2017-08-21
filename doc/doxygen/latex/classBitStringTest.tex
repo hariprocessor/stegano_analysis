@@ -1,0 +1,220 @@
+\section{Bit\+String\+Test Class Reference}
+\label{classBitStringTest}\index{Bit\+String\+Test@{Bit\+String\+Test}}
+
+
+{\ttfamily \#include $<$Bit\+String\+Test.\+h$>$}
+
+Inheritance diagram for Bit\+String\+Test\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classBitStringTest}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Bit\+String\+Test} (\textbf{ Test\+Suite} $\ast$s)
+\item 
+void \textbf{ setup} (void)
+\item 
+void \textbf{ cleanup} (void)
+\item 
+void \textbf{ test\+Bit\+Input\+Output} (void)
+\item 
+void \textbf{ test\+Length} (void)
+\item 
+void \textbf{ test\+Datatype\+Input} (void)
+\item 
+void \textbf{ test\+Datatype\+Output} (void)
+\item 
+void \textbf{ test\+Equality} (void)
+\item 
+void \textbf{ test\+Cutting} (void)
+\item 
+void \textbf{ test\+Compression} (void)
+\item 
+void \textbf{ test\+Arity} (void)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Bit\+String} $\ast$ \textbf{ bs\+\_\+0}
+\item 
+\textbf{ Bit\+String} $\ast$ \textbf{ bs\+\_\+1}
+\item 
+\textbf{ Bit\+String} $\ast$ \textbf{ bs\+\_\+10}
+\item 
+\textbf{ Bit\+String} $\ast$ \textbf{ bs\+\_\+001}
+\item 
+\textbf{ Bit\+String} $\ast$ \textbf{ bs\+\_\+100}
+\item 
+\textbf{ Bit\+String} $\ast$ \textbf{ bs\+\_\+1010}
+\item 
+\textbf{ Bit\+String} $\ast$ \textbf{ bs\+\_\+1110}
+\item 
+\textbf{ Bit\+String} $\ast$ \textbf{ bs\+\_\+01011}
+\item 
+\textbf{ Bit\+String} $\ast$ \textbf{ bs\+\_\+10010}
+\item 
+\textbf{ Bit\+String} $\ast$ \textbf{ bs\+\_\+10101110}
+\item 
+\textbf{ Bit\+String} $\ast$ \textbf{ bs\+\_\+101011101}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{classBitStringTest_a4f00a31731b569f3bdf1e69a48b2db86}} 
+\index{Bit\+String\+Test@{Bit\+String\+Test}!Bit\+String\+Test@{Bit\+String\+Test}}
+\index{Bit\+String\+Test@{Bit\+String\+Test}!Bit\+String\+Test@{Bit\+String\+Test}}
+\subsubsection{Bit\+String\+Test()}
+{\footnotesize\ttfamily Bit\+String\+Test\+::\+Bit\+String\+Test (\begin{DoxyParamCaption}\item[{\textbf{ Test\+Suite} $\ast$}]{s }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{classBitStringTest_af7a839ea60ca9e788e480ee74f1ca675}} 
+\index{Bit\+String\+Test@{Bit\+String\+Test}!cleanup@{cleanup}}
+\index{cleanup@{cleanup}!Bit\+String\+Test@{Bit\+String\+Test}}
+\subsubsection{cleanup()}
+{\footnotesize\ttfamily void Bit\+String\+Test\+::cleanup (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+cleanup the unit test -\/ called after run 
+
+Reimplemented from \textbf{ Unit\+Test} \doxyref{}{p.}{classUnitTest_adf77efe972ee4a766d94e3f7ddc193ad}.
+
+\mbox{\label{classBitStringTest_ae3916035aad5f74e4dbcf92be6b4b9a8}} 
+\index{Bit\+String\+Test@{Bit\+String\+Test}!setup@{setup}}
+\index{setup@{setup}!Bit\+String\+Test@{Bit\+String\+Test}}
+\subsubsection{setup()}
+{\footnotesize\ttfamily void Bit\+String\+Test\+::setup (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+setup the unit test -\/ called before run
+
+\doxyref{Unit\+Test\+::setup}{p.}{classUnitTest_ad73fdf9012b651047ea001d21f9d27ad} will (together with \doxyref{Unit\+Test\+::cleanup}{p.}{classUnitTest_adf77efe972ee4a766d94e3f7ddc193ad}) save and restore the object stored in Globs so they should be called from the corresponding functions in the derived object if the derived unit test manipulates the Globs object. 
+
+Reimplemented from \textbf{ Unit\+Test} \doxyref{}{p.}{classUnitTest_ad73fdf9012b651047ea001d21f9d27ad}.
+
+\mbox{\label{classBitStringTest_ae536ce186a0f23634b86f59d0a17e4ce}} 
+\index{Bit\+String\+Test@{Bit\+String\+Test}!test\+Arity@{test\+Arity}}
+\index{test\+Arity@{test\+Arity}!Bit\+String\+Test@{Bit\+String\+Test}}
+\subsubsection{test\+Arity()}
+{\footnotesize\ttfamily void Bit\+String\+Test\+::test\+Arity (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\label{classBitStringTest_a09533dadbf9261c4c39f7f3885814dfa}} 
+\index{Bit\+String\+Test@{Bit\+String\+Test}!test\+Bit\+Input\+Output@{test\+Bit\+Input\+Output}}
+\index{test\+Bit\+Input\+Output@{test\+Bit\+Input\+Output}!Bit\+String\+Test@{Bit\+String\+Test}}
+\subsubsection{test\+Bit\+Input\+Output()}
+{\footnotesize\ttfamily void Bit\+String\+Test\+::test\+Bit\+Input\+Output (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\label{classBitStringTest_aed6caf8441aa111008eefe02bac29cd2}} 
+\index{Bit\+String\+Test@{Bit\+String\+Test}!test\+Compression@{test\+Compression}}
+\index{test\+Compression@{test\+Compression}!Bit\+String\+Test@{Bit\+String\+Test}}
+\subsubsection{test\+Compression()}
+{\footnotesize\ttfamily void Bit\+String\+Test\+::test\+Compression (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\label{classBitStringTest_af4cd832c422c58a9caeba59068840e8f}} 
+\index{Bit\+String\+Test@{Bit\+String\+Test}!test\+Cutting@{test\+Cutting}}
+\index{test\+Cutting@{test\+Cutting}!Bit\+String\+Test@{Bit\+String\+Test}}
+\subsubsection{test\+Cutting()}
+{\footnotesize\ttfamily void Bit\+String\+Test\+::test\+Cutting (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\label{classBitStringTest_a497868d12e5f592ff4efd713711f6a28}} 
+\index{Bit\+String\+Test@{Bit\+String\+Test}!test\+Datatype\+Input@{test\+Datatype\+Input}}
+\index{test\+Datatype\+Input@{test\+Datatype\+Input}!Bit\+String\+Test@{Bit\+String\+Test}}
+\subsubsection{test\+Datatype\+Input()}
+{\footnotesize\ttfamily void Bit\+String\+Test\+::test\+Datatype\+Input (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\label{classBitStringTest_a65e8ff79f1decc35ddbb99ab761854ba}} 
+\index{Bit\+String\+Test@{Bit\+String\+Test}!test\+Datatype\+Output@{test\+Datatype\+Output}}
+\index{test\+Datatype\+Output@{test\+Datatype\+Output}!Bit\+String\+Test@{Bit\+String\+Test}}
+\subsubsection{test\+Datatype\+Output()}
+{\footnotesize\ttfamily void Bit\+String\+Test\+::test\+Datatype\+Output (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\label{classBitStringTest_ab0b15652d7159f9ef41ff262b9864088}} 
+\index{Bit\+String\+Test@{Bit\+String\+Test}!test\+Equality@{test\+Equality}}
+\index{test\+Equality@{test\+Equality}!Bit\+String\+Test@{Bit\+String\+Test}}
+\subsubsection{test\+Equality()}
+{\footnotesize\ttfamily void Bit\+String\+Test\+::test\+Equality (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\label{classBitStringTest_ae56c089336f6a314f10218bbada60718}} 
+\index{Bit\+String\+Test@{Bit\+String\+Test}!test\+Length@{test\+Length}}
+\index{test\+Length@{test\+Length}!Bit\+String\+Test@{Bit\+String\+Test}}
+\subsubsection{test\+Length()}
+{\footnotesize\ttfamily void Bit\+String\+Test\+::test\+Length (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{classBitStringTest_a240ecc34787f27a6af863d474da67715}} 
+\index{Bit\+String\+Test@{Bit\+String\+Test}!bs\+\_\+0@{bs\+\_\+0}}
+\index{bs\+\_\+0@{bs\+\_\+0}!Bit\+String\+Test@{Bit\+String\+Test}}
+\subsubsection{bs\+\_\+0}
+{\footnotesize\ttfamily \textbf{ Bit\+String}$\ast$ Bit\+String\+Test\+::bs\+\_\+0\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classBitStringTest_abb31362b09119909dcc16b57bf47d0cd}} 
+\index{Bit\+String\+Test@{Bit\+String\+Test}!bs\+\_\+001@{bs\+\_\+001}}
+\index{bs\+\_\+001@{bs\+\_\+001}!Bit\+String\+Test@{Bit\+String\+Test}}
+\subsubsection{bs\+\_\+001}
+{\footnotesize\ttfamily \textbf{ Bit\+String} $\ast$ Bit\+String\+Test\+::bs\+\_\+001\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classBitStringTest_aa135e05c946f07a635be5a714a80a27f}} 
+\index{Bit\+String\+Test@{Bit\+String\+Test}!bs\+\_\+01011@{bs\+\_\+01011}}
+\index{bs\+\_\+01011@{bs\+\_\+01011}!Bit\+String\+Test@{Bit\+String\+Test}}
+\subsubsection{bs\+\_\+01011}
+{\footnotesize\ttfamily \textbf{ Bit\+String} $\ast$ Bit\+String\+Test\+::bs\+\_\+01011\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classBitStringTest_ade6533bb3aba14ed364367a93d19aa6e}} 
+\index{Bit\+String\+Test@{Bit\+String\+Test}!bs\+\_\+1@{bs\+\_\+1}}
+\index{bs\+\_\+1@{bs\+\_\+1}!Bit\+String\+Test@{Bit\+String\+Test}}
+\subsubsection{bs\+\_\+1}
+{\footnotesize\ttfamily \textbf{ Bit\+String} $\ast$ Bit\+String\+Test\+::bs\+\_\+1\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classBitStringTest_a5f623d6a93410cc9337f556a4a36215f}} 
+\index{Bit\+String\+Test@{Bit\+String\+Test}!bs\+\_\+10@{bs\+\_\+10}}
+\index{bs\+\_\+10@{bs\+\_\+10}!Bit\+String\+Test@{Bit\+String\+Test}}
+\subsubsection{bs\+\_\+10}
+{\footnotesize\ttfamily \textbf{ Bit\+String} $\ast$ Bit\+String\+Test\+::bs\+\_\+10\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classBitStringTest_a33fc1e49871eecec79b881c002d4b882}} 
+\index{Bit\+String\+Test@{Bit\+String\+Test}!bs\+\_\+100@{bs\+\_\+100}}
+\index{bs\+\_\+100@{bs\+\_\+100}!Bit\+String\+Test@{Bit\+String\+Test}}
+\subsubsection{bs\+\_\+100}
+{\footnotesize\ttfamily \textbf{ Bit\+String} $\ast$ Bit\+String\+Test\+::bs\+\_\+100\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classBitStringTest_a4eb3ba5730a51c10bf0a3d375e76fbb1}} 
+\index{Bit\+String\+Test@{Bit\+String\+Test}!bs\+\_\+10010@{bs\+\_\+10010}}
+\index{bs\+\_\+10010@{bs\+\_\+10010}!Bit\+String\+Test@{Bit\+String\+Test}}
+\subsubsection{bs\+\_\+10010}
+{\footnotesize\ttfamily \textbf{ Bit\+String} $\ast$ Bit\+String\+Test\+::bs\+\_\+10010\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classBitStringTest_a1f5ff0a2e2fe693442b4877840d8f0f1}} 
+\index{Bit\+String\+Test@{Bit\+String\+Test}!bs\+\_\+1010@{bs\+\_\+1010}}
+\index{bs\+\_\+1010@{bs\+\_\+1010}!Bit\+String\+Test@{Bit\+String\+Test}}
+\subsubsection{bs\+\_\+1010}
+{\footnotesize\ttfamily \textbf{ Bit\+String} $\ast$ Bit\+String\+Test\+::bs\+\_\+1010\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classBitStringTest_af5ca8d0718353d2600508067ffba4da5}} 
+\index{Bit\+String\+Test@{Bit\+String\+Test}!bs\+\_\+10101110@{bs\+\_\+10101110}}
+\index{bs\+\_\+10101110@{bs\+\_\+10101110}!Bit\+String\+Test@{Bit\+String\+Test}}
+\subsubsection{bs\+\_\+10101110}
+{\footnotesize\ttfamily \textbf{ Bit\+String} $\ast$ Bit\+String\+Test\+::bs\+\_\+10101110\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classBitStringTest_a6ddc43ab7563b7a97c37df98998abf76}} 
+\index{Bit\+String\+Test@{Bit\+String\+Test}!bs\+\_\+101011101@{bs\+\_\+101011101}}
+\index{bs\+\_\+101011101@{bs\+\_\+101011101}!Bit\+String\+Test@{Bit\+String\+Test}}
+\subsubsection{bs\+\_\+101011101}
+{\footnotesize\ttfamily \textbf{ Bit\+String} $\ast$ Bit\+String\+Test\+::bs\+\_\+101011101\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classBitStringTest_a48a6b5f97fe87b7b6ca297a48dabe3ef}} 
+\index{Bit\+String\+Test@{Bit\+String\+Test}!bs\+\_\+1110@{bs\+\_\+1110}}
+\index{bs\+\_\+1110@{bs\+\_\+1110}!Bit\+String\+Test@{Bit\+String\+Test}}
+\subsubsection{bs\+\_\+1110}
+{\footnotesize\ttfamily \textbf{ Bit\+String} $\ast$ Bit\+String\+Test\+::bs\+\_\+1110\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ Bit\+String\+Test.\+h}\item 
+\textbf{ Bit\+String\+Test.\+cc}\end{DoxyCompactItemize}

@@ -1,0 +1,224 @@
+.TH "EdgeIterator" 3 "Thu Aug 17 2017" "Version 0.5.1" "steghide" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+EdgeIterator \- allows an iteration trough all edges of a vertex  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <EdgeIterator\&.h>\fP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBITERATIONMODE\fP { \fBSAMPLEOCCURENCE\fP, \fBSAMPLEVALUE\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBEdgeIterator\fP (void)"
+.br
+.ti -1c
+.RI "\fBEdgeIterator\fP (\fBVertex\fP *v, \fBITERATIONMODE\fP m=\fBSAMPLEOCCURENCE\fP)"
+.br
+.ti -1c
+.RI "\fBEdgeIterator\fP (const \fBEdgeIterator\fP &eit)"
+.br
+.ti -1c
+.RI "\fB~EdgeIterator\fP (void)"
+.br
+.ti -1c
+.RI "const \fBEdge\fP * \fBoperator*\fP (void) const"
+.br
+.ti -1c
+.RI "void \fBoperator++\fP (void)"
+.br
+.ti -1c
+.RI "void \fBreset\fP (\fBVertex\fP *v, \fBITERATIONMODE\fP m=\fBSAMPLEOCCURENCE\fP)"
+.br
+.ti -1c
+.RI "void \fBreset\fP (\fBITERATIONMODE\fP m=\fBSAMPLEOCCURENCE\fP)"
+.br
+.ti -1c
+.RI "bool \fBisFinished\fP (void) const"
+.br
+.ti -1c
+.RI "\fBVertexLabel\fP \fBgetPartnerVertexLabel\fP (void) const"
+.br
+.ti -1c
+.RI "void \fBprint\fP (unsigned short spc=0) const"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBUWORD32\fP \fBgetMaxNumEdges\fP (void)"
+.br
+.ti -1c
+.RI "static void \fBsetMaxNumEdges\fP (\fBUWORD32\fP mne)"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBfindNextEdge\fP (void)"
+.br
+.ti -1c
+.RI "bool \fBisDestSampleValueOK\fP (const \fBSampleValue\fP *sv)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBEdge\fP \fBCurrentEdge\fP"
+.br
+.RI "the current edge (is returned by operator*) "
+.ti -1c
+.RI "\fBITERATIONMODE\fP \fBMode\fP"
+.br
+.RI "mode of iteration "
+.ti -1c
+.RI "unsigned long * \fBSVALIndices\fP"
+.br
+.RI "contains (for every sample value) an index to the current opposite neighbour "
+.ti -1c
+.RI "\fBUWORD32\fP \fBEdgeIndex\fP"
+.br
+.RI "the index/number of the edge that is currently returned by operator* "
+.ti -1c
+.RI "bool \fBFinished\fP"
+.br
+.RI "is true iff there are no more edges for this source vertex "
+.ti -1c
+.RI "std::list< \fBSampleOccurence\fP >::const_iterator \fBSampleOccurenceIt\fP"
+.br
+.in -1c
+.SS "Static Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "static \fBUWORD32\fP \fBMaxNumEdges\fP = \fBUWORD32_MAX\fP"
+.br
+.RI "the maximum number of edges the \fBEdgeIterator\fP should iterate through "
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBVertex\fP that is the source for all edges is called 'source vertex'\&. The order of the iteration through the edges is from the shortest to the longest edge\&. If two edges have the same length they are ordered the same way as the corresponding entries in the sample value adjacency lists (for different sample values) respectivly the destination sample occurences in the SampleOccurences data structure (for the same sample value)\&.
+.PP
+\fBEdgeIterator\fP uses an SampleOccurence::const_iterator to store information about the current edge\&. \fBGraph\fP::(un)markDeletedSampleOccurence can invalidate such iterators\&. It is therefore not a good idea to use EdgeIterators at the same time as the \fBGraph\fP::(un)markDeletedSampleOccurence functionality\&.
+.PP
+\fBNOTE:\fP \fBEdgeIterator\fP relies on the \fBGlobals\fP object pointed to by the Globs pointer\&. This means that it must be set correctly before using any method of an \fBEdgeIterator\fP object\&. 
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBEdgeIterator::ITERATIONMODE\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fISAMPLEOCCURENCE \fP\fP
+.TP
+\fB\fISAMPLEVALUE \fP\fP
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "EdgeIterator::EdgeIterator (void)"
+the default contructor - does not create a valid object 
+.SS "EdgeIterator::EdgeIterator (\fBVertex\fP * v, \fBITERATIONMODE\fP m = \fC\fBSAMPLEOCCURENCE\fP\fP)"
+
+.PP
+\fBParameters:\fP
+.RS 4
+\fIv\fP the source vertex 
+.RE
+.PP
+
+.SS "EdgeIterator::EdgeIterator (const \fBEdgeIterator\fP & eit)"
+the copy constructor 
+.SS "EdgeIterator::~EdgeIterator (void)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void EdgeIterator::findNextEdge (void)\fC [private]\fP"
+find the shortest edge, starting the search at SVOppNeighsIndices[0\&.\&.\&.k] set the private variables accordingly is only called to find a new destination sample value, i\&.e\&. if one of the SVOppNeighsIndices[i] is changed 
+.SS "static \fBUWORD32\fP EdgeIterator::getMaxNumEdges (void)\fC [inline]\fP, \fC [static]\fP"
+
+.SS "\fBVertexLabel\fP EdgeIterator::getPartnerVertexLabel (void) const\fC [inline]\fP"
+get the label of the partner vertex 
+.PP
+\fBReturns:\fP
+.RS 4
+the label of the vertex that builds the edge returned by operator* together with SrcVertex 
+.RE
+.PP
+
+.SS "bool EdgeIterator::isDestSampleValueOK (const \fBSampleValue\fP * sv)\fC [private]\fP"
+
+.PP
+\fBReturns:\fP
+.RS 4
+true iff there is a sample with value sv that is part of an edge starting at SrcVertex 
+.RE
+.PP
+
+.SS "bool EdgeIterator::isFinished (void) const\fC [inline]\fP"
+
+.PP
+\fBReturns:\fP
+.RS 4
+true iff this \fBEdgeIterator\fP points to the end of the list of edges of SrcVertex 
+.RE
+.PP
+
+.SS "const \fBEdge\fP* EdgeIterator::operator* (void) const\fC [inline]\fP"
+get the current edge 
+.PP
+\fBReturns:\fP
+.RS 4
+the edge that is described by the current status of this \fBEdgeIterator\fP 
+.RE
+.PP
+
+.SS "void EdgeIterator::operator++ (void)"
+set this iterator to next edge 
+.SS "void EdgeIterator::print (unsigned short spc = \fC0\fP) const"
+
+.SS "void EdgeIterator::reset (\fBVertex\fP * v, \fBITERATIONMODE\fP m = \fC\fBSAMPLEOCCURENCE\fP\fP)"
+set this iterator to first (shortest) edge of vertex v 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIv\fP new vertex (don't change if it is NULL) 
+.RE
+.PP
+
+.SS "void EdgeIterator::reset (\fBITERATIONMODE\fP m = \fC\fBSAMPLEOCCURENCE\fP\fP)"
+reset this iterator to first (shortest) edge 
+.SS "static void EdgeIterator::setMaxNumEdges (\fBUWORD32\fP mne)\fC [inline]\fP, \fC [static]\fP"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBEdge\fP EdgeIterator::CurrentEdge\fC [private]\fP"
+
+.SS "\fBUWORD32\fP EdgeIterator::EdgeIndex\fC [private]\fP"
+
+.SS "bool EdgeIterator::Finished\fC [private]\fP"
+
+.SS "\fBUWORD32\fP EdgeIterator::MaxNumEdges = \fBUWORD32_MAX\fP\fC [static]\fP, \fC [private]\fP"
+
+.SS "\fBITERATIONMODE\fP EdgeIterator::Mode\fC [private]\fP"
+
+.SS "std::list<\fBSampleOccurence\fP>::const_iterator EdgeIterator::SampleOccurenceIt\fC [private]\fP"
+contains the iterator pointing to the sample occurence that constitutes the edge together with SourceVertex/SourceSamleValueIndex 
+.SS "unsigned long* EdgeIterator::SVALIndices\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for steghide from the source code\&.

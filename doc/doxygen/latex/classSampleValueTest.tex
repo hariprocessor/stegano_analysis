@@ -1,0 +1,96 @@
+\section{Sample\+Value\+Test Class Reference}
+\label{classSampleValueTest}\index{Sample\+Value\+Test@{Sample\+Value\+Test}}
+
+
+{\ttfamily \#include $<$Sample\+Value\+Test.\+h$>$}
+
+Inheritance diagram for Sample\+Value\+Test\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.502793cm]{classSampleValueTest}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Sample\+Value\+Test} (std\+::string n, \textbf{ Test\+Suite} $\ast$s)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \textbf{ generic\+Test\+Distance} (\textbf{ Sample\+Value} $\ast$s1, \textbf{ Sample\+Value} $\ast$s2, \textbf{ U\+W\+O\+R\+D32} dist)
+\item 
+bool \textbf{ generic\+Test\+Is\+Neighbour} (\textbf{ Sample\+Value} $\ast$s1, \textbf{ Sample\+Value} $\ast$s2, bool res)
+\item 
+bool \textbf{ generic\+Test\+E\+Value} (\textbf{ Sample\+Value} $\ast$s, \textbf{ Emb\+Value} ev)
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{classSampleValueTest_a65687e9172466f10ec1f3f97b367b76a}} 
+\index{Sample\+Value\+Test@{Sample\+Value\+Test}!Sample\+Value\+Test@{Sample\+Value\+Test}}
+\index{Sample\+Value\+Test@{Sample\+Value\+Test}!Sample\+Value\+Test@{Sample\+Value\+Test}}
+\subsubsection{Sample\+Value\+Test()}
+{\footnotesize\ttfamily Sample\+Value\+Test\+::\+Sample\+Value\+Test (\begin{DoxyParamCaption}\item[{std\+::string}]{n,  }\item[{\textbf{ Test\+Suite} $\ast$}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{classSampleValueTest_ad7df3ef7a3b8fd9029143cb1db012318}} 
+\index{Sample\+Value\+Test@{Sample\+Value\+Test}!generic\+Test\+Distance@{generic\+Test\+Distance}}
+\index{generic\+Test\+Distance@{generic\+Test\+Distance}!Sample\+Value\+Test@{Sample\+Value\+Test}}
+\subsubsection{generic\+Test\+Distance()}
+{\footnotesize\ttfamily bool Sample\+Value\+Test\+::generic\+Test\+Distance (\begin{DoxyParamCaption}\item[{\textbf{ Sample\+Value} $\ast$}]{s1,  }\item[{\textbf{ Sample\+Value} $\ast$}]{s2,  }\item[{\textbf{ U\+W\+O\+R\+D32}}]{dist }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+generic distance test 
+\begin{DoxyParams}{Parameters}
+{\em s1} & a sample value \\
+\hline
+{\em s2} & another sample value \\
+\hline
+{\em dist} & this should be the distance between s1 and s2 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true iff distance is commutative and return dist 
+\end{DoxyReturn}
+\mbox{\label{classSampleValueTest_a4b337a7a2aa6e95d1c8ecfd31b2a1c03}} 
+\index{Sample\+Value\+Test@{Sample\+Value\+Test}!generic\+Test\+E\+Value@{generic\+Test\+E\+Value}}
+\index{generic\+Test\+E\+Value@{generic\+Test\+E\+Value}!Sample\+Value\+Test@{Sample\+Value\+Test}}
+\subsubsection{generic\+Test\+E\+Value()}
+{\footnotesize\ttfamily bool Sample\+Value\+Test\+::generic\+Test\+E\+Value (\begin{DoxyParamCaption}\item[{\textbf{ Sample\+Value} $\ast$}]{s,  }\item[{\textbf{ Emb\+Value}}]{ev }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+generic evalue test 
+\begin{DoxyParams}{Parameters}
+{\em s} & a sample value \\
+\hline
+{\em ev} & an embedded value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true iff s-\/$>$get\+Embedded\+Value() == ev 
+\end{DoxyReturn}
+\mbox{\label{classSampleValueTest_adf6d6ba56d2a98be8435b1bb2933febc}} 
+\index{Sample\+Value\+Test@{Sample\+Value\+Test}!generic\+Test\+Is\+Neighbour@{generic\+Test\+Is\+Neighbour}}
+\index{generic\+Test\+Is\+Neighbour@{generic\+Test\+Is\+Neighbour}!Sample\+Value\+Test@{Sample\+Value\+Test}}
+\subsubsection{generic\+Test\+Is\+Neighbour()}
+{\footnotesize\ttfamily bool Sample\+Value\+Test\+::generic\+Test\+Is\+Neighbour (\begin{DoxyParamCaption}\item[{\textbf{ Sample\+Value} $\ast$}]{s1,  }\item[{\textbf{ Sample\+Value} $\ast$}]{s2,  }\item[{bool}]{res }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+generic neighbourhood test 
+\begin{DoxyParams}{Parameters}
+{\em s1} & a sample value \\
+\hline
+{\em s2} & another sample value \\
+\hline
+{\em res} & true iff they are neighbours \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true iff calling is\+Neighbour (with reflexivity) equals res 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ Sample\+Value\+Test.\+h}\item 
+\textbf{ Sample\+Value\+Test.\+cc}\end{DoxyCompactItemize}

@@ -1,0 +1,540 @@
+\section{Arguments Class Reference}
+\label{classArguments}\index{Arguments@{Arguments}}
+
+
+parsing and data representation of command-\/line arguments  
+
+
+
+
+{\ttfamily \#include $<$Arguments.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Arguments} (void)
+\item 
+\textbf{ Arguments} (int argc, char $\ast$argv[$\,$])
+\item 
+void \textbf{ parse} (void)
+\item 
+bool \textbf{ stdin\+\_\+isused} (void) const
+\item 
+std\+::string \textbf{ get\+Passphrase} (bool doublecheck=false)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Arg\+Command} \textbf{ Command}
+\begin{DoxyCompactList}\small\item\em the command to be executed in this session \end{DoxyCompactList}\item 
+std\+::string \textbf{ Command\+String}
+\begin{DoxyCompactList}\small\item\em the name of the command to be executed in this session (as supplied by the user) \end{DoxyCompactList}\item 
+\textbf{ Arg\+String} \textbf{ Emb\+Fn}
+\begin{DoxyCompactList}\small\item\em the embed file name, \char`\"{}\char`\"{} if stdin \end{DoxyCompactList}\item 
+\textbf{ Arg\+String} \textbf{ Ext\+Fn}
+\begin{DoxyCompactList}\small\item\em the extract file name, \char`\"{}\char`\"{} if stdout \end{DoxyCompactList}\item 
+\textbf{ Arg\+String} \textbf{ Cvr\+Fn}
+\begin{DoxyCompactList}\small\item\em the cover file name, \char`\"{}\char`\"{} if stdin \end{DoxyCompactList}\item 
+\textbf{ Arg\+String} \textbf{ Stg\+Fn}
+\begin{DoxyCompactList}\small\item\em the stego file name, \char`\"{}\char`\"{} if stdout/stdin \end{DoxyCompactList}\item 
+\textbf{ Arg\+String} \textbf{ Passphrase}
+\item 
+\textbf{ Arg\+Bool} \textbf{ Checksum}
+\item 
+\textbf{ Arg\+Int} \textbf{ Compression}
+\item 
+\textbf{ Arg\+Bool} \textbf{ Embed\+Emb\+Fn}
+\item 
+\textbf{ Arg\+Enc\+Algo} \textbf{ Enc\+Algo}
+\item 
+\textbf{ Arg\+Enc\+Mode} \textbf{ Enc\+Mode}
+\item 
+\textbf{ Arg\+U\+Long} \textbf{ Radius}
+\item 
+\textbf{ Arg\+Float} \textbf{ Goal}
+\item 
+\textbf{ Arg\+Bool} \textbf{ Force}
+\item 
+\textbf{ Arg\+Verbosity} \textbf{ Verbosity}
+\item 
+\textbf{ Arg\+Debug\+Command} \textbf{ Debug\+Command}
+\item 
+\textbf{ Arg\+Bool} \textbf{ Check}
+\item 
+\textbf{ Arg\+String\+List} \textbf{ File\+List}
+\item 
+\textbf{ Arg\+U\+Int} \textbf{ Debug\+Level}
+\item 
+\textbf{ Arg\+U\+Int} \textbf{ Gml\+Graph\+Rec\+Depth}
+\item 
+\textbf{ Arg\+U\+Int} \textbf{ Gml\+Start\+Vertex}
+\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::vector$<$ std\+::string $>$\+::const\+\_\+iterator \textbf{ Arg\+It}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ parse\+\_\+\+Command} (\textbf{ Arg\+It} \&curarg)
+\item 
+bool \textbf{ parse\+\_\+\+Emb\+Fn} (\textbf{ Arg\+It} \&curarg)
+\item 
+bool \textbf{ parse\+\_\+\+Ext\+Fn} (\textbf{ Arg\+It} \&curarg)
+\item 
+bool \textbf{ parse\+\_\+\+Cvr\+Fn} (\textbf{ Arg\+It} \&curarg)
+\item 
+bool \textbf{ parse\+\_\+\+Stg\+Fn} (\textbf{ Arg\+It} \&curarg)
+\item 
+bool \textbf{ parse\+\_\+\+Passphrase} (\textbf{ Arg\+It} \&curarg)
+\item 
+bool \textbf{ parse\+\_\+\+Checksum} (\textbf{ Arg\+It} \&curarg)
+\item 
+bool \textbf{ parse\+\_\+\+Compression} (\textbf{ Arg\+It} \&curarg)
+\item 
+bool \textbf{ parse\+\_\+\+Embed\+Emb\+Fn} (\textbf{ Arg\+It} \&curarg)
+\item 
+bool \textbf{ parse\+\_\+\+Encryption} (\textbf{ Arg\+It} \&curarg)
+\item 
+bool \textbf{ parse\+\_\+\+Radius} (\textbf{ Arg\+It} \&curarg)
+\item 
+bool \textbf{ parse\+\_\+\+Goal} (\textbf{ Arg\+It} \&curarg)
+\item 
+bool \textbf{ parse\+\_\+\+Force} (\textbf{ Arg\+It} \&curarg)
+\item 
+bool \textbf{ parse\+\_\+\+Verbosity} (\textbf{ Arg\+It} \&curarg)
+\item 
+bool \textbf{ parse\+\_\+\+Debug} (\textbf{ Arg\+It} \&curarg)
+\item 
+void \textbf{ set\+Defaults} (void)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::string $>$ \textbf{ The\+Arguments}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const int \textbf{ No\+Compression} = 0
+\item 
+static const \textbf{ Encryption\+Algorithm} \textbf{ Default\+\_\+\+Enc\+Algo} = \textbf{ Encryption\+Algorithm} (\textbf{ Encryption\+Algorithm\+::\+N\+O\+NE})
+\item 
+static const \textbf{ Encryption\+Mode} \textbf{ Default\+\_\+\+Enc\+Mode} = \textbf{ Encryption\+Mode} (\textbf{ Encryption\+Mode\+::\+E\+CB})
+\item 
+static const bool \textbf{ Default\+\_\+\+Checksum} = true
+\item 
+static const int \textbf{ Default\+\_\+\+Compression} = 9
+\item 
+static const bool \textbf{ Default\+\_\+\+Embed\+Emb\+Fn} = true
+\item 
+static const bool \textbf{ Default\+\_\+\+Force} = false
+\item 
+static const \textbf{ V\+E\+R\+B\+O\+S\+I\+TY} \textbf{ Default\+\_\+\+Verbosity} = \textbf{ N\+O\+R\+M\+AL}
+\item 
+static const unsigned long \textbf{ Default\+\_\+\+Radius} = 0
+\item 
+static const unsigned int \textbf{ Max\+\_\+\+Algorithm} = 3
+\item 
+static const float \textbf{ Default\+\_\+\+Goal} = 100.\+0
+\item 
+static const \textbf{ D\+E\+B\+U\+G\+C\+O\+M\+M\+A\+ND} \textbf{ Default\+\_\+\+Debug\+Command} = \textbf{ N\+O\+NE}
+\item 
+static const bool \textbf{ Default\+\_\+\+Check} = false
+\item 
+static const unsigned int \textbf{ Default\+\_\+\+Debug\+Level} = 0
+\item 
+static const unsigned int \textbf{ Default\+\_\+\+Gml\+Graph\+Rec\+Depth} = 0
+\item 
+static const unsigned int \textbf{ Default\+\_\+\+Gml\+Start\+Vertex} = 0
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Typedef Documentation}
+\mbox{\label{classArguments_a364dd8c74c7f076209ae669e111b1e17}} 
+\index{Arguments@{Arguments}!Arg\+It@{Arg\+It}}
+\index{Arg\+It@{Arg\+It}!Arguments@{Arguments}}
+\subsubsection{Arg\+It}
+{\footnotesize\ttfamily typedef std\+::vector$<$std\+::string$>$\+::const\+\_\+iterator \textbf{ Arguments\+::\+Arg\+It}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{classArguments_ad9fbdb9fcbe68000a87d15b4f60244fb}} 
+\index{Arguments@{Arguments}!Arguments@{Arguments}}
+\index{Arguments@{Arguments}!Arguments@{Arguments}}
+\subsubsection{Arguments()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Arguments\+::\+Arguments (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classArguments_a3d9dd7b675eac3c375c6b2e9bb13e896}} 
+\index{Arguments@{Arguments}!Arguments@{Arguments}}
+\index{Arguments@{Arguments}!Arguments@{Arguments}}
+\subsubsection{Arguments()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Arguments\+::\+Arguments (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv[$\,$] }\end{DoxyParamCaption})}
+
+initialize this \doxyref{Arguments}{p.}{classArguments} object with argc and argv 
+
+\subsection{Member Function Documentation}
+\mbox{\label{classArguments_a949a03365c6024f3e204b23d1c3bfbce}} 
+\index{Arguments@{Arguments}!get\+Passphrase@{get\+Passphrase}}
+\index{get\+Passphrase@{get\+Passphrase}!Arguments@{Arguments}}
+\subsubsection{get\+Passphrase()}
+{\footnotesize\ttfamily std\+::string Arguments\+::get\+Passphrase (\begin{DoxyParamCaption}\item[{bool}]{doublecheck = {\ttfamily false} }\end{DoxyParamCaption})}
+
+\mbox{\label{classArguments_a73cb5b1d3960bba7552c02c3f4ca088c}} 
+\index{Arguments@{Arguments}!parse@{parse}}
+\index{parse@{parse}!Arguments@{Arguments}}
+\subsubsection{parse()}
+{\footnotesize\ttfamily void Arguments\+::parse (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+parse Argc and Argv filling the Arg$\ast$ member variable for later access \mbox{\label{classArguments_af3321f349ed2a45f3cf469d73091ab19}} 
+\index{Arguments@{Arguments}!parse\+\_\+\+Checksum@{parse\+\_\+\+Checksum}}
+\index{parse\+\_\+\+Checksum@{parse\+\_\+\+Checksum}!Arguments@{Arguments}}
+\subsubsection{parse\+\_\+\+Checksum()}
+{\footnotesize\ttfamily bool Arguments\+::parse\+\_\+\+Checksum (\begin{DoxyParamCaption}\item[{\textbf{ Arg\+It} \&}]{curarg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classArguments_a4c19459fe4d26d06abe71322198c3b99}} 
+\index{Arguments@{Arguments}!parse\+\_\+\+Command@{parse\+\_\+\+Command}}
+\index{parse\+\_\+\+Command@{parse\+\_\+\+Command}!Arguments@{Arguments}}
+\subsubsection{parse\+\_\+\+Command()}
+{\footnotesize\ttfamily void Arguments\+::parse\+\_\+\+Command (\begin{DoxyParamCaption}\item[{\textbf{ Arg\+It} \&}]{curarg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+parse the command
+
+Note\+: parse\+\_\+\+Command is the only parse\+\_\+$\ast$ function that requires curarg to be a command. (because the command is the only argument with a fixed position). \mbox{\label{classArguments_ab457cbdbed4dfc7260c93c7dc51d866c}} 
+\index{Arguments@{Arguments}!parse\+\_\+\+Compression@{parse\+\_\+\+Compression}}
+\index{parse\+\_\+\+Compression@{parse\+\_\+\+Compression}!Arguments@{Arguments}}
+\subsubsection{parse\+\_\+\+Compression()}
+{\footnotesize\ttfamily bool Arguments\+::parse\+\_\+\+Compression (\begin{DoxyParamCaption}\item[{\textbf{ Arg\+It} \&}]{curarg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classArguments_a2108bc892de8ddb4a2367e20c5b76be3}} 
+\index{Arguments@{Arguments}!parse\+\_\+\+Cvr\+Fn@{parse\+\_\+\+Cvr\+Fn}}
+\index{parse\+\_\+\+Cvr\+Fn@{parse\+\_\+\+Cvr\+Fn}!Arguments@{Arguments}}
+\subsubsection{parse\+\_\+\+Cvr\+Fn()}
+{\footnotesize\ttfamily bool Arguments\+::parse\+\_\+\+Cvr\+Fn (\begin{DoxyParamCaption}\item[{\textbf{ Arg\+It} \&}]{curarg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classArguments_a17c957f70dc5f3c218601ac21db6b60c}} 
+\index{Arguments@{Arguments}!parse\+\_\+\+Debug@{parse\+\_\+\+Debug}}
+\index{parse\+\_\+\+Debug@{parse\+\_\+\+Debug}!Arguments@{Arguments}}
+\subsubsection{parse\+\_\+\+Debug()}
+{\footnotesize\ttfamily bool Arguments\+::parse\+\_\+\+Debug (\begin{DoxyParamCaption}\item[{\textbf{ Arg\+It} \&}]{curarg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classArguments_a6acd02c15228d9579fe7ef91632560ff}} 
+\index{Arguments@{Arguments}!parse\+\_\+\+Embed\+Emb\+Fn@{parse\+\_\+\+Embed\+Emb\+Fn}}
+\index{parse\+\_\+\+Embed\+Emb\+Fn@{parse\+\_\+\+Embed\+Emb\+Fn}!Arguments@{Arguments}}
+\subsubsection{parse\+\_\+\+Embed\+Emb\+Fn()}
+{\footnotesize\ttfamily bool Arguments\+::parse\+\_\+\+Embed\+Emb\+Fn (\begin{DoxyParamCaption}\item[{\textbf{ Arg\+It} \&}]{curarg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classArguments_a10c80492559837473315585d530df5ed}} 
+\index{Arguments@{Arguments}!parse\+\_\+\+Emb\+Fn@{parse\+\_\+\+Emb\+Fn}}
+\index{parse\+\_\+\+Emb\+Fn@{parse\+\_\+\+Emb\+Fn}!Arguments@{Arguments}}
+\subsubsection{parse\+\_\+\+Emb\+Fn()}
+{\footnotesize\ttfamily bool Arguments\+::parse\+\_\+\+Emb\+Fn (\begin{DoxyParamCaption}\item[{\textbf{ Arg\+It} \&}]{curarg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+test if curarg points to an emb filename argument and if yes\+: parse it \begin{DoxyReturn}{Returns}
+true iff one or more arguments have been parsed 
+\end{DoxyReturn}
+\mbox{\label{classArguments_a3d389442fbcb40f80caaa050307956b1}} 
+\index{Arguments@{Arguments}!parse\+\_\+\+Encryption@{parse\+\_\+\+Encryption}}
+\index{parse\+\_\+\+Encryption@{parse\+\_\+\+Encryption}!Arguments@{Arguments}}
+\subsubsection{parse\+\_\+\+Encryption()}
+{\footnotesize\ttfamily bool Arguments\+::parse\+\_\+\+Encryption (\begin{DoxyParamCaption}\item[{\textbf{ Arg\+It} \&}]{curarg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classArguments_abaca2ffefa0c28f34ddb7f67509c1678}} 
+\index{Arguments@{Arguments}!parse\+\_\+\+Ext\+Fn@{parse\+\_\+\+Ext\+Fn}}
+\index{parse\+\_\+\+Ext\+Fn@{parse\+\_\+\+Ext\+Fn}!Arguments@{Arguments}}
+\subsubsection{parse\+\_\+\+Ext\+Fn()}
+{\footnotesize\ttfamily bool Arguments\+::parse\+\_\+\+Ext\+Fn (\begin{DoxyParamCaption}\item[{\textbf{ Arg\+It} \&}]{curarg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classArguments_abc68c17a514cc2b8153d04f4f8afb82f}} 
+\index{Arguments@{Arguments}!parse\+\_\+\+Force@{parse\+\_\+\+Force}}
+\index{parse\+\_\+\+Force@{parse\+\_\+\+Force}!Arguments@{Arguments}}
+\subsubsection{parse\+\_\+\+Force()}
+{\footnotesize\ttfamily bool Arguments\+::parse\+\_\+\+Force (\begin{DoxyParamCaption}\item[{\textbf{ Arg\+It} \&}]{curarg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classArguments_a3610c5ee36796d30a24093a43c042f6b}} 
+\index{Arguments@{Arguments}!parse\+\_\+\+Goal@{parse\+\_\+\+Goal}}
+\index{parse\+\_\+\+Goal@{parse\+\_\+\+Goal}!Arguments@{Arguments}}
+\subsubsection{parse\+\_\+\+Goal()}
+{\footnotesize\ttfamily bool Arguments\+::parse\+\_\+\+Goal (\begin{DoxyParamCaption}\item[{\textbf{ Arg\+It} \&}]{curarg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classArguments_a53cbd74d662bf1d6acd796965db1d332}} 
+\index{Arguments@{Arguments}!parse\+\_\+\+Passphrase@{parse\+\_\+\+Passphrase}}
+\index{parse\+\_\+\+Passphrase@{parse\+\_\+\+Passphrase}!Arguments@{Arguments}}
+\subsubsection{parse\+\_\+\+Passphrase()}
+{\footnotesize\ttfamily bool Arguments\+::parse\+\_\+\+Passphrase (\begin{DoxyParamCaption}\item[{\textbf{ Arg\+It} \&}]{curarg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classArguments_ab3cae9862989c9da7539caccd64e347a}} 
+\index{Arguments@{Arguments}!parse\+\_\+\+Radius@{parse\+\_\+\+Radius}}
+\index{parse\+\_\+\+Radius@{parse\+\_\+\+Radius}!Arguments@{Arguments}}
+\subsubsection{parse\+\_\+\+Radius()}
+{\footnotesize\ttfamily bool Arguments\+::parse\+\_\+\+Radius (\begin{DoxyParamCaption}\item[{\textbf{ Arg\+It} \&}]{curarg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classArguments_ace3cd4a045e1ea941861e6757c5e0658}} 
+\index{Arguments@{Arguments}!parse\+\_\+\+Stg\+Fn@{parse\+\_\+\+Stg\+Fn}}
+\index{parse\+\_\+\+Stg\+Fn@{parse\+\_\+\+Stg\+Fn}!Arguments@{Arguments}}
+\subsubsection{parse\+\_\+\+Stg\+Fn()}
+{\footnotesize\ttfamily bool Arguments\+::parse\+\_\+\+Stg\+Fn (\begin{DoxyParamCaption}\item[{\textbf{ Arg\+It} \&}]{curarg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classArguments_a4eb8abe74f651b40166a0ff5c3db5e23}} 
+\index{Arguments@{Arguments}!parse\+\_\+\+Verbosity@{parse\+\_\+\+Verbosity}}
+\index{parse\+\_\+\+Verbosity@{parse\+\_\+\+Verbosity}!Arguments@{Arguments}}
+\subsubsection{parse\+\_\+\+Verbosity()}
+{\footnotesize\ttfamily bool Arguments\+::parse\+\_\+\+Verbosity (\begin{DoxyParamCaption}\item[{\textbf{ Arg\+It} \&}]{curarg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classArguments_ae4dcc7d3f9551ae4a855fa1cae8897a5}} 
+\index{Arguments@{Arguments}!set\+Defaults@{set\+Defaults}}
+\index{set\+Defaults@{set\+Defaults}!Arguments@{Arguments}}
+\subsubsection{set\+Defaults()}
+{\footnotesize\ttfamily void Arguments\+::set\+Defaults (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classArguments_a5e63f21d6faa82884f7f2251790c46a5}} 
+\index{Arguments@{Arguments}!stdin\+\_\+isused@{stdin\+\_\+isused}}
+\index{stdin\+\_\+isused@{stdin\+\_\+isused}!Arguments@{Arguments}}
+\subsubsection{stdin\+\_\+isused()}
+{\footnotesize\ttfamily bool Arguments\+::stdin\+\_\+isused (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+is standard input used ? -\/ according to the given arguments 
+
+\subsection{Member Data Documentation}
+\mbox{\label{classArguments_a603081ed6f56947f2fcd20829a715da9}} 
+\index{Arguments@{Arguments}!Check@{Check}}
+\index{Check@{Check}!Arguments@{Arguments}}
+\subsubsection{Check}
+{\footnotesize\ttfamily \textbf{ Arg\+Bool} Arguments\+::\+Check}
+
+\mbox{\label{classArguments_a5005c1e69b276c098daec1bed4647739}} 
+\index{Arguments@{Arguments}!Checksum@{Checksum}}
+\index{Checksum@{Checksum}!Arguments@{Arguments}}
+\subsubsection{Checksum}
+{\footnotesize\ttfamily \textbf{ Arg\+Bool} Arguments\+::\+Checksum}
+
+\mbox{\label{classArguments_acc9b16218e702644a8ecc276595552df}} 
+\index{Arguments@{Arguments}!Command@{Command}}
+\index{Command@{Command}!Arguments@{Arguments}}
+\subsubsection{Command}
+{\footnotesize\ttfamily \textbf{ Arg\+Command} Arguments\+::\+Command}
+
+\mbox{\label{classArguments_a9f9727f4725bf93467a040b73bd54db5}} 
+\index{Arguments@{Arguments}!Command\+String@{Command\+String}}
+\index{Command\+String@{Command\+String}!Arguments@{Arguments}}
+\subsubsection{Command\+String}
+{\footnotesize\ttfamily std\+::string Arguments\+::\+Command\+String}
+
+\mbox{\label{classArguments_a55855602c58dadc579b1553f80deae50}} 
+\index{Arguments@{Arguments}!Compression@{Compression}}
+\index{Compression@{Compression}!Arguments@{Arguments}}
+\subsubsection{Compression}
+{\footnotesize\ttfamily \textbf{ Arg\+Int} Arguments\+::\+Compression}
+
+\mbox{\label{classArguments_ab6c97be04a624b0faa00b1eccd8e9ae8}} 
+\index{Arguments@{Arguments}!Cvr\+Fn@{Cvr\+Fn}}
+\index{Cvr\+Fn@{Cvr\+Fn}!Arguments@{Arguments}}
+\subsubsection{Cvr\+Fn}
+{\footnotesize\ttfamily \textbf{ Arg\+String} Arguments\+::\+Cvr\+Fn}
+
+\mbox{\label{classArguments_aa41655956a8fe1ff0d0bafb8f763234a}} 
+\index{Arguments@{Arguments}!Debug\+Command@{Debug\+Command}}
+\index{Debug\+Command@{Debug\+Command}!Arguments@{Arguments}}
+\subsubsection{Debug\+Command}
+{\footnotesize\ttfamily \textbf{ Arg\+Debug\+Command} Arguments\+::\+Debug\+Command}
+
+\mbox{\label{classArguments_aa5c0dfd8dd6858295f63e72d74e16db4}} 
+\index{Arguments@{Arguments}!Debug\+Level@{Debug\+Level}}
+\index{Debug\+Level@{Debug\+Level}!Arguments@{Arguments}}
+\subsubsection{Debug\+Level}
+{\footnotesize\ttfamily \textbf{ Arg\+U\+Int} Arguments\+::\+Debug\+Level}
+
+\mbox{\label{classArguments_a321f4a5c1716d0b6419562000457bef8}} 
+\index{Arguments@{Arguments}!Default\+\_\+\+Check@{Default\+\_\+\+Check}}
+\index{Default\+\_\+\+Check@{Default\+\_\+\+Check}!Arguments@{Arguments}}
+\subsubsection{Default\+\_\+\+Check}
+{\footnotesize\ttfamily const bool Arguments\+::\+Default\+\_\+\+Check = false\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\label{classArguments_aa465d1ac0962caa5479b51e36d8f6e41}} 
+\index{Arguments@{Arguments}!Default\+\_\+\+Checksum@{Default\+\_\+\+Checksum}}
+\index{Default\+\_\+\+Checksum@{Default\+\_\+\+Checksum}!Arguments@{Arguments}}
+\subsubsection{Default\+\_\+\+Checksum}
+{\footnotesize\ttfamily const bool Arguments\+::\+Default\+\_\+\+Checksum = true\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\label{classArguments_ade01a1851efc374e35a5caef50a21dba}} 
+\index{Arguments@{Arguments}!Default\+\_\+\+Compression@{Default\+\_\+\+Compression}}
+\index{Default\+\_\+\+Compression@{Default\+\_\+\+Compression}!Arguments@{Arguments}}
+\subsubsection{Default\+\_\+\+Compression}
+{\footnotesize\ttfamily const int Arguments\+::\+Default\+\_\+\+Compression = 9\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\label{classArguments_afa11c543146c6bb8d554088846767981}} 
+\index{Arguments@{Arguments}!Default\+\_\+\+Debug\+Command@{Default\+\_\+\+Debug\+Command}}
+\index{Default\+\_\+\+Debug\+Command@{Default\+\_\+\+Debug\+Command}!Arguments@{Arguments}}
+\subsubsection{Default\+\_\+\+Debug\+Command}
+{\footnotesize\ttfamily const \textbf{ D\+E\+B\+U\+G\+C\+O\+M\+M\+A\+ND} Arguments\+::\+Default\+\_\+\+Debug\+Command = \textbf{ N\+O\+NE}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\label{classArguments_a5accad7c3f9748b28f97dc09616f9248}} 
+\index{Arguments@{Arguments}!Default\+\_\+\+Debug\+Level@{Default\+\_\+\+Debug\+Level}}
+\index{Default\+\_\+\+Debug\+Level@{Default\+\_\+\+Debug\+Level}!Arguments@{Arguments}}
+\subsubsection{Default\+\_\+\+Debug\+Level}
+{\footnotesize\ttfamily const unsigned int Arguments\+::\+Default\+\_\+\+Debug\+Level = 0\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\label{classArguments_a0e871d57240004c746b17db3dd73e2fe}} 
+\index{Arguments@{Arguments}!Default\+\_\+\+Embed\+Emb\+Fn@{Default\+\_\+\+Embed\+Emb\+Fn}}
+\index{Default\+\_\+\+Embed\+Emb\+Fn@{Default\+\_\+\+Embed\+Emb\+Fn}!Arguments@{Arguments}}
+\subsubsection{Default\+\_\+\+Embed\+Emb\+Fn}
+{\footnotesize\ttfamily const bool Arguments\+::\+Default\+\_\+\+Embed\+Emb\+Fn = true\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\label{classArguments_a7087a2e48728335a1cdd736e55cccccf}} 
+\index{Arguments@{Arguments}!Default\+\_\+\+Enc\+Algo@{Default\+\_\+\+Enc\+Algo}}
+\index{Default\+\_\+\+Enc\+Algo@{Default\+\_\+\+Enc\+Algo}!Arguments@{Arguments}}
+\subsubsection{Default\+\_\+\+Enc\+Algo}
+{\footnotesize\ttfamily const \textbf{ Encryption\+Algorithm} Arguments\+::\+Default\+\_\+\+Enc\+Algo = \textbf{ Encryption\+Algorithm} (\textbf{ Encryption\+Algorithm\+::\+N\+O\+NE})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\label{classArguments_ade7c80528dc147a4258ebdd3deab6d11}} 
+\index{Arguments@{Arguments}!Default\+\_\+\+Enc\+Mode@{Default\+\_\+\+Enc\+Mode}}
+\index{Default\+\_\+\+Enc\+Mode@{Default\+\_\+\+Enc\+Mode}!Arguments@{Arguments}}
+\subsubsection{Default\+\_\+\+Enc\+Mode}
+{\footnotesize\ttfamily const \textbf{ Encryption\+Mode} Arguments\+::\+Default\+\_\+\+Enc\+Mode = \textbf{ Encryption\+Mode} (\textbf{ Encryption\+Mode\+::\+E\+CB})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\label{classArguments_acdaa1bdc3e4cf5c4022e7240c7175f9b}} 
+\index{Arguments@{Arguments}!Default\+\_\+\+Force@{Default\+\_\+\+Force}}
+\index{Default\+\_\+\+Force@{Default\+\_\+\+Force}!Arguments@{Arguments}}
+\subsubsection{Default\+\_\+\+Force}
+{\footnotesize\ttfamily const bool Arguments\+::\+Default\+\_\+\+Force = false\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\label{classArguments_a038246ddc2a99efe9edd76488e074662}} 
+\index{Arguments@{Arguments}!Default\+\_\+\+Gml\+Graph\+Rec\+Depth@{Default\+\_\+\+Gml\+Graph\+Rec\+Depth}}
+\index{Default\+\_\+\+Gml\+Graph\+Rec\+Depth@{Default\+\_\+\+Gml\+Graph\+Rec\+Depth}!Arguments@{Arguments}}
+\subsubsection{Default\+\_\+\+Gml\+Graph\+Rec\+Depth}
+{\footnotesize\ttfamily const unsigned int Arguments\+::\+Default\+\_\+\+Gml\+Graph\+Rec\+Depth = 0\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\label{classArguments_a9d5b4d02ff13f9c5cd189a39f7c7cfc2}} 
+\index{Arguments@{Arguments}!Default\+\_\+\+Gml\+Start\+Vertex@{Default\+\_\+\+Gml\+Start\+Vertex}}
+\index{Default\+\_\+\+Gml\+Start\+Vertex@{Default\+\_\+\+Gml\+Start\+Vertex}!Arguments@{Arguments}}
+\subsubsection{Default\+\_\+\+Gml\+Start\+Vertex}
+{\footnotesize\ttfamily const unsigned int Arguments\+::\+Default\+\_\+\+Gml\+Start\+Vertex = 0\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\label{classArguments_a1849af56dcb024147fc5b4cc9d12b7c4}} 
+\index{Arguments@{Arguments}!Default\+\_\+\+Goal@{Default\+\_\+\+Goal}}
+\index{Default\+\_\+\+Goal@{Default\+\_\+\+Goal}!Arguments@{Arguments}}
+\subsubsection{Default\+\_\+\+Goal}
+{\footnotesize\ttfamily const float Arguments\+::\+Default\+\_\+\+Goal = 100.\+0\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\label{classArguments_afdc4e2ebb15490487bf1bf6c413249b5}} 
+\index{Arguments@{Arguments}!Default\+\_\+\+Radius@{Default\+\_\+\+Radius}}
+\index{Default\+\_\+\+Radius@{Default\+\_\+\+Radius}!Arguments@{Arguments}}
+\subsubsection{Default\+\_\+\+Radius}
+{\footnotesize\ttfamily const unsigned long Arguments\+::\+Default\+\_\+\+Radius = 0\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\label{classArguments_a22e001d707e30969e6e6fa8e08f3dc14}} 
+\index{Arguments@{Arguments}!Default\+\_\+\+Verbosity@{Default\+\_\+\+Verbosity}}
+\index{Default\+\_\+\+Verbosity@{Default\+\_\+\+Verbosity}!Arguments@{Arguments}}
+\subsubsection{Default\+\_\+\+Verbosity}
+{\footnotesize\ttfamily const \textbf{ V\+E\+R\+B\+O\+S\+I\+TY} Arguments\+::\+Default\+\_\+\+Verbosity = \textbf{ N\+O\+R\+M\+AL}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\label{classArguments_a8474452b8592fab92462e00dc961c81e}} 
+\index{Arguments@{Arguments}!Embed\+Emb\+Fn@{Embed\+Emb\+Fn}}
+\index{Embed\+Emb\+Fn@{Embed\+Emb\+Fn}!Arguments@{Arguments}}
+\subsubsection{Embed\+Emb\+Fn}
+{\footnotesize\ttfamily \textbf{ Arg\+Bool} Arguments\+::\+Embed\+Emb\+Fn}
+
+\mbox{\label{classArguments_a12c3a28f09e610c0f952037681b049cb}} 
+\index{Arguments@{Arguments}!Emb\+Fn@{Emb\+Fn}}
+\index{Emb\+Fn@{Emb\+Fn}!Arguments@{Arguments}}
+\subsubsection{Emb\+Fn}
+{\footnotesize\ttfamily \textbf{ Arg\+String} Arguments\+::\+Emb\+Fn}
+
+\mbox{\label{classArguments_acd26418c75e4a897656880f6f1188fe9}} 
+\index{Arguments@{Arguments}!Enc\+Algo@{Enc\+Algo}}
+\index{Enc\+Algo@{Enc\+Algo}!Arguments@{Arguments}}
+\subsubsection{Enc\+Algo}
+{\footnotesize\ttfamily \textbf{ Arg\+Enc\+Algo} Arguments\+::\+Enc\+Algo}
+
+\mbox{\label{classArguments_a76fd62516a7da91baf92e75b5e3e74fb}} 
+\index{Arguments@{Arguments}!Enc\+Mode@{Enc\+Mode}}
+\index{Enc\+Mode@{Enc\+Mode}!Arguments@{Arguments}}
+\subsubsection{Enc\+Mode}
+{\footnotesize\ttfamily \textbf{ Arg\+Enc\+Mode} Arguments\+::\+Enc\+Mode}
+
+\mbox{\label{classArguments_a937a64373e35f61d3ddabfad7e9e6930}} 
+\index{Arguments@{Arguments}!Ext\+Fn@{Ext\+Fn}}
+\index{Ext\+Fn@{Ext\+Fn}!Arguments@{Arguments}}
+\subsubsection{Ext\+Fn}
+{\footnotesize\ttfamily \textbf{ Arg\+String} Arguments\+::\+Ext\+Fn}
+
+\mbox{\label{classArguments_a49c2c2ba850aabeb651efa64df4d58a1}} 
+\index{Arguments@{Arguments}!File\+List@{File\+List}}
+\index{File\+List@{File\+List}!Arguments@{Arguments}}
+\subsubsection{File\+List}
+{\footnotesize\ttfamily \textbf{ Arg\+String\+List} Arguments\+::\+File\+List}
+
+\mbox{\label{classArguments_ac9cc71e9d2dd92a3d332a71566596788}} 
+\index{Arguments@{Arguments}!Force@{Force}}
+\index{Force@{Force}!Arguments@{Arguments}}
+\subsubsection{Force}
+{\footnotesize\ttfamily \textbf{ Arg\+Bool} Arguments\+::\+Force}
+
+\mbox{\label{classArguments_a52bec7af0fe1355b2dd336839fe35579}} 
+\index{Arguments@{Arguments}!Gml\+Graph\+Rec\+Depth@{Gml\+Graph\+Rec\+Depth}}
+\index{Gml\+Graph\+Rec\+Depth@{Gml\+Graph\+Rec\+Depth}!Arguments@{Arguments}}
+\subsubsection{Gml\+Graph\+Rec\+Depth}
+{\footnotesize\ttfamily \textbf{ Arg\+U\+Int} Arguments\+::\+Gml\+Graph\+Rec\+Depth}
+
+\mbox{\label{classArguments_abd98a39911a586ec9bd28834251aac09}} 
+\index{Arguments@{Arguments}!Gml\+Start\+Vertex@{Gml\+Start\+Vertex}}
+\index{Gml\+Start\+Vertex@{Gml\+Start\+Vertex}!Arguments@{Arguments}}
+\subsubsection{Gml\+Start\+Vertex}
+{\footnotesize\ttfamily \textbf{ Arg\+U\+Int} Arguments\+::\+Gml\+Start\+Vertex}
+
+\mbox{\label{classArguments_a813e8d4cdc854ea5d9496757a3b0dd55}} 
+\index{Arguments@{Arguments}!Goal@{Goal}}
+\index{Goal@{Goal}!Arguments@{Arguments}}
+\subsubsection{Goal}
+{\footnotesize\ttfamily \textbf{ Arg\+Float} Arguments\+::\+Goal}
+
+\mbox{\label{classArguments_aeb4d6ca9411772d61096e0b52996be04}} 
+\index{Arguments@{Arguments}!Max\+\_\+\+Algorithm@{Max\+\_\+\+Algorithm}}
+\index{Max\+\_\+\+Algorithm@{Max\+\_\+\+Algorithm}!Arguments@{Arguments}}
+\subsubsection{Max\+\_\+\+Algorithm}
+{\footnotesize\ttfamily const unsigned int Arguments\+::\+Max\+\_\+\+Algorithm = 3\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\label{classArguments_a7433848d69f277be30c9a2bc57af707d}} 
+\index{Arguments@{Arguments}!No\+Compression@{No\+Compression}}
+\index{No\+Compression@{No\+Compression}!Arguments@{Arguments}}
+\subsubsection{No\+Compression}
+{\footnotesize\ttfamily const int Arguments\+::\+No\+Compression = 0\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\label{classArguments_a3f5592cbcf337f3c8a3dc7a81658b872}} 
+\index{Arguments@{Arguments}!Passphrase@{Passphrase}}
+\index{Passphrase@{Passphrase}!Arguments@{Arguments}}
+\subsubsection{Passphrase}
+{\footnotesize\ttfamily \textbf{ Arg\+String} Arguments\+::\+Passphrase}
+
+\mbox{\label{classArguments_a25b945c660b5e092126442457341f4d6}} 
+\index{Arguments@{Arguments}!Radius@{Radius}}
+\index{Radius@{Radius}!Arguments@{Arguments}}
+\subsubsection{Radius}
+{\footnotesize\ttfamily \textbf{ Arg\+U\+Long} Arguments\+::\+Radius}
+
+\mbox{\label{classArguments_a76c6fd6c5e80777b4602027bef5c6c1d}} 
+\index{Arguments@{Arguments}!Stg\+Fn@{Stg\+Fn}}
+\index{Stg\+Fn@{Stg\+Fn}!Arguments@{Arguments}}
+\subsubsection{Stg\+Fn}
+{\footnotesize\ttfamily \textbf{ Arg\+String} Arguments\+::\+Stg\+Fn}
+
+\mbox{\label{classArguments_a51c12d145b4a05427462ce475dd9a4d7}} 
+\index{Arguments@{Arguments}!The\+Arguments@{The\+Arguments}}
+\index{The\+Arguments@{The\+Arguments}!Arguments@{Arguments}}
+\subsubsection{The\+Arguments}
+{\footnotesize\ttfamily std\+::vector$<$std\+::string$>$ Arguments\+::\+The\+Arguments\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classArguments_a332013d89bb1d0133fa115c46155526a}} 
+\index{Arguments@{Arguments}!Verbosity@{Verbosity}}
+\index{Verbosity@{Verbosity}!Arguments@{Arguments}}
+\subsubsection{Verbosity}
+{\footnotesize\ttfamily \textbf{ Arg\+Verbosity} Arguments\+::\+Verbosity}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ Arguments.\+h}\item 
+\textbf{ Arguments.\+cc}\end{DoxyCompactItemize}

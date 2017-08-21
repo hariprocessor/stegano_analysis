@@ -1,0 +1,266 @@
+.TH "CvrStgFile" 3 "Thu Aug 17 2017" "Version 0.5.1" "steghide" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+CvrStgFile \- a cover-/stego-file  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <CvrStgFile\&.h>\fP
+.PP
+Inherits \fBCvrStgObject\fP\&.
+.PP
+Inherited by \fBAuFile\fP, \fBBmpFile\fP, \fBDummyFile\fP, and \fBWavFile\fP\&.
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBProperty\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCvrStgFile\fP (void)"
+.br
+.ti -1c
+.RI "virtual \fB~CvrStgFile\fP (void)"
+.br
+.ti -1c
+.RI "virtual void \fBread\fP (\fBBinaryIO\fP *io)"
+.br
+.ti -1c
+.RI "virtual void \fBwrite\fP (void)"
+.br
+.ti -1c
+.RI "void \fBtransform\fP (const std::string &fn)"
+.br
+.ti -1c
+.RI "virtual std::list< \fBProperty\fP > \fBgetProperties\fP (void) const =0"
+.br
+.ti -1c
+.RI "virtual std::vector< \fBSampleValueAdjacencyList\fP * > \fBcalcSVAdjacencyLists\fP (const std::vector< \fBSampleValue\fP *> &svs) const"
+.br
+.ti -1c
+.RI "virtual std::vector< \fBMatchingAlgorithm\fP * > \fBgetMatchingAlgorithms\fP (\fBGraph\fP *g, \fBMatching\fP *m) const"
+.br
+.ti -1c
+.RI "const std::string & \fBgetName\fP (void) const"
+.br
+.ti -1c
+.RI "bool \fBis_std\fP (void) const"
+.br
+.ti -1c
+.RI "unsigned long \fBgetCapacity\fP (void) const"
+.br
+.ti -1c
+.RI "std::string \fBgetHRCapacity\fP (void) const"
+.br
+.ti -1c
+.RI "unsigned short \fBgetSamplesPerVertex\fP (void) const"
+.br
+.ti -1c
+.RI "\fBUWORD32\fP \fBgetRadius\fP (void) const"
+.br
+.ti -1c
+.RI "\fBEmbValue\fP \fBgetEmbValueModulus\fP (void) const"
+.br
+.ti -1c
+.RI "virtual \fBEmbValue\fP \fBgetEmbeddedValue\fP (const \fBSamplePos\fP pos) const"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBCvrStgFile\fP * \fBreadFile\fP (const std::string &fn)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBsetSamplesPerVertex\fP (unsigned short spv)"
+.br
+.ti -1c
+.RI "void \fBsetRadius\fP (\fBUWORD32\fP r)"
+.br
+.ti -1c
+.RI "void \fBsetEmbValueModulus\fP (\fBEmbValue\fP m)"
+.br
+.ti -1c
+.RI "void \fBsetBinIO\fP (\fBBinaryIO\fP *io)"
+.br
+.ti -1c
+.RI "\fBBinaryIO\fP * \fBgetBinIO\fP (void) const"
+.br
+.in -1c
+.SS "Private Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBFILEFORMAT\fP { \fBUNKNOWN\fP, \fBBMP\fP, \fBWAV\fP, \fBAU\fP, \fBJPEG\fP }"
+.br
+.in -1c
+.SS "Static Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBFILEFORMAT\fP \fBguessff\fP (\fBBinaryIO\fP *io)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBBinaryIO\fP * \fBBinIO\fP"
+.br
+.ti -1c
+.RI "unsigned short \fBSamplesPerVertex\fP"
+.br
+.ti -1c
+.RI "\fBUWORD32\fP \fBRadius\fP"
+.br
+.ti -1c
+.RI "\fBEmbValue\fP \fBEmbValueModulus\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+file-format specific constants are handled as follows: \fBCvrStgFile\fP contains a protected set-function (e\&.g\&. setSamplesPerVertex), a public get-function (e\&.g\&. \fBgetSamplesPerVertex() const\fP) and a private variable\&. The public get function does nothing else than returning the private variable, which must be set as soon as possible (if it is not set, it will contain a null value set in \fBCvrStgFile::CvrStgFile\fP)\&. 
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBCvrStgFile::FILEFORMAT\fP\fC [private]\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIUNKNOWN \fP\fP
+.TP
+\fB\fIBMP \fP\fP
+.TP
+\fB\fIWAV \fP\fP
+.TP
+\fB\fIAU \fP\fP
+.TP
+\fB\fIJPEG \fP\fP
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "CvrStgFile::CvrStgFile (void)"
+
+.SS "CvrStgFile::~CvrStgFile (void)\fC [virtual]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "std::vector< \fBSampleValueAdjacencyList\fP * > CvrStgFile::calcSVAdjacencyLists (const std::vector< \fBSampleValue\fP *> & svs) const\fC [virtual]\fP"
+calculate a vector a SampleValueAdjacencyLists 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsvs\fP a vector of unique(!) sample values where svs[i]->getLabel() == i holds for all i 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+a vector of SampleValueAdjacencyLists where retval[i] only contains sample values with getEmbValue() == i
+.RE
+.PP
+Every row in the adjacency lists must be sorted in the following order: The first sample value has the least distance to the source sample value, the last has the largest distance\&. If two sample values in one row have the same distance to the source sample value, the order does not matter\&.
+.PP
+May be overridden in derived class to provide a faster version\&. 
+.PP
+Reimplemented in \fBWavFile\fP, and \fBBmpFile\fP\&.
+.SS "\fBBinaryIO\fP* CvrStgFile::getBinIO (void) const\fC [inline]\fP, \fC [protected]\fP"
+
+.SS "unsigned long CvrStgFile::getCapacity (void) const"
+get the capacity of this cvrstgfile 
+.PP
+\fBReturns:\fP
+.RS 4
+the capacity in bytes 
+.RE
+.PP
+
+.SS "\fBEmbValue\fP CvrStgFile::getEmbeddedValue (const \fBSamplePos\fP pos) const\fC [virtual]\fP"
+get the value that is embedded in the Sample pos 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpos\fP the position of the sample 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the value that is embedded in the sample at the given sample position
+.RE
+.PP
+This is equivalent to getSample(pos)->\fBgetEmbeddedValue()\fP and is implemented here like this\&.
+.PP
+May be overwritten by derived class to provide a faster version\&. 
+.SS "\fBEmbValue\fP CvrStgFile::getEmbValueModulus (void) const\fC [inline]\fP"
+values that are embedded in samples will be in 0\&.\&.\&.Modulus-1 (this is a file-format specific constant) 
+.SS "std::string CvrStgFile::getHRCapacity (void) const"
+get the capacity as a human-readable string 
+.SS "std::vector< \fBMatchingAlgorithm\fP * > CvrStgFile::getMatchingAlgorithms (\fBGraph\fP * g, \fBMatching\fP * m) const\fC [virtual]\fP"
+get recommended list of matching algorithms 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIm\fP an empty matching - will be used in construction of \fBMatchingAlgorithm\fP objects
+.RE
+.PP
+The \fBMatchingAlgorithm\fP objects returned by this function should be deleted by the caller if they are no longer needed\&. 
+.PP
+Reimplemented in \fBWavFile\fP, \fBAuFile\fP, and \fBBmpFile\fP\&.
+.SS "const std::string& CvrStgFile::getName (void) const\fC [inline]\fP"
+get the name of this cvrstgfile 
+.SS "virtual std::list<\fBProperty\fP> CvrStgFile::getProperties (void) const\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBDummyFile\fP, \fBAuFile\fP, \fBWavFile\fP, and \fBBmpFile\fP\&.
+.SS "\fBUWORD32\fP CvrStgFile::getRadius (void) const\fC [inline]\fP"
+get the neighbourhood radius (this is a file-format specific constant) 
+.SS "unsigned short CvrStgFile::getSamplesPerVertex (void) const\fC [inline]\fP"
+get the number of samples per vertex (this is a file-format specific constant) 
+.SS "\fBCvrStgFile::FILEFORMAT\fP CvrStgFile::guessff (\fBBinaryIO\fP * io)\fC [static]\fP, \fC [private]\fP"
+guesses the file format by looking at the first few bytes 
+.SS "bool CvrStgFile::is_std (void) const\fC [inline]\fP"
+
+.SS "void CvrStgFile::read (\fBBinaryIO\fP * io)\fC [virtual]\fP"
+
+.PP
+Reimplemented in \fBAuFile\fP, \fBWavFile\fP, and \fBBmpFile\fP\&.
+.SS "\fBCvrStgFile\fP * CvrStgFile::readFile (const std::string & fn)\fC [static]\fP"
+this function reads the file with name fn and returns a *File object of the correct type casted to \fBCvrStgFile\fP\&. 
+.SS "void CvrStgFile::setBinIO (\fBBinaryIO\fP * io)\fC [inline]\fP, \fC [protected]\fP"
+
+.SS "void CvrStgFile::setEmbValueModulus (\fBEmbValue\fP m)\fC [inline]\fP, \fC [protected]\fP"
+
+.SS "void CvrStgFile::setRadius (\fBUWORD32\fP r)\fC [protected]\fP"
+set Radius to r unless Args\&.Radius is set (set Radius to Args\&.Radius\&.getValue() then) 
+.SS "void CvrStgFile::setSamplesPerVertex (unsigned short spv)\fC [inline]\fP, \fC [protected]\fP"
+
+.SS "void CvrStgFile::transform (const std::string & fn)"
+
+.SS "void CvrStgFile::write (void)\fC [virtual]\fP"
+
+.PP
+Reimplemented in \fBAuFile\fP, \fBWavFile\fP, and \fBBmpFile\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBBinaryIO\fP* CvrStgFile::BinIO\fC [private]\fP"
+
+.SS "\fBEmbValue\fP CvrStgFile::EmbValueModulus\fC [private]\fP"
+
+.SS "\fBUWORD32\fP CvrStgFile::Radius\fC [private]\fP"
+
+.SS "unsigned short CvrStgFile::SamplesPerVertex\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for steghide from the source code\&.

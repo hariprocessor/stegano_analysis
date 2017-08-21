@@ -1,0 +1,188 @@
+\section{Au\+File\+Test Class Reference}
+\label{classAuFileTest}\index{Au\+File\+Test@{Au\+File\+Test}}
+
+
+{\ttfamily \#include $<$Au\+File\+Test.\+h$>$}
+
+Inheritance diagram for Au\+File\+Test\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classAuFileTest}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Au\+File\+Test} (\textbf{ Test\+Suite} $\ast$s)
+\item 
+void \textbf{ setup} (void)
+\item 
+void \textbf{ cleanup} (void)
+\item 
+void \textbf{ test\+Read\+Write} (void)
+\item 
+void \textbf{ test\+Read\+Embed\+Extract} (void)
+\item 
+void \textbf{ test\+Read\+Embed\+Write\+Read\+Extract} (void)
+\item 
+void \textbf{ test\+Position} (void)
+\item 
+void \textbf{ test\+Read\+Extract\+Compare} (void)
+\item 
+void \textbf{ test\+Embedded\+Value} (void)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Bit\+String} $\ast$ \textbf{ bs1}
+\item 
+\textbf{ Bit\+String} $\ast$ \textbf{ bs2}
+\item 
+\textbf{ Bit\+String} $\ast$ \textbf{ bs3}
+\item 
+\textbf{ Cvr\+Stg\+File} $\ast$ \textbf{ f1}
+\item 
+\textbf{ Cvr\+Stg\+File} $\ast$ \textbf{ f2}
+\item 
+\textbf{ Cvr\+Stg\+File} $\ast$ \textbf{ f3}
+\item 
+\textbf{ Globals} \textbf{ gl1}
+\item 
+\textbf{ Globals} \textbf{ gl2}
+\item 
+\textbf{ Globals} \textbf{ gl3}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{classAuFileTest_adf6f137493c0066d906f55293384901a}} 
+\index{Au\+File\+Test@{Au\+File\+Test}!Au\+File\+Test@{Au\+File\+Test}}
+\index{Au\+File\+Test@{Au\+File\+Test}!Au\+File\+Test@{Au\+File\+Test}}
+\subsubsection{Au\+File\+Test()}
+{\footnotesize\ttfamily Au\+File\+Test\+::\+Au\+File\+Test (\begin{DoxyParamCaption}\item[{\textbf{ Test\+Suite} $\ast$}]{s }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{classAuFileTest_a10ebf29919259a98f435645885bf856f}} 
+\index{Au\+File\+Test@{Au\+File\+Test}!cleanup@{cleanup}}
+\index{cleanup@{cleanup}!Au\+File\+Test@{Au\+File\+Test}}
+\subsubsection{cleanup()}
+{\footnotesize\ttfamily void Au\+File\+Test\+::cleanup (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+cleanup the unit test -\/ called after run 
+
+Reimplemented from \textbf{ Unit\+Test} \doxyref{}{p.}{classUnitTest_adf77efe972ee4a766d94e3f7ddc193ad}.
+
+\mbox{\label{classAuFileTest_a2f2b853a21a4fd46f1010a1ee474a9a1}} 
+\index{Au\+File\+Test@{Au\+File\+Test}!setup@{setup}}
+\index{setup@{setup}!Au\+File\+Test@{Au\+File\+Test}}
+\subsubsection{setup()}
+{\footnotesize\ttfamily void Au\+File\+Test\+::setup (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+setup the unit test -\/ called before run
+
+\doxyref{Unit\+Test\+::setup}{p.}{classUnitTest_ad73fdf9012b651047ea001d21f9d27ad} will (together with \doxyref{Unit\+Test\+::cleanup}{p.}{classUnitTest_adf77efe972ee4a766d94e3f7ddc193ad}) save and restore the object stored in Globs so they should be called from the corresponding functions in the derived object if the derived unit test manipulates the Globs object. 
+
+Reimplemented from \textbf{ Unit\+Test} \doxyref{}{p.}{classUnitTest_ad73fdf9012b651047ea001d21f9d27ad}.
+
+\mbox{\label{classAuFileTest_a5dd13b6323db882a381b7bf91267bec2}} 
+\index{Au\+File\+Test@{Au\+File\+Test}!test\+Embedded\+Value@{test\+Embedded\+Value}}
+\index{test\+Embedded\+Value@{test\+Embedded\+Value}!Au\+File\+Test@{Au\+File\+Test}}
+\subsubsection{test\+Embedded\+Value()}
+{\footnotesize\ttfamily void Au\+File\+Test\+::test\+Embedded\+Value (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\label{classAuFileTest_a350e286890726565387d78fd33b9c910}} 
+\index{Au\+File\+Test@{Au\+File\+Test}!test\+Position@{test\+Position}}
+\index{test\+Position@{test\+Position}!Au\+File\+Test@{Au\+File\+Test}}
+\subsubsection{test\+Position()}
+{\footnotesize\ttfamily void Au\+File\+Test\+::test\+Position (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\label{classAuFileTest_a0b231ad8f4aa0e0430f195b5c9b1b62d}} 
+\index{Au\+File\+Test@{Au\+File\+Test}!test\+Read\+Embed\+Extract@{test\+Read\+Embed\+Extract}}
+\index{test\+Read\+Embed\+Extract@{test\+Read\+Embed\+Extract}!Au\+File\+Test@{Au\+File\+Test}}
+\subsubsection{test\+Read\+Embed\+Extract()}
+{\footnotesize\ttfamily void Au\+File\+Test\+::test\+Read\+Embed\+Extract (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\label{classAuFileTest_a371d1ef5cc425015738dc0f8d7e6527f}} 
+\index{Au\+File\+Test@{Au\+File\+Test}!test\+Read\+Embed\+Write\+Read\+Extract@{test\+Read\+Embed\+Write\+Read\+Extract}}
+\index{test\+Read\+Embed\+Write\+Read\+Extract@{test\+Read\+Embed\+Write\+Read\+Extract}!Au\+File\+Test@{Au\+File\+Test}}
+\subsubsection{test\+Read\+Embed\+Write\+Read\+Extract()}
+{\footnotesize\ttfamily void Au\+File\+Test\+::test\+Read\+Embed\+Write\+Read\+Extract (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\label{classAuFileTest_ab3b3582b5c25f87141d58960201168e0}} 
+\index{Au\+File\+Test@{Au\+File\+Test}!test\+Read\+Extract\+Compare@{test\+Read\+Extract\+Compare}}
+\index{test\+Read\+Extract\+Compare@{test\+Read\+Extract\+Compare}!Au\+File\+Test@{Au\+File\+Test}}
+\subsubsection{test\+Read\+Extract\+Compare()}
+{\footnotesize\ttfamily void Au\+File\+Test\+::test\+Read\+Extract\+Compare (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\label{classAuFileTest_afb576a199192946f6fb3f0be480af1f4}} 
+\index{Au\+File\+Test@{Au\+File\+Test}!test\+Read\+Write@{test\+Read\+Write}}
+\index{test\+Read\+Write@{test\+Read\+Write}!Au\+File\+Test@{Au\+File\+Test}}
+\subsubsection{test\+Read\+Write()}
+{\footnotesize\ttfamily void Au\+File\+Test\+::test\+Read\+Write (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{classAuFileTest_a92fb65918ef53f3d916bd61dafb11d91}} 
+\index{Au\+File\+Test@{Au\+File\+Test}!bs1@{bs1}}
+\index{bs1@{bs1}!Au\+File\+Test@{Au\+File\+Test}}
+\subsubsection{bs1}
+{\footnotesize\ttfamily \textbf{ Bit\+String}$\ast$ Au\+File\+Test\+::bs1\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classAuFileTest_abdc7d1c97af31f3a41e91377c9c5826a}} 
+\index{Au\+File\+Test@{Au\+File\+Test}!bs2@{bs2}}
+\index{bs2@{bs2}!Au\+File\+Test@{Au\+File\+Test}}
+\subsubsection{bs2}
+{\footnotesize\ttfamily \textbf{ Bit\+String} $\ast$ Au\+File\+Test\+::bs2\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classAuFileTest_adbc8359f064b8a2d38edaccd907bedae}} 
+\index{Au\+File\+Test@{Au\+File\+Test}!bs3@{bs3}}
+\index{bs3@{bs3}!Au\+File\+Test@{Au\+File\+Test}}
+\subsubsection{bs3}
+{\footnotesize\ttfamily \textbf{ Bit\+String} $\ast$ Au\+File\+Test\+::bs3\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classAuFileTest_a9f86b05e9f8d2ea9265bbef8ab1ec854}} 
+\index{Au\+File\+Test@{Au\+File\+Test}!f1@{f1}}
+\index{f1@{f1}!Au\+File\+Test@{Au\+File\+Test}}
+\subsubsection{f1}
+{\footnotesize\ttfamily \textbf{ Cvr\+Stg\+File}$\ast$ Au\+File\+Test\+::f1\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classAuFileTest_a4f083a6d7bb3433b3b9e6af52aeee618}} 
+\index{Au\+File\+Test@{Au\+File\+Test}!f2@{f2}}
+\index{f2@{f2}!Au\+File\+Test@{Au\+File\+Test}}
+\subsubsection{f2}
+{\footnotesize\ttfamily \textbf{ Cvr\+Stg\+File} $\ast$ Au\+File\+Test\+::f2\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classAuFileTest_a2785eda74685e7a2c05047d6f30d4699}} 
+\index{Au\+File\+Test@{Au\+File\+Test}!f3@{f3}}
+\index{f3@{f3}!Au\+File\+Test@{Au\+File\+Test}}
+\subsubsection{f3}
+{\footnotesize\ttfamily \textbf{ Cvr\+Stg\+File} $\ast$ Au\+File\+Test\+::f3\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classAuFileTest_a3311376cef3d9a5c38ff0077d4a54490}} 
+\index{Au\+File\+Test@{Au\+File\+Test}!gl1@{gl1}}
+\index{gl1@{gl1}!Au\+File\+Test@{Au\+File\+Test}}
+\subsubsection{gl1}
+{\footnotesize\ttfamily \textbf{ Globals} Au\+File\+Test\+::gl1\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classAuFileTest_a329ca7f4d3e2eefefdbcb01bfbe09955}} 
+\index{Au\+File\+Test@{Au\+File\+Test}!gl2@{gl2}}
+\index{gl2@{gl2}!Au\+File\+Test@{Au\+File\+Test}}
+\subsubsection{gl2}
+{\footnotesize\ttfamily \textbf{ Globals} Au\+File\+Test\+::gl2\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classAuFileTest_a8dfe96a1013553f1bff762dc6dbed66c}} 
+\index{Au\+File\+Test@{Au\+File\+Test}!gl3@{gl3}}
+\index{gl3@{gl3}!Au\+File\+Test@{Au\+File\+Test}}
+\subsubsection{gl3}
+{\footnotesize\ttfamily \textbf{ Globals} Au\+File\+Test\+::gl3\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ Au\+File\+Test.\+h}\item 
+\textbf{ Au\+File\+Test.\+cc}\end{DoxyCompactItemize}

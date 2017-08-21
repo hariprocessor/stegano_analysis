@@ -1,0 +1,162 @@
+.TH "WKSConstructionHeuristicTest" 3 "Thu Aug 17 2017" "Version 0.5.1" "steghide" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+WKSConstructionHeuristicTest
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <WKSConstructionHeuristicTest\&.h>\fP
+.PP
+Inherits \fBUnitTest\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBWKSConstructionHeuristicTest\fP (\fBTestSuite\fP *s)"
+.br
+.ti -1c
+.RI "void \fBsetup\fP (void)"
+.br
+.ti -1c
+.RI "void \fBcleanup\fP (void)"
+.br
+.ti -1c
+.RI "void \fBtestAlgorithm\fP (void)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBBitString\fP * \fBbs1\fP"
+.br
+.ti -1c
+.RI "\fBBitString\fP * \fBbs2\fP"
+.br
+.ti -1c
+.RI "\fBBitString\fP * \fBbs3\fP"
+.br
+.ti -1c
+.RI "\fBCvrStgFile\fP * \fBf1\fP"
+.br
+.ti -1c
+.RI "\fBCvrStgFile\fP * \fBf2\fP"
+.br
+.ti -1c
+.RI "\fBCvrStgFile\fP * \fBf3\fP"
+.br
+.ti -1c
+.RI "\fBSelector\fP * \fBs1\fP"
+.br
+.ti -1c
+.RI "\fBSelector\fP * \fBs2\fP"
+.br
+.ti -1c
+.RI "\fBSelector\fP * \fBs3\fP"
+.br
+.ti -1c
+.RI "\fBGraph\fP * \fBg1\fP"
+.br
+.ti -1c
+.RI "\fBGraph\fP * \fBg2\fP"
+.br
+.ti -1c
+.RI "\fBGraph\fP * \fBg3\fP"
+.br
+.ti -1c
+.RI "\fBWKSConstructionHeuristic\fP * \fBch1\fP"
+.br
+.ti -1c
+.RI "\fBWKSConstructionHeuristic\fP * \fBch2\fP"
+.br
+.ti -1c
+.RI "\fBWKSConstructionHeuristic\fP * \fBch3\fP"
+.br
+.ti -1c
+.RI "\fBMatching\fP * \fBm1\fP"
+.br
+.ti -1c
+.RI "\fBMatching\fP * \fBm2\fP"
+.br
+.ti -1c
+.RI "\fBMatching\fP * \fBm3\fP"
+.br
+.ti -1c
+.RI "\fBGlobals\fP \fBgl1\fP"
+.br
+.ti -1c
+.RI "\fBGlobals\fP \fBgl2\fP"
+.br
+.ti -1c
+.RI "\fBGlobals\fP \fBgl3\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "WKSConstructionHeuristicTest::WKSConstructionHeuristicTest (\fBTestSuite\fP * s)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void WKSConstructionHeuristicTest::cleanup (void)\fC [virtual]\fP"
+cleanup the unit test - called after run 
+.PP
+Reimplemented from \fBUnitTest\fP\&.
+.SS "void WKSConstructionHeuristicTest::setup (void)\fC [virtual]\fP"
+setup the unit test - called before run
+.PP
+\fBUnitTest::setup\fP will (together with \fBUnitTest::cleanup\fP) save and restore the object stored in Globs so they should be called from the corresponding functions in the derived object if the derived unit test manipulates the Globs object\&. 
+.PP
+Reimplemented from \fBUnitTest\fP\&.
+.SS "void WKSConstructionHeuristicTest::testAlgorithm (void)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBBitString\fP* WKSConstructionHeuristicTest::bs1\fC [private]\fP"
+
+.SS "\fBBitString\fP * WKSConstructionHeuristicTest::bs2\fC [private]\fP"
+
+.SS "\fBBitString\fP * WKSConstructionHeuristicTest::bs3\fC [private]\fP"
+
+.SS "\fBWKSConstructionHeuristic\fP* WKSConstructionHeuristicTest::ch1\fC [private]\fP"
+
+.SS "\fBWKSConstructionHeuristic\fP * WKSConstructionHeuristicTest::ch2\fC [private]\fP"
+
+.SS "\fBWKSConstructionHeuristic\fP * WKSConstructionHeuristicTest::ch3\fC [private]\fP"
+
+.SS "\fBCvrStgFile\fP* WKSConstructionHeuristicTest::f1\fC [private]\fP"
+
+.SS "\fBCvrStgFile\fP * WKSConstructionHeuristicTest::f2\fC [private]\fP"
+
+.SS "\fBCvrStgFile\fP * WKSConstructionHeuristicTest::f3\fC [private]\fP"
+
+.SS "\fBGraph\fP* WKSConstructionHeuristicTest::g1\fC [private]\fP"
+
+.SS "\fBGraph\fP * WKSConstructionHeuristicTest::g2\fC [private]\fP"
+
+.SS "\fBGraph\fP * WKSConstructionHeuristicTest::g3\fC [private]\fP"
+
+.SS "\fBGlobals\fP WKSConstructionHeuristicTest::gl1\fC [private]\fP"
+
+.SS "\fBGlobals\fP WKSConstructionHeuristicTest::gl2\fC [private]\fP"
+
+.SS "\fBGlobals\fP WKSConstructionHeuristicTest::gl3\fC [private]\fP"
+
+.SS "\fBMatching\fP* WKSConstructionHeuristicTest::m1\fC [private]\fP"
+
+.SS "\fBMatching\fP * WKSConstructionHeuristicTest::m2\fC [private]\fP"
+
+.SS "\fBMatching\fP * WKSConstructionHeuristicTest::m3\fC [private]\fP"
+
+.SS "\fBSelector\fP* WKSConstructionHeuristicTest::s1\fC [private]\fP"
+
+.SS "\fBSelector\fP * WKSConstructionHeuristicTest::s2\fC [private]\fP"
+
+.SS "\fBSelector\fP * WKSConstructionHeuristicTest::s3\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for steghide from the source code\&.

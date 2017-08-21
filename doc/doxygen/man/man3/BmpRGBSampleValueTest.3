@@ -1,0 +1,122 @@
+.TH "BmpRGBSampleValueTest" 3 "Thu Aug 17 2017" "Version 0.5.1" "steghide" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+BmpRGBSampleValueTest
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <BmpRGBSampleValueTest\&.h>\fP
+.PP
+Inherits \fBSampleValueTest\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBBmpRGBSampleValueTest\fP (\fBTestSuite\fP *s)"
+.br
+.ti -1c
+.RI "void \fBsetup\fP (void)"
+.br
+.ti -1c
+.RI "void \fBcleanup\fP (void)"
+.br
+.ti -1c
+.RI "void \fBtestDistance\fP (void)"
+.br
+.ti -1c
+.RI "void \fBtestIsNeighbour\fP (void)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBCvrStgFile\fP * \fBf_win\fP"
+.br
+.ti -1c
+.RI "\fBCvrStgFile\fP * \fBf_os2\fP"
+.br
+.ti -1c
+.RI "\fBSampleValue\fP * \fBsv_0_0_0\fP"
+.br
+.ti -1c
+.RI "\fBSampleValue\fP * \fBsv_1_1_1\fP"
+.br
+.ti -1c
+.RI "\fBSampleValue\fP * \fBsv_0_3_4\fP"
+.br
+.ti -1c
+.RI "\fBSampleValue\fP * \fBsv_10_10_10\fP"
+.br
+.ti -1c
+.RI "\fBSampleValue\fP * \fBsv_12_13_14\fP"
+.br
+.ti -1c
+.RI "\fBSampleValue\fP * \fBsv_128_128_128\fP"
+.br
+.ti -1c
+.RI "\fBSampleValue\fP * \fBsv_210_0_120\fP"
+.br
+.ti -1c
+.RI "\fBSampleValue\fP * \fBsv_255_255_255\fP"
+.br
+.ti -1c
+.RI "\fBGlobals\fP \fBgl_win\fP"
+.br
+.ti -1c
+.RI "\fBGlobals\fP \fBgl_os2\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "BmpRGBSampleValueTest::BmpRGBSampleValueTest (\fBTestSuite\fP * s)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void BmpRGBSampleValueTest::cleanup (void)\fC [virtual]\fP"
+cleanup the unit test - called after run 
+.PP
+Reimplemented from \fBUnitTest\fP\&.
+.SS "void BmpRGBSampleValueTest::setup (void)\fC [virtual]\fP"
+setup the unit test - called before run
+.PP
+\fBUnitTest::setup\fP will (together with \fBUnitTest::cleanup\fP) save and restore the object stored in Globs so they should be called from the corresponding functions in the derived object if the derived unit test manipulates the Globs object\&. 
+.PP
+Reimplemented from \fBUnitTest\fP\&.
+.SS "void BmpRGBSampleValueTest::testDistance (void)"
+
+.SS "void BmpRGBSampleValueTest::testIsNeighbour (void)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBCvrStgFile\fP * BmpRGBSampleValueTest::f_os2\fC [private]\fP"
+
+.SS "\fBCvrStgFile\fP* BmpRGBSampleValueTest::f_win\fC [private]\fP"
+
+.SS "\fBGlobals\fP BmpRGBSampleValueTest::gl_os2\fC [private]\fP"
+
+.SS "\fBGlobals\fP BmpRGBSampleValueTest::gl_win\fC [private]\fP"
+
+.SS "\fBSampleValue\fP* BmpRGBSampleValueTest::sv_0_0_0\fC [private]\fP"
+
+.SS "\fBSampleValue\fP * BmpRGBSampleValueTest::sv_0_3_4\fC [private]\fP"
+
+.SS "\fBSampleValue\fP * BmpRGBSampleValueTest::sv_10_10_10\fC [private]\fP"
+
+.SS "\fBSampleValue\fP * BmpRGBSampleValueTest::sv_128_128_128\fC [private]\fP"
+
+.SS "\fBSampleValue\fP * BmpRGBSampleValueTest::sv_12_13_14\fC [private]\fP"
+
+.SS "\fBSampleValue\fP * BmpRGBSampleValueTest::sv_1_1_1\fC [private]\fP"
+
+.SS "\fBSampleValue\fP * BmpRGBSampleValueTest::sv_210_0_120\fC [private]\fP"
+
+.SS "\fBSampleValue\fP * BmpRGBSampleValueTest::sv_255_255_255\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for steghide from the source code\&.

@@ -1,0 +1,204 @@
+\section{Wav\+File\+Test Class Reference}
+\label{classWavFileTest}\index{Wav\+File\+Test@{Wav\+File\+Test}}
+
+
+{\ttfamily \#include $<$Wav\+File\+Test.\+h$>$}
+
+Inheritance diagram for Wav\+File\+Test\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classWavFileTest}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Wav\+File\+Test} (\textbf{ Test\+Suite} $\ast$s)
+\item 
+void \textbf{ setup} (void)
+\item 
+void \textbf{ cleanup} (void)
+\item 
+void \textbf{ test\+Read\+Write} (void)
+\item 
+void \textbf{ test\+Read\+Embed\+Extract} (void)
+\item 
+void \textbf{ test\+Read\+Embed\+Write\+Read\+Extract} (void)
+\item 
+void \textbf{ test\+Position} (void)
+\item 
+void \textbf{ test\+Read\+Extract\+Compare} (void)
+\item 
+void \textbf{ test\+S\+V\+A\+L\+Calculation} (void)
+\item 
+void \textbf{ test\+Embedded\+Value} (void)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Bit\+String} $\ast$ \textbf{ bs1}
+\item 
+\textbf{ Bit\+String} $\ast$ \textbf{ bs2}
+\item 
+\textbf{ Cvr\+Stg\+File} $\ast$ \textbf{ f1}
+\item 
+\textbf{ Cvr\+Stg\+File} $\ast$ \textbf{ f2}
+\item 
+\textbf{ Graph} $\ast$ \textbf{ g1}
+\item 
+\textbf{ Graph} $\ast$ \textbf{ g2}
+\item 
+\textbf{ Selector} $\ast$ \textbf{ s1}
+\item 
+\textbf{ Selector} $\ast$ \textbf{ s2}
+\item 
+\textbf{ Globals} \textbf{ gl1}
+\item 
+\textbf{ Globals} \textbf{ gl2}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{classWavFileTest_a2fcc48cc720a22ec38e0e1f095a1935c}} 
+\index{Wav\+File\+Test@{Wav\+File\+Test}!Wav\+File\+Test@{Wav\+File\+Test}}
+\index{Wav\+File\+Test@{Wav\+File\+Test}!Wav\+File\+Test@{Wav\+File\+Test}}
+\subsubsection{Wav\+File\+Test()}
+{\footnotesize\ttfamily Wav\+File\+Test\+::\+Wav\+File\+Test (\begin{DoxyParamCaption}\item[{\textbf{ Test\+Suite} $\ast$}]{s }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{classWavFileTest_ab126367a744e7cb74c3e367337ef3606}} 
+\index{Wav\+File\+Test@{Wav\+File\+Test}!cleanup@{cleanup}}
+\index{cleanup@{cleanup}!Wav\+File\+Test@{Wav\+File\+Test}}
+\subsubsection{cleanup()}
+{\footnotesize\ttfamily void Wav\+File\+Test\+::cleanup (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+cleanup the unit test -\/ called after run 
+
+Reimplemented from \textbf{ Unit\+Test} \doxyref{}{p.}{classUnitTest_adf77efe972ee4a766d94e3f7ddc193ad}.
+
+\mbox{\label{classWavFileTest_a2efeccbc9aeed06504572e9b5d7d9f90}} 
+\index{Wav\+File\+Test@{Wav\+File\+Test}!setup@{setup}}
+\index{setup@{setup}!Wav\+File\+Test@{Wav\+File\+Test}}
+\subsubsection{setup()}
+{\footnotesize\ttfamily void Wav\+File\+Test\+::setup (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+setup the unit test -\/ called before run
+
+\doxyref{Unit\+Test\+::setup}{p.}{classUnitTest_ad73fdf9012b651047ea001d21f9d27ad} will (together with \doxyref{Unit\+Test\+::cleanup}{p.}{classUnitTest_adf77efe972ee4a766d94e3f7ddc193ad}) save and restore the object stored in Globs so they should be called from the corresponding functions in the derived object if the derived unit test manipulates the Globs object. 
+
+Reimplemented from \textbf{ Unit\+Test} \doxyref{}{p.}{classUnitTest_ad73fdf9012b651047ea001d21f9d27ad}.
+
+\mbox{\label{classWavFileTest_a58516b4e5cc0a4e9b34203f51042faa2}} 
+\index{Wav\+File\+Test@{Wav\+File\+Test}!test\+Embedded\+Value@{test\+Embedded\+Value}}
+\index{test\+Embedded\+Value@{test\+Embedded\+Value}!Wav\+File\+Test@{Wav\+File\+Test}}
+\subsubsection{test\+Embedded\+Value()}
+{\footnotesize\ttfamily void Wav\+File\+Test\+::test\+Embedded\+Value (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\label{classWavFileTest_a06650dcb972c7072dd1ada0557168a44}} 
+\index{Wav\+File\+Test@{Wav\+File\+Test}!test\+Position@{test\+Position}}
+\index{test\+Position@{test\+Position}!Wav\+File\+Test@{Wav\+File\+Test}}
+\subsubsection{test\+Position()}
+{\footnotesize\ttfamily void Wav\+File\+Test\+::test\+Position (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\label{classWavFileTest_a355bbbfb91dd00c972e6e5e7c8d274c2}} 
+\index{Wav\+File\+Test@{Wav\+File\+Test}!test\+Read\+Embed\+Extract@{test\+Read\+Embed\+Extract}}
+\index{test\+Read\+Embed\+Extract@{test\+Read\+Embed\+Extract}!Wav\+File\+Test@{Wav\+File\+Test}}
+\subsubsection{test\+Read\+Embed\+Extract()}
+{\footnotesize\ttfamily void Wav\+File\+Test\+::test\+Read\+Embed\+Extract (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\label{classWavFileTest_a4ca5a1d25cc32d2f25e4d778ce93a82e}} 
+\index{Wav\+File\+Test@{Wav\+File\+Test}!test\+Read\+Embed\+Write\+Read\+Extract@{test\+Read\+Embed\+Write\+Read\+Extract}}
+\index{test\+Read\+Embed\+Write\+Read\+Extract@{test\+Read\+Embed\+Write\+Read\+Extract}!Wav\+File\+Test@{Wav\+File\+Test}}
+\subsubsection{test\+Read\+Embed\+Write\+Read\+Extract()}
+{\footnotesize\ttfamily void Wav\+File\+Test\+::test\+Read\+Embed\+Write\+Read\+Extract (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\label{classWavFileTest_aab63ab18a225d994586d6f0c530b8995}} 
+\index{Wav\+File\+Test@{Wav\+File\+Test}!test\+Read\+Extract\+Compare@{test\+Read\+Extract\+Compare}}
+\index{test\+Read\+Extract\+Compare@{test\+Read\+Extract\+Compare}!Wav\+File\+Test@{Wav\+File\+Test}}
+\subsubsection{test\+Read\+Extract\+Compare()}
+{\footnotesize\ttfamily void Wav\+File\+Test\+::test\+Read\+Extract\+Compare (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\label{classWavFileTest_a42f3ec9b812b11a78333deb6526fcbea}} 
+\index{Wav\+File\+Test@{Wav\+File\+Test}!test\+Read\+Write@{test\+Read\+Write}}
+\index{test\+Read\+Write@{test\+Read\+Write}!Wav\+File\+Test@{Wav\+File\+Test}}
+\subsubsection{test\+Read\+Write()}
+{\footnotesize\ttfamily void Wav\+File\+Test\+::test\+Read\+Write (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\label{classWavFileTest_a5564aeda6849cb1226d988c65fc3f7f1}} 
+\index{Wav\+File\+Test@{Wav\+File\+Test}!test\+S\+V\+A\+L\+Calculation@{test\+S\+V\+A\+L\+Calculation}}
+\index{test\+S\+V\+A\+L\+Calculation@{test\+S\+V\+A\+L\+Calculation}!Wav\+File\+Test@{Wav\+File\+Test}}
+\subsubsection{test\+S\+V\+A\+L\+Calculation()}
+{\footnotesize\ttfamily void Wav\+File\+Test\+::test\+S\+V\+A\+L\+Calculation (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{classWavFileTest_a73bfdb1707accf621bfc69fc12b2fc83}} 
+\index{Wav\+File\+Test@{Wav\+File\+Test}!bs1@{bs1}}
+\index{bs1@{bs1}!Wav\+File\+Test@{Wav\+File\+Test}}
+\subsubsection{bs1}
+{\footnotesize\ttfamily \textbf{ Bit\+String}$\ast$ Wav\+File\+Test\+::bs1\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classWavFileTest_a3e2c6cdfb1f947f64292689b0503750c}} 
+\index{Wav\+File\+Test@{Wav\+File\+Test}!bs2@{bs2}}
+\index{bs2@{bs2}!Wav\+File\+Test@{Wav\+File\+Test}}
+\subsubsection{bs2}
+{\footnotesize\ttfamily \textbf{ Bit\+String} $\ast$ Wav\+File\+Test\+::bs2\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classWavFileTest_a170c0f05c81edae7bc0d411a0f2f25d7}} 
+\index{Wav\+File\+Test@{Wav\+File\+Test}!f1@{f1}}
+\index{f1@{f1}!Wav\+File\+Test@{Wav\+File\+Test}}
+\subsubsection{f1}
+{\footnotesize\ttfamily \textbf{ Cvr\+Stg\+File}$\ast$ Wav\+File\+Test\+::f1\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classWavFileTest_acf1b6fc7bbaf22160178393489e7dd2f}} 
+\index{Wav\+File\+Test@{Wav\+File\+Test}!f2@{f2}}
+\index{f2@{f2}!Wav\+File\+Test@{Wav\+File\+Test}}
+\subsubsection{f2}
+{\footnotesize\ttfamily \textbf{ Cvr\+Stg\+File} $\ast$ Wav\+File\+Test\+::f2\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classWavFileTest_aaf81d463556c54d9bcdb98257672dc50}} 
+\index{Wav\+File\+Test@{Wav\+File\+Test}!g1@{g1}}
+\index{g1@{g1}!Wav\+File\+Test@{Wav\+File\+Test}}
+\subsubsection{g1}
+{\footnotesize\ttfamily \textbf{ Graph}$\ast$ Wav\+File\+Test\+::g1\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classWavFileTest_a3bc6ec3e6231db5fc1a763b7c5dfcf98}} 
+\index{Wav\+File\+Test@{Wav\+File\+Test}!g2@{g2}}
+\index{g2@{g2}!Wav\+File\+Test@{Wav\+File\+Test}}
+\subsubsection{g2}
+{\footnotesize\ttfamily \textbf{ Graph} $\ast$ Wav\+File\+Test\+::g2\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classWavFileTest_a942747ccdd7a7bb748ba25abed92b95e}} 
+\index{Wav\+File\+Test@{Wav\+File\+Test}!gl1@{gl1}}
+\index{gl1@{gl1}!Wav\+File\+Test@{Wav\+File\+Test}}
+\subsubsection{gl1}
+{\footnotesize\ttfamily \textbf{ Globals} Wav\+File\+Test\+::gl1\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classWavFileTest_a0390665314be860d1a23fb0e7678980c}} 
+\index{Wav\+File\+Test@{Wav\+File\+Test}!gl2@{gl2}}
+\index{gl2@{gl2}!Wav\+File\+Test@{Wav\+File\+Test}}
+\subsubsection{gl2}
+{\footnotesize\ttfamily \textbf{ Globals} Wav\+File\+Test\+::gl2\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classWavFileTest_a6074f075576a13841bb2a1c48db85097}} 
+\index{Wav\+File\+Test@{Wav\+File\+Test}!s1@{s1}}
+\index{s1@{s1}!Wav\+File\+Test@{Wav\+File\+Test}}
+\subsubsection{s1}
+{\footnotesize\ttfamily \textbf{ Selector}$\ast$ Wav\+File\+Test\+::s1\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classWavFileTest_a3c4430fcface4689902da29c25befee5}} 
+\index{Wav\+File\+Test@{Wav\+File\+Test}!s2@{s2}}
+\index{s2@{s2}!Wav\+File\+Test@{Wav\+File\+Test}}
+\subsubsection{s2}
+{\footnotesize\ttfamily \textbf{ Selector} $\ast$ Wav\+File\+Test\+::s2\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ Wav\+File\+Test.\+h}\item 
+\textbf{ Wav\+File\+Test.\+cc}\end{DoxyCompactItemize}

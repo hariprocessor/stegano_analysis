@@ -1,0 +1,389 @@
+\section{Binary\+IO Class Reference}
+\label{classBinaryIO}\index{Binary\+IO@{Binary\+IO}}
+
+
+provides methods for file i/o as needed by the rest of steghide  
+
+
+
+
+{\ttfamily \#include $<$Binary\+I\+O.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \textbf{ M\+O\+DE} \{ \textbf{ R\+E\+AD}, 
+\textbf{ W\+R\+I\+TE}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Binary\+IO} (void)
+\item 
+\textbf{ Binary\+IO} (const std\+::string \&fn, \textbf{ M\+O\+DE} m)
+\item 
+\textbf{ $\sim$\+Binary\+IO} (void)
+\item 
+const std\+::string \& \textbf{ get\+Name} (void) const
+\item 
+bool \textbf{ is\+\_\+open} (void) const
+\item 
+bool \textbf{ is\+\_\+std} (void) const
+\item 
+unsigned long \textbf{ get\+Pos} (void) const
+\item 
+bool \textbf{ eof} (void) const
+\item 
+void \textbf{ open} (const std\+::string \&fn, \textbf{ M\+O\+DE} m)
+\item 
+void \textbf{ close} (void)
+\item 
+\textbf{ B\+Y\+TE} \textbf{ read8} (void)
+\item 
+\textbf{ U\+W\+O\+R\+D16} \textbf{ read16\+\_\+le} (void)
+\item 
+\textbf{ U\+W\+O\+R\+D16} \textbf{ read16\+\_\+be} (void)
+\item 
+\textbf{ U\+W\+O\+R\+D32} \textbf{ read32\+\_\+le} (void)
+\item 
+\textbf{ U\+W\+O\+R\+D32} \textbf{ read32\+\_\+be} (void)
+\item 
+\textbf{ U\+W\+O\+R\+D32} \textbf{ read\+\_\+le} (unsigned short n)
+\item 
+std\+::string \textbf{ readstring} (unsigned int len)
+\item 
+void \textbf{ write8} (\textbf{ B\+Y\+TE} val)
+\item 
+void \textbf{ write16\+\_\+le} (\textbf{ U\+W\+O\+R\+D16} val)
+\item 
+void \textbf{ write16\+\_\+be} (\textbf{ U\+W\+O\+R\+D16} val)
+\item 
+void \textbf{ write32\+\_\+le} (\textbf{ U\+W\+O\+R\+D32} val)
+\item 
+void \textbf{ write32\+\_\+be} (\textbf{ U\+W\+O\+R\+D32} val)
+\item 
+void \textbf{ write\+\_\+le} (\textbf{ U\+W\+O\+R\+D32} val, unsigned short n)
+\item 
+void \textbf{ writestring} (const std\+::string \&s)
+\item 
+F\+I\+LE $\ast$ \textbf{ get\+Stream} (void) const
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ set\+Stream} (F\+I\+LE $\ast$s)
+\item 
+void \textbf{ set\+Name} (const std\+::string \&fn)
+\item 
+\textbf{ M\+O\+DE} \textbf{ get\+Mode} (void) const
+\item 
+void \textbf{ set\+Mode} (\textbf{ M\+O\+DE} m)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ init} (void)
+\item 
+void \textbf{ set\+\_\+open} (bool o)
+\item 
+void \textbf{ check\+Force} (const std\+::string \&fn) const
+\item 
+bool \textbf{ Fileexists} (const std\+::string \&fn) const
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \textbf{ Name}
+\item 
+F\+I\+LE $\ast$ \textbf{ Stream}
+\item 
+bool \textbf{ File\+Open}
+\item 
+\textbf{ M\+O\+DE} \textbf{ Mode}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\label{classBinaryIO_a39efef0fa56b45a901763f0f9d1515f8}} 
+\index{Binary\+IO@{Binary\+IO}!M\+O\+DE@{M\+O\+DE}}
+\index{M\+O\+DE@{M\+O\+DE}!Binary\+IO@{Binary\+IO}}
+\subsubsection{M\+O\+DE}
+{\footnotesize\ttfamily enum \textbf{ Binary\+I\+O\+::\+M\+O\+DE}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R\+E\+AD@{R\+E\+AD}!Binary\+IO@{Binary\+IO}}\index{Binary\+IO@{Binary\+IO}!R\+E\+AD@{R\+E\+AD}}}\mbox{\label{classBinaryIO_a39efef0fa56b45a901763f0f9d1515f8aab09be55cd7e94f751c2e7fabb33608a}} 
+R\+E\+AD&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{W\+R\+I\+TE@{W\+R\+I\+TE}!Binary\+IO@{Binary\+IO}}\index{Binary\+IO@{Binary\+IO}!W\+R\+I\+TE@{W\+R\+I\+TE}}}\mbox{\label{classBinaryIO_a39efef0fa56b45a901763f0f9d1515f8a58e070ce9ef4f5b02b7f65a7326b22d2}} 
+W\+R\+I\+TE&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{classBinaryIO_a0bf35fbb43ff17d5b0a29bd492acd209}} 
+\index{Binary\+IO@{Binary\+IO}!Binary\+IO@{Binary\+IO}}
+\index{Binary\+IO@{Binary\+IO}!Binary\+IO@{Binary\+IO}}
+\subsubsection{Binary\+I\+O()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Binary\+I\+O\+::\+Binary\+IO (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\label{classBinaryIO_a7ccae332f41b5437506d6cb58e0e6309}} 
+\index{Binary\+IO@{Binary\+IO}!Binary\+IO@{Binary\+IO}}
+\index{Binary\+IO@{Binary\+IO}!Binary\+IO@{Binary\+IO}}
+\subsubsection{Binary\+I\+O()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Binary\+I\+O\+::\+Binary\+IO (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{fn,  }\item[{\textbf{ M\+O\+DE}}]{m }\end{DoxyParamCaption})}
+
+construct a \doxyref{Binary\+IO}{p.}{classBinaryIO} object 
+\begin{DoxyParams}{Parameters}
+{\em fn} & the filename (\char`\"{}\char`\"{} to indicate stdin/stdout) \\
+\hline
+{\em m} & the mode (\doxyref{Binary\+I\+O\+::\+R\+E\+AD}{p.}{classBinaryIO_a39efef0fa56b45a901763f0f9d1515f8aab09be55cd7e94f751c2e7fabb33608a} or \doxyref{Binary\+I\+O\+::\+W\+R\+I\+TE}{p.}{classBinaryIO_a39efef0fa56b45a901763f0f9d1515f8a58e070ce9ef4f5b02b7f65a7326b22d2})\\
+\hline
+\end{DoxyParams}
+The file described by fn is opened in the given mode. \mbox{\label{classBinaryIO_a998ac3108e4a6a0bbb97b6488b85d279}} 
+\index{Binary\+IO@{Binary\+IO}!````~Binary\+IO@{$\sim$\+Binary\+IO}}
+\index{````~Binary\+IO@{$\sim$\+Binary\+IO}!Binary\+IO@{Binary\+IO}}
+\subsubsection{$\sim$\+Binary\+I\+O()}
+{\footnotesize\ttfamily Binary\+I\+O\+::$\sim$\+Binary\+IO (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{classBinaryIO_aead6fb65e7d2c70fb5a65d4483fa456a}} 
+\index{Binary\+IO@{Binary\+IO}!check\+Force@{check\+Force}}
+\index{check\+Force@{check\+Force}!Binary\+IO@{Binary\+IO}}
+\subsubsection{check\+Force()}
+{\footnotesize\ttfamily void Binary\+I\+O\+::check\+Force (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{fn }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+when opening a file in write mode perform various checks depending on the value of the force argument \mbox{\label{classBinaryIO_a7d1b96a2c17fb45e7918e6d730861d04}} 
+\index{Binary\+IO@{Binary\+IO}!close@{close}}
+\index{close@{close}!Binary\+IO@{Binary\+IO}}
+\subsubsection{close()}
+{\footnotesize\ttfamily void Binary\+I\+O\+::close (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+close the currently open file -\/ it is save to call \doxyref{close()}{p.}{classBinaryIO_a7d1b96a2c17fb45e7918e6d730861d04} even if \doxyref{is\+\_\+std()}{p.}{classBinaryIO_a7d40c1b945ac9bf34f1187fd315b33ab} is true \mbox{\label{classBinaryIO_a4b3115d6947100fc9171160c6beab7d1}} 
+\index{Binary\+IO@{Binary\+IO}!eof@{eof}}
+\index{eof@{eof}!Binary\+IO@{Binary\+IO}}
+\subsubsection{eof()}
+{\footnotesize\ttfamily bool Binary\+I\+O\+::eof (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+is the current state of this file at the end of the file \mbox{\label{classBinaryIO_aca30a749adb6f750011a70e9e0e40802}} 
+\index{Binary\+IO@{Binary\+IO}!Fileexists@{Fileexists}}
+\index{Fileexists@{Fileexists}!Binary\+IO@{Binary\+IO}}
+\subsubsection{Fileexists()}
+{\footnotesize\ttfamily bool Binary\+I\+O\+::\+Fileexists (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{fn }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+check if the file described by fn exists \begin{DoxyReturn}{Returns}
+true iff a fopen call with fn as file name succeeded 
+\end{DoxyReturn}
+\mbox{\label{classBinaryIO_a08ba7230d2ba5b866bbd78b024b10de9}} 
+\index{Binary\+IO@{Binary\+IO}!get\+Mode@{get\+Mode}}
+\index{get\+Mode@{get\+Mode}!Binary\+IO@{Binary\+IO}}
+\subsubsection{get\+Mode()}
+{\footnotesize\ttfamily \textbf{ M\+O\+DE} Binary\+I\+O\+::get\+Mode (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\mbox{\label{classBinaryIO_abad253f71b8705a2315d4d9a3dfdc080}} 
+\index{Binary\+IO@{Binary\+IO}!get\+Name@{get\+Name}}
+\index{get\+Name@{get\+Name}!Binary\+IO@{Binary\+IO}}
+\subsubsection{get\+Name()}
+{\footnotesize\ttfamily const std\+::string\& Binary\+I\+O\+::get\+Name (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+get the name (with path) of this file \mbox{\label{classBinaryIO_a3a31f0549a7effe9aeec868b4acd36db}} 
+\index{Binary\+IO@{Binary\+IO}!get\+Pos@{get\+Pos}}
+\index{get\+Pos@{get\+Pos}!Binary\+IO@{Binary\+IO}}
+\subsubsection{get\+Pos()}
+{\footnotesize\ttfamily unsigned long Binary\+I\+O\+::get\+Pos (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+get the current position in the current file \mbox{\label{classBinaryIO_a82b8e015444d4f08409266aba8409cad}} 
+\index{Binary\+IO@{Binary\+IO}!get\+Stream@{get\+Stream}}
+\index{get\+Stream@{get\+Stream}!Binary\+IO@{Binary\+IO}}
+\subsubsection{get\+Stream()}
+{\footnotesize\ttfamily F\+I\+LE$\ast$ Binary\+I\+O\+::get\+Stream (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+get the underlying cstdio F\+I\+L\+E$\ast$ pointer \mbox{\label{classBinaryIO_ae17f9a27379768a7403fde20b4b5f660}} 
+\index{Binary\+IO@{Binary\+IO}!init@{init}}
+\index{init@{init}!Binary\+IO@{Binary\+IO}}
+\subsubsection{init()}
+{\footnotesize\ttfamily void Binary\+I\+O\+::init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classBinaryIO_ad01391d8b01b14dc524036e61194cd30}} 
+\index{Binary\+IO@{Binary\+IO}!is\+\_\+open@{is\+\_\+open}}
+\index{is\+\_\+open@{is\+\_\+open}!Binary\+IO@{Binary\+IO}}
+\subsubsection{is\+\_\+open()}
+{\footnotesize\ttfamily bool Binary\+I\+O\+::is\+\_\+open (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+is this file currently opened ? \mbox{\label{classBinaryIO_a7d40c1b945ac9bf34f1187fd315b33ab}} 
+\index{Binary\+IO@{Binary\+IO}!is\+\_\+std@{is\+\_\+std}}
+\index{is\+\_\+std@{is\+\_\+std}!Binary\+IO@{Binary\+IO}}
+\subsubsection{is\+\_\+std()}
+{\footnotesize\ttfamily bool Binary\+I\+O\+::is\+\_\+std (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+is this file a standard stream (stdin or stdout) ? \mbox{\label{classBinaryIO_a789dc643814786b49bdd0ab0484b7218}} 
+\index{Binary\+IO@{Binary\+IO}!open@{open}}
+\index{open@{open}!Binary\+IO@{Binary\+IO}}
+\subsubsection{open()}
+{\footnotesize\ttfamily void Binary\+I\+O\+::open (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{fn,  }\item[{\textbf{ M\+O\+DE}}]{m }\end{DoxyParamCaption})}
+
+open the file given by fn in the mode m 
+\begin{DoxyParams}{Parameters}
+{\em fn} & a filename (\char`\"{}\char`\"{} to indicate stdin/stdout) \\
+\hline
+{\em m} & the mode (\doxyref{Binary\+I\+O\+::\+R\+E\+AD}{p.}{classBinaryIO_a39efef0fa56b45a901763f0f9d1515f8aab09be55cd7e94f751c2e7fabb33608a} or \doxyref{Binary\+I\+O\+::\+W\+R\+I\+TE}{p.}{classBinaryIO_a39efef0fa56b45a901763f0f9d1515f8a58e070ce9ef4f5b02b7f65a7326b22d2}) \\
+\hline
+\end{DoxyParams}
+\mbox{\label{classBinaryIO_ae6cab3a9995c04305f22e716ba20c332}} 
+\index{Binary\+IO@{Binary\+IO}!read16\+\_\+be@{read16\+\_\+be}}
+\index{read16\+\_\+be@{read16\+\_\+be}!Binary\+IO@{Binary\+IO}}
+\subsubsection{read16\+\_\+be()}
+{\footnotesize\ttfamily \textbf{ U\+W\+O\+R\+D16} Binary\+I\+O\+::read16\+\_\+be (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+read two bytes from the file using big-\/endian byte ordering \mbox{\label{classBinaryIO_a9af2449937a4c50c638be6c03815a0cf}} 
+\index{Binary\+IO@{Binary\+IO}!read16\+\_\+le@{read16\+\_\+le}}
+\index{read16\+\_\+le@{read16\+\_\+le}!Binary\+IO@{Binary\+IO}}
+\subsubsection{read16\+\_\+le()}
+{\footnotesize\ttfamily \textbf{ U\+W\+O\+R\+D16} Binary\+I\+O\+::read16\+\_\+le (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+read two bytes from the file using little-\/endian byte ordering \mbox{\label{classBinaryIO_a5f48a7aacb83a7381d9ce67f49d3a36c}} 
+\index{Binary\+IO@{Binary\+IO}!read32\+\_\+be@{read32\+\_\+be}}
+\index{read32\+\_\+be@{read32\+\_\+be}!Binary\+IO@{Binary\+IO}}
+\subsubsection{read32\+\_\+be()}
+{\footnotesize\ttfamily \textbf{ U\+W\+O\+R\+D32} Binary\+I\+O\+::read32\+\_\+be (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+read four bytes from the file using big-\/endian byte ordering \mbox{\label{classBinaryIO_a41541700c43a89efd9a4e73bc0cb7bb7}} 
+\index{Binary\+IO@{Binary\+IO}!read32\+\_\+le@{read32\+\_\+le}}
+\index{read32\+\_\+le@{read32\+\_\+le}!Binary\+IO@{Binary\+IO}}
+\subsubsection{read32\+\_\+le()}
+{\footnotesize\ttfamily \textbf{ U\+W\+O\+R\+D32} Binary\+I\+O\+::read32\+\_\+le (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+read four bytes from the file using little-\/endian byte ordering \mbox{\label{classBinaryIO_a23502610cfdf0d789dc02ef16262dbe1}} 
+\index{Binary\+IO@{Binary\+IO}!read8@{read8}}
+\index{read8@{read8}!Binary\+IO@{Binary\+IO}}
+\subsubsection{read8()}
+{\footnotesize\ttfamily \textbf{ B\+Y\+TE} Binary\+I\+O\+::read8 (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+read one byte from the file \mbox{\label{classBinaryIO_a320263cd4adaee51b1ae982bdb3b6615}} 
+\index{Binary\+IO@{Binary\+IO}!read\+\_\+le@{read\+\_\+le}}
+\index{read\+\_\+le@{read\+\_\+le}!Binary\+IO@{Binary\+IO}}
+\subsubsection{read\+\_\+le()}
+{\footnotesize\ttfamily \textbf{ U\+W\+O\+R\+D32} Binary\+I\+O\+::read\+\_\+le (\begin{DoxyParamCaption}\item[{unsigned short}]{n }\end{DoxyParamCaption})}
+
+read n bytes (little endian byte ordering) 
+\begin{DoxyParams}{Parameters}
+{\em n} & the number of bytes to read (must be $<$= 4) \\
+\hline
+\end{DoxyParams}
+\mbox{\label{classBinaryIO_a02f7eaa184af4082dd438a5fcd2c318b}} 
+\index{Binary\+IO@{Binary\+IO}!readstring@{readstring}}
+\index{readstring@{readstring}!Binary\+IO@{Binary\+IO}}
+\subsubsection{readstring()}
+{\footnotesize\ttfamily std\+::string Binary\+I\+O\+::readstring (\begin{DoxyParamCaption}\item[{unsigned int}]{len }\end{DoxyParamCaption})}
+
+read a string with length len from the file \mbox{\label{classBinaryIO_aefffa46734a984085cd4309939bcaddb}} 
+\index{Binary\+IO@{Binary\+IO}!set\+\_\+open@{set\+\_\+open}}
+\index{set\+\_\+open@{set\+\_\+open}!Binary\+IO@{Binary\+IO}}
+\subsubsection{set\+\_\+open()}
+{\footnotesize\ttfamily void Binary\+I\+O\+::set\+\_\+open (\begin{DoxyParamCaption}\item[{bool}]{o }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\mbox{\label{classBinaryIO_abea111493f6008e396e4f99924912c7b}} 
+\index{Binary\+IO@{Binary\+IO}!set\+Mode@{set\+Mode}}
+\index{set\+Mode@{set\+Mode}!Binary\+IO@{Binary\+IO}}
+\subsubsection{set\+Mode()}
+{\footnotesize\ttfamily void Binary\+I\+O\+::set\+Mode (\begin{DoxyParamCaption}\item[{\textbf{ M\+O\+DE}}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\mbox{\label{classBinaryIO_a9c866c14899279ad6e9fabb6b69767d5}} 
+\index{Binary\+IO@{Binary\+IO}!set\+Name@{set\+Name}}
+\index{set\+Name@{set\+Name}!Binary\+IO@{Binary\+IO}}
+\subsubsection{set\+Name()}
+{\footnotesize\ttfamily void Binary\+I\+O\+::set\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{fn }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\mbox{\label{classBinaryIO_a54eb9e307df74443779107b2fe772bbf}} 
+\index{Binary\+IO@{Binary\+IO}!set\+Stream@{set\+Stream}}
+\index{set\+Stream@{set\+Stream}!Binary\+IO@{Binary\+IO}}
+\subsubsection{set\+Stream()}
+{\footnotesize\ttfamily void Binary\+I\+O\+::set\+Stream (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\mbox{\label{classBinaryIO_ac551a0c15a8027b830d461df36c70982}} 
+\index{Binary\+IO@{Binary\+IO}!write16\+\_\+be@{write16\+\_\+be}}
+\index{write16\+\_\+be@{write16\+\_\+be}!Binary\+IO@{Binary\+IO}}
+\subsubsection{write16\+\_\+be()}
+{\footnotesize\ttfamily void Binary\+I\+O\+::write16\+\_\+be (\begin{DoxyParamCaption}\item[{\textbf{ U\+W\+O\+R\+D16}}]{val }\end{DoxyParamCaption})}
+
+write two bytes to the file using big-\/endian byte ordering \mbox{\label{classBinaryIO_af029be6769535da614986f3625d24c60}} 
+\index{Binary\+IO@{Binary\+IO}!write16\+\_\+le@{write16\+\_\+le}}
+\index{write16\+\_\+le@{write16\+\_\+le}!Binary\+IO@{Binary\+IO}}
+\subsubsection{write16\+\_\+le()}
+{\footnotesize\ttfamily void Binary\+I\+O\+::write16\+\_\+le (\begin{DoxyParamCaption}\item[{\textbf{ U\+W\+O\+R\+D16}}]{val }\end{DoxyParamCaption})}
+
+write two bytes to the file using little-\/endian byte ordering \mbox{\label{classBinaryIO_a778cb8560b7792e96a8de7a32440e2fe}} 
+\index{Binary\+IO@{Binary\+IO}!write32\+\_\+be@{write32\+\_\+be}}
+\index{write32\+\_\+be@{write32\+\_\+be}!Binary\+IO@{Binary\+IO}}
+\subsubsection{write32\+\_\+be()}
+{\footnotesize\ttfamily void Binary\+I\+O\+::write32\+\_\+be (\begin{DoxyParamCaption}\item[{\textbf{ U\+W\+O\+R\+D32}}]{val }\end{DoxyParamCaption})}
+
+write four bytes to the file using big-\/endian byte ordering \mbox{\label{classBinaryIO_a546779c9f2bd7a3bce516310605cfbb0}} 
+\index{Binary\+IO@{Binary\+IO}!write32\+\_\+le@{write32\+\_\+le}}
+\index{write32\+\_\+le@{write32\+\_\+le}!Binary\+IO@{Binary\+IO}}
+\subsubsection{write32\+\_\+le()}
+{\footnotesize\ttfamily void Binary\+I\+O\+::write32\+\_\+le (\begin{DoxyParamCaption}\item[{\textbf{ U\+W\+O\+R\+D32}}]{val }\end{DoxyParamCaption})}
+
+write four bytes to the file using little-\/endian byte ordering \mbox{\label{classBinaryIO_a3df966cbb5955a9cc12db9c1b841f316}} 
+\index{Binary\+IO@{Binary\+IO}!write8@{write8}}
+\index{write8@{write8}!Binary\+IO@{Binary\+IO}}
+\subsubsection{write8()}
+{\footnotesize\ttfamily void Binary\+I\+O\+::write8 (\begin{DoxyParamCaption}\item[{\textbf{ B\+Y\+TE}}]{val }\end{DoxyParamCaption})}
+
+write one byte to the file \mbox{\label{classBinaryIO_a6d8356e8fbf862d79d8ec97fb93217c3}} 
+\index{Binary\+IO@{Binary\+IO}!write\+\_\+le@{write\+\_\+le}}
+\index{write\+\_\+le@{write\+\_\+le}!Binary\+IO@{Binary\+IO}}
+\subsubsection{write\+\_\+le()}
+{\footnotesize\ttfamily void Binary\+I\+O\+::write\+\_\+le (\begin{DoxyParamCaption}\item[{\textbf{ U\+W\+O\+R\+D32}}]{val,  }\item[{unsigned short}]{n }\end{DoxyParamCaption})}
+
+write n bytes of val (little endian byte ordering) 
+\begin{DoxyParams}{Parameters}
+{\em n} & the number of bytes to write (must be $<$= 4) \\
+\hline
+{\em val} & the value \\
+\hline
+\end{DoxyParams}
+\mbox{\label{classBinaryIO_a116ca944bd525917198f8438c9c2f1a1}} 
+\index{Binary\+IO@{Binary\+IO}!writestring@{writestring}}
+\index{writestring@{writestring}!Binary\+IO@{Binary\+IO}}
+\subsubsection{writestring()}
+{\footnotesize\ttfamily void Binary\+I\+O\+::writestring (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{classBinaryIO_ac9ae8526d944e3e26f50618afe09d3ab}} 
+\index{Binary\+IO@{Binary\+IO}!File\+Open@{File\+Open}}
+\index{File\+Open@{File\+Open}!Binary\+IO@{Binary\+IO}}
+\subsubsection{File\+Open}
+{\footnotesize\ttfamily bool Binary\+I\+O\+::\+File\+Open\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classBinaryIO_aa3305696bab79bc4e3b18ea6bfff4477}} 
+\index{Binary\+IO@{Binary\+IO}!Mode@{Mode}}
+\index{Mode@{Mode}!Binary\+IO@{Binary\+IO}}
+\subsubsection{Mode}
+{\footnotesize\ttfamily \textbf{ M\+O\+DE} Binary\+I\+O\+::\+Mode\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classBinaryIO_aecedcd5d40e7b4326cd2ef3aa0e3c2ad}} 
+\index{Binary\+IO@{Binary\+IO}!Name@{Name}}
+\index{Name@{Name}!Binary\+IO@{Binary\+IO}}
+\subsubsection{Name}
+{\footnotesize\ttfamily std\+::string Binary\+I\+O\+::\+Name\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classBinaryIO_aa0009cff8318597b0c46a339d38f08ce}} 
+\index{Binary\+IO@{Binary\+IO}!Stream@{Stream}}
+\index{Stream@{Stream}!Binary\+IO@{Binary\+IO}}
+\subsubsection{Stream}
+{\footnotesize\ttfamily F\+I\+LE$\ast$ Binary\+I\+O\+::\+Stream\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ Binary\+I\+O.\+h}\item 
+\textbf{ Binary\+I\+O.\+cc}\end{DoxyCompactItemize}

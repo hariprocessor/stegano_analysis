@@ -1,0 +1,118 @@
+\section{Sample\+Value\+Adjacency\+List Class Reference}
+\label{classSampleValueAdjacencyList}\index{Sample\+Value\+Adjacency\+List@{Sample\+Value\+Adjacency\+List}}
+
+
+an adjacency list-\/like data structur for sample values  
+
+
+
+
+{\ttfamily \#include $<$Sample\+Value\+Adjacency\+List.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Sample\+Value\+Adjacency\+List} (\textbf{ Sample\+Value\+Label} numsvs)
+\item 
+std\+::vector$<$ \textbf{ Sample\+Value} $\ast$ $>$ \& \textbf{ operator[$\,$]} (const \textbf{ Sample\+Value\+Label} lbl)
+\item 
+std\+::vector$<$ \textbf{ Sample\+Value} $\ast$ $>$ \& \textbf{ operator[$\,$]} (const \textbf{ Sample\+Value} $\ast$sv)
+\item 
+unsigned long \textbf{ get\+Num\+Rows} (void) const
+\item 
+bool \textbf{ operator==} (const \textbf{ Sample\+Value\+Adjacency\+List} \&sval)
+\item 
+void \textbf{ sort} (void)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ quicksort} (std\+::vector$<$ \textbf{ Sample\+Value} $\ast$$>$ \&oppneighs, \textbf{ U\+W\+O\+R\+D32} $\ast$distances, unsigned int l, unsigned int r)
+\item 
+unsigned int \textbf{ partition} (std\+::vector$<$ \textbf{ Sample\+Value} $\ast$$>$ \&oppneighs, \textbf{ U\+W\+O\+R\+D32} $\ast$distances, unsigned int l, unsigned int r, \textbf{ U\+W\+O\+R\+D32} x)
+\item 
+void \textbf{ swap} (std\+::vector$<$ \textbf{ Sample\+Value} $\ast$$>$ \&oppneighs, \textbf{ U\+W\+O\+R\+D32} $\ast$distances, unsigned int i, unsigned int j)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::vector$<$ \textbf{ Sample\+Value} $\ast$ $>$ $>$ \textbf{ Adjacency\+List}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{classSampleValueAdjacencyList_a81c851f26c708720e55f8e5f90430071}} 
+\index{Sample\+Value\+Adjacency\+List@{Sample\+Value\+Adjacency\+List}!Sample\+Value\+Adjacency\+List@{Sample\+Value\+Adjacency\+List}}
+\index{Sample\+Value\+Adjacency\+List@{Sample\+Value\+Adjacency\+List}!Sample\+Value\+Adjacency\+List@{Sample\+Value\+Adjacency\+List}}
+\subsubsection{Sample\+Value\+Adjacency\+List()}
+{\footnotesize\ttfamily Sample\+Value\+Adjacency\+List\+::\+Sample\+Value\+Adjacency\+List (\begin{DoxyParamCaption}\item[{\textbf{ Sample\+Value\+Label}}]{numsvs }\end{DoxyParamCaption})}
+
+construct a \doxyref{Sample\+Value\+Adjacency\+List}{p.}{classSampleValueAdjacencyList} with numsvs rows 
+
+\subsection{Member Function Documentation}
+\mbox{\label{classSampleValueAdjacencyList_ae9439b621c139fd3f16086db81ebd4e5}} 
+\index{Sample\+Value\+Adjacency\+List@{Sample\+Value\+Adjacency\+List}!get\+Num\+Rows@{get\+Num\+Rows}}
+\index{get\+Num\+Rows@{get\+Num\+Rows}!Sample\+Value\+Adjacency\+List@{Sample\+Value\+Adjacency\+List}}
+\subsubsection{get\+Num\+Rows()}
+{\footnotesize\ttfamily unsigned long Sample\+Value\+Adjacency\+List\+::get\+Num\+Rows (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classSampleValueAdjacencyList_a0e66b822cdd83fba21ba0b1da4f1bdb5}} 
+\index{Sample\+Value\+Adjacency\+List@{Sample\+Value\+Adjacency\+List}!operator==@{operator==}}
+\index{operator==@{operator==}!Sample\+Value\+Adjacency\+List@{Sample\+Value\+Adjacency\+List}}
+\subsubsection{operator==()}
+{\footnotesize\ttfamily bool Sample\+Value\+Adjacency\+List\+::operator== (\begin{DoxyParamCaption}\item[{const \textbf{ Sample\+Value\+Adjacency\+List} \&}]{sval }\end{DoxyParamCaption})}
+
+check if every row contains the same set of sample values \mbox{\label{classSampleValueAdjacencyList_a5ddb2cac85c31f388d45f562ea8aa8e1}} 
+\index{Sample\+Value\+Adjacency\+List@{Sample\+Value\+Adjacency\+List}!operator[]@{operator[]}}
+\index{operator[]@{operator[]}!Sample\+Value\+Adjacency\+List@{Sample\+Value\+Adjacency\+List}}
+\subsubsection{operator[]()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::vector$<$\textbf{ Sample\+Value}$\ast$$>$\& Sample\+Value\+Adjacency\+List\+::operator[$\,$] (\begin{DoxyParamCaption}\item[{const \textbf{ Sample\+Value\+Label}}]{lbl }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classSampleValueAdjacencyList_a9a0ffd571156e87d83d356ad455dcb9e}} 
+\index{Sample\+Value\+Adjacency\+List@{Sample\+Value\+Adjacency\+List}!operator[]@{operator[]}}
+\index{operator[]@{operator[]}!Sample\+Value\+Adjacency\+List@{Sample\+Value\+Adjacency\+List}}
+\subsubsection{operator[]()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::vector$<$\textbf{ Sample\+Value}$\ast$$>$\& Sample\+Value\+Adjacency\+List\+::operator[$\,$] (\begin{DoxyParamCaption}\item[{const \textbf{ Sample\+Value} $\ast$}]{sv }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classSampleValueAdjacencyList_a08b9c540abc3c6a39f120f43de6ffa37}} 
+\index{Sample\+Value\+Adjacency\+List@{Sample\+Value\+Adjacency\+List}!partition@{partition}}
+\index{partition@{partition}!Sample\+Value\+Adjacency\+List@{Sample\+Value\+Adjacency\+List}}
+\subsubsection{partition()}
+{\footnotesize\ttfamily unsigned int Sample\+Value\+Adjacency\+List\+::partition (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \textbf{ Sample\+Value} $\ast$$>$ \&}]{oppneighs,  }\item[{\textbf{ U\+W\+O\+R\+D32} $\ast$}]{distances,  }\item[{unsigned int}]{l,  }\item[{unsigned int}]{r,  }\item[{\textbf{ U\+W\+O\+R\+D32}}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+partition oppneighs/distances into those with distances less than and those with distances greater than and equal to x \begin{DoxyReturn}{Returns}
+the index in oppneighs/distances that separates the two 
+\end{DoxyReturn}
+\mbox{\label{classSampleValueAdjacencyList_a12b38ef6c198ac8bc25c0b31fa4a7183}} 
+\index{Sample\+Value\+Adjacency\+List@{Sample\+Value\+Adjacency\+List}!quicksort@{quicksort}}
+\index{quicksort@{quicksort}!Sample\+Value\+Adjacency\+List@{Sample\+Value\+Adjacency\+List}}
+\subsubsection{quicksort()}
+{\footnotesize\ttfamily void Sample\+Value\+Adjacency\+List\+::quicksort (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \textbf{ Sample\+Value} $\ast$$>$ \&}]{oppneighs,  }\item[{\textbf{ U\+W\+O\+R\+D32} $\ast$}]{distances,  }\item[{unsigned int}]{l,  }\item[{unsigned int}]{r }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classSampleValueAdjacencyList_a10a6341035abc389fbf5e0595e5fb763}} 
+\index{Sample\+Value\+Adjacency\+List@{Sample\+Value\+Adjacency\+List}!sort@{sort}}
+\index{sort@{sort}!Sample\+Value\+Adjacency\+List@{Sample\+Value\+Adjacency\+List}}
+\subsubsection{sort()}
+{\footnotesize\ttfamily void Sample\+Value\+Adjacency\+List\+::sort (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+sort the list in a way that the first entry of a row has the least distance to source sample value \mbox{\label{classSampleValueAdjacencyList_abaae855936fb67e28330326d1a8fd797}} 
+\index{Sample\+Value\+Adjacency\+List@{Sample\+Value\+Adjacency\+List}!swap@{swap}}
+\index{swap@{swap}!Sample\+Value\+Adjacency\+List@{Sample\+Value\+Adjacency\+List}}
+\subsubsection{swap()}
+{\footnotesize\ttfamily void Sample\+Value\+Adjacency\+List\+::swap (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \textbf{ Sample\+Value} $\ast$$>$ \&}]{oppneighs,  }\item[{\textbf{ U\+W\+O\+R\+D32} $\ast$}]{distances,  }\item[{unsigned int}]{i,  }\item[{unsigned int}]{j }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{classSampleValueAdjacencyList_aec4f2087d0e2136dc25d653d468f5e27}} 
+\index{Sample\+Value\+Adjacency\+List@{Sample\+Value\+Adjacency\+List}!Adjacency\+List@{Adjacency\+List}}
+\index{Adjacency\+List@{Adjacency\+List}!Sample\+Value\+Adjacency\+List@{Sample\+Value\+Adjacency\+List}}
+\subsubsection{Adjacency\+List}
+{\footnotesize\ttfamily std\+::vector$<$std\+::vector$<$\textbf{ Sample\+Value}$\ast$$>$ $>$ Sample\+Value\+Adjacency\+List\+::\+Adjacency\+List\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ Sample\+Value\+Adjacency\+List.\+h}\item 
+\textbf{ Sample\+Value\+Adjacency\+List.\+cc}\end{DoxyCompactItemize}

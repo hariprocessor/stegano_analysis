@@ -1,0 +1,246 @@
+\section{Edge Class Reference}
+\label{classEdge}\index{Edge@{Edge}}
+
+
+{\ttfamily \#include $<$Edge.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Edge} (void)
+\item 
+\textbf{ Edge} (\textbf{ Vertex} $\ast$v1, unsigned short idx1, \textbf{ Vertex} $\ast$v2, unsigned short idx2)
+\item 
+\textbf{ Edge} (const \textbf{ Edge} \&e)
+\item 
+\textbf{ Vertex} $\ast$ \textbf{ get\+Vertex1} (void) const
+\item 
+void \textbf{ set\+Vertex1} (\textbf{ Vertex} $\ast$v)
+\item 
+\textbf{ Vertex} $\ast$ \textbf{ get\+Vertex2} (void) const
+\item 
+unsigned short \textbf{ get\+Index1} (void) const
+\item 
+void \textbf{ set\+Index1} (unsigned short i)
+\item 
+unsigned short \textbf{ get\+Index2} (void) const
+\item 
+\textbf{ U\+W\+O\+R\+D32} \textbf{ get\+Weight} (void)
+\item 
+void \textbf{ set} (\textbf{ Vertex} $\ast$v1, unsigned short idx1, \textbf{ Vertex} $\ast$v2, unsigned short idx2)
+\item 
+void \textbf{ set1} (\textbf{ Vertex} $\ast$v1, unsigned short idx1)
+\item 
+void \textbf{ set2} (\textbf{ Vertex} $\ast$v2, unsigned short idx2)
+\item 
+bool \textbf{ operator==} (const \textbf{ Edge} \&e) const
+\item 
+bool \textbf{ operator!=} (const \textbf{ Edge} \&e) const
+\item 
+void \textbf{ swap} (void)
+\item 
+bool \textbf{ contains} (const \textbf{ Vertex} $\ast$v) const
+\item 
+\textbf{ Vertex} $\ast$ \textbf{ get\+Other\+Vertex} (const \textbf{ Vertex} $\ast$v) const
+\item 
+\textbf{ Sample\+Pos} \textbf{ get\+Sample\+Pos} (\textbf{ Vertex} $\ast$v) const
+\item 
+\textbf{ Sample\+Value} $\ast$ \textbf{ get\+Original\+Sample\+Value} (\textbf{ Vertex} $\ast$v) const
+\item 
+\textbf{ Sample\+Value} $\ast$ \textbf{ get\+Replacing\+Sample\+Value} (\textbf{ Vertex} $\ast$v) const
+\item 
+void \textbf{ print} (unsigned short spc=0) const
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Vertex} $\ast$ \textbf{ Vertex1}
+\item 
+unsigned short \textbf{ Index1}
+\begin{DoxyCompactList}\small\item\em contains the index of the sample (of those in Vertex1) that will be changed (if this edge is used) \end{DoxyCompactList}\item 
+\textbf{ Vertex} $\ast$ \textbf{ Vertex2}
+\item 
+unsigned short \textbf{ Index2}
+\begin{DoxyCompactList}\small\item\em contains the index of the sample (of those in Vertex2) that will be changed (if this edge is used) \end{DoxyCompactList}\item 
+\textbf{ U\+W\+O\+R\+D32} \textbf{ Weight}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{classEdge_a45da6ae146df7547a4c7a86603e7a570}} 
+\index{Edge@{Edge}!Edge@{Edge}}
+\index{Edge@{Edge}!Edge@{Edge}}
+\subsubsection{Edge()\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Edge\+::\+Edge (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+default constructor -\/ does not create a useful object \mbox{\label{classEdge_a646d0b1057d6961de70dee774bdef3a4}} 
+\index{Edge@{Edge}!Edge@{Edge}}
+\index{Edge@{Edge}!Edge@{Edge}}
+\subsubsection{Edge()\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Edge\+::\+Edge (\begin{DoxyParamCaption}\item[{\textbf{ Vertex} $\ast$}]{v1,  }\item[{unsigned short}]{idx1,  }\item[{\textbf{ Vertex} $\ast$}]{v2,  }\item[{unsigned short}]{idx2 }\end{DoxyParamCaption})}
+
+constructs an edge object \mbox{\label{classEdge_a70ed9f4d5f93c9cc5273a34361781532}} 
+\index{Edge@{Edge}!Edge@{Edge}}
+\index{Edge@{Edge}!Edge@{Edge}}
+\subsubsection{Edge()\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Edge\+::\+Edge (\begin{DoxyParamCaption}\item[{const \textbf{ Edge} \&}]{e }\end{DoxyParamCaption})}
+
+copy constructor 
+
+\subsection{Member Function Documentation}
+\mbox{\label{classEdge_a382681c66e048bb4bdfbd226db6958de}} 
+\index{Edge@{Edge}!contains@{contains}}
+\index{contains@{contains}!Edge@{Edge}}
+\subsubsection{contains()}
+{\footnotesize\ttfamily bool Edge\+::contains (\begin{DoxyParamCaption}\item[{const \textbf{ Vertex} $\ast$}]{v }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+true iff this edge contains the vertex v 
+\end{DoxyReturn}
+\mbox{\label{classEdge_a10939171ecd22a7839f6986dae97279f}} 
+\index{Edge@{Edge}!get\+Index1@{get\+Index1}}
+\index{get\+Index1@{get\+Index1}!Edge@{Edge}}
+\subsubsection{get\+Index1()}
+{\footnotesize\ttfamily unsigned short Edge\+::get\+Index1 (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classEdge_a2c9cbfe1125d3ca19e36bceed5612dbe}} 
+\index{Edge@{Edge}!get\+Index2@{get\+Index2}}
+\index{get\+Index2@{get\+Index2}!Edge@{Edge}}
+\subsubsection{get\+Index2()}
+{\footnotesize\ttfamily unsigned short Edge\+::get\+Index2 (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classEdge_ac68dfbcc1e393685e9de05237215ae0c}} 
+\index{Edge@{Edge}!get\+Original\+Sample\+Value@{get\+Original\+Sample\+Value}}
+\index{get\+Original\+Sample\+Value@{get\+Original\+Sample\+Value}!Edge@{Edge}}
+\subsubsection{get\+Original\+Sample\+Value()}
+{\footnotesize\ttfamily \textbf{ Sample\+Value} $\ast$ Edge\+::get\+Original\+Sample\+Value (\begin{DoxyParamCaption}\item[{\textbf{ Vertex} $\ast$}]{v }\end{DoxyParamCaption}) const}
+
+get the old sample value that will be replaced to embed the bit represented by the vertex v \mbox{\label{classEdge_a58ed07f0227bcd3cc96782f953c94c0b}} 
+\index{Edge@{Edge}!get\+Other\+Vertex@{get\+Other\+Vertex}}
+\index{get\+Other\+Vertex@{get\+Other\+Vertex}!Edge@{Edge}}
+\subsubsection{get\+Other\+Vertex()}
+{\footnotesize\ttfamily \textbf{ Vertex} $\ast$ Edge\+::get\+Other\+Vertex (\begin{DoxyParamCaption}\item[{const \textbf{ Vertex} $\ast$}]{v }\end{DoxyParamCaption}) const}
+
+get the vertex on this edge that is not equal to v \mbox{\label{classEdge_a63017c10332e6c064134bbab26a27011}} 
+\index{Edge@{Edge}!get\+Replacing\+Sample\+Value@{get\+Replacing\+Sample\+Value}}
+\index{get\+Replacing\+Sample\+Value@{get\+Replacing\+Sample\+Value}!Edge@{Edge}}
+\subsubsection{get\+Replacing\+Sample\+Value()}
+{\footnotesize\ttfamily \textbf{ Sample\+Value} $\ast$ Edge\+::get\+Replacing\+Sample\+Value (\begin{DoxyParamCaption}\item[{\textbf{ Vertex} $\ast$}]{v }\end{DoxyParamCaption}) const}
+
+get the sample value that should replace the previous sample value to embed the bit represented by the vertex v \mbox{\label{classEdge_ae8ada19820ea7633f6b3f5cfad67bff8}} 
+\index{Edge@{Edge}!get\+Sample\+Pos@{get\+Sample\+Pos}}
+\index{get\+Sample\+Pos@{get\+Sample\+Pos}!Edge@{Edge}}
+\subsubsection{get\+Sample\+Pos()}
+{\footnotesize\ttfamily \textbf{ Sample\+Pos} Edge\+::get\+Sample\+Pos (\begin{DoxyParamCaption}\item[{\textbf{ Vertex} $\ast$}]{v }\end{DoxyParamCaption}) const}
+
+get the position of the sample that should be changed to embed the bit represented by the vertex v \mbox{\label{classEdge_a3f5a5ae4404a59f4346f48b497c682ae}} 
+\index{Edge@{Edge}!get\+Vertex1@{get\+Vertex1}}
+\index{get\+Vertex1@{get\+Vertex1}!Edge@{Edge}}
+\subsubsection{get\+Vertex1()}
+{\footnotesize\ttfamily \textbf{ Vertex}$\ast$ Edge\+::get\+Vertex1 (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classEdge_a60a4db1ce179dc036d8398672c9cde90}} 
+\index{Edge@{Edge}!get\+Vertex2@{get\+Vertex2}}
+\index{get\+Vertex2@{get\+Vertex2}!Edge@{Edge}}
+\subsubsection{get\+Vertex2()}
+{\footnotesize\ttfamily \textbf{ Vertex}$\ast$ Edge\+::get\+Vertex2 (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classEdge_ac2da75a813dcd04c2af4da2180418d12}} 
+\index{Edge@{Edge}!get\+Weight@{get\+Weight}}
+\index{get\+Weight@{get\+Weight}!Edge@{Edge}}
+\subsubsection{get\+Weight()}
+{\footnotesize\ttfamily \textbf{ U\+W\+O\+R\+D32} Edge\+::get\+Weight (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\label{classEdge_aad68f2cc1043548996c7ce6f4989a93d}} 
+\index{Edge@{Edge}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!Edge@{Edge}}
+\subsubsection{operator"!=()}
+{\footnotesize\ttfamily bool Edge\+::operator!= (\begin{DoxyParamCaption}\item[{const \textbf{ Edge} \&}]{e }\end{DoxyParamCaption}) const}
+
+\mbox{\label{classEdge_a38c76499b14c3ada34f0b485f6e2a5bb}} 
+\index{Edge@{Edge}!operator==@{operator==}}
+\index{operator==@{operator==}!Edge@{Edge}}
+\subsubsection{operator==()}
+{\footnotesize\ttfamily bool Edge\+::operator== (\begin{DoxyParamCaption}\item[{const \textbf{ Edge} \&}]{e }\end{DoxyParamCaption}) const}
+
+\mbox{\label{classEdge_a49933dc1fe12ca796ae077ea56d39cfb}} 
+\index{Edge@{Edge}!print@{print}}
+\index{print@{print}!Edge@{Edge}}
+\subsubsection{print()}
+{\footnotesize\ttfamily void Edge\+::print (\begin{DoxyParamCaption}\item[{unsigned short}]{spc = {\ttfamily 0} }\end{DoxyParamCaption}) const}
+
+\mbox{\label{classEdge_ad0bc2e13a488d397b66d7bd674672a8e}} 
+\index{Edge@{Edge}!set@{set}}
+\index{set@{set}!Edge@{Edge}}
+\subsubsection{set()}
+{\footnotesize\ttfamily void Edge\+::set (\begin{DoxyParamCaption}\item[{\textbf{ Vertex} $\ast$}]{v1,  }\item[{unsigned short}]{idx1,  }\item[{\textbf{ Vertex} $\ast$}]{v2,  }\item[{unsigned short}]{idx2 }\end{DoxyParamCaption})}
+
+\mbox{\label{classEdge_a058438cf83e35b0ea6322ff8e5e3eefb}} 
+\index{Edge@{Edge}!set1@{set1}}
+\index{set1@{set1}!Edge@{Edge}}
+\subsubsection{set1()}
+{\footnotesize\ttfamily void Edge\+::set1 (\begin{DoxyParamCaption}\item[{\textbf{ Vertex} $\ast$}]{v1,  }\item[{unsigned short}]{idx1 }\end{DoxyParamCaption})}
+
+\mbox{\label{classEdge_a08854a9139fead445d8a6ddb34dfa172}} 
+\index{Edge@{Edge}!set2@{set2}}
+\index{set2@{set2}!Edge@{Edge}}
+\subsubsection{set2()}
+{\footnotesize\ttfamily void Edge\+::set2 (\begin{DoxyParamCaption}\item[{\textbf{ Vertex} $\ast$}]{v2,  }\item[{unsigned short}]{idx2 }\end{DoxyParamCaption})}
+
+\mbox{\label{classEdge_a50d59e065b66696d25ae54427a40ea1e}} 
+\index{Edge@{Edge}!set\+Index1@{set\+Index1}}
+\index{set\+Index1@{set\+Index1}!Edge@{Edge}}
+\subsubsection{set\+Index1()}
+{\footnotesize\ttfamily void Edge\+::set\+Index1 (\begin{DoxyParamCaption}\item[{unsigned short}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classEdge_a92c7a9a5a34934d0a9618a64db6ff0d3}} 
+\index{Edge@{Edge}!set\+Vertex1@{set\+Vertex1}}
+\index{set\+Vertex1@{set\+Vertex1}!Edge@{Edge}}
+\subsubsection{set\+Vertex1()}
+{\footnotesize\ttfamily void Edge\+::set\+Vertex1 (\begin{DoxyParamCaption}\item[{\textbf{ Vertex} $\ast$}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classEdge_add513e10480eb84ae2398033e716e9df}} 
+\index{Edge@{Edge}!swap@{swap}}
+\index{swap@{swap}!Edge@{Edge}}
+\subsubsection{swap()}
+{\footnotesize\ttfamily void Edge\+::swap (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+swap vertices 1 and 2 in this edge (weight is not altered) 
+
+\subsection{Member Data Documentation}
+\mbox{\label{classEdge_ab6f50ba5af2cff33b4be0af543289c70}} 
+\index{Edge@{Edge}!Index1@{Index1}}
+\index{Index1@{Index1}!Edge@{Edge}}
+\subsubsection{Index1}
+{\footnotesize\ttfamily unsigned short Edge\+::\+Index1\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classEdge_a7622b443cd056a4bcb4daec77aa418f2}} 
+\index{Edge@{Edge}!Index2@{Index2}}
+\index{Index2@{Index2}!Edge@{Edge}}
+\subsubsection{Index2}
+{\footnotesize\ttfamily unsigned short Edge\+::\+Index2\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classEdge_a1aae91fda044302e3a198d04db545477}} 
+\index{Edge@{Edge}!Vertex1@{Vertex1}}
+\index{Vertex1@{Vertex1}!Edge@{Edge}}
+\subsubsection{Vertex1}
+{\footnotesize\ttfamily \textbf{ Vertex}$\ast$ Edge\+::\+Vertex1\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classEdge_a64ab838b08888b8c9305fb9a57f0291d}} 
+\index{Edge@{Edge}!Vertex2@{Vertex2}}
+\index{Vertex2@{Vertex2}!Edge@{Edge}}
+\subsubsection{Vertex2}
+{\footnotesize\ttfamily \textbf{ Vertex}$\ast$ Edge\+::\+Vertex2\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classEdge_a9aa7a0c6a76f8b360f96ab564603b9c5}} 
+\index{Edge@{Edge}!Weight@{Weight}}
+\index{Weight@{Weight}!Edge@{Edge}}
+\subsubsection{Weight}
+{\footnotesize\ttfamily \textbf{ U\+W\+O\+R\+D32} Edge\+::\+Weight\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ Edge.\+h}\item 
+\textbf{ Edge.\+cc}\end{DoxyCompactItemize}

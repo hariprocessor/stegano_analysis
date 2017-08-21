@@ -1,0 +1,29 @@
+\section{D\+F\+S\+A\+P\+Heuristic.\+cc File Reference}
+\label{DFSAPHeuristic_8cc}\index{D\+F\+S\+A\+P\+Heuristic.\+cc@{D\+F\+S\+A\+P\+Heuristic.\+cc}}
+{\ttfamily \#include \char`\"{}D\+F\+S\+A\+P\+Heuristic.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Edge.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Edge\+Iterator.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Graph.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Matching.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}common.\+h\char`\"{}}\newline
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \textbf{ push\+On\+Path}(E\+D\+GE)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\label{DFSAPHeuristic_8cc_a7d1618ffd86e73ed7df2c8f92df7b38b}} 
+\index{D\+F\+S\+A\+P\+Heuristic.\+cc@{D\+F\+S\+A\+P\+Heuristic.\+cc}!push\+On\+Path@{push\+On\+Path}}
+\index{push\+On\+Path@{push\+On\+Path}!D\+F\+S\+A\+P\+Heuristic.\+cc@{D\+F\+S\+A\+P\+Heuristic.\+cc}}
+\subsubsection{push\+On\+Path}
+{\footnotesize\ttfamily \#define push\+On\+Path(\begin{DoxyParamCaption}\item[{}]{E\+D\+GE }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+path[pathlen] = EDGE ; \(\backslash\)
+pathlen++ ; \(\backslash\)
+VertexOnPath[EDGE->getVertex1()->getLabel()] = true ; \(\backslash\)
+VertexOnPath[EDGE->getVertex2()->getLabel()] = true ;
+\end{DoxyCode}

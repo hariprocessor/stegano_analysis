@@ -1,0 +1,76 @@
+.TH "Embedder" 3 "Thu Aug 17 2017" "Version 0.5.1" "steghide" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Embedder
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Embedder\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBEmbedder\fP (void)"
+.br
+.ti -1c
+.RI "\fB~Embedder\fP (void)"
+.br
+.ti -1c
+.RI "void \fBembed\fP (void)"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "const \fBMatching\fP * \fBcalculateMatching\fP (\fBProgressOutput\fP *prout)"
+.br
+.ti -1c
+.RI "void \fBembedEdge\fP (\fBEdge\fP *e)"
+.br
+.ti -1c
+.RI "void \fBembedExposedVertex\fP (\fBVertex\fP *v)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBBitString\fP \fBToEmbed\fP"
+.br
+.in -1c
+.SS "Static Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "static const unsigned int \fBDefault_NConstrHeur\fP = 1"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Embedder::Embedder (void)"
+
+.SS "Embedder::~Embedder (void)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "const \fBMatching\fP * Embedder::calculateMatching (\fBProgressOutput\fP * prout)\fC [private]\fP"
+do the matching algorithms 
+.SS "void Embedder::embed (void)"
+
+.SS "void Embedder::embedEdge (\fBEdge\fP * e)\fC [private]\fP"
+embed the two bits represented by the two vertices adjacent to e 
+.SS "void Embedder::embedExposedVertex (\fBVertex\fP * v)\fC [private]\fP"
+embed the bit represented by the \fBVertex\fP v 
+.SH "Member Data Documentation"
+.PP 
+.SS "const unsigned int Embedder::Default_NConstrHeur = 1\fC [static]\fP, \fC [private]\fP"
+
+.SS "\fBBitString\fP Embedder::ToEmbed\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for steghide from the source code\&.

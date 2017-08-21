@@ -1,0 +1,194 @@
+\section{D\+F\+S\+A\+P\+Heuristic Class Reference}
+\label{classDFSAPHeuristic}\index{D\+F\+S\+A\+P\+Heuristic@{D\+F\+S\+A\+P\+Heuristic}}
+
+
+a matching algorithm implementing a heuristic search for augmenting paths  
+
+
+
+
+{\ttfamily \#include $<$D\+F\+S\+A\+P\+Heuristic.\+h$>$}
+
+Inheritance diagram for D\+F\+S\+A\+P\+Heuristic\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classDFSAPHeuristic}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ D\+F\+S\+A\+P\+Heuristic} (\textbf{ Graph} $\ast$g, \textbf{ Matching} $\ast$m, float goal=100.\+0, \textbf{ U\+W\+O\+R\+D32} mne=\textbf{ U\+W\+O\+R\+D32\+\_\+\+M\+AX}, \textbf{ Edge\+Iterator\+::\+I\+T\+E\+R\+A\+T\+I\+O\+N\+M\+O\+DE} mo=\textbf{ Edge\+Iterator\+::\+S\+A\+M\+P\+L\+E\+O\+C\+C\+U\+R\+E\+N\+CE})
+\item 
+virtual \textbf{ $\sim$\+D\+F\+S\+A\+P\+Heuristic} (void)
+\item 
+const char $\ast$ \textbf{ get\+Name} (void) const
+\item 
+void \textbf{ reset} (\textbf{ U\+W\+O\+R\+D32} mne=\textbf{ U\+W\+O\+R\+D32\+\_\+\+M\+AX}, \textbf{ Edge\+Iterator\+::\+I\+T\+E\+R\+A\+T\+I\+O\+N\+M\+O\+DE} mo=\textbf{ Edge\+Iterator\+::\+S\+A\+M\+P\+L\+E\+O\+C\+C\+U\+R\+E\+N\+CE})
+\item 
+void \textbf{ run} (void)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+unsigned long \textbf{ search\+Augmenting\+Path} (\textbf{ Vertex} $\ast$v0, const \textbf{ Edge} $\ast$$\ast$path)
+\item 
+const \textbf{ Edge} $\ast$ \textbf{ get\+Next\+Edge} (\textbf{ Vertex} $\ast$v)
+\item 
+void \textbf{ mark\+Visited} (\textbf{ Vertex} $\ast$v)
+\item 
+bool \textbf{ is\+Visited} (\textbf{ Vertex} $\ast$v) const
+\item 
+bool \textbf{ is\+Visited} (\textbf{ Vertex\+Label} vlbl) const
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ U\+W\+O\+R\+D32} \textbf{ Time\+Counter}
+\item 
+\textbf{ U\+W\+O\+R\+D32} $\ast$ \textbf{ Time\+Counters}
+\item 
+bool $\ast$ \textbf{ Vertex\+On\+Path}
+\item 
+\textbf{ Edge\+Iterator} $\ast$ \textbf{ Edge\+Iterators}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+This class implements the heuristic augmenting path search presented by Rolf H. Moehring and Matthias Mueller-\/\+Hannemann in their paper\+: \char`\"{}\+Cardinality
+\+Matching\+: Heuristic Search for Augmenting Paths\char`\"{}. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{classDFSAPHeuristic_ab0d70281dd13170430076bb6bf7e6d9d}} 
+\index{D\+F\+S\+A\+P\+Heuristic@{D\+F\+S\+A\+P\+Heuristic}!D\+F\+S\+A\+P\+Heuristic@{D\+F\+S\+A\+P\+Heuristic}}
+\index{D\+F\+S\+A\+P\+Heuristic@{D\+F\+S\+A\+P\+Heuristic}!D\+F\+S\+A\+P\+Heuristic@{D\+F\+S\+A\+P\+Heuristic}}
+\subsubsection{D\+F\+S\+A\+P\+Heuristic()}
+{\footnotesize\ttfamily D\+F\+S\+A\+P\+Heuristic\+::\+D\+F\+S\+A\+P\+Heuristic (\begin{DoxyParamCaption}\item[{\textbf{ Graph} $\ast$}]{g,  }\item[{\textbf{ Matching} $\ast$}]{m,  }\item[{float}]{goal = {\ttfamily 100.0},  }\item[{\textbf{ U\+W\+O\+R\+D32}}]{mne = {\ttfamily \textbf{ U\+W\+O\+R\+D32\+\_\+\+M\+AX}},  }\item[{\textbf{ Edge\+Iterator\+::\+I\+T\+E\+R\+A\+T\+I\+O\+N\+M\+O\+DE}}]{mo = {\ttfamily \textbf{ Edge\+Iterator\+::\+S\+A\+M\+P\+L\+E\+O\+C\+C\+U\+R\+E\+N\+CE}} }\end{DoxyParamCaption})}
+
+construct an \doxyref{D\+F\+S\+A\+P\+Heuristic}{p.}{classDFSAPHeuristic} object 
+\begin{DoxyParams}{Parameters}
+{\em g} & the graph on which this heuristic should run \\
+\hline
+{\em m} & the matching to start with \\
+\hline
+{\em goal} & the percentage of matched vertices that should be reached \\
+\hline
+{\em mne} & the maximum number of edges that should be considered for every vertex \\
+\hline
+{\em mo} & the mode for edge iteration \\
+\hline
+\end{DoxyParams}
+\mbox{\label{classDFSAPHeuristic_a995ea2e59f6b27143da1efa3799c68f4}} 
+\index{D\+F\+S\+A\+P\+Heuristic@{D\+F\+S\+A\+P\+Heuristic}!````~D\+F\+S\+A\+P\+Heuristic@{$\sim$\+D\+F\+S\+A\+P\+Heuristic}}
+\index{````~D\+F\+S\+A\+P\+Heuristic@{$\sim$\+D\+F\+S\+A\+P\+Heuristic}!D\+F\+S\+A\+P\+Heuristic@{D\+F\+S\+A\+P\+Heuristic}}
+\subsubsection{$\sim$\+D\+F\+S\+A\+P\+Heuristic()}
+{\footnotesize\ttfamily D\+F\+S\+A\+P\+Heuristic\+::$\sim$\+D\+F\+S\+A\+P\+Heuristic (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{classDFSAPHeuristic_afd3814466a9968e66558451ae0a0c611}} 
+\index{D\+F\+S\+A\+P\+Heuristic@{D\+F\+S\+A\+P\+Heuristic}!get\+Name@{get\+Name}}
+\index{get\+Name@{get\+Name}!D\+F\+S\+A\+P\+Heuristic@{D\+F\+S\+A\+P\+Heuristic}}
+\subsubsection{get\+Name()}
+{\footnotesize\ttfamily const char$\ast$ D\+F\+S\+A\+P\+Heuristic\+::get\+Name (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \textbf{ Matching\+Algorithm} \doxyref{}{p.}{classMatchingAlgorithm_a7305edae5d74e91987bcf983b2a1171a}.
+
+\mbox{\label{classDFSAPHeuristic_a8fbae63f1ab832aacf5c432e1270589e}} 
+\index{D\+F\+S\+A\+P\+Heuristic@{D\+F\+S\+A\+P\+Heuristic}!get\+Next\+Edge@{get\+Next\+Edge}}
+\index{get\+Next\+Edge@{get\+Next\+Edge}!D\+F\+S\+A\+P\+Heuristic@{D\+F\+S\+A\+P\+Heuristic}}
+\subsubsection{get\+Next\+Edge()}
+{\footnotesize\ttfamily const \textbf{ Edge} $\ast$ D\+F\+S\+A\+P\+Heuristic\+::get\+Next\+Edge (\begin{DoxyParamCaption}\item[{\textbf{ Vertex} $\ast$}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classDFSAPHeuristic_ac1c192383aba7c0ad8035bb0458825bd}} 
+\index{D\+F\+S\+A\+P\+Heuristic@{D\+F\+S\+A\+P\+Heuristic}!is\+Visited@{is\+Visited}}
+\index{is\+Visited@{is\+Visited}!D\+F\+S\+A\+P\+Heuristic@{D\+F\+S\+A\+P\+Heuristic}}
+\subsubsection{is\+Visited()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool D\+F\+S\+A\+P\+Heuristic\+::is\+Visited (\begin{DoxyParamCaption}\item[{\textbf{ Vertex} $\ast$}]{v }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+returns true iff v has already been visited in this iteration, i.\+e. in the current call of search\+Augmenting\+Path \mbox{\label{classDFSAPHeuristic_a6aa7765a5171a9947dfbc7d5ab86ed21}} 
+\index{D\+F\+S\+A\+P\+Heuristic@{D\+F\+S\+A\+P\+Heuristic}!is\+Visited@{is\+Visited}}
+\index{is\+Visited@{is\+Visited}!D\+F\+S\+A\+P\+Heuristic@{D\+F\+S\+A\+P\+Heuristic}}
+\subsubsection{is\+Visited()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool D\+F\+S\+A\+P\+Heuristic\+::is\+Visited (\begin{DoxyParamCaption}\item[{\textbf{ Vertex\+Label}}]{vlbl }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\mbox{\label{classDFSAPHeuristic_a88358a5e013978a2211d6cc94cbc19e8}} 
+\index{D\+F\+S\+A\+P\+Heuristic@{D\+F\+S\+A\+P\+Heuristic}!mark\+Visited@{mark\+Visited}}
+\index{mark\+Visited@{mark\+Visited}!D\+F\+S\+A\+P\+Heuristic@{D\+F\+S\+A\+P\+Heuristic}}
+\subsubsection{mark\+Visited()}
+{\footnotesize\ttfamily void D\+F\+S\+A\+P\+Heuristic\+::mark\+Visited (\begin{DoxyParamCaption}\item[{\textbf{ Vertex} $\ast$}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\mbox{\label{classDFSAPHeuristic_aa32cf73dfea46c56170ab93d038aa1bb}} 
+\index{D\+F\+S\+A\+P\+Heuristic@{D\+F\+S\+A\+P\+Heuristic}!reset@{reset}}
+\index{reset@{reset}!D\+F\+S\+A\+P\+Heuristic@{D\+F\+S\+A\+P\+Heuristic}}
+\subsubsection{reset()}
+{\footnotesize\ttfamily void D\+F\+S\+A\+P\+Heuristic\+::reset (\begin{DoxyParamCaption}\item[{\textbf{ U\+W\+O\+R\+D32}}]{mne = {\ttfamily \textbf{ U\+W\+O\+R\+D32\+\_\+\+M\+AX}},  }\item[{\textbf{ Edge\+Iterator\+::\+I\+T\+E\+R\+A\+T\+I\+O\+N\+M\+O\+DE}}]{mo = {\ttfamily \textbf{ Edge\+Iterator\+::\+S\+A\+M\+P\+L\+E\+O\+C\+C\+U\+R\+E\+N\+CE}} }\end{DoxyParamCaption})}
+
+reset the state of this \doxyref{D\+F\+S\+A\+P\+Heuristic}{p.}{classDFSAPHeuristic}, esp. the Edge\+Iterators 
+\begin{DoxyParams}{Parameters}
+{\em mne} & the maximum number of edges that should be considered for every vertex for now on \\
+\hline
+\end{DoxyParams}
+\mbox{\label{classDFSAPHeuristic_a6be8de5d724975d145500fc7a1f12198}} 
+\index{D\+F\+S\+A\+P\+Heuristic@{D\+F\+S\+A\+P\+Heuristic}!run@{run}}
+\index{run@{run}!D\+F\+S\+A\+P\+Heuristic@{D\+F\+S\+A\+P\+Heuristic}}
+\subsubsection{run()}
+{\footnotesize\ttfamily void D\+F\+S\+A\+P\+Heuristic\+::run (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \textbf{ Matching\+Algorithm} \doxyref{}{p.}{classMatchingAlgorithm_aeea6c808daf03fd788c9a9feea885c41}.
+
+\mbox{\label{classDFSAPHeuristic_a2046bacf3bdd3468cd5732bb7544a090}} 
+\index{D\+F\+S\+A\+P\+Heuristic@{D\+F\+S\+A\+P\+Heuristic}!search\+Augmenting\+Path@{search\+Augmenting\+Path}}
+\index{search\+Augmenting\+Path@{search\+Augmenting\+Path}!D\+F\+S\+A\+P\+Heuristic@{D\+F\+S\+A\+P\+Heuristic}}
+\subsubsection{search\+Augmenting\+Path()}
+{\footnotesize\ttfamily unsigned long D\+F\+S\+A\+P\+Heuristic\+::search\+Augmenting\+Path (\begin{DoxyParamCaption}\item[{\textbf{ Vertex} $\ast$}]{v0,  }\item[{const \textbf{ Edge} $\ast$$\ast$}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em v0} & an exposed vertex \\
+\hline
+{\em path} & an array of \doxyref{Edge}{p.}{classEdge} pointers where the path will be put \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the length of the path (the number of valid edges in path) 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{classDFSAPHeuristic_aa31f7a99d7771193e274d962c2841a2c}} 
+\index{D\+F\+S\+A\+P\+Heuristic@{D\+F\+S\+A\+P\+Heuristic}!Edge\+Iterators@{Edge\+Iterators}}
+\index{Edge\+Iterators@{Edge\+Iterators}!D\+F\+S\+A\+P\+Heuristic@{D\+F\+S\+A\+P\+Heuristic}}
+\subsubsection{Edge\+Iterators}
+{\footnotesize\ttfamily \textbf{ Edge\+Iterator}$\ast$ D\+F\+S\+A\+P\+Heuristic\+::\+Edge\+Iterators\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classDFSAPHeuristic_a58332cda0fbc79a94ff15b2715cdb59e}} 
+\index{D\+F\+S\+A\+P\+Heuristic@{D\+F\+S\+A\+P\+Heuristic}!Time\+Counter@{Time\+Counter}}
+\index{Time\+Counter@{Time\+Counter}!D\+F\+S\+A\+P\+Heuristic@{D\+F\+S\+A\+P\+Heuristic}}
+\subsubsection{Time\+Counter}
+{\footnotesize\ttfamily \textbf{ U\+W\+O\+R\+D32} D\+F\+S\+A\+P\+Heuristic\+::\+Time\+Counter\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classDFSAPHeuristic_aef8179c11e9f17f0499281ff4ea04a57}} 
+\index{D\+F\+S\+A\+P\+Heuristic@{D\+F\+S\+A\+P\+Heuristic}!Time\+Counters@{Time\+Counters}}
+\index{Time\+Counters@{Time\+Counters}!D\+F\+S\+A\+P\+Heuristic@{D\+F\+S\+A\+P\+Heuristic}}
+\subsubsection{Time\+Counters}
+{\footnotesize\ttfamily \textbf{ U\+W\+O\+R\+D32}$\ast$ D\+F\+S\+A\+P\+Heuristic\+::\+Time\+Counters\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classDFSAPHeuristic_a25fe18d2559609eab338ab4c2fffd9fc}} 
+\index{D\+F\+S\+A\+P\+Heuristic@{D\+F\+S\+A\+P\+Heuristic}!Vertex\+On\+Path@{Vertex\+On\+Path}}
+\index{Vertex\+On\+Path@{Vertex\+On\+Path}!D\+F\+S\+A\+P\+Heuristic@{D\+F\+S\+A\+P\+Heuristic}}
+\subsubsection{Vertex\+On\+Path}
+{\footnotesize\ttfamily bool$\ast$ D\+F\+S\+A\+P\+Heuristic\+::\+Vertex\+On\+Path\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ D\+F\+S\+A\+P\+Heuristic.\+h}\item 
+\textbf{ D\+F\+S\+A\+P\+Heuristic.\+cc}\end{DoxyCompactItemize}

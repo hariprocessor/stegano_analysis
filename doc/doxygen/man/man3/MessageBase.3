@@ -1,0 +1,122 @@
+.TH "MessageBase" 3 "Thu Aug 17 2017" "Version 0.5.1" "steghide" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MessageBase
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <msg\&.h>\fP
+.PP
+Inherited by \fBCriticalWarning\fP, \fBMessage\fP, \fBQuestion\fP, \fBSteghideError\fP, \fBVerboseMessage\fP, and \fBWarning\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMessageBase\fP (void)"
+.br
+.ti -1c
+.RI "\fBMessageBase\fP (std::string msg)"
+.br
+.ti -1c
+.RI "\fBMessageBase\fP (const char *msgfmt,\&.\&.\&.)"
+.br
+.ti -1c
+.RI "virtual \fB~MessageBase\fP ()"
+.br
+.ti -1c
+.RI "const std::string & \fBgetMessage\fP (void) const"
+.br
+.ti -1c
+.RI "void \fBsetMessage\fP (std::string msg)"
+.br
+.ti -1c
+.RI "void \fBsetNewline\fP (bool prnl)"
+.br
+.ti -1c
+.RI "const std::string \fBgetNewline\fP (void) const"
+.br
+.ti -1c
+.RI "void \fBsetMessage\fP (const char *msgfmt,\&.\&.\&.)"
+.br
+.ti -1c
+.RI "virtual void \fBprintMessage\fP (void) const =0"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "std::string \fBcompose\fP (const char *msgfmt,\&.\&.\&.) const"
+.br
+.ti -1c
+.RI "std::string \fBvcompose\fP (const char *msgfmt, va_list ap) const"
+.br
+.in -1c
+.SS "Static Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "static const unsigned int \fBMsgMaxSize\fP = 512"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::string \fBMessage\fP"
+.br
+.ti -1c
+.RI "bool \fBNewline\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "MessageBase::MessageBase (void)"
+
+.SS "MessageBase::MessageBase (std::string msg)"
+
+.SS "MessageBase::MessageBase (const char * msgfmt,  \&.\&.\&.)"
+
+.SS "virtual MessageBase::~MessageBase ()\fC [inline]\fP, \fC [virtual]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "std::string MessageBase::compose (const char * msgfmt,  \&.\&.\&.) const\fC [protected]\fP"
+
+.SS "const std::string& MessageBase::getMessage (void) const\fC [inline]\fP"
+
+.SS "const std::string MessageBase::getNewline (void) const\fC [inline]\fP"
+return either '\\n' or '' depending on wether this message should be followed by a newline or not 
+.SS "virtual void MessageBase::printMessage (void) const\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBQuestion\fP, \fBCriticalWarning\fP, \fBWarning\fP, \fBCorruptDataError\fP, \fBVerboseMessage\fP, \fBNotImplementedError\fP, \fBMessage\fP, \fBArgError\fP, \fBSteghideError\fP, and \fBAssertionFailed\fP\&.
+.SS "void MessageBase::setMessage (std::string msg)\fC [inline]\fP"
+
+.SS "void MessageBase::setMessage (const char * msgfmt,  \&.\&.\&.)"
+
+.SS "void MessageBase::setNewline (bool prnl)\fC [inline]\fP"
+toggle newline printing on/off 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIprnl\fP wether to print a newline character after the message 
+.RE
+.PP
+
+.SS "std::string MessageBase::vcompose (const char * msgfmt, va_list ap) const\fC [protected]\fP"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "std::string MessageBase::Message\fC [private]\fP"
+
+.SS "const unsigned int MessageBase::MsgMaxSize = 512\fC [static]\fP, \fC [protected]\fP"
+
+.SS "bool MessageBase::Newline\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for steghide from the source code\&.

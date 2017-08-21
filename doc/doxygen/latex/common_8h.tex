@@ -1,0 +1,250 @@
+\section{common.\+h File Reference}
+\label{common_8h}\index{common.\+h@{common.\+h}}
+{\ttfamily \#include \char`\"{}gettext.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Globals.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Assertion\+Failed.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include \char`\"{}Arguments.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Random\+Source.\+h\char`\"{}}\newline
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \textbf{ U\+W\+O\+R\+D32\+\_\+\+M\+AX}~0x\+F\+F\+F\+F\+F\+F\+F\+F\+UL
+\item 
+\#define \textbf{ U\+W\+O\+R\+D16\+\_\+\+M\+AX}~0x\+F\+F\+FF
+\item 
+\#define \textbf{ B\+Y\+T\+E\+\_\+\+M\+AX}~0x\+FF
+\item 
+\#define \textbf{ S\+W\+O\+R\+D32\+\_\+\+M\+IN}~-\/2147483647 -\/ 1
+\item 
+\#define \textbf{ S\+W\+O\+R\+D32\+\_\+\+M\+AX}~2147483647
+\item 
+\#define \textbf{ S\+W\+O\+R\+D16\+\_\+\+M\+IN}~-\/32768
+\item 
+\#define \textbf{ S\+W\+O\+R\+D16\+\_\+\+M\+AX}~32767
+\item 
+\#define \textbf{ S\+B\+Y\+T\+E\+\_\+\+M\+IN}~-\/128
+\item 
+\#define \textbf{ S\+B\+Y\+T\+E\+\_\+\+M\+AX}~127
+\item 
+\#define \textbf{ S\+A\+M\+P\+L\+E\+K\+E\+Y\+\_\+\+M\+AX}~\textbf{ U\+W\+O\+R\+D32\+\_\+\+M\+AX}
+\item 
+\#define \textbf{ V\+E\+R\+T\+E\+X\+L\+A\+B\+E\+L\+\_\+\+M\+AX}~\textbf{ U\+W\+O\+R\+D32\+\_\+\+M\+AX}
+\item 
+\#define \textbf{ \+\_\+}(S)~\textbf{ gettext} (S)
+\item 
+\#define \textbf{ myassert}(expr)~if (!(expr)) throw \textbf{ Assertion\+Failed} (\+\_\+\+\_\+\+F\+I\+L\+E\+\_\+\+\_\+, \+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+)
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef unsigned long \textbf{ U\+W\+O\+R\+D32}
+\item 
+typedef unsigned short \textbf{ U\+W\+O\+R\+D16}
+\item 
+typedef unsigned char \textbf{ B\+Y\+TE}
+\item 
+typedef long \textbf{ S\+W\+O\+R\+D32}
+\item 
+typedef short \textbf{ S\+W\+O\+R\+D16}
+\item 
+typedef char \textbf{ S\+B\+Y\+TE}
+\item 
+typedef bool \textbf{ B\+IT}
+\item 
+typedef \textbf{ B\+Y\+TE} \textbf{ Emb\+Value}
+\item 
+typedef \textbf{ U\+W\+O\+R\+D32} \textbf{ Sample\+Pos}
+\item 
+typedef \textbf{ U\+W\+O\+R\+D32} \textbf{ Vertex\+Label}
+\item 
+typedef \textbf{ U\+W\+O\+R\+D32} \textbf{ Sample\+Value\+Label}
+\item 
+typedef \textbf{ U\+W\+O\+R\+D32} \textbf{ Sample\+Key}
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Globals} \textbf{ Globs}
+\item 
+\textbf{ Arguments} \textbf{ Args}
+\item 
+\textbf{ Random\+Source} \textbf{ Rnd\+Src}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\label{common_8h_aa06e91c029ac29220c178c21e259f640}} 
+\index{common.\+h@{common.\+h}!\+\_\+@{\+\_\+}}
+\index{\+\_\+@{\+\_\+}!common.\+h@{common.\+h}}
+\subsubsection{\+\_\+}
+{\footnotesize\ttfamily \#define \+\_\+(\begin{DoxyParamCaption}\item[{}]{S }\end{DoxyParamCaption})~\textbf{ gettext} (S)}
+
+\mbox{\label{common_8h_ac9e7264518a2ef08d338c7913ee72b9f}} 
+\index{common.\+h@{common.\+h}!B\+Y\+T\+E\+\_\+\+M\+AX@{B\+Y\+T\+E\+\_\+\+M\+AX}}
+\index{B\+Y\+T\+E\+\_\+\+M\+AX@{B\+Y\+T\+E\+\_\+\+M\+AX}!common.\+h@{common.\+h}}
+\subsubsection{B\+Y\+T\+E\+\_\+\+M\+AX}
+{\footnotesize\ttfamily \#define B\+Y\+T\+E\+\_\+\+M\+AX~0x\+FF}
+
+\mbox{\label{common_8h_ad831915bc375efb1fab423abe2d0237a}} 
+\index{common.\+h@{common.\+h}!myassert@{myassert}}
+\index{myassert@{myassert}!common.\+h@{common.\+h}}
+\subsubsection{myassert}
+{\footnotesize\ttfamily \#define myassert(\begin{DoxyParamCaption}\item[{}]{expr }\end{DoxyParamCaption})~if (!(expr)) throw \textbf{ Assertion\+Failed} (\+\_\+\+\_\+\+F\+I\+L\+E\+\_\+\+\_\+, \+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+)}
+
+\mbox{\label{common_8h_a270c6085d202ed6bad94c99c398317d0}} 
+\index{common.\+h@{common.\+h}!S\+A\+M\+P\+L\+E\+K\+E\+Y\+\_\+\+M\+AX@{S\+A\+M\+P\+L\+E\+K\+E\+Y\+\_\+\+M\+AX}}
+\index{S\+A\+M\+P\+L\+E\+K\+E\+Y\+\_\+\+M\+AX@{S\+A\+M\+P\+L\+E\+K\+E\+Y\+\_\+\+M\+AX}!common.\+h@{common.\+h}}
+\subsubsection{S\+A\+M\+P\+L\+E\+K\+E\+Y\+\_\+\+M\+AX}
+{\footnotesize\ttfamily \#define S\+A\+M\+P\+L\+E\+K\+E\+Y\+\_\+\+M\+AX~\textbf{ U\+W\+O\+R\+D32\+\_\+\+M\+AX}}
+
+\mbox{\label{common_8h_a1754a0cae08744c1094e943f71fadc60}} 
+\index{common.\+h@{common.\+h}!S\+B\+Y\+T\+E\+\_\+\+M\+AX@{S\+B\+Y\+T\+E\+\_\+\+M\+AX}}
+\index{S\+B\+Y\+T\+E\+\_\+\+M\+AX@{S\+B\+Y\+T\+E\+\_\+\+M\+AX}!common.\+h@{common.\+h}}
+\subsubsection{S\+B\+Y\+T\+E\+\_\+\+M\+AX}
+{\footnotesize\ttfamily \#define S\+B\+Y\+T\+E\+\_\+\+M\+AX~127}
+
+\mbox{\label{common_8h_a79aa685bb065079af9341bf55c1e808e}} 
+\index{common.\+h@{common.\+h}!S\+B\+Y\+T\+E\+\_\+\+M\+IN@{S\+B\+Y\+T\+E\+\_\+\+M\+IN}}
+\index{S\+B\+Y\+T\+E\+\_\+\+M\+IN@{S\+B\+Y\+T\+E\+\_\+\+M\+IN}!common.\+h@{common.\+h}}
+\subsubsection{S\+B\+Y\+T\+E\+\_\+\+M\+IN}
+{\footnotesize\ttfamily \#define S\+B\+Y\+T\+E\+\_\+\+M\+IN~-\/128}
+
+\mbox{\label{common_8h_a392fa581b30a37135810da0d0df642b9}} 
+\index{common.\+h@{common.\+h}!S\+W\+O\+R\+D16\+\_\+\+M\+AX@{S\+W\+O\+R\+D16\+\_\+\+M\+AX}}
+\index{S\+W\+O\+R\+D16\+\_\+\+M\+AX@{S\+W\+O\+R\+D16\+\_\+\+M\+AX}!common.\+h@{common.\+h}}
+\subsubsection{S\+W\+O\+R\+D16\+\_\+\+M\+AX}
+{\footnotesize\ttfamily \#define S\+W\+O\+R\+D16\+\_\+\+M\+AX~32767}
+
+\mbox{\label{common_8h_a2ca8cf0e5c4acfc9c4e80b46bc0a3035}} 
+\index{common.\+h@{common.\+h}!S\+W\+O\+R\+D16\+\_\+\+M\+IN@{S\+W\+O\+R\+D16\+\_\+\+M\+IN}}
+\index{S\+W\+O\+R\+D16\+\_\+\+M\+IN@{S\+W\+O\+R\+D16\+\_\+\+M\+IN}!common.\+h@{common.\+h}}
+\subsubsection{S\+W\+O\+R\+D16\+\_\+\+M\+IN}
+{\footnotesize\ttfamily \#define S\+W\+O\+R\+D16\+\_\+\+M\+IN~-\/32768}
+
+\mbox{\label{common_8h_a132f802946c8d705317e16f10be9b26a}} 
+\index{common.\+h@{common.\+h}!S\+W\+O\+R\+D32\+\_\+\+M\+AX@{S\+W\+O\+R\+D32\+\_\+\+M\+AX}}
+\index{S\+W\+O\+R\+D32\+\_\+\+M\+AX@{S\+W\+O\+R\+D32\+\_\+\+M\+AX}!common.\+h@{common.\+h}}
+\subsubsection{S\+W\+O\+R\+D32\+\_\+\+M\+AX}
+{\footnotesize\ttfamily \#define S\+W\+O\+R\+D32\+\_\+\+M\+AX~2147483647}
+
+\mbox{\label{common_8h_aae27796b9762429c4bf068b5a0eb9874}} 
+\index{common.\+h@{common.\+h}!S\+W\+O\+R\+D32\+\_\+\+M\+IN@{S\+W\+O\+R\+D32\+\_\+\+M\+IN}}
+\index{S\+W\+O\+R\+D32\+\_\+\+M\+IN@{S\+W\+O\+R\+D32\+\_\+\+M\+IN}!common.\+h@{common.\+h}}
+\subsubsection{S\+W\+O\+R\+D32\+\_\+\+M\+IN}
+{\footnotesize\ttfamily \#define S\+W\+O\+R\+D32\+\_\+\+M\+IN~-\/2147483647 -\/ 1}
+
+\mbox{\label{common_8h_ab23648022300c19843bd93b06d639b2e}} 
+\index{common.\+h@{common.\+h}!U\+W\+O\+R\+D16\+\_\+\+M\+AX@{U\+W\+O\+R\+D16\+\_\+\+M\+AX}}
+\index{U\+W\+O\+R\+D16\+\_\+\+M\+AX@{U\+W\+O\+R\+D16\+\_\+\+M\+AX}!common.\+h@{common.\+h}}
+\subsubsection{U\+W\+O\+R\+D16\+\_\+\+M\+AX}
+{\footnotesize\ttfamily \#define U\+W\+O\+R\+D16\+\_\+\+M\+AX~0x\+F\+F\+FF}
+
+\mbox{\label{common_8h_a7c5e1100effed542218f9eff1db76b6a}} 
+\index{common.\+h@{common.\+h}!U\+W\+O\+R\+D32\+\_\+\+M\+AX@{U\+W\+O\+R\+D32\+\_\+\+M\+AX}}
+\index{U\+W\+O\+R\+D32\+\_\+\+M\+AX@{U\+W\+O\+R\+D32\+\_\+\+M\+AX}!common.\+h@{common.\+h}}
+\subsubsection{U\+W\+O\+R\+D32\+\_\+\+M\+AX}
+{\footnotesize\ttfamily \#define U\+W\+O\+R\+D32\+\_\+\+M\+AX~0x\+F\+F\+F\+F\+F\+F\+F\+F\+UL}
+
+\mbox{\label{common_8h_a124dd0e836ec26e66d24918bed871d62}} 
+\index{common.\+h@{common.\+h}!V\+E\+R\+T\+E\+X\+L\+A\+B\+E\+L\+\_\+\+M\+AX@{V\+E\+R\+T\+E\+X\+L\+A\+B\+E\+L\+\_\+\+M\+AX}}
+\index{V\+E\+R\+T\+E\+X\+L\+A\+B\+E\+L\+\_\+\+M\+AX@{V\+E\+R\+T\+E\+X\+L\+A\+B\+E\+L\+\_\+\+M\+AX}!common.\+h@{common.\+h}}
+\subsubsection{V\+E\+R\+T\+E\+X\+L\+A\+B\+E\+L\+\_\+\+M\+AX}
+{\footnotesize\ttfamily \#define V\+E\+R\+T\+E\+X\+L\+A\+B\+E\+L\+\_\+\+M\+AX~\textbf{ U\+W\+O\+R\+D32\+\_\+\+M\+AX}}
+
+
+
+\subsection{Typedef Documentation}
+\mbox{\label{common_8h_ad4ca9f2833516c0b9fec8faae85a80cf}} 
+\index{common.\+h@{common.\+h}!B\+IT@{B\+IT}}
+\index{B\+IT@{B\+IT}!common.\+h@{common.\+h}}
+\subsubsection{B\+IT}
+{\footnotesize\ttfamily typedef bool \textbf{ B\+IT}}
+
+\mbox{\label{common_8h_a4ae1dab0fb4b072a66584546209e7d58}} 
+\index{common.\+h@{common.\+h}!B\+Y\+TE@{B\+Y\+TE}}
+\index{B\+Y\+TE@{B\+Y\+TE}!common.\+h@{common.\+h}}
+\subsubsection{B\+Y\+TE}
+{\footnotesize\ttfamily typedef unsigned char \textbf{ B\+Y\+TE}}
+
+\mbox{\label{common_8h_acf820202f81f25eb00734eac0d7aed2d}} 
+\index{common.\+h@{common.\+h}!Emb\+Value@{Emb\+Value}}
+\index{Emb\+Value@{Emb\+Value}!common.\+h@{common.\+h}}
+\subsubsection{Emb\+Value}
+{\footnotesize\ttfamily typedef \textbf{ B\+Y\+TE} \textbf{ Emb\+Value}}
+
+\mbox{\label{common_8h_a9c132ac55bb1dc381114b510b8342b6f}} 
+\index{common.\+h@{common.\+h}!Sample\+Key@{Sample\+Key}}
+\index{Sample\+Key@{Sample\+Key}!common.\+h@{common.\+h}}
+\subsubsection{Sample\+Key}
+{\footnotesize\ttfamily typedef \textbf{ U\+W\+O\+R\+D32} \textbf{ Sample\+Key}}
+
+\mbox{\label{common_8h_a048401d1365616f5eef97e251096a02d}} 
+\index{common.\+h@{common.\+h}!Sample\+Pos@{Sample\+Pos}}
+\index{Sample\+Pos@{Sample\+Pos}!common.\+h@{common.\+h}}
+\subsubsection{Sample\+Pos}
+{\footnotesize\ttfamily typedef \textbf{ U\+W\+O\+R\+D32} \textbf{ Sample\+Pos}}
+
+\mbox{\label{common_8h_a3da02d64339354ab5cbfe6692464c5d9}} 
+\index{common.\+h@{common.\+h}!Sample\+Value\+Label@{Sample\+Value\+Label}}
+\index{Sample\+Value\+Label@{Sample\+Value\+Label}!common.\+h@{common.\+h}}
+\subsubsection{Sample\+Value\+Label}
+{\footnotesize\ttfamily typedef \textbf{ U\+W\+O\+R\+D32} \textbf{ Sample\+Value\+Label}}
+
+\mbox{\label{common_8h_ad8da5206821b41708d8949a883bb016c}} 
+\index{common.\+h@{common.\+h}!S\+B\+Y\+TE@{S\+B\+Y\+TE}}
+\index{S\+B\+Y\+TE@{S\+B\+Y\+TE}!common.\+h@{common.\+h}}
+\subsubsection{S\+B\+Y\+TE}
+{\footnotesize\ttfamily typedef char \textbf{ S\+B\+Y\+TE}}
+
+\mbox{\label{common_8h_a75e993730bc2fad258c1f7becd24fec9}} 
+\index{common.\+h@{common.\+h}!S\+W\+O\+R\+D16@{S\+W\+O\+R\+D16}}
+\index{S\+W\+O\+R\+D16@{S\+W\+O\+R\+D16}!common.\+h@{common.\+h}}
+\subsubsection{S\+W\+O\+R\+D16}
+{\footnotesize\ttfamily typedef short \textbf{ S\+W\+O\+R\+D16}}
+
+\mbox{\label{common_8h_a8667feb95ad50bdfeaeddc69113acf79}} 
+\index{common.\+h@{common.\+h}!S\+W\+O\+R\+D32@{S\+W\+O\+R\+D32}}
+\index{S\+W\+O\+R\+D32@{S\+W\+O\+R\+D32}!common.\+h@{common.\+h}}
+\subsubsection{S\+W\+O\+R\+D32}
+{\footnotesize\ttfamily typedef long \textbf{ S\+W\+O\+R\+D32}}
+
+\mbox{\label{common_8h_a9346f50cd1a0569efeb685f429a562ff}} 
+\index{common.\+h@{common.\+h}!U\+W\+O\+R\+D16@{U\+W\+O\+R\+D16}}
+\index{U\+W\+O\+R\+D16@{U\+W\+O\+R\+D16}!common.\+h@{common.\+h}}
+\subsubsection{U\+W\+O\+R\+D16}
+{\footnotesize\ttfamily typedef unsigned short \textbf{ U\+W\+O\+R\+D16}}
+
+\mbox{\label{common_8h_a6b8592979b076e06aa233e3f586ac999}} 
+\index{common.\+h@{common.\+h}!U\+W\+O\+R\+D32@{U\+W\+O\+R\+D32}}
+\index{U\+W\+O\+R\+D32@{U\+W\+O\+R\+D32}!common.\+h@{common.\+h}}
+\subsubsection{U\+W\+O\+R\+D32}
+{\footnotesize\ttfamily typedef unsigned long \textbf{ U\+W\+O\+R\+D32}}
+
+\mbox{\label{common_8h_ab9c88dfaf90b738f73f1700aa77d06ef}} 
+\index{common.\+h@{common.\+h}!Vertex\+Label@{Vertex\+Label}}
+\index{Vertex\+Label@{Vertex\+Label}!common.\+h@{common.\+h}}
+\subsubsection{Vertex\+Label}
+{\footnotesize\ttfamily typedef \textbf{ U\+W\+O\+R\+D32} \textbf{ Vertex\+Label}}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\label{common_8h_a7d9e0086268ae4469cc7256b4e3003cc}} 
+\index{common.\+h@{common.\+h}!Args@{Args}}
+\index{Args@{Args}!common.\+h@{common.\+h}}
+\subsubsection{Args}
+{\footnotesize\ttfamily \textbf{ Arguments} Args}
+
+\mbox{\label{common_8h_a2a123bbda4503ceb387f31a384139bec}} 
+\index{common.\+h@{common.\+h}!Globs@{Globs}}
+\index{Globs@{Globs}!common.\+h@{common.\+h}}
+\subsubsection{Globs}
+{\footnotesize\ttfamily \textbf{ Globals} Globs}
+
+\mbox{\label{common_8h_a683edca1300d89e758d2347c2b85369e}} 
+\index{common.\+h@{common.\+h}!Rnd\+Src@{Rnd\+Src}}
+\index{Rnd\+Src@{Rnd\+Src}!common.\+h@{common.\+h}}
+\subsubsection{Rnd\+Src}
+{\footnotesize\ttfamily \textbf{ Random\+Source} Rnd\+Src}
+

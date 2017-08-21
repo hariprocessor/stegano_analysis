@@ -1,0 +1,256 @@
+\section{Vertex Class Reference}
+\label{classVertex}\index{Vertex@{Vertex}}
+
+
+a vertex in a graph  
+
+
+
+
+{\ttfamily \#include $<$Vertex.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Vertex} (\textbf{ Vertex\+Label} l, \textbf{ Sample\+Pos} $\ast$sposs, \textbf{ Sample\+Value} $\ast$$\ast$svalues, \textbf{ Emb\+Value} t)
+\item 
+\textbf{ $\sim$\+Vertex} (void)
+\item 
+\textbf{ Sample\+Pos} \textbf{ get\+Sample\+Pos} (unsigned short i) const
+\item 
+\textbf{ Sample\+Value} $\ast$ \textbf{ get\+Sample\+Value} (unsigned short i) const
+\item 
+\textbf{ U\+W\+O\+R\+D32} \textbf{ get\+Degree} (void) const
+\item 
+\textbf{ Edge} $\ast$ \textbf{ get\+Shortest\+Edge} (void) const
+\item 
+void \textbf{ update\+Shortest\+Edge} (void)
+\item 
+void \textbf{ mark\+Deleted} (void)
+\item 
+void \textbf{ unmark\+Deleted} (void)
+\item 
+\textbf{ Vertex\+Label} \textbf{ get\+Label} (void) const
+\item 
+void \textbf{ set\+Label} (\textbf{ Vertex\+Label} l)
+\item 
+void \textbf{ set\+Sample\+Occurence\+It} (unsigned short i, std\+::list$<$ \textbf{ Sample\+Occurence} $>$\+::iterator it)
+\item 
+\textbf{ Emb\+Value} \textbf{ get\+Embedded\+Value} (void) const
+\item 
+\textbf{ Emb\+Value} \textbf{ get\+Target\+Value} (unsigned short i) const
+\item 
+void \textbf{ print} (unsigned short spc=0) const
+\item 
+void \textbf{ print\+Edges} (void) const
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Vertex\+Label} \textbf{ Label}
+\begin{DoxyCompactList}\small\item\em the vertex label of this vertex \end{DoxyCompactList}\item 
+\textbf{ Sample\+Pos} $\ast$ \textbf{ Sample\+Positions}
+\begin{DoxyCompactList}\small\item\em the sample positions of the samples described by this vertex in the \doxyref{Cvr\+Stg\+File}{p.}{classCvrStgFile} \end{DoxyCompactList}\item 
+\textbf{ Sample\+Value} $\ast$$\ast$ \textbf{ Sample\+Values}
+\begin{DoxyCompactList}\small\item\em the sample values at the Sample\+Positions \end{DoxyCompactList}\item 
+\textbf{ Emb\+Value} $\ast$ \textbf{ Target\+Values}
+\begin{DoxyCompactList}\small\item\em the target values for the sample values (exactly one of them has to be reached (and the other left unchanged) to embed this vertex) \end{DoxyCompactList}\item 
+std\+::list$<$ \textbf{ Sample\+Occurence} $>$\+::iterator $\ast$ \textbf{ Sample\+Occurence\+Its}
+\begin{DoxyCompactList}\small\item\em point to entries in std\+::lists of sample occurences in the graph \end{DoxyCompactList}\item 
+\textbf{ Edge} $\ast$ \textbf{ Shortest\+Edge}
+\begin{DoxyCompactList}\small\item\em the shortest edge of this vertex (as calculated by update\+Shortest\+Edge) \end{DoxyCompactList}\item 
+bool \textbf{ valid}
+\begin{DoxyCompactList}\small\item\em true iff this vertex is not deleted \end{DoxyCompactList}\item 
+unsigned short \textbf{ Self\+Degree}
+\begin{DoxyCompactList}\small\item\em the number of loop edges (loop edges are not valid edges) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A vertex represents a bit that will cause a change to the cover-\/stego-\/file to be embedded. A vertex consists of k samples (that is k sample values at k (different) positions in the cover-\/stego-\/file), where k is The\+Cvr\+Stg\+File-\/$>$get\+Num\+Samples\+Per\+Vertex(). One of these k samples must be changed to an opposite sample to embed the bit that corresponds to this vertex.
+
+{\bfseries N\+O\+TE\+:} \doxyref{Vertex}{p.}{classVertex} relies on the \doxyref{Globals}{p.}{classGlobals} object pointed to by the Globs pointer. This means that it must be set correctly before using any method of a \doxyref{Vertex}{p.}{classVertex} object. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{classVertex_a3d7e8502bae7f2001a36275bc9ec5fa6}} 
+\index{Vertex@{Vertex}!Vertex@{Vertex}}
+\index{Vertex@{Vertex}!Vertex@{Vertex}}
+\subsubsection{Vertex()}
+{\footnotesize\ttfamily Vertex\+::\+Vertex (\begin{DoxyParamCaption}\item[{\textbf{ Vertex\+Label}}]{l,  }\item[{\textbf{ Sample\+Pos} $\ast$}]{sposs,  }\item[{\textbf{ Sample\+Value} $\ast$$\ast$}]{svalues,  }\item[{\textbf{ Emb\+Value}}]{t }\end{DoxyParamCaption})}
+
+construct a new vertex object 
+\begin{DoxyParams}{Parameters}
+{\em l} & the vertex label for this vertex \\
+\hline
+{\em sposs} & the array (with length g-\/$>$get\+Samples\+Per\+Vertex()) of the positions of the samples \\
+\hline
+{\em svalues} & the array (with length g-\/$>$get\+Samples\+Per\+Vertex()) of (unique (!)) pointers to the sample values \\
+\hline
+{\em t} & the target value for the whole vertex -\/ the value that should be returned by \doxyref{get\+Embedded\+Value()}{p.}{classVertex_a327b64b7974d5fb27f10e29bce438512} after the embedding \\
+\hline
+\end{DoxyParams}
+\mbox{\label{classVertex_af33ebc52a611ca80cd3be168f6671846}} 
+\index{Vertex@{Vertex}!````~Vertex@{$\sim$\+Vertex}}
+\index{````~Vertex@{$\sim$\+Vertex}!Vertex@{Vertex}}
+\subsubsection{$\sim$\+Vertex()}
+{\footnotesize\ttfamily Vertex\+::$\sim$\+Vertex (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{classVertex_a6c32cb4a8c1da2419034936b46c28eef}} 
+\index{Vertex@{Vertex}!get\+Degree@{get\+Degree}}
+\index{get\+Degree@{get\+Degree}!Vertex@{Vertex}}
+\subsubsection{get\+Degree()}
+{\footnotesize\ttfamily \textbf{ U\+W\+O\+R\+D32} Vertex\+::get\+Degree (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+get the degree of this vertex \mbox{\label{classVertex_a327b64b7974d5fb27f10e29bce438512}} 
+\index{Vertex@{Vertex}!get\+Embedded\+Value@{get\+Embedded\+Value}}
+\index{get\+Embedded\+Value@{get\+Embedded\+Value}!Vertex@{Vertex}}
+\subsubsection{get\+Embedded\+Value()}
+{\footnotesize\ttfamily \textbf{ Emb\+Value} Vertex\+::get\+Embedded\+Value (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+\mbox{\label{classVertex_a683f61632ed4063e6c856f77d5eae085}} 
+\index{Vertex@{Vertex}!get\+Label@{get\+Label}}
+\index{get\+Label@{get\+Label}!Vertex@{Vertex}}
+\subsubsection{get\+Label()}
+{\footnotesize\ttfamily \textbf{ Vertex\+Label} Vertex\+::get\+Label (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classVertex_a824b711ba3091e1ba544361669df7ffe}} 
+\index{Vertex@{Vertex}!get\+Sample\+Pos@{get\+Sample\+Pos}}
+\index{get\+Sample\+Pos@{get\+Sample\+Pos}!Vertex@{Vertex}}
+\subsubsection{get\+Sample\+Pos()}
+{\footnotesize\ttfamily \textbf{ Sample\+Pos} Vertex\+::get\+Sample\+Pos (\begin{DoxyParamCaption}\item[{unsigned short}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+get the i-\/th sample position 
+\begin{DoxyParams}{Parameters}
+{\em i} & an index of a sample in this vertex (must be $<$ The\+Cvr\+Stg\+File-\/$>$get\+Num\+Samples\+Per\+Vertex()) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the position of the sample in the associated cvrstgfile 
+\end{DoxyReturn}
+\mbox{\label{classVertex_a11a8bccf851eb4654e18444a5b7daf94}} 
+\index{Vertex@{Vertex}!get\+Sample\+Value@{get\+Sample\+Value}}
+\index{get\+Sample\+Value@{get\+Sample\+Value}!Vertex@{Vertex}}
+\subsubsection{get\+Sample\+Value()}
+{\footnotesize\ttfamily \textbf{ Sample\+Value}$\ast$ Vertex\+::get\+Sample\+Value (\begin{DoxyParamCaption}\item[{unsigned short}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+get the i-\/th sample value 
+\begin{DoxyParams}{Parameters}
+{\em i} & an index of a sample in this vertex (must be $<$ The\+Cvr\+Stg\+File-\/$>$get\+Num\+Samples\+Per\+Vertex()) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the value of the sample in the associated cvrstgfile 
+\end{DoxyReturn}
+\mbox{\label{classVertex_a8162edd73965e0c9ebab30d0be50e4ac}} 
+\index{Vertex@{Vertex}!get\+Shortest\+Edge@{get\+Shortest\+Edge}}
+\index{get\+Shortest\+Edge@{get\+Shortest\+Edge}!Vertex@{Vertex}}
+\subsubsection{get\+Shortest\+Edge()}
+{\footnotesize\ttfamily \textbf{ Edge}$\ast$ Vertex\+::get\+Shortest\+Edge (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+get the shortest edge of this vertex \mbox{\label{classVertex_a1fabe68fbc75d9e6468cfdb509199664}} 
+\index{Vertex@{Vertex}!get\+Target\+Value@{get\+Target\+Value}}
+\index{get\+Target\+Value@{get\+Target\+Value}!Vertex@{Vertex}}
+\subsubsection{get\+Target\+Value()}
+{\footnotesize\ttfamily \textbf{ Emb\+Value} Vertex\+::get\+Target\+Value (\begin{DoxyParamCaption}\item[{unsigned short}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classVertex_aa90f4f2ade4432d95f81d817054479a2}} 
+\index{Vertex@{Vertex}!mark\+Deleted@{mark\+Deleted}}
+\index{mark\+Deleted@{mark\+Deleted}!Vertex@{Vertex}}
+\subsubsection{mark\+Deleted()}
+{\footnotesize\ttfamily void Vertex\+::mark\+Deleted (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+if this vertex is valid, mark it as deleted \mbox{\label{classVertex_ad1b52ce1cef2da5facc2bea9711f9030}} 
+\index{Vertex@{Vertex}!print@{print}}
+\index{print@{print}!Vertex@{Vertex}}
+\subsubsection{print()}
+{\footnotesize\ttfamily void Vertex\+::print (\begin{DoxyParamCaption}\item[{unsigned short}]{spc = {\ttfamily 0} }\end{DoxyParamCaption}) const}
+
+\mbox{\label{classVertex_a652486e4c2d54416c4a0bf2d3687e04d}} 
+\index{Vertex@{Vertex}!print\+Edges@{print\+Edges}}
+\index{print\+Edges@{print\+Edges}!Vertex@{Vertex}}
+\subsubsection{print\+Edges()}
+{\footnotesize\ttfamily void Vertex\+::print\+Edges (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+\mbox{\label{classVertex_a38b39f747fbc4ac32b15e5bb306f9e06}} 
+\index{Vertex@{Vertex}!set\+Label@{set\+Label}}
+\index{set\+Label@{set\+Label}!Vertex@{Vertex}}
+\subsubsection{set\+Label()}
+{\footnotesize\ttfamily void Vertex\+::set\+Label (\begin{DoxyParamCaption}\item[{\textbf{ Vertex\+Label}}]{l }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classVertex_a52161cd734da5318248985df90d7f410}} 
+\index{Vertex@{Vertex}!set\+Sample\+Occurence\+It@{set\+Sample\+Occurence\+It}}
+\index{set\+Sample\+Occurence\+It@{set\+Sample\+Occurence\+It}!Vertex@{Vertex}}
+\subsubsection{set\+Sample\+Occurence\+It()}
+{\footnotesize\ttfamily void Vertex\+::set\+Sample\+Occurence\+It (\begin{DoxyParamCaption}\item[{unsigned short}]{i,  }\item[{std\+::list$<$ \textbf{ Sample\+Occurence} $>$\+::iterator}]{it }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classVertex_ae742954c202e56c57f37e9f8bdb7f7b1}} 
+\index{Vertex@{Vertex}!unmark\+Deleted@{unmark\+Deleted}}
+\index{unmark\+Deleted@{unmark\+Deleted}!Vertex@{Vertex}}
+\subsubsection{unmark\+Deleted()}
+{\footnotesize\ttfamily void Vertex\+::unmark\+Deleted (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+if this vertex is marked as deleted, undo this \mbox{\label{classVertex_a52743bdda67e928c4545d0cd1bbeb6b4}} 
+\index{Vertex@{Vertex}!update\+Shortest\+Edge@{update\+Shortest\+Edge}}
+\index{update\+Shortest\+Edge@{update\+Shortest\+Edge}!Vertex@{Vertex}}
+\subsubsection{update\+Shortest\+Edge()}
+{\footnotesize\ttfamily void Vertex\+::update\+Shortest\+Edge (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+find shortest edge of this vertex and save result to Shortest\+Edge 
+
+\subsection{Member Data Documentation}
+\mbox{\label{classVertex_a32872da8a9212c5916545807ec24d941}} 
+\index{Vertex@{Vertex}!Label@{Label}}
+\index{Label@{Label}!Vertex@{Vertex}}
+\subsubsection{Label}
+{\footnotesize\ttfamily \textbf{ Vertex\+Label} Vertex\+::\+Label\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classVertex_aebf42a036471d89d2b01cc07f79db0b7}} 
+\index{Vertex@{Vertex}!Sample\+Occurence\+Its@{Sample\+Occurence\+Its}}
+\index{Sample\+Occurence\+Its@{Sample\+Occurence\+Its}!Vertex@{Vertex}}
+\subsubsection{Sample\+Occurence\+Its}
+{\footnotesize\ttfamily std\+::list$<$\textbf{ Sample\+Occurence}$>$\+::iterator$\ast$ Vertex\+::\+Sample\+Occurence\+Its\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classVertex_afc5803f99d5ce0a65cb69c843887d08e}} 
+\index{Vertex@{Vertex}!Sample\+Positions@{Sample\+Positions}}
+\index{Sample\+Positions@{Sample\+Positions}!Vertex@{Vertex}}
+\subsubsection{Sample\+Positions}
+{\footnotesize\ttfamily \textbf{ Sample\+Pos}$\ast$ Vertex\+::\+Sample\+Positions\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classVertex_a082f31a3c544f8ae952ccda22ee6f6e7}} 
+\index{Vertex@{Vertex}!Sample\+Values@{Sample\+Values}}
+\index{Sample\+Values@{Sample\+Values}!Vertex@{Vertex}}
+\subsubsection{Sample\+Values}
+{\footnotesize\ttfamily \textbf{ Sample\+Value}$\ast$$\ast$ Vertex\+::\+Sample\+Values\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classVertex_a0716c3dcd968e71697cae35d415dc22c}} 
+\index{Vertex@{Vertex}!Self\+Degree@{Self\+Degree}}
+\index{Self\+Degree@{Self\+Degree}!Vertex@{Vertex}}
+\subsubsection{Self\+Degree}
+{\footnotesize\ttfamily unsigned short Vertex\+::\+Self\+Degree\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classVertex_aa42c1ba538da69c8038a908fc97b5096}} 
+\index{Vertex@{Vertex}!Shortest\+Edge@{Shortest\+Edge}}
+\index{Shortest\+Edge@{Shortest\+Edge}!Vertex@{Vertex}}
+\subsubsection{Shortest\+Edge}
+{\footnotesize\ttfamily \textbf{ Edge}$\ast$ Vertex\+::\+Shortest\+Edge\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classVertex_ace002f43cff0a84736e58629fce36632}} 
+\index{Vertex@{Vertex}!Target\+Values@{Target\+Values}}
+\index{Target\+Values@{Target\+Values}!Vertex@{Vertex}}
+\subsubsection{Target\+Values}
+{\footnotesize\ttfamily \textbf{ Emb\+Value}$\ast$ Vertex\+::\+Target\+Values\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classVertex_a7ee78e1c37055b63e5a00f989bba044c}} 
+\index{Vertex@{Vertex}!valid@{valid}}
+\index{valid@{valid}!Vertex@{Vertex}}
+\subsubsection{valid}
+{\footnotesize\ttfamily bool Vertex\+::valid\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ Vertex.\+h}\item 
+\textbf{ Vertex.\+cc}\end{DoxyCompactItemize}

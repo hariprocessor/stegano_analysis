@@ -1,0 +1,91 @@
+\section{Pseudo\+Random\+Source Class Reference}
+\label{classPseudoRandomSource}\index{Pseudo\+Random\+Source@{Pseudo\+Random\+Source}}
+
+
+this class serves as a source of reproducible (pseudo-\/)random numbers  
+
+
+
+
+{\ttfamily \#include $<$Pseudo\+Random\+Source.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Pseudo\+Random\+Source} (\textbf{ U\+W\+O\+R\+D32} s)
+\item 
+\textbf{ U\+W\+O\+R\+D32} \textbf{ get\+Value} (\textbf{ U\+W\+O\+R\+D32} n)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ U\+W\+O\+R\+D32} \textbf{ Value}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const \textbf{ U\+W\+O\+R\+D32} \textbf{ A} = 1367208549
+\item 
+static const \textbf{ U\+W\+O\+R\+D32} \textbf{ C} = 1
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+To generate the random numbers, the linear congruetial method is used. 2$^\wedge$32 is used as modulus. The overflow in the implementation is intended (and controlled, as U\+W\+O\+R\+D32 is used as datatype which always is 32 bits wide). 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{classPseudoRandomSource_a99178fce83f11ef778d93c125d8b0638}} 
+\index{Pseudo\+Random\+Source@{Pseudo\+Random\+Source}!Pseudo\+Random\+Source@{Pseudo\+Random\+Source}}
+\index{Pseudo\+Random\+Source@{Pseudo\+Random\+Source}!Pseudo\+Random\+Source@{Pseudo\+Random\+Source}}
+\subsubsection{Pseudo\+Random\+Source()}
+{\footnotesize\ttfamily Pseudo\+Random\+Source\+::\+Pseudo\+Random\+Source (\begin{DoxyParamCaption}\item[{\textbf{ U\+W\+O\+R\+D32}}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+construct a \doxyref{Pseudo\+Random\+Source}{p.}{classPseudoRandomSource} object 
+\begin{DoxyParams}{Parameters}
+{\em s} & the seed \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{classPseudoRandomSource_a8ef2aa9bb5419cbaf1d7a28f958115f9}} 
+\index{Pseudo\+Random\+Source@{Pseudo\+Random\+Source}!get\+Value@{get\+Value}}
+\index{get\+Value@{get\+Value}!Pseudo\+Random\+Source@{Pseudo\+Random\+Source}}
+\subsubsection{get\+Value()}
+{\footnotesize\ttfamily \textbf{ U\+W\+O\+R\+D32} Pseudo\+Random\+Source\+::get\+Value (\begin{DoxyParamCaption}\item[{\textbf{ U\+W\+O\+R\+D32}}]{n }\end{DoxyParamCaption})}
+
+get a pseudo-\/random value from \{0,...,n-\/1\} 
+\begin{DoxyParams}{Parameters}
+{\em n} & the range of the random value to be returned \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a number $>$= 0 and $<$= n -\/ 1
+\end{DoxyReturn}
+After calling get\+Value, the next get\+Value call will use the next state of the random number generator (analogous to the C rand() function) 
+
+\subsection{Member Data Documentation}
+\mbox{\label{classPseudoRandomSource_a5b780fa93c41e7057e00e44faaaa2dca}} 
+\index{Pseudo\+Random\+Source@{Pseudo\+Random\+Source}!A@{A}}
+\index{A@{A}!Pseudo\+Random\+Source@{Pseudo\+Random\+Source}}
+\subsubsection{A}
+{\footnotesize\ttfamily const \textbf{ U\+W\+O\+R\+D32} Pseudo\+Random\+Source\+::A = 1367208549\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\label{classPseudoRandomSource_a4a35b7e561bfcf7c8031ce0e985a992e}} 
+\index{Pseudo\+Random\+Source@{Pseudo\+Random\+Source}!C@{C}}
+\index{C@{C}!Pseudo\+Random\+Source@{Pseudo\+Random\+Source}}
+\subsubsection{C}
+{\footnotesize\ttfamily const \textbf{ U\+W\+O\+R\+D32} Pseudo\+Random\+Source\+::C = 1\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\label{classPseudoRandomSource_a7b82ea9bcac4633974b9d10f260d3f4e}} 
+\index{Pseudo\+Random\+Source@{Pseudo\+Random\+Source}!Value@{Value}}
+\index{Value@{Value}!Pseudo\+Random\+Source@{Pseudo\+Random\+Source}}
+\subsubsection{Value}
+{\footnotesize\ttfamily \textbf{ U\+W\+O\+R\+D32} Pseudo\+Random\+Source\+::\+Value\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ Pseudo\+Random\+Source.\+h}\item 
+\textbf{ Pseudo\+Random\+Source.\+cc}\end{DoxyCompactItemize}

@@ -1,0 +1,353 @@
+\section{Encryption\+Algorithm Class Reference}
+\label{classEncryptionAlgorithm}\index{Encryption\+Algorithm@{Encryption\+Algorithm}}
+
+
+{\ttfamily \#include $<$Encryption\+Algorithm.\+h$>$}
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \textbf{ struct\+\_\+\+Translation}
+\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \textbf{ I\+Rep} \{ \newline
+\textbf{ N\+O\+NE} = 0, 
+\textbf{ T\+W\+O\+F\+I\+SH} = 1, 
+\textbf{ R\+I\+J\+N\+D\+A\+E\+L128} = 2, 
+\textbf{ R\+I\+J\+N\+D\+A\+E\+L192} = 3, 
+\newline
+\textbf{ R\+I\+J\+N\+D\+A\+E\+L256} = 4, 
+\textbf{ S\+A\+F\+E\+R\+P\+L\+US} = 5, 
+\textbf{ R\+C2} = 6, 
+\textbf{ X\+T\+EA} = 7, 
+\newline
+\textbf{ S\+E\+R\+P\+E\+NT} = 8, 
+\textbf{ S\+A\+F\+E\+R\+S\+K64} = 9, 
+\textbf{ S\+A\+F\+E\+R\+S\+K128} = 10, 
+\textbf{ C\+A\+S\+T256} = 11, 
+\newline
+\textbf{ L\+O\+K\+I97} = 12, 
+\textbf{ G\+O\+ST} = 13, 
+\textbf{ T\+H\+R\+E\+E\+W\+AY} = 14, 
+\textbf{ C\+A\+S\+T128} = 15, 
+\newline
+\textbf{ B\+L\+O\+W\+F\+I\+SH} = 16, 
+\textbf{ D\+ES} = 17, 
+\textbf{ T\+R\+I\+P\+L\+E\+D\+ES} = 18, 
+\textbf{ E\+N\+I\+G\+MA} = 19, 
+\newline
+\textbf{ A\+R\+C\+F\+O\+UR} = 20, 
+\textbf{ P\+A\+N\+A\+MA} = 21, 
+\textbf{ W\+A\+KE} = 22
+ \}
+\begin{DoxyCompactList}\small\item\em integer representation of encryption algorithm \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Encryption\+Algorithm} (void)
+\item 
+\textbf{ Encryption\+Algorithm} (\textbf{ I\+Rep} irep)
+\item 
+\textbf{ Encryption\+Algorithm} (std\+::string srep)
+\item 
+void \textbf{ set\+Value} (\textbf{ I\+Rep} irep)
+\item 
+std\+::string \textbf{ get\+String\+Rep} (void) const
+\item 
+\textbf{ I\+Rep} \textbf{ get\+Integer\+Rep} (void) const
+\item 
+bool \textbf{ operator==} (const \textbf{ Encryption\+Algorithm} \&algo) const
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \textbf{ is\+Valid\+String\+Rep} (std\+::string srep)
+\item 
+static bool \textbf{ is\+Valid\+Integer\+Rep} (unsigned int irep)
+\item 
+static std\+::string \textbf{ translate} (\textbf{ I\+Rep} irep)
+\item 
+static \textbf{ I\+Rep} \textbf{ translate} (std\+::string srep)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const unsigned int \textbf{ I\+Rep\+\_\+size} = 5
+\begin{DoxyCompactList}\small\item\em number of bits needed to code the algorithm \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \textbf{ Encryption\+Algorithm\+::struct\+\_\+\+Translation} \textbf{ Translation}
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ I\+Rep} \textbf{ Value}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const unsigned int \textbf{ Num\+Values} = 23
+\item 
+static const \textbf{ Translation} \textbf{ Translations} [$\,$]
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Typedef Documentation}
+\mbox{\label{classEncryptionAlgorithm_a619b72407ff6ac5ba13c3e50199fc9fa}} 
+\index{Encryption\+Algorithm@{Encryption\+Algorithm}!Translation@{Translation}}
+\index{Translation@{Translation}!Encryption\+Algorithm@{Encryption\+Algorithm}}
+\subsubsection{Translation}
+{\footnotesize\ttfamily typedef struct \textbf{ Encryption\+Algorithm\+::struct\+\_\+\+Translation}  \textbf{ Encryption\+Algorithm\+::\+Translation}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\label{classEncryptionAlgorithm_a0b0a38d56c374dd496b2eb3b196064da}} 
+\index{Encryption\+Algorithm@{Encryption\+Algorithm}!I\+Rep@{I\+Rep}}
+\index{I\+Rep@{I\+Rep}!Encryption\+Algorithm@{Encryption\+Algorithm}}
+\subsubsection{I\+Rep}
+{\footnotesize\ttfamily enum \textbf{ Encryption\+Algorithm\+::\+I\+Rep}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{N\+O\+NE@{N\+O\+NE}!Encryption\+Algorithm@{Encryption\+Algorithm}}\index{Encryption\+Algorithm@{Encryption\+Algorithm}!N\+O\+NE@{N\+O\+NE}}}\mbox{\label{classEncryptionAlgorithm_a0b0a38d56c374dd496b2eb3b196064daa8d4a74a03b2605f7a1f8030a83c9e1e3}} 
+N\+O\+NE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+W\+O\+F\+I\+SH@{T\+W\+O\+F\+I\+SH}!Encryption\+Algorithm@{Encryption\+Algorithm}}\index{Encryption\+Algorithm@{Encryption\+Algorithm}!T\+W\+O\+F\+I\+SH@{T\+W\+O\+F\+I\+SH}}}\mbox{\label{classEncryptionAlgorithm_a0b0a38d56c374dd496b2eb3b196064daab720e8b15fef4372ab9393532cb1a13a}} 
+T\+W\+O\+F\+I\+SH&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R\+I\+J\+N\+D\+A\+E\+L128@{R\+I\+J\+N\+D\+A\+E\+L128}!Encryption\+Algorithm@{Encryption\+Algorithm}}\index{Encryption\+Algorithm@{Encryption\+Algorithm}!R\+I\+J\+N\+D\+A\+E\+L128@{R\+I\+J\+N\+D\+A\+E\+L128}}}\mbox{\label{classEncryptionAlgorithm_a0b0a38d56c374dd496b2eb3b196064daa443d301831aef540d75c4cf59265d75f}} 
+R\+I\+J\+N\+D\+A\+E\+L128&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R\+I\+J\+N\+D\+A\+E\+L192@{R\+I\+J\+N\+D\+A\+E\+L192}!Encryption\+Algorithm@{Encryption\+Algorithm}}\index{Encryption\+Algorithm@{Encryption\+Algorithm}!R\+I\+J\+N\+D\+A\+E\+L192@{R\+I\+J\+N\+D\+A\+E\+L192}}}\mbox{\label{classEncryptionAlgorithm_a0b0a38d56c374dd496b2eb3b196064daa18cddf561172034b88fc5677845de3ff}} 
+R\+I\+J\+N\+D\+A\+E\+L192&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R\+I\+J\+N\+D\+A\+E\+L256@{R\+I\+J\+N\+D\+A\+E\+L256}!Encryption\+Algorithm@{Encryption\+Algorithm}}\index{Encryption\+Algorithm@{Encryption\+Algorithm}!R\+I\+J\+N\+D\+A\+E\+L256@{R\+I\+J\+N\+D\+A\+E\+L256}}}\mbox{\label{classEncryptionAlgorithm_a0b0a38d56c374dd496b2eb3b196064daa2f0a09f210fae871590704e1a85cb9f2}} 
+R\+I\+J\+N\+D\+A\+E\+L256&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+A\+F\+E\+R\+P\+L\+US@{S\+A\+F\+E\+R\+P\+L\+US}!Encryption\+Algorithm@{Encryption\+Algorithm}}\index{Encryption\+Algorithm@{Encryption\+Algorithm}!S\+A\+F\+E\+R\+P\+L\+US@{S\+A\+F\+E\+R\+P\+L\+US}}}\mbox{\label{classEncryptionAlgorithm_a0b0a38d56c374dd496b2eb3b196064daaa9dfea62ff8794811048ddb1032a7071}} 
+S\+A\+F\+E\+R\+P\+L\+US&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R\+C2@{R\+C2}!Encryption\+Algorithm@{Encryption\+Algorithm}}\index{Encryption\+Algorithm@{Encryption\+Algorithm}!R\+C2@{R\+C2}}}\mbox{\label{classEncryptionAlgorithm_a0b0a38d56c374dd496b2eb3b196064daa78ad6beefce45cca6430003e49475d95}} 
+R\+C2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{X\+T\+EA@{X\+T\+EA}!Encryption\+Algorithm@{Encryption\+Algorithm}}\index{Encryption\+Algorithm@{Encryption\+Algorithm}!X\+T\+EA@{X\+T\+EA}}}\mbox{\label{classEncryptionAlgorithm_a0b0a38d56c374dd496b2eb3b196064daaf542f1648c141ba50cacac5cf590ca00}} 
+X\+T\+EA&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+E\+R\+P\+E\+NT@{S\+E\+R\+P\+E\+NT}!Encryption\+Algorithm@{Encryption\+Algorithm}}\index{Encryption\+Algorithm@{Encryption\+Algorithm}!S\+E\+R\+P\+E\+NT@{S\+E\+R\+P\+E\+NT}}}\mbox{\label{classEncryptionAlgorithm_a0b0a38d56c374dd496b2eb3b196064daa29333d9a6ebf780ffb67029b841aa5c1}} 
+S\+E\+R\+P\+E\+NT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+A\+F\+E\+R\+S\+K64@{S\+A\+F\+E\+R\+S\+K64}!Encryption\+Algorithm@{Encryption\+Algorithm}}\index{Encryption\+Algorithm@{Encryption\+Algorithm}!S\+A\+F\+E\+R\+S\+K64@{S\+A\+F\+E\+R\+S\+K64}}}\mbox{\label{classEncryptionAlgorithm_a0b0a38d56c374dd496b2eb3b196064daa33c11966ccd4075492eede553d34748e}} 
+S\+A\+F\+E\+R\+S\+K64&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+A\+F\+E\+R\+S\+K128@{S\+A\+F\+E\+R\+S\+K128}!Encryption\+Algorithm@{Encryption\+Algorithm}}\index{Encryption\+Algorithm@{Encryption\+Algorithm}!S\+A\+F\+E\+R\+S\+K128@{S\+A\+F\+E\+R\+S\+K128}}}\mbox{\label{classEncryptionAlgorithm_a0b0a38d56c374dd496b2eb3b196064daad9da67ad1a05fbe2dc7ca6d4ba0a85bd}} 
+S\+A\+F\+E\+R\+S\+K128&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+A\+S\+T256@{C\+A\+S\+T256}!Encryption\+Algorithm@{Encryption\+Algorithm}}\index{Encryption\+Algorithm@{Encryption\+Algorithm}!C\+A\+S\+T256@{C\+A\+S\+T256}}}\mbox{\label{classEncryptionAlgorithm_a0b0a38d56c374dd496b2eb3b196064daa5da62f3e21e98cf6e04da8636a109536}} 
+C\+A\+S\+T256&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{L\+O\+K\+I97@{L\+O\+K\+I97}!Encryption\+Algorithm@{Encryption\+Algorithm}}\index{Encryption\+Algorithm@{Encryption\+Algorithm}!L\+O\+K\+I97@{L\+O\+K\+I97}}}\mbox{\label{classEncryptionAlgorithm_a0b0a38d56c374dd496b2eb3b196064daac83d0354296871b8f1d6d16e15967245}} 
+L\+O\+K\+I97&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{G\+O\+ST@{G\+O\+ST}!Encryption\+Algorithm@{Encryption\+Algorithm}}\index{Encryption\+Algorithm@{Encryption\+Algorithm}!G\+O\+ST@{G\+O\+ST}}}\mbox{\label{classEncryptionAlgorithm_a0b0a38d56c374dd496b2eb3b196064daa01e07af2d40a0b0bb0dd68a653be7f48}} 
+G\+O\+ST&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+H\+R\+E\+E\+W\+AY@{T\+H\+R\+E\+E\+W\+AY}!Encryption\+Algorithm@{Encryption\+Algorithm}}\index{Encryption\+Algorithm@{Encryption\+Algorithm}!T\+H\+R\+E\+E\+W\+AY@{T\+H\+R\+E\+E\+W\+AY}}}\mbox{\label{classEncryptionAlgorithm_a0b0a38d56c374dd496b2eb3b196064daa87b9713f03f6d386a291adce770997d5}} 
+T\+H\+R\+E\+E\+W\+AY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+A\+S\+T128@{C\+A\+S\+T128}!Encryption\+Algorithm@{Encryption\+Algorithm}}\index{Encryption\+Algorithm@{Encryption\+Algorithm}!C\+A\+S\+T128@{C\+A\+S\+T128}}}\mbox{\label{classEncryptionAlgorithm_a0b0a38d56c374dd496b2eb3b196064daad515a7dc78cbd5612e83a9aae1107244}} 
+C\+A\+S\+T128&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{B\+L\+O\+W\+F\+I\+SH@{B\+L\+O\+W\+F\+I\+SH}!Encryption\+Algorithm@{Encryption\+Algorithm}}\index{Encryption\+Algorithm@{Encryption\+Algorithm}!B\+L\+O\+W\+F\+I\+SH@{B\+L\+O\+W\+F\+I\+SH}}}\mbox{\label{classEncryptionAlgorithm_a0b0a38d56c374dd496b2eb3b196064daa0d677fe184757e7586de175698103a03}} 
+B\+L\+O\+W\+F\+I\+SH&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D\+ES@{D\+ES}!Encryption\+Algorithm@{Encryption\+Algorithm}}\index{Encryption\+Algorithm@{Encryption\+Algorithm}!D\+ES@{D\+ES}}}\mbox{\label{classEncryptionAlgorithm_a0b0a38d56c374dd496b2eb3b196064daa9cee17436bacf6fb196fa9314eb36e86}} 
+D\+ES&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+R\+I\+P\+L\+E\+D\+ES@{T\+R\+I\+P\+L\+E\+D\+ES}!Encryption\+Algorithm@{Encryption\+Algorithm}}\index{Encryption\+Algorithm@{Encryption\+Algorithm}!T\+R\+I\+P\+L\+E\+D\+ES@{T\+R\+I\+P\+L\+E\+D\+ES}}}\mbox{\label{classEncryptionAlgorithm_a0b0a38d56c374dd496b2eb3b196064daa1a2a0556c135deea10e369fbac503d23}} 
+T\+R\+I\+P\+L\+E\+D\+ES&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E\+N\+I\+G\+MA@{E\+N\+I\+G\+MA}!Encryption\+Algorithm@{Encryption\+Algorithm}}\index{Encryption\+Algorithm@{Encryption\+Algorithm}!E\+N\+I\+G\+MA@{E\+N\+I\+G\+MA}}}\mbox{\label{classEncryptionAlgorithm_a0b0a38d56c374dd496b2eb3b196064daa8b222ca28b942be68840b02dded149ff}} 
+E\+N\+I\+G\+MA&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+R\+C\+F\+O\+UR@{A\+R\+C\+F\+O\+UR}!Encryption\+Algorithm@{Encryption\+Algorithm}}\index{Encryption\+Algorithm@{Encryption\+Algorithm}!A\+R\+C\+F\+O\+UR@{A\+R\+C\+F\+O\+UR}}}\mbox{\label{classEncryptionAlgorithm_a0b0a38d56c374dd496b2eb3b196064daa9b6958d25a21123bb63d2080fa8064b5}} 
+A\+R\+C\+F\+O\+UR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{P\+A\+N\+A\+MA@{P\+A\+N\+A\+MA}!Encryption\+Algorithm@{Encryption\+Algorithm}}\index{Encryption\+Algorithm@{Encryption\+Algorithm}!P\+A\+N\+A\+MA@{P\+A\+N\+A\+MA}}}\mbox{\label{classEncryptionAlgorithm_a0b0a38d56c374dd496b2eb3b196064daae9dfbc00d41cf18d6a765c5014a5989e}} 
+P\+A\+N\+A\+MA&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{W\+A\+KE@{W\+A\+KE}!Encryption\+Algorithm@{Encryption\+Algorithm}}\index{Encryption\+Algorithm@{Encryption\+Algorithm}!W\+A\+KE@{W\+A\+KE}}}\mbox{\label{classEncryptionAlgorithm_a0b0a38d56c374dd496b2eb3b196064daa8bac05b1857afecc3d189a61a61d4923}} 
+W\+A\+KE&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{classEncryptionAlgorithm_a8153a4eeaf5463cdb05f0715fe782a1d}} 
+\index{Encryption\+Algorithm@{Encryption\+Algorithm}!Encryption\+Algorithm@{Encryption\+Algorithm}}
+\index{Encryption\+Algorithm@{Encryption\+Algorithm}!Encryption\+Algorithm@{Encryption\+Algorithm}}
+\subsubsection{Encryption\+Algorithm()\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Encryption\+Algorithm\+::\+Encryption\+Algorithm (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\label{classEncryptionAlgorithm_ac0c8f868b64367f33cabbfdb38c5ff23}} 
+\index{Encryption\+Algorithm@{Encryption\+Algorithm}!Encryption\+Algorithm@{Encryption\+Algorithm}}
+\index{Encryption\+Algorithm@{Encryption\+Algorithm}!Encryption\+Algorithm@{Encryption\+Algorithm}}
+\subsubsection{Encryption\+Algorithm()\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Encryption\+Algorithm\+::\+Encryption\+Algorithm (\begin{DoxyParamCaption}\item[{\textbf{ Encryption\+Algorithm\+::\+I\+Rep}}]{irep }\end{DoxyParamCaption})}
+
+\mbox{\label{classEncryptionAlgorithm_a940896eedb7cecc898d1e7630d11c650}} 
+\index{Encryption\+Algorithm@{Encryption\+Algorithm}!Encryption\+Algorithm@{Encryption\+Algorithm}}
+\index{Encryption\+Algorithm@{Encryption\+Algorithm}!Encryption\+Algorithm@{Encryption\+Algorithm}}
+\subsubsection{Encryption\+Algorithm()\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Encryption\+Algorithm\+::\+Encryption\+Algorithm (\begin{DoxyParamCaption}\item[{std\+::string}]{srep }\end{DoxyParamCaption})}
+
+construct a new \doxyref{Encryption\+Algorithm}{p.}{classEncryptionAlgorithm} object from a std\+::string representation 
+\begin{DoxyParams}{Parameters}
+{\em srep} & a valid(!) std\+::string representation \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{classEncryptionAlgorithm_a45524ec1f2d469ac1c3e2a62b407d6b3}} 
+\index{Encryption\+Algorithm@{Encryption\+Algorithm}!get\+Integer\+Rep@{get\+Integer\+Rep}}
+\index{get\+Integer\+Rep@{get\+Integer\+Rep}!Encryption\+Algorithm@{Encryption\+Algorithm}}
+\subsubsection{get\+Integer\+Rep()}
+{\footnotesize\ttfamily \textbf{ Encryption\+Algorithm\+::\+I\+Rep} Encryption\+Algorithm\+::get\+Integer\+Rep (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+\mbox{\label{classEncryptionAlgorithm_aeb9d69a2abdf02658ccf410f3fa93239}} 
+\index{Encryption\+Algorithm@{Encryption\+Algorithm}!get\+String\+Rep@{get\+String\+Rep}}
+\index{get\+String\+Rep@{get\+String\+Rep}!Encryption\+Algorithm@{Encryption\+Algorithm}}
+\subsubsection{get\+String\+Rep()}
+{\footnotesize\ttfamily std\+::string Encryption\+Algorithm\+::get\+String\+Rep (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+\mbox{\label{classEncryptionAlgorithm_a6831aa0c243e97fea301b9941e80ff54}} 
+\index{Encryption\+Algorithm@{Encryption\+Algorithm}!is\+Valid\+Integer\+Rep@{is\+Valid\+Integer\+Rep}}
+\index{is\+Valid\+Integer\+Rep@{is\+Valid\+Integer\+Rep}!Encryption\+Algorithm@{Encryption\+Algorithm}}
+\subsubsection{is\+Valid\+Integer\+Rep()}
+{\footnotesize\ttfamily bool Encryption\+Algorithm\+::is\+Valid\+Integer\+Rep (\begin{DoxyParamCaption}\item[{unsigned int}]{irep }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\label{classEncryptionAlgorithm_aa27946ca69ace48b6264fcd6a11bf820}} 
+\index{Encryption\+Algorithm@{Encryption\+Algorithm}!is\+Valid\+String\+Rep@{is\+Valid\+String\+Rep}}
+\index{is\+Valid\+String\+Rep@{is\+Valid\+String\+Rep}!Encryption\+Algorithm@{Encryption\+Algorithm}}
+\subsubsection{is\+Valid\+String\+Rep()}
+{\footnotesize\ttfamily bool Encryption\+Algorithm\+::is\+Valid\+String\+Rep (\begin{DoxyParamCaption}\item[{std\+::string}]{srep }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+check if srep is a valid std\+::string representation (w.\+r.\+t the Translations array) 
+\begin{DoxyParams}{Parameters}
+{\em srep} & a std\+::string that maybe represents an encryption algorithm fron the Translations table \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true iff the Translations table contains srep 
+\end{DoxyReturn}
+\mbox{\label{classEncryptionAlgorithm_a62450c1dbf1e0a539b1077b50dfc9369}} 
+\index{Encryption\+Algorithm@{Encryption\+Algorithm}!operator==@{operator==}}
+\index{operator==@{operator==}!Encryption\+Algorithm@{Encryption\+Algorithm}}
+\subsubsection{operator==()}
+{\footnotesize\ttfamily bool Encryption\+Algorithm\+::operator== (\begin{DoxyParamCaption}\item[{const \textbf{ Encryption\+Algorithm} \&}]{algo }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classEncryptionAlgorithm_a5fe2a9ccaeb63a6d24e9c6c826aa0aec}} 
+\index{Encryption\+Algorithm@{Encryption\+Algorithm}!set\+Value@{set\+Value}}
+\index{set\+Value@{set\+Value}!Encryption\+Algorithm@{Encryption\+Algorithm}}
+\subsubsection{set\+Value()}
+{\footnotesize\ttfamily void Encryption\+Algorithm\+::set\+Value (\begin{DoxyParamCaption}\item[{\textbf{ Encryption\+Algorithm\+::\+I\+Rep}}]{irep }\end{DoxyParamCaption})}
+
+\mbox{\label{classEncryptionAlgorithm_a11940db2351b1c3bb112e82584db3ce2}} 
+\index{Encryption\+Algorithm@{Encryption\+Algorithm}!translate@{translate}}
+\index{translate@{translate}!Encryption\+Algorithm@{Encryption\+Algorithm}}
+\subsubsection{translate()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::string Encryption\+Algorithm\+::translate (\begin{DoxyParamCaption}\item[{\textbf{ Encryption\+Algorithm\+::\+I\+Rep}}]{irep }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+translate an integer representation into the corresponding std\+::string representation \mbox{\label{classEncryptionAlgorithm_a3553b82544a11b6cd730489bf62493b9}} 
+\index{Encryption\+Algorithm@{Encryption\+Algorithm}!translate@{translate}}
+\index{translate@{translate}!Encryption\+Algorithm@{Encryption\+Algorithm}}
+\subsubsection{translate()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \textbf{ Encryption\+Algorithm\+::\+I\+Rep} Encryption\+Algorithm\+::translate (\begin{DoxyParamCaption}\item[{std\+::string}]{srep }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+translate a valid std\+::string representation into the corresponding integer representation 
+
+\subsection{Member Data Documentation}
+\mbox{\label{classEncryptionAlgorithm_a6c180bb36ea4f6cedbb1b6e0817c5aee}} 
+\index{Encryption\+Algorithm@{Encryption\+Algorithm}!I\+Rep\+\_\+size@{I\+Rep\+\_\+size}}
+\index{I\+Rep\+\_\+size@{I\+Rep\+\_\+size}!Encryption\+Algorithm@{Encryption\+Algorithm}}
+\subsubsection{I\+Rep\+\_\+size}
+{\footnotesize\ttfamily const unsigned int Encryption\+Algorithm\+::\+I\+Rep\+\_\+size = 5\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\label{classEncryptionAlgorithm_ac73bd3dce21f67281d56d2f472cae216}} 
+\index{Encryption\+Algorithm@{Encryption\+Algorithm}!Num\+Values@{Num\+Values}}
+\index{Num\+Values@{Num\+Values}!Encryption\+Algorithm@{Encryption\+Algorithm}}
+\subsubsection{Num\+Values}
+{\footnotesize\ttfamily const unsigned int Encryption\+Algorithm\+::\+Num\+Values = 23\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\label{classEncryptionAlgorithm_a04ae419348583b3a689f04877968ea06}} 
+\index{Encryption\+Algorithm@{Encryption\+Algorithm}!Translations@{Translations}}
+\index{Translations@{Translations}!Encryption\+Algorithm@{Encryption\+Algorithm}}
+\subsubsection{Translations}
+{\footnotesize\ttfamily const \textbf{ Encryption\+Algorithm\+::\+Translation} Encryption\+Algorithm\+::\+Translations\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+        \{ NONE, \textcolor{stringliteral}{"none"} \},
+        \{ TWOFISH, \textcolor{stringliteral}{"twofish"} \},
+        \{ RIJNDAEL128, \textcolor{stringliteral}{"rijndael-128"} \},
+        \{ RIJNDAEL192, \textcolor{stringliteral}{"rijndael-192"} \},
+        \{ RIJNDAEL256, \textcolor{stringliteral}{"rijndael-256"} \},
+        \{ SAFERPLUS, \textcolor{stringliteral}{"saferplus"} \},
+        \{ RC2, \textcolor{stringliteral}{"rc2"} \},
+        \{ XTEA, \textcolor{stringliteral}{"xtea"} \},
+        \{ SERPENT, \textcolor{stringliteral}{"serpent"} \},
+        \{ SAFERSK64, \textcolor{stringliteral}{"safer-sk64"} \},
+        \{ SAFERSK128, \textcolor{stringliteral}{"safer-sk128"} \},
+        \{ CAST256, \textcolor{stringliteral}{"cast-256"} \},
+        \{ LOKI97, \textcolor{stringliteral}{"loki97"} \},
+        \{ GOST, \textcolor{stringliteral}{"gost"} \},
+        \{ THREEWAY, \textcolor{stringliteral}{"threeway"} \},
+        \{ CAST128, \textcolor{stringliteral}{"cast-128"} \},
+        \{ BLOWFISH, \textcolor{stringliteral}{"blowfish"} \},
+        \{ DES, \textcolor{stringliteral}{"des"} \},
+        \{ TRIPLEDES, \textcolor{stringliteral}{"tripledes"} \},
+        \{ ENIGMA, \textcolor{stringliteral}{"enigma"} \},
+        \{ ARCFOUR, \textcolor{stringliteral}{"arcfour"} \},
+        \{ PANAMA, \textcolor{stringliteral}{"panama"} \},
+        \{ WAKE, \textcolor{stringliteral}{"wake"} \}
+\}
+\end{DoxyCode}
+\mbox{\label{classEncryptionAlgorithm_af75d13966d2b849cb0d92446ab982f5a}} 
+\index{Encryption\+Algorithm@{Encryption\+Algorithm}!Value@{Value}}
+\index{Value@{Value}!Encryption\+Algorithm@{Encryption\+Algorithm}}
+\subsubsection{Value}
+{\footnotesize\ttfamily \textbf{ I\+Rep} Encryption\+Algorithm\+::\+Value\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ Encryption\+Algorithm.\+h}\item 
+\textbf{ Encryption\+Algorithm.\+cc}\end{DoxyCompactItemize}

@@ -1,0 +1,102 @@
+.TH "UnitTest" 3 "Thu Aug 17 2017" "Version 0.5.1" "steghide" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+UnitTest
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <UnitTest\&.h>\fP
+.PP
+Inherits \fBTest\fP\&.
+.PP
+Inherited by \fBAUtilsTest\fP, \fBBFSAPHeuristicTest\fP, \fBBitStringTest\fP, \fBCvrStgFileTest\fP, \fBDFSAPHeuristicTest\fP, \fBEdgeIteratorTest\fP, \fBEmbDataTest\fP, \fBGraphTest\fP, \fBMatchingTest\fP, \fBMCryptPPTest\fP, \fBMHashKeyGenTest\fP, \fBMHashPPTest\fP, \fBSampleValueAdjacencyListTest\fP, \fBSampleValueTest\fP, \fBSelectorTest\fP, and \fBWKSConstructionHeuristicTest\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBUnitTest\fP (std::string n, \fBTestSuite\fP *s)"
+.br
+.ti -1c
+.RI "\fB~UnitTest\fP (void)"
+.br
+.ti -1c
+.RI "virtual void \fBsetup\fP (void)"
+.br
+.ti -1c
+.RI "void \fBrun\fP (void)"
+.br
+.ti -1c
+.RI "virtual void \fBcleanup\fP (void)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBaddTestCategory\fP (\fBTestCategory\fP *tc)"
+.br
+.ti -1c
+.RI "void \fBaddTestResult\fP (bool r)"
+.br
+.ti -1c
+.RI "char * \fBstrip_test\fP (char *s)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::vector< \fBTestCategory\fP * > \fBTestCategories\fP"
+.br
+.ti -1c
+.RI "\fBGlobals\fP \fBGlobsBackup\fP"
+.br
+.RI "servers as a backup for the \fBGlobals\fP object stored in Globs "
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "UnitTest::UnitTest (std::string n, \fBTestSuite\fP * s)\fC [inline]\fP"
+
+.PP
+\fBParameters:\fP
+.RS 4
+\fIn\fP name of this unit test (probably the name of the tested class) 
+.RE
+.PP
+
+.SS "UnitTest::~UnitTest (void)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void UnitTest::addTestCategory (\fBTestCategory\fP * tc)\fC [protected]\fP"
+
+.SS "void UnitTest::addTestResult (bool r)\fC [protected]\fP"
+
+.SS "void UnitTest::cleanup (void)\fC [virtual]\fP"
+cleanup the unit test - called after run 
+.PP
+Reimplemented in \fBEdgeIteratorTest\fP, \fBMatchingTest\fP, \fBWKSConstructionHeuristicTest\fP, \fBBFSAPHeuristicTest\fP, \fBBitStringTest\fP, \fBDFSAPHeuristicTest\fP, \fBGraphTest\fP, \fBBmpWinFileTest\fP, \fBBmpFileTest\fP, \fBJpegSampleValueTest\fP, \fBSelectorTest\fP, \fBAudioSampleValueTest\fP, \fBAuFileTest\fP, \fBBmpOS2FileTest\fP, \fBBmpPaletteSampleValueTest\fP, \fBBmpRGBSampleValueTest\fP, \fBJpegFileTest\fP, \fBWavFileTest\fP, and \fBWavPCMSampleValueTest\fP\&.
+.SS "void UnitTest::run (void)\fC [virtual]\fP"
+
+.PP
+Implements \fBTest\fP\&.
+.SS "void UnitTest::setup (void)\fC [virtual]\fP"
+setup the unit test - called before run
+.PP
+\fBUnitTest::setup\fP will (together with \fBUnitTest::cleanup\fP) save and restore the object stored in Globs so they should be called from the corresponding functions in the derived object if the derived unit test manipulates the Globs object\&. 
+.PP
+Reimplemented in \fBEdgeIteratorTest\fP, \fBMatchingTest\fP, \fBWKSConstructionHeuristicTest\fP, \fBBFSAPHeuristicTest\fP, \fBBitStringTest\fP, \fBDFSAPHeuristicTest\fP, \fBSampleValueAdjacencyListTest\fP, \fBGraphTest\fP, \fBBmpWinFileTest\fP, \fBBmpFileTest\fP, \fBJpegSampleValueTest\fP, \fBSelectorTest\fP, \fBAudioSampleValueTest\fP, \fBAuFileTest\fP, \fBBmpOS2FileTest\fP, \fBBmpPaletteSampleValueTest\fP, \fBBmpRGBSampleValueTest\fP, \fBJpegFileTest\fP, \fBWavFileTest\fP, and \fBWavPCMSampleValueTest\fP\&.
+.SS "char* UnitTest::strip_test (char * s)\fC [inline]\fP, \fC [protected]\fP"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBGlobals\fP UnitTest::GlobsBackup\fC [private]\fP"
+
+.SS "std::vector<\fBTestCategory\fP*> UnitTest::TestCategories\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for steghide from the source code\&.

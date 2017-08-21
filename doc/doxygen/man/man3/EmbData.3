@@ -1,0 +1,310 @@
+.TH "EmbData" 3 "Thu Aug 17 2017" "Version 0.5.1" "steghide" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+EmbData
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <EmbData\&.h>\fP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBMODE\fP { \fBEMBED\fP, \fBEXTRACT\fP }"
+.br
+.ti -1c
+.RI "enum \fBSTATE\fP { \fBREAD_MAGIC\fP, \fBREAD_VERSION\fP, \fBREAD_ENCINFO\fP, \fBREAD_NPLAINBITS\fP, \fBREAD_ENCRYPTED\fP, \fBEND\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBEmbData\fP (\fBMODE\fP m, std::string pp, std::string fn='')"
+.br
+.ti -1c
+.RI "\fBBitString\fP \fBgetBitString\fP (void)"
+.br
+.ti -1c
+.RI "bool \fBfinished\fP (void)"
+.br
+.ti -1c
+.RI "unsigned long \fBgetNumBitsRequested\fP (void)"
+.br
+.ti -1c
+.RI "void \fBaddBits\fP (\fBBitString\fP addbits)"
+.br
+.ti -1c
+.RI "void \fBsetEncAlgo\fP (\fBEncryptionAlgorithm\fP a)"
+.br
+.ti -1c
+.RI "\fBEncryptionAlgorithm\fP \fBgetEncAlgo\fP (void) const"
+.br
+.ti -1c
+.RI "void \fBsetEncMode\fP (\fBEncryptionMode\fP m)"
+.br
+.ti -1c
+.RI "\fBEncryptionMode\fP \fBgetEncMode\fP (void) const"
+.br
+.ti -1c
+.RI "void \fBsetCompression\fP (int c)"
+.br
+.ti -1c
+.RI "int \fBgetCompression\fP (void) const"
+.br
+.ti -1c
+.RI "void \fBsetChecksum\fP (bool c)"
+.br
+.ti -1c
+.RI "bool \fBgetChecksum\fP (void) const"
+.br
+.ti -1c
+.RI "bool \fBchecksumOK\fP (void) const"
+.br
+.ti -1c
+.RI "void \fBsetData\fP (const std::vector< \fBBYTE\fP > data)"
+.br
+.ti -1c
+.RI "std::vector< \fBBYTE\fP > \fBgetData\fP (void) const"
+.br
+.ti -1c
+.RI "std::string \fBgetFileName\fP (void) const"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static const unsigned int \fBMinStegoHeaderSize\fP = 50"
+.br
+.RI "the minimum size of the part of the generatred \fBBitString\fP that is not the data "
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "std::string \fBstripDir\fP (std::string s)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBMODE\fP \fBMode\fP"
+.br
+.ti -1c
+.RI "\fBSTATE\fP \fBState\fP"
+.br
+.ti -1c
+.RI "unsigned long \fBNPlainBits\fP"
+.br
+.ti -1c
+.RI "unsigned long \fBNumBitsRequested\fP"
+.br
+.RI "the number of bits that the caller must at least supply to addBits "
+.ti -1c
+.RI "unsigned long \fBNumBitsNeeded\fP"
+.br
+.RI "exactly the number of bits that the next step will consume from Reservoir and addBits together "
+.ti -1c
+.RI "\fBBitString\fP \fBReservoir\fP"
+.br
+.ti -1c
+.RI "std::string \fBPassphrase\fP"
+.br
+.ti -1c
+.RI "unsigned short \fBVersion\fP"
+.br
+.RI "version read from input bitstring "
+.ti -1c
+.RI "\fBEncryptionAlgorithm\fP \fBEncAlgo\fP"
+.br
+.ti -1c
+.RI "\fBEncryptionMode\fP \fBEncMode\fP"
+.br
+.ti -1c
+.RI "int \fBCompression\fP"
+.br
+.RI "compression level: 0(none),1(best speed),\&.\&.\&.,9(best compression) "
+.ti -1c
+.RI "bool \fBChecksum\fP"
+.br
+.RI "will a checksum be embedded ? "
+.ti -1c
+.RI "unsigned long \fBCRC32\fP"
+.br
+.RI "the checksum "
+.ti -1c
+.RI "std::string \fBFileName\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBBYTE\fP > \fBData\fP"
+.br
+.RI "contains the actual message to be embedded "
+.in -1c
+.SS "Static Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "static const unsigned int \fBNBitsNPlainBits\fP = 32"
+.br
+.RI "number of bits used to code the number of plain bits "
+.ti -1c
+.RI "static const unsigned int \fBNBitsNUncompressedBits\fP = 32"
+.br
+.RI "number of bits used to code the number of uncompressed bits "
+.ti -1c
+.RI "static const unsigned int \fBNBitsCrc32\fP = 32"
+.br
+.RI "size of a crc32 checksum in bits "
+.ti -1c
+.RI "static const unsigned short \fBCodeVersion\fP = 0"
+.br
+.RI "version of this steghide embedding (stego compatibility of \fBEmbData\fP) "
+.ti -1c
+.RI "static const \fBUWORD32\fP \fBMagic\fP = 0x73688DUL"
+.br
+.RI "steghide magic to recognize embedded data (the string 'shm') "
+.ti -1c
+.RI "static const unsigned int \fBNBitsMagic\fP = 24"
+.br
+.RI "size (in bits of Magic) "
+.in -1c
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBEmbData::MODE\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIEMBED \fP\fP
+.TP
+\fB\fIEXTRACT \fP\fP
+.SS "enum \fBEmbData::STATE\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIREAD_MAGIC \fP\fP
+.TP
+\fB\fIREAD_VERSION \fP\fP
+.TP
+\fB\fIREAD_ENCINFO \fP\fP
+.TP
+\fB\fIREAD_NPLAINBITS \fP\fP
+.TP
+\fB\fIREAD_ENCRYPTED \fP\fP
+.TP
+\fB\fIEND \fP\fP
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "EmbData::EmbData (\fBMODE\fP m, std::string pp, std::string fn = \fC''\fP)"
+construct a new \fBEmbData\fP object 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIm\fP the mode (EMBED or EXTRACT) 
+.br
+\fIpp\fP the passphrase 
+.br
+\fIfn\fP the filename (only need for mode EMBED) 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void EmbData::addBits (\fBBitString\fP addbits)"
+
+.SS "bool EmbData::checksumOK (void) const"
+check if crc32 checksum is ok (needs filled Data and CRC32 fields) 
+.PP
+\fBReturns:\fP
+.RS 4
+true iff checksum is ok 
+.RE
+.PP
+
+.SS "bool EmbData::finished (void)"
+
+.SS "\fBBitString\fP EmbData::getBitString (void)"
+
+.SS "bool EmbData::getChecksum (void) const"
+
+.SS "int EmbData::getCompression (void) const"
+
+.SS "std::vector<\fBBYTE\fP> EmbData::getData (void) const\fC [inline]\fP"
+
+.SS "\fBEncryptionAlgorithm\fP EmbData::getEncAlgo (void) const"
+
+.SS "\fBEncryptionMode\fP EmbData::getEncMode (void) const"
+
+.SS "std::string EmbData::getFileName (void) const\fC [inline]\fP"
+
+.SS "unsigned long EmbData::getNumBitsRequested (void)"
+get the minimum length of the \fBBitString\fP that is to be passed to addBits 
+.SS "void EmbData::setChecksum (bool c)"
+
+.SS "void EmbData::setCompression (int c)"
+
+.SS "void EmbData::setData (const std::vector< \fBBYTE\fP > data)\fC [inline]\fP"
+
+.SS "void EmbData::setEncAlgo (\fBEncryptionAlgorithm\fP a)"
+
+.SS "void EmbData::setEncMode (\fBEncryptionMode\fP m)"
+
+.SS "std::string EmbData::stripDir (std::string s)\fC [protected]\fP"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "bool EmbData::Checksum\fC [private]\fP"
+
+.SS "const unsigned short EmbData::CodeVersion = 0\fC [static]\fP, \fC [private]\fP"
+
+.SS "int EmbData::Compression\fC [private]\fP"
+
+.SS "unsigned long EmbData::CRC32\fC [private]\fP"
+
+.SS "std::vector<\fBBYTE\fP> EmbData::Data\fC [private]\fP"
+
+.SS "\fBEncryptionAlgorithm\fP EmbData::EncAlgo\fC [private]\fP"
+
+.SS "\fBEncryptionMode\fP EmbData::EncMode\fC [private]\fP"
+
+.SS "std::string EmbData::FileName\fC [private]\fP"
+
+.SS "const \fBUWORD32\fP EmbData::Magic = 0x73688DUL\fC [static]\fP, \fC [private]\fP"
+
+.SS "const unsigned int EmbData::MinStegoHeaderSize = 50\fC [static]\fP"
+
+.SS "\fBMODE\fP EmbData::Mode\fC [private]\fP"
+
+.SS "const unsigned int EmbData::NBitsCrc32 = 32\fC [static]\fP, \fC [private]\fP"
+
+.SS "const unsigned int EmbData::NBitsMagic = 24\fC [static]\fP, \fC [private]\fP"
+
+.SS "const unsigned int EmbData::NBitsNPlainBits = 32\fC [static]\fP, \fC [private]\fP"
+
+.SS "const unsigned int EmbData::NBitsNUncompressedBits = 32\fC [static]\fP, \fC [private]\fP"
+
+.SS "unsigned long EmbData::NPlainBits\fC [private]\fP"
+
+.SS "unsigned long EmbData::NumBitsNeeded\fC [private]\fP"
+
+.SS "unsigned long EmbData::NumBitsRequested\fC [private]\fP"
+
+.SS "std::string EmbData::Passphrase\fC [private]\fP"
+
+.SS "\fBBitString\fP EmbData::Reservoir\fC [private]\fP"
+
+.SS "\fBSTATE\fP EmbData::State\fC [private]\fP"
+
+.SS "unsigned short EmbData::Version\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for steghide from the source code\&.

@@ -1,0 +1,75 @@
+.TH "Question" 3 "Thu Aug 17 2017" "Version 0.5.1" "steghide" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Question
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <msg\&.h>\fP
+.PP
+Inherits \fBMessageBase\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBQuestion\fP (void)"
+.br
+.ti -1c
+.RI "\fBQuestion\fP (std::string msg)"
+.br
+.ti -1c
+.RI "\fBQuestion\fP (const char *msgfmt,\&.\&.\&.)"
+.br
+.ti -1c
+.RI "void \fBprintMessage\fP (void) const"
+.br
+.ti -1c
+.RI "bool \fBgetAnswer\fP (void)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::string \fByeschar\fP"
+.br
+.ti -1c
+.RI "std::string \fBnochar\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Question::Question (void)"
+
+.SS "Question::Question (std::string msg)"
+
+.SS "Question::Question (const char * msgfmt,  \&.\&.\&.)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "bool Question::getAnswer (void)"
+wait for the user to answer the question (should be printed before) 
+.PP
+\fBReturns:\fP
+.RS 4
+true iff the user answers with yes, i\&.e\&. presses the yeschar-key 
+.RE
+.PP
+
+.SS "void Question::printMessage (void) const\fC [virtual]\fP"
+
+.PP
+Implements \fBMessageBase\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "std::string Question::nochar\fC [private]\fP"
+
+.SS "std::string Question::yeschar\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for steghide from the source code\&.

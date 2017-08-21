@@ -1,0 +1,242 @@
+.TH "EncryptionAlgorithm" 3 "Thu Aug 17 2017" "Version 0.5.1" "steghide" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+EncryptionAlgorithm
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <EncryptionAlgorithm\&.h>\fP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBstruct_Translation\fP"
+.br
+.in -1c
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBIRep\fP { \fBNONE\fP = 0, \fBTWOFISH\fP = 1, \fBRIJNDAEL128\fP = 2, \fBRIJNDAEL192\fP = 3, \fBRIJNDAEL256\fP = 4, \fBSAFERPLUS\fP = 5, \fBRC2\fP = 6, \fBXTEA\fP = 7, \fBSERPENT\fP = 8, \fBSAFERSK64\fP = 9, \fBSAFERSK128\fP = 10, \fBCAST256\fP = 11, \fBLOKI97\fP = 12, \fBGOST\fP = 13, \fBTHREEWAY\fP = 14, \fBCAST128\fP = 15, \fBBLOWFISH\fP = 16, \fBDES\fP = 17, \fBTRIPLEDES\fP = 18, \fBENIGMA\fP = 19, \fBARCFOUR\fP = 20, \fBPANAMA\fP = 21, \fBWAKE\fP = 22 }"
+.br
+.RI "integer representation of encryption algorithm "
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBEncryptionAlgorithm\fP (void)"
+.br
+.ti -1c
+.RI "\fBEncryptionAlgorithm\fP (\fBIRep\fP irep)"
+.br
+.ti -1c
+.RI "\fBEncryptionAlgorithm\fP (std::string srep)"
+.br
+.ti -1c
+.RI "void \fBsetValue\fP (\fBIRep\fP irep)"
+.br
+.ti -1c
+.RI "std::string \fBgetStringRep\fP (void) const"
+.br
+.ti -1c
+.RI "\fBIRep\fP \fBgetIntegerRep\fP (void) const"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBEncryptionAlgorithm\fP &algo) const"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static bool \fBisValidStringRep\fP (std::string srep)"
+.br
+.ti -1c
+.RI "static bool \fBisValidIntegerRep\fP (unsigned int irep)"
+.br
+.ti -1c
+.RI "static std::string \fBtranslate\fP (\fBIRep\fP irep)"
+.br
+.ti -1c
+.RI "static \fBIRep\fP \fBtranslate\fP (std::string srep)"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static const unsigned int \fBIRep_size\fP = 5"
+.br
+.RI "number of bits needed to code the algorithm "
+.in -1c
+.SS "Private Types"
+
+.in +1c
+.ti -1c
+.RI "typedef struct \fBEncryptionAlgorithm::struct_Translation\fP \fBTranslation\fP"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBIRep\fP \fBValue\fP"
+.br
+.in -1c
+.SS "Static Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "static const unsigned int \fBNumValues\fP = 23"
+.br
+.ti -1c
+.RI "static const \fBTranslation\fP \fBTranslations\fP []"
+.br
+.in -1c
+.SH "Member Typedef Documentation"
+.PP 
+.SS "typedef struct \fBEncryptionAlgorithm::struct_Translation\fP  \fBEncryptionAlgorithm::Translation\fP\fC [private]\fP"
+
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBEncryptionAlgorithm::IRep\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fINONE \fP\fP
+.TP
+\fB\fITWOFISH \fP\fP
+.TP
+\fB\fIRIJNDAEL128 \fP\fP
+.TP
+\fB\fIRIJNDAEL192 \fP\fP
+.TP
+\fB\fIRIJNDAEL256 \fP\fP
+.TP
+\fB\fISAFERPLUS \fP\fP
+.TP
+\fB\fIRC2 \fP\fP
+.TP
+\fB\fIXTEA \fP\fP
+.TP
+\fB\fISERPENT \fP\fP
+.TP
+\fB\fISAFERSK64 \fP\fP
+.TP
+\fB\fISAFERSK128 \fP\fP
+.TP
+\fB\fICAST256 \fP\fP
+.TP
+\fB\fILOKI97 \fP\fP
+.TP
+\fB\fIGOST \fP\fP
+.TP
+\fB\fITHREEWAY \fP\fP
+.TP
+\fB\fICAST128 \fP\fP
+.TP
+\fB\fIBLOWFISH \fP\fP
+.TP
+\fB\fIDES \fP\fP
+.TP
+\fB\fITRIPLEDES \fP\fP
+.TP
+\fB\fIENIGMA \fP\fP
+.TP
+\fB\fIARCFOUR \fP\fP
+.TP
+\fB\fIPANAMA \fP\fP
+.TP
+\fB\fIWAKE \fP\fP
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "EncryptionAlgorithm::EncryptionAlgorithm (void)"
+
+.SS "EncryptionAlgorithm::EncryptionAlgorithm (\fBEncryptionAlgorithm::IRep\fP irep)"
+
+.SS "EncryptionAlgorithm::EncryptionAlgorithm (std::string srep)"
+construct a new \fBEncryptionAlgorithm\fP object from a std::string representation 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsrep\fP a valid(!) std::string representation 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBEncryptionAlgorithm::IRep\fP EncryptionAlgorithm::getIntegerRep (void) const"
+
+.SS "std::string EncryptionAlgorithm::getStringRep (void) const"
+
+.SS "bool EncryptionAlgorithm::isValidIntegerRep (unsigned int irep)\fC [static]\fP"
+
+.SS "bool EncryptionAlgorithm::isValidStringRep (std::string srep)\fC [static]\fP"
+check if srep is a valid std::string representation (w\&.r\&.t the Translations array) 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsrep\fP a std::string that maybe represents an encryption algorithm fron the Translations table 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+true iff the Translations table contains srep 
+.RE
+.PP
+
+.SS "bool EncryptionAlgorithm::operator== (const \fBEncryptionAlgorithm\fP & algo) const\fC [inline]\fP"
+
+.SS "void EncryptionAlgorithm::setValue (\fBEncryptionAlgorithm::IRep\fP irep)"
+
+.SS "std::string EncryptionAlgorithm::translate (\fBEncryptionAlgorithm::IRep\fP irep)\fC [static]\fP"
+translate an integer representation into the corresponding std::string representation 
+.SS "\fBEncryptionAlgorithm::IRep\fP EncryptionAlgorithm::translate (std::string srep)\fC [static]\fP"
+translate a valid std::string representation into the corresponding integer representation 
+.SH "Member Data Documentation"
+.PP 
+.SS "const unsigned int EncryptionAlgorithm::IRep_size = 5\fC [static]\fP"
+
+.SS "const unsigned int EncryptionAlgorithm::NumValues = 23\fC [static]\fP, \fC [private]\fP"
+
+.SS "const \fBEncryptionAlgorithm::Translation\fP EncryptionAlgorithm::Translations\fC [static]\fP, \fC [private]\fP"
+\fBInitial value:\fP
+.PP
+.nf
+= {
+        { NONE, "none" },
+        { TWOFISH, "twofish" },
+        { RIJNDAEL128, "rijndael-128" },
+        { RIJNDAEL192, "rijndael-192" },
+        { RIJNDAEL256, "rijndael-256" },
+        { SAFERPLUS, "saferplus" },
+        { RC2, "rc2" },
+        { XTEA, "xtea" },
+        { SERPENT, "serpent" },
+        { SAFERSK64, "safer-sk64" },
+        { SAFERSK128, "safer-sk128" },
+        { CAST256, "cast-256" },
+        { LOKI97, "loki97" },
+        { GOST, "gost" },
+        { THREEWAY, "threeway" },
+        { CAST128, "cast-128" },
+        { BLOWFISH, "blowfish" },
+        { DES, "des" },
+        { TRIPLEDES, "tripledes" },
+        { ENIGMA, "enigma" },
+        { ARCFOUR, "arcfour" },
+        { PANAMA, "panama" },
+        { WAKE, "wake" }
+}
+.fi
+.SS "\fBIRep\fP EncryptionAlgorithm::Value\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for steghide from the source code\&.

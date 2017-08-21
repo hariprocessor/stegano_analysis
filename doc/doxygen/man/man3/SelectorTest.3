@@ -1,0 +1,106 @@
+.TH "SelectorTest" 3 "Thu Aug 17 2017" "Version 0.5.1" "steghide" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SelectorTest
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SelectorTest\&.h>\fP
+.PP
+Inherits \fBUnitTest\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSelectorTest\fP (\fBTestSuite\fP *s)"
+.br
+.ti -1c
+.RI "void \fBsetup\fP (void)"
+.br
+.ti -1c
+.RI "void \fBcleanup\fP (void)"
+.br
+.ti -1c
+.RI "void \fBtestIsPermutation\fP (void)"
+.br
+.ti -1c
+.RI "void \fBtestIsIdentityPermutation\fP (void)"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBgenericTestIsPermutation\fP (\fBSelector\fP *s)"
+.br
+.ti -1c
+.RI "bool \fBgenericTestIsIdentityPermutation\fP (\fBSelector\fP *s)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBSelector\fP * \fBs1\fP"
+.br
+.ti -1c
+.RI "\fBSelector\fP * \fBs2\fP"
+.br
+.ti -1c
+.RI "\fBSelector\fP * \fBs3\fP"
+.br
+.ti -1c
+.RI "\fBSelector\fP * \fBs4\fP"
+.br
+.ti -1c
+.RI "\fBSelector\fP * \fBsid1\fP"
+.br
+.ti -1c
+.RI "\fBSelector\fP * \fBsid2\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SelectorTest::SelectorTest (\fBTestSuite\fP * s)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void SelectorTest::cleanup (void)\fC [virtual]\fP"
+cleanup the unit test - called after run 
+.PP
+Reimplemented from \fBUnitTest\fP\&.
+.SS "bool SelectorTest::genericTestIsIdentityPermutation (\fBSelector\fP * s)\fC [private]\fP"
+
+.SS "bool SelectorTest::genericTestIsPermutation (\fBSelector\fP * s)\fC [private]\fP"
+
+.SS "void SelectorTest::setup (void)\fC [virtual]\fP"
+setup the unit test - called before run
+.PP
+\fBUnitTest::setup\fP will (together with \fBUnitTest::cleanup\fP) save and restore the object stored in Globs so they should be called from the corresponding functions in the derived object if the derived unit test manipulates the Globs object\&. 
+.PP
+Reimplemented from \fBUnitTest\fP\&.
+.SS "void SelectorTest::testIsIdentityPermutation (void)"
+
+.SS "void SelectorTest::testIsPermutation (void)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBSelector\fP* SelectorTest::s1\fC [private]\fP"
+
+.SS "\fBSelector\fP * SelectorTest::s2\fC [private]\fP"
+
+.SS "\fBSelector\fP * SelectorTest::s3\fC [private]\fP"
+
+.SS "\fBSelector\fP * SelectorTest::s4\fC [private]\fP"
+
+.SS "\fBSelector\fP* SelectorTest::sid1\fC [private]\fP"
+
+.SS "\fBSelector\fP * SelectorTest::sid2\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for steghide from the source code\&.

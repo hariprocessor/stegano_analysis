@@ -1,0 +1,28 @@
+\section{Edge\+Iterator\+Test.\+cc File Reference}
+\label{EdgeIteratorTest_8cc}\index{Edge\+Iterator\+Test.\+cc@{Edge\+Iterator\+Test.\+cc}}
+{\ttfamily \#include \char`\"{}Edge.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}common.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Dummy\+File.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Edge\+Iterator\+Test.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Test\+Category\+Caller.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}utcommon.\+h\char`\"{}}\newline
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \textbf{ C\+R\+E\+A\+T\+E\+E\+D\+GE}(G,  V1,  V2)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\label{EdgeIteratorTest_8cc_a52ddf6d2de5e99f66a5609f59b8f13fd}} 
+\index{Edge\+Iterator\+Test.\+cc@{Edge\+Iterator\+Test.\+cc}!C\+R\+E\+A\+T\+E\+E\+D\+GE@{C\+R\+E\+A\+T\+E\+E\+D\+GE}}
+\index{C\+R\+E\+A\+T\+E\+E\+D\+GE@{C\+R\+E\+A\+T\+E\+E\+D\+GE}!Edge\+Iterator\+Test.\+cc@{Edge\+Iterator\+Test.\+cc}}
+\subsubsection{C\+R\+E\+A\+T\+E\+E\+D\+GE}
+{\footnotesize\ttfamily \#define C\+R\+E\+A\+T\+E\+E\+D\+GE(\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{V1,  }\item[{}]{V2 }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+((V1 < V2) ? \(\backslash\)
+                (\textcolor{keyword}{new} Edge ((G)->getVertex(V1), 0, (G)->getVertex(V2), 1)) : \(\backslash\)
+                (\textcolor{keyword}{new} Edge ((G)->getVertex(V2), 0, (G)->getVertex(V1), 1)))
+\end{DoxyCode}

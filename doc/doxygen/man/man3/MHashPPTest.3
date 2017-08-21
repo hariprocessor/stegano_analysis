@@ -1,0 +1,65 @@
+.TH "MHashPPTest" 3 "Thu Aug 17 2017" "Version 0.5.1" "steghide" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MHashPPTest
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <MHashPPTest\&.h>\fP
+.PP
+Inherits \fBUnitTest\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMHashPPTest\fP (\fBTestSuite\fP *s)"
+.br
+.ti -1c
+.RI "void \fBtestMD5\fP (void)"
+.br
+.ti -1c
+.RI "void \fBtestCRC32\fP (void)"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBgenericTestMHashPP\fP (hashid a, \fBBitString\fP data, \fBBYTE\fP *shouldbe)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "MHashPPTest::MHashPPTest (\fBTestSuite\fP * s)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "bool MHashPPTest::genericTestMHashPP (hashid a, \fBBitString\fP data, \fBBYTE\fP * shouldbe)\fC [private]\fP"
+compute a hash using \fBMHashPP\fP and compare it to a reference value 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIa\fP the hash algorithm that should be used by \fBMHashPP\fP 
+.br
+\fIdata\fP the input of the hash algorithm 
+.br
+\fIshouldbe\fP the reference value of the result of the hash algorithm 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+true iff shouldbe is the result of the hash algorithm a applied to data by \fBMHashPP\fP 
+.RE
+.PP
+
+.SS "void MHashPPTest::testCRC32 (void)"
+
+.SS "void MHashPPTest::testMD5 (void)"
+test output of \fBMHashPP\fP class with MD5 algorithm against the test vectors given in RFC 1321 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for steghide from the source code\&.

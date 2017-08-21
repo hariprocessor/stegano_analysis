@@ -1,0 +1,199 @@
+.TH "Vertex" 3 "Thu Aug 17 2017" "Version 0.5.1" "steghide" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Vertex \- a vertex in a graph  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Vertex\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBVertex\fP (\fBVertexLabel\fP l, \fBSamplePos\fP *sposs, \fBSampleValue\fP **svalues, \fBEmbValue\fP t)"
+.br
+.ti -1c
+.RI "\fB~Vertex\fP (void)"
+.br
+.ti -1c
+.RI "\fBSamplePos\fP \fBgetSamplePos\fP (unsigned short i) const"
+.br
+.ti -1c
+.RI "\fBSampleValue\fP * \fBgetSampleValue\fP (unsigned short i) const"
+.br
+.ti -1c
+.RI "\fBUWORD32\fP \fBgetDegree\fP (void) const"
+.br
+.ti -1c
+.RI "\fBEdge\fP * \fBgetShortestEdge\fP (void) const"
+.br
+.ti -1c
+.RI "void \fBupdateShortestEdge\fP (void)"
+.br
+.ti -1c
+.RI "void \fBmarkDeleted\fP (void)"
+.br
+.ti -1c
+.RI "void \fBunmarkDeleted\fP (void)"
+.br
+.ti -1c
+.RI "\fBVertexLabel\fP \fBgetLabel\fP (void) const"
+.br
+.ti -1c
+.RI "void \fBsetLabel\fP (\fBVertexLabel\fP l)"
+.br
+.ti -1c
+.RI "void \fBsetSampleOccurenceIt\fP (unsigned short i, std::list< \fBSampleOccurence\fP >::iterator it)"
+.br
+.ti -1c
+.RI "\fBEmbValue\fP \fBgetEmbeddedValue\fP (void) const"
+.br
+.ti -1c
+.RI "\fBEmbValue\fP \fBgetTargetValue\fP (unsigned short i) const"
+.br
+.ti -1c
+.RI "void \fBprint\fP (unsigned short spc=0) const"
+.br
+.ti -1c
+.RI "void \fBprintEdges\fP (void) const"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBVertexLabel\fP \fBLabel\fP"
+.br
+.RI "the vertex label of this vertex "
+.ti -1c
+.RI "\fBSamplePos\fP * \fBSamplePositions\fP"
+.br
+.RI "the sample positions of the samples described by this vertex in the \fBCvrStgFile\fP "
+.ti -1c
+.RI "\fBSampleValue\fP ** \fBSampleValues\fP"
+.br
+.RI "the sample values at the SamplePositions "
+.ti -1c
+.RI "\fBEmbValue\fP * \fBTargetValues\fP"
+.br
+.RI "the target values for the sample values (exactly one of them has to be reached (and the other left unchanged) to embed this vertex) "
+.ti -1c
+.RI "std::list< \fBSampleOccurence\fP >::iterator * \fBSampleOccurenceIts\fP"
+.br
+.RI "point to entries in std::lists of sample occurences in the graph "
+.ti -1c
+.RI "\fBEdge\fP * \fBShortestEdge\fP"
+.br
+.RI "the shortest edge of this vertex (as calculated by updateShortestEdge) "
+.ti -1c
+.RI "bool \fBvalid\fP"
+.br
+.RI "true iff this vertex is not deleted "
+.ti -1c
+.RI "unsigned short \fBSelfDegree\fP"
+.br
+.RI "the number of loop edges (loop edges are not valid edges) "
+.in -1c
+.SH "Detailed Description"
+.PP 
+A vertex represents a bit that will cause a change to the cover-stego-file to be embedded\&. A vertex consists of k samples (that is k sample values at k (different) positions in the cover-stego-file), where k is TheCvrStgFile->getNumSamplesPerVertex()\&. One of these k samples must be changed to an opposite sample to embed the bit that corresponds to this vertex\&.
+.PP
+\fBNOTE:\fP \fBVertex\fP relies on the \fBGlobals\fP object pointed to by the Globs pointer\&. This means that it must be set correctly before using any method of a \fBVertex\fP object\&. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Vertex::Vertex (\fBVertexLabel\fP l, \fBSamplePos\fP * sposs, \fBSampleValue\fP ** svalues, \fBEmbValue\fP t)"
+construct a new vertex object 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIl\fP the vertex label for this vertex 
+.br
+\fIsposs\fP the array (with length g->getSamplesPerVertex()) of the positions of the samples 
+.br
+\fIsvalues\fP the array (with length g->getSamplesPerVertex()) of (unique (!)) pointers to the sample values 
+.br
+\fIt\fP the target value for the whole vertex - the value that should be returned by \fBgetEmbeddedValue()\fP after the embedding 
+.RE
+.PP
+
+.SS "Vertex::~Vertex (void)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBUWORD32\fP Vertex::getDegree (void) const"
+get the degree of this vertex 
+.SS "\fBEmbValue\fP Vertex::getEmbeddedValue (void) const"
+
+.SS "\fBVertexLabel\fP Vertex::getLabel (void) const\fC [inline]\fP"
+
+.SS "\fBSamplePos\fP Vertex::getSamplePos (unsigned short i) const\fC [inline]\fP"
+get the i-th sample position 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIi\fP an index of a sample in this vertex (must be < TheCvrStgFile->getNumSamplesPerVertex()) 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the position of the sample in the associated cvrstgfile 
+.RE
+.PP
+
+.SS "\fBSampleValue\fP* Vertex::getSampleValue (unsigned short i) const\fC [inline]\fP"
+get the i-th sample value 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIi\fP an index of a sample in this vertex (must be < TheCvrStgFile->getNumSamplesPerVertex()) 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the value of the sample in the associated cvrstgfile 
+.RE
+.PP
+
+.SS "\fBEdge\fP* Vertex::getShortestEdge (void) const\fC [inline]\fP"
+get the shortest edge of this vertex 
+.SS "\fBEmbValue\fP Vertex::getTargetValue (unsigned short i) const\fC [inline]\fP"
+
+.SS "void Vertex::markDeleted (void)"
+if this vertex is valid, mark it as deleted 
+.SS "void Vertex::print (unsigned short spc = \fC0\fP) const"
+
+.SS "void Vertex::printEdges (void) const"
+
+.SS "void Vertex::setLabel (\fBVertexLabel\fP l)\fC [inline]\fP"
+
+.SS "void Vertex::setSampleOccurenceIt (unsigned short i, std::list< \fBSampleOccurence\fP >::iterator it)\fC [inline]\fP"
+
+.SS "void Vertex::unmarkDeleted (void)"
+if this vertex is marked as deleted, undo this 
+.SS "void Vertex::updateShortestEdge (void)"
+find shortest edge of this vertex and save result to ShortestEdge 
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBVertexLabel\fP Vertex::Label\fC [private]\fP"
+
+.SS "std::list<\fBSampleOccurence\fP>::iterator* Vertex::SampleOccurenceIts\fC [private]\fP"
+
+.SS "\fBSamplePos\fP* Vertex::SamplePositions\fC [private]\fP"
+
+.SS "\fBSampleValue\fP** Vertex::SampleValues\fC [private]\fP"
+
+.SS "unsigned short Vertex::SelfDegree\fC [private]\fP"
+
+.SS "\fBEdge\fP* Vertex::ShortestEdge\fC [private]\fP"
+
+.SS "\fBEmbValue\fP* Vertex::TargetValues\fC [private]\fP"
+
+.SS "bool Vertex::valid\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for steghide from the source code\&.

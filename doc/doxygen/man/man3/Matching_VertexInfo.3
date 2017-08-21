@@ -1,0 +1,89 @@
+.TH "Matching::VertexInfo" 3 "Thu Aug 17 2017" "Version 0.5.1" "steghide" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Matching::VertexInfo \- contains information about a vertex that is possibly in a matching  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBVertexInfo\fP (std::list< \fBEdge\fP *>::iterator mit)"
+.br
+.ti -1c
+.RI "\fBVertexInfo\fP (std::list< \fBVertex\fP *>::iterator eit)"
+.br
+.ti -1c
+.RI "bool \fBisExposed\fP (void) const"
+.br
+.ti -1c
+.RI "bool \fBisMatched\fP (void) const"
+.br
+.ti -1c
+.RI "\fBEdge\fP * \fBgetMatchingEdge\fP (void) const"
+.br
+.ti -1c
+.RI "std::list< \fBEdge\fP * >::iterator \fBgetMatchedIterator\fP (void) const"
+.br
+.ti -1c
+.RI "std::list< \fBVertex\fP * >::iterator \fBgetExposedIterator\fP (void) const"
+.br
+.ti -1c
+.RI "void \fBsetMatched\fP (std::list< \fBEdge\fP *>::iterator mit)"
+.br
+.ti -1c
+.RI "void \fBsetExposed\fP (std::list< \fBVertex\fP *>::iterator eit)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "bool \fBMatched\fP"
+.br
+.ti -1c
+.RI "std::list< \fBEdge\fP * >::iterator \fBMatchedIterator\fP"
+.br
+.RI "an iterator into the list of matched edges (only valid if this vertex is matched) "
+.ti -1c
+.RI "std::list< \fBVertex\fP * >::iterator \fBExposedIterator\fP"
+.br
+.RI "an iterator into the list of exposed vertices (only valid if this vertex is exposed) "
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Matching::VertexInfo::VertexInfo (std::list< \fBEdge\fP *>::iterator mit)\fC [inline]\fP"
+
+.SS "Matching::VertexInfo::VertexInfo (std::list< \fBVertex\fP *>::iterator eit)\fC [inline]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "std::list<\fBVertex\fP*>::iterator Matching::VertexInfo::getExposedIterator (void) const\fC [inline]\fP"
+
+.SS "std::list<\fBEdge\fP*>::iterator Matching::VertexInfo::getMatchedIterator (void) const\fC [inline]\fP"
+
+.SS "\fBEdge\fP* Matching::VertexInfo::getMatchingEdge (void) const\fC [inline]\fP"
+
+.SS "bool Matching::VertexInfo::isExposed (void) const\fC [inline]\fP"
+
+.SS "bool Matching::VertexInfo::isMatched (void) const\fC [inline]\fP"
+
+.SS "void Matching::VertexInfo::setExposed (std::list< \fBVertex\fP *>::iterator eit)\fC [inline]\fP"
+
+.SS "void Matching::VertexInfo::setMatched (std::list< \fBEdge\fP *>::iterator mit)\fC [inline]\fP"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "std::list<\fBVertex\fP*>::iterator Matching::VertexInfo::ExposedIterator\fC [private]\fP"
+
+.SS "bool Matching::VertexInfo::Matched\fC [private]\fP"
+
+.SS "std::list<\fBEdge\fP*>::iterator Matching::VertexInfo::MatchedIterator\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for steghide from the source code\&.

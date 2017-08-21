@@ -1,0 +1,123 @@
+\section{Matching\+:\+:Vertex\+Info Class Reference}
+\label{classMatching_1_1VertexInfo}\index{Matching\+::\+Vertex\+Info@{Matching\+::\+Vertex\+Info}}
+
+
+contains information about a vertex that is possibly in a matching  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Vertex\+Info} (std\+::list$<$ \textbf{ Edge} $\ast$$>$\+::iterator mit)
+\item 
+\textbf{ Vertex\+Info} (std\+::list$<$ \textbf{ Vertex} $\ast$$>$\+::iterator eit)
+\item 
+bool \textbf{ is\+Exposed} (void) const
+\item 
+bool \textbf{ is\+Matched} (void) const
+\item 
+\textbf{ Edge} $\ast$ \textbf{ get\+Matching\+Edge} (void) const
+\item 
+std\+::list$<$ \textbf{ Edge} $\ast$ $>$\+::iterator \textbf{ get\+Matched\+Iterator} (void) const
+\item 
+std\+::list$<$ \textbf{ Vertex} $\ast$ $>$\+::iterator \textbf{ get\+Exposed\+Iterator} (void) const
+\item 
+void \textbf{ set\+Matched} (std\+::list$<$ \textbf{ Edge} $\ast$$>$\+::iterator mit)
+\item 
+void \textbf{ set\+Exposed} (std\+::list$<$ \textbf{ Vertex} $\ast$$>$\+::iterator eit)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \textbf{ Matched}
+\item 
+std\+::list$<$ \textbf{ Edge} $\ast$ $>$\+::iterator \textbf{ Matched\+Iterator}
+\begin{DoxyCompactList}\small\item\em an iterator into the list of matched edges (only valid if this vertex is matched) \end{DoxyCompactList}\item 
+std\+::list$<$ \textbf{ Vertex} $\ast$ $>$\+::iterator \textbf{ Exposed\+Iterator}
+\begin{DoxyCompactList}\small\item\em an iterator into the list of exposed vertices (only valid if this vertex is exposed) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{classMatching_1_1VertexInfo_a5eb57bf3501fc426d2a7c9560728c7c9}} 
+\index{Matching\+::\+Vertex\+Info@{Matching\+::\+Vertex\+Info}!Vertex\+Info@{Vertex\+Info}}
+\index{Vertex\+Info@{Vertex\+Info}!Matching\+::\+Vertex\+Info@{Matching\+::\+Vertex\+Info}}
+\subsubsection{Vertex\+Info()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Matching\+::\+Vertex\+Info\+::\+Vertex\+Info (\begin{DoxyParamCaption}\item[{std\+::list$<$ \textbf{ Edge} $\ast$$>$\+::iterator}]{mit }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classMatching_1_1VertexInfo_ab08e072227ee9a0ac74b31cf32758d28}} 
+\index{Matching\+::\+Vertex\+Info@{Matching\+::\+Vertex\+Info}!Vertex\+Info@{Vertex\+Info}}
+\index{Vertex\+Info@{Vertex\+Info}!Matching\+::\+Vertex\+Info@{Matching\+::\+Vertex\+Info}}
+\subsubsection{Vertex\+Info()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Matching\+::\+Vertex\+Info\+::\+Vertex\+Info (\begin{DoxyParamCaption}\item[{std\+::list$<$ \textbf{ Vertex} $\ast$$>$\+::iterator}]{eit }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{classMatching_1_1VertexInfo_aa53f2418d91084a2323e452adc400ad2}} 
+\index{Matching\+::\+Vertex\+Info@{Matching\+::\+Vertex\+Info}!get\+Exposed\+Iterator@{get\+Exposed\+Iterator}}
+\index{get\+Exposed\+Iterator@{get\+Exposed\+Iterator}!Matching\+::\+Vertex\+Info@{Matching\+::\+Vertex\+Info}}
+\subsubsection{get\+Exposed\+Iterator()}
+{\footnotesize\ttfamily std\+::list$<$\textbf{ Vertex}$\ast$$>$\+::iterator Matching\+::\+Vertex\+Info\+::get\+Exposed\+Iterator (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classMatching_1_1VertexInfo_aa3fa664826f49e975fc983e5b054f06f}} 
+\index{Matching\+::\+Vertex\+Info@{Matching\+::\+Vertex\+Info}!get\+Matched\+Iterator@{get\+Matched\+Iterator}}
+\index{get\+Matched\+Iterator@{get\+Matched\+Iterator}!Matching\+::\+Vertex\+Info@{Matching\+::\+Vertex\+Info}}
+\subsubsection{get\+Matched\+Iterator()}
+{\footnotesize\ttfamily std\+::list$<$\textbf{ Edge}$\ast$$>$\+::iterator Matching\+::\+Vertex\+Info\+::get\+Matched\+Iterator (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classMatching_1_1VertexInfo_a374685ea6d5eee2fa0685539ce48d388}} 
+\index{Matching\+::\+Vertex\+Info@{Matching\+::\+Vertex\+Info}!get\+Matching\+Edge@{get\+Matching\+Edge}}
+\index{get\+Matching\+Edge@{get\+Matching\+Edge}!Matching\+::\+Vertex\+Info@{Matching\+::\+Vertex\+Info}}
+\subsubsection{get\+Matching\+Edge()}
+{\footnotesize\ttfamily \textbf{ Edge}$\ast$ Matching\+::\+Vertex\+Info\+::get\+Matching\+Edge (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classMatching_1_1VertexInfo_a76e56b1a4b5f41aa9c1bb0781acc393c}} 
+\index{Matching\+::\+Vertex\+Info@{Matching\+::\+Vertex\+Info}!is\+Exposed@{is\+Exposed}}
+\index{is\+Exposed@{is\+Exposed}!Matching\+::\+Vertex\+Info@{Matching\+::\+Vertex\+Info}}
+\subsubsection{is\+Exposed()}
+{\footnotesize\ttfamily bool Matching\+::\+Vertex\+Info\+::is\+Exposed (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classMatching_1_1VertexInfo_a2984ee21696a4a1840d7d0e6c13f9c54}} 
+\index{Matching\+::\+Vertex\+Info@{Matching\+::\+Vertex\+Info}!is\+Matched@{is\+Matched}}
+\index{is\+Matched@{is\+Matched}!Matching\+::\+Vertex\+Info@{Matching\+::\+Vertex\+Info}}
+\subsubsection{is\+Matched()}
+{\footnotesize\ttfamily bool Matching\+::\+Vertex\+Info\+::is\+Matched (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classMatching_1_1VertexInfo_aed72c93e4a869dab801f69b3492f5bd7}} 
+\index{Matching\+::\+Vertex\+Info@{Matching\+::\+Vertex\+Info}!set\+Exposed@{set\+Exposed}}
+\index{set\+Exposed@{set\+Exposed}!Matching\+::\+Vertex\+Info@{Matching\+::\+Vertex\+Info}}
+\subsubsection{set\+Exposed()}
+{\footnotesize\ttfamily void Matching\+::\+Vertex\+Info\+::set\+Exposed (\begin{DoxyParamCaption}\item[{std\+::list$<$ \textbf{ Vertex} $\ast$$>$\+::iterator}]{eit }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classMatching_1_1VertexInfo_ad39ce51377ac86546ff0b1f6cb62b3ee}} 
+\index{Matching\+::\+Vertex\+Info@{Matching\+::\+Vertex\+Info}!set\+Matched@{set\+Matched}}
+\index{set\+Matched@{set\+Matched}!Matching\+::\+Vertex\+Info@{Matching\+::\+Vertex\+Info}}
+\subsubsection{set\+Matched()}
+{\footnotesize\ttfamily void Matching\+::\+Vertex\+Info\+::set\+Matched (\begin{DoxyParamCaption}\item[{std\+::list$<$ \textbf{ Edge} $\ast$$>$\+::iterator}]{mit }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{classMatching_1_1VertexInfo_ad144234438700679eb3d17fdf624819b}} 
+\index{Matching\+::\+Vertex\+Info@{Matching\+::\+Vertex\+Info}!Exposed\+Iterator@{Exposed\+Iterator}}
+\index{Exposed\+Iterator@{Exposed\+Iterator}!Matching\+::\+Vertex\+Info@{Matching\+::\+Vertex\+Info}}
+\subsubsection{Exposed\+Iterator}
+{\footnotesize\ttfamily std\+::list$<$\textbf{ Vertex}$\ast$$>$\+::iterator Matching\+::\+Vertex\+Info\+::\+Exposed\+Iterator\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classMatching_1_1VertexInfo_af160302bc51731cf764115be564aab8f}} 
+\index{Matching\+::\+Vertex\+Info@{Matching\+::\+Vertex\+Info}!Matched@{Matched}}
+\index{Matched@{Matched}!Matching\+::\+Vertex\+Info@{Matching\+::\+Vertex\+Info}}
+\subsubsection{Matched}
+{\footnotesize\ttfamily bool Matching\+::\+Vertex\+Info\+::\+Matched\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classMatching_1_1VertexInfo_a41fd366f19d5733e39bd4fe038fc1809}} 
+\index{Matching\+::\+Vertex\+Info@{Matching\+::\+Vertex\+Info}!Matched\+Iterator@{Matched\+Iterator}}
+\index{Matched\+Iterator@{Matched\+Iterator}!Matching\+::\+Vertex\+Info@{Matching\+::\+Vertex\+Info}}
+\subsubsection{Matched\+Iterator}
+{\footnotesize\ttfamily std\+::list$<$\textbf{ Edge}$\ast$$>$\+::iterator Matching\+::\+Vertex\+Info\+::\+Matched\+Iterator\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ Matching.\+h}\end{DoxyCompactItemize}

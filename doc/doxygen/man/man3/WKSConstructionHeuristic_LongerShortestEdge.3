@@ -1,0 +1,31 @@
+.TH "WKSConstructionHeuristic::LongerShortestEdge" 3 "Thu Aug 17 2017" "Version 0.5.1" "steghide" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+WKSConstructionHeuristic::LongerShortestEdge \- a comparison operator  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <WKSConstructionHeuristic\&.h>\fP
+.PP
+Inherits binary_function< Vertex *, Vertex *, bool >\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBoperator()\fP (const \fBVertex\fP *v1, const \fBVertex\fP *v2)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+lse(v1, v2) is true if the length of the shortest edge of v1 is greater than the length of the shortest edge of v2\&. If a vertex has Degree 0, the length of its shortest edge is defined to be +Infinity\&. If both v1 and v2 have degree 0, then the vertex with the greater label is defined to have the 'longer shortest edge'\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "bool WKSConstructionHeuristic::LongerShortestEdge::operator() (const \fBVertex\fP * v1, const \fBVertex\fP * v2)"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for steghide from the source code\&.

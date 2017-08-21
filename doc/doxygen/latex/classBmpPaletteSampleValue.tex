@@ -1,0 +1,149 @@
+\section{Bmp\+Palette\+Sample\+Value Class Reference}
+\label{classBmpPaletteSampleValue}\index{Bmp\+Palette\+Sample\+Value@{Bmp\+Palette\+Sample\+Value}}
+
+
+a sample in a bmp palette (i.\+e. in a 1-\/,4-\/ or 8-\/bit) file  
+
+
+
+
+{\ttfamily \#include $<$Bmp\+Palette\+Sample\+Value.\+h$>$}
+
+Inheritance diagram for Bmp\+Palette\+Sample\+Value\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classBmpPaletteSampleValue}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Bmp\+Palette\+Sample\+Value} (\textbf{ B\+Y\+TE} i)
+\item 
+\textbf{ Sample\+Value} $\ast$ \textbf{ get\+Nearest\+Target\+Sample\+Value} (\textbf{ Emb\+Value} t) const
+\item 
+std\+::string \textbf{ get\+Name} (void) const
+\item 
+\textbf{ B\+Y\+TE} \textbf{ get\+Index} (void) const
+\item 
+\textbf{ B\+Y\+TE} \textbf{ get\+Red} (void) const
+\item 
+\textbf{ B\+Y\+TE} \textbf{ get\+Green} (void) const
+\item 
+\textbf{ B\+Y\+TE} \textbf{ get\+Blue} (void) const
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Emb\+Value} \textbf{ calc\+E\+Value} (\textbf{ B\+Y\+TE} idx) const
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Color\+Palette} $\ast$ \textbf{ Palette}
+\item 
+\textbf{ B\+Y\+TE} \textbf{ Index}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{classBmpPaletteSampleValue_a81d345b74502effc44a9995ab44918ed}} 
+\index{Bmp\+Palette\+Sample\+Value@{Bmp\+Palette\+Sample\+Value}!Bmp\+Palette\+Sample\+Value@{Bmp\+Palette\+Sample\+Value}}
+\index{Bmp\+Palette\+Sample\+Value@{Bmp\+Palette\+Sample\+Value}!Bmp\+Palette\+Sample\+Value@{Bmp\+Palette\+Sample\+Value}}
+\subsubsection{Bmp\+Palette\+Sample\+Value()}
+{\footnotesize\ttfamily Bmp\+Palette\+Sample\+Value\+::\+Bmp\+Palette\+Sample\+Value (\begin{DoxyParamCaption}\item[{\textbf{ B\+Y\+TE}}]{i }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{classBmpPaletteSampleValue_a480da9a02dff7cab6b10278cdf2d25d9}} 
+\index{Bmp\+Palette\+Sample\+Value@{Bmp\+Palette\+Sample\+Value}!calc\+E\+Value@{calc\+E\+Value}}
+\index{calc\+E\+Value@{calc\+E\+Value}!Bmp\+Palette\+Sample\+Value@{Bmp\+Palette\+Sample\+Value}}
+\subsubsection{calc\+E\+Value()}
+{\footnotesize\ttfamily \textbf{ Emb\+Value} Bmp\+Palette\+Sample\+Value\+::calc\+E\+Value (\begin{DoxyParamCaption}\item[{\textbf{ B\+Y\+TE}}]{idx }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\mbox{\label{classBmpPaletteSampleValue_aba2549aa10e39b580488e0c4625720c0}} 
+\index{Bmp\+Palette\+Sample\+Value@{Bmp\+Palette\+Sample\+Value}!get\+Blue@{get\+Blue}}
+\index{get\+Blue@{get\+Blue}!Bmp\+Palette\+Sample\+Value@{Bmp\+Palette\+Sample\+Value}}
+\subsubsection{get\+Blue()}
+{\footnotesize\ttfamily \textbf{ B\+Y\+TE} Bmp\+Palette\+Sample\+Value\+::get\+Blue (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+get the blue color component 
+
+Implements \textbf{ Bmp\+Sample\+Value} \doxyref{}{p.}{classBmpSampleValue_a0c31d4428158c7c6017935ac03254b26}.
+
+\mbox{\label{classBmpPaletteSampleValue_a886c54100ed64d4bfd732b4be4ddae67}} 
+\index{Bmp\+Palette\+Sample\+Value@{Bmp\+Palette\+Sample\+Value}!get\+Green@{get\+Green}}
+\index{get\+Green@{get\+Green}!Bmp\+Palette\+Sample\+Value@{Bmp\+Palette\+Sample\+Value}}
+\subsubsection{get\+Green()}
+{\footnotesize\ttfamily \textbf{ B\+Y\+TE} Bmp\+Palette\+Sample\+Value\+::get\+Green (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+get the green color component 
+
+Implements \textbf{ Bmp\+Sample\+Value} \doxyref{}{p.}{classBmpSampleValue_a5d646a4082648a5b63323167553066ab}.
+
+\mbox{\label{classBmpPaletteSampleValue_aaaae1fc0c04018c029e923c8c1a04d86}} 
+\index{Bmp\+Palette\+Sample\+Value@{Bmp\+Palette\+Sample\+Value}!get\+Index@{get\+Index}}
+\index{get\+Index@{get\+Index}!Bmp\+Palette\+Sample\+Value@{Bmp\+Palette\+Sample\+Value}}
+\subsubsection{get\+Index()}
+{\footnotesize\ttfamily \textbf{ B\+Y\+TE} Bmp\+Palette\+Sample\+Value\+::get\+Index (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classBmpPaletteSampleValue_afdee36c56b6cc471c96d93dbbc8c8fa0}} 
+\index{Bmp\+Palette\+Sample\+Value@{Bmp\+Palette\+Sample\+Value}!get\+Name@{get\+Name}}
+\index{get\+Name@{get\+Name}!Bmp\+Palette\+Sample\+Value@{Bmp\+Palette\+Sample\+Value}}
+\subsubsection{get\+Name()}
+{\footnotesize\ttfamily std\+::string Bmp\+Palette\+Sample\+Value\+::get\+Name (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+return a short name uniquely identifying this sample value 
+
+Implements \textbf{ Sample\+Value} \doxyref{}{p.}{classSampleValue_aeaf5c46ec6d023840e9773604b20d25c}.
+
+\mbox{\label{classBmpPaletteSampleValue_acb0da2ffb8ad2b8880e5eb8d0ea16e62}} 
+\index{Bmp\+Palette\+Sample\+Value@{Bmp\+Palette\+Sample\+Value}!get\+Nearest\+Target\+Sample\+Value@{get\+Nearest\+Target\+Sample\+Value}}
+\index{get\+Nearest\+Target\+Sample\+Value@{get\+Nearest\+Target\+Sample\+Value}!Bmp\+Palette\+Sample\+Value@{Bmp\+Palette\+Sample\+Value}}
+\subsubsection{get\+Nearest\+Target\+Sample\+Value()}
+{\footnotesize\ttfamily \textbf{ Sample\+Value} $\ast$ Bmp\+Palette\+Sample\+Value\+::get\+Nearest\+Target\+Sample\+Value (\begin{DoxyParamCaption}\item[{\textbf{ Emb\+Value}}]{t }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+get the nearest (with the least distance to this sample value) sample value whose embedded value equals the specified target 
+\begin{DoxyParams}{Parameters}
+{\em t} & the target embedded value\\
+\hline
+\end{DoxyParams}
+If two or more target sample values have equal distance each of them should be returned with equal probability.
+
+The returned \doxyref{Sample\+Value}{p.}{classSampleValue} object should be deleted by the callser. 
+
+Implements \textbf{ Sample\+Value} \doxyref{}{p.}{classSampleValue_aeca3fc1fd34c09d2244706b010935c2c}.
+
+\mbox{\label{classBmpPaletteSampleValue_a168e95b6da4f8aa4216fde934d561660}} 
+\index{Bmp\+Palette\+Sample\+Value@{Bmp\+Palette\+Sample\+Value}!get\+Red@{get\+Red}}
+\index{get\+Red@{get\+Red}!Bmp\+Palette\+Sample\+Value@{Bmp\+Palette\+Sample\+Value}}
+\subsubsection{get\+Red()}
+{\footnotesize\ttfamily \textbf{ B\+Y\+TE} Bmp\+Palette\+Sample\+Value\+::get\+Red (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+get the red color component 
+
+Implements \textbf{ Bmp\+Sample\+Value} \doxyref{}{p.}{classBmpSampleValue_a8665a4c4db9ac910abf4ec0738cfde68}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{classBmpPaletteSampleValue_ac838911edfa68d87a10580e098e6e353}} 
+\index{Bmp\+Palette\+Sample\+Value@{Bmp\+Palette\+Sample\+Value}!Index@{Index}}
+\index{Index@{Index}!Bmp\+Palette\+Sample\+Value@{Bmp\+Palette\+Sample\+Value}}
+\subsubsection{Index}
+{\footnotesize\ttfamily \textbf{ B\+Y\+TE} Bmp\+Palette\+Sample\+Value\+::\+Index\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classBmpPaletteSampleValue_af9a9aae8c5ce9dfd8e2566d984cf7302}} 
+\index{Bmp\+Palette\+Sample\+Value@{Bmp\+Palette\+Sample\+Value}!Palette@{Palette}}
+\index{Palette@{Palette}!Bmp\+Palette\+Sample\+Value@{Bmp\+Palette\+Sample\+Value}}
+\subsubsection{Palette}
+{\footnotesize\ttfamily \textbf{ Color\+Palette}$\ast$ Bmp\+Palette\+Sample\+Value\+::\+Palette\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ Bmp\+Palette\+Sample\+Value.\+h}\item 
+\textbf{ Bmp\+Palette\+Sample\+Value.\+cc}\end{DoxyCompactItemize}

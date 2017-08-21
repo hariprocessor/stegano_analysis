@@ -1,0 +1,269 @@
+.TH "Graph" 3 "Thu Aug 17 2017" "Version 0.5.1" "steghide" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Graph \- a graph constructed from a cover file and a message to be embedded  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Graph\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBGraph\fP (\fBCvrStgFile\fP *cvr, const \fBBitString\fP &emb, \fBSelector\fP &sel)"
+.br
+.ti -1c
+.RI "\fB~Graph\fP (void)"
+.br
+.ti -1c
+.RI "unsigned long \fBgetNumVertices\fP (void) const"
+.br
+.ti -1c
+.RI "\fBVertex\fP * \fBgetVertex\fP (\fBVertexLabel\fP l) const"
+.br
+.ti -1c
+.RI "void \fBunmarkDeletedAllVertices\fP (void)"
+.br
+.ti -1c
+.RI "float \fBgetAvgVertexDegree\fP (void) const"
+.br
+.ti -1c
+.RI "void \fBprintVerboseInfo\fP (void)"
+.br
+.ti -1c
+.RI "bool \fBcheck\fP (bool verbose=false) const"
+.br
+.ti -1c
+.RI "bool \fBcheck_Vertices\fP (bool verbose=false) const"
+.br
+.ti -1c
+.RI "bool \fBcheck_SampleValues\fP (bool verbose=false) const"
+.br
+.ti -1c
+.RI "bool \fBcheck_SampleOccurences\fP (bool verbose=false) const"
+.br
+.ti -1c
+.RI "bool \fBcheck_SVALists\fP (bool verbose=false) const"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "std::list< \fBSampleOccurence\fP >::iterator \fBmarkDeletedSampleOccurence\fP (std::list< \fBSampleOccurence\fP >::iterator it)"
+.br
+.ti -1c
+.RI "std::list< \fBSampleOccurence\fP >::iterator \fBunmarkDeletedSampleOccurence\fP (std::list< \fBSampleOccurence\fP >::iterator it)"
+.br
+.ti -1c
+.RI "void \fBconstructSamples\fP (const std::vector< \fBSamplePos\fP *> &sposs, std::vector< \fBSampleValue\fP **> &svalues)"
+.br
+.ti -1c
+.RI "void \fBconstructVertices\fP (std::vector< \fBSamplePos\fP *> &sposs, std::vector< \fBSampleValue\fP **> &svalues, const std::vector< \fBEmbValue\fP > &tvalues)"
+.br
+.ti -1c
+.RI "void \fBconstructEdges\fP (void)"
+.br
+.ti -1c
+.RI "bool \fBcheck_SampleOccurences_size\fP (bool verbose=false) const"
+.br
+.ti -1c
+.RI "bool \fBcheck_SampleOccurences_correctness\fP (bool verbose=false) const"
+.br
+.ti -1c
+.RI "bool \fBcheck_SampleOccurences_completeness\fP (bool verbose=false) const"
+.br
+.ti -1c
+.RI "bool \fBcheck_SVALists_size\fP (bool verbose=false) const"
+.br
+.ti -1c
+.RI "bool \fBcheck_SVALists_soundness\fP (bool verbose=false) const"
+.br
+.ti -1c
+.RI "bool \fBcheck_SVALists_sorted\fP (bool verbose=false) const"
+.br
+.ti -1c
+.RI "bool \fBcheck_SVALists_uniqueness\fP (bool verbose=false) const"
+.br
+.ti -1c
+.RI "bool \fBcheck_SVALists_completeness\fP (bool verbose=false) const"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::vector< \fBVertex\fP * > \fBVertices\fP"
+.br
+.RI "contains the vertices in this graph - Vertices[l] is the vertex with label l "
+.ti -1c
+.RI "std::vector< \fBSampleValue\fP * > \fBSampleValues\fP"
+.br
+.RI "contains the list of (unique) sample values - SampleValues[l] is the sample value with label l "
+.ti -1c
+.RI "std::vector< \fBSampleValueAdjacencyList\fP * > \fBSVALists\fP"
+.br
+.RI "contains the sample value adjacency lists (SVALists[v] contains only sample values with embedded value v) "
+.ti -1c
+.RI "std::vector< std::list< \fBSampleOccurence\fP > > \fBSampleOccurences\fP"
+.br
+.RI "SampleOccurences[l] contains all occurences of the sample value with label l\&. "
+.ti -1c
+.RI "std::vector< \fBUWORD32\fP * > \fBNumSampleOccurences\fP"
+.br
+.ti -1c
+.RI "std::vector< std::list< \fBSampleOccurence\fP > > \fBDeletedSampleOccurences\fP"
+.br
+.RI "contains those sample occurences that have been marked as deleted from SampleOccurences "
+.ti -1c
+.RI "std::vector< \fBUWORD32\fP * > \fBNumDeletedSampleOccurences\fP"
+.br
+.ti -1c
+.RI "\fBCvrStgFile\fP * \fBFile\fP"
+.br
+.ti -1c
+.RI "\fBEmbValue\fP \fBEmbValueModulus\fP"
+.br
+.ti -1c
+.RI "unsigned short \fBSamplesPerVertex\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBWKSConstructionHeuristic\fP"
+.br
+.ti -1c
+.RI "class \fBEdgeIterator\fP"
+.br
+.ti -1c
+.RI "class \fBSampleValueAdjacencyList\fP"
+.br
+.ti -1c
+.RI "class \fBVertex\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+This class provides a purely graph-theoretic interface to any other class\&. Some classes however need access to the internal (steganographic) representation, for example: \fBVertex\fP, \fBEdgeIterator\fP,\&.\&.\&. \&. These are declared as friends of \fBGraph\fP here and thus have direct access to the private data structures\&. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Graph::Graph (\fBCvrStgFile\fP * cvr, const \fBBitString\fP & emb, \fBSelector\fP & sel)"
+construct a graph 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcvr\fP the underlying cover file 
+.br
+\fIemb\fP the bitstring to be embedded (with correct arity already set) 
+.RE
+.PP
+
+.SS "Graph::~Graph (void)"
+destructor 
+.SH "Member Function Documentation"
+.PP 
+.SS "bool Graph::check (bool verbose = \fCfalse\fP) const"
+check the integrity of all data structures, only used for debugging and testing 
+.SS "bool Graph::check_SampleOccurences (bool verbose = \fCfalse\fP) const"
+check the integrity of the SampleOccurences data structure, it is assumed that DeletedSampleOccurences is empty, only used for debugging and testing 
+.SS "bool Graph::check_SampleOccurences_completeness (bool verbose = \fCfalse\fP) const\fC [private]\fP"
+
+.SS "bool Graph::check_SampleOccurences_correctness (bool verbose = \fCfalse\fP) const\fC [private]\fP"
+
+.SS "bool Graph::check_SampleOccurences_size (bool verbose = \fCfalse\fP) const\fC [private]\fP"
+
+.SS "bool Graph::check_SampleValues (bool verbose = \fCfalse\fP) const"
+check the integrity of the SampleValues data structure, only used for debugging and testing 
+.SS "bool Graph::check_SVALists (bool verbose = \fCfalse\fP) const"
+check the integrity of the SVALists data structure, only used for debugging and testing 
+.SS "bool Graph::check_SVALists_completeness (bool verbose = \fCfalse\fP) const\fC [private]\fP"
+
+.SS "bool Graph::check_SVALists_size (bool verbose = \fCfalse\fP) const\fC [private]\fP"
+
+.SS "bool Graph::check_SVALists_sorted (bool verbose = \fCfalse\fP) const\fC [private]\fP"
+
+.SS "bool Graph::check_SVALists_soundness (bool verbose = \fCfalse\fP) const\fC [private]\fP"
+
+.SS "bool Graph::check_SVALists_uniqueness (bool verbose = \fCfalse\fP) const\fC [private]\fP"
+
+.SS "bool Graph::check_Vertices (bool verbose = \fCfalse\fP) const"
+check the integrity of the Vertices data structure, only used for debugging and testing 
+.SS "void Graph::constructEdges (void)\fC [private]\fP"
+construct edge-related data structures
+.PP
+needs: SampleValues, Vertices (except SampleOccurenceIts) provides: SVALists, SampleOccurences, Vertices (SampleOccurenceIts) 
+.SS "void Graph::constructSamples (const std::vector< \fBSamplePos\fP *> & sposs, std::vector< \fBSampleValue\fP **> & svalues)\fC [private]\fP"
+construct sample-related data structures
+.PP
+needs: sposs(unsorted) provides: svalues(unsorted,unique), SampleValues 
+.SS "void Graph::constructVertices (std::vector< \fBSamplePos\fP *> & sposs, std::vector< \fBSampleValue\fP **> & svalues, const std::vector< \fBEmbValue\fP > & tvalues)\fC [private]\fP"
+construct vertex-related data structures
+.PP
+needs: sposs(unsorted), svalues(unsorted,unique), tvalues provides: sposs(sorted), Vertices (except SampleOccurenceIts) 
+.SS "float Graph::getAvgVertexDegree (void) const"
+calculate and return the average vertex degree 
+.SS "unsigned long Graph::getNumVertices (void) const\fC [inline]\fP"
+get the number of vertices in this graph 
+.SS "\fBVertex\fP* Graph::getVertex (\fBVertexLabel\fP l) const\fC [inline]\fP"
+get a vertex 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIl\fP the vertex label (index) of the vertex to be returned (must be < \fBgetNumVertices()\fP) 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the vertex with label l 
+.RE
+.PP
+
+.SS "std::list< \fBSampleOccurence\fP >::iterator Graph::markDeletedSampleOccurence (std::list< \fBSampleOccurence\fP >::iterator it)\fC [private]\fP"
+
+.SS "void Graph::printVerboseInfo (void)"
+
+.SS "void Graph::unmarkDeletedAllVertices (void)"
+
+.SS "std::list< \fBSampleOccurence\fP >::iterator Graph::unmarkDeletedSampleOccurence (std::list< \fBSampleOccurence\fP >::iterator it)\fC [private]\fP"
+
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "friend class \fBEdgeIterator\fP\fC [friend]\fP"
+
+.SS "friend class \fBSampleValueAdjacencyList\fP\fC [friend]\fP"
+
+.SS "friend class \fBVertex\fP\fC [friend]\fP"
+
+.SS "friend class \fBWKSConstructionHeuristic\fP\fC [friend]\fP"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "std::vector<std::list<\fBSampleOccurence\fP> > Graph::DeletedSampleOccurences\fC [private]\fP"
+
+.SS "\fBEmbValue\fP Graph::EmbValueModulus\fC [private]\fP"
+
+.SS "\fBCvrStgFile\fP* Graph::File\fC [private]\fP"
+
+.SS "std::vector<\fBUWORD32\fP*> Graph::NumDeletedSampleOccurences\fC [private]\fP"
+
+.SS "std::vector<\fBUWORD32\fP*> Graph::NumSampleOccurences\fC [private]\fP"
+NumSampleOccurences[l][t] contains the number vertices that contain the sample value with label l and associated target t 
+.SS "std::vector<std::list<\fBSampleOccurence\fP> > Graph::SampleOccurences\fC [private]\fP"
+
+.SS "unsigned short Graph::SamplesPerVertex\fC [private]\fP"
+
+.SS "std::vector<\fBSampleValue\fP*> Graph::SampleValues\fC [private]\fP"
+
+.SS "std::vector<\fBSampleValueAdjacencyList\fP*> Graph::SVALists\fC [private]\fP"
+
+.SS "std::vector<\fBVertex\fP*> Graph::Vertices\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for steghide from the source code\&.

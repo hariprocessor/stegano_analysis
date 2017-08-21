@@ -1,0 +1,272 @@
+\section{Edge\+Iterator Class Reference}
+\label{classEdgeIterator}\index{Edge\+Iterator@{Edge\+Iterator}}
+
+
+allows an iteration trough all edges of a vertex  
+
+
+
+
+{\ttfamily \#include $<$Edge\+Iterator.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \textbf{ I\+T\+E\+R\+A\+T\+I\+O\+N\+M\+O\+DE} \{ \textbf{ S\+A\+M\+P\+L\+E\+O\+C\+C\+U\+R\+E\+N\+CE}, 
+\textbf{ S\+A\+M\+P\+L\+E\+V\+A\+L\+UE}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Edge\+Iterator} (void)
+\item 
+\textbf{ Edge\+Iterator} (\textbf{ Vertex} $\ast$v, \textbf{ I\+T\+E\+R\+A\+T\+I\+O\+N\+M\+O\+DE} m=\textbf{ S\+A\+M\+P\+L\+E\+O\+C\+C\+U\+R\+E\+N\+CE})
+\item 
+\textbf{ Edge\+Iterator} (const \textbf{ Edge\+Iterator} \&eit)
+\item 
+\textbf{ $\sim$\+Edge\+Iterator} (void)
+\item 
+const \textbf{ Edge} $\ast$ \textbf{ operator$\ast$} (void) const
+\item 
+void \textbf{ operator++} (void)
+\item 
+void \textbf{ reset} (\textbf{ Vertex} $\ast$v, \textbf{ I\+T\+E\+R\+A\+T\+I\+O\+N\+M\+O\+DE} m=\textbf{ S\+A\+M\+P\+L\+E\+O\+C\+C\+U\+R\+E\+N\+CE})
+\item 
+void \textbf{ reset} (\textbf{ I\+T\+E\+R\+A\+T\+I\+O\+N\+M\+O\+DE} m=\textbf{ S\+A\+M\+P\+L\+E\+O\+C\+C\+U\+R\+E\+N\+CE})
+\item 
+bool \textbf{ is\+Finished} (void) const
+\item 
+\textbf{ Vertex\+Label} \textbf{ get\+Partner\+Vertex\+Label} (void) const
+\item 
+void \textbf{ print} (unsigned short spc=0) const
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \textbf{ U\+W\+O\+R\+D32} \textbf{ get\+Max\+Num\+Edges} (void)
+\item 
+static void \textbf{ set\+Max\+Num\+Edges} (\textbf{ U\+W\+O\+R\+D32} mne)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ find\+Next\+Edge} (void)
+\item 
+bool \textbf{ is\+Dest\+Sample\+Value\+OK} (const \textbf{ Sample\+Value} $\ast$sv)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Edge} \textbf{ Current\+Edge}
+\begin{DoxyCompactList}\small\item\em the current edge (is returned by operator$\ast$) \end{DoxyCompactList}\item 
+\textbf{ I\+T\+E\+R\+A\+T\+I\+O\+N\+M\+O\+DE} \textbf{ Mode}
+\begin{DoxyCompactList}\small\item\em mode of iteration \end{DoxyCompactList}\item 
+unsigned long $\ast$ \textbf{ S\+V\+A\+L\+Indices}
+\begin{DoxyCompactList}\small\item\em contains (for every sample value) an index to the current opposite neighbour \end{DoxyCompactList}\item 
+\textbf{ U\+W\+O\+R\+D32} \textbf{ Edge\+Index}
+\begin{DoxyCompactList}\small\item\em the index/number of the edge that is currently returned by operator$\ast$ \end{DoxyCompactList}\item 
+bool \textbf{ Finished}
+\begin{DoxyCompactList}\small\item\em is true iff there are no more edges for this source vertex \end{DoxyCompactList}\item 
+std\+::list$<$ \textbf{ Sample\+Occurence} $>$\+::const\+\_\+iterator \textbf{ Sample\+Occurence\+It}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \textbf{ U\+W\+O\+R\+D32} \textbf{ Max\+Num\+Edges} = \textbf{ U\+W\+O\+R\+D32\+\_\+\+M\+AX}
+\begin{DoxyCompactList}\small\item\em the maximum number of edges the \doxyref{Edge\+Iterator}{p.}{classEdgeIterator} should iterate through \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \doxyref{Vertex}{p.}{classVertex} that is the source for all edges is called \char`\"{}source vertex\char`\"{}. The order of the iteration through the edges is from the shortest to the longest edge. If two edges have the same length they are ordered the same way as the corresponding entries in the sample value adjacency lists (for different sample values) respectivly the destination sample occurences in the Sample\+Occurences data structure (for the same sample value).
+
+\doxyref{Edge\+Iterator}{p.}{classEdgeIterator} uses an Sample\+Occurence\+::const\+\_\+iterator to store information about the current edge. \doxyref{Graph}{p.}{classGraph}\+:\+:(un)mark\+Deleted\+Sample\+Occurence can invalidate such iterators. It is therefore not a good idea to use Edge\+Iterators at the same time as the \doxyref{Graph}{p.}{classGraph}\+:\+:(un)mark\+Deleted\+Sample\+Occurence functionality.
+
+{\bfseries N\+O\+TE\+:} \doxyref{Edge\+Iterator}{p.}{classEdgeIterator} relies on the \doxyref{Globals}{p.}{classGlobals} object pointed to by the Globs pointer. This means that it must be set correctly before using any method of an \doxyref{Edge\+Iterator}{p.}{classEdgeIterator} object. 
+
+\subsection{Member Enumeration Documentation}
+\mbox{\label{classEdgeIterator_a1e6b8b43d1620445bf945f667a38f06f}} 
+\index{Edge\+Iterator@{Edge\+Iterator}!I\+T\+E\+R\+A\+T\+I\+O\+N\+M\+O\+DE@{I\+T\+E\+R\+A\+T\+I\+O\+N\+M\+O\+DE}}
+\index{I\+T\+E\+R\+A\+T\+I\+O\+N\+M\+O\+DE@{I\+T\+E\+R\+A\+T\+I\+O\+N\+M\+O\+DE}!Edge\+Iterator@{Edge\+Iterator}}
+\subsubsection{I\+T\+E\+R\+A\+T\+I\+O\+N\+M\+O\+DE}
+{\footnotesize\ttfamily enum \textbf{ Edge\+Iterator\+::\+I\+T\+E\+R\+A\+T\+I\+O\+N\+M\+O\+DE}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+A\+M\+P\+L\+E\+O\+C\+C\+U\+R\+E\+N\+CE@{S\+A\+M\+P\+L\+E\+O\+C\+C\+U\+R\+E\+N\+CE}!Edge\+Iterator@{Edge\+Iterator}}\index{Edge\+Iterator@{Edge\+Iterator}!S\+A\+M\+P\+L\+E\+O\+C\+C\+U\+R\+E\+N\+CE@{S\+A\+M\+P\+L\+E\+O\+C\+C\+U\+R\+E\+N\+CE}}}\mbox{\label{classEdgeIterator_a1e6b8b43d1620445bf945f667a38f06fa6406f55724d4783ed9a29dc26ffbafc6}} 
+S\+A\+M\+P\+L\+E\+O\+C\+C\+U\+R\+E\+N\+CE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+A\+M\+P\+L\+E\+V\+A\+L\+UE@{S\+A\+M\+P\+L\+E\+V\+A\+L\+UE}!Edge\+Iterator@{Edge\+Iterator}}\index{Edge\+Iterator@{Edge\+Iterator}!S\+A\+M\+P\+L\+E\+V\+A\+L\+UE@{S\+A\+M\+P\+L\+E\+V\+A\+L\+UE}}}\mbox{\label{classEdgeIterator_a1e6b8b43d1620445bf945f667a38f06fa06bb450ad4fec4b63fa6a16fa01a68d9}} 
+S\+A\+M\+P\+L\+E\+V\+A\+L\+UE&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{classEdgeIterator_a7e5d6b76060848a91db6b0571bdadbb8}} 
+\index{Edge\+Iterator@{Edge\+Iterator}!Edge\+Iterator@{Edge\+Iterator}}
+\index{Edge\+Iterator@{Edge\+Iterator}!Edge\+Iterator@{Edge\+Iterator}}
+\subsubsection{Edge\+Iterator()\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Edge\+Iterator\+::\+Edge\+Iterator (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+the default contructor -\/ does not create a valid object \mbox{\label{classEdgeIterator_ad52ffe34e5776d9ca5daebc2c8a1762d}} 
+\index{Edge\+Iterator@{Edge\+Iterator}!Edge\+Iterator@{Edge\+Iterator}}
+\index{Edge\+Iterator@{Edge\+Iterator}!Edge\+Iterator@{Edge\+Iterator}}
+\subsubsection{Edge\+Iterator()\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Edge\+Iterator\+::\+Edge\+Iterator (\begin{DoxyParamCaption}\item[{\textbf{ Vertex} $\ast$}]{v,  }\item[{\textbf{ I\+T\+E\+R\+A\+T\+I\+O\+N\+M\+O\+DE}}]{m = {\ttfamily \textbf{ S\+A\+M\+P\+L\+E\+O\+C\+C\+U\+R\+E\+N\+CE}} }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & the source vertex \\
+\hline
+\end{DoxyParams}
+\mbox{\label{classEdgeIterator_a8f7fdb7b330eec99bfe759e1be060dc4}} 
+\index{Edge\+Iterator@{Edge\+Iterator}!Edge\+Iterator@{Edge\+Iterator}}
+\index{Edge\+Iterator@{Edge\+Iterator}!Edge\+Iterator@{Edge\+Iterator}}
+\subsubsection{Edge\+Iterator()\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Edge\+Iterator\+::\+Edge\+Iterator (\begin{DoxyParamCaption}\item[{const \textbf{ Edge\+Iterator} \&}]{eit }\end{DoxyParamCaption})}
+
+the copy constructor \mbox{\label{classEdgeIterator_a19c446b13783b0db2e9330b3982c4aac}} 
+\index{Edge\+Iterator@{Edge\+Iterator}!````~Edge\+Iterator@{$\sim$\+Edge\+Iterator}}
+\index{````~Edge\+Iterator@{$\sim$\+Edge\+Iterator}!Edge\+Iterator@{Edge\+Iterator}}
+\subsubsection{$\sim$\+Edge\+Iterator()}
+{\footnotesize\ttfamily Edge\+Iterator\+::$\sim$\+Edge\+Iterator (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{classEdgeIterator_ac311721ce85f5301e76edc29b0504d53}} 
+\index{Edge\+Iterator@{Edge\+Iterator}!find\+Next\+Edge@{find\+Next\+Edge}}
+\index{find\+Next\+Edge@{find\+Next\+Edge}!Edge\+Iterator@{Edge\+Iterator}}
+\subsubsection{find\+Next\+Edge()}
+{\footnotesize\ttfamily void Edge\+Iterator\+::find\+Next\+Edge (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+find the shortest edge, starting the search at S\+V\+Opp\+Neighs\+Indices[0...k] set the private variables accordingly is only called to find a new destination sample value, i.\+e. if one of the S\+V\+Opp\+Neighs\+Indices[i] is changed \mbox{\label{classEdgeIterator_a60d3b8bc61a31c440cdb3566d05cb8c8}} 
+\index{Edge\+Iterator@{Edge\+Iterator}!get\+Max\+Num\+Edges@{get\+Max\+Num\+Edges}}
+\index{get\+Max\+Num\+Edges@{get\+Max\+Num\+Edges}!Edge\+Iterator@{Edge\+Iterator}}
+\subsubsection{get\+Max\+Num\+Edges()}
+{\footnotesize\ttfamily static \textbf{ U\+W\+O\+R\+D32} Edge\+Iterator\+::get\+Max\+Num\+Edges (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\mbox{\label{classEdgeIterator_aec17c48fb9fa6f6c096fc24a8bc8b92f}} 
+\index{Edge\+Iterator@{Edge\+Iterator}!get\+Partner\+Vertex\+Label@{get\+Partner\+Vertex\+Label}}
+\index{get\+Partner\+Vertex\+Label@{get\+Partner\+Vertex\+Label}!Edge\+Iterator@{Edge\+Iterator}}
+\subsubsection{get\+Partner\+Vertex\+Label()}
+{\footnotesize\ttfamily \textbf{ Vertex\+Label} Edge\+Iterator\+::get\+Partner\+Vertex\+Label (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+get the label of the partner vertex \begin{DoxyReturn}{Returns}
+the label of the vertex that builds the edge returned by operator$\ast$ together with Src\+Vertex 
+\end{DoxyReturn}
+\mbox{\label{classEdgeIterator_a5784525651bdb8d0f68171378d79a337}} 
+\index{Edge\+Iterator@{Edge\+Iterator}!is\+Dest\+Sample\+Value\+OK@{is\+Dest\+Sample\+Value\+OK}}
+\index{is\+Dest\+Sample\+Value\+OK@{is\+Dest\+Sample\+Value\+OK}!Edge\+Iterator@{Edge\+Iterator}}
+\subsubsection{is\+Dest\+Sample\+Value\+O\+K()}
+{\footnotesize\ttfamily bool Edge\+Iterator\+::is\+Dest\+Sample\+Value\+OK (\begin{DoxyParamCaption}\item[{const \textbf{ Sample\+Value} $\ast$}]{sv }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\begin{DoxyReturn}{Returns}
+true iff there is a sample with value sv that is part of an edge starting at Src\+Vertex 
+\end{DoxyReturn}
+\mbox{\label{classEdgeIterator_a54b814ef06349cb05cec7a98530a7162}} 
+\index{Edge\+Iterator@{Edge\+Iterator}!is\+Finished@{is\+Finished}}
+\index{is\+Finished@{is\+Finished}!Edge\+Iterator@{Edge\+Iterator}}
+\subsubsection{is\+Finished()}
+{\footnotesize\ttfamily bool Edge\+Iterator\+::is\+Finished (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+true iff this \doxyref{Edge\+Iterator}{p.}{classEdgeIterator} points to the end of the list of edges of Src\+Vertex 
+\end{DoxyReturn}
+\mbox{\label{classEdgeIterator_abc0f5f5d8a9c4fc8514493a16f7bbb85}} 
+\index{Edge\+Iterator@{Edge\+Iterator}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!Edge\+Iterator@{Edge\+Iterator}}
+\subsubsection{operator$\ast$()}
+{\footnotesize\ttfamily const \textbf{ Edge}$\ast$ Edge\+Iterator\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+get the current edge \begin{DoxyReturn}{Returns}
+the edge that is described by the current status of this \doxyref{Edge\+Iterator}{p.}{classEdgeIterator} 
+\end{DoxyReturn}
+\mbox{\label{classEdgeIterator_a4ddd6595ef896f8137897745883baeaf}} 
+\index{Edge\+Iterator@{Edge\+Iterator}!operator++@{operator++}}
+\index{operator++@{operator++}!Edge\+Iterator@{Edge\+Iterator}}
+\subsubsection{operator++()}
+{\footnotesize\ttfamily void Edge\+Iterator\+::operator++ (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+set this iterator to next edge \mbox{\label{classEdgeIterator_a47630728e64dca512adbaab0880a0394}} 
+\index{Edge\+Iterator@{Edge\+Iterator}!print@{print}}
+\index{print@{print}!Edge\+Iterator@{Edge\+Iterator}}
+\subsubsection{print()}
+{\footnotesize\ttfamily void Edge\+Iterator\+::print (\begin{DoxyParamCaption}\item[{unsigned short}]{spc = {\ttfamily 0} }\end{DoxyParamCaption}) const}
+
+\mbox{\label{classEdgeIterator_a913b73da861648481ae7d74d927f9466}} 
+\index{Edge\+Iterator@{Edge\+Iterator}!reset@{reset}}
+\index{reset@{reset}!Edge\+Iterator@{Edge\+Iterator}}
+\subsubsection{reset()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Edge\+Iterator\+::reset (\begin{DoxyParamCaption}\item[{\textbf{ Vertex} $\ast$}]{v,  }\item[{\textbf{ I\+T\+E\+R\+A\+T\+I\+O\+N\+M\+O\+DE}}]{m = {\ttfamily \textbf{ S\+A\+M\+P\+L\+E\+O\+C\+C\+U\+R\+E\+N\+CE}} }\end{DoxyParamCaption})}
+
+set this iterator to first (shortest) edge of vertex v 
+\begin{DoxyParams}{Parameters}
+{\em v} & new vertex (don\textquotesingle{}t change if it is N\+U\+LL) \\
+\hline
+\end{DoxyParams}
+\mbox{\label{classEdgeIterator_a2db46e5ab5973dcc5ea40c9dcccdd225}} 
+\index{Edge\+Iterator@{Edge\+Iterator}!reset@{reset}}
+\index{reset@{reset}!Edge\+Iterator@{Edge\+Iterator}}
+\subsubsection{reset()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Edge\+Iterator\+::reset (\begin{DoxyParamCaption}\item[{\textbf{ I\+T\+E\+R\+A\+T\+I\+O\+N\+M\+O\+DE}}]{m = {\ttfamily \textbf{ S\+A\+M\+P\+L\+E\+O\+C\+C\+U\+R\+E\+N\+CE}} }\end{DoxyParamCaption})}
+
+reset this iterator to first (shortest) edge \mbox{\label{classEdgeIterator_a134f9df6962195c8630db2321b3f39c4}} 
+\index{Edge\+Iterator@{Edge\+Iterator}!set\+Max\+Num\+Edges@{set\+Max\+Num\+Edges}}
+\index{set\+Max\+Num\+Edges@{set\+Max\+Num\+Edges}!Edge\+Iterator@{Edge\+Iterator}}
+\subsubsection{set\+Max\+Num\+Edges()}
+{\footnotesize\ttfamily static void Edge\+Iterator\+::set\+Max\+Num\+Edges (\begin{DoxyParamCaption}\item[{\textbf{ U\+W\+O\+R\+D32}}]{mne }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{classEdgeIterator_a5bfdc881c10c2e7f1f427143fe085319}} 
+\index{Edge\+Iterator@{Edge\+Iterator}!Current\+Edge@{Current\+Edge}}
+\index{Current\+Edge@{Current\+Edge}!Edge\+Iterator@{Edge\+Iterator}}
+\subsubsection{Current\+Edge}
+{\footnotesize\ttfamily \textbf{ Edge} Edge\+Iterator\+::\+Current\+Edge\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classEdgeIterator_a6f8659a01c46698ae37fb4a929d2bfa7}} 
+\index{Edge\+Iterator@{Edge\+Iterator}!Edge\+Index@{Edge\+Index}}
+\index{Edge\+Index@{Edge\+Index}!Edge\+Iterator@{Edge\+Iterator}}
+\subsubsection{Edge\+Index}
+{\footnotesize\ttfamily \textbf{ U\+W\+O\+R\+D32} Edge\+Iterator\+::\+Edge\+Index\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classEdgeIterator_a0eb7a498646e95059198ad9c6b2e4a0a}} 
+\index{Edge\+Iterator@{Edge\+Iterator}!Finished@{Finished}}
+\index{Finished@{Finished}!Edge\+Iterator@{Edge\+Iterator}}
+\subsubsection{Finished}
+{\footnotesize\ttfamily bool Edge\+Iterator\+::\+Finished\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classEdgeIterator_a66f4a506bb6682d79385d89e8dcbc1d7}} 
+\index{Edge\+Iterator@{Edge\+Iterator}!Max\+Num\+Edges@{Max\+Num\+Edges}}
+\index{Max\+Num\+Edges@{Max\+Num\+Edges}!Edge\+Iterator@{Edge\+Iterator}}
+\subsubsection{Max\+Num\+Edges}
+{\footnotesize\ttfamily \textbf{ U\+W\+O\+R\+D32} Edge\+Iterator\+::\+Max\+Num\+Edges = \textbf{ U\+W\+O\+R\+D32\+\_\+\+M\+AX}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\label{classEdgeIterator_ab48d3dfdc5004cec669c9dc04c069c77}} 
+\index{Edge\+Iterator@{Edge\+Iterator}!Mode@{Mode}}
+\index{Mode@{Mode}!Edge\+Iterator@{Edge\+Iterator}}
+\subsubsection{Mode}
+{\footnotesize\ttfamily \textbf{ I\+T\+E\+R\+A\+T\+I\+O\+N\+M\+O\+DE} Edge\+Iterator\+::\+Mode\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classEdgeIterator_ab23539c65c464b0f88e81f402124101c}} 
+\index{Edge\+Iterator@{Edge\+Iterator}!Sample\+Occurence\+It@{Sample\+Occurence\+It}}
+\index{Sample\+Occurence\+It@{Sample\+Occurence\+It}!Edge\+Iterator@{Edge\+Iterator}}
+\subsubsection{Sample\+Occurence\+It}
+{\footnotesize\ttfamily std\+::list$<$\textbf{ Sample\+Occurence}$>$\+::const\+\_\+iterator Edge\+Iterator\+::\+Sample\+Occurence\+It\hspace{0.3cm}{\ttfamily [private]}}
+
+contains the iterator pointing to the sample occurence that constitutes the edge together with Source\+Vertex/\+Source\+Samle\+Value\+Index \mbox{\label{classEdgeIterator_a15657a537da3adaba5977db8d2f30743}} 
+\index{Edge\+Iterator@{Edge\+Iterator}!S\+V\+A\+L\+Indices@{S\+V\+A\+L\+Indices}}
+\index{S\+V\+A\+L\+Indices@{S\+V\+A\+L\+Indices}!Edge\+Iterator@{Edge\+Iterator}}
+\subsubsection{S\+V\+A\+L\+Indices}
+{\footnotesize\ttfamily unsigned long$\ast$ Edge\+Iterator\+::\+S\+V\+A\+L\+Indices\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ Edge\+Iterator.\+h}\item 
+\textbf{ Edge\+Iterator.\+cc}\end{DoxyCompactItemize}

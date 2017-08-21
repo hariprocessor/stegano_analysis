@@ -1,0 +1,61 @@
+.TH "EmbDataTest" 3 "Thu Aug 17 2017" "Version 0.5.1" "steghide" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+EmbDataTest
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <EmbDataTest\&.h>\fP
+.PP
+Inherits \fBUnitTest\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBEmbDataTest\fP (\fBTestSuite\fP *s)"
+.br
+.ti -1c
+.RI "void \fBtestEmbedding\fP (void)"
+.br
+.ti -1c
+.RI "void \fBtestExtracting\fP (void)"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBgenericTestEmbedding\fP (\fBEmbData\fP emb, \fBBitString\fP shouldbe)"
+.br
+.ti -1c
+.RI "bool \fBfeed_to\fP (const \fBBitString\fP &bs, \fBEmbData\fP &emb)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "EmbDataTest::EmbDataTest (\fBTestSuite\fP * s)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "bool EmbDataTest::feed_to (const \fBBitString\fP & bs, \fBEmbData\fP & emb)\fC [private]\fP"
+pass the \fBBitString\fP bs to emb using getNumBitsNeeded and addBits 
+.PP
+\fBReturns:\fP
+.RS 4
+true iff emb took exactly the (number of) bits from bs 
+.RE
+.PP
+
+.SS "bool EmbDataTest::genericTestEmbedding (\fBEmbData\fP emb, \fBBitString\fP shouldbe)\fC [private]\fP"
+
+.SS "void EmbDataTest::testEmbedding (void)"
+
+.SS "void EmbDataTest::testExtracting (void)"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for steghide from the source code\&.

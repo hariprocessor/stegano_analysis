@@ -1,0 +1,136 @@
+\section{Wav\+P\+C\+M\+Sample\+Value Class Reference}
+\label{classWavPCMSampleValue}\index{Wav\+P\+C\+M\+Sample\+Value@{Wav\+P\+C\+M\+Sample\+Value}}
+
+
+{\ttfamily \#include $<$Wav\+P\+C\+M\+Sample\+Value.\+h$>$}
+
+Inheritance diagram for Wav\+P\+C\+M\+Sample\+Value\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classWavPCMSampleValue}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Wav\+P\+C\+M\+Sample\+Value} (int v)
+\item 
+\textbf{ Sample\+Value} $\ast$ \textbf{ get\+Nearest\+Target\+Sample\+Value} (\textbf{ Emb\+Value} t) const
+\item 
+\textbf{ U\+W\+O\+R\+D32} \textbf{ calc\+Distance} (const \textbf{ Sample\+Value} $\ast$s) const
+\item 
+std\+::string \textbf{ get\+Name} (void) const
+\item 
+int \textbf{ get\+Value} (void) const
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Emb\+Value} \textbf{ calc\+E\+Value} (int v) const
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \textbf{ Value}
+\item 
+int \textbf{ Max\+Value}
+\item 
+int \textbf{ Min\+Value}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{classWavPCMSampleValue_aae81b19d622123ba6d70478d5004ff3a}} 
+\index{Wav\+P\+C\+M\+Sample\+Value@{Wav\+P\+C\+M\+Sample\+Value}!Wav\+P\+C\+M\+Sample\+Value@{Wav\+P\+C\+M\+Sample\+Value}}
+\index{Wav\+P\+C\+M\+Sample\+Value@{Wav\+P\+C\+M\+Sample\+Value}!Wav\+P\+C\+M\+Sample\+Value@{Wav\+P\+C\+M\+Sample\+Value}}
+\subsubsection{Wav\+P\+C\+M\+Sample\+Value()}
+{\footnotesize\ttfamily Wav\+P\+C\+M\+Sample\+Value\+::\+Wav\+P\+C\+M\+Sample\+Value (\begin{DoxyParamCaption}\item[{int}]{v }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{classWavPCMSampleValue_a251133a815b938136242460fde486a3a}} 
+\index{Wav\+P\+C\+M\+Sample\+Value@{Wav\+P\+C\+M\+Sample\+Value}!calc\+Distance@{calc\+Distance}}
+\index{calc\+Distance@{calc\+Distance}!Wav\+P\+C\+M\+Sample\+Value@{Wav\+P\+C\+M\+Sample\+Value}}
+\subsubsection{calc\+Distance()}
+{\footnotesize\ttfamily \textbf{ U\+W\+O\+R\+D32} Wav\+P\+C\+M\+Sample\+Value\+::calc\+Distance (\begin{DoxyParamCaption}\item[{const \textbf{ Sample\+Value} $\ast$}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+calculate the distance between the sample value s and this sample value 
+\begin{DoxyParams}{Parameters}
+{\em s} & a sample value of the same type as this \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the distance 
+\end{DoxyReturn}
+
+
+Implements \textbf{ Sample\+Value} \doxyref{}{p.}{classSampleValue_aa7e5d9b69203f6f6edf97c79319232dd}.
+
+\mbox{\label{classWavPCMSampleValue_aa1aeb2771c396dee5719b4fb132a87f1}} 
+\index{Wav\+P\+C\+M\+Sample\+Value@{Wav\+P\+C\+M\+Sample\+Value}!calc\+E\+Value@{calc\+E\+Value}}
+\index{calc\+E\+Value@{calc\+E\+Value}!Wav\+P\+C\+M\+Sample\+Value@{Wav\+P\+C\+M\+Sample\+Value}}
+\subsubsection{calc\+E\+Value()}
+{\footnotesize\ttfamily \textbf{ Emb\+Value} Wav\+P\+C\+M\+Sample\+Value\+::calc\+E\+Value (\begin{DoxyParamCaption}\item[{int}]{v }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\mbox{\label{classWavPCMSampleValue_a29f405e3ab8f8571131ec38fb07aa728}} 
+\index{Wav\+P\+C\+M\+Sample\+Value@{Wav\+P\+C\+M\+Sample\+Value}!get\+Name@{get\+Name}}
+\index{get\+Name@{get\+Name}!Wav\+P\+C\+M\+Sample\+Value@{Wav\+P\+C\+M\+Sample\+Value}}
+\subsubsection{get\+Name()}
+{\footnotesize\ttfamily std\+::string Wav\+P\+C\+M\+Sample\+Value\+::get\+Name (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+return a short name uniquely identifying this sample value 
+
+Implements \textbf{ Sample\+Value} \doxyref{}{p.}{classSampleValue_aeaf5c46ec6d023840e9773604b20d25c}.
+
+\mbox{\label{classWavPCMSampleValue_ade9412085402d750dc1251b948db8c9b}} 
+\index{Wav\+P\+C\+M\+Sample\+Value@{Wav\+P\+C\+M\+Sample\+Value}!get\+Nearest\+Target\+Sample\+Value@{get\+Nearest\+Target\+Sample\+Value}}
+\index{get\+Nearest\+Target\+Sample\+Value@{get\+Nearest\+Target\+Sample\+Value}!Wav\+P\+C\+M\+Sample\+Value@{Wav\+P\+C\+M\+Sample\+Value}}
+\subsubsection{get\+Nearest\+Target\+Sample\+Value()}
+{\footnotesize\ttfamily \textbf{ Sample\+Value} $\ast$ Wav\+P\+C\+M\+Sample\+Value\+::get\+Nearest\+Target\+Sample\+Value (\begin{DoxyParamCaption}\item[{\textbf{ Emb\+Value}}]{t }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+get the nearest (with the least distance to this sample value) sample value whose embedded value equals the specified target 
+\begin{DoxyParams}{Parameters}
+{\em t} & the target embedded value\\
+\hline
+\end{DoxyParams}
+If two or more target sample values have equal distance each of them should be returned with equal probability.
+
+The returned \doxyref{Sample\+Value}{p.}{classSampleValue} object should be deleted by the callser. 
+
+Implements \textbf{ Sample\+Value} \doxyref{}{p.}{classSampleValue_aeca3fc1fd34c09d2244706b010935c2c}.
+
+\mbox{\label{classWavPCMSampleValue_a1eb27fa73d2c213d4ce9cdb54f0c05bc}} 
+\index{Wav\+P\+C\+M\+Sample\+Value@{Wav\+P\+C\+M\+Sample\+Value}!get\+Value@{get\+Value}}
+\index{get\+Value@{get\+Value}!Wav\+P\+C\+M\+Sample\+Value@{Wav\+P\+C\+M\+Sample\+Value}}
+\subsubsection{get\+Value()}
+{\footnotesize\ttfamily int Wav\+P\+C\+M\+Sample\+Value\+::get\+Value (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{classWavPCMSampleValue_ae0ea5221a0a0fa15fa25a93a3bf23339}} 
+\index{Wav\+P\+C\+M\+Sample\+Value@{Wav\+P\+C\+M\+Sample\+Value}!Max\+Value@{Max\+Value}}
+\index{Max\+Value@{Max\+Value}!Wav\+P\+C\+M\+Sample\+Value@{Wav\+P\+C\+M\+Sample\+Value}}
+\subsubsection{Max\+Value}
+{\footnotesize\ttfamily int Wav\+P\+C\+M\+Sample\+Value\+::\+Max\+Value\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classWavPCMSampleValue_a44106d42e52a3e8fa4f6243e2c9ec9e4}} 
+\index{Wav\+P\+C\+M\+Sample\+Value@{Wav\+P\+C\+M\+Sample\+Value}!Min\+Value@{Min\+Value}}
+\index{Min\+Value@{Min\+Value}!Wav\+P\+C\+M\+Sample\+Value@{Wav\+P\+C\+M\+Sample\+Value}}
+\subsubsection{Min\+Value}
+{\footnotesize\ttfamily int Wav\+P\+C\+M\+Sample\+Value\+::\+Min\+Value\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classWavPCMSampleValue_aae1057f324f86a73e644c4957aca4c0f}} 
+\index{Wav\+P\+C\+M\+Sample\+Value@{Wav\+P\+C\+M\+Sample\+Value}!Value@{Value}}
+\index{Value@{Value}!Wav\+P\+C\+M\+Sample\+Value@{Wav\+P\+C\+M\+Sample\+Value}}
+\subsubsection{Value}
+{\footnotesize\ttfamily int Wav\+P\+C\+M\+Sample\+Value\+::\+Value\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ Wav\+P\+C\+M\+Sample\+Value.\+h}\item 
+\textbf{ Wav\+P\+C\+M\+Sample\+Value.\+cc}\end{DoxyCompactItemize}

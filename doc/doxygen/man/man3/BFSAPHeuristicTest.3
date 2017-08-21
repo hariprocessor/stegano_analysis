@@ -1,0 +1,232 @@
+.TH "BFSAPHeuristicTest" 3 "Thu Aug 17 2017" "Version 0.5.1" "steghide" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+BFSAPHeuristicTest
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <BFSAPHeuristicTest\&.h>\fP
+.PP
+Inherits \fBUnitTest\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBBFSAPHeuristicTest\fP (\fBTestSuite\fP *s)"
+.br
+.ti -1c
+.RI "void \fBsetup\fP (void)"
+.br
+.ti -1c
+.RI "void \fBcleanup\fP (void)"
+.br
+.ti -1c
+.RI "void \fBtestAlgorithm\fP (void)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBBitString\fP * \fBbs1\fP"
+.br
+.ti -1c
+.RI "\fBBitString\fP * \fBbs2\fP"
+.br
+.ti -1c
+.RI "\fBBitString\fP * \fBbs3\fP"
+.br
+.ti -1c
+.RI "\fBBitString\fP * \fBbs4\fP"
+.br
+.ti -1c
+.RI "\fBBitString\fP * \fBbs5\fP"
+.br
+.ti -1c
+.RI "\fBCvrStgFile\fP * \fBf1\fP"
+.br
+.ti -1c
+.RI "\fBCvrStgFile\fP * \fBf2\fP"
+.br
+.ti -1c
+.RI "\fBCvrStgFile\fP * \fBf3\fP"
+.br
+.ti -1c
+.RI "\fBCvrStgFile\fP * \fBf4\fP"
+.br
+.ti -1c
+.RI "\fBCvrStgFile\fP * \fBf5\fP"
+.br
+.ti -1c
+.RI "\fBSelector\fP * \fBs1\fP"
+.br
+.ti -1c
+.RI "\fBSelector\fP * \fBs2\fP"
+.br
+.ti -1c
+.RI "\fBSelector\fP * \fBs3\fP"
+.br
+.ti -1c
+.RI "\fBSelector\fP * \fBs4\fP"
+.br
+.ti -1c
+.RI "\fBSelector\fP * \fBs5\fP"
+.br
+.ti -1c
+.RI "\fBGraph\fP * \fBg1\fP"
+.br
+.ti -1c
+.RI "\fBGraph\fP * \fBg2\fP"
+.br
+.ti -1c
+.RI "\fBGraph\fP * \fBg3\fP"
+.br
+.ti -1c
+.RI "\fBGraph\fP * \fBg4\fP"
+.br
+.ti -1c
+.RI "\fBGraph\fP * \fBg5\fP"
+.br
+.ti -1c
+.RI "\fBMatching\fP * \fBm1\fP"
+.br
+.ti -1c
+.RI "\fBMatching\fP * \fBm2\fP"
+.br
+.ti -1c
+.RI "\fBMatching\fP * \fBm3\fP"
+.br
+.ti -1c
+.RI "\fBMatching\fP * \fBm4\fP"
+.br
+.ti -1c
+.RI "\fBMatching\fP * \fBm5\fP"
+.br
+.ti -1c
+.RI "\fBBFSAPHeuristic\fP * \fBaph1\fP"
+.br
+.ti -1c
+.RI "\fBBFSAPHeuristic\fP * \fBaph2\fP"
+.br
+.ti -1c
+.RI "\fBBFSAPHeuristic\fP * \fBaph3\fP"
+.br
+.ti -1c
+.RI "\fBBFSAPHeuristic\fP * \fBaph4\fP"
+.br
+.ti -1c
+.RI "\fBBFSAPHeuristic\fP * \fBaph5\fP"
+.br
+.ti -1c
+.RI "\fBGlobals\fP \fBgl1\fP"
+.br
+.ti -1c
+.RI "\fBGlobals\fP \fBgl2\fP"
+.br
+.ti -1c
+.RI "\fBGlobals\fP \fBgl3\fP"
+.br
+.ti -1c
+.RI "\fBGlobals\fP \fBgl4\fP"
+.br
+.ti -1c
+.RI "\fBGlobals\fP \fBgl5\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "BFSAPHeuristicTest::BFSAPHeuristicTest (\fBTestSuite\fP * s)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void BFSAPHeuristicTest::cleanup (void)\fC [virtual]\fP"
+cleanup the unit test - called after run 
+.PP
+Reimplemented from \fBUnitTest\fP\&.
+.SS "void BFSAPHeuristicTest::setup (void)\fC [virtual]\fP"
+setup the unit test - called before run
+.PP
+\fBUnitTest::setup\fP will (together with \fBUnitTest::cleanup\fP) save and restore the object stored in Globs so they should be called from the corresponding functions in the derived object if the derived unit test manipulates the Globs object\&. 
+.PP
+Reimplemented from \fBUnitTest\fP\&.
+.SS "void BFSAPHeuristicTest::testAlgorithm (void)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBBFSAPHeuristic\fP* BFSAPHeuristicTest::aph1\fC [private]\fP"
+
+.SS "\fBBFSAPHeuristic\fP * BFSAPHeuristicTest::aph2\fC [private]\fP"
+
+.SS "\fBBFSAPHeuristic\fP * BFSAPHeuristicTest::aph3\fC [private]\fP"
+
+.SS "\fBBFSAPHeuristic\fP * BFSAPHeuristicTest::aph4\fC [private]\fP"
+
+.SS "\fBBFSAPHeuristic\fP * BFSAPHeuristicTest::aph5\fC [private]\fP"
+
+.SS "\fBBitString\fP* BFSAPHeuristicTest::bs1\fC [private]\fP"
+
+.SS "\fBBitString\fP * BFSAPHeuristicTest::bs2\fC [private]\fP"
+
+.SS "\fBBitString\fP * BFSAPHeuristicTest::bs3\fC [private]\fP"
+
+.SS "\fBBitString\fP * BFSAPHeuristicTest::bs4\fC [private]\fP"
+
+.SS "\fBBitString\fP * BFSAPHeuristicTest::bs5\fC [private]\fP"
+
+.SS "\fBCvrStgFile\fP* BFSAPHeuristicTest::f1\fC [private]\fP"
+
+.SS "\fBCvrStgFile\fP * BFSAPHeuristicTest::f2\fC [private]\fP"
+
+.SS "\fBCvrStgFile\fP * BFSAPHeuristicTest::f3\fC [private]\fP"
+
+.SS "\fBCvrStgFile\fP * BFSAPHeuristicTest::f4\fC [private]\fP"
+
+.SS "\fBCvrStgFile\fP * BFSAPHeuristicTest::f5\fC [private]\fP"
+
+.SS "\fBGraph\fP* BFSAPHeuristicTest::g1\fC [private]\fP"
+
+.SS "\fBGraph\fP * BFSAPHeuristicTest::g2\fC [private]\fP"
+
+.SS "\fBGraph\fP * BFSAPHeuristicTest::g3\fC [private]\fP"
+
+.SS "\fBGraph\fP * BFSAPHeuristicTest::g4\fC [private]\fP"
+
+.SS "\fBGraph\fP * BFSAPHeuristicTest::g5\fC [private]\fP"
+
+.SS "\fBGlobals\fP BFSAPHeuristicTest::gl1\fC [private]\fP"
+
+.SS "\fBGlobals\fP BFSAPHeuristicTest::gl2\fC [private]\fP"
+
+.SS "\fBGlobals\fP BFSAPHeuristicTest::gl3\fC [private]\fP"
+
+.SS "\fBGlobals\fP BFSAPHeuristicTest::gl4\fC [private]\fP"
+
+.SS "\fBGlobals\fP BFSAPHeuristicTest::gl5\fC [private]\fP"
+
+.SS "\fBMatching\fP* BFSAPHeuristicTest::m1\fC [private]\fP"
+
+.SS "\fBMatching\fP * BFSAPHeuristicTest::m2\fC [private]\fP"
+
+.SS "\fBMatching\fP * BFSAPHeuristicTest::m3\fC [private]\fP"
+
+.SS "\fBMatching\fP * BFSAPHeuristicTest::m4\fC [private]\fP"
+
+.SS "\fBMatching\fP * BFSAPHeuristicTest::m5\fC [private]\fP"
+
+.SS "\fBSelector\fP* BFSAPHeuristicTest::s1\fC [private]\fP"
+
+.SS "\fBSelector\fP * BFSAPHeuristicTest::s2\fC [private]\fP"
+
+.SS "\fBSelector\fP * BFSAPHeuristicTest::s3\fC [private]\fP"
+
+.SS "\fBSelector\fP * BFSAPHeuristicTest::s4\fC [private]\fP"
+
+.SS "\fBSelector\fP * BFSAPHeuristicTest::s5\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for steghide from the source code\&.

@@ -1,0 +1,251 @@
+\section{Encryption\+Mode Class Reference}
+\label{classEncryptionMode}\index{Encryption\+Mode@{Encryption\+Mode}}
+
+
+{\ttfamily \#include $<$Encryption\+Mode.\+h$>$}
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \textbf{ struct\+\_\+\+Translation}
+\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \textbf{ I\+Rep} \{ \newline
+\textbf{ E\+CB} = 0, 
+\textbf{ C\+BC} = 1, 
+\textbf{ O\+FB} = 2, 
+\textbf{ C\+FB} = 3, 
+\newline
+\textbf{ N\+O\+FB} = 4, 
+\textbf{ N\+C\+FB} = 5, 
+\textbf{ C\+TR} = 6, 
+\textbf{ S\+T\+R\+E\+AM} = 7
+ \}
+\begin{DoxyCompactList}\small\item\em integer representation of encryption mode \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Encryption\+Mode} (void)
+\item 
+\textbf{ Encryption\+Mode} (\textbf{ I\+Rep} irep)
+\item 
+\textbf{ Encryption\+Mode} (std\+::string srep)
+\item 
+void \textbf{ set\+Value} (\textbf{ I\+Rep} irep)
+\item 
+std\+::string \textbf{ get\+String\+Rep} (void) const
+\item 
+\textbf{ I\+Rep} \textbf{ get\+Integer\+Rep} (void) const
+\item 
+bool \textbf{ operator==} (const \textbf{ Encryption\+Mode} \&mode) const
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \textbf{ is\+Valid\+String\+Rep} (std\+::string srep)
+\item 
+static bool \textbf{ is\+Valid\+Integer\+Rep} (unsigned int irep)
+\item 
+static std\+::string \textbf{ translate} (\textbf{ I\+Rep} irep)
+\item 
+static \textbf{ I\+Rep} \textbf{ translate} (std\+::string srep)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const unsigned int \textbf{ I\+Rep\+\_\+size} = 3
+\begin{DoxyCompactList}\small\item\em number of bits needed to code the mode \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \textbf{ Encryption\+Mode\+::struct\+\_\+\+Translation} \textbf{ Translation}
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ I\+Rep} \textbf{ Value}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const unsigned int \textbf{ Num\+Values} = 8
+\item 
+static const \textbf{ Translation} \textbf{ Translations} [$\,$]
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Typedef Documentation}
+\mbox{\label{classEncryptionMode_a2cc1860b5cc1e1fadf7ba0067a903405}} 
+\index{Encryption\+Mode@{Encryption\+Mode}!Translation@{Translation}}
+\index{Translation@{Translation}!Encryption\+Mode@{Encryption\+Mode}}
+\subsubsection{Translation}
+{\footnotesize\ttfamily typedef struct \textbf{ Encryption\+Mode\+::struct\+\_\+\+Translation}  \textbf{ Encryption\+Mode\+::\+Translation}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\label{classEncryptionMode_a136e2b84c94488c7f0fe4c2c781b1581}} 
+\index{Encryption\+Mode@{Encryption\+Mode}!I\+Rep@{I\+Rep}}
+\index{I\+Rep@{I\+Rep}!Encryption\+Mode@{Encryption\+Mode}}
+\subsubsection{I\+Rep}
+{\footnotesize\ttfamily enum \textbf{ Encryption\+Mode\+::\+I\+Rep}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E\+CB@{E\+CB}!Encryption\+Mode@{Encryption\+Mode}}\index{Encryption\+Mode@{Encryption\+Mode}!E\+CB@{E\+CB}}}\mbox{\label{classEncryptionMode_a136e2b84c94488c7f0fe4c2c781b1581ac08a5875339f740132386b99b8262a23}} 
+E\+CB&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+BC@{C\+BC}!Encryption\+Mode@{Encryption\+Mode}}\index{Encryption\+Mode@{Encryption\+Mode}!C\+BC@{C\+BC}}}\mbox{\label{classEncryptionMode_a136e2b84c94488c7f0fe4c2c781b1581a3c5b2f7f95ff4b1613687119248ab96d}} 
+C\+BC&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{O\+FB@{O\+FB}!Encryption\+Mode@{Encryption\+Mode}}\index{Encryption\+Mode@{Encryption\+Mode}!O\+FB@{O\+FB}}}\mbox{\label{classEncryptionMode_a136e2b84c94488c7f0fe4c2c781b1581a1a6e3391aab5f3c35ff71f4e89875b74}} 
+O\+FB&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+FB@{C\+FB}!Encryption\+Mode@{Encryption\+Mode}}\index{Encryption\+Mode@{Encryption\+Mode}!C\+FB@{C\+FB}}}\mbox{\label{classEncryptionMode_a136e2b84c94488c7f0fe4c2c781b1581a01a6f1542ff51301bc2f909bdcac5e92}} 
+C\+FB&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{N\+O\+FB@{N\+O\+FB}!Encryption\+Mode@{Encryption\+Mode}}\index{Encryption\+Mode@{Encryption\+Mode}!N\+O\+FB@{N\+O\+FB}}}\mbox{\label{classEncryptionMode_a136e2b84c94488c7f0fe4c2c781b1581ac8bfd5ef69e4edf2cd934fd61c26d691}} 
+N\+O\+FB&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{N\+C\+FB@{N\+C\+FB}!Encryption\+Mode@{Encryption\+Mode}}\index{Encryption\+Mode@{Encryption\+Mode}!N\+C\+FB@{N\+C\+FB}}}\mbox{\label{classEncryptionMode_a136e2b84c94488c7f0fe4c2c781b1581a41e9989ca9de600aee36c4c41271d331}} 
+N\+C\+FB&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+TR@{C\+TR}!Encryption\+Mode@{Encryption\+Mode}}\index{Encryption\+Mode@{Encryption\+Mode}!C\+TR@{C\+TR}}}\mbox{\label{classEncryptionMode_a136e2b84c94488c7f0fe4c2c781b1581aab9094135177237ba8f9e1960a02d391}} 
+C\+TR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+T\+R\+E\+AM@{S\+T\+R\+E\+AM}!Encryption\+Mode@{Encryption\+Mode}}\index{Encryption\+Mode@{Encryption\+Mode}!S\+T\+R\+E\+AM@{S\+T\+R\+E\+AM}}}\mbox{\label{classEncryptionMode_a136e2b84c94488c7f0fe4c2c781b1581a27cbbe34c17df2bbe2d7fca18fe44373}} 
+S\+T\+R\+E\+AM&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{classEncryptionMode_a2c228ca6820b76748d84e04828e2c38c}} 
+\index{Encryption\+Mode@{Encryption\+Mode}!Encryption\+Mode@{Encryption\+Mode}}
+\index{Encryption\+Mode@{Encryption\+Mode}!Encryption\+Mode@{Encryption\+Mode}}
+\subsubsection{Encryption\+Mode()\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Encryption\+Mode\+::\+Encryption\+Mode (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+construct a new \doxyref{Encryption\+Mode}{p.}{classEncryptionMode} object setting Value to E\+CB \mbox{\label{classEncryptionMode_abcb7fda77b5f7ab31a4a26c788ae35d9}} 
+\index{Encryption\+Mode@{Encryption\+Mode}!Encryption\+Mode@{Encryption\+Mode}}
+\index{Encryption\+Mode@{Encryption\+Mode}!Encryption\+Mode@{Encryption\+Mode}}
+\subsubsection{Encryption\+Mode()\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Encryption\+Mode\+::\+Encryption\+Mode (\begin{DoxyParamCaption}\item[{\textbf{ Encryption\+Mode\+::\+I\+Rep}}]{irep }\end{DoxyParamCaption})}
+
+\mbox{\label{classEncryptionMode_a74bca6f0a7c1ceec56f368fa77d33c07}} 
+\index{Encryption\+Mode@{Encryption\+Mode}!Encryption\+Mode@{Encryption\+Mode}}
+\index{Encryption\+Mode@{Encryption\+Mode}!Encryption\+Mode@{Encryption\+Mode}}
+\subsubsection{Encryption\+Mode()\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Encryption\+Mode\+::\+Encryption\+Mode (\begin{DoxyParamCaption}\item[{std\+::string}]{srep }\end{DoxyParamCaption})}
+
+construct a new \doxyref{Encryption\+Mode}{p.}{classEncryptionMode} object from a std\+::string representation 
+\begin{DoxyParams}{Parameters}
+{\em srep} & a valid(!) std\+::string representation \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{classEncryptionMode_af4a17e17a48c6a86ddda108227424c38}} 
+\index{Encryption\+Mode@{Encryption\+Mode}!get\+Integer\+Rep@{get\+Integer\+Rep}}
+\index{get\+Integer\+Rep@{get\+Integer\+Rep}!Encryption\+Mode@{Encryption\+Mode}}
+\subsubsection{get\+Integer\+Rep()}
+{\footnotesize\ttfamily \textbf{ Encryption\+Mode\+::\+I\+Rep} Encryption\+Mode\+::get\+Integer\+Rep (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+\mbox{\label{classEncryptionMode_a6ed8917f0a8f5e41e39e877ce6a1966c}} 
+\index{Encryption\+Mode@{Encryption\+Mode}!get\+String\+Rep@{get\+String\+Rep}}
+\index{get\+String\+Rep@{get\+String\+Rep}!Encryption\+Mode@{Encryption\+Mode}}
+\subsubsection{get\+String\+Rep()}
+{\footnotesize\ttfamily std\+::string Encryption\+Mode\+::get\+String\+Rep (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+\mbox{\label{classEncryptionMode_a4148d3e25613ba8733bbc459805c71d0}} 
+\index{Encryption\+Mode@{Encryption\+Mode}!is\+Valid\+Integer\+Rep@{is\+Valid\+Integer\+Rep}}
+\index{is\+Valid\+Integer\+Rep@{is\+Valid\+Integer\+Rep}!Encryption\+Mode@{Encryption\+Mode}}
+\subsubsection{is\+Valid\+Integer\+Rep()}
+{\footnotesize\ttfamily bool Encryption\+Mode\+::is\+Valid\+Integer\+Rep (\begin{DoxyParamCaption}\item[{unsigned int}]{irep }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\label{classEncryptionMode_a3fe8eeb1fb6397fcb14bd7964d0a3dbf}} 
+\index{Encryption\+Mode@{Encryption\+Mode}!is\+Valid\+String\+Rep@{is\+Valid\+String\+Rep}}
+\index{is\+Valid\+String\+Rep@{is\+Valid\+String\+Rep}!Encryption\+Mode@{Encryption\+Mode}}
+\subsubsection{is\+Valid\+String\+Rep()}
+{\footnotesize\ttfamily bool Encryption\+Mode\+::is\+Valid\+String\+Rep (\begin{DoxyParamCaption}\item[{std\+::string}]{srep }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\label{classEncryptionMode_a7f5159af8571867c3204763927468254}} 
+\index{Encryption\+Mode@{Encryption\+Mode}!operator==@{operator==}}
+\index{operator==@{operator==}!Encryption\+Mode@{Encryption\+Mode}}
+\subsubsection{operator==()}
+{\footnotesize\ttfamily bool Encryption\+Mode\+::operator== (\begin{DoxyParamCaption}\item[{const \textbf{ Encryption\+Mode} \&}]{mode }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classEncryptionMode_a166b3995fdb42166bde42d52cc92a94b}} 
+\index{Encryption\+Mode@{Encryption\+Mode}!set\+Value@{set\+Value}}
+\index{set\+Value@{set\+Value}!Encryption\+Mode@{Encryption\+Mode}}
+\subsubsection{set\+Value()}
+{\footnotesize\ttfamily void Encryption\+Mode\+::set\+Value (\begin{DoxyParamCaption}\item[{\textbf{ Encryption\+Mode\+::\+I\+Rep}}]{irep }\end{DoxyParamCaption})}
+
+\mbox{\label{classEncryptionMode_ac86dd4e2d7a79f694ab5599f59cc3ba0}} 
+\index{Encryption\+Mode@{Encryption\+Mode}!translate@{translate}}
+\index{translate@{translate}!Encryption\+Mode@{Encryption\+Mode}}
+\subsubsection{translate()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::string Encryption\+Mode\+::translate (\begin{DoxyParamCaption}\item[{\textbf{ Encryption\+Mode\+::\+I\+Rep}}]{irep }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\label{classEncryptionMode_a1d820d81ede8f0c6a9e4942419ff6e76}} 
+\index{Encryption\+Mode@{Encryption\+Mode}!translate@{translate}}
+\index{translate@{translate}!Encryption\+Mode@{Encryption\+Mode}}
+\subsubsection{translate()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \textbf{ Encryption\+Mode\+::\+I\+Rep} Encryption\+Mode\+::translate (\begin{DoxyParamCaption}\item[{std\+::string}]{srep }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{classEncryptionMode_af91221dba10e069148e860ddd92d5b15}} 
+\index{Encryption\+Mode@{Encryption\+Mode}!I\+Rep\+\_\+size@{I\+Rep\+\_\+size}}
+\index{I\+Rep\+\_\+size@{I\+Rep\+\_\+size}!Encryption\+Mode@{Encryption\+Mode}}
+\subsubsection{I\+Rep\+\_\+size}
+{\footnotesize\ttfamily const unsigned int Encryption\+Mode\+::\+I\+Rep\+\_\+size = 3\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\label{classEncryptionMode_a61a77e42fd22c95f4385eb87dbe03718}} 
+\index{Encryption\+Mode@{Encryption\+Mode}!Num\+Values@{Num\+Values}}
+\index{Num\+Values@{Num\+Values}!Encryption\+Mode@{Encryption\+Mode}}
+\subsubsection{Num\+Values}
+{\footnotesize\ttfamily const unsigned int Encryption\+Mode\+::\+Num\+Values = 8\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\label{classEncryptionMode_a3a14ae66088a1903f1488397fc36cb14}} 
+\index{Encryption\+Mode@{Encryption\+Mode}!Translations@{Translations}}
+\index{Translations@{Translations}!Encryption\+Mode@{Encryption\+Mode}}
+\subsubsection{Translations}
+{\footnotesize\ttfamily const \textbf{ Encryption\+Mode\+::\+Translation} Encryption\+Mode\+::\+Translations\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+        \{ ECB, \textcolor{stringliteral}{"ecb"} \},
+        \{ CBC, \textcolor{stringliteral}{"cbc"} \},
+        \{ OFB, \textcolor{stringliteral}{"ofb"} \},
+        \{ CFB, \textcolor{stringliteral}{"cfb"} \},
+        \{ NOFB, \textcolor{stringliteral}{"nofb"} \},
+        \{ NCFB, \textcolor{stringliteral}{"ncfb"} \},
+        \{ CTR, \textcolor{stringliteral}{"ctr"} \},
+        \{ STREAM, \textcolor{stringliteral}{"stream"} \}
+\}
+\end{DoxyCode}
+\mbox{\label{classEncryptionMode_a4db0b0305bdd00aa7580bb6db8d4a8c3}} 
+\index{Encryption\+Mode@{Encryption\+Mode}!Value@{Value}}
+\index{Value@{Value}!Encryption\+Mode@{Encryption\+Mode}}
+\subsubsection{Value}
+{\footnotesize\ttfamily \textbf{ I\+Rep} Encryption\+Mode\+::\+Value\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ Encryption\+Mode.\+h}\item 
+\textbf{ Encryption\+Mode.\+cc}\end{DoxyCompactItemize}

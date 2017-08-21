@@ -1,0 +1,103 @@
+\section{A\+Utils Class Reference}
+\label{classAUtils}\index{A\+Utils@{A\+Utils}}
+
+
+provides some generic functions for non-\/standard arithmetic operations  
+
+
+
+
+{\ttfamily \#include $<$A\+Utils.\+h$>$}
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class T $>$ }\\static T \textbf{ max} (T a, T b)
+\item 
+{\footnotesize template$<$class T $>$ }\\static T \textbf{ min} (T a, T b)
+\item 
+{\footnotesize template$<$class T $>$ }\\static T \textbf{ div\+\_\+roundup} (T a, T b)
+\item 
+{\footnotesize template$<$class T $>$ }\\static T \textbf{ bminus} (T a, T b)
+\item 
+{\footnotesize template$<$class T , T top$>$ }\\static T \textbf{ bplus} (T a, T b)
+\item 
+{\footnotesize template$<$class T $>$ }\\static T \textbf{ bplus} (T a, T b, T top)
+\item 
+{\footnotesize template$<$class T , class C\+T\+Y\+PE $>$ }\\static T \textbf{ modsum} (T $\ast$s, C\+T\+Y\+PE n, T m)
+\item 
+{\footnotesize template$<$class IT , class FT $>$ }\\static IT \textbf{ roundup} (FT x)
+\item 
+{\footnotesize template$<$class T $>$ }\\static T \textbf{ log2\+\_\+ceil} (T n)
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{classAUtils_a913619524397350adb0e1c047b378a58}} 
+\index{A\+Utils@{A\+Utils}!bminus@{bminus}}
+\index{bminus@{bminus}!A\+Utils@{A\+Utils}}
+\subsubsection{bminus()}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+T A\+Utils\+::bminus (\begin{DoxyParamCaption}\item[{T}]{a,  }\item[{T}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+substraction with the modification to return 0 (T()) for negative difference (needs $>$, -\/, T()) \mbox{\label{classAUtils_a2195cee438b25dd9794334914ee31588}} 
+\index{A\+Utils@{A\+Utils}!bplus@{bplus}}
+\index{bplus@{bplus}!A\+Utils@{A\+Utils}}
+\subsubsection{bplus()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T , T top$>$ \\
+T A\+Utils\+::bplus (\begin{DoxyParamCaption}\item[{T}]{a,  }\item[{T}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+addition with the modification to return top for sums that are larger than top \mbox{\label{classAUtils_a0150b72b95e38e28588ffcae0d10e0a0}} 
+\index{A\+Utils@{A\+Utils}!bplus@{bplus}}
+\index{bplus@{bplus}!A\+Utils@{A\+Utils}}
+\subsubsection{bplus()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+T A\+Utils\+::bplus (\begin{DoxyParamCaption}\item[{T}]{a,  }\item[{T}]{b,  }\item[{T}]{top }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\label{classAUtils_a447da3912ebadf1c8e387c41b8564d21}} 
+\index{A\+Utils@{A\+Utils}!div\+\_\+roundup@{div\+\_\+roundup}}
+\index{div\+\_\+roundup@{div\+\_\+roundup}!A\+Utils@{A\+Utils}}
+\subsubsection{div\+\_\+roundup()}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+T A\+Utils\+::div\+\_\+roundup (\begin{DoxyParamCaption}\item[{T}]{a,  }\item[{T}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+returns a divided through b rounded up to nearest \char`\"{}integer\char`\"{} (needs =, --, +, /) \mbox{\label{classAUtils_a139c8f7686c2d57cbac08bb875612eee}} 
+\index{A\+Utils@{A\+Utils}!log2\+\_\+ceil@{log2\+\_\+ceil}}
+\index{log2\+\_\+ceil@{log2\+\_\+ceil}!A\+Utils@{A\+Utils}}
+\subsubsection{log2\+\_\+ceil()}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+T A\+Utils\+::log2\+\_\+ceil (\begin{DoxyParamCaption}\item[{T}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+compute 2-\/logarithm of n (rounded up to nearest int), i.\+e. number of bits needed to store values from \{0,...,n-\/1\} \mbox{\label{classAUtils_a78af5cdca7b9ad8f5bda06e1a16f62be}} 
+\index{A\+Utils@{A\+Utils}!max@{max}}
+\index{max@{max}!A\+Utils@{A\+Utils}}
+\subsubsection{max()}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+T A\+Utils\+::max (\begin{DoxyParamCaption}\item[{T}]{a,  }\item[{T}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+return the maximum of a and b (needs $>$) \mbox{\label{classAUtils_a526333c7b780b8b99e62dc7d87caa50b}} 
+\index{A\+Utils@{A\+Utils}!min@{min}}
+\index{min@{min}!A\+Utils@{A\+Utils}}
+\subsubsection{min()}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+T A\+Utils\+::min (\begin{DoxyParamCaption}\item[{T}]{a,  }\item[{T}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+return the minimum of a and b (needs $<$) \mbox{\label{classAUtils_a60bf7adcf99889a97a02bcb4c5290080}} 
+\index{A\+Utils@{A\+Utils}!modsum@{modsum}}
+\index{modsum@{modsum}!A\+Utils@{A\+Utils}}
+\subsubsection{modsum()}
+{\footnotesize\ttfamily template$<$class T , class C\+T\+Y\+PE $>$ \\
+T A\+Utils\+::modsum (\begin{DoxyParamCaption}\item[{T $\ast$}]{s,  }\item[{C\+T\+Y\+PE}]{n,  }\item[{T}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+calculate the sum s[0]+...s[n-\/1] modulo m (needs =, +, \% for T and =, C\+T\+Y\+P\+E(), $<$, ++ for C\+T\+Y\+PE) \mbox{\label{classAUtils_a978c57821e2acd0f8560aa3b1d866c07}} 
+\index{A\+Utils@{A\+Utils}!roundup@{roundup}}
+\index{roundup@{roundup}!A\+Utils@{A\+Utils}}
+\subsubsection{roundup()}
+{\footnotesize\ttfamily template$<$class IT , class FT $>$ \\
+IT A\+Utils\+::roundup (\begin{DoxyParamCaption}\item[{FT}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+round up x to nearest integer 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ A\+Utils.\+h}\end{DoxyCompactItemize}

@@ -1,0 +1,41 @@
+.TH "EdgeIteratorTest.cc" 3 "Thu Aug 17 2017" "Version 0.5.1" "steghide" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+EdgeIteratorTest.cc
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'Edge\&.h'\fP
+.br
+\fC#include 'common\&.h'\fP
+.br
+\fC#include 'DummyFile\&.h'\fP
+.br
+\fC#include 'EdgeIteratorTest\&.h'\fP
+.br
+\fC#include 'TestCategoryCaller\&.h'\fP
+.br
+\fC#include 'utcommon\&.h'\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBCREATEEDGE\fP(G,  V1,  V2)"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define CREATEEDGE(G, V1, V2)"
+\fBValue:\fP
+.PP
+.nf
+((V1 < V2) ? \
+                (new Edge ((G)->getVertex(V1), 0, (G)->getVertex(V2), 1)) : \
+                (new Edge ((G)->getVertex(V2), 0, (G)->getVertex(V1), 1)))
+.fi
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for steghide from the source code\&.

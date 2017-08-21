@@ -1,0 +1,99 @@
+\section{Wav\+Chunk\+Header Class Reference}
+\label{classWavChunkHeader}\index{Wav\+Chunk\+Header@{Wav\+Chunk\+Header}}
+
+
+{\ttfamily \#include $<$Wav\+Chunk\+Header.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Wav\+Chunk\+Header} (void)
+\item 
+\textbf{ Wav\+Chunk\+Header} (char $\ast$id, \textbf{ U\+W\+O\+R\+D32} len)
+\item 
+\textbf{ Wav\+Chunk\+Header} (\textbf{ Binary\+IO} $\ast$io)
+\item 
+void \textbf{ read} (\textbf{ Binary\+IO} $\ast$io)
+\item 
+void \textbf{ write} (\textbf{ Binary\+IO} $\ast$io) const
+\item 
+\textbf{ U\+W\+O\+R\+D32} \textbf{ get\+Chunk\+Length} (void) const
+\item 
+const char $\ast$ \textbf{ get\+Chunk\+Id} (void) const
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+char \textbf{ Chunk\+Id} [4]
+\item 
+\textbf{ U\+W\+O\+R\+D32} \textbf{ Chunk\+Length}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{classWavChunkHeader_a301119c81ae995ebf513cb4fc27fdbc9}} 
+\index{Wav\+Chunk\+Header@{Wav\+Chunk\+Header}!Wav\+Chunk\+Header@{Wav\+Chunk\+Header}}
+\index{Wav\+Chunk\+Header@{Wav\+Chunk\+Header}!Wav\+Chunk\+Header@{Wav\+Chunk\+Header}}
+\subsubsection{Wav\+Chunk\+Header()\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Wav\+Chunk\+Header\+::\+Wav\+Chunk\+Header (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classWavChunkHeader_a442a43fbd1b5ddb083a5c77b26d6ae05}} 
+\index{Wav\+Chunk\+Header@{Wav\+Chunk\+Header}!Wav\+Chunk\+Header@{Wav\+Chunk\+Header}}
+\index{Wav\+Chunk\+Header@{Wav\+Chunk\+Header}!Wav\+Chunk\+Header@{Wav\+Chunk\+Header}}
+\subsubsection{Wav\+Chunk\+Header()\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Wav\+Chunk\+Header\+::\+Wav\+Chunk\+Header (\begin{DoxyParamCaption}\item[{char $\ast$}]{id,  }\item[{\textbf{ U\+W\+O\+R\+D32}}]{len }\end{DoxyParamCaption})}
+
+\mbox{\label{classWavChunkHeader_ad2a5c20221c883b9dcafec98dec031ac}} 
+\index{Wav\+Chunk\+Header@{Wav\+Chunk\+Header}!Wav\+Chunk\+Header@{Wav\+Chunk\+Header}}
+\index{Wav\+Chunk\+Header@{Wav\+Chunk\+Header}!Wav\+Chunk\+Header@{Wav\+Chunk\+Header}}
+\subsubsection{Wav\+Chunk\+Header()\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Wav\+Chunk\+Header\+::\+Wav\+Chunk\+Header (\begin{DoxyParamCaption}\item[{\textbf{ Binary\+IO} $\ast$}]{io }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{classWavChunkHeader_a2a4eb8899e38b1528eaec1f18b07408b}} 
+\index{Wav\+Chunk\+Header@{Wav\+Chunk\+Header}!get\+Chunk\+Id@{get\+Chunk\+Id}}
+\index{get\+Chunk\+Id@{get\+Chunk\+Id}!Wav\+Chunk\+Header@{Wav\+Chunk\+Header}}
+\subsubsection{get\+Chunk\+Id()}
+{\footnotesize\ttfamily const char$\ast$ Wav\+Chunk\+Header\+::get\+Chunk\+Id (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classWavChunkHeader_ac97c5e02e4078d1e37c36126b07d00f2}} 
+\index{Wav\+Chunk\+Header@{Wav\+Chunk\+Header}!get\+Chunk\+Length@{get\+Chunk\+Length}}
+\index{get\+Chunk\+Length@{get\+Chunk\+Length}!Wav\+Chunk\+Header@{Wav\+Chunk\+Header}}
+\subsubsection{get\+Chunk\+Length()}
+{\footnotesize\ttfamily \textbf{ U\+W\+O\+R\+D32} Wav\+Chunk\+Header\+::get\+Chunk\+Length (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classWavChunkHeader_afba9f807a9c3a7f6a6d87043d4934f0c}} 
+\index{Wav\+Chunk\+Header@{Wav\+Chunk\+Header}!read@{read}}
+\index{read@{read}!Wav\+Chunk\+Header@{Wav\+Chunk\+Header}}
+\subsubsection{read()}
+{\footnotesize\ttfamily void Wav\+Chunk\+Header\+::read (\begin{DoxyParamCaption}\item[{\textbf{ Binary\+IO} $\ast$}]{io }\end{DoxyParamCaption})}
+
+\mbox{\label{classWavChunkHeader_a12953237537800d1d4ee294b498bae88}} 
+\index{Wav\+Chunk\+Header@{Wav\+Chunk\+Header}!write@{write}}
+\index{write@{write}!Wav\+Chunk\+Header@{Wav\+Chunk\+Header}}
+\subsubsection{write()}
+{\footnotesize\ttfamily void Wav\+Chunk\+Header\+::write (\begin{DoxyParamCaption}\item[{\textbf{ Binary\+IO} $\ast$}]{io }\end{DoxyParamCaption}) const}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{classWavChunkHeader_a85b451f23d74f8972fda96dfd450a91c}} 
+\index{Wav\+Chunk\+Header@{Wav\+Chunk\+Header}!Chunk\+Id@{Chunk\+Id}}
+\index{Chunk\+Id@{Chunk\+Id}!Wav\+Chunk\+Header@{Wav\+Chunk\+Header}}
+\subsubsection{Chunk\+Id}
+{\footnotesize\ttfamily char Wav\+Chunk\+Header\+::\+Chunk\+Id[4]\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classWavChunkHeader_aae2290f9c2cca139e55759e37e711ac4}} 
+\index{Wav\+Chunk\+Header@{Wav\+Chunk\+Header}!Chunk\+Length@{Chunk\+Length}}
+\index{Chunk\+Length@{Chunk\+Length}!Wav\+Chunk\+Header@{Wav\+Chunk\+Header}}
+\subsubsection{Chunk\+Length}
+{\footnotesize\ttfamily \textbf{ U\+W\+O\+R\+D32} Wav\+Chunk\+Header\+::\+Chunk\+Length\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ Wav\+Chunk\+Header.\+h}\item 
+\textbf{ Wav\+Chunk\+Header.\+cc}\end{DoxyCompactItemize}

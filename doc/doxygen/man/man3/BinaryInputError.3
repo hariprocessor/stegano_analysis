@@ -1,0 +1,77 @@
+.TH "BinaryInputError" 3 "Thu Aug 17 2017" "Version 0.5.1" "steghide" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+BinaryInputError
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <error\&.h>\fP
+.PP
+Inherits \fBSteghideError\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBTYPE\fP { \fBFILE_ERR\fP, \fBFILE_EOF\fP, \fBSTDIN_ERR\fP, \fBSTDIN_EOF\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBBinaryInputError\fP (std::string fn, FILE *s)"
+.br
+.ti -1c
+.RI "\fBTYPE\fP \fBgetType\fP (void)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBsetType\fP (\fBTYPE\fP t)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBTYPE\fP \fBtype\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBBinaryInputError::TYPE\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIFILE_ERR \fP\fP
+.TP
+\fB\fIFILE_EOF \fP\fP
+.TP
+\fB\fISTDIN_ERR \fP\fP
+.TP
+\fB\fISTDIN_EOF \fP\fP
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "BinaryInputError::BinaryInputError (std::string fn, FILE * s)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBBinaryInputError::TYPE\fP BinaryInputError::getType (void)"
+
+.SS "void BinaryInputError::setType (\fBBinaryInputError::TYPE\fP t)\fC [protected]\fP"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBTYPE\fP BinaryInputError::type\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for steghide from the source code\&.

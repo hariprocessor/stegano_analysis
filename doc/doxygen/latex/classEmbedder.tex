@@ -1,0 +1,97 @@
+\section{Embedder Class Reference}
+\label{classEmbedder}\index{Embedder@{Embedder}}
+
+
+{\ttfamily \#include $<$Embedder.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Embedder} (void)
+\item 
+\textbf{ $\sim$\+Embedder} (void)
+\item 
+void \textbf{ embed} (void)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const \textbf{ Matching} $\ast$ \textbf{ calculate\+Matching} (\textbf{ Progress\+Output} $\ast$prout)
+\item 
+void \textbf{ embed\+Edge} (\textbf{ Edge} $\ast$e)
+\item 
+void \textbf{ embed\+Exposed\+Vertex} (\textbf{ Vertex} $\ast$v)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Bit\+String} \textbf{ To\+Embed}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const unsigned int \textbf{ Default\+\_\+\+N\+Constr\+Heur} = 1
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{classEmbedder_ad9587f765edd8ae802ba5f4c0c36f627}} 
+\index{Embedder@{Embedder}!Embedder@{Embedder}}
+\index{Embedder@{Embedder}!Embedder@{Embedder}}
+\subsubsection{Embedder()}
+{\footnotesize\ttfamily Embedder\+::\+Embedder (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\label{classEmbedder_aad9422d7eec0e770b1a27e604139fd41}} 
+\index{Embedder@{Embedder}!````~Embedder@{$\sim$\+Embedder}}
+\index{````~Embedder@{$\sim$\+Embedder}!Embedder@{Embedder}}
+\subsubsection{$\sim$\+Embedder()}
+{\footnotesize\ttfamily Embedder\+::$\sim$\+Embedder (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{classEmbedder_a5d811c9c54f1e48860052274af0c018b}} 
+\index{Embedder@{Embedder}!calculate\+Matching@{calculate\+Matching}}
+\index{calculate\+Matching@{calculate\+Matching}!Embedder@{Embedder}}
+\subsubsection{calculate\+Matching()}
+{\footnotesize\ttfamily const \textbf{ Matching} $\ast$ Embedder\+::calculate\+Matching (\begin{DoxyParamCaption}\item[{\textbf{ Progress\+Output} $\ast$}]{prout }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+do the matching algorithms \mbox{\label{classEmbedder_aaef91d4567fb4192c6d9db05eb69cd21}} 
+\index{Embedder@{Embedder}!embed@{embed}}
+\index{embed@{embed}!Embedder@{Embedder}}
+\subsubsection{embed()}
+{\footnotesize\ttfamily void Embedder\+::embed (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\label{classEmbedder_a9f336a582a8008569f9c6a4db2badaa6}} 
+\index{Embedder@{Embedder}!embed\+Edge@{embed\+Edge}}
+\index{embed\+Edge@{embed\+Edge}!Embedder@{Embedder}}
+\subsubsection{embed\+Edge()}
+{\footnotesize\ttfamily void Embedder\+::embed\+Edge (\begin{DoxyParamCaption}\item[{\textbf{ Edge} $\ast$}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+embed the two bits represented by the two vertices adjacent to e \mbox{\label{classEmbedder_ac1d1beb28f5bdb0da57c2b698179cf5b}} 
+\index{Embedder@{Embedder}!embed\+Exposed\+Vertex@{embed\+Exposed\+Vertex}}
+\index{embed\+Exposed\+Vertex@{embed\+Exposed\+Vertex}!Embedder@{Embedder}}
+\subsubsection{embed\+Exposed\+Vertex()}
+{\footnotesize\ttfamily void Embedder\+::embed\+Exposed\+Vertex (\begin{DoxyParamCaption}\item[{\textbf{ Vertex} $\ast$}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+embed the bit represented by the \doxyref{Vertex}{p.}{classVertex} v 
+
+\subsection{Member Data Documentation}
+\mbox{\label{classEmbedder_afc1c21c83bcdc7b265f2433093df85d3}} 
+\index{Embedder@{Embedder}!Default\+\_\+\+N\+Constr\+Heur@{Default\+\_\+\+N\+Constr\+Heur}}
+\index{Default\+\_\+\+N\+Constr\+Heur@{Default\+\_\+\+N\+Constr\+Heur}!Embedder@{Embedder}}
+\subsubsection{Default\+\_\+\+N\+Constr\+Heur}
+{\footnotesize\ttfamily const unsigned int Embedder\+::\+Default\+\_\+\+N\+Constr\+Heur = 1\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\label{classEmbedder_a672bcc754465963bb302c94af2e28e61}} 
+\index{Embedder@{Embedder}!To\+Embed@{To\+Embed}}
+\index{To\+Embed@{To\+Embed}!Embedder@{Embedder}}
+\subsubsection{To\+Embed}
+{\footnotesize\ttfamily \textbf{ Bit\+String} Embedder\+::\+To\+Embed\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ Embedder.\+h}\item 
+\textbf{ Embedder.\+cc}\end{DoxyCompactItemize}

@@ -1,0 +1,281 @@
+.TH "BinaryIO" 3 "Thu Aug 17 2017" "Version 0.5.1" "steghide" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+BinaryIO \- provides methods for file i/o as needed by the rest of steghide  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <BinaryIO\&.h>\fP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBMODE\fP { \fBREAD\fP, \fBWRITE\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBBinaryIO\fP (void)"
+.br
+.ti -1c
+.RI "\fBBinaryIO\fP (const std::string &fn, \fBMODE\fP m)"
+.br
+.ti -1c
+.RI "\fB~BinaryIO\fP (void)"
+.br
+.ti -1c
+.RI "const std::string & \fBgetName\fP (void) const"
+.br
+.ti -1c
+.RI "bool \fBis_open\fP (void) const"
+.br
+.ti -1c
+.RI "bool \fBis_std\fP (void) const"
+.br
+.ti -1c
+.RI "unsigned long \fBgetPos\fP (void) const"
+.br
+.ti -1c
+.RI "bool \fBeof\fP (void) const"
+.br
+.ti -1c
+.RI "void \fBopen\fP (const std::string &fn, \fBMODE\fP m)"
+.br
+.ti -1c
+.RI "void \fBclose\fP (void)"
+.br
+.ti -1c
+.RI "\fBBYTE\fP \fBread8\fP (void)"
+.br
+.ti -1c
+.RI "\fBUWORD16\fP \fBread16_le\fP (void)"
+.br
+.ti -1c
+.RI "\fBUWORD16\fP \fBread16_be\fP (void)"
+.br
+.ti -1c
+.RI "\fBUWORD32\fP \fBread32_le\fP (void)"
+.br
+.ti -1c
+.RI "\fBUWORD32\fP \fBread32_be\fP (void)"
+.br
+.ti -1c
+.RI "\fBUWORD32\fP \fBread_le\fP (unsigned short n)"
+.br
+.ti -1c
+.RI "std::string \fBreadstring\fP (unsigned int len)"
+.br
+.ti -1c
+.RI "void \fBwrite8\fP (\fBBYTE\fP val)"
+.br
+.ti -1c
+.RI "void \fBwrite16_le\fP (\fBUWORD16\fP val)"
+.br
+.ti -1c
+.RI "void \fBwrite16_be\fP (\fBUWORD16\fP val)"
+.br
+.ti -1c
+.RI "void \fBwrite32_le\fP (\fBUWORD32\fP val)"
+.br
+.ti -1c
+.RI "void \fBwrite32_be\fP (\fBUWORD32\fP val)"
+.br
+.ti -1c
+.RI "void \fBwrite_le\fP (\fBUWORD32\fP val, unsigned short n)"
+.br
+.ti -1c
+.RI "void \fBwritestring\fP (const std::string &s)"
+.br
+.ti -1c
+.RI "FILE * \fBgetStream\fP (void) const"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBsetStream\fP (FILE *s)"
+.br
+.ti -1c
+.RI "void \fBsetName\fP (const std::string &fn)"
+.br
+.ti -1c
+.RI "\fBMODE\fP \fBgetMode\fP (void) const"
+.br
+.ti -1c
+.RI "void \fBsetMode\fP (\fBMODE\fP m)"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBinit\fP (void)"
+.br
+.ti -1c
+.RI "void \fBset_open\fP (bool o)"
+.br
+.ti -1c
+.RI "void \fBcheckForce\fP (const std::string &fn) const"
+.br
+.ti -1c
+.RI "bool \fBFileexists\fP (const std::string &fn) const"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::string \fBName\fP"
+.br
+.ti -1c
+.RI "FILE * \fBStream\fP"
+.br
+.ti -1c
+.RI "bool \fBFileOpen\fP"
+.br
+.ti -1c
+.RI "\fBMODE\fP \fBMode\fP"
+.br
+.in -1c
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBBinaryIO::MODE\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIREAD \fP\fP
+.TP
+\fB\fIWRITE \fP\fP
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "BinaryIO::BinaryIO (void)"
+
+.SS "BinaryIO::BinaryIO (const std::string & fn, \fBMODE\fP m)"
+construct a \fBBinaryIO\fP object 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfn\fP the filename ('' to indicate stdin/stdout) 
+.br
+\fIm\fP the mode (\fBBinaryIO::READ\fP or \fBBinaryIO::WRITE\fP)
+.RE
+.PP
+The file described by fn is opened in the given mode\&. 
+.SS "BinaryIO::~BinaryIO (void)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void BinaryIO::checkForce (const std::string & fn) const\fC [private]\fP"
+when opening a file in write mode perform various checks depending on the value of the force argument 
+.SS "void BinaryIO::close (void)"
+close the currently open file - it is save to call \fBclose()\fP even if \fBis_std()\fP is true 
+.SS "bool BinaryIO::eof (void) const"
+is the current state of this file at the end of the file 
+.SS "bool BinaryIO::Fileexists (const std::string & fn) const\fC [private]\fP"
+check if the file described by fn exists 
+.PP
+\fBReturns:\fP
+.RS 4
+true iff a fopen call with fn as file name succeeded 
+.RE
+.PP
+
+.SS "\fBMODE\fP BinaryIO::getMode (void) const\fC [inline]\fP, \fC [protected]\fP"
+
+.SS "const std::string& BinaryIO::getName (void) const\fC [inline]\fP"
+get the name (with path) of this file 
+.SS "unsigned long BinaryIO::getPos (void) const\fC [inline]\fP"
+get the current position in the current file 
+.SS "FILE* BinaryIO::getStream (void) const\fC [inline]\fP"
+get the underlying cstdio FILE* pointer 
+.SS "void BinaryIO::init (void)\fC [private]\fP"
+
+.SS "bool BinaryIO::is_open (void) const\fC [inline]\fP"
+is this file currently opened ? 
+.SS "bool BinaryIO::is_std (void) const\fC [inline]\fP"
+is this file a standard stream (stdin or stdout) ? 
+.SS "void BinaryIO::open (const std::string & fn, \fBMODE\fP m)"
+open the file given by fn in the mode m 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfn\fP a filename ('' to indicate stdin/stdout) 
+.br
+\fIm\fP the mode (\fBBinaryIO::READ\fP or \fBBinaryIO::WRITE\fP) 
+.RE
+.PP
+
+.SS "\fBUWORD16\fP BinaryIO::read16_be (void)"
+read two bytes from the file using big-endian byte ordering 
+.SS "\fBUWORD16\fP BinaryIO::read16_le (void)"
+read two bytes from the file using little-endian byte ordering 
+.SS "\fBUWORD32\fP BinaryIO::read32_be (void)"
+read four bytes from the file using big-endian byte ordering 
+.SS "\fBUWORD32\fP BinaryIO::read32_le (void)"
+read four bytes from the file using little-endian byte ordering 
+.SS "\fBBYTE\fP BinaryIO::read8 (void)"
+read one byte from the file 
+.SS "\fBUWORD32\fP BinaryIO::read_le (unsigned short n)"
+read n bytes (little endian byte ordering) 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIn\fP the number of bytes to read (must be <= 4) 
+.RE
+.PP
+
+.SS "std::string BinaryIO::readstring (unsigned int len)"
+read a string with length len from the file 
+.SS "void BinaryIO::set_open (bool o)\fC [inline]\fP, \fC [private]\fP"
+
+.SS "void BinaryIO::setMode (\fBMODE\fP m)\fC [inline]\fP, \fC [protected]\fP"
+
+.SS "void BinaryIO::setName (const std::string & fn)\fC [inline]\fP, \fC [protected]\fP"
+
+.SS "void BinaryIO::setStream (FILE * s)\fC [inline]\fP, \fC [protected]\fP"
+
+.SS "void BinaryIO::write16_be (\fBUWORD16\fP val)"
+write two bytes to the file using big-endian byte ordering 
+.SS "void BinaryIO::write16_le (\fBUWORD16\fP val)"
+write two bytes to the file using little-endian byte ordering 
+.SS "void BinaryIO::write32_be (\fBUWORD32\fP val)"
+write four bytes to the file using big-endian byte ordering 
+.SS "void BinaryIO::write32_le (\fBUWORD32\fP val)"
+write four bytes to the file using little-endian byte ordering 
+.SS "void BinaryIO::write8 (\fBBYTE\fP val)"
+write one byte to the file 
+.SS "void BinaryIO::write_le (\fBUWORD32\fP val, unsigned short n)"
+write n bytes of val (little endian byte ordering) 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIn\fP the number of bytes to write (must be <= 4) 
+.br
+\fIval\fP the value 
+.RE
+.PP
+
+.SS "void BinaryIO::writestring (const std::string & s)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "bool BinaryIO::FileOpen\fC [private]\fP"
+
+.SS "\fBMODE\fP BinaryIO::Mode\fC [private]\fP"
+
+.SS "std::string BinaryIO::Name\fC [private]\fP"
+
+.SS "FILE* BinaryIO::Stream\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for steghide from the source code\&.

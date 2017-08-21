@@ -1,0 +1,552 @@
+\section{Bmp\+File Class Reference}
+\label{classBmpFile}\index{Bmp\+File@{Bmp\+File}}
+
+
+{\ttfamily \#include $<$Bmp\+File.\+h$>$}
+
+Inheritance diagram for Bmp\+File\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classBmpFile}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \textbf{ struct\+\_\+\+B\+I\+T\+M\+A\+P\+C\+O\+R\+E\+H\+E\+A\+D\+ER}
+\item 
+struct \textbf{ struct\+\_\+\+B\+I\+T\+M\+A\+P\+F\+I\+L\+E\+H\+E\+A\+D\+ER}
+\item 
+struct \textbf{ struct\+\_\+\+B\+I\+T\+M\+A\+P\+I\+N\+F\+O\+H\+E\+A\+D\+ER}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Bmp\+File} (void)
+\item 
+\textbf{ Bmp\+File} (\textbf{ Binary\+IO} $\ast$io)
+\item 
+\textbf{ $\sim$\+Bmp\+File} (void)
+\item 
+void \textbf{ read} (\textbf{ Binary\+IO} $\ast$io)
+\item 
+void \textbf{ write} (void)
+\item 
+std\+::list$<$ \textbf{ Cvr\+Stg\+File\+::\+Property} $>$ \textbf{ get\+Properties} (void) const
+\item 
+std\+::vector$<$ \textbf{ Matching\+Algorithm} $\ast$ $>$ \textbf{ get\+Matching\+Algorithms} (\textbf{ Graph} $\ast$g, \textbf{ Matching} $\ast$m) const
+\item 
+unsigned long \textbf{ get\+Num\+Samples} (void) const
+\item 
+void \textbf{ replace\+Sample} (const \textbf{ Sample\+Pos} pos, const \textbf{ Sample\+Value} $\ast$s)
+\item 
+\textbf{ Sample\+Value} $\ast$ \textbf{ get\+Sample\+Value} (\textbf{ Sample\+Pos} pos) const
+\item 
+std\+::vector$<$ \textbf{ Sample\+Value\+Adjacency\+List} $\ast$ $>$ \textbf{ calc\+S\+V\+Adjacency\+Lists} (const std\+::vector$<$ \textbf{ Sample\+Value} $\ast$$>$ \&svs) const
+\item 
+unsigned short \textbf{ get\+Bit\+Count} (void) const
+\item 
+unsigned long \textbf{ get\+Width} (void) const
+\item 
+unsigned long \textbf{ get\+Height} (void) const
+\item 
+\textbf{ Color\+Palette} $\ast$ \textbf{ get\+Palette} (void) const
+\end{DoxyCompactItemize}
+\subsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \textbf{ Bmp\+File\+::struct\+\_\+\+B\+I\+T\+M\+A\+P\+F\+I\+L\+E\+H\+E\+A\+D\+ER} \textbf{ B\+I\+T\+M\+A\+P\+F\+I\+L\+E\+H\+E\+A\+D\+ER}
+\item 
+typedef struct \textbf{ Bmp\+File\+::struct\+\_\+\+B\+I\+T\+M\+A\+P\+I\+N\+F\+O\+H\+E\+A\+D\+ER} \textbf{ B\+I\+T\+M\+A\+P\+I\+N\+F\+O\+H\+E\+A\+D\+ER}
+\item 
+typedef struct \textbf{ Bmp\+File\+::struct\+\_\+\+B\+I\+T\+M\+A\+P\+C\+O\+R\+E\+H\+E\+A\+D\+ER} \textbf{ B\+I\+T\+M\+A\+P\+C\+O\+R\+E\+H\+E\+A\+D\+ER}
+\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \textbf{ S\+U\+B\+F\+O\+R\+M\+AT} \{ \textbf{ W\+IN}, 
+\textbf{ O\+S2}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ readheaders} ()
+\item 
+void \textbf{ bmpwin\+\_\+readheaders} ()
+\item 
+void \textbf{ bmpos2\+\_\+readheaders} ()
+\item 
+void \textbf{ writeheaders} ()
+\item 
+void \textbf{ bmpwin\+\_\+writeheaders} ()
+\item 
+void \textbf{ bmpos2\+\_\+writeheaders} ()
+\item 
+void \textbf{ readdata} ()
+\item 
+void \textbf{ writedata} ()
+\item 
+void \textbf{ calc\+Index} (\textbf{ Sample\+Pos} pos, unsigned long $\ast$index, unsigned short $\ast$firstbit) const
+\item 
+unsigned long \textbf{ calc\+Linelength} ()
+\item 
+\textbf{ S\+U\+B\+F\+O\+R\+M\+AT} \textbf{ get\+Subformat} (void) const
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ S\+U\+B\+F\+O\+R\+M\+AT} \textbf{ subformat}
+\item 
+\textbf{ B\+I\+T\+M\+A\+P\+F\+I\+L\+E\+H\+E\+A\+D\+ER} \textbf{ bmfh}
+\item 
+\textbf{ B\+I\+T\+M\+A\+P\+I\+N\+F\+O\+H\+E\+A\+D\+ER} \textbf{ bmih}
+\item 
+\textbf{ B\+I\+T\+M\+A\+P\+C\+O\+R\+E\+H\+E\+A\+D\+ER} \textbf{ bmch}
+\item 
+\textbf{ Color\+Palette} $\ast$ \textbf{ Palette}
+\item 
+std\+::vector$<$ std\+::vector$<$ unsigned char $>$ $>$ \textbf{ bitmap}
+\item 
+std\+::vector$<$ \textbf{ B\+Y\+TE} $>$ \textbf{ Bitmap\+Data}
+\item 
+std\+::vector$<$ \textbf{ B\+Y\+TE} $>$ \textbf{ atend}
+\begin{DoxyCompactList}\small\item\em contains bytes that are appended at the end of the bitmap data (some image editors apparently do this) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const unsigned int \textbf{ Id\+Bm} = 19778
+\item 
+static const unsigned short \textbf{ Size\+B\+M\+F\+I\+L\+E\+H\+E\+A\+D\+ER} = 14
+\item 
+static const unsigned short \textbf{ Size\+B\+M\+I\+N\+F\+O\+H\+E\+A\+D\+ER} = 40
+\item 
+static const unsigned short \textbf{ Size\+B\+M\+C\+O\+R\+E\+H\+E\+A\+D\+ER} = 12
+\item 
+static const unsigned int \textbf{ C\+O\+M\+P\+R\+E\+S\+S\+I\+O\+N\+\_\+\+B\+I\+\_\+\+R\+GB} = 0
+\item 
+static const unsigned short \textbf{ Samples\+Per\+Vertex\+\_\+\+Small\+Palette} = 2
+\item 
+static const unsigned short \textbf{ Samples\+Per\+Vertex\+\_\+\+Large\+Palette} = 3
+\item 
+static const unsigned short \textbf{ Samples\+Per\+Vertex\+\_\+\+R\+GB} = 2
+\item 
+static const \textbf{ U\+W\+O\+R\+D32} \textbf{ Radius\+\_\+\+Palette} = 400
+\begin{DoxyCompactList}\small\item\em the default radius for palette images (400 = 20$^\wedge$2) \end{DoxyCompactList}\item 
+static const \textbf{ U\+W\+O\+R\+D32} \textbf{ Radius\+\_\+\+R\+GB} = 100
+\begin{DoxyCompactList}\small\item\em the default radius for R\+GB images (100 = 10$^\wedge$2) \end{DoxyCompactList}\item 
+static const \textbf{ Emb\+Value} \textbf{ Emb\+Value\+Modulus\+\_\+\+Small\+Palette} = 2
+\item 
+static const \textbf{ Emb\+Value} \textbf{ Emb\+Value\+Modulus\+\_\+\+Large\+Palette} = 4
+\item 
+static const \textbf{ Emb\+Value} \textbf{ Emb\+Value\+Modulus\+\_\+\+R\+GB} = 4
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Member Typedef Documentation}
+\mbox{\label{classBmpFile_a897114f7d9b7e66a89f6f3c9eeec4178}} 
+\index{Bmp\+File@{Bmp\+File}!B\+I\+T\+M\+A\+P\+C\+O\+R\+E\+H\+E\+A\+D\+ER@{B\+I\+T\+M\+A\+P\+C\+O\+R\+E\+H\+E\+A\+D\+ER}}
+\index{B\+I\+T\+M\+A\+P\+C\+O\+R\+E\+H\+E\+A\+D\+ER@{B\+I\+T\+M\+A\+P\+C\+O\+R\+E\+H\+E\+A\+D\+ER}!Bmp\+File@{Bmp\+File}}
+\subsubsection{B\+I\+T\+M\+A\+P\+C\+O\+R\+E\+H\+E\+A\+D\+ER}
+{\footnotesize\ttfamily typedef struct \textbf{ Bmp\+File\+::struct\+\_\+\+B\+I\+T\+M\+A\+P\+C\+O\+R\+E\+H\+E\+A\+D\+ER}  \textbf{ Bmp\+File\+::\+B\+I\+T\+M\+A\+P\+C\+O\+R\+E\+H\+E\+A\+D\+ER}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\label{classBmpFile_a90a9a37736f34d0e1ffb1e8baa6175a5}} 
+\index{Bmp\+File@{Bmp\+File}!B\+I\+T\+M\+A\+P\+F\+I\+L\+E\+H\+E\+A\+D\+ER@{B\+I\+T\+M\+A\+P\+F\+I\+L\+E\+H\+E\+A\+D\+ER}}
+\index{B\+I\+T\+M\+A\+P\+F\+I\+L\+E\+H\+E\+A\+D\+ER@{B\+I\+T\+M\+A\+P\+F\+I\+L\+E\+H\+E\+A\+D\+ER}!Bmp\+File@{Bmp\+File}}
+\subsubsection{B\+I\+T\+M\+A\+P\+F\+I\+L\+E\+H\+E\+A\+D\+ER}
+{\footnotesize\ttfamily typedef struct \textbf{ Bmp\+File\+::struct\+\_\+\+B\+I\+T\+M\+A\+P\+F\+I\+L\+E\+H\+E\+A\+D\+ER}  \textbf{ Bmp\+File\+::\+B\+I\+T\+M\+A\+P\+F\+I\+L\+E\+H\+E\+A\+D\+ER}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\label{classBmpFile_ae443d9c6b709878f3de3007516530bef}} 
+\index{Bmp\+File@{Bmp\+File}!B\+I\+T\+M\+A\+P\+I\+N\+F\+O\+H\+E\+A\+D\+ER@{B\+I\+T\+M\+A\+P\+I\+N\+F\+O\+H\+E\+A\+D\+ER}}
+\index{B\+I\+T\+M\+A\+P\+I\+N\+F\+O\+H\+E\+A\+D\+ER@{B\+I\+T\+M\+A\+P\+I\+N\+F\+O\+H\+E\+A\+D\+ER}!Bmp\+File@{Bmp\+File}}
+\subsubsection{B\+I\+T\+M\+A\+P\+I\+N\+F\+O\+H\+E\+A\+D\+ER}
+{\footnotesize\ttfamily typedef struct \textbf{ Bmp\+File\+::struct\+\_\+\+B\+I\+T\+M\+A\+P\+I\+N\+F\+O\+H\+E\+A\+D\+ER}  \textbf{ Bmp\+File\+::\+B\+I\+T\+M\+A\+P\+I\+N\+F\+O\+H\+E\+A\+D\+ER}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\label{classBmpFile_a6404e5c9aa4324ad5aae29db8fc0366c}} 
+\index{Bmp\+File@{Bmp\+File}!S\+U\+B\+F\+O\+R\+M\+AT@{S\+U\+B\+F\+O\+R\+M\+AT}}
+\index{S\+U\+B\+F\+O\+R\+M\+AT@{S\+U\+B\+F\+O\+R\+M\+AT}!Bmp\+File@{Bmp\+File}}
+\subsubsection{S\+U\+B\+F\+O\+R\+M\+AT}
+{\footnotesize\ttfamily enum \textbf{ Bmp\+File\+::\+S\+U\+B\+F\+O\+R\+M\+AT}\hspace{0.3cm}{\ttfamily [private]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{W\+IN@{W\+IN}!Bmp\+File@{Bmp\+File}}\index{Bmp\+File@{Bmp\+File}!W\+IN@{W\+IN}}}\mbox{\label{classBmpFile_a6404e5c9aa4324ad5aae29db8fc0366ca4debb88cff84bc54592548c435f090e9}} 
+W\+IN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{O\+S2@{O\+S2}!Bmp\+File@{Bmp\+File}}\index{Bmp\+File@{Bmp\+File}!O\+S2@{O\+S2}}}\mbox{\label{classBmpFile_a6404e5c9aa4324ad5aae29db8fc0366ca3ea20d80509d0444e5cc4fca76883ef9}} 
+O\+S2&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{classBmpFile_a59bd454558c8592e5895a215bbfb3e5c}} 
+\index{Bmp\+File@{Bmp\+File}!Bmp\+File@{Bmp\+File}}
+\index{Bmp\+File@{Bmp\+File}!Bmp\+File@{Bmp\+File}}
+\subsubsection{Bmp\+File()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Bmp\+File\+::\+Bmp\+File (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\label{classBmpFile_a7008eb6ae2f402dd81d2e41175d015a8}} 
+\index{Bmp\+File@{Bmp\+File}!Bmp\+File@{Bmp\+File}}
+\index{Bmp\+File@{Bmp\+File}!Bmp\+File@{Bmp\+File}}
+\subsubsection{Bmp\+File()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Bmp\+File\+::\+Bmp\+File (\begin{DoxyParamCaption}\item[{\textbf{ Binary\+IO} $\ast$}]{io }\end{DoxyParamCaption})}
+
+\mbox{\label{classBmpFile_abae6dcc47a03f181d442eb39c79736a3}} 
+\index{Bmp\+File@{Bmp\+File}!````~Bmp\+File@{$\sim$\+Bmp\+File}}
+\index{````~Bmp\+File@{$\sim$\+Bmp\+File}!Bmp\+File@{Bmp\+File}}
+\subsubsection{$\sim$\+Bmp\+File()}
+{\footnotesize\ttfamily Bmp\+File\+::$\sim$\+Bmp\+File (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{classBmpFile_a3ae3e9093381579260981ce8857a445d}} 
+\index{Bmp\+File@{Bmp\+File}!bmpos2\+\_\+readheaders@{bmpos2\+\_\+readheaders}}
+\index{bmpos2\+\_\+readheaders@{bmpos2\+\_\+readheaders}!Bmp\+File@{Bmp\+File}}
+\subsubsection{bmpos2\+\_\+readheaders()}
+{\footnotesize\ttfamily void Bmp\+File\+::bmpos2\+\_\+readheaders (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classBmpFile_a3ab6ae9948e2c83669ce86a1b4a99edb}} 
+\index{Bmp\+File@{Bmp\+File}!bmpos2\+\_\+writeheaders@{bmpos2\+\_\+writeheaders}}
+\index{bmpos2\+\_\+writeheaders@{bmpos2\+\_\+writeheaders}!Bmp\+File@{Bmp\+File}}
+\subsubsection{bmpos2\+\_\+writeheaders()}
+{\footnotesize\ttfamily void Bmp\+File\+::bmpos2\+\_\+writeheaders (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classBmpFile_abc31e0f4cc20d7e1243a012e3bf8988f}} 
+\index{Bmp\+File@{Bmp\+File}!bmpwin\+\_\+readheaders@{bmpwin\+\_\+readheaders}}
+\index{bmpwin\+\_\+readheaders@{bmpwin\+\_\+readheaders}!Bmp\+File@{Bmp\+File}}
+\subsubsection{bmpwin\+\_\+readheaders()}
+{\footnotesize\ttfamily void Bmp\+File\+::bmpwin\+\_\+readheaders (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classBmpFile_ae59dc89212474f3b43a537073b80f060}} 
+\index{Bmp\+File@{Bmp\+File}!bmpwin\+\_\+writeheaders@{bmpwin\+\_\+writeheaders}}
+\index{bmpwin\+\_\+writeheaders@{bmpwin\+\_\+writeheaders}!Bmp\+File@{Bmp\+File}}
+\subsubsection{bmpwin\+\_\+writeheaders()}
+{\footnotesize\ttfamily void Bmp\+File\+::bmpwin\+\_\+writeheaders (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classBmpFile_af1f3faff36705b9b496ebc50bf5aa691}} 
+\index{Bmp\+File@{Bmp\+File}!calc\+Index@{calc\+Index}}
+\index{calc\+Index@{calc\+Index}!Bmp\+File@{Bmp\+File}}
+\subsubsection{calc\+Index()}
+{\footnotesize\ttfamily void Bmp\+File\+::calc\+Index (\begin{DoxyParamCaption}\item[{\textbf{ Sample\+Pos}}]{pos,  }\item[{unsigned long $\ast$}]{index,  }\item[{unsigned short $\ast$}]{firstbit }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+translate a sample position into a $<$index,firstbit$>$ pair \char`\"{}pointing\char`\"{} into the Bitmap\+Data array 
+\begin{DoxyParams}{Parameters}
+{\em pos} & a sample position \\
+\hline
+{\em index} & a pointer to a variable that will contain the array index used to access the pos-\/th sample \\
+\hline
+{\em firstbit} & the firstbit in Bitmap\+Data[index] that belongs to the sample with the given position \\
+\hline
+\end{DoxyParams}
+\mbox{\label{classBmpFile_ac102e4126e23158629e174f757374b26}} 
+\index{Bmp\+File@{Bmp\+File}!calc\+Linelength@{calc\+Linelength}}
+\index{calc\+Linelength@{calc\+Linelength}!Bmp\+File@{Bmp\+File}}
+\subsubsection{calc\+Linelength()}
+{\footnotesize\ttfamily unsigned long Bmp\+File\+::calc\+Linelength (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classBmpFile_a4a4e207e07864d6f862bb3bfb5f9cd12}} 
+\index{Bmp\+File@{Bmp\+File}!calc\+S\+V\+Adjacency\+Lists@{calc\+S\+V\+Adjacency\+Lists}}
+\index{calc\+S\+V\+Adjacency\+Lists@{calc\+S\+V\+Adjacency\+Lists}!Bmp\+File@{Bmp\+File}}
+\subsubsection{calc\+S\+V\+Adjacency\+Lists()}
+{\footnotesize\ttfamily std\+::vector$<$ \textbf{ Sample\+Value\+Adjacency\+List} $\ast$ $>$ Bmp\+File\+::calc\+S\+V\+Adjacency\+Lists (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \textbf{ Sample\+Value} $\ast$$>$ \&}]{svs }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+calculate a vector a Sample\+Value\+Adjacency\+Lists 
+\begin{DoxyParams}{Parameters}
+{\em svs} & a vector of unique(!) sample values where svs[i]-\/$>$get\+Label() == i holds for all i \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a vector of Sample\+Value\+Adjacency\+Lists where retval[i] only contains sample values with get\+Emb\+Value() == i
+\end{DoxyReturn}
+Every row in the adjacency lists must be sorted in the following order\+: The first sample value has the least distance to the source sample value, the last has the largest distance. If two sample values in one row have the same distance to the source sample value, the order does not matter.
+
+May be overridden in derived class to provide a faster version. 
+
+Reimplemented from \textbf{ Cvr\+Stg\+File} \doxyref{}{p.}{classCvrStgFile_a5969e7a6a948067673a977b4c539d354}.
+
+\mbox{\label{classBmpFile_ad23c28df703b051f34fc1b052176aa31}} 
+\index{Bmp\+File@{Bmp\+File}!get\+Bit\+Count@{get\+Bit\+Count}}
+\index{get\+Bit\+Count@{get\+Bit\+Count}!Bmp\+File@{Bmp\+File}}
+\subsubsection{get\+Bit\+Count()}
+{\footnotesize\ttfamily unsigned short Bmp\+File\+::get\+Bit\+Count (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+\mbox{\label{classBmpFile_ad7016b6b79ba7ec67e569f86fd237c52}} 
+\index{Bmp\+File@{Bmp\+File}!get\+Height@{get\+Height}}
+\index{get\+Height@{get\+Height}!Bmp\+File@{Bmp\+File}}
+\subsubsection{get\+Height()}
+{\footnotesize\ttfamily unsigned long Bmp\+File\+::get\+Height (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+\mbox{\label{classBmpFile_ab9dedf8aeebeaa832bb290991f94fc89}} 
+\index{Bmp\+File@{Bmp\+File}!get\+Matching\+Algorithms@{get\+Matching\+Algorithms}}
+\index{get\+Matching\+Algorithms@{get\+Matching\+Algorithms}!Bmp\+File@{Bmp\+File}}
+\subsubsection{get\+Matching\+Algorithms()}
+{\footnotesize\ttfamily std\+::vector$<$ \textbf{ Matching\+Algorithm} $\ast$ $>$ Bmp\+File\+::get\+Matching\+Algorithms (\begin{DoxyParamCaption}\item[{\textbf{ Graph} $\ast$}]{g,  }\item[{\textbf{ Matching} $\ast$}]{m }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+get recommended list of matching algorithms 
+\begin{DoxyParams}{Parameters}
+{\em m} & an empty matching -\/ will be used in construction of \doxyref{Matching\+Algorithm}{p.}{classMatchingAlgorithm} objects\\
+\hline
+\end{DoxyParams}
+The \doxyref{Matching\+Algorithm}{p.}{classMatchingAlgorithm} objects returned by this function should be deleted by the caller if they are no longer needed. 
+
+Reimplemented from \textbf{ Cvr\+Stg\+File} \doxyref{}{p.}{classCvrStgFile_aa0b1087f94e191b72e794a56e49bb706}.
+
+\mbox{\label{classBmpFile_a564fb90235f06c80162b9086dcc6e78d}} 
+\index{Bmp\+File@{Bmp\+File}!get\+Num\+Samples@{get\+Num\+Samples}}
+\index{get\+Num\+Samples@{get\+Num\+Samples}!Bmp\+File@{Bmp\+File}}
+\subsubsection{get\+Num\+Samples()}
+{\footnotesize\ttfamily unsigned long Bmp\+File\+::get\+Num\+Samples (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+get the number of samples in this \doxyref{Cvr\+Stg\+Object}{p.}{classCvrStgObject} 
+
+Implements \textbf{ Cvr\+Stg\+Object} \doxyref{}{p.}{classCvrStgObject_a80ae8f095b66683e5207adf8ff8265b4}.
+
+\mbox{\label{classBmpFile_a95e71e37b6e9752527d438623a924c7a}} 
+\index{Bmp\+File@{Bmp\+File}!get\+Palette@{get\+Palette}}
+\index{get\+Palette@{get\+Palette}!Bmp\+File@{Bmp\+File}}
+\subsubsection{get\+Palette()}
+{\footnotesize\ttfamily \textbf{ Color\+Palette} $\ast$ Bmp\+File\+::get\+Palette (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+\mbox{\label{classBmpFile_acc609c77bb5fdc4260bd40f76e7286e6}} 
+\index{Bmp\+File@{Bmp\+File}!get\+Properties@{get\+Properties}}
+\index{get\+Properties@{get\+Properties}!Bmp\+File@{Bmp\+File}}
+\subsubsection{get\+Properties()}
+{\footnotesize\ttfamily std\+::list$<$ \textbf{ Cvr\+Stg\+File\+::\+Property} $>$ Bmp\+File\+::get\+Properties (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \textbf{ Cvr\+Stg\+File} \doxyref{}{p.}{classCvrStgFile_afe2f570ea6447c0636093b44ff7793cc}.
+
+\mbox{\label{classBmpFile_a8a982a74d9d5ef1a33228859e51c888b}} 
+\index{Bmp\+File@{Bmp\+File}!get\+Sample\+Value@{get\+Sample\+Value}}
+\index{get\+Sample\+Value@{get\+Sample\+Value}!Bmp\+File@{Bmp\+File}}
+\subsubsection{get\+Sample\+Value()}
+{\footnotesize\ttfamily \textbf{ Sample\+Value} $\ast$ Bmp\+File\+::get\+Sample\+Value (\begin{DoxyParamCaption}\item[{\textbf{ Sample\+Pos}}]{pos }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+get the sample at position pos 
+\begin{DoxyParams}{Parameters}
+{\em pos} & the position of a sample (must be in 0...\doxyref{get\+Num\+Samples()}{p.}{classBmpFile_a564fb90235f06c80162b9086dcc6e78d}-\/1) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the sample at the given position
+\end{DoxyReturn}
+The sample object is created in this function and should be deleted by the caller. The derived class should check the condition(s) given above in its Implementation of this function. 
+
+Implements \textbf{ Cvr\+Stg\+Object} \doxyref{}{p.}{classCvrStgObject_ac77a8da85a4f7b53e2166e990dfaa4f2}.
+
+\mbox{\label{classBmpFile_aa49be0847a8e260564f5996d75fc5326}} 
+\index{Bmp\+File@{Bmp\+File}!get\+Subformat@{get\+Subformat}}
+\index{get\+Subformat@{get\+Subformat}!Bmp\+File@{Bmp\+File}}
+\subsubsection{get\+Subformat()}
+{\footnotesize\ttfamily \textbf{ Bmp\+File\+::\+S\+U\+B\+F\+O\+R\+M\+AT} Bmp\+File\+::get\+Subformat (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classBmpFile_a9e4cd6a539139ddeedc5a23079c72663}} 
+\index{Bmp\+File@{Bmp\+File}!get\+Width@{get\+Width}}
+\index{get\+Width@{get\+Width}!Bmp\+File@{Bmp\+File}}
+\subsubsection{get\+Width()}
+{\footnotesize\ttfamily unsigned long Bmp\+File\+::get\+Width (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+\mbox{\label{classBmpFile_a626da8e445ba96fb6372cc2769ef5cfd}} 
+\index{Bmp\+File@{Bmp\+File}!read@{read}}
+\index{read@{read}!Bmp\+File@{Bmp\+File}}
+\subsubsection{read()}
+{\footnotesize\ttfamily void Bmp\+File\+::read (\begin{DoxyParamCaption}\item[{\textbf{ Binary\+IO} $\ast$}]{io }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \textbf{ Cvr\+Stg\+File} \doxyref{}{p.}{classCvrStgFile_a8a568ccb2ad5d6c178f764dca6090908}.
+
+\mbox{\label{classBmpFile_ab9a22d02a32a6901c8b3c4fbaa2d37ed}} 
+\index{Bmp\+File@{Bmp\+File}!readdata@{readdata}}
+\index{readdata@{readdata}!Bmp\+File@{Bmp\+File}}
+\subsubsection{readdata()}
+{\footnotesize\ttfamily void Bmp\+File\+::readdata (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classBmpFile_af91c186f49fdb8b1056934fff598c1a0}} 
+\index{Bmp\+File@{Bmp\+File}!readheaders@{readheaders}}
+\index{readheaders@{readheaders}!Bmp\+File@{Bmp\+File}}
+\subsubsection{readheaders()}
+{\footnotesize\ttfamily void Bmp\+File\+::readheaders (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classBmpFile_a9f476c72483674452cf272f9e10d1087}} 
+\index{Bmp\+File@{Bmp\+File}!replace\+Sample@{replace\+Sample}}
+\index{replace\+Sample@{replace\+Sample}!Bmp\+File@{Bmp\+File}}
+\subsubsection{replace\+Sample()}
+{\footnotesize\ttfamily void Bmp\+File\+::replace\+Sample (\begin{DoxyParamCaption}\item[{const \textbf{ Sample\+Pos}}]{pos,  }\item[{const \textbf{ Sample\+Value} $\ast$}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+replace a sample thus (possibly) altering the value of the bit returned by Sample\+Value-\/$>$get\+Bit() 
+\begin{DoxyParams}{Parameters}
+{\em pos} & the position of the sample (must be in 0...\doxyref{get\+Num\+Samples()}{p.}{classBmpFile_a564fb90235f06c80162b9086dcc6e78d}-\/1) \\
+\hline
+{\em s} & the sample value that should replace the current sample value (must be of correct type for this \doxyref{Cvr\+Stg\+Object}{p.}{classCvrStgObject})\\
+\hline
+\end{DoxyParams}
+The derived class should check the condition(s) given above in its Implementation of this function. 
+
+Implements \textbf{ Cvr\+Stg\+Object} \doxyref{}{p.}{classCvrStgObject_a3068d6a9dcc1c0b8bde2f081cfde6ce5}.
+
+\mbox{\label{classBmpFile_ad1ab3f4964c187a0d2c23f14f9a278af}} 
+\index{Bmp\+File@{Bmp\+File}!write@{write}}
+\index{write@{write}!Bmp\+File@{Bmp\+File}}
+\subsubsection{write()}
+{\footnotesize\ttfamily void Bmp\+File\+::write (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \textbf{ Cvr\+Stg\+File} \doxyref{}{p.}{classCvrStgFile_af2b8f47f83f9210409af6be7d750a841}.
+
+\mbox{\label{classBmpFile_a3b433fac7315fdc42c50e58a2c65eef7}} 
+\index{Bmp\+File@{Bmp\+File}!writedata@{writedata}}
+\index{writedata@{writedata}!Bmp\+File@{Bmp\+File}}
+\subsubsection{writedata()}
+{\footnotesize\ttfamily void Bmp\+File\+::writedata (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classBmpFile_a5912cb13cc1bb1f837671d61950ed219}} 
+\index{Bmp\+File@{Bmp\+File}!writeheaders@{writeheaders}}
+\index{writeheaders@{writeheaders}!Bmp\+File@{Bmp\+File}}
+\subsubsection{writeheaders()}
+{\footnotesize\ttfamily void Bmp\+File\+::writeheaders (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{classBmpFile_a9e65f30114e66be87fb7110e2328d2c3}} 
+\index{Bmp\+File@{Bmp\+File}!atend@{atend}}
+\index{atend@{atend}!Bmp\+File@{Bmp\+File}}
+\subsubsection{atend}
+{\footnotesize\ttfamily std\+::vector$<$\textbf{ B\+Y\+TE}$>$ Bmp\+File\+::atend\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classBmpFile_a9f0a6ff821e71cf2aaf4965a1a53eb4e}} 
+\index{Bmp\+File@{Bmp\+File}!bitmap@{bitmap}}
+\index{bitmap@{bitmap}!Bmp\+File@{Bmp\+File}}
+\subsubsection{bitmap}
+{\footnotesize\ttfamily std\+::vector$<$std\+::vector $<$unsigned char$>$ $>$ Bmp\+File\+::bitmap\hspace{0.3cm}{\ttfamily [private]}}
+
+contains the bitmap in the following format bitmap[i] is the pixel data of the i-\/th row of the bitmap bitmap[i][j] is the j-\/th byte of the pixel data of the i-\/th row of the bitmap if bitcount is $<$ 8 then bitmap[i][j] contains the pixels as read in from the file (i.\+e. in the \char`\"{}wrong\char`\"{} direction) this is taken care of in the calc\+R\+CB function \mbox{\label{classBmpFile_aa9246cb941c51d2e5609dd322c9b684a}} 
+\index{Bmp\+File@{Bmp\+File}!Bitmap\+Data@{Bitmap\+Data}}
+\index{Bitmap\+Data@{Bitmap\+Data}!Bmp\+File@{Bmp\+File}}
+\subsubsection{Bitmap\+Data}
+{\footnotesize\ttfamily std\+::vector$<$\textbf{ B\+Y\+TE}$>$ Bmp\+File\+::\+Bitmap\+Data\hspace{0.3cm}{\ttfamily [private]}}
+
+contains the bitmap data in the same order as read from file (but without padding bytes) \mbox{\label{classBmpFile_aaca86a5389fc68c40cdf30b37acf3d94}} 
+\index{Bmp\+File@{Bmp\+File}!bmch@{bmch}}
+\index{bmch@{bmch}!Bmp\+File@{Bmp\+File}}
+\subsubsection{bmch}
+{\footnotesize\ttfamily \textbf{ B\+I\+T\+M\+A\+P\+C\+O\+R\+E\+H\+E\+A\+D\+ER} Bmp\+File\+::bmch\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classBmpFile_ab6e68a5be1e5d2c9fb96c8a6bb167c41}} 
+\index{Bmp\+File@{Bmp\+File}!bmfh@{bmfh}}
+\index{bmfh@{bmfh}!Bmp\+File@{Bmp\+File}}
+\subsubsection{bmfh}
+{\footnotesize\ttfamily \textbf{ B\+I\+T\+M\+A\+P\+F\+I\+L\+E\+H\+E\+A\+D\+ER} Bmp\+File\+::bmfh\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classBmpFile_a1aa4569052f459f3e99d290120b9dd94}} 
+\index{Bmp\+File@{Bmp\+File}!bmih@{bmih}}
+\index{bmih@{bmih}!Bmp\+File@{Bmp\+File}}
+\subsubsection{bmih}
+{\footnotesize\ttfamily \textbf{ B\+I\+T\+M\+A\+P\+I\+N\+F\+O\+H\+E\+A\+D\+ER} Bmp\+File\+::bmih\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classBmpFile_a7fb79389dda23b0526b76bee5e61c320}} 
+\index{Bmp\+File@{Bmp\+File}!C\+O\+M\+P\+R\+E\+S\+S\+I\+O\+N\+\_\+\+B\+I\+\_\+\+R\+GB@{C\+O\+M\+P\+R\+E\+S\+S\+I\+O\+N\+\_\+\+B\+I\+\_\+\+R\+GB}}
+\index{C\+O\+M\+P\+R\+E\+S\+S\+I\+O\+N\+\_\+\+B\+I\+\_\+\+R\+GB@{C\+O\+M\+P\+R\+E\+S\+S\+I\+O\+N\+\_\+\+B\+I\+\_\+\+R\+GB}!Bmp\+File@{Bmp\+File}}
+\subsubsection{C\+O\+M\+P\+R\+E\+S\+S\+I\+O\+N\+\_\+\+B\+I\+\_\+\+R\+GB}
+{\footnotesize\ttfamily const unsigned int Bmp\+File\+::\+C\+O\+M\+P\+R\+E\+S\+S\+I\+O\+N\+\_\+\+B\+I\+\_\+\+R\+GB = 0\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\label{classBmpFile_a6c674aec59a1e5a1b8f6481e54a147ac}} 
+\index{Bmp\+File@{Bmp\+File}!Emb\+Value\+Modulus\+\_\+\+Large\+Palette@{Emb\+Value\+Modulus\+\_\+\+Large\+Palette}}
+\index{Emb\+Value\+Modulus\+\_\+\+Large\+Palette@{Emb\+Value\+Modulus\+\_\+\+Large\+Palette}!Bmp\+File@{Bmp\+File}}
+\subsubsection{Emb\+Value\+Modulus\+\_\+\+Large\+Palette}
+{\footnotesize\ttfamily const \textbf{ Emb\+Value} Bmp\+File\+::\+Emb\+Value\+Modulus\+\_\+\+Large\+Palette = 4\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\label{classBmpFile_a32fc1b03aba7a94b7523addff3c007d8}} 
+\index{Bmp\+File@{Bmp\+File}!Emb\+Value\+Modulus\+\_\+\+R\+GB@{Emb\+Value\+Modulus\+\_\+\+R\+GB}}
+\index{Emb\+Value\+Modulus\+\_\+\+R\+GB@{Emb\+Value\+Modulus\+\_\+\+R\+GB}!Bmp\+File@{Bmp\+File}}
+\subsubsection{Emb\+Value\+Modulus\+\_\+\+R\+GB}
+{\footnotesize\ttfamily const \textbf{ Emb\+Value} Bmp\+File\+::\+Emb\+Value\+Modulus\+\_\+\+R\+GB = 4\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\label{classBmpFile_a8823c9e4c01d1d950540e3dc17835d20}} 
+\index{Bmp\+File@{Bmp\+File}!Emb\+Value\+Modulus\+\_\+\+Small\+Palette@{Emb\+Value\+Modulus\+\_\+\+Small\+Palette}}
+\index{Emb\+Value\+Modulus\+\_\+\+Small\+Palette@{Emb\+Value\+Modulus\+\_\+\+Small\+Palette}!Bmp\+File@{Bmp\+File}}
+\subsubsection{Emb\+Value\+Modulus\+\_\+\+Small\+Palette}
+{\footnotesize\ttfamily const \textbf{ Emb\+Value} Bmp\+File\+::\+Emb\+Value\+Modulus\+\_\+\+Small\+Palette = 2\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\label{classBmpFile_aeec5116ac502e161779825827e6f59e0}} 
+\index{Bmp\+File@{Bmp\+File}!Id\+Bm@{Id\+Bm}}
+\index{Id\+Bm@{Id\+Bm}!Bmp\+File@{Bmp\+File}}
+\subsubsection{Id\+Bm}
+{\footnotesize\ttfamily const unsigned int Bmp\+File\+::\+Id\+Bm = 19778\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\label{classBmpFile_a6c56c60fcfa09a9e937311d40e86f7fe}} 
+\index{Bmp\+File@{Bmp\+File}!Palette@{Palette}}
+\index{Palette@{Palette}!Bmp\+File@{Bmp\+File}}
+\subsubsection{Palette}
+{\footnotesize\ttfamily \textbf{ Color\+Palette}$\ast$ Bmp\+File\+::\+Palette\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classBmpFile_a67e3867c388c9e68516a7c76b8c65b8d}} 
+\index{Bmp\+File@{Bmp\+File}!Radius\+\_\+\+Palette@{Radius\+\_\+\+Palette}}
+\index{Radius\+\_\+\+Palette@{Radius\+\_\+\+Palette}!Bmp\+File@{Bmp\+File}}
+\subsubsection{Radius\+\_\+\+Palette}
+{\footnotesize\ttfamily const \textbf{ U\+W\+O\+R\+D32} Bmp\+File\+::\+Radius\+\_\+\+Palette = 400\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\label{classBmpFile_a1acbeb684e15579bea2e18d74d65f37e}} 
+\index{Bmp\+File@{Bmp\+File}!Radius\+\_\+\+R\+GB@{Radius\+\_\+\+R\+GB}}
+\index{Radius\+\_\+\+R\+GB@{Radius\+\_\+\+R\+GB}!Bmp\+File@{Bmp\+File}}
+\subsubsection{Radius\+\_\+\+R\+GB}
+{\footnotesize\ttfamily const \textbf{ U\+W\+O\+R\+D32} Bmp\+File\+::\+Radius\+\_\+\+R\+GB = 100\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\label{classBmpFile_aab7eda4b026a70aaeec2d0946ad54c52}} 
+\index{Bmp\+File@{Bmp\+File}!Samples\+Per\+Vertex\+\_\+\+Large\+Palette@{Samples\+Per\+Vertex\+\_\+\+Large\+Palette}}
+\index{Samples\+Per\+Vertex\+\_\+\+Large\+Palette@{Samples\+Per\+Vertex\+\_\+\+Large\+Palette}!Bmp\+File@{Bmp\+File}}
+\subsubsection{Samples\+Per\+Vertex\+\_\+\+Large\+Palette}
+{\footnotesize\ttfamily const unsigned short Bmp\+File\+::\+Samples\+Per\+Vertex\+\_\+\+Large\+Palette = 3\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\label{classBmpFile_aee8003b8bd509706205423a44a607de9}} 
+\index{Bmp\+File@{Bmp\+File}!Samples\+Per\+Vertex\+\_\+\+R\+GB@{Samples\+Per\+Vertex\+\_\+\+R\+GB}}
+\index{Samples\+Per\+Vertex\+\_\+\+R\+GB@{Samples\+Per\+Vertex\+\_\+\+R\+GB}!Bmp\+File@{Bmp\+File}}
+\subsubsection{Samples\+Per\+Vertex\+\_\+\+R\+GB}
+{\footnotesize\ttfamily const unsigned short Bmp\+File\+::\+Samples\+Per\+Vertex\+\_\+\+R\+GB = 2\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\label{classBmpFile_a5d5717d1cf4cafaa68d3977952e3f322}} 
+\index{Bmp\+File@{Bmp\+File}!Samples\+Per\+Vertex\+\_\+\+Small\+Palette@{Samples\+Per\+Vertex\+\_\+\+Small\+Palette}}
+\index{Samples\+Per\+Vertex\+\_\+\+Small\+Palette@{Samples\+Per\+Vertex\+\_\+\+Small\+Palette}!Bmp\+File@{Bmp\+File}}
+\subsubsection{Samples\+Per\+Vertex\+\_\+\+Small\+Palette}
+{\footnotesize\ttfamily const unsigned short Bmp\+File\+::\+Samples\+Per\+Vertex\+\_\+\+Small\+Palette = 2\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\label{classBmpFile_a789abd708a235e82460c7a3933554903}} 
+\index{Bmp\+File@{Bmp\+File}!Size\+B\+M\+C\+O\+R\+E\+H\+E\+A\+D\+ER@{Size\+B\+M\+C\+O\+R\+E\+H\+E\+A\+D\+ER}}
+\index{Size\+B\+M\+C\+O\+R\+E\+H\+E\+A\+D\+ER@{Size\+B\+M\+C\+O\+R\+E\+H\+E\+A\+D\+ER}!Bmp\+File@{Bmp\+File}}
+\subsubsection{Size\+B\+M\+C\+O\+R\+E\+H\+E\+A\+D\+ER}
+{\footnotesize\ttfamily const unsigned short Bmp\+File\+::\+Size\+B\+M\+C\+O\+R\+E\+H\+E\+A\+D\+ER = 12\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\label{classBmpFile_a88f5c63beeb5226eeaa8f36407a606f3}} 
+\index{Bmp\+File@{Bmp\+File}!Size\+B\+M\+F\+I\+L\+E\+H\+E\+A\+D\+ER@{Size\+B\+M\+F\+I\+L\+E\+H\+E\+A\+D\+ER}}
+\index{Size\+B\+M\+F\+I\+L\+E\+H\+E\+A\+D\+ER@{Size\+B\+M\+F\+I\+L\+E\+H\+E\+A\+D\+ER}!Bmp\+File@{Bmp\+File}}
+\subsubsection{Size\+B\+M\+F\+I\+L\+E\+H\+E\+A\+D\+ER}
+{\footnotesize\ttfamily const unsigned short Bmp\+File\+::\+Size\+B\+M\+F\+I\+L\+E\+H\+E\+A\+D\+ER = 14\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\label{classBmpFile_a64e9416762d3dcb3366655ea3127e30c}} 
+\index{Bmp\+File@{Bmp\+File}!Size\+B\+M\+I\+N\+F\+O\+H\+E\+A\+D\+ER@{Size\+B\+M\+I\+N\+F\+O\+H\+E\+A\+D\+ER}}
+\index{Size\+B\+M\+I\+N\+F\+O\+H\+E\+A\+D\+ER@{Size\+B\+M\+I\+N\+F\+O\+H\+E\+A\+D\+ER}!Bmp\+File@{Bmp\+File}}
+\subsubsection{Size\+B\+M\+I\+N\+F\+O\+H\+E\+A\+D\+ER}
+{\footnotesize\ttfamily const unsigned short Bmp\+File\+::\+Size\+B\+M\+I\+N\+F\+O\+H\+E\+A\+D\+ER = 40\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\label{classBmpFile_aa1d2b96815e36630b5f23b44a30da00c}} 
+\index{Bmp\+File@{Bmp\+File}!subformat@{subformat}}
+\index{subformat@{subformat}!Bmp\+File@{Bmp\+File}}
+\subsubsection{subformat}
+{\footnotesize\ttfamily \textbf{ S\+U\+B\+F\+O\+R\+M\+AT} Bmp\+File\+::subformat\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ Bmp\+File.\+h}\item 
+\textbf{ Bmp\+File.\+cc}\end{DoxyCompactItemize}

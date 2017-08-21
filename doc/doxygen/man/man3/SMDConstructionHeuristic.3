@@ -1,0 +1,68 @@
+.TH "SMDConstructionHeuristic" 3 "Thu Aug 17 2017" "Version 0.5.1" "steghide" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SMDConstructionHeuristic \- an implementation of the 'static minimum degree' heuristic for contructing a matching  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SMDConstructionHeuristic\&.h>\fP
+.PP
+Inherits \fBMatchingAlgorithm\fP\&.
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBSmallerVertexDegree\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSMDConstructionHeuristic\fP (\fBGraph\fP *g, \fBMatching\fP *m, float goal=100\&.0)"
+.br
+.ti -1c
+.RI "virtual \fB~SMDConstructionHeuristic\fP (void)"
+.br
+.ti -1c
+.RI "const char * \fBgetName\fP (void) const"
+.br
+.ti -1c
+.RI "void \fBrun\fP (void)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::vector< \fBVertex\fP * > \fBVertices\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SMDConstructionHeuristic::SMDConstructionHeuristic (\fBGraph\fP * g, \fBMatching\fP * m, float goal = \fC100\&.0\fP)"
+
+.SS "virtual SMDConstructionHeuristic::~SMDConstructionHeuristic (void)\fC [inline]\fP, \fC [virtual]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "const char* SMDConstructionHeuristic::getName (void) const\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBMatchingAlgorithm\fP\&.
+.SS "void SMDConstructionHeuristic::run (void)\fC [virtual]\fP"
+
+.PP
+Implements \fBMatchingAlgorithm\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "std::vector<\fBVertex\fP*> SMDConstructionHeuristic::Vertices\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for steghide from the source code\&.

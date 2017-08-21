@@ -1,0 +1,70 @@
+.TH "CvrStgObject" 3 "Thu Aug 17 2017" "Version 0.5.1" "steghide" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+CvrStgObject \- an object that can hold embedded data  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <CvrStgObject\&.h>\fP
+.PP
+Inherited by \fBAudioData\fP, and \fBCvrStgFile\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual unsigned long \fBgetNumSamples\fP (void) const =0"
+.br
+.ti -1c
+.RI "virtual \fBSampleValue\fP * \fBgetSampleValue\fP (const \fBSamplePos\fP pos) const =0"
+.br
+.ti -1c
+.RI "virtual void \fBreplaceSample\fP (const \fBSamplePos\fP pos, const \fBSampleValue\fP *s)=0"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+This abstract base class provides an interface for every class that is able to hold embedded data\&. Something that can hold embedded data is essentially though of as an array of samples\&.
+.PP
+Definitions: Embedded Bit\&.\&.\&.a bit to be embedded (one bit in the original or extracted embfile) Sample\&.\&.\&.the smallest data unit in a file (e\&.g\&. a RGB triple, a DCT coefficient) 
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual unsigned long CvrStgObject::getNumSamples (void) const\fC [pure virtual]\fP"
+get the number of samples in this \fBCvrStgObject\fP 
+.PP
+Implemented in \fBAudioDataImpl< Type, ValueType, SampleValueType >\fP, \fBDummyFile\fP, \fBAuFile\fP, \fBWavFile\fP, and \fBBmpFile\fP\&.
+.SS "virtual \fBSampleValue\fP* CvrStgObject::getSampleValue (const \fBSamplePos\fP pos) const\fC [pure virtual]\fP"
+get the sample at position pos 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpos\fP the position of a sample (must be in 0\&.\&.\&.\fBgetNumSamples()\fP-1) 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the sample at the given position
+.RE
+.PP
+The sample object is created in this function and should be deleted by the caller\&. The derived class should check the condition(s) given above in its Implementation of this function\&. 
+.PP
+Implemented in \fBAudioDataImpl< Type, ValueType, SampleValueType >\fP, \fBAuFile\fP, \fBDummyFile\fP, \fBWavFile\fP, and \fBBmpFile\fP\&.
+.SS "virtual void CvrStgObject::replaceSample (const \fBSamplePos\fP pos, const \fBSampleValue\fP * s)\fC [pure virtual]\fP"
+replace a sample thus (possibly) altering the value of the bit returned by SampleValue->getBit() 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpos\fP the position of the sample (must be in 0\&.\&.\&.\fBgetNumSamples()\fP-1) 
+.br
+\fIs\fP the sample value that should replace the current sample value (must be of correct type for this \fBCvrStgObject\fP)
+.RE
+.PP
+The derived class should check the condition(s) given above in its Implementation of this function\&. 
+.PP
+Implemented in \fBAudioDataImpl< Type, ValueType, SampleValueType >\fP, \fBAuFile\fP, \fBDummyFile\fP, \fBWavFile\fP, and \fBBmpFile\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for steghide from the source code\&.

@@ -1,0 +1,212 @@
+\section{Bmp\+O\+S2\+File\+Test Class Reference}
+\label{classBmpOS2FileTest}\index{Bmp\+O\+S2\+File\+Test@{Bmp\+O\+S2\+File\+Test}}
+
+
+{\ttfamily \#include $<$Bmp\+O\+S2\+File\+Test.\+h$>$}
+
+Inheritance diagram for Bmp\+O\+S2\+File\+Test\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classBmpOS2FileTest}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Bmp\+O\+S2\+File\+Test} (\textbf{ Test\+Suite} $\ast$s)
+\item 
+void \textbf{ setup} (void)
+\item 
+void \textbf{ cleanup} (void)
+\item 
+void \textbf{ test\+Read\+Write} (void)
+\item 
+void \textbf{ test\+Read\+Embed\+Extract} (void)
+\item 
+void \textbf{ test\+Read\+Embed\+Write\+Read\+Extract} (void)
+\item 
+void \textbf{ test\+Position} (void)
+\item 
+void \textbf{ test\+Read\+Extract\+Compare} (void)
+\item 
+void \textbf{ test\+Embedded\+Value} (void)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Bit\+String} $\ast$ \textbf{ bs1}
+\item 
+\textbf{ Bit\+String} $\ast$ \textbf{ bs2}
+\item 
+\textbf{ Bit\+String} $\ast$ \textbf{ bs3}
+\item 
+\textbf{ Bit\+String} $\ast$ \textbf{ bs4}
+\item 
+\textbf{ Cvr\+Stg\+File} $\ast$ \textbf{ f1}
+\item 
+\textbf{ Cvr\+Stg\+File} $\ast$ \textbf{ f2}
+\item 
+\textbf{ Cvr\+Stg\+File} $\ast$ \textbf{ f3}
+\item 
+\textbf{ Cvr\+Stg\+File} $\ast$ \textbf{ f4}
+\item 
+\textbf{ Globals} \textbf{ gl1}
+\item 
+\textbf{ Globals} \textbf{ gl2}
+\item 
+\textbf{ Globals} \textbf{ gl3}
+\item 
+\textbf{ Globals} \textbf{ gl4}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{classBmpOS2FileTest_a0a63a4d4e958ff6f63bd8b0493f3bb91}} 
+\index{Bmp\+O\+S2\+File\+Test@{Bmp\+O\+S2\+File\+Test}!Bmp\+O\+S2\+File\+Test@{Bmp\+O\+S2\+File\+Test}}
+\index{Bmp\+O\+S2\+File\+Test@{Bmp\+O\+S2\+File\+Test}!Bmp\+O\+S2\+File\+Test@{Bmp\+O\+S2\+File\+Test}}
+\subsubsection{Bmp\+O\+S2\+File\+Test()}
+{\footnotesize\ttfamily Bmp\+O\+S2\+File\+Test\+::\+Bmp\+O\+S2\+File\+Test (\begin{DoxyParamCaption}\item[{\textbf{ Test\+Suite} $\ast$}]{s }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{classBmpOS2FileTest_a1fcfaa4f555c1cdf8c6ff2fc8e451eec}} 
+\index{Bmp\+O\+S2\+File\+Test@{Bmp\+O\+S2\+File\+Test}!cleanup@{cleanup}}
+\index{cleanup@{cleanup}!Bmp\+O\+S2\+File\+Test@{Bmp\+O\+S2\+File\+Test}}
+\subsubsection{cleanup()}
+{\footnotesize\ttfamily void Bmp\+O\+S2\+File\+Test\+::cleanup (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+cleanup the unit test -\/ called after run 
+
+Reimplemented from \textbf{ Unit\+Test} \doxyref{}{p.}{classUnitTest_adf77efe972ee4a766d94e3f7ddc193ad}.
+
+\mbox{\label{classBmpOS2FileTest_aa2a4aa30f613dff18079f04a45ee6665}} 
+\index{Bmp\+O\+S2\+File\+Test@{Bmp\+O\+S2\+File\+Test}!setup@{setup}}
+\index{setup@{setup}!Bmp\+O\+S2\+File\+Test@{Bmp\+O\+S2\+File\+Test}}
+\subsubsection{setup()}
+{\footnotesize\ttfamily void Bmp\+O\+S2\+File\+Test\+::setup (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+setup the unit test -\/ called before run
+
+\doxyref{Unit\+Test\+::setup}{p.}{classUnitTest_ad73fdf9012b651047ea001d21f9d27ad} will (together with \doxyref{Unit\+Test\+::cleanup}{p.}{classUnitTest_adf77efe972ee4a766d94e3f7ddc193ad}) save and restore the object stored in Globs so they should be called from the corresponding functions in the derived object if the derived unit test manipulates the Globs object. 
+
+Reimplemented from \textbf{ Unit\+Test} \doxyref{}{p.}{classUnitTest_ad73fdf9012b651047ea001d21f9d27ad}.
+
+\mbox{\label{classBmpOS2FileTest_ac9027ac14a0cbf39ecada214d4048280}} 
+\index{Bmp\+O\+S2\+File\+Test@{Bmp\+O\+S2\+File\+Test}!test\+Embedded\+Value@{test\+Embedded\+Value}}
+\index{test\+Embedded\+Value@{test\+Embedded\+Value}!Bmp\+O\+S2\+File\+Test@{Bmp\+O\+S2\+File\+Test}}
+\subsubsection{test\+Embedded\+Value()}
+{\footnotesize\ttfamily void Bmp\+O\+S2\+File\+Test\+::test\+Embedded\+Value (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\label{classBmpOS2FileTest_a3d235c9267b76959b8bee32b8fcefb40}} 
+\index{Bmp\+O\+S2\+File\+Test@{Bmp\+O\+S2\+File\+Test}!test\+Position@{test\+Position}}
+\index{test\+Position@{test\+Position}!Bmp\+O\+S2\+File\+Test@{Bmp\+O\+S2\+File\+Test}}
+\subsubsection{test\+Position()}
+{\footnotesize\ttfamily void Bmp\+O\+S2\+File\+Test\+::test\+Position (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\label{classBmpOS2FileTest_a53f0d78d0fe60de31911cddb325a39eb}} 
+\index{Bmp\+O\+S2\+File\+Test@{Bmp\+O\+S2\+File\+Test}!test\+Read\+Embed\+Extract@{test\+Read\+Embed\+Extract}}
+\index{test\+Read\+Embed\+Extract@{test\+Read\+Embed\+Extract}!Bmp\+O\+S2\+File\+Test@{Bmp\+O\+S2\+File\+Test}}
+\subsubsection{test\+Read\+Embed\+Extract()}
+{\footnotesize\ttfamily void Bmp\+O\+S2\+File\+Test\+::test\+Read\+Embed\+Extract (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\label{classBmpOS2FileTest_ae4e0f7fc89794a74e03bbbf006978f61}} 
+\index{Bmp\+O\+S2\+File\+Test@{Bmp\+O\+S2\+File\+Test}!test\+Read\+Embed\+Write\+Read\+Extract@{test\+Read\+Embed\+Write\+Read\+Extract}}
+\index{test\+Read\+Embed\+Write\+Read\+Extract@{test\+Read\+Embed\+Write\+Read\+Extract}!Bmp\+O\+S2\+File\+Test@{Bmp\+O\+S2\+File\+Test}}
+\subsubsection{test\+Read\+Embed\+Write\+Read\+Extract()}
+{\footnotesize\ttfamily void Bmp\+O\+S2\+File\+Test\+::test\+Read\+Embed\+Write\+Read\+Extract (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\label{classBmpOS2FileTest_a4e62e6870b8d2cc5bb2b5f6ae402abe6}} 
+\index{Bmp\+O\+S2\+File\+Test@{Bmp\+O\+S2\+File\+Test}!test\+Read\+Extract\+Compare@{test\+Read\+Extract\+Compare}}
+\index{test\+Read\+Extract\+Compare@{test\+Read\+Extract\+Compare}!Bmp\+O\+S2\+File\+Test@{Bmp\+O\+S2\+File\+Test}}
+\subsubsection{test\+Read\+Extract\+Compare()}
+{\footnotesize\ttfamily void Bmp\+O\+S2\+File\+Test\+::test\+Read\+Extract\+Compare (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\label{classBmpOS2FileTest_ac3a8059096148685311f10836c172d3d}} 
+\index{Bmp\+O\+S2\+File\+Test@{Bmp\+O\+S2\+File\+Test}!test\+Read\+Write@{test\+Read\+Write}}
+\index{test\+Read\+Write@{test\+Read\+Write}!Bmp\+O\+S2\+File\+Test@{Bmp\+O\+S2\+File\+Test}}
+\subsubsection{test\+Read\+Write()}
+{\footnotesize\ttfamily void Bmp\+O\+S2\+File\+Test\+::test\+Read\+Write (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{classBmpOS2FileTest_a1f9f06cdab685d1619ce0cf71f78032f}} 
+\index{Bmp\+O\+S2\+File\+Test@{Bmp\+O\+S2\+File\+Test}!bs1@{bs1}}
+\index{bs1@{bs1}!Bmp\+O\+S2\+File\+Test@{Bmp\+O\+S2\+File\+Test}}
+\subsubsection{bs1}
+{\footnotesize\ttfamily \textbf{ Bit\+String}$\ast$ Bmp\+O\+S2\+File\+Test\+::bs1\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classBmpOS2FileTest_ac0fedf91338a227d2800e79d28d0ae77}} 
+\index{Bmp\+O\+S2\+File\+Test@{Bmp\+O\+S2\+File\+Test}!bs2@{bs2}}
+\index{bs2@{bs2}!Bmp\+O\+S2\+File\+Test@{Bmp\+O\+S2\+File\+Test}}
+\subsubsection{bs2}
+{\footnotesize\ttfamily \textbf{ Bit\+String} $\ast$ Bmp\+O\+S2\+File\+Test\+::bs2\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classBmpOS2FileTest_a24c42ae78ff894065277806fa429f46e}} 
+\index{Bmp\+O\+S2\+File\+Test@{Bmp\+O\+S2\+File\+Test}!bs3@{bs3}}
+\index{bs3@{bs3}!Bmp\+O\+S2\+File\+Test@{Bmp\+O\+S2\+File\+Test}}
+\subsubsection{bs3}
+{\footnotesize\ttfamily \textbf{ Bit\+String} $\ast$ Bmp\+O\+S2\+File\+Test\+::bs3\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classBmpOS2FileTest_a907304a0224acd6d94378232b695b7cd}} 
+\index{Bmp\+O\+S2\+File\+Test@{Bmp\+O\+S2\+File\+Test}!bs4@{bs4}}
+\index{bs4@{bs4}!Bmp\+O\+S2\+File\+Test@{Bmp\+O\+S2\+File\+Test}}
+\subsubsection{bs4}
+{\footnotesize\ttfamily \textbf{ Bit\+String} $\ast$ Bmp\+O\+S2\+File\+Test\+::bs4\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classBmpOS2FileTest_a09fc57f7a850e0d7b4ebac7c24045104}} 
+\index{Bmp\+O\+S2\+File\+Test@{Bmp\+O\+S2\+File\+Test}!f1@{f1}}
+\index{f1@{f1}!Bmp\+O\+S2\+File\+Test@{Bmp\+O\+S2\+File\+Test}}
+\subsubsection{f1}
+{\footnotesize\ttfamily \textbf{ Cvr\+Stg\+File}$\ast$ Bmp\+O\+S2\+File\+Test\+::f1\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classBmpOS2FileTest_a33bf41aa2fe689ebd6327caa231ff946}} 
+\index{Bmp\+O\+S2\+File\+Test@{Bmp\+O\+S2\+File\+Test}!f2@{f2}}
+\index{f2@{f2}!Bmp\+O\+S2\+File\+Test@{Bmp\+O\+S2\+File\+Test}}
+\subsubsection{f2}
+{\footnotesize\ttfamily \textbf{ Cvr\+Stg\+File} $\ast$ Bmp\+O\+S2\+File\+Test\+::f2\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classBmpOS2FileTest_a6671840f4e885cef64c8558036d5e610}} 
+\index{Bmp\+O\+S2\+File\+Test@{Bmp\+O\+S2\+File\+Test}!f3@{f3}}
+\index{f3@{f3}!Bmp\+O\+S2\+File\+Test@{Bmp\+O\+S2\+File\+Test}}
+\subsubsection{f3}
+{\footnotesize\ttfamily \textbf{ Cvr\+Stg\+File} $\ast$ Bmp\+O\+S2\+File\+Test\+::f3\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classBmpOS2FileTest_aef99bf83500f7429b74094c880444223}} 
+\index{Bmp\+O\+S2\+File\+Test@{Bmp\+O\+S2\+File\+Test}!f4@{f4}}
+\index{f4@{f4}!Bmp\+O\+S2\+File\+Test@{Bmp\+O\+S2\+File\+Test}}
+\subsubsection{f4}
+{\footnotesize\ttfamily \textbf{ Cvr\+Stg\+File} $\ast$ Bmp\+O\+S2\+File\+Test\+::f4\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classBmpOS2FileTest_a62b43b7bff6c5a28de3b8493396f294f}} 
+\index{Bmp\+O\+S2\+File\+Test@{Bmp\+O\+S2\+File\+Test}!gl1@{gl1}}
+\index{gl1@{gl1}!Bmp\+O\+S2\+File\+Test@{Bmp\+O\+S2\+File\+Test}}
+\subsubsection{gl1}
+{\footnotesize\ttfamily \textbf{ Globals} Bmp\+O\+S2\+File\+Test\+::gl1\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classBmpOS2FileTest_af40bb63eeb0e97ffb6906417aee8646a}} 
+\index{Bmp\+O\+S2\+File\+Test@{Bmp\+O\+S2\+File\+Test}!gl2@{gl2}}
+\index{gl2@{gl2}!Bmp\+O\+S2\+File\+Test@{Bmp\+O\+S2\+File\+Test}}
+\subsubsection{gl2}
+{\footnotesize\ttfamily \textbf{ Globals} Bmp\+O\+S2\+File\+Test\+::gl2\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classBmpOS2FileTest_a3406fa49eeb3eda4a25344adfe261718}} 
+\index{Bmp\+O\+S2\+File\+Test@{Bmp\+O\+S2\+File\+Test}!gl3@{gl3}}
+\index{gl3@{gl3}!Bmp\+O\+S2\+File\+Test@{Bmp\+O\+S2\+File\+Test}}
+\subsubsection{gl3}
+{\footnotesize\ttfamily \textbf{ Globals} Bmp\+O\+S2\+File\+Test\+::gl3\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classBmpOS2FileTest_a08abc87034baa11df03d956aaf4bf65c}} 
+\index{Bmp\+O\+S2\+File\+Test@{Bmp\+O\+S2\+File\+Test}!gl4@{gl4}}
+\index{gl4@{gl4}!Bmp\+O\+S2\+File\+Test@{Bmp\+O\+S2\+File\+Test}}
+\subsubsection{gl4}
+{\footnotesize\ttfamily \textbf{ Globals} Bmp\+O\+S2\+File\+Test\+::gl4\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ Bmp\+O\+S2\+File\+Test.\+h}\item 
+\textbf{ Bmp\+O\+S2\+File\+Test.\+cc}\end{DoxyCompactItemize}

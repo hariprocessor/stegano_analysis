@@ -1,0 +1,151 @@
+\section{Selector\+Test Class Reference}
+\label{classSelectorTest}\index{Selector\+Test@{Selector\+Test}}
+
+
+{\ttfamily \#include $<$Selector\+Test.\+h$>$}
+
+Inheritance diagram for Selector\+Test\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classSelectorTest}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Selector\+Test} (\textbf{ Test\+Suite} $\ast$s)
+\item 
+void \textbf{ setup} (void)
+\item 
+void \textbf{ cleanup} (void)
+\item 
+void \textbf{ test\+Is\+Permutation} (void)
+\item 
+void \textbf{ test\+Is\+Identity\+Permutation} (void)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \textbf{ generic\+Test\+Is\+Permutation} (\textbf{ Selector} $\ast$s)
+\item 
+bool \textbf{ generic\+Test\+Is\+Identity\+Permutation} (\textbf{ Selector} $\ast$s)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Selector} $\ast$ \textbf{ s1}
+\item 
+\textbf{ Selector} $\ast$ \textbf{ s2}
+\item 
+\textbf{ Selector} $\ast$ \textbf{ s3}
+\item 
+\textbf{ Selector} $\ast$ \textbf{ s4}
+\item 
+\textbf{ Selector} $\ast$ \textbf{ sid1}
+\item 
+\textbf{ Selector} $\ast$ \textbf{ sid2}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{classSelectorTest_a97f7ae82c8969fb463cd92cb6b7ec70a}} 
+\index{Selector\+Test@{Selector\+Test}!Selector\+Test@{Selector\+Test}}
+\index{Selector\+Test@{Selector\+Test}!Selector\+Test@{Selector\+Test}}
+\subsubsection{Selector\+Test()}
+{\footnotesize\ttfamily Selector\+Test\+::\+Selector\+Test (\begin{DoxyParamCaption}\item[{\textbf{ Test\+Suite} $\ast$}]{s }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{classSelectorTest_a98447b7b1a6496e9cfbeb67804815da2}} 
+\index{Selector\+Test@{Selector\+Test}!cleanup@{cleanup}}
+\index{cleanup@{cleanup}!Selector\+Test@{Selector\+Test}}
+\subsubsection{cleanup()}
+{\footnotesize\ttfamily void Selector\+Test\+::cleanup (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+cleanup the unit test -\/ called after run 
+
+Reimplemented from \textbf{ Unit\+Test} \doxyref{}{p.}{classUnitTest_adf77efe972ee4a766d94e3f7ddc193ad}.
+
+\mbox{\label{classSelectorTest_a149278ba54adeccc166bae14b74ad670}} 
+\index{Selector\+Test@{Selector\+Test}!generic\+Test\+Is\+Identity\+Permutation@{generic\+Test\+Is\+Identity\+Permutation}}
+\index{generic\+Test\+Is\+Identity\+Permutation@{generic\+Test\+Is\+Identity\+Permutation}!Selector\+Test@{Selector\+Test}}
+\subsubsection{generic\+Test\+Is\+Identity\+Permutation()}
+{\footnotesize\ttfamily bool Selector\+Test\+::generic\+Test\+Is\+Identity\+Permutation (\begin{DoxyParamCaption}\item[{\textbf{ Selector} $\ast$}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classSelectorTest_a6c993f638fb1993d52d6f584a571e198}} 
+\index{Selector\+Test@{Selector\+Test}!generic\+Test\+Is\+Permutation@{generic\+Test\+Is\+Permutation}}
+\index{generic\+Test\+Is\+Permutation@{generic\+Test\+Is\+Permutation}!Selector\+Test@{Selector\+Test}}
+\subsubsection{generic\+Test\+Is\+Permutation()}
+{\footnotesize\ttfamily bool Selector\+Test\+::generic\+Test\+Is\+Permutation (\begin{DoxyParamCaption}\item[{\textbf{ Selector} $\ast$}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classSelectorTest_a06e85cff4977a465080b7a0b5f0e94b4}} 
+\index{Selector\+Test@{Selector\+Test}!setup@{setup}}
+\index{setup@{setup}!Selector\+Test@{Selector\+Test}}
+\subsubsection{setup()}
+{\footnotesize\ttfamily void Selector\+Test\+::setup (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+setup the unit test -\/ called before run
+
+\doxyref{Unit\+Test\+::setup}{p.}{classUnitTest_ad73fdf9012b651047ea001d21f9d27ad} will (together with \doxyref{Unit\+Test\+::cleanup}{p.}{classUnitTest_adf77efe972ee4a766d94e3f7ddc193ad}) save and restore the object stored in Globs so they should be called from the corresponding functions in the derived object if the derived unit test manipulates the Globs object. 
+
+Reimplemented from \textbf{ Unit\+Test} \doxyref{}{p.}{classUnitTest_ad73fdf9012b651047ea001d21f9d27ad}.
+
+\mbox{\label{classSelectorTest_acae551e203cc29dfc9a248e1d51d6b00}} 
+\index{Selector\+Test@{Selector\+Test}!test\+Is\+Identity\+Permutation@{test\+Is\+Identity\+Permutation}}
+\index{test\+Is\+Identity\+Permutation@{test\+Is\+Identity\+Permutation}!Selector\+Test@{Selector\+Test}}
+\subsubsection{test\+Is\+Identity\+Permutation()}
+{\footnotesize\ttfamily void Selector\+Test\+::test\+Is\+Identity\+Permutation (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\label{classSelectorTest_aac5cb519b9003fc757c49650717382d9}} 
+\index{Selector\+Test@{Selector\+Test}!test\+Is\+Permutation@{test\+Is\+Permutation}}
+\index{test\+Is\+Permutation@{test\+Is\+Permutation}!Selector\+Test@{Selector\+Test}}
+\subsubsection{test\+Is\+Permutation()}
+{\footnotesize\ttfamily void Selector\+Test\+::test\+Is\+Permutation (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{classSelectorTest_ad3daa47d815441d9167060e3e77af8aa}} 
+\index{Selector\+Test@{Selector\+Test}!s1@{s1}}
+\index{s1@{s1}!Selector\+Test@{Selector\+Test}}
+\subsubsection{s1}
+{\footnotesize\ttfamily \textbf{ Selector}$\ast$ Selector\+Test\+::s1\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classSelectorTest_a5504e8a0787b093a72f6e392e0c24364}} 
+\index{Selector\+Test@{Selector\+Test}!s2@{s2}}
+\index{s2@{s2}!Selector\+Test@{Selector\+Test}}
+\subsubsection{s2}
+{\footnotesize\ttfamily \textbf{ Selector} $\ast$ Selector\+Test\+::s2\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classSelectorTest_a0a27ec2b328791ec63f1ea7cc5472368}} 
+\index{Selector\+Test@{Selector\+Test}!s3@{s3}}
+\index{s3@{s3}!Selector\+Test@{Selector\+Test}}
+\subsubsection{s3}
+{\footnotesize\ttfamily \textbf{ Selector} $\ast$ Selector\+Test\+::s3\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classSelectorTest_a3b648c9e2bc07978b62c2b0e71878a24}} 
+\index{Selector\+Test@{Selector\+Test}!s4@{s4}}
+\index{s4@{s4}!Selector\+Test@{Selector\+Test}}
+\subsubsection{s4}
+{\footnotesize\ttfamily \textbf{ Selector} $\ast$ Selector\+Test\+::s4\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classSelectorTest_a2918843bca3641393c6ea85e757f7cee}} 
+\index{Selector\+Test@{Selector\+Test}!sid1@{sid1}}
+\index{sid1@{sid1}!Selector\+Test@{Selector\+Test}}
+\subsubsection{sid1}
+{\footnotesize\ttfamily \textbf{ Selector}$\ast$ Selector\+Test\+::sid1\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classSelectorTest_ae75e529c8f071d399b70c35e7a02ead5}} 
+\index{Selector\+Test@{Selector\+Test}!sid2@{sid2}}
+\index{sid2@{sid2}!Selector\+Test@{Selector\+Test}}
+\subsubsection{sid2}
+{\footnotesize\ttfamily \textbf{ Selector} $\ast$ Selector\+Test\+::sid2\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ Selector\+Test.\+h}\item 
+\textbf{ Selector\+Test.\+cc}\end{DoxyCompactItemize}

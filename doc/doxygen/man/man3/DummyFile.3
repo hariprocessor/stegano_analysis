@@ -1,0 +1,148 @@
+.TH "DummyFile" 3 "Thu Aug 17 2017" "Version 0.5.1" "steghide" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DummyFile \- a dummy \fBCvrStgFile\fP implementation to facilitate testing and debugging  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <DummyFile\&.h>\fP
+.PP
+Inherits \fBCvrStgFile\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDummyFile\fP (\fBUWORD16\fP s, std::vector< std::vector< bool > > *svam)"
+.br
+.ti -1c
+.RI "std::list< \fBCvrStgFile::Property\fP > \fBgetProperties\fP (void) const"
+.br
+.ti -1c
+.RI "unsigned long \fBgetNumSamples\fP (void) const"
+.br
+.ti -1c
+.RI "void \fBreplaceSample\fP (const \fBSamplePos\fP pos, const \fBSampleValue\fP *s)"
+.br
+.ti -1c
+.RI "\fBSampleValue\fP * \fBgetSampleValue\fP (const \fBSamplePos\fP pos) const"
+.br
+.ti -1c
+.RI "std::vector< std::vector< bool > > * \fBgetSampleValueAdjacencyMatrix\fP () const"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static void \fBcreateGraph\fP (std::vector< std::list< \fBUWORD16\fP > > &adjlist, \fBBitString\fP **bs, \fBCvrStgFile\fP **f, \fBSelector\fP **s)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::vector< \fBUWORD16\fP > \fBSamples\fP"
+.br
+.ti -1c
+.RI "std::vector< std::vector< bool > > * \fBSampleValueAdjacencyMatrix\fP"
+.br
+.in -1c
+.SS "Static Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "static const unsigned short \fBSamplesPerVertex\fP = 2"
+.br
+.ti -1c
+.RI "static const \fBEmbValue\fP \fBEmbValueModulus\fP = 2"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "DummyFile::DummyFile (\fBUWORD16\fP s, std::vector< std::vector< bool > > * svam)"
+construct a \fBDummyFile\fP object containing the sample values 0,1,\&.\&.\&.,s-1 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIs\fP the size of the \fBDummyFile\fP (i\&.e\&. the number of samples it should contain) 
+.br
+\fIsvam\fP the SampleValueAdjacencyMatrix for the Samples in this file 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void DummyFile::createGraph (std::vector< std::list< \fBUWORD16\fP > > & adjlist, \fBBitString\fP ** bs, \fBCvrStgFile\fP ** f, \fBSelector\fP ** s)\fC [static]\fP"
+create a \fBBitString\fP, a \fBDummyFile\fP and a \fBSelector\fP that together will produce a graph like described by the adjacency list 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIadjlist\fP an adjacency list describing the 'target graph' 
+.br
+\fIbs\fP will be filled with the \fBBitString\fP 
+.br
+\fIf\fP will be filled with the \fBDummyFile\fP 
+.br
+\fIs\fP will be filled with the \fBSelector\fP
+.RE
+.PP
+Constructing a \fBGraph\fP object with 'Graph (*f, **bs, **s)' will result in a graph of the form of adjlist\&.
+.PP
+The constructed graph has the following form: SamplesPerVertex == 2, EmbValueModulus = 2 every vertex has a sample value with bit == 0 at index 0 and one with bit == 1 at index 1, if two vertices are adjacent, one end of the edge is at index 0 of the vertex with the lower vertex label and the other end of the edge is at index 1 of the vertex with the higher vertex label\&. The distance between vertex with label i and vertex with label j is : 2*|j - i| + 1 
+.SS "unsigned long DummyFile::getNumSamples (void) const\fC [virtual]\fP"
+get the number of samples in this \fBCvrStgObject\fP 
+.PP
+Implements \fBCvrStgObject\fP\&.
+.SS "std::list< \fBCvrStgFile::Property\fP > DummyFile::getProperties (void) const\fC [virtual]\fP"
+
+.PP
+Implements \fBCvrStgFile\fP\&.
+.SS "\fBSampleValue\fP * DummyFile::getSampleValue (const \fBSamplePos\fP pos) const\fC [virtual]\fP"
+get the sample at position pos 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpos\fP the position of a sample (must be in 0\&.\&.\&.\fBgetNumSamples()\fP-1) 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the sample at the given position
+.RE
+.PP
+The sample object is created in this function and should be deleted by the caller\&. The derived class should check the condition(s) given above in its Implementation of this function\&. 
+.PP
+Implements \fBCvrStgObject\fP\&.
+.SS "std::vector<std::vector<bool> >* DummyFile::getSampleValueAdjacencyMatrix () const\fC [inline]\fP"
+
+.SS "void DummyFile::replaceSample (const \fBSamplePos\fP pos, const \fBSampleValue\fP * s)\fC [virtual]\fP"
+replace a sample thus (possibly) altering the value of the bit returned by SampleValue->getBit() 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpos\fP the position of the sample (must be in 0\&.\&.\&.\fBgetNumSamples()\fP-1) 
+.br
+\fIs\fP the sample value that should replace the current sample value (must be of correct type for this \fBCvrStgObject\fP)
+.RE
+.PP
+The derived class should check the condition(s) given above in its Implementation of this function\&. 
+.PP
+Implements \fBCvrStgObject\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "const \fBEmbValue\fP DummyFile::EmbValueModulus = 2\fC [static]\fP, \fC [private]\fP"
+
+.SS "std::vector<\fBUWORD16\fP> DummyFile::Samples\fC [private]\fP"
+
+.SS "const unsigned short DummyFile::SamplesPerVertex = 2\fC [static]\fP, \fC [private]\fP"
+
+.SS "std::vector<std::vector<bool> >* DummyFile::SampleValueAdjacencyMatrix\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for steghide from the source code\&.

@@ -1,0 +1,280 @@
+\section{Sample\+Value Class Reference}
+\label{classSampleValue}\index{Sample\+Value@{Sample\+Value}}
+
+
+the value of a sample in a \doxyref{Cvr\+Stg\+File}{p.}{classCvrStgFile}  
+
+
+
+
+{\ttfamily \#include $<$Sample\+Value.\+h$>$}
+
+Inheritance diagram for Sample\+Value\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.349398cm]{classSampleValue}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Sample\+Value} (void)
+\item 
+virtual \textbf{ $\sim$\+Sample\+Value} (void)
+\item 
+virtual \textbf{ Sample\+Value} $\ast$ \textbf{ get\+Nearest\+Target\+Sample\+Value} (\textbf{ Emb\+Value} t) const =0
+\item 
+virtual \textbf{ U\+W\+O\+R\+D32} \textbf{ calc\+Distance} (const \textbf{ Sample\+Value} $\ast$s) const =0
+\item 
+virtual std\+::string \textbf{ get\+Name} (void) const =0
+\item 
+virtual bool \textbf{ is\+Neighbour} (const \textbf{ Sample\+Value} $\ast$s) const
+\item 
+\textbf{ Emb\+Value} \textbf{ get\+Embedded\+Value} (void) const
+\item 
+\textbf{ U\+W\+O\+R\+D32} \textbf{ get\+Key} (void) const
+\item 
+bool \textbf{ operator==} (const \textbf{ Sample\+Value} \&sv) const
+\item 
+bool \textbf{ operator!=} (const \textbf{ Sample\+Value} \&sv) const
+\item 
+bool \textbf{ operator$<$} (const \textbf{ Sample\+Value} \&sv) const
+\item 
+\textbf{ U\+W\+O\+R\+D32} \textbf{ get\+Num\+Edges} (\textbf{ Emb\+Value} t) const
+\item 
+void \textbf{ set\+Num\+Edges} (\textbf{ Emb\+Value} t, \textbf{ U\+W\+O\+R\+D32} ne)
+\item 
+void \textbf{ inc\+Num\+Edges} (\textbf{ Emb\+Value} t)
+\item 
+void \textbf{ dec\+Num\+Edges} (\textbf{ Emb\+Value} t)
+\item 
+void \textbf{ set\+Label} (unsigned long l)
+\item 
+unsigned long \textbf{ get\+Label} (void) const
+\item 
+void \textbf{ print} (unsigned short spc=0) const
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Emb\+Value} \textbf{ E\+Value}
+\begin{DoxyCompactList}\small\item\em the bit that is embedded in this sample value -\/ must be set in constructor of derived class \end{DoxyCompactList}\item 
+\textbf{ U\+W\+O\+R\+D32} \textbf{ Key}
+\begin{DoxyCompactList}\small\item\em the key of this sample value -\/ must be different for two different sample values -\/ must be set in constructor of derived class \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned long \textbf{ Label}
+\item 
+\textbf{ U\+W\+O\+R\+D32} $\ast$ \textbf{ Num\+Edges}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This is the abstract base class for all Au\+Sample\+Value, \doxyref{Bmp\+Sample\+Value}{p.}{classBmpSampleValue}, etc. classes
+
+For two sample values s1 and s2\+:
+
+s1-\/$>$calc\+Distance(s2) == s2-\/$>$calc\+Distance(s1) is always true.
+
+s1-\/$>$is\+Neighbour(s2) == s2-\/$>$is\+Neighbour(s1) is always true.
+
+s1 and s2 are called opposite if s1-\/$>$get\+Bit() != s2-\/$>$get\+Bit()
+
+s1 and s2 are called neighbours if s1-\/$>$is\+Neighbour(s2) is true
+
+s1-\/$>$\doxyref{get\+Key()}{p.}{classSampleValue_a6af594244c6bc8375f13a4aff067cd0a} == s2-\/$>$\doxyref{get\+Key()}{p.}{classSampleValue_a6af594244c6bc8375f13a4aff067cd0a} iff s1 == s2
+
+s1 == s2 implies s1-\/$>$get\+Distance(s2) == 0 B\+UT\+: s1-\/$>$get\+Distance(s2) == 0 does not imply s1 == s2 example\+: 8-\/bit bmp palette image -\/ same color value for two different indices
+
+s1 == s2 implies s1-\/$>$get\+Bit() == s2-\/$>$get\+Bit()
+
+s1-\/$>$get\+Distance(s2) == 0 implies s1-\/$>$get\+Bit() == s2-\/$>$get\+Bit()
+
+{\bfseries N\+O\+TE\+:} \doxyref{Sample\+Value}{p.}{classSampleValue} and all derived classes rely on the \doxyref{Globals}{p.}{classGlobals} object pointed to by the Globs pointer. This means that it must be set correctly before using any method of a \doxyref{Sample\+Value}{p.}{classSampleValue} (or derived) object. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{classSampleValue_a74c75452d43690d940d9ca5d8b64da27}} 
+\index{Sample\+Value@{Sample\+Value}!Sample\+Value@{Sample\+Value}}
+\index{Sample\+Value@{Sample\+Value}!Sample\+Value@{Sample\+Value}}
+\subsubsection{Sample\+Value()}
+{\footnotesize\ttfamily Sample\+Value\+::\+Sample\+Value (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\label{classSampleValue_a7e51c7f758b83d354bdb6d3e9502934e}} 
+\index{Sample\+Value@{Sample\+Value}!````~Sample\+Value@{$\sim$\+Sample\+Value}}
+\index{````~Sample\+Value@{$\sim$\+Sample\+Value}!Sample\+Value@{Sample\+Value}}
+\subsubsection{$\sim$\+Sample\+Value()}
+{\footnotesize\ttfamily Sample\+Value\+::$\sim$\+Sample\+Value (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{classSampleValue_aa7e5d9b69203f6f6edf97c79319232dd}} 
+\index{Sample\+Value@{Sample\+Value}!calc\+Distance@{calc\+Distance}}
+\index{calc\+Distance@{calc\+Distance}!Sample\+Value@{Sample\+Value}}
+\subsubsection{calc\+Distance()}
+{\footnotesize\ttfamily virtual \textbf{ U\+W\+O\+R\+D32} Sample\+Value\+::calc\+Distance (\begin{DoxyParamCaption}\item[{const \textbf{ Sample\+Value} $\ast$}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+calculate the distance between the sample value s and this sample value 
+\begin{DoxyParams}{Parameters}
+{\em s} & a sample value of the same type as this \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the distance 
+\end{DoxyReturn}
+
+
+Implemented in \textbf{ Audio\+Sample\+Value$<$ Type, Value\+Type $>$} \doxyref{}{p.}{classAudioSampleValue_a6e8bd4368a717ab9d97b0f85e3bcc24f}, \textbf{ Dummy\+Sample\+Value} \doxyref{}{p.}{classDummySampleValue_ac3af289d7b12a404aebb4df17cfd3122}, \textbf{ Bmp\+R\+G\+B\+Sample\+Value} \doxyref{}{p.}{classBmpRGBSampleValue_a41c765b2108e640d3e7249f5dfd81eef}, \textbf{ Bmp\+Sample\+Value} \doxyref{}{p.}{classBmpSampleValue_af81c03b48ec98543a9e1a88b69b83abd}, \textbf{ Wav\+P\+C\+M\+Sample\+Value} \doxyref{}{p.}{classWavPCMSampleValue_a251133a815b938136242460fde486a3a}, and \textbf{ Jpeg\+Sample\+Value} \doxyref{}{p.}{classJpegSampleValue_a94973d445cd7b4d40e767f533f38164b}.
+
+\mbox{\label{classSampleValue_a469706163142f053d9e10585a72c9322}} 
+\index{Sample\+Value@{Sample\+Value}!dec\+Num\+Edges@{dec\+Num\+Edges}}
+\index{dec\+Num\+Edges@{dec\+Num\+Edges}!Sample\+Value@{Sample\+Value}}
+\subsubsection{dec\+Num\+Edges()}
+{\footnotesize\ttfamily void Sample\+Value\+::dec\+Num\+Edges (\begin{DoxyParamCaption}\item[{\textbf{ Emb\+Value}}]{t }\end{DoxyParamCaption})}
+
+\mbox{\label{classSampleValue_aff358954788807974f37c8d5fde1a72f}} 
+\index{Sample\+Value@{Sample\+Value}!get\+Embedded\+Value@{get\+Embedded\+Value}}
+\index{get\+Embedded\+Value@{get\+Embedded\+Value}!Sample\+Value@{Sample\+Value}}
+\subsubsection{get\+Embedded\+Value()}
+{\footnotesize\ttfamily \textbf{ Emb\+Value} Sample\+Value\+::get\+Embedded\+Value (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+get the value that is embedded in this sample value (must be $>$=0 and $<$Emb\+Value\+Modulus) \begin{DoxyReturn}{Returns}
+the embedded value 
+\end{DoxyReturn}
+\mbox{\label{classSampleValue_a6af594244c6bc8375f13a4aff067cd0a}} 
+\index{Sample\+Value@{Sample\+Value}!get\+Key@{get\+Key}}
+\index{get\+Key@{get\+Key}!Sample\+Value@{Sample\+Value}}
+\subsubsection{get\+Key()}
+{\footnotesize\ttfamily \textbf{ U\+W\+O\+R\+D32} Sample\+Value\+::get\+Key (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+get the key for this sample \begin{DoxyReturn}{Returns}
+a key which must be different for two different samples values. 
+\end{DoxyReturn}
+\mbox{\label{classSampleValue_ac75dcb24408be75b8ba19018343a7677}} 
+\index{Sample\+Value@{Sample\+Value}!get\+Label@{get\+Label}}
+\index{get\+Label@{get\+Label}!Sample\+Value@{Sample\+Value}}
+\subsubsection{get\+Label()}
+{\footnotesize\ttfamily unsigned long Sample\+Value\+::get\+Label (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classSampleValue_aeaf5c46ec6d023840e9773604b20d25c}} 
+\index{Sample\+Value@{Sample\+Value}!get\+Name@{get\+Name}}
+\index{get\+Name@{get\+Name}!Sample\+Value@{Sample\+Value}}
+\subsubsection{get\+Name()}
+{\footnotesize\ttfamily virtual std\+::string Sample\+Value\+::get\+Name (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+return a short name uniquely identifying this sample value 
+
+Implemented in \textbf{ Audio\+Sample\+Value$<$ Type, Value\+Type $>$} \doxyref{}{p.}{classAudioSampleValue_a9f6d83bd0007d8a9b157f55161519b08}, \textbf{ Dummy\+Sample\+Value} \doxyref{}{p.}{classDummySampleValue_aba495f69560f9341acda9227878975a4}, \textbf{ Bmp\+R\+G\+B\+Sample\+Value} \doxyref{}{p.}{classBmpRGBSampleValue_a4937eb190ebfedbd7b97b899e15855db}, \textbf{ Bmp\+Palette\+Sample\+Value} \doxyref{}{p.}{classBmpPaletteSampleValue_afdee36c56b6cc471c96d93dbbc8c8fa0}, \textbf{ Wav\+P\+C\+M\+Sample\+Value} \doxyref{}{p.}{classWavPCMSampleValue_a29f405e3ab8f8571131ec38fb07aa728}, and \textbf{ Jpeg\+Sample\+Value} \doxyref{}{p.}{classJpegSampleValue_a8d030038b36fff2478ed0eaf212bc73f}.
+
+\mbox{\label{classSampleValue_aeca3fc1fd34c09d2244706b010935c2c}} 
+\index{Sample\+Value@{Sample\+Value}!get\+Nearest\+Target\+Sample\+Value@{get\+Nearest\+Target\+Sample\+Value}}
+\index{get\+Nearest\+Target\+Sample\+Value@{get\+Nearest\+Target\+Sample\+Value}!Sample\+Value@{Sample\+Value}}
+\subsubsection{get\+Nearest\+Target\+Sample\+Value()}
+{\footnotesize\ttfamily virtual \textbf{ Sample\+Value}$\ast$ Sample\+Value\+::get\+Nearest\+Target\+Sample\+Value (\begin{DoxyParamCaption}\item[{\textbf{ Emb\+Value}}]{t }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+get the nearest (with the least distance to this sample value) sample value whose embedded value equals the specified target 
+\begin{DoxyParams}{Parameters}
+{\em t} & the target embedded value\\
+\hline
+\end{DoxyParams}
+If two or more target sample values have equal distance each of them should be returned with equal probability.
+
+The returned \doxyref{Sample\+Value}{p.}{classSampleValue} object should be deleted by the callser. 
+
+Implemented in \textbf{ Audio\+Sample\+Value$<$ Type, Value\+Type $>$} \doxyref{}{p.}{classAudioSampleValue_aaeaaef73950dbe29a1bb1620bd4c53ab}, \textbf{ Dummy\+Sample\+Value} \doxyref{}{p.}{classDummySampleValue_a5920eb5fb6d87e8fbd8f6320a8a5f3f9}, \textbf{ Bmp\+R\+G\+B\+Sample\+Value} \doxyref{}{p.}{classBmpRGBSampleValue_a8dcb01b4e05109a5ddabf882b4bb3b41}, \textbf{ Bmp\+Palette\+Sample\+Value} \doxyref{}{p.}{classBmpPaletteSampleValue_acb0da2ffb8ad2b8880e5eb8d0ea16e62}, \textbf{ Wav\+P\+C\+M\+Sample\+Value} \doxyref{}{p.}{classWavPCMSampleValue_ade9412085402d750dc1251b948db8c9b}, and \textbf{ Jpeg\+Sample\+Value} \doxyref{}{p.}{classJpegSampleValue_afcd941c26dea216970e6da945cb78511}.
+
+\mbox{\label{classSampleValue_ab77221b1bd63a0a8210903c3623beaf6}} 
+\index{Sample\+Value@{Sample\+Value}!get\+Num\+Edges@{get\+Num\+Edges}}
+\index{get\+Num\+Edges@{get\+Num\+Edges}!Sample\+Value@{Sample\+Value}}
+\subsubsection{get\+Num\+Edges()}
+{\footnotesize\ttfamily \textbf{ U\+W\+O\+R\+D32} Sample\+Value\+::get\+Num\+Edges (\begin{DoxyParamCaption}\item[{\textbf{ Emb\+Value}}]{t }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classSampleValue_a7cda8c5bb0b8689764c80582dcbd145f}} 
+\index{Sample\+Value@{Sample\+Value}!inc\+Num\+Edges@{inc\+Num\+Edges}}
+\index{inc\+Num\+Edges@{inc\+Num\+Edges}!Sample\+Value@{Sample\+Value}}
+\subsubsection{inc\+Num\+Edges()}
+{\footnotesize\ttfamily void Sample\+Value\+::inc\+Num\+Edges (\begin{DoxyParamCaption}\item[{\textbf{ Emb\+Value}}]{t }\end{DoxyParamCaption})}
+
+\mbox{\label{classSampleValue_a6f746349802439be40062a7a27d118fb}} 
+\index{Sample\+Value@{Sample\+Value}!is\+Neighbour@{is\+Neighbour}}
+\index{is\+Neighbour@{is\+Neighbour}!Sample\+Value@{Sample\+Value}}
+\subsubsection{is\+Neighbour()}
+{\footnotesize\ttfamily bool Sample\+Value\+::is\+Neighbour (\begin{DoxyParamCaption}\item[{const \textbf{ Sample\+Value} $\ast$}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+is the sample value s a neighbour of this sample value ? \begin{DoxyReturn}{Returns}
+true iff this and s are neighbours
+\end{DoxyReturn}
+This is implemented as (\doxyref{calc\+Distance()}{p.}{classSampleValue_aa7e5d9b69203f6f6edf97c79319232dd} $<$= Radius) but may be overridden by derived classes. 
+
+Reimplemented in \textbf{ Dummy\+Sample\+Value} \doxyref{}{p.}{classDummySampleValue_a63875aaa574e70c8f1aa881ebe60dede}.
+
+\mbox{\label{classSampleValue_a70dab6e124cc11619c8b4c5386e8c4a8}} 
+\index{Sample\+Value@{Sample\+Value}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!Sample\+Value@{Sample\+Value}}
+\subsubsection{operator"!=()}
+{\footnotesize\ttfamily bool Sample\+Value\+::operator!= (\begin{DoxyParamCaption}\item[{const \textbf{ Sample\+Value} \&}]{sv }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classSampleValue_a92cab0a2e67aa0c43d3fcfe68775bbb0}} 
+\index{Sample\+Value@{Sample\+Value}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!Sample\+Value@{Sample\+Value}}
+\subsubsection{operator$<$()}
+{\footnotesize\ttfamily bool Sample\+Value\+::operator$<$ (\begin{DoxyParamCaption}\item[{const \textbf{ Sample\+Value} \&}]{sv }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classSampleValue_a2f965bbf16cc6e283401af6728ecf76f}} 
+\index{Sample\+Value@{Sample\+Value}!operator==@{operator==}}
+\index{operator==@{operator==}!Sample\+Value@{Sample\+Value}}
+\subsubsection{operator==()}
+{\footnotesize\ttfamily bool Sample\+Value\+::operator== (\begin{DoxyParamCaption}\item[{const \textbf{ Sample\+Value} \&}]{sv }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+two sample values are equal iff their keys are equal \mbox{\label{classSampleValue_a9be5b60f0fce1d14d77ec4d15ad8300d}} 
+\index{Sample\+Value@{Sample\+Value}!print@{print}}
+\index{print@{print}!Sample\+Value@{Sample\+Value}}
+\subsubsection{print()}
+{\footnotesize\ttfamily void Sample\+Value\+::print (\begin{DoxyParamCaption}\item[{unsigned short}]{spc = {\ttfamily 0} }\end{DoxyParamCaption}) const}
+
+\mbox{\label{classSampleValue_aa05c5d32ce2e4c9f27e894d9df51bf19}} 
+\index{Sample\+Value@{Sample\+Value}!set\+Label@{set\+Label}}
+\index{set\+Label@{set\+Label}!Sample\+Value@{Sample\+Value}}
+\subsubsection{set\+Label()}
+{\footnotesize\ttfamily void Sample\+Value\+::set\+Label (\begin{DoxyParamCaption}\item[{unsigned long}]{l }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classSampleValue_a576da5dade60d82b0d00373fac218b8f}} 
+\index{Sample\+Value@{Sample\+Value}!set\+Num\+Edges@{set\+Num\+Edges}}
+\index{set\+Num\+Edges@{set\+Num\+Edges}!Sample\+Value@{Sample\+Value}}
+\subsubsection{set\+Num\+Edges()}
+{\footnotesize\ttfamily void Sample\+Value\+::set\+Num\+Edges (\begin{DoxyParamCaption}\item[{\textbf{ Emb\+Value}}]{t,  }\item[{\textbf{ U\+W\+O\+R\+D32}}]{ne }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{classSampleValue_a0dcaf6e226df96e9caab87aa933f9f19}} 
+\index{Sample\+Value@{Sample\+Value}!E\+Value@{E\+Value}}
+\index{E\+Value@{E\+Value}!Sample\+Value@{Sample\+Value}}
+\subsubsection{E\+Value}
+{\footnotesize\ttfamily \textbf{ Emb\+Value} Sample\+Value\+::\+E\+Value\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\label{classSampleValue_a10e075aea7ba428d0c76549423d8efe2}} 
+\index{Sample\+Value@{Sample\+Value}!Key@{Key}}
+\index{Key@{Key}!Sample\+Value@{Sample\+Value}}
+\subsubsection{Key}
+{\footnotesize\ttfamily \textbf{ U\+W\+O\+R\+D32} Sample\+Value\+::\+Key\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\label{classSampleValue_a2702bee2b3636a57d92c779e31c038aa}} 
+\index{Sample\+Value@{Sample\+Value}!Label@{Label}}
+\index{Label@{Label}!Sample\+Value@{Sample\+Value}}
+\subsubsection{Label}
+{\footnotesize\ttfamily unsigned long Sample\+Value\+::\+Label\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classSampleValue_abcc2fdc624ecf5fb143d268ccb1c0f87}} 
+\index{Sample\+Value@{Sample\+Value}!Num\+Edges@{Num\+Edges}}
+\index{Num\+Edges@{Num\+Edges}!Sample\+Value@{Sample\+Value}}
+\subsubsection{Num\+Edges}
+{\footnotesize\ttfamily \textbf{ U\+W\+O\+R\+D32}$\ast$ Sample\+Value\+::\+Num\+Edges\hspace{0.3cm}{\ttfamily [private]}}
+
+Num\+Edges[t] contains the number of edges that are added to a vertex if this sample value with corresponding target value t is added to the vertex 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ Sample\+Value.\+h}\item 
+\textbf{ Sample\+Value.\+cc}\end{DoxyCompactItemize}

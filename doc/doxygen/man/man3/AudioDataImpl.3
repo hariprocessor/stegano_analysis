@@ -1,0 +1,122 @@
+.TH "AudioDataImpl< Type, ValueType, SampleValueType >" 3 "Thu Aug 17 2017" "Version 0.5.1" "steghide" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+AudioDataImpl< Type, ValueType, SampleValueType > \- implementation of the AudioData-Interface  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <AudioData\&.h>\fP
+.PP
+Inherits \fBAudioData\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBAudioDataImpl\fP (\fBCvrStgFile\fP *f)"
+.br
+.ti -1c
+.RI "virtual \fB~AudioDataImpl\fP (void)"
+.br
+.ti -1c
+.RI "void \fBread\fP (\fBBinaryIO\fP *io, \fBUWORD32\fP n=\fBAudioData::NoLimit\fP)"
+.br
+.ti -1c
+.RI "void \fBwrite\fP (\fBBinaryIO\fP *io, \fBUWORD32\fP n=\fBAudioData::NoLimit\fP)"
+.br
+.ti -1c
+.RI "unsigned long \fBgetNumSamples\fP (void) const"
+.br
+.ti -1c
+.RI "\fBSampleValue\fP * \fBgetSampleValue\fP (const \fBSamplePos\fP pos) const"
+.br
+.ti -1c
+.RI "void \fBreplaceSample\fP (const \fBSamplePos\fP pos, const \fBSampleValue\fP *s)"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "ValueType \fBreadValue\fP (\fBBinaryIO\fP *io) const"
+.br
+.ti -1c
+.RI "void \fBwriteValue\fP (\fBBinaryIO\fP *io, ValueType v) const"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::vector< ValueType > \fBData\fP"
+.br
+.ti -1c
+.RI "\fBCvrStgFile\fP * \fBTheCvrStgFile\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "template<AUDIOSAMPLETYPE Type, class ValueType , class SampleValueType  = AudioSampleValue<Type,ValueType>> \fBAudioDataImpl\fP< Type, ValueType, SampleValueType >::\fBAudioDataImpl\fP (\fBCvrStgFile\fP * f)\fC [inline]\fP"
+
+.SS "template<AUDIOSAMPLETYPE Type, class ValueType , class SampleValueType  = AudioSampleValue<Type,ValueType>> virtual \fBAudioDataImpl\fP< Type, ValueType, SampleValueType >::~\fBAudioDataImpl\fP (void)\fC [inline]\fP, \fC [virtual]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "template<AUDIOSAMPLETYPE Type, class ValueType , class SampleValueType > unsigned long \fBAudioDataImpl\fP< Type, ValueType, SampleValueType >::getNumSamples (void) const\fC [virtual]\fP"
+get the number of samples in this \fBCvrStgObject\fP 
+.PP
+Implements \fBCvrStgObject\fP\&.
+.SS "template<AUDIOSAMPLETYPE Type, class ValueType , class SampleValueType > \fBSampleValue\fP * \fBAudioDataImpl\fP< Type, ValueType, SampleValueType >::getSampleValue (const \fBSamplePos\fP pos) const\fC [virtual]\fP"
+get the sample at position pos 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpos\fP the position of a sample (must be in 0\&.\&.\&.\fBgetNumSamples()\fP-1) 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the sample at the given position
+.RE
+.PP
+The sample object is created in this function and should be deleted by the caller\&. The derived class should check the condition(s) given above in its Implementation of this function\&. 
+.PP
+Implements \fBCvrStgObject\fP\&.
+.SS "template<AUDIOSAMPLETYPE Type, class ValueType , class SampleValueType > void \fBAudioDataImpl\fP< Type, ValueType, SampleValueType >::read (\fBBinaryIO\fP * io, \fBUWORD32\fP n = \fC\fBAudioData::NoLimit\fP\fP)\fC [virtual]\fP"
+
+.PP
+Implements \fBAudioData\fP\&.
+.SS "\fBSWORD32\fP AuPCM32AudioData::readValue (\fBBinaryIO\fP * io) const\fC [private]\fP"
+
+.SS "template<AUDIOSAMPLETYPE Type, class ValueType , class SampleValueType > void \fBAudioDataImpl\fP< Type, ValueType, SampleValueType >::replaceSample (const \fBSamplePos\fP pos, const \fBSampleValue\fP * s)\fC [virtual]\fP"
+replace a sample thus (possibly) altering the value of the bit returned by SampleValue->getBit() 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpos\fP the position of the sample (must be in 0\&.\&.\&.\fBgetNumSamples()\fP-1) 
+.br
+\fIs\fP the sample value that should replace the current sample value (must be of correct type for this \fBCvrStgObject\fP)
+.RE
+.PP
+The derived class should check the condition(s) given above in its Implementation of this function\&. 
+.PP
+Implements \fBCvrStgObject\fP\&.
+.SS "template<AUDIOSAMPLETYPE Type, class ValueType , class SampleValueType > void \fBAudioDataImpl\fP< Type, ValueType, SampleValueType >::write (\fBBinaryIO\fP * io, \fBUWORD32\fP n = \fC\fBAudioData::NoLimit\fP\fP)\fC [virtual]\fP"
+
+.PP
+Implements \fBAudioData\fP\&.
+.SS "template<AUDIOSAMPLETYPE Type, class ValueType , class SampleValueType  = AudioSampleValue<Type,ValueType>> void \fBAudioDataImpl\fP< Type, ValueType, SampleValueType >::writeValue (\fBBinaryIO\fP * io, ValueType v) const\fC [private]\fP"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "template<AUDIOSAMPLETYPE Type, class ValueType , class SampleValueType  = AudioSampleValue<Type,ValueType>> std::vector<ValueType> \fBAudioDataImpl\fP< Type, ValueType, SampleValueType >::Data\fC [private]\fP"
+
+.SS "template<AUDIOSAMPLETYPE Type, class ValueType , class SampleValueType  = AudioSampleValue<Type,ValueType>> \fBCvrStgFile\fP* \fBAudioDataImpl\fP< Type, ValueType, SampleValueType >::TheCvrStgFile\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for steghide from the source code\&.

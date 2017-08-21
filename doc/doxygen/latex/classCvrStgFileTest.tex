@@ -1,0 +1,136 @@
+\section{Cvr\+Stg\+File\+Test Class Reference}
+\label{classCvrStgFileTest}\index{Cvr\+Stg\+File\+Test@{Cvr\+Stg\+File\+Test}}
+
+
+{\ttfamily \#include $<$Cvr\+Stg\+File\+Test.\+h$>$}
+
+Inheritance diagram for Cvr\+Stg\+File\+Test\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.303835cm]{classCvrStgFileTest}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Cvr\+Stg\+File\+Test} (std\+::string n, \textbf{ Test\+Suite} $\ast$s)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \textbf{ generic\+Test\+Read\+Write} (const std\+::string \&rfn, bool new\+\_\+wfn=true) const
+\item 
+bool \textbf{ generic\+Test\+Read\+Embed\+Extract} (const std\+::string \&fn, \textbf{ Bit\+String} \&emb) const
+\item 
+bool \textbf{ generic\+Test\+Read\+Extract\+Compare} (const std\+::string \&fn, \textbf{ Bit\+String} \&emb) const
+\item 
+bool \textbf{ generic\+Test\+Read\+Embed\+Write\+Read\+Extract} (const std\+::string \&cvrfn, \textbf{ Bit\+String} \&emb) const
+\item 
+bool \textbf{ generic\+Test\+Position} (const \textbf{ Cvr\+Stg\+File} $\ast$f, const \textbf{ Sample\+Pos} pos, \textbf{ Sample\+Value} $\ast$sv\+\_\+r) const
+\item 
+bool \textbf{ generic\+Test\+S\+V\+A\+L\+Calculation} (const \textbf{ Cvr\+Stg\+File} $\ast$f, const \textbf{ Graph} $\ast$g) const
+\item 
+bool \textbf{ generic\+Test\+Embedded\+Value} (const \textbf{ Cvr\+Stg\+File} $\ast$f) const
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \textbf{ are\+Equal} (const std\+::string \&fn1, const std\+::string \&fn2) const
+\item 
+void \textbf{ remove\+File} (const std\+::string \&fn) const
+\item 
+void \textbf{ copy\+File} (const std\+::string \&src, const std\+::string \&dest) const
+\item 
+void \textbf{ move\+File} (const std\+::string \&src, const std\+::string \&dest) const
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{classCvrStgFileTest_a490e6158822a3b73b8935becef5a683f}} 
+\index{Cvr\+Stg\+File\+Test@{Cvr\+Stg\+File\+Test}!Cvr\+Stg\+File\+Test@{Cvr\+Stg\+File\+Test}}
+\index{Cvr\+Stg\+File\+Test@{Cvr\+Stg\+File\+Test}!Cvr\+Stg\+File\+Test@{Cvr\+Stg\+File\+Test}}
+\subsubsection{Cvr\+Stg\+File\+Test()}
+{\footnotesize\ttfamily Cvr\+Stg\+File\+Test\+::\+Cvr\+Stg\+File\+Test (\begin{DoxyParamCaption}\item[{std\+::string}]{n,  }\item[{\textbf{ Test\+Suite} $\ast$}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{classCvrStgFileTest_ade841ab9117d084ca19bbeb2562912ab}} 
+\index{Cvr\+Stg\+File\+Test@{Cvr\+Stg\+File\+Test}!are\+Equal@{are\+Equal}}
+\index{are\+Equal@{are\+Equal}!Cvr\+Stg\+File\+Test@{Cvr\+Stg\+File\+Test}}
+\subsubsection{are\+Equal()}
+{\footnotesize\ttfamily bool Cvr\+Stg\+File\+Test\+::are\+Equal (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{fn1,  }\item[{const std\+::string \&}]{fn2 }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classCvrStgFileTest_aef89dd9e7d6208d697d5e7fb3dc3623c}} 
+\index{Cvr\+Stg\+File\+Test@{Cvr\+Stg\+File\+Test}!copy\+File@{copy\+File}}
+\index{copy\+File@{copy\+File}!Cvr\+Stg\+File\+Test@{Cvr\+Stg\+File\+Test}}
+\subsubsection{copy\+File()}
+{\footnotesize\ttfamily void Cvr\+Stg\+File\+Test\+::copy\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{src,  }\item[{const std\+::string \&}]{dest }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classCvrStgFileTest_aafd2079227474a72c9403d9a57ce3d72}} 
+\index{Cvr\+Stg\+File\+Test@{Cvr\+Stg\+File\+Test}!generic\+Test\+Embedded\+Value@{generic\+Test\+Embedded\+Value}}
+\index{generic\+Test\+Embedded\+Value@{generic\+Test\+Embedded\+Value}!Cvr\+Stg\+File\+Test@{Cvr\+Stg\+File\+Test}}
+\subsubsection{generic\+Test\+Embedded\+Value()}
+{\footnotesize\ttfamily bool Cvr\+Stg\+File\+Test\+::generic\+Test\+Embedded\+Value (\begin{DoxyParamCaption}\item[{const \textbf{ Cvr\+Stg\+File} $\ast$}]{f }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+for all sample positions, test if f-\/$>$get\+Embedded\+Value(p) and f-\/$>$get\+Sample\+Value(p)-\/$>$get\+Embedded\+Value() return the same result \mbox{\label{classCvrStgFileTest_a899e3867e522c92df9bffc39ae2f3f8a}} 
+\index{Cvr\+Stg\+File\+Test@{Cvr\+Stg\+File\+Test}!generic\+Test\+Position@{generic\+Test\+Position}}
+\index{generic\+Test\+Position@{generic\+Test\+Position}!Cvr\+Stg\+File\+Test@{Cvr\+Stg\+File\+Test}}
+\subsubsection{generic\+Test\+Position()}
+{\footnotesize\ttfamily bool Cvr\+Stg\+File\+Test\+::generic\+Test\+Position (\begin{DoxyParamCaption}\item[{const \textbf{ Cvr\+Stg\+File} $\ast$}]{f,  }\item[{const \textbf{ Sample\+Pos}}]{pos,  }\item[{\textbf{ Sample\+Value} $\ast$}]{sv\+\_\+r }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\label{classCvrStgFileTest_a374274d31964bacded40cb741e70cf92}} 
+\index{Cvr\+Stg\+File\+Test@{Cvr\+Stg\+File\+Test}!generic\+Test\+Read\+Embed\+Extract@{generic\+Test\+Read\+Embed\+Extract}}
+\index{generic\+Test\+Read\+Embed\+Extract@{generic\+Test\+Read\+Embed\+Extract}!Cvr\+Stg\+File\+Test@{Cvr\+Stg\+File\+Test}}
+\subsubsection{generic\+Test\+Read\+Embed\+Extract()}
+{\footnotesize\ttfamily bool Cvr\+Stg\+File\+Test\+::generic\+Test\+Read\+Embed\+Extract (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{fn,  }\item[{\textbf{ Bit\+String} \&}]{emb }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\label{classCvrStgFileTest_a800a6c6b931f2a6cc6e6994bbebf437c}} 
+\index{Cvr\+Stg\+File\+Test@{Cvr\+Stg\+File\+Test}!generic\+Test\+Read\+Embed\+Write\+Read\+Extract@{generic\+Test\+Read\+Embed\+Write\+Read\+Extract}}
+\index{generic\+Test\+Read\+Embed\+Write\+Read\+Extract@{generic\+Test\+Read\+Embed\+Write\+Read\+Extract}!Cvr\+Stg\+File\+Test@{Cvr\+Stg\+File\+Test}}
+\subsubsection{generic\+Test\+Read\+Embed\+Write\+Read\+Extract()}
+{\footnotesize\ttfamily bool Cvr\+Stg\+File\+Test\+::generic\+Test\+Read\+Embed\+Write\+Read\+Extract (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{cvrfn,  }\item[{\textbf{ Bit\+String} \&}]{emb }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\label{classCvrStgFileTest_a1be5e78e6b8743fcd52621d6404a9b60}} 
+\index{Cvr\+Stg\+File\+Test@{Cvr\+Stg\+File\+Test}!generic\+Test\+Read\+Extract\+Compare@{generic\+Test\+Read\+Extract\+Compare}}
+\index{generic\+Test\+Read\+Extract\+Compare@{generic\+Test\+Read\+Extract\+Compare}!Cvr\+Stg\+File\+Test@{Cvr\+Stg\+File\+Test}}
+\subsubsection{generic\+Test\+Read\+Extract\+Compare()}
+{\footnotesize\ttfamily bool Cvr\+Stg\+File\+Test\+::generic\+Test\+Read\+Extract\+Compare (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{fn,  }\item[{\textbf{ Bit\+String} \&}]{emb }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+read fn and extract the first emb.\+get\+Length() bits, return true iff these equal emb \mbox{\label{classCvrStgFileTest_adde58709938e4f73f988d9f631b13723}} 
+\index{Cvr\+Stg\+File\+Test@{Cvr\+Stg\+File\+Test}!generic\+Test\+Read\+Write@{generic\+Test\+Read\+Write}}
+\index{generic\+Test\+Read\+Write@{generic\+Test\+Read\+Write}!Cvr\+Stg\+File\+Test@{Cvr\+Stg\+File\+Test}}
+\subsubsection{generic\+Test\+Read\+Write()}
+{\footnotesize\ttfamily bool Cvr\+Stg\+File\+Test\+::generic\+Test\+Read\+Write (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{rfn,  }\item[{bool}]{new\+\_\+wfn = {\ttfamily true} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+read the file rfn and write it again, return true iff write op created what was read by read op 
+\begin{DoxyParams}{Parameters}
+{\em rfn} & the file name of the file to read \\
+\hline
+{\em new\+\_\+wfn} & wether to write the data to another file or to rfn (a backup copy is done) \\
+\hline
+\end{DoxyParams}
+\mbox{\label{classCvrStgFileTest_a0be3c1772b798e99c963d1b99150409e}} 
+\index{Cvr\+Stg\+File\+Test@{Cvr\+Stg\+File\+Test}!generic\+Test\+S\+V\+A\+L\+Calculation@{generic\+Test\+S\+V\+A\+L\+Calculation}}
+\index{generic\+Test\+S\+V\+A\+L\+Calculation@{generic\+Test\+S\+V\+A\+L\+Calculation}!Cvr\+Stg\+File\+Test@{Cvr\+Stg\+File\+Test}}
+\subsubsection{generic\+Test\+S\+V\+A\+L\+Calculation()}
+{\footnotesize\ttfamily bool Cvr\+Stg\+File\+Test\+::generic\+Test\+S\+V\+A\+L\+Calculation (\begin{DoxyParamCaption}\item[{const \textbf{ Cvr\+Stg\+File} $\ast$}]{f,  }\item[{const \textbf{ Graph} $\ast$}]{g }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\label{classCvrStgFileTest_a94f814539db17c02ac3e4f70a3cd96eb}} 
+\index{Cvr\+Stg\+File\+Test@{Cvr\+Stg\+File\+Test}!move\+File@{move\+File}}
+\index{move\+File@{move\+File}!Cvr\+Stg\+File\+Test@{Cvr\+Stg\+File\+Test}}
+\subsubsection{move\+File()}
+{\footnotesize\ttfamily void Cvr\+Stg\+File\+Test\+::move\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{src,  }\item[{const std\+::string \&}]{dest }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classCvrStgFileTest_a20f92774fcd716209a45731a6b977f52}} 
+\index{Cvr\+Stg\+File\+Test@{Cvr\+Stg\+File\+Test}!remove\+File@{remove\+File}}
+\index{remove\+File@{remove\+File}!Cvr\+Stg\+File\+Test@{Cvr\+Stg\+File\+Test}}
+\subsubsection{remove\+File()}
+{\footnotesize\ttfamily void Cvr\+Stg\+File\+Test\+::remove\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{fn }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ Cvr\+Stg\+File\+Test.\+h}\item 
+\textbf{ Cvr\+Stg\+File\+Test.\+cc}\end{DoxyCompactItemize}

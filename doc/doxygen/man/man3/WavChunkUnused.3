@@ -1,0 +1,65 @@
+.TH "WavChunkUnused" 3 "Thu Aug 17 2017" "Version 0.5.1" "steghide" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+WavChunkUnused
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <WavChunkUnused\&.h>\fP
+.PP
+Inherits \fBWavChunk\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBWavChunkUnused\fP (void)"
+.br
+.ti -1c
+.RI "\fBWavChunkUnused\fP (\fBWavChunkHeader\fP *chh)"
+.br
+.ti -1c
+.RI "\fBWavChunkUnused\fP (\fBWavChunkHeader\fP *chh, \fBBinaryIO\fP *io)"
+.br
+.ti -1c
+.RI "void \fBread\fP (\fBBinaryIO\fP *io)"
+.br
+.ti -1c
+.RI "void \fBwrite\fP (\fBBinaryIO\fP *io)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::vector< \fBBYTE\fP > \fBData\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "WavChunkUnused::WavChunkUnused (void)\fC [inline]\fP"
+
+.SS "WavChunkUnused::WavChunkUnused (\fBWavChunkHeader\fP * chh)\fC [inline]\fP"
+
+.SS "WavChunkUnused::WavChunkUnused (\fBWavChunkHeader\fP * chh, \fBBinaryIO\fP * io)\fC [inline]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void WavChunkUnused::read (\fBBinaryIO\fP * io)\fC [virtual]\fP"
+
+.PP
+Implements \fBWavChunk\fP\&.
+.SS "void WavChunkUnused::write (\fBBinaryIO\fP * io)\fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBWavChunk\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "std::vector<\fBBYTE\fP> WavChunkUnused::Data\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for steghide from the source code\&.

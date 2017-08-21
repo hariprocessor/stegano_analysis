@@ -1,0 +1,220 @@
+.TH "SampleValue" 3 "Thu Aug 17 2017" "Version 0.5.1" "steghide" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SampleValue \- the value of a sample in a \fBCvrStgFile\fP  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SampleValue\&.h>\fP
+.PP
+Inherited by \fBAudioSampleValue< Type, ValueType >\fP, \fBBmpSampleValue\fP, \fBDummySampleValue\fP, \fBJpegSampleValue\fP, and \fBWavPCMSampleValue\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSampleValue\fP (void)"
+.br
+.ti -1c
+.RI "virtual \fB~SampleValue\fP (void)"
+.br
+.ti -1c
+.RI "virtual \fBSampleValue\fP * \fBgetNearestTargetSampleValue\fP (\fBEmbValue\fP t) const =0"
+.br
+.ti -1c
+.RI "virtual \fBUWORD32\fP \fBcalcDistance\fP (const \fBSampleValue\fP *s) const =0"
+.br
+.ti -1c
+.RI "virtual std::string \fBgetName\fP (void) const =0"
+.br
+.ti -1c
+.RI "virtual bool \fBisNeighbour\fP (const \fBSampleValue\fP *s) const"
+.br
+.ti -1c
+.RI "\fBEmbValue\fP \fBgetEmbeddedValue\fP (void) const"
+.br
+.ti -1c
+.RI "\fBUWORD32\fP \fBgetKey\fP (void) const"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBSampleValue\fP &sv) const"
+.br
+.ti -1c
+.RI "bool \fBoperator!=\fP (const \fBSampleValue\fP &sv) const"
+.br
+.ti -1c
+.RI "bool \fBoperator<\fP (const \fBSampleValue\fP &sv) const"
+.br
+.ti -1c
+.RI "\fBUWORD32\fP \fBgetNumEdges\fP (\fBEmbValue\fP t) const"
+.br
+.ti -1c
+.RI "void \fBsetNumEdges\fP (\fBEmbValue\fP t, \fBUWORD32\fP ne)"
+.br
+.ti -1c
+.RI "void \fBincNumEdges\fP (\fBEmbValue\fP t)"
+.br
+.ti -1c
+.RI "void \fBdecNumEdges\fP (\fBEmbValue\fP t)"
+.br
+.ti -1c
+.RI "void \fBsetLabel\fP (unsigned long l)"
+.br
+.ti -1c
+.RI "unsigned long \fBgetLabel\fP (void) const"
+.br
+.ti -1c
+.RI "void \fBprint\fP (unsigned short spc=0) const"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBEmbValue\fP \fBEValue\fP"
+.br
+.RI "the bit that is embedded in this sample value - must be set in constructor of derived class "
+.ti -1c
+.RI "\fBUWORD32\fP \fBKey\fP"
+.br
+.RI "the key of this sample value - must be different for two different sample values - must be set in constructor of derived class "
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "unsigned long \fBLabel\fP"
+.br
+.ti -1c
+.RI "\fBUWORD32\fP * \fBNumEdges\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+This is the abstract base class for all AuSampleValue, \fBBmpSampleValue\fP, etc\&. classes
+.PP
+For two sample values s1 and s2:
+.PP
+s1->calcDistance(s2) == s2->calcDistance(s1) is always true\&.
+.PP
+s1->isNeighbour(s2) == s2->isNeighbour(s1) is always true\&.
+.PP
+s1 and s2 are called opposite if s1->getBit() != s2->getBit()
+.PP
+s1 and s2 are called neighbours if s1->isNeighbour(s2) is true
+.PP
+s1->\fBgetKey()\fP == s2->\fBgetKey()\fP iff s1 == s2
+.PP
+s1 == s2 implies s1->getDistance(s2) == 0 BUT: s1->getDistance(s2) == 0 does not imply s1 == s2 example: 8-bit bmp palette image - same color value for two different indices
+.PP
+s1 == s2 implies s1->getBit() == s2->getBit()
+.PP
+s1->getDistance(s2) == 0 implies s1->getBit() == s2->getBit()
+.PP
+\fBNOTE:\fP \fBSampleValue\fP and all derived classes rely on the \fBGlobals\fP object pointed to by the Globs pointer\&. This means that it must be set correctly before using any method of a \fBSampleValue\fP (or derived) object\&. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SampleValue::SampleValue (void)"
+
+.SS "SampleValue::~SampleValue (void)\fC [virtual]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual \fBUWORD32\fP SampleValue::calcDistance (const \fBSampleValue\fP * s) const\fC [pure virtual]\fP"
+calculate the distance between the sample value s and this sample value 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIs\fP a sample value of the same type as this 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the distance 
+.RE
+.PP
+
+.PP
+Implemented in \fBAudioSampleValue< Type, ValueType >\fP, \fBDummySampleValue\fP, \fBBmpRGBSampleValue\fP, \fBBmpSampleValue\fP, \fBWavPCMSampleValue\fP, and \fBJpegSampleValue\fP\&.
+.SS "void SampleValue::decNumEdges (\fBEmbValue\fP t)"
+
+.SS "\fBEmbValue\fP SampleValue::getEmbeddedValue (void) const\fC [inline]\fP"
+get the value that is embedded in this sample value (must be >=0 and <EmbValueModulus) 
+.PP
+\fBReturns:\fP
+.RS 4
+the embedded value 
+.RE
+.PP
+
+.SS "\fBUWORD32\fP SampleValue::getKey (void) const\fC [inline]\fP"
+get the key for this sample 
+.PP
+\fBReturns:\fP
+.RS 4
+a key which must be different for two different samples values\&. 
+.RE
+.PP
+
+.SS "unsigned long SampleValue::getLabel (void) const\fC [inline]\fP"
+
+.SS "virtual std::string SampleValue::getName (void) const\fC [pure virtual]\fP"
+return a short name uniquely identifying this sample value 
+.PP
+Implemented in \fBAudioSampleValue< Type, ValueType >\fP, \fBDummySampleValue\fP, \fBBmpRGBSampleValue\fP, \fBBmpPaletteSampleValue\fP, \fBWavPCMSampleValue\fP, and \fBJpegSampleValue\fP\&.
+.SS "virtual \fBSampleValue\fP* SampleValue::getNearestTargetSampleValue (\fBEmbValue\fP t) const\fC [pure virtual]\fP"
+get the nearest (with the least distance to this sample value) sample value whose embedded value equals the specified target 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIt\fP the target embedded value
+.RE
+.PP
+If two or more target sample values have equal distance each of them should be returned with equal probability\&.
+.PP
+The returned \fBSampleValue\fP object should be deleted by the callser\&. 
+.PP
+Implemented in \fBAudioSampleValue< Type, ValueType >\fP, \fBDummySampleValue\fP, \fBBmpRGBSampleValue\fP, \fBBmpPaletteSampleValue\fP, \fBWavPCMSampleValue\fP, and \fBJpegSampleValue\fP\&.
+.SS "\fBUWORD32\fP SampleValue::getNumEdges (\fBEmbValue\fP t) const\fC [inline]\fP"
+
+.SS "void SampleValue::incNumEdges (\fBEmbValue\fP t)"
+
+.SS "bool SampleValue::isNeighbour (const \fBSampleValue\fP * s) const\fC [virtual]\fP"
+is the sample value s a neighbour of this sample value ? 
+.PP
+\fBReturns:\fP
+.RS 4
+true iff this and s are neighbours
+.RE
+.PP
+This is implemented as (\fBcalcDistance()\fP <= Radius) but may be overridden by derived classes\&. 
+.PP
+Reimplemented in \fBDummySampleValue\fP\&.
+.SS "bool SampleValue::operator!= (const \fBSampleValue\fP & sv) const\fC [inline]\fP"
+
+.SS "bool SampleValue::operator< (const \fBSampleValue\fP & sv) const\fC [inline]\fP"
+
+.SS "bool SampleValue::operator== (const \fBSampleValue\fP & sv) const\fC [inline]\fP"
+two sample values are equal iff their keys are equal 
+.SS "void SampleValue::print (unsigned short spc = \fC0\fP) const"
+
+.SS "void SampleValue::setLabel (unsigned long l)\fC [inline]\fP"
+
+.SS "void SampleValue::setNumEdges (\fBEmbValue\fP t, \fBUWORD32\fP ne)\fC [inline]\fP"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBEmbValue\fP SampleValue::EValue\fC [protected]\fP"
+
+.SS "\fBUWORD32\fP SampleValue::Key\fC [protected]\fP"
+
+.SS "unsigned long SampleValue::Label\fC [private]\fP"
+
+.SS "\fBUWORD32\fP* SampleValue::NumEdges\fC [private]\fP"
+NumEdges[t] contains the number of edges that are added to a vertex if this sample value with corresponding target value t is added to the vertex 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for steghide from the source code\&.

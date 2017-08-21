@@ -1,0 +1,75 @@
+.TH "BmpSampleValue" 3 "Thu Aug 17 2017" "Version 0.5.1" "steghide" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+BmpSampleValue \- an (abstract) sample value in a bmp file  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <BmpSampleValue\&.h>\fP
+.PP
+Inherits \fBSampleValue\fP\&.
+.PP
+Inherited by \fBBmpPaletteSampleValue\fP, and \fBBmpRGBSampleValue\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBBmpSampleValue\fP (void)"
+.br
+.ti -1c
+.RI "virtual \fBUWORD32\fP \fBcalcDistance\fP (const \fBSampleValue\fP *s) const"
+.br
+.ti -1c
+.RI "virtual unsigned char \fBgetRed\fP (void) const =0"
+.br
+.ti -1c
+.RI "virtual unsigned char \fBgetGreen\fP (void) const =0"
+.br
+.ti -1c
+.RI "virtual unsigned char \fBgetBlue\fP (void) const =0"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "BmpSampleValue::BmpSampleValue (void)\fC [inline]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBUWORD32\fP BmpSampleValue::calcDistance (const \fBSampleValue\fP * s) const\fC [virtual]\fP"
+calculate the distance between the sample value s and this sample value 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIs\fP a sample value of the same type as this 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the distance 
+.RE
+.PP
+
+.PP
+Implements \fBSampleValue\fP\&.
+.PP
+Reimplemented in \fBBmpRGBSampleValue\fP\&.
+.SS "virtual unsigned char BmpSampleValue::getBlue (void) const\fC [pure virtual]\fP"
+get the blue color component 
+.PP
+Implemented in \fBBmpPaletteSampleValue\fP, and \fBBmpRGBSampleValue\fP\&.
+.SS "virtual unsigned char BmpSampleValue::getGreen (void) const\fC [pure virtual]\fP"
+get the green color component 
+.PP
+Implemented in \fBBmpPaletteSampleValue\fP, and \fBBmpRGBSampleValue\fP\&.
+.SS "virtual unsigned char BmpSampleValue::getRed (void) const\fC [pure virtual]\fP"
+get the red color component 
+.PP
+Implemented in \fBBmpPaletteSampleValue\fP, and \fBBmpRGBSampleValue\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for steghide from the source code\&.

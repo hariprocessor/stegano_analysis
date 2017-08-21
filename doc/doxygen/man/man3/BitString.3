@@ -1,0 +1,387 @@
+.TH "BitString" 3 "Thu Aug 17 2017" "Version 0.5.1" "steghide" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+BitString \- a string of bits  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <BitString\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBBitString\fP (\fBEmbValue\fP arity=2)"
+.br
+.ti -1c
+.RI "\fBBitString\fP (const \fBBitString\fP &bs)"
+.br
+.ti -1c
+.RI "\fBBitString\fP (const unsigned long l)"
+.br
+.ti -1c
+.RI "\fBBitString\fP (const std::vector< \fBBYTE\fP > &d)"
+.br
+.ti -1c
+.RI "\fBBitString\fP (const std::string &d)"
+.br
+.ti -1c
+.RI "void \fBsetArity\fP (\fBEmbValue\fP arity)"
+.br
+.ti -1c
+.RI "\fBEmbValue\fP \fBgetArity\fP (void) const"
+.br
+.ti -1c
+.RI "\fBUWORD32\fP \fBgetLength\fP (void) const"
+.br
+.ti -1c
+.RI "\fBUWORD32\fP \fBgetNAryLength\fP (void) const"
+.br
+.ti -1c
+.RI "\fBBitString\fP & \fBclear\fP (void)"
+.br
+.ti -1c
+.RI "\fBBitString\fP & \fBappend\fP (const \fBBIT\fP v)"
+.br
+.ti -1c
+.RI "\fBBitString\fP & \fBappend\fP (const \fBBYTE\fP v, const unsigned short n=8)"
+.br
+.ti -1c
+.RI "\fBBitString\fP & \fBappend\fP (const \fBUWORD16\fP v, const unsigned short n=16)"
+.br
+.ti -1c
+.RI "\fBBitString\fP & \fBappend\fP (const \fBUWORD32\fP v, const unsigned short n=32)"
+.br
+.ti -1c
+.RI "\fBBitString\fP & \fBappend\fP (const std::string &v)"
+.br
+.ti -1c
+.RI "\fBBitString\fP & \fBappend\fP (const std::vector< \fBBYTE\fP > &v)"
+.br
+.ti -1c
+.RI "\fBBitString\fP & \fBappend\fP (const \fBBitString\fP &v)"
+.br
+.ti -1c
+.RI "\fBBitString\fP & \fBsetBit\fP (unsigned long i, \fBBIT\fP v)"
+.br
+.ti -1c
+.RI "\fBBitString\fP \fBgetBits\fP (const unsigned long s, const unsigned long l) const"
+.br
+.ti -1c
+.RI "\fBBitString\fP \fBcutBits\fP (const unsigned long s, const unsigned long l)"
+.br
+.ti -1c
+.RI "\fBUWORD32\fP \fBgetValue\fP (const unsigned long s, const unsigned short l) const"
+.br
+.ti -1c
+.RI "const std::vector< \fBBYTE\fP > & \fBgetBytes\fP (void) const"
+.br
+.ti -1c
+.RI "\fBBitString\fP & \fBtruncate\fP (const unsigned long s, const unsigned long e)"
+.br
+.ti -1c
+.RI "\fBBitString\fP & \fBpad\fP (const unsigned long mult, const \fBBIT\fP v)"
+.br
+.ti -1c
+.RI "\fBBitString\fP & \fBpadRandom\fP (const unsigned long mult)"
+.br
+.ti -1c
+.RI "\fBBYTE\fP \fBgetNAry\fP (unsigned long p) const"
+.br
+.ti -1c
+.RI "void \fBappendNAry\fP (\fBBYTE\fP v)"
+.br
+.ti -1c
+.RI "\fBBIT\fP \fBoperator[]\fP (const unsigned long i) const"
+.br
+.ti -1c
+.RI "\fBBitString\fP & \fBoperator^=\fP (const \fBBitString\fP &v)"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBBitString\fP &v) const"
+.br
+.ti -1c
+.RI "bool \fBoperator!=\fP (const \fBBitString\fP &v) const"
+.br
+.ti -1c
+.RI "void \fBprint\fP (unsigned short spc=0) const"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fB_append\fP (\fBBIT\fP v)"
+.br
+.ti -1c
+.RI "void \fBclearUnused\fP (void)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBUWORD32\fP \fBLength\fP"
+.br
+.RI "the number of bits in Data "
+.ti -1c
+.RI "\fBEmbValue\fP \fBArity\fP"
+.br
+.RI "the arity that will be used for getLength/getNAry/appendNAry "
+.ti -1c
+.RI "unsigned short \fBArityNBits\fP"
+.br
+.RI "the number of Bits per n-ary digit (where n is Arity) "
+.ti -1c
+.RI "std::vector< \fBBYTE\fP > \fBData\fP"
+.br
+.RI "the actual data "
+.in -1c
+.SH "Detailed Description"
+.PP 
+This class provides a way to conveniently store and manipulate a string of bits\&. Various objects can be appended to a \fBBitString\fP\&.
+.PP
+For data storage a vector of BYTEs is used with little endian bit encoding, i\&.e\&. the first bit is the least significant bit of the first byte and so on\&. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "BitString::BitString (\fBEmbValue\fP arity = \fC2\fP)"
+construct an empty \fBBitString\fP 
+.SS "BitString::BitString (const \fBBitString\fP & bs)"
+copy constructor 
+.SS "BitString::BitString (const unsigned long l)"
+construct a \fBBitString\fP containing l bits with value zero 
+.SS "BitString::BitString (const std::vector< \fBBYTE\fP > & d)"
+construct a \fBBitString\fP containing the data in d 
+.SS "BitString::BitString (const std::string & d)"
+construct a \fBBitString\fP containing the characters in d as 8 bit unsigned chars 
+.SH "Member Function Documentation"
+.PP 
+.SS "void BitString::_append (\fBBIT\fP v)\fC [private]\fP"
+
+.SS "\fBBitString\fP & BitString::append (const \fBBIT\fP v)"
+append the bit v to this \fBBitString\fP 
+.SS "\fBBitString\fP & BitString::append (const \fBBYTE\fP v, const unsigned short n = \fC8\fP)"
+append n lower order bits of v to this \fBBitString\fP 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIv\fP the value to be appended 
+.br
+\fIn\fP the number of bits to be appended 
+.RE
+.PP
+
+.SS "\fBBitString\fP & BitString::append (const \fBUWORD16\fP v, const unsigned short n = \fC16\fP)"
+append n lower order bits of v to this \fBBitString\fP 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIv\fP the value to be appended 
+.br
+\fIn\fP the number of bits to be appended 
+.RE
+.PP
+
+.SS "\fBBitString\fP & BitString::append (const \fBUWORD32\fP v, const unsigned short n = \fC32\fP)"
+append n lower order bits of v to this \fBBitString\fP 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIv\fP the value to be appended 
+.br
+\fIn\fP the number of bits to be appended 
+.RE
+.PP
+
+.SS "\fBBitString\fP & BitString::append (const std::string & v)"
+append the string v to this \fBBitString\fP 
+.SS "\fBBitString\fP & BitString::append (const std::vector< \fBBYTE\fP > & v)"
+append the vector v byte-wise to this \fBBitString\fP 
+.SS "\fBBitString\fP & BitString::append (const \fBBitString\fP & v)"
+append the \fBBitString\fP v to this \fBBitString\fP 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIv\fP the \fBBitString\fP to be appended 
+.RE
+.PP
+
+.SS "void BitString::appendNAry (\fBBYTE\fP v)"
+append an n-ary digit to this \fBBitString\fP 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIv\fP the n-ary value to be appended 
+.RE
+.PP
+
+.SS "\fBBitString\fP & BitString::clear (void)"
+delete the contents of this Bitstring 
+.SS "void BitString::clearUnused (void)\fC [private]\fP"
+clear unused part of last byte (_append depends on this) 
+.SS "\fBBitString\fP BitString::cutBits (const unsigned long s, const unsigned long l)"
+cut some bits out of this \fBBitString\fP 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIs\fP the index of the first bit to be removed from this \fBBitString\fP 
+.br
+\fIl\fP the total number of bits to be removed 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the \fBBitString\fP containing of the bits [s\&.\&.\&.s+(l-1)] of this \fBBitString\fP
+.RE
+.PP
+After calling cutBits, this \fBBitString\fP consists of the bits 0,\&.\&.\&.,s-1,s+l,\&.\&.\&. \&. 
+.SS "\fBEmbValue\fP BitString::getArity (void) const\fC [inline]\fP"
+
+.SS "\fBBitString\fP BitString::getBits (const unsigned long s, const unsigned long l) const"
+get a \fBBitString\fP that is a part of this \fBBitString\fP 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIs\fP the index of the first bit to be copied from this \fBBitString\fP 
+.br
+\fIl\fP the total number of bits to be used for the return value 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the \fBBitString\fP containing of the bits [s\&.\&.\&.s+(l-1)] of this \fBBitString\fP 
+.RE
+.PP
+
+.SS "const std::vector< \fBBYTE\fP > & BitString::getBytes (void) const"
+get the contents of this \fBBitString\fP as vector of bytes 
+.PP
+\fBReturns:\fP
+.RS 4
+the contents of this \fBBitString\fP as vector of bytes
+.RE
+.PP
+\fBgetLength()\fP % 8 must be 0 to call this function 
+.SS "\fBUWORD32\fP BitString::getLength (void) const\fC [inline]\fP"
+get the number of bits in this \fBBitString\fP 
+.SS "\fBBYTE\fP BitString::getNAry (unsigned long p) const"
+get an n-ary digit from this \fBBitString\fP 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIp\fP the position (in the n-ary representation of this \fBBitString\fP) 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the p-th n-ary digit 
+.RE
+.PP
+
+.SS "\fBUWORD32\fP BitString::getNAryLength (void) const\fC [inline]\fP"
+get the number of EmbValues in this \fBBitString\fP (using this \fBBitString\fP's arity) 
+.SS "\fBUWORD32\fP BitString::getValue (const unsigned long s, const unsigned short l) const"
+return a value composed from bits in this \fBBitString\fP 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIs\fP the index of the first bit to be used for the return value 
+.br
+\fIl\fP the total number of bits to be used for the return value (must be <= 32) 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the value (*this)[s],\&.\&.\&.,(*this)[s+l-1] 
+.RE
+.PP
+
+.SS "bool BitString::operator!= (const \fBBitString\fP & v) const"
+compare this \fBBitString\fP with the \fBBitString\fP v 
+.PP
+\fBReturns:\fP
+.RS 4
+true iff the lengths are not equal or there exists an index with different values 
+.RE
+.PP
+
+.SS "bool BitString::operator== (const \fBBitString\fP & v) const"
+compare this \fBBitString\fP with the \fBBitString\fP v 
+.PP
+\fBReturns:\fP
+.RS 4
+true iff the lengths are equal and for every valid index the value is equal 
+.RE
+.PP
+
+.SS "\fBBIT\fP BitString::operator[] (const unsigned long i) const"
+get the value of the i-th bit 
+.SS "\fBBitString\fP & BitString::operator^= (const \fBBitString\fP & v)"
+xor v with this \fBBitString\fP, saving the result in this Bitstring\&. The result has the same length as this \fBBitString\fP\&. 
+.SS "\fBBitString\fP & BitString::pad (const unsigned long mult, const \fBBIT\fP v)"
+pad this \fBBitString\fP with the value in v 
+.PP
+\fBParameters:\fP
+.RS 4
+\fImult\fP this \fBBitString\fP is padded until size is a multiple of mult (given in bits) 
+.br
+\fIv\fP the value this \fBBitString\fP should be padded with 
+.RE
+.PP
+
+.SS "\fBBitString\fP & BitString::padRandom (const unsigned long mult)"
+pad this \fBBitString\fP with random data 
+.PP
+\fBParameters:\fP
+.RS 4
+\fImult\fP this \fBBitString\fP is padded until size is a multiple of mult (given in bits) 
+.RE
+.PP
+
+.SS "void BitString::print (unsigned short spc = \fC0\fP) const"
+
+.SS "void BitString::setArity (\fBEmbValue\fP arity)"
+
+.SS "\fBBitString\fP & BitString::setBit (unsigned long i, \fBBIT\fP v)"
+set the p-th bit to v 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIi\fP the index (must be < \fBgetLength()\fP) 
+.br
+\fIv\fP the value 
+.RE
+.PP
+
+.SS "\fBBitString\fP & BitString::truncate (const unsigned long s, const unsigned long e)"
+truncate this \fBBitString\fP 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIs\fP start 
+.br
+\fIe\fP end 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+this \fBBitString\fP modified to contain only (*this)[s]\&.\&.\&.(*this)[e - 1] 
+.RE
+.PP
+
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBEmbValue\fP BitString::Arity\fC [private]\fP"
+
+.SS "unsigned short BitString::ArityNBits\fC [private]\fP"
+
+.SS "std::vector<\fBBYTE\fP> BitString::Data\fC [private]\fP"
+
+.SS "\fBUWORD32\fP BitString::Length\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for steghide from the source code\&.

@@ -1,0 +1,181 @@
+.TH "MHashPP" 3 "Thu Aug 17 2017" "Version 0.5.1" "steghide" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MHashPP
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <MHashPP\&.h>\fP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBCommand\fP { \fBendhash\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMHashPP\fP (void)"
+.br
+.ti -1c
+.RI "\fBMHashPP\fP (hashid a)"
+.br
+.ti -1c
+.RI "void \fBinit\fP (hashid a)"
+.br
+.ti -1c
+.RI "const std::vector< \fBBYTE\fP > & \fBend\fP (void)"
+.br
+.ti -1c
+.RI "\fBMHashPP\fP & \fBoperator<<\fP (std::string v)"
+.br
+.ti -1c
+.RI "\fBMHashPP\fP & \fBoperator<<\fP (\fBBitString\fP v)"
+.br
+.ti -1c
+.RI "\fBMHashPP\fP & \fBoperator<<\fP (\fBBYTE\fP v)"
+.br
+.ti -1c
+.RI "\fBMHashPP\fP & \fBoperator<<\fP (\fBCommand\fP c)"
+.br
+.ti -1c
+.RI "\fBBitString\fP \fBgetHashBits\fP (void)"
+.br
+.ti -1c
+.RI "const std::vector< \fBBYTE\fP > & \fBgetHashBytes\fP (void)"
+.br
+.ti -1c
+.RI "unsigned int \fBgetHashSize\fP (void)"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "std::string \fBgetAlgorithmName\fP (void)"
+.br
+.in -1c
+.SS "Static Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static std::string \fBgetAlgorithmName\fP (hashid id)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "bool \fBhashing\fP"
+.br
+.RI "true iff HashD contains a legal hash descriptor and data can be passed via << "
+.ti -1c
+.RI "MHASH \fBHashD\fP"
+.br
+.ti -1c
+.RI "bool \fBHashBytesValid\fP"
+.br
+.RI "true iff HashBytes contains a valid hash value "
+.ti -1c
+.RI "std::vector< \fBBYTE\fP > \fBHashBytes\fP"
+.br
+.in -1c
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBMHashPP::Command\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIendhash \fP\fP
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "MHashPP::MHashPP (void)"
+
+.SS "MHashPP::MHashPP (hashid a)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "const std::vector< \fBBYTE\fP > & MHashPP::end (void)"
+
+.SS "std::string MHashPP::getAlgorithmName (void)\fC [private]\fP"
+
+.SS "std::string MHashPP::getAlgorithmName (hashid id)\fC [static]\fP, \fC [private]\fP"
+
+.SS "\fBBitString\fP MHashPP::getHashBits (void)"
+get the hash bits 
+.PP
+\fBReturns:\fP
+.RS 4
+the hash value of the data that has been passed via << 
+.RE
+.PP
+
+.SS "const std::vector< \fBBYTE\fP > & MHashPP::getHashBytes (void)"
+
+.SS "unsigned int MHashPP::getHashSize (void)"
+get the hash size 
+.PP
+\fBReturns:\fP
+.RS 4
+the size of the value returned by getHashBits in bytes 
+.RE
+.PP
+
+.SS "void MHashPP::init (hashid a)"
+
+.SS "\fBMHashPP\fP & MHashPP::operator<< (std::string v)"
+feed the std::string v to the hashing algorithm 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIv\fP the std::string to be feeded to the hashing algorithm (without '\\0' at the end) 
+.RE
+.PP
+
+.SS "\fBMHashPP\fP & MHashPP::operator<< (\fBBitString\fP v)"
+feed the \fBBitString\fP v to the hashing algorithm 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIv\fP the \fBBitString\fP to be feeded to the hashing algorithm (v\&.getLength() % 8 == 0 must hold) 
+.RE
+.PP
+
+.SS "\fBMHashPP\fP & MHashPP::operator<< (\fBBYTE\fP v)"
+feed the byte v to the hashing algorithm 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIv\fP the byte to be feeded to the hashing algorithm 
+.RE
+.PP
+
+.SS "\fBMHashPP\fP & MHashPP::operator<< (\fBMHashPP::Command\fP c)"
+interpret the command c 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIc\fP a command (member of \fBMHashPP::Command\fP) 
+.RE
+.PP
+
+.SH "Member Data Documentation"
+.PP 
+.SS "std::vector<\fBBYTE\fP> MHashPP::HashBytes\fC [private]\fP"
+
+.SS "bool MHashPP::HashBytesValid\fC [private]\fP"
+
+.SS "MHASH MHashPP::HashD\fC [private]\fP"
+
+.SS "bool MHashPP::hashing\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for steghide from the source code\&.

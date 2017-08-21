@@ -1,0 +1,138 @@
+\section{Progress\+Output Class Reference}
+\label{classProgressOutput}\index{Progress\+Output@{Progress\+Output}}
+
+
+prints the progress to stdout  
+
+
+
+
+{\ttfamily \#include $<$Progress\+Output.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Progress\+Output} (void)
+\item 
+\textbf{ Progress\+Output} (const std\+::string \&m)
+\item 
+void \textbf{ set\+Message} (const std\+::string \&m)
+\item 
+void \textbf{ set\+Message} (const char $\ast$msgfmt,...)
+\item 
+void \textbf{ update} (float rate)
+\item 
+void \textbf{ done} (void) const
+\item 
+void \textbf{ done} (float rate, float avgweight=\textbf{ No\+Avg\+Weight}) const
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const float \textbf{ No\+Avg\+Weight} = -\/1.\+0
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \textbf{ vcompose} (const char $\ast$msgfmt, va\+\_\+list ap) const
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \textbf{ Message}
+\item 
+time\+\_\+t \textbf{ Last\+Update}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{classProgressOutput_a3bcb9ceb59b9692bdc1e4ad21a258776}} 
+\index{Progress\+Output@{Progress\+Output}!Progress\+Output@{Progress\+Output}}
+\index{Progress\+Output@{Progress\+Output}!Progress\+Output@{Progress\+Output}}
+\subsubsection{Progress\+Output()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Progress\+Output\+::\+Progress\+Output (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+create an empty \doxyref{Progress\+Output}{p.}{classProgressOutput} object \mbox{\label{classProgressOutput_a152c668bd24d44d4ba3fabab1228cda2}} 
+\index{Progress\+Output@{Progress\+Output}!Progress\+Output@{Progress\+Output}}
+\index{Progress\+Output@{Progress\+Output}!Progress\+Output@{Progress\+Output}}
+\subsubsection{Progress\+Output()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Progress\+Output\+::\+Progress\+Output (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{m }\end{DoxyParamCaption})}
+
+create a \doxyref{Progress\+Output}{p.}{classProgressOutput} object 
+\begin{DoxyParams}{Parameters}
+{\em m} & the message to be displayed \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{classProgressOutput_ab9500306bfb6f2585ea5b28d9a217d97}} 
+\index{Progress\+Output@{Progress\+Output}!done@{done}}
+\index{done@{done}!Progress\+Output@{Progress\+Output}}
+\subsubsection{done()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Progress\+Output\+::done (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+update the output appending \char`\"{}done\char`\"{} and a newline (no rate nor average weight) \mbox{\label{classProgressOutput_ac46bf29a71369f33bd936d4cc6fbd82c}} 
+\index{Progress\+Output@{Progress\+Output}!done@{done}}
+\index{done@{done}!Progress\+Output@{Progress\+Output}}
+\subsubsection{done()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Progress\+Output\+::done (\begin{DoxyParamCaption}\item[{float}]{rate,  }\item[{float}]{avgweight = {\ttfamily \textbf{ No\+Avg\+Weight}} }\end{DoxyParamCaption}) const}
+
+update the output appending rate, [average edge weight], \char`\"{}done\char`\"{} and a newline 
+\begin{DoxyParams}{Parameters}
+{\em rate} & the rate of matched vertices \\
+\hline
+{\em avgweight} & the average edge weight (is not printed if not given) \\
+\hline
+\end{DoxyParams}
+\mbox{\label{classProgressOutput_a0855ccf4fb1ebfd3af608070eb1d4a71}} 
+\index{Progress\+Output@{Progress\+Output}!set\+Message@{set\+Message}}
+\index{set\+Message@{set\+Message}!Progress\+Output@{Progress\+Output}}
+\subsubsection{set\+Message()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Progress\+Output\+::set\+Message (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classProgressOutput_af1baf2a638d4003ff77eebc075ef30e4}} 
+\index{Progress\+Output@{Progress\+Output}!set\+Message@{set\+Message}}
+\index{set\+Message@{set\+Message}!Progress\+Output@{Progress\+Output}}
+\subsubsection{set\+Message()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Progress\+Output\+::set\+Message (\begin{DoxyParamCaption}\item[{const char $\ast$}]{msgfmt,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+\mbox{\label{classProgressOutput_afa50b8bcf85f139caa01495479b3849b}} 
+\index{Progress\+Output@{Progress\+Output}!update@{update}}
+\index{update@{update}!Progress\+Output@{Progress\+Output}}
+\subsubsection{update()}
+{\footnotesize\ttfamily void Progress\+Output\+::update (\begin{DoxyParamCaption}\item[{float}]{rate }\end{DoxyParamCaption})}
+
+update the output (taking update frequency into account) with rate as percentage \mbox{\label{classProgressOutput_a46454cbf5d2a9e7cf8b6af61874b8f2e}} 
+\index{Progress\+Output@{Progress\+Output}!vcompose@{vcompose}}
+\index{vcompose@{vcompose}!Progress\+Output@{Progress\+Output}}
+\subsubsection{vcompose()}
+{\footnotesize\ttfamily std\+::string Progress\+Output\+::vcompose (\begin{DoxyParamCaption}\item[{const char $\ast$}]{msgfmt,  }\item[{va\+\_\+list}]{ap }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{classProgressOutput_a1786e9955e0ef66f3806c4d7a7818f6d}} 
+\index{Progress\+Output@{Progress\+Output}!Last\+Update@{Last\+Update}}
+\index{Last\+Update@{Last\+Update}!Progress\+Output@{Progress\+Output}}
+\subsubsection{Last\+Update}
+{\footnotesize\ttfamily time\+\_\+t Progress\+Output\+::\+Last\+Update\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classProgressOutput_a9cac63691979785d388daa94051468be}} 
+\index{Progress\+Output@{Progress\+Output}!Message@{Message}}
+\index{Message@{Message}!Progress\+Output@{Progress\+Output}}
+\subsubsection{Message}
+{\footnotesize\ttfamily std\+::string Progress\+Output\+::\+Message\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classProgressOutput_ac72839c165b28e001209dfce3c8ba9d1}} 
+\index{Progress\+Output@{Progress\+Output}!No\+Avg\+Weight@{No\+Avg\+Weight}}
+\index{No\+Avg\+Weight@{No\+Avg\+Weight}!Progress\+Output@{Progress\+Output}}
+\subsubsection{No\+Avg\+Weight}
+{\footnotesize\ttfamily const float Progress\+Output\+::\+No\+Avg\+Weight = -\/1.\+0\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ Progress\+Output.\+h}\item 
+\textbf{ Progress\+Output.\+cc}\end{DoxyCompactItemize}

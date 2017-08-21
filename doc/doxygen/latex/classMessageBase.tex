@@ -1,0 +1,168 @@
+\section{Message\+Base Class Reference}
+\label{classMessageBase}\index{Message\+Base@{Message\+Base}}
+
+
+{\ttfamily \#include $<$msg.\+h$>$}
+
+Inheritance diagram for Message\+Base\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.739130cm]{classMessageBase}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Message\+Base} (void)
+\item 
+\textbf{ Message\+Base} (std\+::string msg)
+\item 
+\textbf{ Message\+Base} (const char $\ast$msgfmt,...)
+\item 
+virtual \textbf{ $\sim$\+Message\+Base} ()
+\item 
+const std\+::string \& \textbf{ get\+Message} (void) const
+\item 
+void \textbf{ set\+Message} (std\+::string msg)
+\item 
+void \textbf{ set\+Newline} (bool prnl)
+\item 
+const std\+::string \textbf{ get\+Newline} (void) const
+\item 
+void \textbf{ set\+Message} (const char $\ast$msgfmt,...)
+\item 
+virtual void \textbf{ print\+Message} (void) const =0
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \textbf{ compose} (const char $\ast$msgfmt,...) const
+\item 
+std\+::string \textbf{ vcompose} (const char $\ast$msgfmt, va\+\_\+list ap) const
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const unsigned int \textbf{ Msg\+Max\+Size} = 512
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \textbf{ Message}
+\item 
+bool \textbf{ Newline}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{classMessageBase_acf6ea060e624f6db8babe88de299e230}} 
+\index{Message\+Base@{Message\+Base}!Message\+Base@{Message\+Base}}
+\index{Message\+Base@{Message\+Base}!Message\+Base@{Message\+Base}}
+\subsubsection{Message\+Base()\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Message\+Base\+::\+Message\+Base (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\label{classMessageBase_a2e9dad473adc239134c60edb80de661e}} 
+\index{Message\+Base@{Message\+Base}!Message\+Base@{Message\+Base}}
+\index{Message\+Base@{Message\+Base}!Message\+Base@{Message\+Base}}
+\subsubsection{Message\+Base()\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Message\+Base\+::\+Message\+Base (\begin{DoxyParamCaption}\item[{std\+::string}]{msg }\end{DoxyParamCaption})}
+
+\mbox{\label{classMessageBase_a55d2364790e0464914dbdecd14988032}} 
+\index{Message\+Base@{Message\+Base}!Message\+Base@{Message\+Base}}
+\index{Message\+Base@{Message\+Base}!Message\+Base@{Message\+Base}}
+\subsubsection{Message\+Base()\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Message\+Base\+::\+Message\+Base (\begin{DoxyParamCaption}\item[{const char $\ast$}]{msgfmt,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+\mbox{\label{classMessageBase_a9aeacbfb067feedb44738ee99f9d281c}} 
+\index{Message\+Base@{Message\+Base}!````~Message\+Base@{$\sim$\+Message\+Base}}
+\index{````~Message\+Base@{$\sim$\+Message\+Base}!Message\+Base@{Message\+Base}}
+\subsubsection{$\sim$\+Message\+Base()}
+{\footnotesize\ttfamily virtual Message\+Base\+::$\sim$\+Message\+Base (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{classMessageBase_a4e9a7c8408337eb3e2e0a934ac06ec7d}} 
+\index{Message\+Base@{Message\+Base}!compose@{compose}}
+\index{compose@{compose}!Message\+Base@{Message\+Base}}
+\subsubsection{compose()}
+{\footnotesize\ttfamily std\+::string Message\+Base\+::compose (\begin{DoxyParamCaption}\item[{const char $\ast$}]{msgfmt,  }\item[{}]{... }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\label{classMessageBase_abf3214aff1175a0219ca2f9cb60dfb1a}} 
+\index{Message\+Base@{Message\+Base}!get\+Message@{get\+Message}}
+\index{get\+Message@{get\+Message}!Message\+Base@{Message\+Base}}
+\subsubsection{get\+Message()}
+{\footnotesize\ttfamily const std\+::string\& Message\+Base\+::get\+Message (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classMessageBase_a4f48f8273be5cc7c3de17c42fad58349}} 
+\index{Message\+Base@{Message\+Base}!get\+Newline@{get\+Newline}}
+\index{get\+Newline@{get\+Newline}!Message\+Base@{Message\+Base}}
+\subsubsection{get\+Newline()}
+{\footnotesize\ttfamily const std\+::string Message\+Base\+::get\+Newline (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+return either \char`\"{}\textbackslash{}n\char`\"{} or \char`\"{}\char`\"{} depending on wether this message should be followed by a newline or not \mbox{\label{classMessageBase_a207178190da2bec546a972495cdf9bc6}} 
+\index{Message\+Base@{Message\+Base}!print\+Message@{print\+Message}}
+\index{print\+Message@{print\+Message}!Message\+Base@{Message\+Base}}
+\subsubsection{print\+Message()}
+{\footnotesize\ttfamily virtual void Message\+Base\+::print\+Message (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \textbf{ Question} \doxyref{}{p.}{classQuestion_a5b0fe8561addc6710984b02b34cfe68c}, \textbf{ Critical\+Warning} \doxyref{}{p.}{classCriticalWarning_af92d1c346a1a0ec2a150a46d90afe2f5}, \textbf{ Warning} \doxyref{}{p.}{classWarning_af91afcff6919bda9f7c8bec584cbc68c}, \textbf{ Corrupt\+Data\+Error} \doxyref{}{p.}{classCorruptDataError_a345998f46c50877c96d40c1d349f2a1a}, \textbf{ Verbose\+Message} \doxyref{}{p.}{classVerboseMessage_ac54162e30aec66d4fb07d99eadfd8b52}, \textbf{ Not\+Implemented\+Error} \doxyref{}{p.}{classNotImplementedError_abbe96cc33b89076043f8f71fde80a0cd}, \textbf{ Message} \doxyref{}{p.}{classMessage_a96dd19b80fb02907222585e33007e3a7}, \textbf{ Arg\+Error} \doxyref{}{p.}{classArgError_a45233b131442b1af57c8278485856a83}, \textbf{ Steghide\+Error} \doxyref{}{p.}{classSteghideError_a22d688da944706920f51159ebd0076d9}, and \textbf{ Assertion\+Failed} \doxyref{}{p.}{classAssertionFailed_acab14a3cc730015f7c8c76a17d0b347c}.
+
+\mbox{\label{classMessageBase_a30b3927e0f2eb7c47fa14f67af027397}} 
+\index{Message\+Base@{Message\+Base}!set\+Message@{set\+Message}}
+\index{set\+Message@{set\+Message}!Message\+Base@{Message\+Base}}
+\subsubsection{set\+Message()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Message\+Base\+::set\+Message (\begin{DoxyParamCaption}\item[{std\+::string}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classMessageBase_ab927341ddd9c9cb558a544e15bfc356b}} 
+\index{Message\+Base@{Message\+Base}!set\+Message@{set\+Message}}
+\index{set\+Message@{set\+Message}!Message\+Base@{Message\+Base}}
+\subsubsection{set\+Message()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Message\+Base\+::set\+Message (\begin{DoxyParamCaption}\item[{const char $\ast$}]{msgfmt,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+\mbox{\label{classMessageBase_a46e7f5b7693a4dcce4a20c7b29fb0c5a}} 
+\index{Message\+Base@{Message\+Base}!set\+Newline@{set\+Newline}}
+\index{set\+Newline@{set\+Newline}!Message\+Base@{Message\+Base}}
+\subsubsection{set\+Newline()}
+{\footnotesize\ttfamily void Message\+Base\+::set\+Newline (\begin{DoxyParamCaption}\item[{bool}]{prnl }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+toggle newline printing on/off 
+\begin{DoxyParams}{Parameters}
+{\em prnl} & wether to print a newline character after the message \\
+\hline
+\end{DoxyParams}
+\mbox{\label{classMessageBase_a8394206583995f6fbfe858d656968490}} 
+\index{Message\+Base@{Message\+Base}!vcompose@{vcompose}}
+\index{vcompose@{vcompose}!Message\+Base@{Message\+Base}}
+\subsubsection{vcompose()}
+{\footnotesize\ttfamily std\+::string Message\+Base\+::vcompose (\begin{DoxyParamCaption}\item[{const char $\ast$}]{msgfmt,  }\item[{va\+\_\+list}]{ap }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{classMessageBase_a9383dfdf1b15fc5ec1bfc3b00619bb47}} 
+\index{Message\+Base@{Message\+Base}!Message@{Message}}
+\index{Message@{Message}!Message\+Base@{Message\+Base}}
+\subsubsection{Message}
+{\footnotesize\ttfamily std\+::string Message\+Base\+::\+Message\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classMessageBase_af16e9e59496a1277b4baa08828c9f388}} 
+\index{Message\+Base@{Message\+Base}!Msg\+Max\+Size@{Msg\+Max\+Size}}
+\index{Msg\+Max\+Size@{Msg\+Max\+Size}!Message\+Base@{Message\+Base}}
+\subsubsection{Msg\+Max\+Size}
+{\footnotesize\ttfamily const unsigned int Message\+Base\+::\+Msg\+Max\+Size = 512\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+\mbox{\label{classMessageBase_a926ed952613f951d8f17e14c340614d3}} 
+\index{Message\+Base@{Message\+Base}!Newline@{Newline}}
+\index{Newline@{Newline}!Message\+Base@{Message\+Base}}
+\subsubsection{Newline}
+{\footnotesize\ttfamily bool Message\+Base\+::\+Newline\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ msg.\+h}\item 
+\textbf{ msg.\+cc}\end{DoxyCompactItemize}

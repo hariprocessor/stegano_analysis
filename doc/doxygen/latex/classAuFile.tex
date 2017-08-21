@@ -1,0 +1,262 @@
+\section{Au\+File Class Reference}
+\label{classAuFile}\index{Au\+File@{Au\+File}}
+
+
+a \doxyref{Cvr\+Stg\+File}{p.}{classCvrStgFile} in Sun .au format  
+
+
+
+
+{\ttfamily \#include $<$Au\+File.\+h$>$}
+
+Inheritance diagram for Au\+File\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classAuFile}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \textbf{ Au\+Header}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Au\+File} (\textbf{ Binary\+IO} $\ast$io)
+\item 
+\textbf{ $\sim$\+Au\+File} (void)
+\item 
+void \textbf{ read} (\textbf{ Binary\+IO} $\ast$io)
+\item 
+void \textbf{ write} (void)
+\item 
+std\+::list$<$ \textbf{ Cvr\+Stg\+File\+::\+Property} $>$ \textbf{ get\+Properties} (void) const
+\item 
+std\+::vector$<$ \textbf{ Matching\+Algorithm} $\ast$ $>$ \textbf{ get\+Matching\+Algorithms} (\textbf{ Graph} $\ast$g, \textbf{ Matching} $\ast$m) const
+\item 
+unsigned long \textbf{ get\+Num\+Samples} (void) const
+\item 
+void \textbf{ replace\+Sample} (const \textbf{ Sample\+Pos} pos, const \textbf{ Sample\+Value} $\ast$s)
+\item 
+\textbf{ Sample\+Value} $\ast$ \textbf{ get\+Sample\+Value} (\textbf{ Sample\+Pos} pos) const
+\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \textbf{ E\+N\+C\+O\+D\+I\+NG} \{ \textbf{ M\+U\+L\+A\+W8} = 1, 
+\textbf{ P\+C\+M8} = 2, 
+\textbf{ P\+C\+M16} = 3
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Au\+Header} \textbf{ Header}
+\item 
+std\+::vector$<$ \textbf{ B\+Y\+TE} $>$ \textbf{ Infofield}
+\item 
+\textbf{ Audio\+Data} $\ast$ \textbf{ Data}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const \textbf{ U\+W\+O\+R\+D32} \textbf{ Radius\+\_\+\+Mu\+Law8} = 1
+\item 
+static const \textbf{ U\+W\+O\+R\+D32} \textbf{ Radius\+\_\+\+P\+C\+M8} = 1
+\item 
+static const \textbf{ U\+W\+O\+R\+D32} \textbf{ Radius\+\_\+\+P\+C\+M16} = 20
+\item 
+static const unsigned short \textbf{ Samples\+Per\+Vertex} = 2
+\item 
+static const \textbf{ Emb\+Value} \textbf{ Emb\+Value\+Modulus} = 2
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\label{classAuFile_a24effbfb64f3b6055dac14ac4fe3c485}} 
+\index{Au\+File@{Au\+File}!E\+N\+C\+O\+D\+I\+NG@{E\+N\+C\+O\+D\+I\+NG}}
+\index{E\+N\+C\+O\+D\+I\+NG@{E\+N\+C\+O\+D\+I\+NG}!Au\+File@{Au\+File}}
+\subsubsection{E\+N\+C\+O\+D\+I\+NG}
+{\footnotesize\ttfamily enum \textbf{ Au\+File\+::\+E\+N\+C\+O\+D\+I\+NG}\hspace{0.3cm}{\ttfamily [private]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+U\+L\+A\+W8@{M\+U\+L\+A\+W8}!Au\+File@{Au\+File}}\index{Au\+File@{Au\+File}!M\+U\+L\+A\+W8@{M\+U\+L\+A\+W8}}}\mbox{\label{classAuFile_a24effbfb64f3b6055dac14ac4fe3c485ac0d7b008c7b619f982e2684fc12a5492}} 
+M\+U\+L\+A\+W8&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{P\+C\+M8@{P\+C\+M8}!Au\+File@{Au\+File}}\index{Au\+File@{Au\+File}!P\+C\+M8@{P\+C\+M8}}}\mbox{\label{classAuFile_a24effbfb64f3b6055dac14ac4fe3c485a9883bf7380667e38228a2c7c953ba49a}} 
+P\+C\+M8&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{P\+C\+M16@{P\+C\+M16}!Au\+File@{Au\+File}}\index{Au\+File@{Au\+File}!P\+C\+M16@{P\+C\+M16}}}\mbox{\label{classAuFile_a24effbfb64f3b6055dac14ac4fe3c485a5ad0d2903b59e209eed1c88c65f573b0}} 
+P\+C\+M16&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{classAuFile_a8d4adaac11d68ee333c78ef02e4d97eb}} 
+\index{Au\+File@{Au\+File}!Au\+File@{Au\+File}}
+\index{Au\+File@{Au\+File}!Au\+File@{Au\+File}}
+\subsubsection{Au\+File()}
+{\footnotesize\ttfamily Au\+File\+::\+Au\+File (\begin{DoxyParamCaption}\item[{\textbf{ Binary\+IO} $\ast$}]{io }\end{DoxyParamCaption})}
+
+\mbox{\label{classAuFile_a7c1b9777c3e1e951788ae814d418ef3a}} 
+\index{Au\+File@{Au\+File}!````~Au\+File@{$\sim$\+Au\+File}}
+\index{````~Au\+File@{$\sim$\+Au\+File}!Au\+File@{Au\+File}}
+\subsubsection{$\sim$\+Au\+File()}
+{\footnotesize\ttfamily Au\+File\+::$\sim$\+Au\+File (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{classAuFile_adce884ef9a8ba89ffb69dc03bf0a10ae}} 
+\index{Au\+File@{Au\+File}!get\+Matching\+Algorithms@{get\+Matching\+Algorithms}}
+\index{get\+Matching\+Algorithms@{get\+Matching\+Algorithms}!Au\+File@{Au\+File}}
+\subsubsection{get\+Matching\+Algorithms()}
+{\footnotesize\ttfamily std\+::vector$<$ \textbf{ Matching\+Algorithm} $\ast$ $>$ Au\+File\+::get\+Matching\+Algorithms (\begin{DoxyParamCaption}\item[{\textbf{ Graph} $\ast$}]{g,  }\item[{\textbf{ Matching} $\ast$}]{m }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+get recommended list of matching algorithms 
+\begin{DoxyParams}{Parameters}
+{\em m} & an empty matching -\/ will be used in construction of \doxyref{Matching\+Algorithm}{p.}{classMatchingAlgorithm} objects\\
+\hline
+\end{DoxyParams}
+The \doxyref{Matching\+Algorithm}{p.}{classMatchingAlgorithm} objects returned by this function should be deleted by the caller if they are no longer needed. 
+
+Reimplemented from \textbf{ Cvr\+Stg\+File} \doxyref{}{p.}{classCvrStgFile_aa0b1087f94e191b72e794a56e49bb706}.
+
+\mbox{\label{classAuFile_a6207c3612049d7467805842de926934e}} 
+\index{Au\+File@{Au\+File}!get\+Num\+Samples@{get\+Num\+Samples}}
+\index{get\+Num\+Samples@{get\+Num\+Samples}!Au\+File@{Au\+File}}
+\subsubsection{get\+Num\+Samples()}
+{\footnotesize\ttfamily unsigned long Au\+File\+::get\+Num\+Samples (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+get the number of samples in this \doxyref{Cvr\+Stg\+Object}{p.}{classCvrStgObject} 
+
+Implements \textbf{ Cvr\+Stg\+Object} \doxyref{}{p.}{classCvrStgObject_a80ae8f095b66683e5207adf8ff8265b4}.
+
+\mbox{\label{classAuFile_ad2953eec58ebadf95c105d5c907d09d4}} 
+\index{Au\+File@{Au\+File}!get\+Properties@{get\+Properties}}
+\index{get\+Properties@{get\+Properties}!Au\+File@{Au\+File}}
+\subsubsection{get\+Properties()}
+{\footnotesize\ttfamily std\+::list$<$ \textbf{ Cvr\+Stg\+File\+::\+Property} $>$ Au\+File\+::get\+Properties (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \textbf{ Cvr\+Stg\+File} \doxyref{}{p.}{classCvrStgFile_afe2f570ea6447c0636093b44ff7793cc}.
+
+\mbox{\label{classAuFile_af55279548dc9840e46115f859dbac36d}} 
+\index{Au\+File@{Au\+File}!get\+Sample\+Value@{get\+Sample\+Value}}
+\index{get\+Sample\+Value@{get\+Sample\+Value}!Au\+File@{Au\+File}}
+\subsubsection{get\+Sample\+Value()}
+{\footnotesize\ttfamily \textbf{ Sample\+Value}$\ast$ Au\+File\+::get\+Sample\+Value (\begin{DoxyParamCaption}\item[{\textbf{ Sample\+Pos}}]{pos }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+get the sample at position pos 
+\begin{DoxyParams}{Parameters}
+{\em pos} & the position of a sample (must be in 0...\doxyref{get\+Num\+Samples()}{p.}{classAuFile_a6207c3612049d7467805842de926934e}-\/1) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the sample at the given position
+\end{DoxyReturn}
+The sample object is created in this function and should be deleted by the caller. The derived class should check the condition(s) given above in its Implementation of this function. 
+
+Implements \textbf{ Cvr\+Stg\+Object} \doxyref{}{p.}{classCvrStgObject_ac77a8da85a4f7b53e2166e990dfaa4f2}.
+
+\mbox{\label{classAuFile_a16b076fd6c452cd93170027f4cf42581}} 
+\index{Au\+File@{Au\+File}!read@{read}}
+\index{read@{read}!Au\+File@{Au\+File}}
+\subsubsection{read()}
+{\footnotesize\ttfamily void Au\+File\+::read (\begin{DoxyParamCaption}\item[{\textbf{ Binary\+IO} $\ast$}]{io }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \textbf{ Cvr\+Stg\+File} \doxyref{}{p.}{classCvrStgFile_a8a568ccb2ad5d6c178f764dca6090908}.
+
+\mbox{\label{classAuFile_a174651b1eb09ce6499dd9b49740e0585}} 
+\index{Au\+File@{Au\+File}!replace\+Sample@{replace\+Sample}}
+\index{replace\+Sample@{replace\+Sample}!Au\+File@{Au\+File}}
+\subsubsection{replace\+Sample()}
+{\footnotesize\ttfamily void Au\+File\+::replace\+Sample (\begin{DoxyParamCaption}\item[{const \textbf{ Sample\+Pos}}]{pos,  }\item[{const \textbf{ Sample\+Value} $\ast$}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+replace a sample thus (possibly) altering the value of the bit returned by Sample\+Value-\/$>$get\+Bit() 
+\begin{DoxyParams}{Parameters}
+{\em pos} & the position of the sample (must be in 0...\doxyref{get\+Num\+Samples()}{p.}{classAuFile_a6207c3612049d7467805842de926934e}-\/1) \\
+\hline
+{\em s} & the sample value that should replace the current sample value (must be of correct type for this \doxyref{Cvr\+Stg\+Object}{p.}{classCvrStgObject})\\
+\hline
+\end{DoxyParams}
+The derived class should check the condition(s) given above in its Implementation of this function. 
+
+Implements \textbf{ Cvr\+Stg\+Object} \doxyref{}{p.}{classCvrStgObject_a3068d6a9dcc1c0b8bde2f081cfde6ce5}.
+
+\mbox{\label{classAuFile_a563b078d7d1660fdd2ebe005eb2c26c6}} 
+\index{Au\+File@{Au\+File}!write@{write}}
+\index{write@{write}!Au\+File@{Au\+File}}
+\subsubsection{write()}
+{\footnotesize\ttfamily void Au\+File\+::write (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \textbf{ Cvr\+Stg\+File} \doxyref{}{p.}{classCvrStgFile_af2b8f47f83f9210409af6be7d750a841}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{classAuFile_a7943587c3dc294e0b3a3a081fffc9940}} 
+\index{Au\+File@{Au\+File}!Data@{Data}}
+\index{Data@{Data}!Au\+File@{Au\+File}}
+\subsubsection{Data}
+{\footnotesize\ttfamily \textbf{ Audio\+Data}$\ast$ Au\+File\+::\+Data\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classAuFile_ad1a55c4ad3f2f2a89af01392ed482fb5}} 
+\index{Au\+File@{Au\+File}!Emb\+Value\+Modulus@{Emb\+Value\+Modulus}}
+\index{Emb\+Value\+Modulus@{Emb\+Value\+Modulus}!Au\+File@{Au\+File}}
+\subsubsection{Emb\+Value\+Modulus}
+{\footnotesize\ttfamily const \textbf{ Emb\+Value} Au\+File\+::\+Emb\+Value\+Modulus = 2\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\label{classAuFile_a644fd49d94b0cb2c446dfa1c3f1b8765}} 
+\index{Au\+File@{Au\+File}!Header@{Header}}
+\index{Header@{Header}!Au\+File@{Au\+File}}
+\subsubsection{Header}
+{\footnotesize\ttfamily \textbf{ Au\+Header} Au\+File\+::\+Header\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classAuFile_ad85e7d37e7d0c9289eba5892d9a7400d}} 
+\index{Au\+File@{Au\+File}!Infofield@{Infofield}}
+\index{Infofield@{Infofield}!Au\+File@{Au\+File}}
+\subsubsection{Infofield}
+{\footnotesize\ttfamily std\+::vector$<$\textbf{ B\+Y\+TE}$>$ Au\+File\+::\+Infofield\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classAuFile_afbfdbb7c5acee758c90226547cd29832}} 
+\index{Au\+File@{Au\+File}!Radius\+\_\+\+Mu\+Law8@{Radius\+\_\+\+Mu\+Law8}}
+\index{Radius\+\_\+\+Mu\+Law8@{Radius\+\_\+\+Mu\+Law8}!Au\+File@{Au\+File}}
+\subsubsection{Radius\+\_\+\+Mu\+Law8}
+{\footnotesize\ttfamily const \textbf{ U\+W\+O\+R\+D32} Au\+File\+::\+Radius\+\_\+\+Mu\+Law8 = 1\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\label{classAuFile_a960d9eccdc793d037bbce748d63456b6}} 
+\index{Au\+File@{Au\+File}!Radius\+\_\+\+P\+C\+M16@{Radius\+\_\+\+P\+C\+M16}}
+\index{Radius\+\_\+\+P\+C\+M16@{Radius\+\_\+\+P\+C\+M16}!Au\+File@{Au\+File}}
+\subsubsection{Radius\+\_\+\+P\+C\+M16}
+{\footnotesize\ttfamily const \textbf{ U\+W\+O\+R\+D32} Au\+File\+::\+Radius\+\_\+\+P\+C\+M16 = 20\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\label{classAuFile_a1e2854d94a307343f2460bca656a2440}} 
+\index{Au\+File@{Au\+File}!Radius\+\_\+\+P\+C\+M8@{Radius\+\_\+\+P\+C\+M8}}
+\index{Radius\+\_\+\+P\+C\+M8@{Radius\+\_\+\+P\+C\+M8}!Au\+File@{Au\+File}}
+\subsubsection{Radius\+\_\+\+P\+C\+M8}
+{\footnotesize\ttfamily const \textbf{ U\+W\+O\+R\+D32} Au\+File\+::\+Radius\+\_\+\+P\+C\+M8 = 1\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\label{classAuFile_a1bc354e94ccacb4415d4501a83481ccd}} 
+\index{Au\+File@{Au\+File}!Samples\+Per\+Vertex@{Samples\+Per\+Vertex}}
+\index{Samples\+Per\+Vertex@{Samples\+Per\+Vertex}!Au\+File@{Au\+File}}
+\subsubsection{Samples\+Per\+Vertex}
+{\footnotesize\ttfamily const unsigned short Au\+File\+::\+Samples\+Per\+Vertex = 2\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ Au\+File.\+h}\item 
+\textbf{ Au\+File.\+cc}\end{DoxyCompactItemize}

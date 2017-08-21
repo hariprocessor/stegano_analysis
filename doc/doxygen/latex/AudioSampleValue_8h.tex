@@ -1,0 +1,46 @@
+\section{Audio\+Sample\+Value.\+h File Reference}
+\label{AudioSampleValue_8h}\index{Audio\+Sample\+Value.\+h@{Audio\+Sample\+Value.\+h}}
+{\ttfamily \#include \char`\"{}Cvr\+Stg\+File.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Sample\+Value.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}common.\+h\char`\"{}}\newline
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \textbf{ Audio\+Sample\+Value$<$ Type, Value\+Type $>$}
+\begin{DoxyCompactList}\small\item\em a class representing an audio sample \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \textbf{ A\+U\+D\+I\+O\+S\+A\+M\+P\+L\+E\+T\+Y\+PE} \{ \textbf{ Au\+Mu\+Law}, 
+\textbf{ Au\+P\+C\+M8}, 
+\textbf{ Au\+P\+C\+M16}, 
+\textbf{ Au\+P\+C\+M32}
+ \}
+\end{DoxyCompactItemize}
+
+
+\subsection{Enumeration Type Documentation}
+\mbox{\label{AudioSampleValue_8h_a1b98ba4a80c7b3c5e8be3a031a1fcdfd}} 
+\index{Audio\+Sample\+Value.\+h@{Audio\+Sample\+Value.\+h}!A\+U\+D\+I\+O\+S\+A\+M\+P\+L\+E\+T\+Y\+PE@{A\+U\+D\+I\+O\+S\+A\+M\+P\+L\+E\+T\+Y\+PE}}
+\index{A\+U\+D\+I\+O\+S\+A\+M\+P\+L\+E\+T\+Y\+PE@{A\+U\+D\+I\+O\+S\+A\+M\+P\+L\+E\+T\+Y\+PE}!Audio\+Sample\+Value.\+h@{Audio\+Sample\+Value.\+h}}
+\subsubsection{A\+U\+D\+I\+O\+S\+A\+M\+P\+L\+E\+T\+Y\+PE}
+{\footnotesize\ttfamily enum \textbf{ A\+U\+D\+I\+O\+S\+A\+M\+P\+L\+E\+T\+Y\+PE}}
+
+An enumeration containing all audio sample types. This enumeration is used as template parameter for \doxyref{Audio\+Sample\+Value}{p.}{classAudioSampleValue} and \doxyref{Audio\+Data}{p.}{classAudioData} to identify the correct implementation for a given audio format. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Au\+Mu\+Law@{Au\+Mu\+Law}!Audio\+Sample\+Value.\+h@{Audio\+Sample\+Value.\+h}}\index{Audio\+Sample\+Value.\+h@{Audio\+Sample\+Value.\+h}!Au\+Mu\+Law@{Au\+Mu\+Law}}}\mbox{\label{AudioSampleValue_8h_a1b98ba4a80c7b3c5e8be3a031a1fcdfda6d75722b4b9b5d14c96b67071dbe1298}} 
+Au\+Mu\+Law&au 8 Bit mu-\/law \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Au\+P\+C\+M8@{Au\+P\+C\+M8}!Audio\+Sample\+Value.\+h@{Audio\+Sample\+Value.\+h}}\index{Audio\+Sample\+Value.\+h@{Audio\+Sample\+Value.\+h}!Au\+P\+C\+M8@{Au\+P\+C\+M8}}}\mbox{\label{AudioSampleValue_8h_a1b98ba4a80c7b3c5e8be3a031a1fcdfdac50afd73f17db17bf1854731c44d5334}} 
+Au\+P\+C\+M8&au 8 Bit linear pcm \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Au\+P\+C\+M16@{Au\+P\+C\+M16}!Audio\+Sample\+Value.\+h@{Audio\+Sample\+Value.\+h}}\index{Audio\+Sample\+Value.\+h@{Audio\+Sample\+Value.\+h}!Au\+P\+C\+M16@{Au\+P\+C\+M16}}}\mbox{\label{AudioSampleValue_8h_a1b98ba4a80c7b3c5e8be3a031a1fcdfda90c9de45d09e8a705c61a1ae21c1302f}} 
+Au\+P\+C\+M16&au 16 Bit linear pcm \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Au\+P\+C\+M32@{Au\+P\+C\+M32}!Audio\+Sample\+Value.\+h@{Audio\+Sample\+Value.\+h}}\index{Audio\+Sample\+Value.\+h@{Audio\+Sample\+Value.\+h}!Au\+P\+C\+M32@{Au\+P\+C\+M32}}}\mbox{\label{AudioSampleValue_8h_a1b98ba4a80c7b3c5e8be3a031a1fcdfda8c9f67e41c483ed56b8cd125cb854d5a}} 
+Au\+P\+C\+M32&au 32 Bit linear pcm \\
+\hline
+
+\end{DoxyEnumFields}

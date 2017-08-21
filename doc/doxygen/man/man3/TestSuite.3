@@ -1,0 +1,144 @@
+.TH "TestSuite" 3 "Thu Aug 17 2017" "Version 0.5.1" "steghide" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+TestSuite
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <TestSuite\&.h>\fP
+.PP
+Inherits \fBTest\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBTESTRESULT\fP { \fBNOTINSTALLED\fP, \fBKNOWNEXCEPTION\fP, \fBUNKNOWNEXCEPTION\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBTestSuite\fP (void)"
+.br
+.ti -1c
+.RI "void \fBaddUnitTest\fP (\fBUnitTest\fP *ut)"
+.br
+.ti -1c
+.RI "void \fBrun\fP (void)"
+.br
+.ti -1c
+.RI "bool \fBgetResult\fP (void)"
+.br
+.ti -1c
+.RI "void \fBstartUnit\fP (std::string n)"
+.br
+.ti -1c
+.RI "void \fBendUnit\fP (std::string n)"
+.br
+.ti -1c
+.RI "void \fBstartCategory\fP (std::string n)"
+.br
+.ti -1c
+.RI "void \fBendCategory\fP (std::string n)"
+.br
+.ti -1c
+.RI "void \fBaddTestResult\fP (bool r)"
+.br
+.ti -1c
+.RI "void \fBaddTestResult\fP (\fBTESTRESULT\fP r)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::vector< \fBUnitTest\fP * > \fBUnitTests\fP"
+.br
+.ti -1c
+.RI "std::string \fBrunningUnit\fP"
+.br
+.ti -1c
+.RI "std::string \fBrunningCategory\fP"
+.br
+.ti -1c
+.RI "bool \fBrunningCategoryOk\fP"
+.br
+.ti -1c
+.RI "bool \fBSuiteOk\fP"
+.br
+.ti -1c
+.RI "unsigned short \fBTestNumber\fP"
+.br
+.ti -1c
+.RI "std::ostream * \fBOutStream\fP"
+.br
+.in -1c
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBTestSuite::TESTRESULT\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fINOTINSTALLED \fP\fP
+.TP
+\fB\fIKNOWNEXCEPTION \fP\fP
+.TP
+\fB\fIUNKNOWNEXCEPTION \fP\fP
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "TestSuite::TestSuite (void)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void TestSuite::addTestResult (bool r)"
+
+.SS "void TestSuite::addTestResult (\fBTestSuite::TESTRESULT\fP r)"
+
+.SS "void TestSuite::addUnitTest (\fBUnitTest\fP * ut)"
+
+.SS "void TestSuite::endCategory (std::string n)"
+
+.SS "void TestSuite::endUnit (std::string n)"
+
+.SS "bool TestSuite::getResult (void)\fC [inline]\fP"
+
+.PP
+\fBReturns:\fP
+.RS 4
+true iff all tests were ok 
+.RE
+.PP
+
+.SS "void TestSuite::run (void)\fC [virtual]\fP"
+
+.PP
+Implements \fBTest\fP\&.
+.SS "void TestSuite::startCategory (std::string n)"
+
+.SS "void TestSuite::startUnit (std::string n)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "std::ostream* TestSuite::OutStream\fC [private]\fP"
+
+.SS "std::string TestSuite::runningCategory\fC [private]\fP"
+
+.SS "bool TestSuite::runningCategoryOk\fC [private]\fP"
+
+.SS "std::string TestSuite::runningUnit\fC [private]\fP"
+
+.SS "bool TestSuite::SuiteOk\fC [private]\fP"
+
+.SS "unsigned short TestSuite::TestNumber\fC [private]\fP"
+
+.SS "std::vector<\fBUnitTest\fP*> TestSuite::UnitTests\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for steghide from the source code\&.

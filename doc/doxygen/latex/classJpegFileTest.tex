@@ -1,0 +1,156 @@
+\section{Jpeg\+File\+Test Class Reference}
+\label{classJpegFileTest}\index{Jpeg\+File\+Test@{Jpeg\+File\+Test}}
+
+
+{\ttfamily \#include $<$Jpeg\+File\+Test.\+h$>$}
+
+Inheritance diagram for Jpeg\+File\+Test\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classJpegFileTest}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Jpeg\+File\+Test} (\textbf{ Test\+Suite} $\ast$s)
+\item 
+void \textbf{ setup} (void)
+\item 
+void \textbf{ cleanup} (void)
+\item 
+void \textbf{ test\+Read\+Embed\+Extract} (void)
+\item 
+void \textbf{ test\+Read\+Embed\+Write\+Read\+Extract} (void)
+\item 
+void \textbf{ test\+Position} (void)
+\item 
+void \textbf{ test\+Read\+Extract\+Compare} (void)
+\item 
+void \textbf{ test\+Embedded\+Value} (void)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Bit\+String} $\ast$ \textbf{ bs1}
+\item 
+\textbf{ Bit\+String} $\ast$ \textbf{ bs2}
+\item 
+\textbf{ Cvr\+Stg\+File} $\ast$ \textbf{ f1}
+\item 
+\textbf{ Cvr\+Stg\+File} $\ast$ \textbf{ f2}
+\item 
+\textbf{ Globals} \textbf{ gl1}
+\item 
+\textbf{ Globals} \textbf{ gl2}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{classJpegFileTest_a1808feac8e7b8bb3937015b80958f368}} 
+\index{Jpeg\+File\+Test@{Jpeg\+File\+Test}!Jpeg\+File\+Test@{Jpeg\+File\+Test}}
+\index{Jpeg\+File\+Test@{Jpeg\+File\+Test}!Jpeg\+File\+Test@{Jpeg\+File\+Test}}
+\subsubsection{Jpeg\+File\+Test()}
+{\footnotesize\ttfamily Jpeg\+File\+Test\+::\+Jpeg\+File\+Test (\begin{DoxyParamCaption}\item[{\textbf{ Test\+Suite} $\ast$}]{s }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{classJpegFileTest_a9d4011e0f9a932d1ad9af4869315bfc5}} 
+\index{Jpeg\+File\+Test@{Jpeg\+File\+Test}!cleanup@{cleanup}}
+\index{cleanup@{cleanup}!Jpeg\+File\+Test@{Jpeg\+File\+Test}}
+\subsubsection{cleanup()}
+{\footnotesize\ttfamily void Jpeg\+File\+Test\+::cleanup (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+cleanup the unit test -\/ called after run 
+
+Reimplemented from \textbf{ Unit\+Test} \doxyref{}{p.}{classUnitTest_adf77efe972ee4a766d94e3f7ddc193ad}.
+
+\mbox{\label{classJpegFileTest_ab8796303fb34f7bbfd03a09bfef85b71}} 
+\index{Jpeg\+File\+Test@{Jpeg\+File\+Test}!setup@{setup}}
+\index{setup@{setup}!Jpeg\+File\+Test@{Jpeg\+File\+Test}}
+\subsubsection{setup()}
+{\footnotesize\ttfamily void Jpeg\+File\+Test\+::setup (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+setup the unit test -\/ called before run
+
+\doxyref{Unit\+Test\+::setup}{p.}{classUnitTest_ad73fdf9012b651047ea001d21f9d27ad} will (together with \doxyref{Unit\+Test\+::cleanup}{p.}{classUnitTest_adf77efe972ee4a766d94e3f7ddc193ad}) save and restore the object stored in Globs so they should be called from the corresponding functions in the derived object if the derived unit test manipulates the Globs object. 
+
+Reimplemented from \textbf{ Unit\+Test} \doxyref{}{p.}{classUnitTest_ad73fdf9012b651047ea001d21f9d27ad}.
+
+\mbox{\label{classJpegFileTest_adb1966b62d65d03280da4d16fecfd018}} 
+\index{Jpeg\+File\+Test@{Jpeg\+File\+Test}!test\+Embedded\+Value@{test\+Embedded\+Value}}
+\index{test\+Embedded\+Value@{test\+Embedded\+Value}!Jpeg\+File\+Test@{Jpeg\+File\+Test}}
+\subsubsection{test\+Embedded\+Value()}
+{\footnotesize\ttfamily void Jpeg\+File\+Test\+::test\+Embedded\+Value (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\label{classJpegFileTest_a971cfd9d97810e9da2de352b986b7646}} 
+\index{Jpeg\+File\+Test@{Jpeg\+File\+Test}!test\+Position@{test\+Position}}
+\index{test\+Position@{test\+Position}!Jpeg\+File\+Test@{Jpeg\+File\+Test}}
+\subsubsection{test\+Position()}
+{\footnotesize\ttfamily void Jpeg\+File\+Test\+::test\+Position (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\label{classJpegFileTest_a0ef20fae53ad23a422449e9224ffe843}} 
+\index{Jpeg\+File\+Test@{Jpeg\+File\+Test}!test\+Read\+Embed\+Extract@{test\+Read\+Embed\+Extract}}
+\index{test\+Read\+Embed\+Extract@{test\+Read\+Embed\+Extract}!Jpeg\+File\+Test@{Jpeg\+File\+Test}}
+\subsubsection{test\+Read\+Embed\+Extract()}
+{\footnotesize\ttfamily void Jpeg\+File\+Test\+::test\+Read\+Embed\+Extract (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\label{classJpegFileTest_a251f4a3d0b2c58bdeb7552618cf675b0}} 
+\index{Jpeg\+File\+Test@{Jpeg\+File\+Test}!test\+Read\+Embed\+Write\+Read\+Extract@{test\+Read\+Embed\+Write\+Read\+Extract}}
+\index{test\+Read\+Embed\+Write\+Read\+Extract@{test\+Read\+Embed\+Write\+Read\+Extract}!Jpeg\+File\+Test@{Jpeg\+File\+Test}}
+\subsubsection{test\+Read\+Embed\+Write\+Read\+Extract()}
+{\footnotesize\ttfamily void Jpeg\+File\+Test\+::test\+Read\+Embed\+Write\+Read\+Extract (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\label{classJpegFileTest_a49f1e1f0899346a024a50821c301fed7}} 
+\index{Jpeg\+File\+Test@{Jpeg\+File\+Test}!test\+Read\+Extract\+Compare@{test\+Read\+Extract\+Compare}}
+\index{test\+Read\+Extract\+Compare@{test\+Read\+Extract\+Compare}!Jpeg\+File\+Test@{Jpeg\+File\+Test}}
+\subsubsection{test\+Read\+Extract\+Compare()}
+{\footnotesize\ttfamily void Jpeg\+File\+Test\+::test\+Read\+Extract\+Compare (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{classJpegFileTest_a66421aace16f4b37097da94fabead924}} 
+\index{Jpeg\+File\+Test@{Jpeg\+File\+Test}!bs1@{bs1}}
+\index{bs1@{bs1}!Jpeg\+File\+Test@{Jpeg\+File\+Test}}
+\subsubsection{bs1}
+{\footnotesize\ttfamily \textbf{ Bit\+String}$\ast$ Jpeg\+File\+Test\+::bs1\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classJpegFileTest_a1d28b01674cac8e500d4055db243938a}} 
+\index{Jpeg\+File\+Test@{Jpeg\+File\+Test}!bs2@{bs2}}
+\index{bs2@{bs2}!Jpeg\+File\+Test@{Jpeg\+File\+Test}}
+\subsubsection{bs2}
+{\footnotesize\ttfamily \textbf{ Bit\+String} $\ast$ Jpeg\+File\+Test\+::bs2\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classJpegFileTest_af8a0c07ffc925e49f4d3e5557f64ac86}} 
+\index{Jpeg\+File\+Test@{Jpeg\+File\+Test}!f1@{f1}}
+\index{f1@{f1}!Jpeg\+File\+Test@{Jpeg\+File\+Test}}
+\subsubsection{f1}
+{\footnotesize\ttfamily \textbf{ Cvr\+Stg\+File}$\ast$ Jpeg\+File\+Test\+::f1\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classJpegFileTest_a88585db1f2a9192671a4bbbcdc5501ce}} 
+\index{Jpeg\+File\+Test@{Jpeg\+File\+Test}!f2@{f2}}
+\index{f2@{f2}!Jpeg\+File\+Test@{Jpeg\+File\+Test}}
+\subsubsection{f2}
+{\footnotesize\ttfamily \textbf{ Cvr\+Stg\+File} $\ast$ Jpeg\+File\+Test\+::f2\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classJpegFileTest_a62e959f10df3d26596a7d9546d92e707}} 
+\index{Jpeg\+File\+Test@{Jpeg\+File\+Test}!gl1@{gl1}}
+\index{gl1@{gl1}!Jpeg\+File\+Test@{Jpeg\+File\+Test}}
+\subsubsection{gl1}
+{\footnotesize\ttfamily \textbf{ Globals} Jpeg\+File\+Test\+::gl1\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classJpegFileTest_a7c36d3ac80d19c24c6f795397bbe5729}} 
+\index{Jpeg\+File\+Test@{Jpeg\+File\+Test}!gl2@{gl2}}
+\index{gl2@{gl2}!Jpeg\+File\+Test@{Jpeg\+File\+Test}}
+\subsubsection{gl2}
+{\footnotesize\ttfamily \textbf{ Globals} Jpeg\+File\+Test\+::gl2\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ Jpeg\+File\+Test.\+h}\item 
+\textbf{ Jpeg\+File\+Test.\+cc}\end{DoxyCompactItemize}

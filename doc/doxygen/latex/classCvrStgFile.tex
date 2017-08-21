@@ -1,0 +1,362 @@
+\section{Cvr\+Stg\+File Class Reference}
+\label{classCvrStgFile}\index{Cvr\+Stg\+File@{Cvr\+Stg\+File}}
+
+
+a cover-\//stego-\/file  
+
+
+
+
+{\ttfamily \#include $<$Cvr\+Stg\+File.\+h$>$}
+
+Inheritance diagram for Cvr\+Stg\+File\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classCvrStgFile}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \textbf{ Property}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Cvr\+Stg\+File} (void)
+\item 
+virtual \textbf{ $\sim$\+Cvr\+Stg\+File} (void)
+\item 
+virtual void \textbf{ read} (\textbf{ Binary\+IO} $\ast$io)
+\item 
+virtual void \textbf{ write} (void)
+\item 
+void \textbf{ transform} (const std\+::string \&fn)
+\item 
+virtual std\+::list$<$ \textbf{ Property} $>$ \textbf{ get\+Properties} (void) const =0
+\item 
+virtual std\+::vector$<$ \textbf{ Sample\+Value\+Adjacency\+List} $\ast$ $>$ \textbf{ calc\+S\+V\+Adjacency\+Lists} (const std\+::vector$<$ \textbf{ Sample\+Value} $\ast$$>$ \&svs) const
+\item 
+virtual std\+::vector$<$ \textbf{ Matching\+Algorithm} $\ast$ $>$ \textbf{ get\+Matching\+Algorithms} (\textbf{ Graph} $\ast$g, \textbf{ Matching} $\ast$m) const
+\item 
+const std\+::string \& \textbf{ get\+Name} (void) const
+\item 
+bool \textbf{ is\+\_\+std} (void) const
+\item 
+unsigned long \textbf{ get\+Capacity} (void) const
+\item 
+std\+::string \textbf{ get\+H\+R\+Capacity} (void) const
+\item 
+unsigned short \textbf{ get\+Samples\+Per\+Vertex} (void) const
+\item 
+\textbf{ U\+W\+O\+R\+D32} \textbf{ get\+Radius} (void) const
+\item 
+\textbf{ Emb\+Value} \textbf{ get\+Emb\+Value\+Modulus} (void) const
+\item 
+virtual \textbf{ Emb\+Value} \textbf{ get\+Embedded\+Value} (const \textbf{ Sample\+Pos} pos) const
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \textbf{ Cvr\+Stg\+File} $\ast$ \textbf{ read\+File} (const std\+::string \&fn)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ set\+Samples\+Per\+Vertex} (unsigned short spv)
+\item 
+void \textbf{ set\+Radius} (\textbf{ U\+W\+O\+R\+D32} r)
+\item 
+void \textbf{ set\+Emb\+Value\+Modulus} (\textbf{ Emb\+Value} m)
+\item 
+void \textbf{ set\+Bin\+IO} (\textbf{ Binary\+IO} $\ast$io)
+\item 
+\textbf{ Binary\+IO} $\ast$ \textbf{ get\+Bin\+IO} (void) const
+\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \textbf{ F\+I\+L\+E\+F\+O\+R\+M\+AT} \{ \newline
+\textbf{ U\+N\+K\+N\+O\+WN}, 
+\textbf{ B\+MP}, 
+\textbf{ W\+AV}, 
+\textbf{ AU}, 
+\newline
+\textbf{ J\+P\+EG}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \textbf{ F\+I\+L\+E\+F\+O\+R\+M\+AT} \textbf{ guessff} (\textbf{ Binary\+IO} $\ast$io)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Binary\+IO} $\ast$ \textbf{ Bin\+IO}
+\item 
+unsigned short \textbf{ Samples\+Per\+Vertex}
+\item 
+\textbf{ U\+W\+O\+R\+D32} \textbf{ Radius}
+\item 
+\textbf{ Emb\+Value} \textbf{ Emb\+Value\+Modulus}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+file-\/format specific constants are handled as follows\+: \doxyref{Cvr\+Stg\+File}{p.}{classCvrStgFile} contains a protected set-\/function (e.\+g. set\+Samples\+Per\+Vertex), a public get-\/function (e.\+g. \doxyref{get\+Samples\+Per\+Vertex() const}{p.}{classCvrStgFile_a6bbcd17a373ddd6f45ced2909b658298}) and a private variable. The public get function does nothing else than returning the private variable, which must be set as soon as possible (if it is not set, it will contain a null value set in \doxyref{Cvr\+Stg\+File\+::\+Cvr\+Stg\+File}{p.}{classCvrStgFile_acf876c7ea8b9442de8ff3624ced376fe}). 
+
+\subsection{Member Enumeration Documentation}
+\mbox{\label{classCvrStgFile_aed0dbb4f9578d50c9458cca77e6a78ed}} 
+\index{Cvr\+Stg\+File@{Cvr\+Stg\+File}!F\+I\+L\+E\+F\+O\+R\+M\+AT@{F\+I\+L\+E\+F\+O\+R\+M\+AT}}
+\index{F\+I\+L\+E\+F\+O\+R\+M\+AT@{F\+I\+L\+E\+F\+O\+R\+M\+AT}!Cvr\+Stg\+File@{Cvr\+Stg\+File}}
+\subsubsection{F\+I\+L\+E\+F\+O\+R\+M\+AT}
+{\footnotesize\ttfamily enum \textbf{ Cvr\+Stg\+File\+::\+F\+I\+L\+E\+F\+O\+R\+M\+AT}\hspace{0.3cm}{\ttfamily [private]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{U\+N\+K\+N\+O\+WN@{U\+N\+K\+N\+O\+WN}!Cvr\+Stg\+File@{Cvr\+Stg\+File}}\index{Cvr\+Stg\+File@{Cvr\+Stg\+File}!U\+N\+K\+N\+O\+WN@{U\+N\+K\+N\+O\+WN}}}\mbox{\label{classCvrStgFile_aed0dbb4f9578d50c9458cca77e6a78eda6ad7275f7504b13b51349cfcacd3282d}} 
+U\+N\+K\+N\+O\+WN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{B\+MP@{B\+MP}!Cvr\+Stg\+File@{Cvr\+Stg\+File}}\index{Cvr\+Stg\+File@{Cvr\+Stg\+File}!B\+MP@{B\+MP}}}\mbox{\label{classCvrStgFile_aed0dbb4f9578d50c9458cca77e6a78edad3ec5c99cce99eeb442bce8e0abb6526}} 
+B\+MP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{W\+AV@{W\+AV}!Cvr\+Stg\+File@{Cvr\+Stg\+File}}\index{Cvr\+Stg\+File@{Cvr\+Stg\+File}!W\+AV@{W\+AV}}}\mbox{\label{classCvrStgFile_aed0dbb4f9578d50c9458cca77e6a78edaf93e33b457535355d83cbf3d5ffb758f}} 
+W\+AV&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AU@{AU}!Cvr\+Stg\+File@{Cvr\+Stg\+File}}\index{Cvr\+Stg\+File@{Cvr\+Stg\+File}!AU@{AU}}}\mbox{\label{classCvrStgFile_aed0dbb4f9578d50c9458cca77e6a78eda8ca54ea807012041d66d5b2fddd735f3}} 
+AU&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{J\+P\+EG@{J\+P\+EG}!Cvr\+Stg\+File@{Cvr\+Stg\+File}}\index{Cvr\+Stg\+File@{Cvr\+Stg\+File}!J\+P\+EG@{J\+P\+EG}}}\mbox{\label{classCvrStgFile_aed0dbb4f9578d50c9458cca77e6a78edab3cb80f06bec2a22c47f9fdd076e9302}} 
+J\+P\+EG&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{classCvrStgFile_acf876c7ea8b9442de8ff3624ced376fe}} 
+\index{Cvr\+Stg\+File@{Cvr\+Stg\+File}!Cvr\+Stg\+File@{Cvr\+Stg\+File}}
+\index{Cvr\+Stg\+File@{Cvr\+Stg\+File}!Cvr\+Stg\+File@{Cvr\+Stg\+File}}
+\subsubsection{Cvr\+Stg\+File()}
+{\footnotesize\ttfamily Cvr\+Stg\+File\+::\+Cvr\+Stg\+File (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\label{classCvrStgFile_ad8bad0c102c517cafb849a943db656be}} 
+\index{Cvr\+Stg\+File@{Cvr\+Stg\+File}!````~Cvr\+Stg\+File@{$\sim$\+Cvr\+Stg\+File}}
+\index{````~Cvr\+Stg\+File@{$\sim$\+Cvr\+Stg\+File}!Cvr\+Stg\+File@{Cvr\+Stg\+File}}
+\subsubsection{$\sim$\+Cvr\+Stg\+File()}
+{\footnotesize\ttfamily Cvr\+Stg\+File\+::$\sim$\+Cvr\+Stg\+File (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{classCvrStgFile_a5969e7a6a948067673a977b4c539d354}} 
+\index{Cvr\+Stg\+File@{Cvr\+Stg\+File}!calc\+S\+V\+Adjacency\+Lists@{calc\+S\+V\+Adjacency\+Lists}}
+\index{calc\+S\+V\+Adjacency\+Lists@{calc\+S\+V\+Adjacency\+Lists}!Cvr\+Stg\+File@{Cvr\+Stg\+File}}
+\subsubsection{calc\+S\+V\+Adjacency\+Lists()}
+{\footnotesize\ttfamily std\+::vector$<$ \textbf{ Sample\+Value\+Adjacency\+List} $\ast$ $>$ Cvr\+Stg\+File\+::calc\+S\+V\+Adjacency\+Lists (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \textbf{ Sample\+Value} $\ast$$>$ \&}]{svs }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+calculate a vector a Sample\+Value\+Adjacency\+Lists 
+\begin{DoxyParams}{Parameters}
+{\em svs} & a vector of unique(!) sample values where svs[i]-\/$>$get\+Label() == i holds for all i \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a vector of Sample\+Value\+Adjacency\+Lists where retval[i] only contains sample values with get\+Emb\+Value() == i
+\end{DoxyReturn}
+Every row in the adjacency lists must be sorted in the following order\+: The first sample value has the least distance to the source sample value, the last has the largest distance. If two sample values in one row have the same distance to the source sample value, the order does not matter.
+
+May be overridden in derived class to provide a faster version. 
+
+Reimplemented in \textbf{ Wav\+File} \doxyref{}{p.}{classWavFile_a43cd6841b11147f9351015d402fbe1cc}, and \textbf{ Bmp\+File} \doxyref{}{p.}{classBmpFile_a4a4e207e07864d6f862bb3bfb5f9cd12}.
+
+\mbox{\label{classCvrStgFile_ab10a36d391e1d06c9751830bc7e46545}} 
+\index{Cvr\+Stg\+File@{Cvr\+Stg\+File}!get\+Bin\+IO@{get\+Bin\+IO}}
+\index{get\+Bin\+IO@{get\+Bin\+IO}!Cvr\+Stg\+File@{Cvr\+Stg\+File}}
+\subsubsection{get\+Bin\+I\+O()}
+{\footnotesize\ttfamily \textbf{ Binary\+IO}$\ast$ Cvr\+Stg\+File\+::get\+Bin\+IO (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\mbox{\label{classCvrStgFile_ab1083d28e87133dfbff732df4f6a8c84}} 
+\index{Cvr\+Stg\+File@{Cvr\+Stg\+File}!get\+Capacity@{get\+Capacity}}
+\index{get\+Capacity@{get\+Capacity}!Cvr\+Stg\+File@{Cvr\+Stg\+File}}
+\subsubsection{get\+Capacity()}
+{\footnotesize\ttfamily unsigned long Cvr\+Stg\+File\+::get\+Capacity (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+get the capacity of this cvrstgfile \begin{DoxyReturn}{Returns}
+the capacity in bytes 
+\end{DoxyReturn}
+\mbox{\label{classCvrStgFile_ad6b993d66f8f865f42877ee76e5a5b39}} 
+\index{Cvr\+Stg\+File@{Cvr\+Stg\+File}!get\+Embedded\+Value@{get\+Embedded\+Value}}
+\index{get\+Embedded\+Value@{get\+Embedded\+Value}!Cvr\+Stg\+File@{Cvr\+Stg\+File}}
+\subsubsection{get\+Embedded\+Value()}
+{\footnotesize\ttfamily \textbf{ Emb\+Value} Cvr\+Stg\+File\+::get\+Embedded\+Value (\begin{DoxyParamCaption}\item[{const \textbf{ Sample\+Pos}}]{pos }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+get the value that is embedded in the Sample pos 
+\begin{DoxyParams}{Parameters}
+{\em pos} & the position of the sample \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the value that is embedded in the sample at the given sample position
+\end{DoxyReturn}
+This is equivalent to get\+Sample(pos)-\/$>$\doxyref{get\+Embedded\+Value()}{p.}{classCvrStgFile_ad6b993d66f8f865f42877ee76e5a5b39} and is implemented here like this.
+
+May be overwritten by derived class to provide a faster version. \mbox{\label{classCvrStgFile_aaa1a2e7422a3568f3228dfe579b3f309}} 
+\index{Cvr\+Stg\+File@{Cvr\+Stg\+File}!get\+Emb\+Value\+Modulus@{get\+Emb\+Value\+Modulus}}
+\index{get\+Emb\+Value\+Modulus@{get\+Emb\+Value\+Modulus}!Cvr\+Stg\+File@{Cvr\+Stg\+File}}
+\subsubsection{get\+Emb\+Value\+Modulus()}
+{\footnotesize\ttfamily \textbf{ Emb\+Value} Cvr\+Stg\+File\+::get\+Emb\+Value\+Modulus (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+values that are embedded in samples will be in 0...Modulus-\/1 (this is a file-\/format specific constant) \mbox{\label{classCvrStgFile_a276227631666dba3e101f35b4d026507}} 
+\index{Cvr\+Stg\+File@{Cvr\+Stg\+File}!get\+H\+R\+Capacity@{get\+H\+R\+Capacity}}
+\index{get\+H\+R\+Capacity@{get\+H\+R\+Capacity}!Cvr\+Stg\+File@{Cvr\+Stg\+File}}
+\subsubsection{get\+H\+R\+Capacity()}
+{\footnotesize\ttfamily std\+::string Cvr\+Stg\+File\+::get\+H\+R\+Capacity (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+get the capacity as a human-\/readable string \mbox{\label{classCvrStgFile_aa0b1087f94e191b72e794a56e49bb706}} 
+\index{Cvr\+Stg\+File@{Cvr\+Stg\+File}!get\+Matching\+Algorithms@{get\+Matching\+Algorithms}}
+\index{get\+Matching\+Algorithms@{get\+Matching\+Algorithms}!Cvr\+Stg\+File@{Cvr\+Stg\+File}}
+\subsubsection{get\+Matching\+Algorithms()}
+{\footnotesize\ttfamily std\+::vector$<$ \textbf{ Matching\+Algorithm} $\ast$ $>$ Cvr\+Stg\+File\+::get\+Matching\+Algorithms (\begin{DoxyParamCaption}\item[{\textbf{ Graph} $\ast$}]{g,  }\item[{\textbf{ Matching} $\ast$}]{m }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+get recommended list of matching algorithms 
+\begin{DoxyParams}{Parameters}
+{\em m} & an empty matching -\/ will be used in construction of \doxyref{Matching\+Algorithm}{p.}{classMatchingAlgorithm} objects\\
+\hline
+\end{DoxyParams}
+The \doxyref{Matching\+Algorithm}{p.}{classMatchingAlgorithm} objects returned by this function should be deleted by the caller if they are no longer needed. 
+
+Reimplemented in \textbf{ Wav\+File} \doxyref{}{p.}{classWavFile_ab4f14d15d85cb63b69fb07da72efce88}, \textbf{ Au\+File} \doxyref{}{p.}{classAuFile_adce884ef9a8ba89ffb69dc03bf0a10ae}, and \textbf{ Bmp\+File} \doxyref{}{p.}{classBmpFile_ab9dedf8aeebeaa832bb290991f94fc89}.
+
+\mbox{\label{classCvrStgFile_a2d08fafd88842c8260cecc8c904573af}} 
+\index{Cvr\+Stg\+File@{Cvr\+Stg\+File}!get\+Name@{get\+Name}}
+\index{get\+Name@{get\+Name}!Cvr\+Stg\+File@{Cvr\+Stg\+File}}
+\subsubsection{get\+Name()}
+{\footnotesize\ttfamily const std\+::string\& Cvr\+Stg\+File\+::get\+Name (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+get the name of this cvrstgfile \mbox{\label{classCvrStgFile_afe2f570ea6447c0636093b44ff7793cc}} 
+\index{Cvr\+Stg\+File@{Cvr\+Stg\+File}!get\+Properties@{get\+Properties}}
+\index{get\+Properties@{get\+Properties}!Cvr\+Stg\+File@{Cvr\+Stg\+File}}
+\subsubsection{get\+Properties()}
+{\footnotesize\ttfamily virtual std\+::list$<$\textbf{ Property}$>$ Cvr\+Stg\+File\+::get\+Properties (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \textbf{ Dummy\+File} \doxyref{}{p.}{classDummyFile_a40d1703beb749e1d6207b7d9eff8777f}, \textbf{ Au\+File} \doxyref{}{p.}{classAuFile_ad2953eec58ebadf95c105d5c907d09d4}, \textbf{ Wav\+File} \doxyref{}{p.}{classWavFile_abbaeb3f92865ec8e53064591e27838a7}, and \textbf{ Bmp\+File} \doxyref{}{p.}{classBmpFile_acc609c77bb5fdc4260bd40f76e7286e6}.
+
+\mbox{\label{classCvrStgFile_ae04391b8437ff66bbf7de87047326603}} 
+\index{Cvr\+Stg\+File@{Cvr\+Stg\+File}!get\+Radius@{get\+Radius}}
+\index{get\+Radius@{get\+Radius}!Cvr\+Stg\+File@{Cvr\+Stg\+File}}
+\subsubsection{get\+Radius()}
+{\footnotesize\ttfamily \textbf{ U\+W\+O\+R\+D32} Cvr\+Stg\+File\+::get\+Radius (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+get the neighbourhood radius (this is a file-\/format specific constant) \mbox{\label{classCvrStgFile_a6bbcd17a373ddd6f45ced2909b658298}} 
+\index{Cvr\+Stg\+File@{Cvr\+Stg\+File}!get\+Samples\+Per\+Vertex@{get\+Samples\+Per\+Vertex}}
+\index{get\+Samples\+Per\+Vertex@{get\+Samples\+Per\+Vertex}!Cvr\+Stg\+File@{Cvr\+Stg\+File}}
+\subsubsection{get\+Samples\+Per\+Vertex()}
+{\footnotesize\ttfamily unsigned short Cvr\+Stg\+File\+::get\+Samples\+Per\+Vertex (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+get the number of samples per vertex (this is a file-\/format specific constant) \mbox{\label{classCvrStgFile_abf22a3d17f5b16f2a6cf368f83cffc04}} 
+\index{Cvr\+Stg\+File@{Cvr\+Stg\+File}!guessff@{guessff}}
+\index{guessff@{guessff}!Cvr\+Stg\+File@{Cvr\+Stg\+File}}
+\subsubsection{guessff()}
+{\footnotesize\ttfamily \textbf{ Cvr\+Stg\+File\+::\+F\+I\+L\+E\+F\+O\+R\+M\+AT} Cvr\+Stg\+File\+::guessff (\begin{DoxyParamCaption}\item[{\textbf{ Binary\+IO} $\ast$}]{io }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+guesses the file format by looking at the first few bytes \mbox{\label{classCvrStgFile_a8df6e264c4c8fd47ebbb6861723a7c5b}} 
+\index{Cvr\+Stg\+File@{Cvr\+Stg\+File}!is\+\_\+std@{is\+\_\+std}}
+\index{is\+\_\+std@{is\+\_\+std}!Cvr\+Stg\+File@{Cvr\+Stg\+File}}
+\subsubsection{is\+\_\+std()}
+{\footnotesize\ttfamily bool Cvr\+Stg\+File\+::is\+\_\+std (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classCvrStgFile_a8a568ccb2ad5d6c178f764dca6090908}} 
+\index{Cvr\+Stg\+File@{Cvr\+Stg\+File}!read@{read}}
+\index{read@{read}!Cvr\+Stg\+File@{Cvr\+Stg\+File}}
+\subsubsection{read()}
+{\footnotesize\ttfamily void Cvr\+Stg\+File\+::read (\begin{DoxyParamCaption}\item[{\textbf{ Binary\+IO} $\ast$}]{io }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \textbf{ Au\+File} \doxyref{}{p.}{classAuFile_a16b076fd6c452cd93170027f4cf42581}, \textbf{ Wav\+File} \doxyref{}{p.}{classWavFile_a41b55845afb5f0c52da295d5e27622cd}, and \textbf{ Bmp\+File} \doxyref{}{p.}{classBmpFile_a626da8e445ba96fb6372cc2769ef5cfd}.
+
+\mbox{\label{classCvrStgFile_a7aba284530a2d3dfecfce7a9628d8ecd}} 
+\index{Cvr\+Stg\+File@{Cvr\+Stg\+File}!read\+File@{read\+File}}
+\index{read\+File@{read\+File}!Cvr\+Stg\+File@{Cvr\+Stg\+File}}
+\subsubsection{read\+File()}
+{\footnotesize\ttfamily \textbf{ Cvr\+Stg\+File} $\ast$ Cvr\+Stg\+File\+::read\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{fn }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+this function reads the file with name fn and returns a $\ast$\+File object of the correct type casted to \doxyref{Cvr\+Stg\+File}{p.}{classCvrStgFile}. \mbox{\label{classCvrStgFile_a07fcc2f771cf601cdd9f04873174de4a}} 
+\index{Cvr\+Stg\+File@{Cvr\+Stg\+File}!set\+Bin\+IO@{set\+Bin\+IO}}
+\index{set\+Bin\+IO@{set\+Bin\+IO}!Cvr\+Stg\+File@{Cvr\+Stg\+File}}
+\subsubsection{set\+Bin\+I\+O()}
+{\footnotesize\ttfamily void Cvr\+Stg\+File\+::set\+Bin\+IO (\begin{DoxyParamCaption}\item[{\textbf{ Binary\+IO} $\ast$}]{io }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\mbox{\label{classCvrStgFile_a8a9c60d811bc5e5771047ec7e87096dd}} 
+\index{Cvr\+Stg\+File@{Cvr\+Stg\+File}!set\+Emb\+Value\+Modulus@{set\+Emb\+Value\+Modulus}}
+\index{set\+Emb\+Value\+Modulus@{set\+Emb\+Value\+Modulus}!Cvr\+Stg\+File@{Cvr\+Stg\+File}}
+\subsubsection{set\+Emb\+Value\+Modulus()}
+{\footnotesize\ttfamily void Cvr\+Stg\+File\+::set\+Emb\+Value\+Modulus (\begin{DoxyParamCaption}\item[{\textbf{ Emb\+Value}}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\mbox{\label{classCvrStgFile_a986c86e8d2fb79d9cda53a646ee64758}} 
+\index{Cvr\+Stg\+File@{Cvr\+Stg\+File}!set\+Radius@{set\+Radius}}
+\index{set\+Radius@{set\+Radius}!Cvr\+Stg\+File@{Cvr\+Stg\+File}}
+\subsubsection{set\+Radius()}
+{\footnotesize\ttfamily void Cvr\+Stg\+File\+::set\+Radius (\begin{DoxyParamCaption}\item[{\textbf{ U\+W\+O\+R\+D32}}]{r }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+set Radius to r unless Args.\+Radius is set (set Radius to Args.\+Radius.\+get\+Value() then) \mbox{\label{classCvrStgFile_ab6af9ecf8e6bb07c260529128218c1bd}} 
+\index{Cvr\+Stg\+File@{Cvr\+Stg\+File}!set\+Samples\+Per\+Vertex@{set\+Samples\+Per\+Vertex}}
+\index{set\+Samples\+Per\+Vertex@{set\+Samples\+Per\+Vertex}!Cvr\+Stg\+File@{Cvr\+Stg\+File}}
+\subsubsection{set\+Samples\+Per\+Vertex()}
+{\footnotesize\ttfamily void Cvr\+Stg\+File\+::set\+Samples\+Per\+Vertex (\begin{DoxyParamCaption}\item[{unsigned short}]{spv }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\mbox{\label{classCvrStgFile_aacbd817cb664ad40261f4a15f104a78f}} 
+\index{Cvr\+Stg\+File@{Cvr\+Stg\+File}!transform@{transform}}
+\index{transform@{transform}!Cvr\+Stg\+File@{Cvr\+Stg\+File}}
+\subsubsection{transform()}
+{\footnotesize\ttfamily void Cvr\+Stg\+File\+::transform (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{fn }\end{DoxyParamCaption})}
+
+\mbox{\label{classCvrStgFile_af2b8f47f83f9210409af6be7d750a841}} 
+\index{Cvr\+Stg\+File@{Cvr\+Stg\+File}!write@{write}}
+\index{write@{write}!Cvr\+Stg\+File@{Cvr\+Stg\+File}}
+\subsubsection{write()}
+{\footnotesize\ttfamily void Cvr\+Stg\+File\+::write (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \textbf{ Au\+File} \doxyref{}{p.}{classAuFile_a563b078d7d1660fdd2ebe005eb2c26c6}, \textbf{ Wav\+File} \doxyref{}{p.}{classWavFile_adb8f892bbfcff259974674b9ba5d1dae}, and \textbf{ Bmp\+File} \doxyref{}{p.}{classBmpFile_ad1ab3f4964c187a0d2c23f14f9a278af}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{classCvrStgFile_a611a47a6d625e28991930eec1275ffe3}} 
+\index{Cvr\+Stg\+File@{Cvr\+Stg\+File}!Bin\+IO@{Bin\+IO}}
+\index{Bin\+IO@{Bin\+IO}!Cvr\+Stg\+File@{Cvr\+Stg\+File}}
+\subsubsection{Bin\+IO}
+{\footnotesize\ttfamily \textbf{ Binary\+IO}$\ast$ Cvr\+Stg\+File\+::\+Bin\+IO\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classCvrStgFile_a5ce04f8bddd5cbe3e9f6c12112530c87}} 
+\index{Cvr\+Stg\+File@{Cvr\+Stg\+File}!Emb\+Value\+Modulus@{Emb\+Value\+Modulus}}
+\index{Emb\+Value\+Modulus@{Emb\+Value\+Modulus}!Cvr\+Stg\+File@{Cvr\+Stg\+File}}
+\subsubsection{Emb\+Value\+Modulus}
+{\footnotesize\ttfamily \textbf{ Emb\+Value} Cvr\+Stg\+File\+::\+Emb\+Value\+Modulus\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classCvrStgFile_ae2902841702d49fec9c335ab0e67b138}} 
+\index{Cvr\+Stg\+File@{Cvr\+Stg\+File}!Radius@{Radius}}
+\index{Radius@{Radius}!Cvr\+Stg\+File@{Cvr\+Stg\+File}}
+\subsubsection{Radius}
+{\footnotesize\ttfamily \textbf{ U\+W\+O\+R\+D32} Cvr\+Stg\+File\+::\+Radius\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classCvrStgFile_adb36bcc7f833abf7d57073fff494dbc1}} 
+\index{Cvr\+Stg\+File@{Cvr\+Stg\+File}!Samples\+Per\+Vertex@{Samples\+Per\+Vertex}}
+\index{Samples\+Per\+Vertex@{Samples\+Per\+Vertex}!Cvr\+Stg\+File@{Cvr\+Stg\+File}}
+\subsubsection{Samples\+Per\+Vertex}
+{\footnotesize\ttfamily unsigned short Cvr\+Stg\+File\+::\+Samples\+Per\+Vertex\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ Cvr\+Stg\+File.\+h}\item 
+\textbf{ Cvr\+Stg\+File.\+cc}\end{DoxyCompactItemize}

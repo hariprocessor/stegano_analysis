@@ -1,0 +1,42 @@
+.TH "DFSAPHeuristic.cc" 3 "Thu Aug 17 2017" "Version 0.5.1" "steghide" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DFSAPHeuristic.cc
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'DFSAPHeuristic\&.h'\fP
+.br
+\fC#include 'Edge\&.h'\fP
+.br
+\fC#include 'EdgeIterator\&.h'\fP
+.br
+\fC#include 'Graph\&.h'\fP
+.br
+\fC#include 'Matching\&.h'\fP
+.br
+\fC#include 'common\&.h'\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBpushOnPath\fP(EDGE)"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define pushOnPath(EDGE)"
+\fBValue:\fP
+.PP
+.nf
+path[pathlen] = EDGE ; \
+pathlen++ ; \
+VertexOnPath[EDGE->getVertex1()->getLabel()] = true ; \
+VertexOnPath[EDGE->getVertex2()->getLabel()] = true ;
+.fi
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for steghide from the source code\&.

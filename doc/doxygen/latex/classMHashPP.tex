@@ -1,0 +1,216 @@
+\section{M\+Hash\+PP Class Reference}
+\label{classMHashPP}\index{M\+Hash\+PP@{M\+Hash\+PP}}
+
+
+{\ttfamily \#include $<$M\+Hash\+P\+P.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \textbf{ Command} \{ \textbf{ endhash}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ M\+Hash\+PP} (void)
+\item 
+\textbf{ M\+Hash\+PP} (hashid a)
+\item 
+void \textbf{ init} (hashid a)
+\item 
+const std\+::vector$<$ \textbf{ B\+Y\+TE} $>$ \& \textbf{ end} (void)
+\item 
+\textbf{ M\+Hash\+PP} \& \textbf{ operator$<$$<$} (std\+::string v)
+\item 
+\textbf{ M\+Hash\+PP} \& \textbf{ operator$<$$<$} (\textbf{ Bit\+String} v)
+\item 
+\textbf{ M\+Hash\+PP} \& \textbf{ operator$<$$<$} (\textbf{ B\+Y\+TE} v)
+\item 
+\textbf{ M\+Hash\+PP} \& \textbf{ operator$<$$<$} (\textbf{ Command} c)
+\item 
+\textbf{ Bit\+String} \textbf{ get\+Hash\+Bits} (void)
+\item 
+const std\+::vector$<$ \textbf{ B\+Y\+TE} $>$ \& \textbf{ get\+Hash\+Bytes} (void)
+\item 
+unsigned int \textbf{ get\+Hash\+Size} (void)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \textbf{ get\+Algorithm\+Name} (void)
+\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::string \textbf{ get\+Algorithm\+Name} (hashid id)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \textbf{ hashing}
+\begin{DoxyCompactList}\small\item\em true iff HashD contains a legal hash descriptor and data can be passed via $<$$<$ \end{DoxyCompactList}\item 
+M\+H\+A\+SH \textbf{ HashD}
+\item 
+bool \textbf{ Hash\+Bytes\+Valid}
+\begin{DoxyCompactList}\small\item\em true iff Hash\+Bytes contains a valid hash value \end{DoxyCompactList}\item 
+std\+::vector$<$ \textbf{ B\+Y\+TE} $>$ \textbf{ Hash\+Bytes}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\label{classMHashPP_ac7390fc319fa6359e869ec9488d633ec}} 
+\index{M\+Hash\+PP@{M\+Hash\+PP}!Command@{Command}}
+\index{Command@{Command}!M\+Hash\+PP@{M\+Hash\+PP}}
+\subsubsection{Command}
+{\footnotesize\ttfamily enum \textbf{ M\+Hash\+P\+P\+::\+Command}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{endhash@{endhash}!M\+Hash\+PP@{M\+Hash\+PP}}\index{M\+Hash\+PP@{M\+Hash\+PP}!endhash@{endhash}}}\mbox{\label{classMHashPP_ac7390fc319fa6359e869ec9488d633eca3b9758f6c85df34357793d9110dd101f}} 
+endhash&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{classMHashPP_a81d66380d1300a707d412089b7fa03a2}} 
+\index{M\+Hash\+PP@{M\+Hash\+PP}!M\+Hash\+PP@{M\+Hash\+PP}}
+\index{M\+Hash\+PP@{M\+Hash\+PP}!M\+Hash\+PP@{M\+Hash\+PP}}
+\subsubsection{M\+Hash\+P\+P()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily M\+Hash\+P\+P\+::\+M\+Hash\+PP (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\label{classMHashPP_a5aa71b96476ef66d40abeed70e6ded19}} 
+\index{M\+Hash\+PP@{M\+Hash\+PP}!M\+Hash\+PP@{M\+Hash\+PP}}
+\index{M\+Hash\+PP@{M\+Hash\+PP}!M\+Hash\+PP@{M\+Hash\+PP}}
+\subsubsection{M\+Hash\+P\+P()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily M\+Hash\+P\+P\+::\+M\+Hash\+PP (\begin{DoxyParamCaption}\item[{hashid}]{a }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{classMHashPP_a4478a5fadf4955519a3249bec76caf1e}} 
+\index{M\+Hash\+PP@{M\+Hash\+PP}!end@{end}}
+\index{end@{end}!M\+Hash\+PP@{M\+Hash\+PP}}
+\subsubsection{end()}
+{\footnotesize\ttfamily const std\+::vector$<$ \textbf{ B\+Y\+TE} $>$ \& M\+Hash\+P\+P\+::end (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\label{classMHashPP_ab9a986263a0ef41639a2735aa8bb09b3}} 
+\index{M\+Hash\+PP@{M\+Hash\+PP}!get\+Algorithm\+Name@{get\+Algorithm\+Name}}
+\index{get\+Algorithm\+Name@{get\+Algorithm\+Name}!M\+Hash\+PP@{M\+Hash\+PP}}
+\subsubsection{get\+Algorithm\+Name()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::string M\+Hash\+P\+P\+::get\+Algorithm\+Name (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classMHashPP_a9d7887a9f3ed507a075be49a10d56fbb}} 
+\index{M\+Hash\+PP@{M\+Hash\+PP}!get\+Algorithm\+Name@{get\+Algorithm\+Name}}
+\index{get\+Algorithm\+Name@{get\+Algorithm\+Name}!M\+Hash\+PP@{M\+Hash\+PP}}
+\subsubsection{get\+Algorithm\+Name()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::string M\+Hash\+P\+P\+::get\+Algorithm\+Name (\begin{DoxyParamCaption}\item[{hashid}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\label{classMHashPP_ac9a617262342f96190b12b5f8973d8ee}} 
+\index{M\+Hash\+PP@{M\+Hash\+PP}!get\+Hash\+Bits@{get\+Hash\+Bits}}
+\index{get\+Hash\+Bits@{get\+Hash\+Bits}!M\+Hash\+PP@{M\+Hash\+PP}}
+\subsubsection{get\+Hash\+Bits()}
+{\footnotesize\ttfamily \textbf{ Bit\+String} M\+Hash\+P\+P\+::get\+Hash\+Bits (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+get the hash bits \begin{DoxyReturn}{Returns}
+the hash value of the data that has been passed via $<$$<$ 
+\end{DoxyReturn}
+\mbox{\label{classMHashPP_a386c7cfc3d953d4a3c4a20a867c508aa}} 
+\index{M\+Hash\+PP@{M\+Hash\+PP}!get\+Hash\+Bytes@{get\+Hash\+Bytes}}
+\index{get\+Hash\+Bytes@{get\+Hash\+Bytes}!M\+Hash\+PP@{M\+Hash\+PP}}
+\subsubsection{get\+Hash\+Bytes()}
+{\footnotesize\ttfamily const std\+::vector$<$ \textbf{ B\+Y\+TE} $>$ \& M\+Hash\+P\+P\+::get\+Hash\+Bytes (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\label{classMHashPP_a844895b753aaff388be34cdb5332687f}} 
+\index{M\+Hash\+PP@{M\+Hash\+PP}!get\+Hash\+Size@{get\+Hash\+Size}}
+\index{get\+Hash\+Size@{get\+Hash\+Size}!M\+Hash\+PP@{M\+Hash\+PP}}
+\subsubsection{get\+Hash\+Size()}
+{\footnotesize\ttfamily unsigned int M\+Hash\+P\+P\+::get\+Hash\+Size (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+get the hash size \begin{DoxyReturn}{Returns}
+the size of the value returned by get\+Hash\+Bits in bytes 
+\end{DoxyReturn}
+\mbox{\label{classMHashPP_af65d7afba20d0e7bf17c3b0021994385}} 
+\index{M\+Hash\+PP@{M\+Hash\+PP}!init@{init}}
+\index{init@{init}!M\+Hash\+PP@{M\+Hash\+PP}}
+\subsubsection{init()}
+{\footnotesize\ttfamily void M\+Hash\+P\+P\+::init (\begin{DoxyParamCaption}\item[{hashid}]{a }\end{DoxyParamCaption})}
+
+\mbox{\label{classMHashPP_adcd3d311e973d71d630a8eca38175141}} 
+\index{M\+Hash\+PP@{M\+Hash\+PP}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!M\+Hash\+PP@{M\+Hash\+PP}}
+\subsubsection{operator$<$$<$()\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \textbf{ M\+Hash\+PP} \& M\+Hash\+P\+P\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::string}]{v }\end{DoxyParamCaption})}
+
+feed the std\+::string v to the hashing algorithm 
+\begin{DoxyParams}{Parameters}
+{\em v} & the std\+::string to be feeded to the hashing algorithm (without \textquotesingle{}\textbackslash{}0\textquotesingle{} at the end) \\
+\hline
+\end{DoxyParams}
+\mbox{\label{classMHashPP_a5374fdd556a88fa8670bddb908c5064b}} 
+\index{M\+Hash\+PP@{M\+Hash\+PP}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!M\+Hash\+PP@{M\+Hash\+PP}}
+\subsubsection{operator$<$$<$()\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \textbf{ M\+Hash\+PP} \& M\+Hash\+P\+P\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{\textbf{ Bit\+String}}]{v }\end{DoxyParamCaption})}
+
+feed the \doxyref{Bit\+String}{p.}{classBitString} v to the hashing algorithm 
+\begin{DoxyParams}{Parameters}
+{\em v} & the \doxyref{Bit\+String}{p.}{classBitString} to be feeded to the hashing algorithm (v.\+get\+Length() \% 8 == 0 must hold) \\
+\hline
+\end{DoxyParams}
+\mbox{\label{classMHashPP_a1445453778f6129e6b4bbee53511b871}} 
+\index{M\+Hash\+PP@{M\+Hash\+PP}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!M\+Hash\+PP@{M\+Hash\+PP}}
+\subsubsection{operator$<$$<$()\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \textbf{ M\+Hash\+PP} \& M\+Hash\+P\+P\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{\textbf{ B\+Y\+TE}}]{v }\end{DoxyParamCaption})}
+
+feed the byte v to the hashing algorithm 
+\begin{DoxyParams}{Parameters}
+{\em v} & the byte to be feeded to the hashing algorithm \\
+\hline
+\end{DoxyParams}
+\mbox{\label{classMHashPP_ac1225a758ebadf9147e93923e7a1ac41}} 
+\index{M\+Hash\+PP@{M\+Hash\+PP}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!M\+Hash\+PP@{M\+Hash\+PP}}
+\subsubsection{operator$<$$<$()\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \textbf{ M\+Hash\+PP} \& M\+Hash\+P\+P\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{\textbf{ M\+Hash\+P\+P\+::\+Command}}]{c }\end{DoxyParamCaption})}
+
+interpret the command c 
+\begin{DoxyParams}{Parameters}
+{\em c} & a command (member of \doxyref{M\+Hash\+P\+P\+::\+Command}{p.}{classMHashPP_ac7390fc319fa6359e869ec9488d633ec}) \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{classMHashPP_aa1a0569b571beb182bb65bb920635377}} 
+\index{M\+Hash\+PP@{M\+Hash\+PP}!Hash\+Bytes@{Hash\+Bytes}}
+\index{Hash\+Bytes@{Hash\+Bytes}!M\+Hash\+PP@{M\+Hash\+PP}}
+\subsubsection{Hash\+Bytes}
+{\footnotesize\ttfamily std\+::vector$<$\textbf{ B\+Y\+TE}$>$ M\+Hash\+P\+P\+::\+Hash\+Bytes\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classMHashPP_a2a8425e32209ba1c9b3615bf544c30cc}} 
+\index{M\+Hash\+PP@{M\+Hash\+PP}!Hash\+Bytes\+Valid@{Hash\+Bytes\+Valid}}
+\index{Hash\+Bytes\+Valid@{Hash\+Bytes\+Valid}!M\+Hash\+PP@{M\+Hash\+PP}}
+\subsubsection{Hash\+Bytes\+Valid}
+{\footnotesize\ttfamily bool M\+Hash\+P\+P\+::\+Hash\+Bytes\+Valid\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classMHashPP_a8f7ec9e6dc85f7028062f0c74f7d23e1}} 
+\index{M\+Hash\+PP@{M\+Hash\+PP}!HashD@{HashD}}
+\index{HashD@{HashD}!M\+Hash\+PP@{M\+Hash\+PP}}
+\subsubsection{HashD}
+{\footnotesize\ttfamily M\+H\+A\+SH M\+Hash\+P\+P\+::\+HashD\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classMHashPP_a37f39579ace5e9efadb5c7fca2dac267}} 
+\index{M\+Hash\+PP@{M\+Hash\+PP}!hashing@{hashing}}
+\index{hashing@{hashing}!M\+Hash\+PP@{M\+Hash\+PP}}
+\subsubsection{hashing}
+{\footnotesize\ttfamily bool M\+Hash\+P\+P\+::hashing\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ M\+Hash\+P\+P.\+h}\item 
+\textbf{ M\+Hash\+P\+P.\+cc}\end{DoxyCompactItemize}

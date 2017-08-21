@@ -1,0 +1,68 @@
+.TH "SampleOccurence" 3 "Thu Aug 17 2017" "Version 0.5.1" "steghide" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SampleOccurence
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SampleOccurence\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSampleOccurence\fP (\fBVertex\fP *v, unsigned short i)"
+.br
+.ti -1c
+.RI "\fBVertex\fP * \fBgetVertex\fP (void) const"
+.br
+.ti -1c
+.RI "void \fBsetVertex\fP (\fBVertex\fP *v)"
+.br
+.ti -1c
+.RI "unsigned short \fBgetIndex\fP (void) const"
+.br
+.ti -1c
+.RI "void \fBsetIndex\fP (unsigned short i)"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBSampleOccurence\fP &soc) const"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBVertex\fP * \fBTheVertex\fP"
+.br
+.ti -1c
+.RI "unsigned short \fBIndex\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SampleOccurence::SampleOccurence (\fBVertex\fP * v, unsigned short i)\fC [inline]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "unsigned short SampleOccurence::getIndex (void) const\fC [inline]\fP"
+
+.SS "\fBVertex\fP* SampleOccurence::getVertex (void) const\fC [inline]\fP"
+
+.SS "bool SampleOccurence::operator== (const \fBSampleOccurence\fP & soc) const\fC [inline]\fP"
+
+.SS "void SampleOccurence::setIndex (unsigned short i)\fC [inline]\fP"
+
+.SS "void SampleOccurence::setVertex (\fBVertex\fP * v)\fC [inline]\fP"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "unsigned short SampleOccurence::Index\fC [private]\fP"
+
+.SS "\fBVertex\fP* SampleOccurence::TheVertex\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for steghide from the source code\&.

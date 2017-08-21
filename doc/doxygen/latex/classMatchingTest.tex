@@ -1,0 +1,180 @@
+\section{Matching\+Test Class Reference}
+\label{classMatchingTest}\index{Matching\+Test@{Matching\+Test}}
+
+
+{\ttfamily \#include $<$Matching\+Test.\+h$>$}
+
+Inheritance diagram for Matching\+Test\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classMatchingTest}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Matching\+Test} (\textbf{ Test\+Suite} $\ast$s)
+\item 
+void \textbf{ setup} (void)
+\item 
+void \textbf{ cleanup} (void)
+\item 
+void \textbf{ test\+Add\+Remove\+Edge} (void)
+\item 
+void \textbf{ test\+Augmenting\+Path} (void)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Bit\+String} $\ast$ \textbf{ bs1}
+\item 
+\textbf{ Bit\+String} $\ast$ \textbf{ bs2}
+\item 
+\textbf{ Cvr\+Stg\+File} $\ast$ \textbf{ f1}
+\item 
+\textbf{ Cvr\+Stg\+File} $\ast$ \textbf{ f2}
+\item 
+\textbf{ Selector} $\ast$ \textbf{ s1}
+\item 
+\textbf{ Selector} $\ast$ \textbf{ s2}
+\item 
+\textbf{ Graph} $\ast$ \textbf{ g1}
+\item 
+\textbf{ Graph} $\ast$ \textbf{ g2}
+\item 
+\textbf{ Matching} $\ast$ \textbf{ m1}
+\item 
+\textbf{ Matching} $\ast$ \textbf{ m2}
+\item 
+\textbf{ Globals} \textbf{ gl1}
+\item 
+\textbf{ Globals} \textbf{ gl2}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{classMatchingTest_a4d394ef9c56f94617b25368018039a69}} 
+\index{Matching\+Test@{Matching\+Test}!Matching\+Test@{Matching\+Test}}
+\index{Matching\+Test@{Matching\+Test}!Matching\+Test@{Matching\+Test}}
+\subsubsection{Matching\+Test()}
+{\footnotesize\ttfamily Matching\+Test\+::\+Matching\+Test (\begin{DoxyParamCaption}\item[{\textbf{ Test\+Suite} $\ast$}]{s }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{classMatchingTest_aec8e791424a85a87a1b2768b1263e11a}} 
+\index{Matching\+Test@{Matching\+Test}!cleanup@{cleanup}}
+\index{cleanup@{cleanup}!Matching\+Test@{Matching\+Test}}
+\subsubsection{cleanup()}
+{\footnotesize\ttfamily void Matching\+Test\+::cleanup (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+cleanup the unit test -\/ called after run 
+
+Reimplemented from \textbf{ Unit\+Test} \doxyref{}{p.}{classUnitTest_adf77efe972ee4a766d94e3f7ddc193ad}.
+
+\mbox{\label{classMatchingTest_a7eaacade93babf431d433f12fc8beac5}} 
+\index{Matching\+Test@{Matching\+Test}!setup@{setup}}
+\index{setup@{setup}!Matching\+Test@{Matching\+Test}}
+\subsubsection{setup()}
+{\footnotesize\ttfamily void Matching\+Test\+::setup (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+setup the unit test -\/ called before run
+
+\doxyref{Unit\+Test\+::setup}{p.}{classUnitTest_ad73fdf9012b651047ea001d21f9d27ad} will (together with \doxyref{Unit\+Test\+::cleanup}{p.}{classUnitTest_adf77efe972ee4a766d94e3f7ddc193ad}) save and restore the object stored in Globs so they should be called from the corresponding functions in the derived object if the derived unit test manipulates the Globs object. 
+
+Reimplemented from \textbf{ Unit\+Test} \doxyref{}{p.}{classUnitTest_ad73fdf9012b651047ea001d21f9d27ad}.
+
+\mbox{\label{classMatchingTest_aed472fcd05151da9c8ab8b25b8f0f895}} 
+\index{Matching\+Test@{Matching\+Test}!test\+Add\+Remove\+Edge@{test\+Add\+Remove\+Edge}}
+\index{test\+Add\+Remove\+Edge@{test\+Add\+Remove\+Edge}!Matching\+Test@{Matching\+Test}}
+\subsubsection{test\+Add\+Remove\+Edge()}
+{\footnotesize\ttfamily void Matching\+Test\+::test\+Add\+Remove\+Edge (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\label{classMatchingTest_aca11568523fd62fca3df73ddad7d7adb}} 
+\index{Matching\+Test@{Matching\+Test}!test\+Augmenting\+Path@{test\+Augmenting\+Path}}
+\index{test\+Augmenting\+Path@{test\+Augmenting\+Path}!Matching\+Test@{Matching\+Test}}
+\subsubsection{test\+Augmenting\+Path()}
+{\footnotesize\ttfamily void Matching\+Test\+::test\+Augmenting\+Path (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{classMatchingTest_a7a2b5c230513aa99f584aa873ad33504}} 
+\index{Matching\+Test@{Matching\+Test}!bs1@{bs1}}
+\index{bs1@{bs1}!Matching\+Test@{Matching\+Test}}
+\subsubsection{bs1}
+{\footnotesize\ttfamily \textbf{ Bit\+String}$\ast$ Matching\+Test\+::bs1\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classMatchingTest_a1830c65ecd9e5644fe09d282fabfd4a1}} 
+\index{Matching\+Test@{Matching\+Test}!bs2@{bs2}}
+\index{bs2@{bs2}!Matching\+Test@{Matching\+Test}}
+\subsubsection{bs2}
+{\footnotesize\ttfamily \textbf{ Bit\+String} $\ast$ Matching\+Test\+::bs2\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classMatchingTest_a8e8d178c38cf7965b5e03832e197f3e9}} 
+\index{Matching\+Test@{Matching\+Test}!f1@{f1}}
+\index{f1@{f1}!Matching\+Test@{Matching\+Test}}
+\subsubsection{f1}
+{\footnotesize\ttfamily \textbf{ Cvr\+Stg\+File}$\ast$ Matching\+Test\+::f1\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classMatchingTest_abbbf61ae7d812f5877f5b973a4cbe0fd}} 
+\index{Matching\+Test@{Matching\+Test}!f2@{f2}}
+\index{f2@{f2}!Matching\+Test@{Matching\+Test}}
+\subsubsection{f2}
+{\footnotesize\ttfamily \textbf{ Cvr\+Stg\+File} $\ast$ Matching\+Test\+::f2\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classMatchingTest_ace10b42f4548578409ed230d955bdd98}} 
+\index{Matching\+Test@{Matching\+Test}!g1@{g1}}
+\index{g1@{g1}!Matching\+Test@{Matching\+Test}}
+\subsubsection{g1}
+{\footnotesize\ttfamily \textbf{ Graph}$\ast$ Matching\+Test\+::g1\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classMatchingTest_ae37f6684d4d8bfb24f957ab2694e38c1}} 
+\index{Matching\+Test@{Matching\+Test}!g2@{g2}}
+\index{g2@{g2}!Matching\+Test@{Matching\+Test}}
+\subsubsection{g2}
+{\footnotesize\ttfamily \textbf{ Graph} $\ast$ Matching\+Test\+::g2\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classMatchingTest_ae46e4d93253d53e952c31490dfbec5ea}} 
+\index{Matching\+Test@{Matching\+Test}!gl1@{gl1}}
+\index{gl1@{gl1}!Matching\+Test@{Matching\+Test}}
+\subsubsection{gl1}
+{\footnotesize\ttfamily \textbf{ Globals} Matching\+Test\+::gl1\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classMatchingTest_af2dad0b76d944dac9e0cde6d38caae25}} 
+\index{Matching\+Test@{Matching\+Test}!gl2@{gl2}}
+\index{gl2@{gl2}!Matching\+Test@{Matching\+Test}}
+\subsubsection{gl2}
+{\footnotesize\ttfamily \textbf{ Globals} Matching\+Test\+::gl2\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classMatchingTest_adf09bdc08c2558566ae8197f0b26c1cf}} 
+\index{Matching\+Test@{Matching\+Test}!m1@{m1}}
+\index{m1@{m1}!Matching\+Test@{Matching\+Test}}
+\subsubsection{m1}
+{\footnotesize\ttfamily \textbf{ Matching}$\ast$ Matching\+Test\+::m1\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classMatchingTest_a7d65ff7b2744f7e57f598fa0b396271b}} 
+\index{Matching\+Test@{Matching\+Test}!m2@{m2}}
+\index{m2@{m2}!Matching\+Test@{Matching\+Test}}
+\subsubsection{m2}
+{\footnotesize\ttfamily \textbf{ Matching} $\ast$ Matching\+Test\+::m2\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classMatchingTest_a4352631cb6b923f6b46c4ac675ced105}} 
+\index{Matching\+Test@{Matching\+Test}!s1@{s1}}
+\index{s1@{s1}!Matching\+Test@{Matching\+Test}}
+\subsubsection{s1}
+{\footnotesize\ttfamily \textbf{ Selector}$\ast$ Matching\+Test\+::s1\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classMatchingTest_a78e2252b89af73b42563f5b161076c60}} 
+\index{Matching\+Test@{Matching\+Test}!s2@{s2}}
+\index{s2@{s2}!Matching\+Test@{Matching\+Test}}
+\subsubsection{s2}
+{\footnotesize\ttfamily \textbf{ Selector} $\ast$ Matching\+Test\+::s2\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ Matching\+Test.\+h}\item 
+\textbf{ Matching\+Test.\+cc}\end{DoxyCompactItemize}

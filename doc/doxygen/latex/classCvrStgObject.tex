@@ -1,0 +1,84 @@
+\section{Cvr\+Stg\+Object Class Reference}
+\label{classCvrStgObject}\index{Cvr\+Stg\+Object@{Cvr\+Stg\+Object}}
+
+
+an object that can hold embedded data  
+
+
+
+
+{\ttfamily \#include $<$Cvr\+Stg\+Object.\+h$>$}
+
+Inheritance diagram for Cvr\+Stg\+Object\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.005988cm]{classCvrStgObject}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual unsigned long \textbf{ get\+Num\+Samples} (void) const =0
+\item 
+virtual \textbf{ Sample\+Value} $\ast$ \textbf{ get\+Sample\+Value} (const \textbf{ Sample\+Pos} pos) const =0
+\item 
+virtual void \textbf{ replace\+Sample} (const \textbf{ Sample\+Pos} pos, const \textbf{ Sample\+Value} $\ast$s)=0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This abstract base class provides an interface for every class that is able to hold embedded data. Something that can hold embedded data is essentially though of as an array of samples.
+
+Definitions\+: Embedded Bit...a bit to be embedded (one bit in the original or extracted embfile) Sample...the smallest data unit in a file (e.\+g. a R\+GB triple, a D\+CT coefficient) 
+
+\subsection{Member Function Documentation}
+\mbox{\label{classCvrStgObject_a80ae8f095b66683e5207adf8ff8265b4}} 
+\index{Cvr\+Stg\+Object@{Cvr\+Stg\+Object}!get\+Num\+Samples@{get\+Num\+Samples}}
+\index{get\+Num\+Samples@{get\+Num\+Samples}!Cvr\+Stg\+Object@{Cvr\+Stg\+Object}}
+\subsubsection{get\+Num\+Samples()}
+{\footnotesize\ttfamily virtual unsigned long Cvr\+Stg\+Object\+::get\+Num\+Samples (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+get the number of samples in this \doxyref{Cvr\+Stg\+Object}{p.}{classCvrStgObject} 
+
+Implemented in \textbf{ Audio\+Data\+Impl$<$ Type, Value\+Type, Sample\+Value\+Type $>$} \doxyref{}{p.}{classAudioDataImpl_a84f684e5b78a19e9b9ecfc530589706a}, \textbf{ Dummy\+File} \doxyref{}{p.}{classDummyFile_a79290dd8bd87a2fabf01f8453d4ce9f0}, \textbf{ Au\+File} \doxyref{}{p.}{classAuFile_a6207c3612049d7467805842de926934e}, \textbf{ Wav\+File} \doxyref{}{p.}{classWavFile_a3345d5c3be349c5e8a6c276e55c5599c}, and \textbf{ Bmp\+File} \doxyref{}{p.}{classBmpFile_a564fb90235f06c80162b9086dcc6e78d}.
+
+\mbox{\label{classCvrStgObject_ac77a8da85a4f7b53e2166e990dfaa4f2}} 
+\index{Cvr\+Stg\+Object@{Cvr\+Stg\+Object}!get\+Sample\+Value@{get\+Sample\+Value}}
+\index{get\+Sample\+Value@{get\+Sample\+Value}!Cvr\+Stg\+Object@{Cvr\+Stg\+Object}}
+\subsubsection{get\+Sample\+Value()}
+{\footnotesize\ttfamily virtual \textbf{ Sample\+Value}$\ast$ Cvr\+Stg\+Object\+::get\+Sample\+Value (\begin{DoxyParamCaption}\item[{const \textbf{ Sample\+Pos}}]{pos }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+get the sample at position pos 
+\begin{DoxyParams}{Parameters}
+{\em pos} & the position of a sample (must be in 0...\doxyref{get\+Num\+Samples()}{p.}{classCvrStgObject_a80ae8f095b66683e5207adf8ff8265b4}-\/1) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the sample at the given position
+\end{DoxyReturn}
+The sample object is created in this function and should be deleted by the caller. The derived class should check the condition(s) given above in its Implementation of this function. 
+
+Implemented in \textbf{ Audio\+Data\+Impl$<$ Type, Value\+Type, Sample\+Value\+Type $>$} \doxyref{}{p.}{classAudioDataImpl_a52990850bb0a8a108108f70f378d9461}, \textbf{ Au\+File} \doxyref{}{p.}{classAuFile_af55279548dc9840e46115f859dbac36d}, \textbf{ Dummy\+File} \doxyref{}{p.}{classDummyFile_a44e79fbed4d236321e47d47a9e916e29}, \textbf{ Wav\+File} \doxyref{}{p.}{classWavFile_a64ce0e228da04c36d423dce2f8c6b49a}, and \textbf{ Bmp\+File} \doxyref{}{p.}{classBmpFile_a8a982a74d9d5ef1a33228859e51c888b}.
+
+\mbox{\label{classCvrStgObject_a3068d6a9dcc1c0b8bde2f081cfde6ce5}} 
+\index{Cvr\+Stg\+Object@{Cvr\+Stg\+Object}!replace\+Sample@{replace\+Sample}}
+\index{replace\+Sample@{replace\+Sample}!Cvr\+Stg\+Object@{Cvr\+Stg\+Object}}
+\subsubsection{replace\+Sample()}
+{\footnotesize\ttfamily virtual void Cvr\+Stg\+Object\+::replace\+Sample (\begin{DoxyParamCaption}\item[{const \textbf{ Sample\+Pos}}]{pos,  }\item[{const \textbf{ Sample\+Value} $\ast$}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+replace a sample thus (possibly) altering the value of the bit returned by Sample\+Value-\/$>$get\+Bit() 
+\begin{DoxyParams}{Parameters}
+{\em pos} & the position of the sample (must be in 0...\doxyref{get\+Num\+Samples()}{p.}{classCvrStgObject_a80ae8f095b66683e5207adf8ff8265b4}-\/1) \\
+\hline
+{\em s} & the sample value that should replace the current sample value (must be of correct type for this \doxyref{Cvr\+Stg\+Object}{p.}{classCvrStgObject})\\
+\hline
+\end{DoxyParams}
+The derived class should check the condition(s) given above in its Implementation of this function. 
+
+Implemented in \textbf{ Audio\+Data\+Impl$<$ Type, Value\+Type, Sample\+Value\+Type $>$} \doxyref{}{p.}{classAudioDataImpl_a2522e8ff1588325b0fe93210a3c048f5}, \textbf{ Au\+File} \doxyref{}{p.}{classAuFile_a174651b1eb09ce6499dd9b49740e0585}, \textbf{ Dummy\+File} \doxyref{}{p.}{classDummyFile_a702ca13d4515e719785b6c7b670354bb}, \textbf{ Wav\+File} \doxyref{}{p.}{classWavFile_ae73ef41e61806392a53385065ec7e444}, and \textbf{ Bmp\+File} \doxyref{}{p.}{classBmpFile_a9f476c72483674452cf272f9e10d1087}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ Cvr\+Stg\+Object.\+h}\end{DoxyCompactItemize}

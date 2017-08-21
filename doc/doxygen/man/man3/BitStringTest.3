@@ -1,0 +1,147 @@
+.TH "BitStringTest" 3 "Thu Aug 17 2017" "Version 0.5.1" "steghide" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+BitStringTest
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <BitStringTest\&.h>\fP
+.PP
+Inherits \fBUnitTest\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBBitStringTest\fP (\fBTestSuite\fP *s)"
+.br
+.ti -1c
+.RI "void \fBsetup\fP (void)"
+.br
+.ti -1c
+.RI "void \fBcleanup\fP (void)"
+.br
+.ti -1c
+.RI "void \fBtestBitInputOutput\fP (void)"
+.br
+.ti -1c
+.RI "void \fBtestLength\fP (void)"
+.br
+.ti -1c
+.RI "void \fBtestDatatypeInput\fP (void)"
+.br
+.ti -1c
+.RI "void \fBtestDatatypeOutput\fP (void)"
+.br
+.ti -1c
+.RI "void \fBtestEquality\fP (void)"
+.br
+.ti -1c
+.RI "void \fBtestCutting\fP (void)"
+.br
+.ti -1c
+.RI "void \fBtestCompression\fP (void)"
+.br
+.ti -1c
+.RI "void \fBtestArity\fP (void)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBBitString\fP * \fBbs_0\fP"
+.br
+.ti -1c
+.RI "\fBBitString\fP * \fBbs_1\fP"
+.br
+.ti -1c
+.RI "\fBBitString\fP * \fBbs_10\fP"
+.br
+.ti -1c
+.RI "\fBBitString\fP * \fBbs_001\fP"
+.br
+.ti -1c
+.RI "\fBBitString\fP * \fBbs_100\fP"
+.br
+.ti -1c
+.RI "\fBBitString\fP * \fBbs_1010\fP"
+.br
+.ti -1c
+.RI "\fBBitString\fP * \fBbs_1110\fP"
+.br
+.ti -1c
+.RI "\fBBitString\fP * \fBbs_01011\fP"
+.br
+.ti -1c
+.RI "\fBBitString\fP * \fBbs_10010\fP"
+.br
+.ti -1c
+.RI "\fBBitString\fP * \fBbs_10101110\fP"
+.br
+.ti -1c
+.RI "\fBBitString\fP * \fBbs_101011101\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "BitStringTest::BitStringTest (\fBTestSuite\fP * s)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void BitStringTest::cleanup (void)\fC [virtual]\fP"
+cleanup the unit test - called after run 
+.PP
+Reimplemented from \fBUnitTest\fP\&.
+.SS "void BitStringTest::setup (void)\fC [virtual]\fP"
+setup the unit test - called before run
+.PP
+\fBUnitTest::setup\fP will (together with \fBUnitTest::cleanup\fP) save and restore the object stored in Globs so they should be called from the corresponding functions in the derived object if the derived unit test manipulates the Globs object\&. 
+.PP
+Reimplemented from \fBUnitTest\fP\&.
+.SS "void BitStringTest::testArity (void)"
+
+.SS "void BitStringTest::testBitInputOutput (void)"
+
+.SS "void BitStringTest::testCompression (void)"
+
+.SS "void BitStringTest::testCutting (void)"
+
+.SS "void BitStringTest::testDatatypeInput (void)"
+
+.SS "void BitStringTest::testDatatypeOutput (void)"
+
+.SS "void BitStringTest::testEquality (void)"
+
+.SS "void BitStringTest::testLength (void)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBBitString\fP* BitStringTest::bs_0\fC [private]\fP"
+
+.SS "\fBBitString\fP * BitStringTest::bs_001\fC [private]\fP"
+
+.SS "\fBBitString\fP * BitStringTest::bs_01011\fC [private]\fP"
+
+.SS "\fBBitString\fP * BitStringTest::bs_1\fC [private]\fP"
+
+.SS "\fBBitString\fP * BitStringTest::bs_10\fC [private]\fP"
+
+.SS "\fBBitString\fP * BitStringTest::bs_100\fC [private]\fP"
+
+.SS "\fBBitString\fP * BitStringTest::bs_10010\fC [private]\fP"
+
+.SS "\fBBitString\fP * BitStringTest::bs_1010\fC [private]\fP"
+
+.SS "\fBBitString\fP * BitStringTest::bs_10101110\fC [private]\fP"
+
+.SS "\fBBitString\fP * BitStringTest::bs_101011101\fC [private]\fP"
+
+.SS "\fBBitString\fP * BitStringTest::bs_1110\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for steghide from the source code\&.

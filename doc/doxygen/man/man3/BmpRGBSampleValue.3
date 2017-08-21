@@ -1,0 +1,198 @@
+.TH "BmpRGBSampleValue" 3 "Thu Aug 17 2017" "Version 0.5.1" "steghide" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+BmpRGBSampleValue \- a sample in a bmp rgb (i\&.e\&. 24-bit) file  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <BmpRGBSampleValue\&.h>\fP
+.PP
+Inherits \fBBmpSampleValue\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBBmpRGBSampleValue\fP (\fBBYTE\fP r, \fBBYTE\fP g, \fBBYTE\fP b)"
+.br
+.ti -1c
+.RI "\fBBmpRGBSampleValue\fP (\fBRGBTriple\fP t)"
+.br
+.ti -1c
+.RI "\fBUWORD32\fP \fBcalcDistance\fP (const \fBSampleValue\fP *s) const"
+.br
+.ti -1c
+.RI "\fBSampleValue\fP * \fBgetNearestTargetSampleValue\fP (\fBEmbValue\fP t) const"
+.br
+.ti -1c
+.RI "std::string \fBgetName\fP (void) const"
+.br
+.ti -1c
+.RI "\fBBYTE\fP \fBgetRed\fP (void) const"
+.br
+.ti -1c
+.RI "\fBBYTE\fP \fBgetGreen\fP (void) const"
+.br
+.ti -1c
+.RI "\fBBYTE\fP \fBgetBlue\fP (void) const"
+.br
+.in -1c
+.SS "Private Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBCOLOR\fP { \fBRED\fP, \fBGREEN\fP, \fBBLUE\fP }"
+.br
+.ti -1c
+.RI "enum \fBDIRECTION\fP { \fBUP\fP, \fBDOWN\fP }"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBUWORD32\fP \fBcalcKey\fP (const \fBRGBTriple\fP &rgb) const"
+.br
+.ti -1c
+.RI "\fBEmbValue\fP \fBcalcEValue\fP (const \fBRGBTriple\fP &rgb) const"
+.br
+.ti -1c
+.RI "\fBBYTE\fP \fBplus\fP (\fBBYTE\fP a, \fBBYTE\fP b) const"
+.br
+.ti -1c
+.RI "\fBBYTE\fP \fBminus\fP (\fBBYTE\fP a, \fBBYTE\fP b) const"
+.br
+.ti -1c
+.RI "void \fBaddNTSVCandidates\fP (std::vector< \fBRGBTriple\fP > &cands, const \fBBYTE\fP cube[3][2], \fBCOLOR\fP fc, \fBDIRECTION\fP fd, \fBCOLOR\fP i1, \fBCOLOR\fP i2, \fBEmbValue\fP t) const"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBRGBTriple\fP \fBColor\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBBmpRGBSampleValue::COLOR\fP\fC [private]\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIRED \fP\fP
+.TP
+\fB\fIGREEN \fP\fP
+.TP
+\fB\fIBLUE \fP\fP
+.SS "enum \fBBmpRGBSampleValue::DIRECTION\fP\fC [private]\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIUP \fP\fP
+.TP
+\fB\fIDOWN \fP\fP
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "BmpRGBSampleValue::BmpRGBSampleValue (\fBBYTE\fP r, \fBBYTE\fP g, \fBBYTE\fP b)"
+
+.SS "BmpRGBSampleValue::BmpRGBSampleValue (\fBRGBTriple\fP t)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void BmpRGBSampleValue::addNTSVCandidates (std::vector< \fBRGBTriple\fP > & cands, const \fBBYTE\fP cube[3][2], \fBCOLOR\fP fc, \fBDIRECTION\fP fd, \fBCOLOR\fP i1, \fBCOLOR\fP i2, \fBEmbValue\fP t) const\fC [private]\fP"
+add candidates for the nearest target sample value 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcands\fP the candidates vector 
+.br
+\fIcube\fP the color values describing the current search cube 
+.br
+\fIfc\fP the fixed color 
+.br
+\fIfd\fP the fixed side of the fixed color 
+.RE
+.PP
+
+.SS "\fBUWORD32\fP BmpRGBSampleValue::calcDistance (const \fBSampleValue\fP * s) const\fC [virtual]\fP"
+calculate the distance between the sample value s and this sample value 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIs\fP a sample value of the same type as this 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the distance 
+.RE
+.PP
+
+.PP
+Reimplemented from \fBBmpSampleValue\fP\&.
+.SS "\fBEmbValue\fP BmpRGBSampleValue::calcEValue (const \fBRGBTriple\fP & rgb) const\fC [inline]\fP, \fC [private]\fP"
+
+.SS "\fBUWORD32\fP BmpRGBSampleValue::calcKey (const \fBRGBTriple\fP & rgb) const\fC [inline]\fP, \fC [private]\fP"
+
+.SS "\fBBYTE\fP BmpRGBSampleValue::getBlue (void) const\fC [inline]\fP, \fC [virtual]\fP"
+get the blue color component 
+.PP
+Implements \fBBmpSampleValue\fP\&.
+.SS "\fBBYTE\fP BmpRGBSampleValue::getGreen (void) const\fC [inline]\fP, \fC [virtual]\fP"
+get the green color component 
+.PP
+Implements \fBBmpSampleValue\fP\&.
+.SS "std::string BmpRGBSampleValue::getName (void) const\fC [virtual]\fP"
+return a short name uniquely identifying this sample value 
+.PP
+Implements \fBSampleValue\fP\&.
+.SS "\fBSampleValue\fP * BmpRGBSampleValue::getNearestTargetSampleValue (\fBEmbValue\fP t) const\fC [virtual]\fP"
+get the nearest (with the least distance to this sample value) sample value whose embedded value equals the specified target 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIt\fP the target embedded value
+.RE
+.PP
+If two or more target sample values have equal distance each of them should be returned with equal probability\&.
+.PP
+The returned \fBSampleValue\fP object should be deleted by the callser\&. 
+.PP
+Implements \fBSampleValue\fP\&.
+.SS "\fBBYTE\fP BmpRGBSampleValue::getRed (void) const\fC [inline]\fP, \fC [virtual]\fP"
+get the red color component 
+.PP
+Implements \fBBmpSampleValue\fP\&.
+.SS "\fBBYTE\fP BmpRGBSampleValue::minus (\fBBYTE\fP a, \fBBYTE\fP b) const\fC [private]\fP"
+substract the BYTE b from the BYTE a 
+.PP
+\fBReturns:\fP
+.RS 4
+max(0, a - b) 
+.RE
+.PP
+
+.SS "\fBBYTE\fP BmpRGBSampleValue::plus (\fBBYTE\fP a, \fBBYTE\fP b) const\fC [private]\fP"
+add the BYTEs a and b 
+.PP
+\fBReturns:\fP
+.RS 4
+min(255, a + b) 
+.RE
+.PP
+
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBRGBTriple\fP BmpRGBSampleValue::Color\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for steghide from the source code\&.

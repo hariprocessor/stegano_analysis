@@ -1,0 +1,207 @@
+\section{Test\+Suite Class Reference}
+\label{classTestSuite}\index{Test\+Suite@{Test\+Suite}}
+
+
+{\ttfamily \#include $<$Test\+Suite.\+h$>$}
+
+Inheritance diagram for Test\+Suite\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classTestSuite}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \textbf{ T\+E\+S\+T\+R\+E\+S\+U\+LT} \{ \textbf{ N\+O\+T\+I\+N\+S\+T\+A\+L\+L\+ED}, 
+\textbf{ K\+N\+O\+W\+N\+E\+X\+C\+E\+P\+T\+I\+ON}, 
+\textbf{ U\+N\+K\+N\+O\+W\+N\+E\+X\+C\+E\+P\+T\+I\+ON}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Test\+Suite} (void)
+\item 
+void \textbf{ add\+Unit\+Test} (\textbf{ Unit\+Test} $\ast$ut)
+\item 
+void \textbf{ run} (void)
+\item 
+bool \textbf{ get\+Result} (void)
+\item 
+void \textbf{ start\+Unit} (std\+::string n)
+\item 
+void \textbf{ end\+Unit} (std\+::string n)
+\item 
+void \textbf{ start\+Category} (std\+::string n)
+\item 
+void \textbf{ end\+Category} (std\+::string n)
+\item 
+void \textbf{ add\+Test\+Result} (bool r)
+\item 
+void \textbf{ add\+Test\+Result} (\textbf{ T\+E\+S\+T\+R\+E\+S\+U\+LT} r)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \textbf{ Unit\+Test} $\ast$ $>$ \textbf{ Unit\+Tests}
+\item 
+std\+::string \textbf{ running\+Unit}
+\item 
+std\+::string \textbf{ running\+Category}
+\item 
+bool \textbf{ running\+Category\+Ok}
+\item 
+bool \textbf{ Suite\+Ok}
+\item 
+unsigned short \textbf{ Test\+Number}
+\item 
+std\+::ostream $\ast$ \textbf{ Out\+Stream}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\label{classTestSuite_ae21bda2421e76881ad8f0489e9116ef4}} 
+\index{Test\+Suite@{Test\+Suite}!T\+E\+S\+T\+R\+E\+S\+U\+LT@{T\+E\+S\+T\+R\+E\+S\+U\+LT}}
+\index{T\+E\+S\+T\+R\+E\+S\+U\+LT@{T\+E\+S\+T\+R\+E\+S\+U\+LT}!Test\+Suite@{Test\+Suite}}
+\subsubsection{T\+E\+S\+T\+R\+E\+S\+U\+LT}
+{\footnotesize\ttfamily enum \textbf{ Test\+Suite\+::\+T\+E\+S\+T\+R\+E\+S\+U\+LT}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{N\+O\+T\+I\+N\+S\+T\+A\+L\+L\+ED@{N\+O\+T\+I\+N\+S\+T\+A\+L\+L\+ED}!Test\+Suite@{Test\+Suite}}\index{Test\+Suite@{Test\+Suite}!N\+O\+T\+I\+N\+S\+T\+A\+L\+L\+ED@{N\+O\+T\+I\+N\+S\+T\+A\+L\+L\+ED}}}\mbox{\label{classTestSuite_ae21bda2421e76881ad8f0489e9116ef4a6518e6c79c5e05f9d14f5504d76aada5}} 
+N\+O\+T\+I\+N\+S\+T\+A\+L\+L\+ED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{K\+N\+O\+W\+N\+E\+X\+C\+E\+P\+T\+I\+ON@{K\+N\+O\+W\+N\+E\+X\+C\+E\+P\+T\+I\+ON}!Test\+Suite@{Test\+Suite}}\index{Test\+Suite@{Test\+Suite}!K\+N\+O\+W\+N\+E\+X\+C\+E\+P\+T\+I\+ON@{K\+N\+O\+W\+N\+E\+X\+C\+E\+P\+T\+I\+ON}}}\mbox{\label{classTestSuite_ae21bda2421e76881ad8f0489e9116ef4ab99850ca49925896e81fff936d3a5ac1}} 
+K\+N\+O\+W\+N\+E\+X\+C\+E\+P\+T\+I\+ON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{U\+N\+K\+N\+O\+W\+N\+E\+X\+C\+E\+P\+T\+I\+ON@{U\+N\+K\+N\+O\+W\+N\+E\+X\+C\+E\+P\+T\+I\+ON}!Test\+Suite@{Test\+Suite}}\index{Test\+Suite@{Test\+Suite}!U\+N\+K\+N\+O\+W\+N\+E\+X\+C\+E\+P\+T\+I\+ON@{U\+N\+K\+N\+O\+W\+N\+E\+X\+C\+E\+P\+T\+I\+ON}}}\mbox{\label{classTestSuite_ae21bda2421e76881ad8f0489e9116ef4a703ebf22dbddf589a35e8e6eea10118a}} 
+U\+N\+K\+N\+O\+W\+N\+E\+X\+C\+E\+P\+T\+I\+ON&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{classTestSuite_a511514a20da34a85fa3ae98f42d4fe3c}} 
+\index{Test\+Suite@{Test\+Suite}!Test\+Suite@{Test\+Suite}}
+\index{Test\+Suite@{Test\+Suite}!Test\+Suite@{Test\+Suite}}
+\subsubsection{Test\+Suite()}
+{\footnotesize\ttfamily Test\+Suite\+::\+Test\+Suite (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{classTestSuite_a1a4a10926f67e22ac34425e62f992891}} 
+\index{Test\+Suite@{Test\+Suite}!add\+Test\+Result@{add\+Test\+Result}}
+\index{add\+Test\+Result@{add\+Test\+Result}!Test\+Suite@{Test\+Suite}}
+\subsubsection{add\+Test\+Result()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Test\+Suite\+::add\+Test\+Result (\begin{DoxyParamCaption}\item[{bool}]{r }\end{DoxyParamCaption})}
+
+\mbox{\label{classTestSuite_a2aa1969dfc16a31b8a449c8a08043de4}} 
+\index{Test\+Suite@{Test\+Suite}!add\+Test\+Result@{add\+Test\+Result}}
+\index{add\+Test\+Result@{add\+Test\+Result}!Test\+Suite@{Test\+Suite}}
+\subsubsection{add\+Test\+Result()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Test\+Suite\+::add\+Test\+Result (\begin{DoxyParamCaption}\item[{\textbf{ Test\+Suite\+::\+T\+E\+S\+T\+R\+E\+S\+U\+LT}}]{r }\end{DoxyParamCaption})}
+
+\mbox{\label{classTestSuite_a0565e859eb7bb0643b9aa61f431aa9fb}} 
+\index{Test\+Suite@{Test\+Suite}!add\+Unit\+Test@{add\+Unit\+Test}}
+\index{add\+Unit\+Test@{add\+Unit\+Test}!Test\+Suite@{Test\+Suite}}
+\subsubsection{add\+Unit\+Test()}
+{\footnotesize\ttfamily void Test\+Suite\+::add\+Unit\+Test (\begin{DoxyParamCaption}\item[{\textbf{ Unit\+Test} $\ast$}]{ut }\end{DoxyParamCaption})}
+
+\mbox{\label{classTestSuite_aaed439e997caf10e1250f3f9b8c626a5}} 
+\index{Test\+Suite@{Test\+Suite}!end\+Category@{end\+Category}}
+\index{end\+Category@{end\+Category}!Test\+Suite@{Test\+Suite}}
+\subsubsection{end\+Category()}
+{\footnotesize\ttfamily void Test\+Suite\+::end\+Category (\begin{DoxyParamCaption}\item[{std\+::string}]{n }\end{DoxyParamCaption})}
+
+\mbox{\label{classTestSuite_ab51bf6755ce5b809ed256ef97674b1e9}} 
+\index{Test\+Suite@{Test\+Suite}!end\+Unit@{end\+Unit}}
+\index{end\+Unit@{end\+Unit}!Test\+Suite@{Test\+Suite}}
+\subsubsection{end\+Unit()}
+{\footnotesize\ttfamily void Test\+Suite\+::end\+Unit (\begin{DoxyParamCaption}\item[{std\+::string}]{n }\end{DoxyParamCaption})}
+
+\mbox{\label{classTestSuite_a0c8cd1bab99c7440c403792b7984fb6e}} 
+\index{Test\+Suite@{Test\+Suite}!get\+Result@{get\+Result}}
+\index{get\+Result@{get\+Result}!Test\+Suite@{Test\+Suite}}
+\subsubsection{get\+Result()}
+{\footnotesize\ttfamily bool Test\+Suite\+::get\+Result (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+true iff all tests were ok 
+\end{DoxyReturn}
+\mbox{\label{classTestSuite_a359444bf9db9b6cf02fcd840c3965f01}} 
+\index{Test\+Suite@{Test\+Suite}!run@{run}}
+\index{run@{run}!Test\+Suite@{Test\+Suite}}
+\subsubsection{run()}
+{\footnotesize\ttfamily void Test\+Suite\+::run (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \textbf{ Test} \doxyref{}{p.}{classTest_adaa1047515f66be6402569c5f4a51189}.
+
+\mbox{\label{classTestSuite_a69e600df082c345c70f59f92b7d9e2b1}} 
+\index{Test\+Suite@{Test\+Suite}!start\+Category@{start\+Category}}
+\index{start\+Category@{start\+Category}!Test\+Suite@{Test\+Suite}}
+\subsubsection{start\+Category()}
+{\footnotesize\ttfamily void Test\+Suite\+::start\+Category (\begin{DoxyParamCaption}\item[{std\+::string}]{n }\end{DoxyParamCaption})}
+
+\mbox{\label{classTestSuite_abad3002928c9e3d04198f914ad1000ba}} 
+\index{Test\+Suite@{Test\+Suite}!start\+Unit@{start\+Unit}}
+\index{start\+Unit@{start\+Unit}!Test\+Suite@{Test\+Suite}}
+\subsubsection{start\+Unit()}
+{\footnotesize\ttfamily void Test\+Suite\+::start\+Unit (\begin{DoxyParamCaption}\item[{std\+::string}]{n }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{classTestSuite_a5f668ca9f9435f755642096df3ad8548}} 
+\index{Test\+Suite@{Test\+Suite}!Out\+Stream@{Out\+Stream}}
+\index{Out\+Stream@{Out\+Stream}!Test\+Suite@{Test\+Suite}}
+\subsubsection{Out\+Stream}
+{\footnotesize\ttfamily std\+::ostream$\ast$ Test\+Suite\+::\+Out\+Stream\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classTestSuite_a6f1fcf00de294a741c2ded3a3b14c56c}} 
+\index{Test\+Suite@{Test\+Suite}!running\+Category@{running\+Category}}
+\index{running\+Category@{running\+Category}!Test\+Suite@{Test\+Suite}}
+\subsubsection{running\+Category}
+{\footnotesize\ttfamily std\+::string Test\+Suite\+::running\+Category\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classTestSuite_ae6689c762af9c7e10403b594dfb53e37}} 
+\index{Test\+Suite@{Test\+Suite}!running\+Category\+Ok@{running\+Category\+Ok}}
+\index{running\+Category\+Ok@{running\+Category\+Ok}!Test\+Suite@{Test\+Suite}}
+\subsubsection{running\+Category\+Ok}
+{\footnotesize\ttfamily bool Test\+Suite\+::running\+Category\+Ok\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classTestSuite_a6b811eaf998e1958e71c6aa253040450}} 
+\index{Test\+Suite@{Test\+Suite}!running\+Unit@{running\+Unit}}
+\index{running\+Unit@{running\+Unit}!Test\+Suite@{Test\+Suite}}
+\subsubsection{running\+Unit}
+{\footnotesize\ttfamily std\+::string Test\+Suite\+::running\+Unit\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classTestSuite_a748194974feede5ee390d8e38dce4493}} 
+\index{Test\+Suite@{Test\+Suite}!Suite\+Ok@{Suite\+Ok}}
+\index{Suite\+Ok@{Suite\+Ok}!Test\+Suite@{Test\+Suite}}
+\subsubsection{Suite\+Ok}
+{\footnotesize\ttfamily bool Test\+Suite\+::\+Suite\+Ok\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classTestSuite_ab8559a8562ab61894fb6820830da169f}} 
+\index{Test\+Suite@{Test\+Suite}!Test\+Number@{Test\+Number}}
+\index{Test\+Number@{Test\+Number}!Test\+Suite@{Test\+Suite}}
+\subsubsection{Test\+Number}
+{\footnotesize\ttfamily unsigned short Test\+Suite\+::\+Test\+Number\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classTestSuite_a753929fd1035b3614180ab005bfb038a}} 
+\index{Test\+Suite@{Test\+Suite}!Unit\+Tests@{Unit\+Tests}}
+\index{Unit\+Tests@{Unit\+Tests}!Test\+Suite@{Test\+Suite}}
+\subsubsection{Unit\+Tests}
+{\footnotesize\ttfamily std\+::vector$<$\textbf{ Unit\+Test}$\ast$$>$ Test\+Suite\+::\+Unit\+Tests\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ Test\+Suite.\+h}\item 
+\textbf{ Test\+Suite.\+cc}\end{DoxyCompactItemize}

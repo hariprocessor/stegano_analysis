@@ -1,0 +1,57 @@
+Extractor.cc:	Selector sel (Globs.TheCvrStgFile->getNumSamples(), Passphrase) ;
+Extractor.cc:		unsigned short bitsperembvalue = AUtils::log2_ceil<unsigned short> (Globs.TheCvrStgFile->getEmbValueModulus()) ;
+Extractor.cc:		if (sv_idx + (Globs.TheCvrStgFile->getSamplesPerVertex() * embvaluesrequested) >= Globs.TheCvrStgFile->getNumSamples()) {
+Extractor.cc:			if (Globs.TheCvrStgFile->is_std()) {
+Extractor.cc:				throw CorruptDataError (_("the stego file \"%s\" is too short to contain the embedded data."), Globs.TheCvrStgFile->getName().c_str()) ;
+Extractor.cc:		BitString bits (Globs.TheCvrStgFile->getEmbValueModulus()) ;
+Extractor.cc:			for (unsigned int j = 0 ; j < Globs.TheCvrStgFile->getSamplesPerVertex() ; j++, sv_idx++) {
+Extractor.cc:				ev = (ev + Globs.TheCvrStgFile->getEmbeddedValue (sel[sv_idx])) % Globs.TheCvrStgFile->getEmbValueModulus() ;
+WavFile.cc:	int r = Globs.TheCvrStgFile->getRadius() ;
+Vertex.cc:	SampleOccurenceIts = new std::list<SampleOccurence>::iterator[Globs.TheCvrStgFile->getSamplesPerVertex()] ;
+Vertex.cc:	TargetValues = new EmbValue[Globs.TheCvrStgFile->getSamplesPerVertex()] ;
+Vertex.cc:	for (unsigned short i = 0 ; i < Globs.TheCvrStgFile->getSamplesPerVertex() ; i++) { // fill TargetValues with source values temporarily
+Vertex.cc:		msum = (msum + TargetValues[i]) % Globs.TheCvrStgFile->getEmbValueModulus() ;
+Vertex.cc:		t += Globs.TheCvrStgFile->getEmbValueModulus() ;
+Vertex.cc:	for (unsigned short i = 0 ; i < Globs.TheCvrStgFile->getSamplesPerVertex() ; i++) {
+Vertex.cc:		TargetValues[i] = (TargetValues[i] + d) % Globs.TheCvrStgFile->getEmbValueModulus() ;
+Vertex.cc:	for (unsigned short i = 0 ; i < Globs.TheCvrStgFile->getSamplesPerVertex() ; i++) {
+Vertex.cc:		for (unsigned short j = i + 1 ; j < Globs.TheCvrStgFile->getSamplesPerVertex() ; j++) {
+Vertex.cc:		for (unsigned short i = 0 ; i < Globs.TheCvrStgFile->getSamplesPerVertex() ; i++) {
+Vertex.cc:		for (unsigned short i = 0 ; i < Globs.TheCvrStgFile->getSamplesPerVertex() ; i++) {
+Vertex.cc:		for (unsigned short i = 0 ; i < Globs.TheCvrStgFile->getSamplesPerVertex() ; i++) {
+Vertex.cc:		for (unsigned short i = 0 ; i < Globs.TheCvrStgFile->getSamplesPerVertex() ; i++) {
+Vertex.cc:	for (unsigned short i = 0 ; i < Globs.TheCvrStgFile->getSamplesPerVertex() ; i++) {
+Vertex.cc:		retval = (retval + SampleValues[i]->getEmbeddedValue()) % Globs.TheCvrStgFile->getEmbValueModulus() ;
+Vertex.cc:	for (unsigned short i = 0 ; i < Globs.TheCvrStgFile->getSamplesPerVertex() ; i++) {
+Vertex.cc:	for (unsigned short i = 0 ; i < Globs.TheCvrStgFile->getSamplesPerVertex() ; i++) {
+BmpPaletteSampleValue.h:		{ return (idx % Globs.TheCvrStgFile->getEmbValueModulus()) ; } ;
+Vertex.h: * cover-stego-file), where k is TheCvrStgFile->getNumSamplesPerVertex(). One of these k samples
+Vertex.h:	 * \param i an index of a sample in this vertex (must be < TheCvrStgFile->getNumSamplesPerVertex())
+Vertex.h:	 * \param i an index of a sample in this vertex (must be < TheCvrStgFile->getNumSamplesPerVertex())
+EdgeIterator.cc:	SVALIndices = new unsigned long[Globs.TheCvrStgFile->getSamplesPerVertex()] ;
+EdgeIterator.cc:	SVALIndices = new unsigned long[Globs.TheCvrStgFile->getSamplesPerVertex()] ;
+EdgeIterator.cc:	SVALIndices = new unsigned long[Globs.TheCvrStgFile->getSamplesPerVertex()] ;
+EdgeIterator.cc:	for (unsigned short i = 0 ; i < Globs.TheCvrStgFile->getSamplesPerVertex() ; i++) {
+EdgeIterator.cc:	for (unsigned short i = 0 ; i < Globs.TheCvrStgFile->getSamplesPerVertex() ; i++) {
+EdgeIterator.cc:	for (unsigned short i = 0 ; i < Globs.TheCvrStgFile->getSamplesPerVertex() ; i++) {
+EdgeIterator.cc:	for (unsigned short i = 0 ; i < Globs.TheCvrStgFile->getSamplesPerVertex() ; i++) {
+AudioSampleValue.h:	EmbValue calcEValue (ValueType v) const { return ((EmbValue) ((v - MinValue) % Globs.TheCvrStgFile->getEmbValueModulus())) ; } ;
+WKSConstructionHeuristic.cc:	for (unsigned short i = 0 ; i < Globs.TheCvrStgFile->getSamplesPerVertex() ; i++) {
+Graph.cc:		for (unsigned short j = 0 ; j < Globs.TheCvrStgFile->getSamplesPerVertex() ; j++) {
+Embedder.cc:	ToEmbed.setArity (Globs.TheCvrStgFile->getEmbValueModulus()) ;
+Embedder.cc:	if ((ToEmbed.getNAryLength() * Globs.TheCvrStgFile->getSamplesPerVertex()) > Globs.TheCvrStgFile->getNumSamples()) {
+Embedder.cc:	Selector sel (Globs.TheCvrStgFile->getNumSamples(), Args.Passphrase.getValue()) ;
+Embedder.cc:	Globs.TheCvrStgFile->transform (Args.StgFn.getValue()) ;
+Embedder.cc:	if (Globs.TheCvrStgFile->is_std()) {
+Embedder.cc:			Message ws (_("writing stego file \"%s\"... "), Globs.TheCvrStgFile->getName().c_str()) ;
+Embedder.cc:	Globs.TheCvrStgFile->write() ;
+Embedder.cc:	std::vector<MatchingAlgorithm*> MatchingAlgos = Globs.TheCvrStgFile->getMatchingAlgorithms (Globs.TheGraph, matching) ;
+Embedder.cc:	Globs.TheCvrStgFile->replaceSample (e->getSamplePos(v1), e->getReplacingSampleValue (v1)) ;
+Embedder.cc:	Globs.TheCvrStgFile->replaceSample (e->getSamplePos(v2), e->getReplacingSampleValue (v2)) ;
+Embedder.cc:	for (unsigned short i = 0 ; i < Globs.TheCvrStgFile->getSamplesPerVertex() ; i++) {
+Embedder.cc:	EmbValue oldev = Globs.TheCvrStgFile->getEmbeddedValue (samplepos) ;
+Embedder.cc:	Globs.TheCvrStgFile->replaceSample (samplepos, newsample) ;
+Embedder.cc:	myassert (oldev != Globs.TheCvrStgFile->getEmbeddedValue (samplepos)) ;
+SampleValue.cc:	NumEdges = new UWORD32[Globs.TheCvrStgFile->getEmbValueModulus()] ;
+SampleValue.cc:	printDebug (5, "SampleValue::isNeighbour: Distance: %lu, Radius: %lu\n", calcDistance(s), Globs.TheCvrStgFile->getRadius()) ;
+SampleValue.cc:	return (calcDistance (s) <= Globs.TheCvrStgFile->getRadius()) ;

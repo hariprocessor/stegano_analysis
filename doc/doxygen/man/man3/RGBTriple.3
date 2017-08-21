@@ -1,0 +1,80 @@
+.TH "RGBTriple" 3 "Thu Aug 17 2017" "Version 0.5.1" "steghide" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RGBTriple
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <RGBTriple\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBRGBTriple\fP (void)"
+.br
+.ti -1c
+.RI "\fBRGBTriple\fP (\fBBYTE\fP r, \fBBYTE\fP g, \fBBYTE\fP b)"
+.br
+.ti -1c
+.RI "\fBUWORD32\fP \fBcalcDistance\fP (const \fBRGBTriple\fP &t) const"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBRGBTriple\fP &t) const"
+.br
+.ti -1c
+.RI "bool \fBoperator!=\fP (const \fBRGBTriple\fP &t) const"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBBYTE\fP \fBRed\fP"
+.br
+.ti -1c
+.RI "\fBBYTE\fP \fBGreen\fP"
+.br
+.ti -1c
+.RI "\fBBYTE\fP \fBBlue\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "RGBTriple::RGBTriple (void)\fC [inline]\fP"
+
+.SS "RGBTriple::RGBTriple (\fBBYTE\fP r, \fBBYTE\fP g, \fBBYTE\fP b)\fC [inline]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBUWORD32\fP RGBTriple::calcDistance (const \fBRGBTriple\fP & t) const"
+get the squared distance in the RGB cube between this triple and the triple t 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIt\fP another RGB triple 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the square of the euclidean distance between this and t 
+.RE
+.PP
+
+.SS "bool RGBTriple::operator!= (const \fBRGBTriple\fP & t) const"
+return true iff this triple and t are not equal (i\&.e\&. have different rgb values) 
+.SS "bool RGBTriple::operator== (const \fBRGBTriple\fP & t) const"
+returns true iff this triple and t are equal (i\&.e\&. have the same rgb values) 
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBBYTE\fP RGBTriple::Blue"
+
+.SS "\fBBYTE\fP RGBTriple::Green"
+
+.SS "\fBBYTE\fP RGBTriple::Red"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for steghide from the source code\&.

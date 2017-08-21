@@ -1,0 +1,261 @@
+\section{Bmp\+R\+G\+B\+Sample\+Value Class Reference}
+\label{classBmpRGBSampleValue}\index{Bmp\+R\+G\+B\+Sample\+Value@{Bmp\+R\+G\+B\+Sample\+Value}}
+
+
+a sample in a bmp rgb (i.\+e. 24-\/bit) file  
+
+
+
+
+{\ttfamily \#include $<$Bmp\+R\+G\+B\+Sample\+Value.\+h$>$}
+
+Inheritance diagram for Bmp\+R\+G\+B\+Sample\+Value\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classBmpRGBSampleValue}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Bmp\+R\+G\+B\+Sample\+Value} (\textbf{ B\+Y\+TE} r, \textbf{ B\+Y\+TE} g, \textbf{ B\+Y\+TE} b)
+\item 
+\textbf{ Bmp\+R\+G\+B\+Sample\+Value} (\textbf{ R\+G\+B\+Triple} t)
+\item 
+\textbf{ U\+W\+O\+R\+D32} \textbf{ calc\+Distance} (const \textbf{ Sample\+Value} $\ast$s) const
+\item 
+\textbf{ Sample\+Value} $\ast$ \textbf{ get\+Nearest\+Target\+Sample\+Value} (\textbf{ Emb\+Value} t) const
+\item 
+std\+::string \textbf{ get\+Name} (void) const
+\item 
+\textbf{ B\+Y\+TE} \textbf{ get\+Red} (void) const
+\item 
+\textbf{ B\+Y\+TE} \textbf{ get\+Green} (void) const
+\item 
+\textbf{ B\+Y\+TE} \textbf{ get\+Blue} (void) const
+\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \textbf{ C\+O\+L\+OR} \{ \textbf{ R\+ED}, 
+\textbf{ G\+R\+E\+EN}, 
+\textbf{ B\+L\+UE}
+ \}
+\item 
+enum \textbf{ D\+I\+R\+E\+C\+T\+I\+ON} \{ \textbf{ UP}, 
+\textbf{ D\+O\+WN}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ U\+W\+O\+R\+D32} \textbf{ calc\+Key} (const \textbf{ R\+G\+B\+Triple} \&rgb) const
+\item 
+\textbf{ Emb\+Value} \textbf{ calc\+E\+Value} (const \textbf{ R\+G\+B\+Triple} \&rgb) const
+\item 
+\textbf{ B\+Y\+TE} \textbf{ plus} (\textbf{ B\+Y\+TE} a, \textbf{ B\+Y\+TE} b) const
+\item 
+\textbf{ B\+Y\+TE} \textbf{ minus} (\textbf{ B\+Y\+TE} a, \textbf{ B\+Y\+TE} b) const
+\item 
+void \textbf{ add\+N\+T\+S\+V\+Candidates} (std\+::vector$<$ \textbf{ R\+G\+B\+Triple} $>$ \&cands, const \textbf{ B\+Y\+TE} cube[3][2], \textbf{ C\+O\+L\+OR} fc, \textbf{ D\+I\+R\+E\+C\+T\+I\+ON} fd, \textbf{ C\+O\+L\+OR} i1, \textbf{ C\+O\+L\+OR} i2, \textbf{ Emb\+Value} t) const
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ R\+G\+B\+Triple} \textbf{ Color}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\label{classBmpRGBSampleValue_a1e5208b4f0d09c8f61d78cdfd5488d3d}} 
+\index{Bmp\+R\+G\+B\+Sample\+Value@{Bmp\+R\+G\+B\+Sample\+Value}!C\+O\+L\+OR@{C\+O\+L\+OR}}
+\index{C\+O\+L\+OR@{C\+O\+L\+OR}!Bmp\+R\+G\+B\+Sample\+Value@{Bmp\+R\+G\+B\+Sample\+Value}}
+\subsubsection{C\+O\+L\+OR}
+{\footnotesize\ttfamily enum \textbf{ Bmp\+R\+G\+B\+Sample\+Value\+::\+C\+O\+L\+OR}\hspace{0.3cm}{\ttfamily [private]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R\+ED@{R\+ED}!Bmp\+R\+G\+B\+Sample\+Value@{Bmp\+R\+G\+B\+Sample\+Value}}\index{Bmp\+R\+G\+B\+Sample\+Value@{Bmp\+R\+G\+B\+Sample\+Value}!R\+ED@{R\+ED}}}\mbox{\label{classBmpRGBSampleValue_a1e5208b4f0d09c8f61d78cdfd5488d3da4d2386856b553e3831419719cf284704}} 
+R\+ED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{G\+R\+E\+EN@{G\+R\+E\+EN}!Bmp\+R\+G\+B\+Sample\+Value@{Bmp\+R\+G\+B\+Sample\+Value}}\index{Bmp\+R\+G\+B\+Sample\+Value@{Bmp\+R\+G\+B\+Sample\+Value}!G\+R\+E\+EN@{G\+R\+E\+EN}}}\mbox{\label{classBmpRGBSampleValue_a1e5208b4f0d09c8f61d78cdfd5488d3da1c65467ddf0f5d047a09cb2e772e1140}} 
+G\+R\+E\+EN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{B\+L\+UE@{B\+L\+UE}!Bmp\+R\+G\+B\+Sample\+Value@{Bmp\+R\+G\+B\+Sample\+Value}}\index{Bmp\+R\+G\+B\+Sample\+Value@{Bmp\+R\+G\+B\+Sample\+Value}!B\+L\+UE@{B\+L\+UE}}}\mbox{\label{classBmpRGBSampleValue_a1e5208b4f0d09c8f61d78cdfd5488d3da4f80e6362ff5d7e0e27950d7d18ca7de}} 
+B\+L\+UE&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\label{classBmpRGBSampleValue_ac0d93f8972ad38b753b94df6991f77f6}} 
+\index{Bmp\+R\+G\+B\+Sample\+Value@{Bmp\+R\+G\+B\+Sample\+Value}!D\+I\+R\+E\+C\+T\+I\+ON@{D\+I\+R\+E\+C\+T\+I\+ON}}
+\index{D\+I\+R\+E\+C\+T\+I\+ON@{D\+I\+R\+E\+C\+T\+I\+ON}!Bmp\+R\+G\+B\+Sample\+Value@{Bmp\+R\+G\+B\+Sample\+Value}}
+\subsubsection{D\+I\+R\+E\+C\+T\+I\+ON}
+{\footnotesize\ttfamily enum \textbf{ Bmp\+R\+G\+B\+Sample\+Value\+::\+D\+I\+R\+E\+C\+T\+I\+ON}\hspace{0.3cm}{\ttfamily [private]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UP@{UP}!Bmp\+R\+G\+B\+Sample\+Value@{Bmp\+R\+G\+B\+Sample\+Value}}\index{Bmp\+R\+G\+B\+Sample\+Value@{Bmp\+R\+G\+B\+Sample\+Value}!UP@{UP}}}\mbox{\label{classBmpRGBSampleValue_ac0d93f8972ad38b753b94df6991f77f6ac51fc636bcbf6661c93467e2e7ca2130}} 
+UP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D\+O\+WN@{D\+O\+WN}!Bmp\+R\+G\+B\+Sample\+Value@{Bmp\+R\+G\+B\+Sample\+Value}}\index{Bmp\+R\+G\+B\+Sample\+Value@{Bmp\+R\+G\+B\+Sample\+Value}!D\+O\+WN@{D\+O\+WN}}}\mbox{\label{classBmpRGBSampleValue_ac0d93f8972ad38b753b94df6991f77f6a0a44fea06b72341ea0b8c0984d2ed71b}} 
+D\+O\+WN&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{classBmpRGBSampleValue_a2038cd4fa8aa78195078db8a40e8af50}} 
+\index{Bmp\+R\+G\+B\+Sample\+Value@{Bmp\+R\+G\+B\+Sample\+Value}!Bmp\+R\+G\+B\+Sample\+Value@{Bmp\+R\+G\+B\+Sample\+Value}}
+\index{Bmp\+R\+G\+B\+Sample\+Value@{Bmp\+R\+G\+B\+Sample\+Value}!Bmp\+R\+G\+B\+Sample\+Value@{Bmp\+R\+G\+B\+Sample\+Value}}
+\subsubsection{Bmp\+R\+G\+B\+Sample\+Value()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Bmp\+R\+G\+B\+Sample\+Value\+::\+Bmp\+R\+G\+B\+Sample\+Value (\begin{DoxyParamCaption}\item[{\textbf{ B\+Y\+TE}}]{r,  }\item[{\textbf{ B\+Y\+TE}}]{g,  }\item[{\textbf{ B\+Y\+TE}}]{b }\end{DoxyParamCaption})}
+
+\mbox{\label{classBmpRGBSampleValue_a0b9ae2be392fe5f69f8e44fa1ac281af}} 
+\index{Bmp\+R\+G\+B\+Sample\+Value@{Bmp\+R\+G\+B\+Sample\+Value}!Bmp\+R\+G\+B\+Sample\+Value@{Bmp\+R\+G\+B\+Sample\+Value}}
+\index{Bmp\+R\+G\+B\+Sample\+Value@{Bmp\+R\+G\+B\+Sample\+Value}!Bmp\+R\+G\+B\+Sample\+Value@{Bmp\+R\+G\+B\+Sample\+Value}}
+\subsubsection{Bmp\+R\+G\+B\+Sample\+Value()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Bmp\+R\+G\+B\+Sample\+Value\+::\+Bmp\+R\+G\+B\+Sample\+Value (\begin{DoxyParamCaption}\item[{\textbf{ R\+G\+B\+Triple}}]{t }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{classBmpRGBSampleValue_a8ab93cbcaea74c8fb1dd724316d5706c}} 
+\index{Bmp\+R\+G\+B\+Sample\+Value@{Bmp\+R\+G\+B\+Sample\+Value}!add\+N\+T\+S\+V\+Candidates@{add\+N\+T\+S\+V\+Candidates}}
+\index{add\+N\+T\+S\+V\+Candidates@{add\+N\+T\+S\+V\+Candidates}!Bmp\+R\+G\+B\+Sample\+Value@{Bmp\+R\+G\+B\+Sample\+Value}}
+\subsubsection{add\+N\+T\+S\+V\+Candidates()}
+{\footnotesize\ttfamily void Bmp\+R\+G\+B\+Sample\+Value\+::add\+N\+T\+S\+V\+Candidates (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \textbf{ R\+G\+B\+Triple} $>$ \&}]{cands,  }\item[{const \textbf{ B\+Y\+TE}}]{cube[3][2],  }\item[{\textbf{ C\+O\+L\+OR}}]{fc,  }\item[{\textbf{ D\+I\+R\+E\+C\+T\+I\+ON}}]{fd,  }\item[{\textbf{ C\+O\+L\+OR}}]{i1,  }\item[{\textbf{ C\+O\+L\+OR}}]{i2,  }\item[{\textbf{ Emb\+Value}}]{t }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+add candidates for the nearest target sample value 
+\begin{DoxyParams}{Parameters}
+{\em cands} & the candidates vector \\
+\hline
+{\em cube} & the color values describing the current search cube \\
+\hline
+{\em fc} & the fixed color \\
+\hline
+{\em fd} & the fixed side of the fixed color \\
+\hline
+\end{DoxyParams}
+\mbox{\label{classBmpRGBSampleValue_a41c765b2108e640d3e7249f5dfd81eef}} 
+\index{Bmp\+R\+G\+B\+Sample\+Value@{Bmp\+R\+G\+B\+Sample\+Value}!calc\+Distance@{calc\+Distance}}
+\index{calc\+Distance@{calc\+Distance}!Bmp\+R\+G\+B\+Sample\+Value@{Bmp\+R\+G\+B\+Sample\+Value}}
+\subsubsection{calc\+Distance()}
+{\footnotesize\ttfamily \textbf{ U\+W\+O\+R\+D32} Bmp\+R\+G\+B\+Sample\+Value\+::calc\+Distance (\begin{DoxyParamCaption}\item[{const \textbf{ Sample\+Value} $\ast$}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+calculate the distance between the sample value s and this sample value 
+\begin{DoxyParams}{Parameters}
+{\em s} & a sample value of the same type as this \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the distance 
+\end{DoxyReturn}
+
+
+Reimplemented from \textbf{ Bmp\+Sample\+Value} \doxyref{}{p.}{classBmpSampleValue_af81c03b48ec98543a9e1a88b69b83abd}.
+
+\mbox{\label{classBmpRGBSampleValue_ac12516b1fc1bc05f277150efe4c65153}} 
+\index{Bmp\+R\+G\+B\+Sample\+Value@{Bmp\+R\+G\+B\+Sample\+Value}!calc\+E\+Value@{calc\+E\+Value}}
+\index{calc\+E\+Value@{calc\+E\+Value}!Bmp\+R\+G\+B\+Sample\+Value@{Bmp\+R\+G\+B\+Sample\+Value}}
+\subsubsection{calc\+E\+Value()}
+{\footnotesize\ttfamily \textbf{ Emb\+Value} Bmp\+R\+G\+B\+Sample\+Value\+::calc\+E\+Value (\begin{DoxyParamCaption}\item[{const \textbf{ R\+G\+B\+Triple} \&}]{rgb }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\mbox{\label{classBmpRGBSampleValue_aed6e7619877620050d4a7bd388c4b29e}} 
+\index{Bmp\+R\+G\+B\+Sample\+Value@{Bmp\+R\+G\+B\+Sample\+Value}!calc\+Key@{calc\+Key}}
+\index{calc\+Key@{calc\+Key}!Bmp\+R\+G\+B\+Sample\+Value@{Bmp\+R\+G\+B\+Sample\+Value}}
+\subsubsection{calc\+Key()}
+{\footnotesize\ttfamily \textbf{ U\+W\+O\+R\+D32} Bmp\+R\+G\+B\+Sample\+Value\+::calc\+Key (\begin{DoxyParamCaption}\item[{const \textbf{ R\+G\+B\+Triple} \&}]{rgb }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\mbox{\label{classBmpRGBSampleValue_a35de04de107bf2a1f66f53eac3ab2b8d}} 
+\index{Bmp\+R\+G\+B\+Sample\+Value@{Bmp\+R\+G\+B\+Sample\+Value}!get\+Blue@{get\+Blue}}
+\index{get\+Blue@{get\+Blue}!Bmp\+R\+G\+B\+Sample\+Value@{Bmp\+R\+G\+B\+Sample\+Value}}
+\subsubsection{get\+Blue()}
+{\footnotesize\ttfamily \textbf{ B\+Y\+TE} Bmp\+R\+G\+B\+Sample\+Value\+::get\+Blue (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+get the blue color component 
+
+Implements \textbf{ Bmp\+Sample\+Value} \doxyref{}{p.}{classBmpSampleValue_a0c31d4428158c7c6017935ac03254b26}.
+
+\mbox{\label{classBmpRGBSampleValue_a9c1418294f6552b218a05a2439ee5df0}} 
+\index{Bmp\+R\+G\+B\+Sample\+Value@{Bmp\+R\+G\+B\+Sample\+Value}!get\+Green@{get\+Green}}
+\index{get\+Green@{get\+Green}!Bmp\+R\+G\+B\+Sample\+Value@{Bmp\+R\+G\+B\+Sample\+Value}}
+\subsubsection{get\+Green()}
+{\footnotesize\ttfamily \textbf{ B\+Y\+TE} Bmp\+R\+G\+B\+Sample\+Value\+::get\+Green (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+get the green color component 
+
+Implements \textbf{ Bmp\+Sample\+Value} \doxyref{}{p.}{classBmpSampleValue_a5d646a4082648a5b63323167553066ab}.
+
+\mbox{\label{classBmpRGBSampleValue_a4937eb190ebfedbd7b97b899e15855db}} 
+\index{Bmp\+R\+G\+B\+Sample\+Value@{Bmp\+R\+G\+B\+Sample\+Value}!get\+Name@{get\+Name}}
+\index{get\+Name@{get\+Name}!Bmp\+R\+G\+B\+Sample\+Value@{Bmp\+R\+G\+B\+Sample\+Value}}
+\subsubsection{get\+Name()}
+{\footnotesize\ttfamily std\+::string Bmp\+R\+G\+B\+Sample\+Value\+::get\+Name (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+return a short name uniquely identifying this sample value 
+
+Implements \textbf{ Sample\+Value} \doxyref{}{p.}{classSampleValue_aeaf5c46ec6d023840e9773604b20d25c}.
+
+\mbox{\label{classBmpRGBSampleValue_a8dcb01b4e05109a5ddabf882b4bb3b41}} 
+\index{Bmp\+R\+G\+B\+Sample\+Value@{Bmp\+R\+G\+B\+Sample\+Value}!get\+Nearest\+Target\+Sample\+Value@{get\+Nearest\+Target\+Sample\+Value}}
+\index{get\+Nearest\+Target\+Sample\+Value@{get\+Nearest\+Target\+Sample\+Value}!Bmp\+R\+G\+B\+Sample\+Value@{Bmp\+R\+G\+B\+Sample\+Value}}
+\subsubsection{get\+Nearest\+Target\+Sample\+Value()}
+{\footnotesize\ttfamily \textbf{ Sample\+Value} $\ast$ Bmp\+R\+G\+B\+Sample\+Value\+::get\+Nearest\+Target\+Sample\+Value (\begin{DoxyParamCaption}\item[{\textbf{ Emb\+Value}}]{t }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+get the nearest (with the least distance to this sample value) sample value whose embedded value equals the specified target 
+\begin{DoxyParams}{Parameters}
+{\em t} & the target embedded value\\
+\hline
+\end{DoxyParams}
+If two or more target sample values have equal distance each of them should be returned with equal probability.
+
+The returned \doxyref{Sample\+Value}{p.}{classSampleValue} object should be deleted by the callser. 
+
+Implements \textbf{ Sample\+Value} \doxyref{}{p.}{classSampleValue_aeca3fc1fd34c09d2244706b010935c2c}.
+
+\mbox{\label{classBmpRGBSampleValue_a8cbb5d220b2be0d1b9239d7abcda3a55}} 
+\index{Bmp\+R\+G\+B\+Sample\+Value@{Bmp\+R\+G\+B\+Sample\+Value}!get\+Red@{get\+Red}}
+\index{get\+Red@{get\+Red}!Bmp\+R\+G\+B\+Sample\+Value@{Bmp\+R\+G\+B\+Sample\+Value}}
+\subsubsection{get\+Red()}
+{\footnotesize\ttfamily \textbf{ B\+Y\+TE} Bmp\+R\+G\+B\+Sample\+Value\+::get\+Red (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+get the red color component 
+
+Implements \textbf{ Bmp\+Sample\+Value} \doxyref{}{p.}{classBmpSampleValue_a8665a4c4db9ac910abf4ec0738cfde68}.
+
+\mbox{\label{classBmpRGBSampleValue_ad2e6b7d9a3b37936732d63dc268f833b}} 
+\index{Bmp\+R\+G\+B\+Sample\+Value@{Bmp\+R\+G\+B\+Sample\+Value}!minus@{minus}}
+\index{minus@{minus}!Bmp\+R\+G\+B\+Sample\+Value@{Bmp\+R\+G\+B\+Sample\+Value}}
+\subsubsection{minus()}
+{\footnotesize\ttfamily \textbf{ B\+Y\+TE} Bmp\+R\+G\+B\+Sample\+Value\+::minus (\begin{DoxyParamCaption}\item[{\textbf{ B\+Y\+TE}}]{a,  }\item[{\textbf{ B\+Y\+TE}}]{b }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+substract the B\+Y\+TE b from the B\+Y\+TE a \begin{DoxyReturn}{Returns}
+max(0, a -\/ b) 
+\end{DoxyReturn}
+\mbox{\label{classBmpRGBSampleValue_a54f1b405be7151da0b955402b0673e71}} 
+\index{Bmp\+R\+G\+B\+Sample\+Value@{Bmp\+R\+G\+B\+Sample\+Value}!plus@{plus}}
+\index{plus@{plus}!Bmp\+R\+G\+B\+Sample\+Value@{Bmp\+R\+G\+B\+Sample\+Value}}
+\subsubsection{plus()}
+{\footnotesize\ttfamily \textbf{ B\+Y\+TE} Bmp\+R\+G\+B\+Sample\+Value\+::plus (\begin{DoxyParamCaption}\item[{\textbf{ B\+Y\+TE}}]{a,  }\item[{\textbf{ B\+Y\+TE}}]{b }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+add the B\+Y\+T\+Es a and b \begin{DoxyReturn}{Returns}
+min(255, a + b) 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{classBmpRGBSampleValue_a48f3be8e29c6e6689a7e8456fe298c3f}} 
+\index{Bmp\+R\+G\+B\+Sample\+Value@{Bmp\+R\+G\+B\+Sample\+Value}!Color@{Color}}
+\index{Color@{Color}!Bmp\+R\+G\+B\+Sample\+Value@{Bmp\+R\+G\+B\+Sample\+Value}}
+\subsubsection{Color}
+{\footnotesize\ttfamily \textbf{ R\+G\+B\+Triple} Bmp\+R\+G\+B\+Sample\+Value\+::\+Color\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ Bmp\+R\+G\+B\+Sample\+Value.\+h}\item 
+\textbf{ Bmp\+R\+G\+B\+Sample\+Value.\+cc}\end{DoxyCompactItemize}

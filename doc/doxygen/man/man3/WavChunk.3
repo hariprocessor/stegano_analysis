@@ -1,0 +1,64 @@
+.TH "WavChunk" 3 "Thu Aug 17 2017" "Version 0.5.1" "steghide" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+WavChunk
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <WavChunk\&.h>\fP
+.PP
+Inherited by \fBWavChunkUnused\fP, and \fBWavFormatChunk\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBWavChunk\fP (void)"
+.br
+.ti -1c
+.RI "\fBWavChunk\fP (\fBWavChunkHeader\fP *chh)"
+.br
+.ti -1c
+.RI "virtual \fB~WavChunk\fP (void)"
+.br
+.ti -1c
+.RI "virtual void \fBread\fP (\fBBinaryIO\fP *io)=0"
+.br
+.ti -1c
+.RI "virtual void \fBwrite\fP (\fBBinaryIO\fP *io)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBWavChunkHeader\fP * \fBChunkHeader\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "WavChunk::WavChunk (void)\fC [inline]\fP"
+
+.SS "WavChunk::WavChunk (\fBWavChunkHeader\fP * chh)\fC [inline]\fP"
+
+.SS "WavChunk::~WavChunk (void)\fC [virtual]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual void WavChunk::read (\fBBinaryIO\fP * io)\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBWavChunkUnused\fP, and \fBWavFormatChunk\fP\&.
+.SS "void WavChunk::write (\fBBinaryIO\fP * io)\fC [virtual]\fP"
+
+.PP
+Reimplemented in \fBWavChunkUnused\fP, and \fBWavFormatChunk\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBWavChunkHeader\fP* WavChunk::ChunkHeader\fC [protected]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for steghide from the source code\&.
