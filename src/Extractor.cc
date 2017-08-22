@@ -19,6 +19,7 @@
  */
 
 #include <string>
+#include <iostream>
 
 #include "BitString.h"
 #include "CvrStgFile.h"
@@ -29,10 +30,107 @@
 #include "common.h"
 #include "error.h"
 
-#include <time.h>
+//#include <time.h>
+#include <sys/time.h>
+#include <stdio.h>
+#include <unistd.h>
+
+void Extractor::Generate(unsigned int length, std::string s)
+{
+	if(length == 0) // when length has been reached
+	{
+
+
+				//std::cout << s << std::endl;
+
+		bool found = false;
+			bool condition = true;
+
+				EmbData* embdata = new EmbData (EmbData::EXTRACT, s) ;
+				Selector sel (Globs.TheCvrStgFile->getNumSamples(), s) ;
+
+				condition = true;
+				unsigned long sv_idx = 0 ;
+
+				found = true;
+
+				while (!embdata->finished() && condition) {
+					try{
+					unsigned short bitsperembvalue = AUtils::log2_ceil<unsigned short> (Globs.TheCvrStgFile->getEmbValueModulus()) ;
+					unsigned long embvaluesrequested = AUtils::div_roundup<unsigned long> (embdata->getNumBitsRequested(), bitsperembvalue) ;
+					if (sv_idx + (Globs.TheCvrStgFile->getSamplesPerVertex() * embvaluesrequested) >= Globs.TheCvrStgFile->getNumSamples()) {
+						if (Globs.TheCvrStgFile->is_std()) {
+							throw CorruptDataError (_("the stego data from standard input is too short to contain the embedded data.")) ;
+						}
+						else {
+							throw CorruptDataError (_("the stego file \"%s\" is too short to contain the embedded data."), Globs.TheCvrStgFile->getName().c_str()) ;
+						}
+
+					}
+					BitString bits (Globs.TheCvrStgFile->getEmbValueModulus()) ;
+
+
+					for (unsigned long i = 0 ; i < embvaluesrequested ; i++) {
+						EmbValue ev = 0 ;
+						for (unsigned int j = 0 ; j < Globs.TheCvrStgFile->getSamplesPerVertex() ; j++, sv_idx++) {
+							ev = (ev + Globs.TheCvrStgFile->getEmbeddedValue (sel[sv_idx])) % Globs.TheCvrStgFile->getEmbValueModulus() ;
+						}
+						bits.appendNAry(ev) ;
+					}
+					if(s.compare("tom") == 0)
+						bits.print();
+
+						embdata->addBits (bits) ;
+					} catch(...){
+						//std::cout << "everything exception" << std::endl;
+						found = false;
+						condition = false;
+					}
+					if(found == true){
+						std::cout << "***************************************** found in password crack" << s <<std::endl;
+
+
+						condition = true;
+					}
+					//std::cout << ii << std::endl;
+					//ii = ii+1;
+				}
+
+		return;
+	}
+
+	for(unsigned int i = 0; i < 62; i++) // iterate through alphabet
+	{
+		// Create new string with next character
+		// Call generate again until string has reached it's length
+		std::string appended = s + BruteChar[i];
+		Generate(length-1, appended);
+	}
+}
+
+void Extractor::Crack()
+{
+	/*
+	while(1)
+	{
+
+		// Keep growing till I get it right
+		static unsigned int stringlength = 1;
+		Generate(stringlength, "");
+		stringlength++;
+
+	}
+	*/
+	for(int i = 0; i < 5; i++){
+		Generate(i, "");
+	}
+}
+
 
 EmbData* Extractor::extract ()
 {
+
+	std::cout << AlphabetUpper[0] << std::endl;
 	VerboseMessage vrs ;
 	if (Args.StgFn.getValue() == "") {
 		vrs.setMessage (_("reading stego file from standard input...")) ;
@@ -60,13 +158,24 @@ EmbData* Extractor::extract ()
 	ve.setNewline (false) ;
 	ve.printMessage() ;
 	bool found = false;
-	bool condition = true;
-	clock_t begin, end;
-	begin = clock();
+		bool condition = true;
+	//clock_t begin, end;
+	//begin = clock();
 	/* 3149253126 */
-	for(UWORD32 ii = 0; ii < pow(2,22); ii = ii+1){
+	struct timeval start, end;
+	long mtime, seconds, useconds;
+	gettimeofday(&start, NULL);
+
+
+
+	Crack();
+
+	/*//hash brute force
+	for(UWORD32 ii = 0; ii < pow(2,16); ii = ii+1){
 		//std::cout << ii << std::endl;
-		if(found) break;
+
+
+
 		embdata = new EmbData (EmbData::EXTRACT, Passphrase) ;
 		Selector sel (Globs.TheCvrStgFile->getNumSamples(), Passphrase) ;
 		sel.setSeed(ii);
@@ -82,15 +191,16 @@ EmbData* Extractor::extract ()
 			unsigned long embvaluesrequested = AUtils::div_roundup<unsigned long> (embdata->getNumBitsRequested(), bitsperembvalue) ;
 			if (sv_idx + (Globs.TheCvrStgFile->getSamplesPerVertex() * embvaluesrequested) >= Globs.TheCvrStgFile->getNumSamples()) {
 				if (Globs.TheCvrStgFile->is_std()) {
-					//throw CorruptDataError (_("the stego data from standard input is too short to contain the embedded data.")) ;
+					throw CorruptDataError (_("the stego data from standard input is too short to contain the embedded data.")) ;
 				}
 				else {
-					//throw CorruptDataError (_("the stego file \"%s\" is too short to contain the embedded data."), Globs.TheCvrStgFile->getName().c_str()) ;
+					throw CorruptDataError (_("the stego file \"%s\" is too short to contain the embedded data."), Globs.TheCvrStgFile->getName().c_str()) ;
 				}
 
 			}
 			BitString bits (Globs.TheCvrStgFile->getEmbValueModulus()) ;
 			//bits.print();
+
 			for (unsigned long i = 0 ; i < embvaluesrequested ; i++) {
 				EmbValue ev = 0 ;
 				for (unsigned int j = 0 ; j < Globs.TheCvrStgFile->getSamplesPerVertex() ; j++, sv_idx++) {
@@ -113,11 +223,23 @@ EmbData* Extractor::extract ()
 			//std::cout << ii << std::endl;
 			//ii = ii+1;
 		}
-
 	}
+*/
 
-	end = clock();
-	std::cout << "time: " << ((end-begin)/CLOCKS_PER_SEC)<<std::endl;
+
+
+
+	gettimeofday(&end, NULL);
+
+			    seconds  = end.tv_sec  - start.tv_sec;
+			    useconds = end.tv_usec - start.tv_usec;
+
+			    mtime = ((seconds) * 1000 + useconds/1000.0) + 0.5;
+
+			    printf("Elapsed time: %ld milliseconds\n", mtime);
+
+	//end = clock();
+	//std::cout << "time: " << ((end-begin)/CLOCKS_PER_SEC)<<std::endl;
 
 	vd.printMessage() ;
 
